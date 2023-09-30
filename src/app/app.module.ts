@@ -13,12 +13,16 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
+import { InmuebleComponent } from './inmueble/inmueble.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+
+   
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { RegistroComponent } from './registro/registro.component';
     MatButtonModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InmuebleComponent,
+  
 
 
   ],

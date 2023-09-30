@@ -8,6 +8,7 @@ import { BrokersModule } from './brokers/brokers.module';
 import { AgentesModule } from './agentes/agentes.module';
 import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
+import { InmuebleComponent } from './inmueble/inmueble.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     path: 'index',
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
+  
   {
     path:'login',
     component: LoginComponent
@@ -39,6 +41,16 @@ const routes: Routes = [
     path:'registro',
     component: RegistroComponent
   },
+
+ 
+  {
+    path:'Inmueble',
+    component:InmuebleComponent
+  },
+
+
+
+
   { 
     path: '**',
     redirectTo: 'index',
