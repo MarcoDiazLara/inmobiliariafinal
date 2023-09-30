@@ -42,11 +42,12 @@ const routes: Routes = [
     component: RegistroComponent
   },
 
- 
   {
-    path:'Inmueble',
-    component:InmuebleComponent
+    path:'publicar',
+    component: InmuebleComponent
   },
+
+
 
 
 

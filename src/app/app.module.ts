@@ -13,6 +13,14 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
+
+  import {MatInputModule} from '@angular/material/input';
+  import {MatFormFieldModule} from '@angular/material/form-field';
+
+  import {MatSelectModule} from '@angular/material/select';
+  import {MatRadioModule} from '@angular/material/radio';
+
+import {MatStepperModule} from '@angular/material/stepper';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 
 
@@ -21,12 +29,13 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     AppComponent,
     LoginComponent,
     RegistroComponent,
+    
 
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
@@ -35,7 +44,14 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    InmuebleComponent,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatRadioModule,
+    
+    
+    MatStepperModule,
+    AppRoutingModule,
   
 
 
