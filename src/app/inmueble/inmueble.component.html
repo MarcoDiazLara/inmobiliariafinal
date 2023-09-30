@@ -1,7 +1,7 @@
 
 <mat-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" >
       <ng-template matStepLabel>General</ng-template>
       <br>
             <hr class="custom-hr">
@@ -18,20 +18,20 @@
             <br>
             <br>
                       <div class="center-content" >
-              <mat-form-field>
+              <mat-form-field >
                 <mat-label>Tipo de inmueble</mat-label>
 
-                  <mat-select>
-                     <mat-option *ngFor="let food of foods" [value]="food.value">
-                      {{food.viewValue}}
-                        </mat-option>
+                  <mat-select formControlName="pId_Tipo_Inmueble">
+                    <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
+                    }}
+                  </mat-option>
                      </mat-select>
                        </mat-form-field>
             </div>
               <br>
             <br>
       <div class="center-content">
-        <button mat-button matStepperNext>Continuar</button>
+        <button (click)="guardar()" mat-button matStepperNext>Continuar</button>
       </div>
     </form>
   </mat-step>
@@ -41,7 +41,7 @@
   
   <!-- --------------------------------------------------------------------------------------------- -->
   <mat-step [stepControl]="secondFormGroup" label="Especificaciones">
-    <form [formGroup]="secondFormGroup">
+    <form [formGroup]="secondFormGroup" >
       <br>
       <hr class="custom-hr">
       <br>
@@ -55,20 +55,19 @@
      
           <mat-form-field style="margin-right: 10px;">
        <mat-label>Estado</mat-label>
-         <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-             {{food.viewValue}}
-               </mat-option>
+         <mat-select formControlName="pId_estado" >
+          <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
+          }}
+        </mat-option>
             </mat-select>
               </mat-form-field>
-              <!-- --------------------------- -->
-
+             
               <mat-form-field style="margin-right: 10px;"> 
                   <mat-label>Municipio</mat-label>
-                    <mat-select>
-                       <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                          </mat-option>
+                    <mat-select formControlName="pId_municipio">
+                      <mat-option (click)="updateA()" *ngFor="let Mun of municipios" value="{{ Mun.id_Municipio}}">{{ Mun.Municipio
+                      }}
+                    </mat-option>
                        </mat-select>
                          </mat-form-field>
         </div>
@@ -77,10 +76,10 @@
         <div style="display: flex; justify-content: center; align-items: center;">
           <mat-form-field style="margin-right: 10px;"> 
               <mat-label>Asentamiento</mat-label>
-                <mat-select>
-                   <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                      </mat-option>
+                <mat-select formControlName="pId_asentamiento">
+                  <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_Asentamiento}}">{{ Ase.Asentamiento
+                  }}
+                </mat-option>
                    </mat-select>
                      </mat-form-field>
                      <mat-form-field class="example-full-width">

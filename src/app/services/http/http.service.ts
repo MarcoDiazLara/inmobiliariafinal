@@ -42,4 +42,28 @@ export class HttpService {
     +'&p_correo='+p_correo+'&p_tel_fijo='+p_tel_fijo+'&p_cel='+p_cel;
     return this.httpclient.post(this.url + 'insertarUsuario.php', params, { headers });
   }
+
+  tipoInmueble(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post(this.url + 'mostrarTipoInmuebles.php', params, { headers });
+  }
+
+  obtenerEstado(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post(this.url + 'mostrarEstados.php', params, { headers });
+  }
+
+  obtenerMunicipio(p_estado : string){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_estado="+p_estado;
+    return this.httpclient.post(this.url + 'mostrarMunicipio.php', params, { headers });
+  }
+
+  obtenerAsentamiento(p_estado : string, p_municipio: string){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_estado="+p_estado + "&p_municipio="+p_municipio;
+    return this.httpclient.post(this.url + 'mostarAsentamiento.php', params, { headers });
+  }
 }
