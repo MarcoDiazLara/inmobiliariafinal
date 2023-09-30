@@ -9,6 +9,7 @@ import { AgentesModule } from './agentes/agentes.module';
 import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
+import { InmueblesModule} from './inmuebles/inmuebles.module'
 
 const routes: Routes = [
   {
@@ -43,12 +44,13 @@ const routes: Routes = [
   },
 
  
+ 
+
+ 
   {
-    path:'Inmueble',
-    component:InmuebleComponent
+    path:'Publicarimueble', //localhost/user/
+    loadChildren: () => import('./inmuebles/inmuebles.module').then(q =>q.InmueblesModule)
   },
-
-
 
 
   { 

@@ -14,6 +14,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
+import { InmueblesComponent } from './inmuebles/inmuebles.component';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 @NgModule({
@@ -21,6 +24,7 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     AppComponent,
     LoginComponent,
     RegistroComponent,
+  
 
    
   ],
@@ -36,6 +40,7 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     FormsModule,
     ReactiveFormsModule,
     InmuebleComponent,
+    MatStepperModule,
   
 
 
