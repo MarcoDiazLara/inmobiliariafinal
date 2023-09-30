@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  formLogin!: FormGroup;
+  registro(){
+    this.router.navigate(["/registro"]);
+  }
+
+  login(){
+    
+  }
+  
 
   constructor(
     private router: Router

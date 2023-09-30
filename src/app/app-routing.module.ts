@@ -7,6 +7,7 @@ import { CompanyAdminModule } from './company-admin/company-admin.module';
 import { BrokersModule } from './brokers/brokers.module';
 import { AgentesModule } from './agentes/agentes.module';
 import { WebModule } from './web/web.module';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent
+  },
+
+  {
+    path:'registro',
+    component: RegistroComponent
   },
   { 
     path: '**',
