@@ -1,4 +1,3 @@
-
 <section class="vh-100">
     <div class="container-fluid">
          <div class="row">
@@ -8,42 +7,42 @@
                     
                  </div>
                  <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                     <form  style="width: 23rem;">
+                     <form  [formGroup]="formRegistro"   style="width: 23rem;">
                          <h1 class="display-1" > Registro</h1>
                           <div class="form-outline mb-4">
 
-                            <input matInput type="text" id="nombres" name="nombres" ngModel required class="form-control"  aria-describedby="nombresHelp" placeholder="Nombres:">
+                            <input matInput formControlName="p_nombres" type="text" id="nombres" name="nombres" ngModel required class="form-control"  aria-describedby="nombresHelp" placeholder="Nombres:">
                            </div>
                           <div class="form-outline mb-4">
 
-                            <input  matInput type="text" id="apellido_paterno" name="apellido_paterno" ngModel required    class="form-control"  aria-describedby="apellidoHelp" placeholder="Apellido Paterno:">
+                            <input  matInput formControlName="p_a_paterno" type="text" id="apellido_paterno" name="apellido_paterno" ngModel required    class="form-control"  aria-describedby="apellidoHelp" placeholder="Apellido Paterno:">
 
                           </div>
                           <div class="form-outline mb-4">
 
-                            <input  matInput type="text" id="apellido_materno" name="apellido_materno" ngModel required    class="form-control"  aria-describedby="apellidoHelp" placeholder="Apellido Materno:">
+                            <input  matInput formControlName="p_a_materno" type="text" id="apellido_materno" name="apellido_materno" ngModel required    class="form-control"  aria-describedby="apellidoHelp" placeholder="Apellido Materno:">
                         </div>
                         <div class="form-outline mb-4">
-                            <input  matInput type="text" id="usuario" name="usuario" required class="form-control"  aria-describedby="UsuarioHelp" placeholder="Usuario:"  >
+                            <input  matInput formControlName="p_nom_usuario" type="text" id="usuario" name="usuario" required class="form-control"  aria-describedby="UsuarioHelp" placeholder="Usuario:"  >
                         </div>
 
                         <div class="form-outline mb-4">
                             
-                            <input  matInput formControlName="contraseña" type="password"  id="contraseña"  class="form-control"  placeholder="Contraseña">
+                            <input  matInput formControlName="p_contrasena" type="password"  id="contraseña"  class="form-control"  placeholder="Contraseña">
                           
                          
                           </div>
                          <div class="form-outline mb-4">
                             
-                             <input matInput formControlName="correo" type="email" class="form-control" id="correo"   aria-describedby="emailHelp" placeholder="Correo Electrónico:">  
+                             <input matInput formControlName="p_correo" type="email" class="form-control" id="correo"   aria-describedby="emailHelp" placeholder="Correo Electrónico:">  
                          </div>
                           
                          <div class="form-outline mb-4">
-                            <input  matInput   type="tel" id="telefono_fijo" name="telefono_fijo" class="form-control" aria-describedby="telefonoHelp" placeholder="Telefono">
+                            <input  matInput formControlName="p_tel_fijo"   type="tel" id="telefono_fijo" name="telefono_fijo" class="form-control" aria-describedby="telefonoHelp" placeholder="Telefono">
                          </div>
 
                           <div class="form-outline mb-4" >
-                            <input  matInput type="tel" id="celular" name="celular" class="form-control" aria-describedby="celularHelp" placeholder="Celular"  >
+                            <input  matInput formControlName="p_cel" type="tel" id="celular" name="celular" class="form-control" aria-describedby="celularHelp" placeholder="Celular"  >
 
                           </div>
                           <br>
@@ -51,7 +50,7 @@
                 
  
                 <div class="pt-1 mb-4">
-               <button class="btn btn-secondary btn-lg" type="button">Iniciar</button>
+               <button class="btn btn-secondary btn-lg" type="button" (click)="Registro()">Iniciar</button>
              </div>
                      </form>
                  </div>

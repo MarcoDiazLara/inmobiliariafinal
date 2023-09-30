@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpService } from '../services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,41 +10,41 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
-  registro(){
-    this.router.navigate(["/registro"]);
-  }
 
-  login(){
-    
-  }
-  
+  constructor(private router: Router,
+    private httpService: HttpService,
+    private formBuilder: FormBuilder){}
 
-  constructor(
-    private router: Router
-  ) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit() {
+      this.formLogin = this.formBuilder.group({
+        nombreU: ['',[Validators.required]],
+        password: ['',[Validators.required]]
+       })
+     }
 
-  openAgentes(){
-   this.router.navigate(["/superUsuario"], { replaceUrl: true });
+     
 
-  }
+login(){
+  this.httpService.iniciarSesion(this.formLogin.value.nombreU,this.formLogin.value.password).subscribe((data: any)=> {
+    if(data== 0){
+      alert("usuario no existe");
+    }else{
+      if(data==2){
+        alert("contraseña incorrecta");
+      }else{
+        alert("pasa usuario");
+      }
+    }
+  });
+}
 
-  openAgentes2(){
-    this.router.navigate(["/inmobiliaria"], { replaceUrl: true });
+registro(){
+  this.router.navigate(["/registro"]);
+}
+
  
-   }
 
-   openAgentes3(){
-    this.router.navigate(["/usuario"], { replaceUrl: true });
- 
-   }
-
-   openAgentes4(){
-    this.router.navigate(["/asesor"], { replaceUrl: true });
- 
-   }
 
 
 }
