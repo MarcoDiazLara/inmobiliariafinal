@@ -9,7 +9,8 @@ import { AgentesModule } from './agentes/agentes.module';
 import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
-import { InmueblesModule} from './inmuebles/inmuebles.module'
+import { InmueblesModule} from './inmuebles/inmuebles.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 const routes: Routes = [
   {
@@ -43,7 +44,10 @@ const routes: Routes = [
     component: RegistroComponent
   },
 
- 
+  {
+    path: 'cliente',
+    loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
+  },
  
 
  
