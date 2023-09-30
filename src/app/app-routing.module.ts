@@ -11,6 +11,9 @@ import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 
 
+import { ClienteModule } from './cliente/cliente.module';
+
+
 const routes: Routes = [
   {
     path: 'superUsuario',
@@ -42,6 +45,18 @@ const routes: Routes = [
     path:'registro',
     component: RegistroComponent
   },
+  
+
+  {
+    path: 'cliente',
+    loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
+  },
+  {
+    path: 'web',
+    loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
+  },
+ 
+
 
  
   {

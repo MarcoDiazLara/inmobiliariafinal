@@ -6,10 +6,12 @@ import { WebComponent } from './web.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    WebComponent
+    WebComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
