@@ -1,0 +1,62 @@
+.row{
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    .contenedorbusca{
+        width: 30%;
+        height: 50vh;
+        float: left;
+    }
+
+    
+    .contenedorbusca2{
+        width: 70%;
+        height: 50vh;
+        float: left;
+    }
+
+}
+ 
+ 
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-disabled {
+  display: inline-block;
+}
