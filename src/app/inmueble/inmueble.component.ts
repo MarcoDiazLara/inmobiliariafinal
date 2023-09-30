@@ -8,6 +8,11 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import {NgFor} from '@angular/common';
   import {MatSelectModule} from '@angular/material/select';
   import {MatRadioModule} from '@angular/material/radio';
+  import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
+
+
 
 
   // esto se tomo de ejemplo 
@@ -29,11 +34,12 @@ interface Food {
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule, MatSelectModule,MatRadioModule
+    MatInputModule, MatSelectModule,MatRadioModule,MatCheckboxModule,NgFor
   ],
   
 })
 export class InmuebleComponent implements OnInit {
+  indeterminate = false;
   fileName: string ="";
   isLinear = false;
   onFileSelected(event: any): void {

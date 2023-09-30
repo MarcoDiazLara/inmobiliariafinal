@@ -1,3 +1,9 @@
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -793,3 +799,6 @@
   font-weight: arial; /* Estilo de fuente negrita */
   padding: 0 10px; /* Espaciado horizontal alrededor del título */
 }
+
+
+

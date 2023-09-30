@@ -1,324 +1,325 @@
-   <mat-stepper [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="firstFormGroup">
-          <form  class="form-horizontal" style="margin:0 auto" [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>General</ng-template>
-            <br>
+
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>General</ng-template>
+      <br>
             <hr class="custom-hr">
             <br>  
-             <h2 class="text-center">¿Qué vas a realizar?</h2>
+            <h2 class="text-center">¿Qué vas a realizar?</h2>
             <br>
             <h3 class="text-center">Tipo de operación</h3>
             <div style="display: flex; justify-content: center; align-items: center;">
-                <label class="checkbox-btn" style="margin-right: 10px;">
-                  <input type="checkbox" formControlName="checkbox1"> Vender
-                  <span class="checkmark"></span>
-                </label>
-            
-                <label class="checkbox-btn"  style="margin-right: 10px;">
-                  <input type="checkbox" formControlName="checkbox2"> Rentar
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <br>
-               <!-- ----------------------------------------------- -->
-               <div class="center-content" >
-    
-    
-           
-                <mat-form-field>
-             <mat-label>Tipo de inmueble</mat-label>
-               <mat-select>
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                   {{food.viewValue}}
-                     </mat-option>
-                  </mat-select>
-                    </mat-form-field>
-    
-    
-    
-    
-    
-    
-               </div>
-            <div class="d-flex justify-content-center align-items-center">
-              <button mat-button matStepperNext>Continuar
-              </button>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button style="margin-right: 10px;" value="1">Comprar</mat-radio-button>
+                <mat-radio-button style="margin-right: 10px;" value="2">Vender</mat-radio-button>
+              </mat-radio-group>
             </div>
-          </form>
-        
-        </mat-step>
-    
-        <!-- ------------------------------------------------------------ -->
-        <mat-step [stepControl]="secondFormGroup" label="Especificaciones">
-          <form [formGroup]="secondFormGroup">
             <br>
-            <hr class="custom-hr">
             <br>
-    
+                      <div class="center-content" >
+              <mat-form-field>
+                <mat-label>Tipo de inmueble</mat-label>
+
+                  <mat-select>
+                     <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                        </mat-option>
+                     </mat-select>
+                       </mat-form-field>
+            </div>
+              <br>
+            <br>
+      <div class="center-content">
+        <button mat-button matStepperNext>Continuar</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+  
+  <!-- --------------------------------------------------------------------------------------------- -->
+  <mat-step [stepControl]="secondFormGroup" label="Especificaciones">
+    <form [formGroup]="secondFormGroup">
+      <br>
+      <hr class="custom-hr">
+      <br>
+
+  
+      <h2 class="text-center">Donde esta tu inmueble</h2>
+      <div style="display: flex; justify-content: center; align-items: center;">
+          
+
+ 
+     
+          <mat-form-field style="margin-right: 10px;">
+       <mat-label>Estado</mat-label>
+         <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+             {{food.viewValue}}
+               </mat-option>
+            </mat-select>
+              </mat-form-field>
+              <!-- --------------------------- -->
+
+              <mat-form-field style="margin-right: 10px;"> 
+                  <mat-label>Municipio</mat-label>
+                    <mat-select>
+                       <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                          </mat-option>
+                       </mat-select>
+                         </mat-form-field>
+        </div>
+
+        <!-- ------------------------------------------------------ -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <mat-form-field style="margin-right: 10px;"> 
+              <mat-label>Asentamiento</mat-label>
+                <mat-select>
+                   <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                      </mat-option>
+                   </mat-select>
+                     </mat-form-field>
+                     <mat-form-field class="example-full-width">
+                      <mat-label>Calle y Numero</mat-label>
+                      <input matInput placeholder="Calle y Numero " >
+                    </mat-form-field>             
+        </div>
+        <div class="center-iframe">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15083.665983785282!2d-98.1447812!3d19.067408699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1695089368802!5m2!1ses-419!2smx" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           </div>
         
-            <h2 class="text-center">Donde esta tu inmueble</h2>
-            <div style="display: flex; justify-content: center; align-items: center;">
-                
-    
-       
-           
-                <mat-form-field style="margin-right: 10px;">
-             <mat-label>Estado</mat-label>
-               <mat-select>
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                   {{food.viewValue}}
-                     </mat-option>
-                  </mat-select>
-                    </mat-form-field>
-                    <!-- --------------------------- -->
-    
-                    <mat-form-field style="margin-right: 10px;"> 
-                        <mat-label>Municipio</mat-label>
-                          <mat-select>
-                             <mat-option *ngFor="let food of foods" [value]="food.value">
-                              {{food.viewValue}}
-                                </mat-option>
-                             </mat-select>
-                               </mat-form-field>
-              </div>
-    
-              <!-- ------------------------------------------------------ -->
-              <div style="display: flex; justify-content: center; align-items: center;">
-                <mat-form-field style="margin-right: 10px;"> 
-                    <mat-label>Asentamiento</mat-label>
-                      <mat-select>
-                         <mat-option *ngFor="let food of foods" [value]="food.value">
-                          {{food.viewValue}}
-                            </mat-option>
-                         </mat-select>
+      <div class="d-flex justify-content-center align-items-center">
+
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button matStepperNext>Continuar</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- ---------------------------------------------------------------- -->
+  <mat-step  [stepControl]="secondFormGroup" label="Caracteristicas">
+    <br>
+    <hr class="custom-hr">
+    <br>
+    <h2 class="text-center">Datos Generales</h2>
+      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="firstFormGroup">
+
+          <div style="display: flex; justify-content: center; align-items: center;" >
+              <mat-form-field style="margin-right: 10px;"> 
+                  <mat-label>Nombre del Inmueble</mat-label>
+                  <input matInput placeholder="Nombre de inmueble" >
+              </mat-form-field>    
+          </div>
+          <!-- ----------------------------------------------------------------- -->
+         <!-- Textarea with class .w-25 -->
+         <div class="d-flex justify-content-center">
+          <div class="form-outline w-25 mb-4 mx-auto">
+          <label  class="form-label" for="textAreaExample4">
+            <h4 class="text-center">Describe tu inmueble</h4>
+          </label>
+            <textarea class="form-control" id="textAreaExample4" rows="3"></textarea>
+          
+          </div>
+        </div>
+        <!-- ------------------------------------------------------------------- -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+       <mat-form-field style="margin-right: 10px;">
+       <mat-label>Calle</mat-label>
+       <input matInput placeholder="Calle y Numero " >
+        </mat-form-field>
+
+        <mat-form-field style="margin-right: 10px;">
+          <mat-label> Numero Interior </mat-label>
+          <input matInput placeholder="Numero  Interior " >
+           </mat-form-field>
+
+           <mat-form-field style="margin-right: 10px;">
+              <mat-label>Numero Exterior </mat-label>
+              <input matInput placeholder=" Numeross Exterior  " >
+               </mat-form-field>
+            </div>
+
+         <!-- ---------------------------------------------------------- -->
+         <div style="display: flex; justify-content: center; align-items: center;">
+      
+          <mat-form-field style="margin-right: 10px;">
+              <mat-label> Terreno metros  </mat-label>
+              <input matInput placeholder="Numero  Interior " >
+               </mat-form-field>
+  
+               <mat-form-field style="margin-right: 10px;">
+                  <mat-label> Construccion  </mat-label>
+                  <input matInput placeholder=" Numeross Exterior  " >
+                   </mat-form-field>
+      </div>
+
+  <!-- ------------------------------------------------------------------ -->
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+      <mat-form-field style="margin-right: 10px;">
+          <mat-label> Numero de Recamaras   </mat-label>
+          <input matInput placeholder=" Numero de Recamaras  " >
+           </mat-form-field>
+
+                 <mat-form-field style="margin-right: 10px;">
+                  <mat-label> Numero de baños  </mat-label>
+                  <input matInput placeholder=" Numero de baños  " >
+                   </mat-form-field>
+
+                 
+
+                         <mat-form-field style="margin-right: 10px;">
+                          <mat-label> Numero de Pisos  </mat-label>
+                          <input matInput placeholder=" Numero de Pisos  " >
                            </mat-form-field>
-                           <mat-form-field class="example-full-width">
-                            <mat-label>Calle y Numero</mat-label>
-                            <input matInput placeholder="Calle y Numero " >
-                          </mat-form-field>             
-              </div>
-              <div class="center-iframe">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15083.665983785282!2d-98.1447812!3d19.067408699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1695089368802!5m2!1ses-419!2smx" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                 </div>
-              
-            <div class="d-flex justify-content-center align-items-center">
+  
+                         
+  </div>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <div class="text-center">
+  <span class="title">Datos Adicionales</span>
+ </div>
+ <br>
+  
+  <div style="display: flex; justify-content: center; align-items: center;">
+
+    <label>
+      <input class="radio-input" type="checkbox" name="engine">
+          <span class="radio-tile">
+              <span class="radio-icon">
+                  <img src="assets/img/gimna.png"  alt="...">
+              </span>
+              <span class="radio-label">Gimnasio</span>
+          </span>
+  </label>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+
+  <label>
+    <input class="radio-input" type="checkbox" name="engine">
+        <span class="radio-tile">
+            <span class="radio-icon">
+                <img src="assets/img/coche.png"  alt="...">
+            </span>
+            <span class="radio-label">Estacionamiento</span>
+        </span>
+</label>
+&nbsp;
+&nbsp;
+&nbsp;
+
+<label>
+  <input class="radio-input" type="checkbox" name="engine">
+      <span class="radio-tile">
+          <span class="radio-icon">
+              <img src="assets/img/terraza.png"  alt="...">
+          </span>
+          <span class="radio-label">Jardin</span>
+      </span>
+</label>
+&nbsp;
+&nbsp;
+&nbsp;
+
+<label>
+  <input class="radio-input" type="checkbox" name="engine">
+      <span class="radio-tile">
+          <span class="radio-icon">
+              <img src="assets/img/cocina.png"  alt="...">
+          </span>
+          <span class="radio-label">Cocina Integral</span>
+      </span>
+</label>
+
+&nbsp;
+&nbsp;
+&nbsp;
+<label>
+  <input class="radio-input" type="checkbox" name="engine">
+      <span class="radio-tile">
+          <span class="radio-icon">
+              <img src="assets/img/nadando.png"  alt="...">
+          </span>
+          <span class="radio-label">Alberca</span>
+      </span>
+</label>
+&nbsp;
+&nbsp;
+&nbsp;
+<label >
+  <input  class="radio-input" type="checkbox" name="engine">
+      <span class="radio-tile">
+          <span class="radio-icon">
+              <img src="assets/img/techo.png"  alt="...">
+          </span>
+          <span class="radio-label">Roof Garden</span>
+      </span>
+</label> 
+
+
+
+
+
+
+
+
+
+
+
+
     
+
+    
+    
+
+</div>
+<br>
+<br>
+<br>
+          <div class="d-flex justify-content-center align-items-center">
               <button mat-button matStepperPrevious>Atras</button>
               <button mat-button matStepperNext>Continuar</button>
             </div>
-          </form>
-        </mat-step>
-        <!-- ---------------------------------------------------------------- -->
-        <mat-step  [stepControl]="secondFormGroup" label="Caracteristicas">
-          <br>
-          <hr class="custom-hr">
-          <br>
-          <h2 class="text-center">Datos Generales</h2>
-            <form  class="form-horizontal" style="margin:0 auto" [formGroup]="firstFormGroup">
-    
-                <div style="display: flex; justify-content: center; align-items: center;" >
-                    <mat-form-field style="margin-right: 10px;"> 
-                        <mat-label>Nombre del Inmueble</mat-label>
-                        <input matInput placeholder="Nombre de inmueble" >
-                    </mat-form-field>    
-                </div>
-                <!-- ----------------------------------------------------------------- -->
-               <!-- Textarea with class .w-25 -->
-               <div class="d-flex justify-content-center">
-                <div class="form-outline w-25 mb-4 mx-auto">
-                <label  class="form-label" for="textAreaExample4">
-                  <h4 class="text-center">Describe tu inmueble</h4>
-                </label>
-                  <textarea class="form-control" id="textAreaExample4" rows="3"></textarea>
-                
-                </div>
-              </div>
-              <!-- ------------------------------------------------------------------- -->
-              <div style="display: flex; justify-content: center; align-items: center;">
-             <mat-form-field style="margin-right: 10px;">
-             <mat-label>Calle</mat-label>
-             <input matInput placeholder="Calle y Numero " >
-              </mat-form-field>
-    
-              <mat-form-field style="margin-right: 10px;">
-                <mat-label> Numero Interior </mat-label>
-                <input matInput placeholder="Numero  Interior " >
-                 </mat-form-field>
-    
-                 <mat-form-field style="margin-right: 10px;">
-                    <mat-label>Numero Exterior </mat-label>
-                    <input matInput placeholder=" Numeross Exterior  " >
-                     </mat-form-field>
-                  </div>
-    
-               <!-- ---------------------------------------------------------- -->
-               <div style="display: flex; justify-content: center; align-items: center;">
-            
-                <mat-form-field style="margin-right: 10px;">
-                    <mat-label> Terreno metros  </mat-label>
-                    <input matInput placeholder="Numero  Interior " >
-                     </mat-form-field>
-        
-                     <mat-form-field style="margin-right: 10px;">
-                        <mat-label> Construccion  </mat-label>
-                        <input matInput placeholder=" Numeross Exterior  " >
-                         </mat-form-field>
-            </div>
-    
-        <!-- ------------------------------------------------------------------ -->
-    
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <mat-form-field style="margin-right: 10px;">
-                <mat-label> Numero de Recamaras   </mat-label>
-                <input matInput placeholder=" Numero de Recamaras  " >
-                 </mat-form-field>
-    
-                       <mat-form-field style="margin-right: 10px;">
-                        <mat-label> Numero de baños  </mat-label>
-                        <input matInput placeholder=" Numero de baños  " >
-                         </mat-form-field>
-    
-                       
-    
-                               <mat-form-field style="margin-right: 10px;">
-                                <mat-label> Numero de Pisos  </mat-label>
-                                <input matInput placeholder=" Numero de Pisos  " >
-                                 </mat-form-field>
-        
-                               
-        </div>
-    
-        <!-- ----------------------------------------------------------------------- -->
-        <div class="text-center">
-        <span class="title">Datos Adicionales</span>
-       </div>
-       <br>
-        
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div class="radio-inputs">
-    
-            <mat-radio-group  style="margin-right: 10px;">
-                     <label>
-                    <input class="radio-input" type="radio" name="engine">
-                        <span class="radio-tile">
-                            <span class="radio-icon">
-                                <img src="assets/gimna.png"  alt="...">
-                            </span>
-                            <span class="radio-label">Gimnasio</span>
-                        </span>
-                </label>
-             </mat-radio-group>
-    
-             <mat-radio-group  style="margin-right: 10px;">
-                <label>
-                    <input class="radio-input" type="radio" name="engine">
-                    <span class="radio-tile">
-                        <span class="radio-icon">
-                            <img src="assets/coche.png"  alt="...">
-                        </span>
-                        <span class="radio-label">Estacionamiento</span>
-                    </span>
-                </label>
-        </mat-radio-group>
-    
-    <mat-radio-group  style="margin-right: 10px;">
-        <label>
-            <input class="radio-input" type="radio" name="engine">
-            <span class="radio-tile">
-                <span class="radio-icon">
-                    <img src="assets/terraza.png"  alt="...">    
-                </span>
-                <span class="radio-label">Jardin</span>
-            </span>
-        </label>
-                
-        </mat-radio-group>
-    
-    
-    
-        <mat-radio-group  style="margin-right: 10px;">
-    
-            <label>
-                <input class="radio-input" type="radio" name="engine">
-                <span class="radio-tile">
-                    <span class="radio-icon">
-                        <img src="assets/cocina.png"  alt="...">    
-                    </span>
-                    <span class="radio-label">Cocina Integral</span>
-                </span>
-            </label>
-                </mat-radio-group>
-    
-    
-    
-        <mat-radio-group  style="margin-right: 10px;">
-            <label>
-                <input class="radio-input" type="radio" name="engine">
-                <span class="radio-tile">
-                    <span class="radio-icon">
-                        <img src="assets/nadando.png"  alt="...">    
-                    </span>
-                    <span class="radio-label">Alberca</span>
-                </span>
-            </label>
-                </mat-radio-group>
-    
-                <mat-radio-group  style="margin-right: 10px;">
-                    <label>
-                    <input class="radio-input" type="radio" name="engine">
-                    <span class="radio-tile">
-                        <span class="radio-icon">
-                            <img src="assets/techo.png"  alt="...">    
-                        </span>
-                        <span class="radio-label">Roof Garden</span>
-                    </span>
-                </label>
-        
-                        </mat-radio-group>
-    
-        </div>
-    
+      
+      </form>
+  </mat-step>
+  
+
+  <!-- ----------------------------------------------------------------- -->
+  <mat-step>
+    <ng-template matStepLabel>Publicar</ng-template>
+    <br>
+      <hr class="custom-hr">
+      <br>
+    <h1 class="text-center">Muestranos tu inmueble</h1>
+    <br>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="container2"> 
+      <div class="header"> 
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+            <path d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+             <p>Examinar archivo para cargarlo</p>
+        </div> 
+        <label for="file" class="footer" > 
+          <svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M15.331 6H8.5v20h15V14.154h-8.169z"></path><path d="M18.153 6h-.009v5.342H23.5v-.002z"></path></g></svg> 
+          <p>Archivo no seleccionado</p> 
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.16565 10.1534C5.07629 8.99181 5.99473 8 7.15975 8H16.8402C18.0053 8 18.9237 8.9918 18.8344 10.1534L18.142 19.1534C18.0619 20.1954 17.193 21 16.1479 21H7.85206C6.80699 21 5.93811 20.1954 5.85795 19.1534L5.16565 10.1534Z" stroke="#000000" stroke-width="2"></path> <path d="M19.5 5H4.5" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z" stroke="#000000" stroke-width="2"></path> </g></svg>
+        </label> 
+        <input id="file" type="file">  
+      </div>
+  </div>
+  <br>
+  <br>
+    <div class="d-flex justify-content-center align-items-center">
+      <button mat-button matStepperPrevious>Atras</button>
+      <button mat-button matStepperNext>Aceptar</button>
     </div>
-     <br>
-     <br>
-     <br>
-                <div class="d-flex justify-content-center align-items-center">
-                    <button mat-button matStepperPrevious>Atras</button>
-                    <button mat-button matStepperNext>Continuar</button>
-                  </div>
-            
-            </form>
-        </mat-step>
-        <!-- ----------------------------------------------------------------- -->
-        <mat-step>
-          <ng-template matStepLabel>Publicar</ng-template>
-          <br>
-            <hr class="custom-hr">
-            <br>
-          <h1 class="text-center">Muestranos tu inmueble</h1>
-          <br>
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="container2"> 
-            <div class="header"> 
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
-                  <path d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                   <p>Examinar archivo para cargarlo</p>
-              </div> 
-              <label for="file" class="footer" > 
-                <svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M15.331 6H8.5v20h15V14.154h-8.169z"></path><path d="M18.153 6h-.009v5.342H23.5v-.002z"></path></g></svg> 
-                <p>Archivo no seleccionado</p> 
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.16565 10.1534C5.07629 8.99181 5.99473 8 7.15975 8H16.8402C18.0053 8 18.9237 8.9918 18.8344 10.1534L18.142 19.1534C18.0619 20.1954 17.193 21 16.1479 21H7.85206C6.80699 21 5.93811 20.1954 5.85795 19.1534L5.16565 10.1534Z" stroke="#000000" stroke-width="2"></path> <path d="M19.5 5H4.5" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z" stroke="#000000" stroke-width="2"></path> </g></svg>
-              </label> 
-              <input id="file" type="file">  
-            </div>
-        </div>
-        <br>
-        <br>
-          <div class="d-flex justify-content-center align-items-center">
-            <button mat-button matStepperPrevious>Atras</button>
-            <button mat-button matStepperNext>Aceptar</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
+  </mat-step>
+</mat-stepper>
       
     

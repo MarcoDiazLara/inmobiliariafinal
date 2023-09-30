@@ -9,7 +9,7 @@ import { AgentesModule } from './agentes/agentes.module';
 import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
-import { InmueblesModule} from './inmuebles/inmuebles.module'
+
 
 const routes: Routes = [
   {
