@@ -24,12 +24,14 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
-    
+
 
    
   ],
@@ -44,6 +46,7 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
@@ -52,6 +55,10 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     
     MatStepperModule,
     AppRoutingModule,
+
+    InmuebleComponent,
+    MatStepperModule,
+
   
 
 
