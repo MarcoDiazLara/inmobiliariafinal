@@ -50,11 +50,14 @@ const routes: Routes = [
   },
  
 
+
  
   {
-    path:'Publicarimueble', //localhost/user/
-    loadChildren: () => import('./inmuebles/inmuebles.module').then(q =>q.InmueblesModule)
+    path:'Inmueble',
+    component:InmuebleComponent
   },
+
+
 
 
   { 

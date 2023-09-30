@@ -21,7 +21,7 @@ interface Food {
 @Component({
   selector: 'app-inmueble',
   templateUrl: './inmueble.component.html',
-  styleUrls: ['./inmueble.component.scss'],
+  styleUrls: ['./inmueble.component.css'],
   standalone: true,
   imports: [
     MatButtonModule,
@@ -29,12 +29,13 @@ interface Food {
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule, NgFor, MatSelectModule,MatRadioModule
+    MatInputModule, MatSelectModule,MatRadioModule
   ],
   
 })
 export class InmuebleComponent implements OnInit {
   fileName: string ="";
+  isLinear = false;
   onFileSelected(event: any): void {
     const file = event.target.files[0];
     if (file) {
@@ -67,7 +68,7 @@ export class InmuebleComponent implements OnInit {
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
-  isLinear = false;
+ 
   constructor(private _formBuilder: FormBuilder) {}
 
 
@@ -86,6 +87,7 @@ export class InmuebleComponent implements OnInit {
 
 
   ngOnInit(): void {
+   
   }
 
 }
