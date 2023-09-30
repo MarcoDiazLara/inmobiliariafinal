@@ -43,10 +43,15 @@ const routes: Routes = [
     path:'registro',
     component: RegistroComponent
   },
+  
 
   {
     path: 'cliente',
     loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
+  },
+  {
+    path: 'web',
+    loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
  
 
