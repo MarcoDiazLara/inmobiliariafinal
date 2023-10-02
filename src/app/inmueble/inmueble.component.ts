@@ -10,6 +10,8 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import { Inmuebles,Estados, Municipios, Asentamiento } from '../services/Interface/Interfaces';
   import { HttpService } from '../services/http/http.service';
   import { NgFor } from '@angular/common';
+  import { MatDividerModule } from '@angular/material/divider';
+
 
 
   // esto se tomo de ejemplo 
@@ -28,7 +30,11 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule, MatSelectModule,MatRadioModule,NgFor
+    MatInputModule, MatSelectModule,MatRadioModule,NgFor,
+    MatDividerModule,
+
+    
+    
   ],
   
 })

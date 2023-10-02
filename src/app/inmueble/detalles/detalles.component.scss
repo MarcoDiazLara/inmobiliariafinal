@@ -1,0 +1,201 @@
+.detalles h2{
+    font-size: 30px;
+    color: #044504;
+
+ }
+
+ .caracteristicas h3{
+    font-size: 20px;
+    color: #044504;
+
+ }
+
+ .caracteristicas p{
+    font-size: 20px;
+    color: #044504;
+
+ }
+
+
+
+.divider {
+    height: 20px; /* Altura de la línea */
+    background-color: #264D5E; /* Color de fondo de la línea (puedes cambiarlo) */
+    margin: 0; /* Margen cero para evitar espacios innecesarios */
+}
+.detalles{
+    width: 100%;
+    height: 100%;
+
+}
+
+.d-flex{
+    margin-top: 30px;
+    margin-left: 30px;
+
+}
+
+/* aqui van los iconos traidos desde internet */
+
+.backarrow{
+    background: url('https://api.iconify.design/ei/arrow-up.svg?color=%2307732d&rotate=270deg') no-repeat center center / contain;
+    content: url('https://api.iconify.design/ei/arrow-up.svg?color=%2307732d&rotate=270deg');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+
+}
+
+.plane{
+    background: url('https://api.iconify.design/cib/telegram-plane.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/cib/telegram-plane.svg?color=%2351bc57');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+}
+.map{
+    background: url('https://api.iconify.design/carbon/map.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/carbon/map.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+
+}
+.money{
+    background: url('https://api.iconify.design/tdesign/money.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/tdesign/money.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+}
+.description{
+    background: url('https://api.iconify.design/mdi/tag-text-outline.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/mdi/tag-text-outline.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+
+}
+.wc{
+    background: url('https://api.iconify.design/cil/bathroom.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/cil/bathroom.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+
+}
+.garage{
+    background: url('https://api.iconify.design/bxs/car-garage.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/bxs/car-garage.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+
+}
+.room{
+    background: url('https://api.iconify.design/mdi/guest-room.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/mdi/guest-room.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+
+}
+
+.m2{
+    background: url('https://api.iconify.design/mingcute/ruler-line.svg?color=%2351bc57') no-repeat center center / contain;
+    content: url('https://api.iconify.design/mingcute/ruler-line.svg?color=%2351bc57');
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 25px;
+    height: 25px;
+
+}
+
+
+
+
+
+.datos{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+img{
+    width: 700px;
+    height: 550px;
+}
+.caracteristicas{
+    margin-top: 30px;
+    margin-left: 30px;
+
+}
+
+#caja{
+    
+
+    border: 1px solid #b3b2b2; /* Borde de la caja de 1 píxel con color gris*/
+    margin: 0px auto 50px; /* Margen vertical y horizontal para centrar */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    width: 450px; /* Ancho maximo de la caja */
+    text-align: center;
+    background-color: #d4f4c6;
+ 
+      
+}
+
+ /* Estilos CSS para dar formato al formulario */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 150px;
+}
+
+/* Contenedor que recorta la imagen */
+.imagen-recortada {
+    border-radius: 15px;
+    width: 100%; /* Ancho del contenedor */
+    height: 400px; /* Alto del contenedor */
+    overflow: hidden; /* Recorta el contenido que desborda el contenedor */
+    border: 1px solid #ccc; /* Borde opcional */
+    margin-bottom: 10px;
+  }
+
+  /* Estilo de la imagen recortada */
+  .imagen-recortada img {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: 100%; /* Mantiene la relación de aspecto original */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  }
+
+

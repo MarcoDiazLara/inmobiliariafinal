@@ -20,6 +20,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import { InmuebleComponent } from './inmueble/inmueble.component';
+import { DetallesComponent } from './inmueble/detalles/detalles.component';
+import { MatListModule } from '@angular/material/list';
+
 
 
 
@@ -29,6 +32,7 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
     AppComponent,
     LoginComponent,
     RegistroComponent,
+    DetallesComponent,
 
 
    
@@ -51,6 +55,8 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
      AppRoutingModule,
      InmuebleComponent,
      MatStepperModule,
+     MatListModule,
+     
 
   
 
