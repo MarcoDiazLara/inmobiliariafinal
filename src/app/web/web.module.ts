@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { AtajosComponent } from './atajos/atajos.component';
+import { DescargaComponent } from './descarga/descarga.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AtajosComponent } from './atajos/atajos.component';
     FooterComponent,
     MenuComponent,
     BuscadorComponent,
-    AtajosComponent
+    AtajosComponent,
+    DescargaComponent
   ],
   imports: [
     CommonModule,
