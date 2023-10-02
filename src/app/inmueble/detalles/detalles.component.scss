@@ -1,18 +1,18 @@
 .detalles h2{
     font-size: 30px;
-    color: #044504;
+    color: #264D5E;
 
  }
 
  .caracteristicas h3{
     font-size: 20px;
-    color: #044504;
+    color: #264D5E;
 
  }
 
  .caracteristicas p{
     font-size: 20px;
-    color: #044504;
+    color: #264D5E;
 
  }
 
@@ -149,7 +149,7 @@ img{
     padding: 16px;
     width: 450px; /* Ancho maximo de la caja */
     text-align: center;
-    background-color: #d4f4c6;
+    background-color: #959193;
  
       
 }
@@ -199,3 +199,16 @@ textarea {
   }
 
 
+.btn{
+    background-color: #264D5E;
+    border-color: #264D5E;
+    
+}
+.btn-outline-success {
+    color: aliceblue; 
+    
+  }
+.btn:hover{
+    background-color: #38B6E3;
+    border-color: #264D5E;
+}
