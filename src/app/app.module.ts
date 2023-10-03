@@ -22,10 +22,15 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
+<<<<<<< Updated upstream
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import { WebComponent } from './web/web.component';
 import { WebModule } from './web/web.module';
+=======
+import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
+
+>>>>>>> Stashed changes
 
 
 
@@ -36,7 +41,12 @@ import { WebModule } from './web/web.module';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
+<<<<<<< Updated upstream
     MenugloguedoComponent
+=======
+    MenugloguedoComponent,
+    VistadeinmuebleComponent,
+>>>>>>> Stashed changes
 
 
    
