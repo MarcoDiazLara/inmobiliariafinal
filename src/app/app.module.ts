@@ -11,18 +11,17 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
-
-
-  import {MatInputModule} from '@angular/material/input';
-  import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatStepperModule} from '@angular/material/stepper';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 
 
 
@@ -34,6 +33,7 @@ import {MatMenuModule} from '@angular/material/menu';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
+    MenugloguedoComponent,
 
 
    
@@ -56,9 +56,11 @@ import {MatMenuModule} from '@angular/material/menu';
      AppRoutingModule,
      InmuebleComponent,
      MatStepperModule,
+     MatToolbarModule,
      MatListModule,
      MatMenuModule,
      
+
 
   
 
