@@ -10,7 +10,10 @@ import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { ClienteModule } from './cliente/cliente.module';
+
 import { AltaBrokersComponent } from './master-admin/modals/alta-brokers/alta-brokers.component';
+import { DetallesComponent } from './inmueble/detalles/detalles.component';
+
 
 
 const routes: Routes = [
@@ -67,6 +70,10 @@ const routes: Routes = [
   {
     path:'Inmueble',
     component:InmuebleComponent
+  },
+  {
+    path:'Detalles', 
+    component: DetallesComponent
   },
 
 

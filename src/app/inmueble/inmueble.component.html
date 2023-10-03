@@ -84,7 +84,7 @@
                      </mat-form-field>
                      <mat-form-field class="example-full-width">
                       <mat-label>Calle</mat-label>
-                      <input matInput placeholder="Calle y Numero " >
+                      <input formControlName="p_calle" matInput placeholder="Calle y Numero " >
                     </mat-form-field>             
         </div>
         <div class="center-iframe">
@@ -99,17 +99,17 @@
     </form>
   </mat-step>
   <!-- ---------------------------------------------------------------- -->
-  <mat-step  [stepControl]="secondFormGroup" label="Caracteristicas">
+  <mat-step  [stepControl]="tercerFormGroup" label="Caracteristicas">
     <br>
     <hr class="custom-hr">
     <br>
     <h2 class="text-center">Datos Generales</h2>
-      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="firstFormGroup">
+      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="tercerFormGroup">
 
           <div style="display: flex; justify-content: center; align-items: center;" >
               <mat-form-field style="margin-right: 10px;"> 
                   <mat-label>Nombre del Inmueble</mat-label>
-                  <input matInput placeholder="Nombre de inmueble" >
+                  <input formControlName="p_nom_inmu" matInput placeholder="Nombre de inmueble" >
               </mat-form-field>    
           </div>
           <!-- ----------------------------------------------------------------- -->
@@ -119,7 +119,7 @@
           <label  class="form-label" for="textAreaExample4">
             <h4 class="text-center">Describe tu inmueble</h4>
           </label>
-            <textarea class="form-control" id="textAreaExample4" rows="3"></textarea>
+            <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3"></textarea>
           
           </div>
         </div>
@@ -127,12 +127,12 @@
         <div style="display: flex; justify-content: center; align-items: center;">
          <mat-form-field style="margin-right: 10px;">
           <mat-label> Numero Interior </mat-label>
-          <input matInput placeholder="Numero  Interior " >
+          <input formControlName="p_num_int" matInput placeholder="Numero  Interior " >
            </mat-form-field>
 
            <mat-form-field style="margin-right: 10px;">
               <mat-label>Numero Exterior </mat-label>
-              <input matInput placeholder=" Numeross Exterior  " >
+              <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
                </mat-form-field>
             </div>
 
@@ -141,12 +141,12 @@
       
           <mat-form-field style="margin-right: 10px;">
               <mat-label> Terreno metros  </mat-label>
-              <input matInput placeholder="Numero  Interior " >
+              <input formControlName="p_terreno" matInput placeholder="Terreno " >
                </mat-form-field>
   
                <mat-form-field style="margin-right: 10px;">
                   <mat-label> Construccion  </mat-label>
-                  <input matInput placeholder=" Numeross Exterior  " >
+                  <input formControlName="p_constru" matInput placeholder=" Construccion " >
                    </mat-form-field>
       </div>
 
@@ -155,19 +155,19 @@
   <div style="display: flex; justify-content: center; align-items: center;">
       <mat-form-field style="margin-right: 10px;">
           <mat-label> Numero de Recamaras   </mat-label>
-          <input matInput placeholder=" Numero de Recamaras  " >
+          <input formControlName="p_num_recamaras" matInput placeholder=" Numero de Recamaras  " >
            </mat-form-field>
 
                  <mat-form-field style="margin-right: 10px;">
                   <mat-label> Numero de baños  </mat-label>
-                  <input matInput placeholder=" Numero de baños  " >
+                  <input formControlName="p_banos" matInput placeholder=" Numero de baños  " >
                    </mat-form-field>
 
                  
 
                          <mat-form-field style="margin-right: 10px;">
                           <mat-label> Numero de Pisos  </mat-label>
-                          <input matInput placeholder=" Numero de Pisos  " >
+                          <input formControlName="p_pisos" matInput placeholder=" Numero de Pisos  " >
                            </mat-form-field>
   
                          
@@ -182,7 +182,7 @@
   <div style="display: flex; justify-content: center; align-items: center;">
 
     <label>
-      <input class="radio-input" type="checkbox" name="engine">
+      <input formControlName="p_gym" class="radio-input" type="checkbox">
           <span class="radio-tile">
               <span class="radio-icon">
                   <img src="assets/img/gimna.png"  alt="...">
@@ -195,7 +195,7 @@
   &nbsp;
 
   <label>
-    <input class="radio-input" type="checkbox" name="engine">
+    <input formControlName="p_esta" class="radio-input" type="checkbox">
         <span class="radio-tile">
             <span class="radio-icon">
                 <img src="assets/img/coche.png"  alt="...">
@@ -208,7 +208,7 @@
 &nbsp;
 
 <label>
-  <input class="radio-input" type="checkbox" name="engine">
+  <input formControlName="p_jardin" class="radio-input" type="checkbox">
       <span class="radio-tile">
           <span class="radio-icon">
               <img src="assets/img/terraza.png"  alt="...">
@@ -221,7 +221,7 @@
 &nbsp;
 
 <label>
-  <input class="radio-input" type="checkbox" name="engine">
+  <input formControlName="p_cocina" class="radio-input" type="checkbox">
       <span class="radio-tile">
           <span class="radio-icon">
               <img src="assets/img/cocina.png"  alt="...">
@@ -229,12 +229,11 @@
           <span class="radio-label">Cocina Integral</span>
       </span>
 </label>
-
 &nbsp;
 &nbsp;
 &nbsp;
 <label>
-  <input class="radio-input" type="checkbox" name="engine">
+  <input formControlName="p_alberca" class="radio-input" type="checkbox">
       <span class="radio-tile">
           <span class="radio-icon">
               <img src="assets/img/nadando.png"  alt="...">
@@ -246,7 +245,7 @@
 &nbsp;
 &nbsp;
 <label >
-  <input  class="radio-input" type="checkbox" name="engine">
+  <input formControlName="p_roof" class="radio-input" type="checkbox" checked>
       <span class="radio-tile">
           <span class="radio-icon">
               <img src="assets/img/techo.png"  alt="...">
@@ -254,30 +253,13 @@
           <span class="radio-label">Roof Garden</span>
       </span>
 </label> 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-    
-
 </div>
 <br>
 <br>
 <br>
           <div class="d-flex justify-content-center align-items-center">
-              <button mat-button matStepperPrevious>Atras</button>
-              <button mat-button matStepperNext>Continuar</button>
+              <button  mat-button matStepperPrevious>Atras</button>
+              <button (click)="xd()" mat-button matStepperNext>Continuar</button>
             </div>
       
       </form>
@@ -311,7 +293,7 @@
   <br>
     <div class="d-flex justify-content-center align-items-center">
       <button mat-button matStepperPrevious>Atras</button>
-      <button mat-button matStepperNext>Aceptar</button>
+      <button mat-button (click)="subirInmueble()">Aceptar</button>
     </div>
   </mat-step>
 </mat-stepper>

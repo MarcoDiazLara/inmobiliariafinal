@@ -1,0 +1,92 @@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<div class="divider"></div>
+
+<!-- Aqui ya va el contenido de los respectivos inmuebles -->
+<div class="detalles">
+    <div class="d-flex align-items-center">
+        <button class="btn btn-outline-success me-2"><img class="backarrow">Regresar</button>
+        <h2 class="mb-0 ml-3">Nombre del Inmueble</h2>
+    </div>
+    
+    <div class="datos">
+        <div class="row">
+            <div class="col-md-6">
+              <!-- Tu contenido dentro del div -->
+                <div class="Imgmuestra">
+                    <img src="assets/6.jpg">
+                    <h2> <img class="map">(insertar carrusel con imagenes desde la base de datos)</h2>
+
+
+                <div class="caracteristicas">
+                    <p> <img class="map">Lugar: Ciudad, País</p>
+                    <p> <img class="money">Precio: $1,000,000</p>
+                    <p> <img class="description">Descripción:</p>
+                    <p>Esta es una descripcion de vivienda ejemplo () dentro del parentesis va la informacion almacenada en la base de datos y se muestra aqui.</p>
+                    <h3>Características Adicionales</h3>
+                    <mat-list>
+
+                        <h3 mat-subheader>Lugar</h3>
+                        <mat-list-item >
+                           <mat-icon mat-list-icon>folder</mat-icon>
+                           <h4 mat-line></h4>
+                           <p mat-line class="demo-2"></p>
+                           <mat-divider [inset]="true" ></mat-divider>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <h3 mat-subheader>Notes</h3>
+                        <mat-list-item>
+                           <mat-icon mat-list-icon>note</mat-icon>
+                           <h4 mat-line></h4>
+                           <p mat-line class="demo-2">  </p>
+                        </mat-list-item>
+
+                     </mat-list>
+                    <!-- <ul>
+                        <p> <img class="wc">2 Baño(s)</p>
+                        <p> <img class="garage"> 1 Cochera(s)</p>
+                        <p> <img class="room">3 Dormitorio(s)</p>
+                        <p> <img class="m2"> 15m^2 x 8m^2</p>
+                       
+                    </ul> -->
+                </div>
+                </div>
+            </div>
+            <div class="6" id="caja">
+                <form>
+                    <!-- Tu formulario aquí -->
+                    <h2>Contactar Agente</h2>
+                    <h3>¿Te interesó nuestra propiedad? <br>contacta a uno de nuestros agentes</h3>
+                        <div class="imagen-recortada">
+                        <img src="assets/asesor.jpg" alt="Imagen Recortada">
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="number" id="telefono" name="telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comentarios">Comentarios:</label>
+                                <textarea id="comentarios" name="comentarios"></textarea>
+                            </div>
+                            <button class="btn btn-outline-success me-2" type="submit">Enviar <img class="plane"></button>
+                        </form>
+                </form>
+            </div>
+          </div>
+    </div>
+    
+    <div class="divider"></div>
+
+</div>
