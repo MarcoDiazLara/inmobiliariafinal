@@ -11,6 +11,9 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import { HttpService } from '../services/http/http.service';
   import { NgFor } from '@angular/common';
   import { MatDividerModule } from '@angular/material/divider';
+  import { FormControl } from '@angular/forms';
+
+
 
 
 
@@ -38,6 +41,15 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   
 })
 export class InmuebleComponent implements OnInit {
+// Define un FormControl con validadores para números
+numberFormControl = new FormControl('', [
+  Validators.required,
+  Validators.pattern(/^-?\d*(\.\d+)?$/) // Acepta números enteros y decimales
+]);
+
+
+
+
   fileName: string ="";
   isLinear = false;
 
@@ -160,6 +172,8 @@ xd(){
 
 
   }
+
+  
 
   subirInmueble(){
     let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
