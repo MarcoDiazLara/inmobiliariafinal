@@ -57,69 +57,18 @@
     width: 25px;
     height: 25px;
 }
+
 .map{
-    background: url('https://api.iconify.design/carbon/map.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/carbon/map.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
+    background: url('https://api.iconify.design/carbon/map.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/carbon/map.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
     width: 25px;
     height: 25px;
-
-}
-.money{
-    background: url('https://api.iconify.design/tdesign/money.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/tdesign/money.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
-    width: 25px;
-    height: 25px;
-}
-.description{
-    background: url('https://api.iconify.design/mdi/tag-text-outline.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/mdi/tag-text-outline.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
-    width: 25px;
-    height: 25px;
-
-}
-.wc{
-    background: url('https://api.iconify.design/cil/bathroom.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/cil/bathroom.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
-    width: 25px;
-    height: 25px;
-
-}
-.garage{
-    background: url('https://api.iconify.design/bxs/car-garage.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/bxs/car-garage.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
-    width: 25px;
-    height: 25px;
-
-}
-.room{
-    background: url('https://api.iconify.design/mdi/guest-room.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/mdi/guest-room.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
-    width: 25px;
-    height: 25px;
-
+    margin-right: 8px;
 }
 
-.m2{
-    background: url('https://api.iconify.design/mingcute/ruler-line.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/mingcute/ruler-line.svg?color=%2351bc57');
-    margin-right: 10px;
-    margin-top: -10px;
-    width: 25px;
-    height: 25px;
-
-}
 
 
 
@@ -199,16 +148,3 @@ textarea {
   }
 
 
-.btn{
-    background-color: #264D5E;
-    border-color: #264D5E;
-    
-}
-.btn-outline-success {
-    color: aliceblue; 
-    
-  }
-.btn:hover{
-    background-color: #38B6E3;
-    border-color: #264D5E;
-}
