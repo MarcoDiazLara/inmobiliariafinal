@@ -33,7 +33,8 @@ login(){
       if(data==2){
         alert("contraseña incorrecta");
       }else{
-        alert("pasa usuario");
+       this.router.navigate(["/menu2"]);
+
       }
     }
   });

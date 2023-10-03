@@ -22,6 +22,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
+import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 
 
 
@@ -33,6 +34,7 @@ import { MatListModule } from '@angular/material/list';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
+    MenugloguedoComponent,
 
 
    

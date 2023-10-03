@@ -13,6 +13,7 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
 
 import { ClienteModule } from './cliente/cliente.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
+import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 
 
 const routes: Routes = [
@@ -69,7 +70,10 @@ const routes: Routes = [
     component: DetallesComponent
   },
 
-
+  {
+    path:'menu2', 
+    component: MenugloguedoComponent
+  },
 
 
   { 
