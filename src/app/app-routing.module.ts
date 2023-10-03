@@ -13,6 +13,7 @@ import { ClienteModule } from './cliente/cliente.module';
 
 import { AltaBrokersComponent } from './master-admin/modals/alta-brokers/alta-brokers.component';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
+import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 
 
 const routes: Routes = [
