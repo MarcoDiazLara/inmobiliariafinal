@@ -27,6 +27,11 @@ import { DescargaComponent } from './descarga/descarga.component';
     MatButtonModule,
     MatDividerModule,
     MatIconModule
-  ]
+  ],
+  exports:[
+    FooterComponent,
+    DescargaComponent,
+  ],
+
 })
 export class WebModule { }

@@ -28,6 +28,10 @@
                     <button class="round-button"><img class="other"></button>
 
                     <mat-list>
+                        <h3 mat-subheader> <img class="money">Venta MXN</h3>
+                        <mat-list-item ><h3 mat-line>Aqui va la variable para mostrar el precio</h3></mat-list-item>
+                        <h3 mat-subheader> <img class="money">Renta MXN</h3>
+                        <mat-list-item ><h3 mat-line>Aqui va la variable para mostrar el precio</h3></mat-list-item>
 
                         <h3 mat-subheader> <img class="map"> Lugar</h3>
                         <mat-list-item >
@@ -36,42 +40,66 @@
                         </mat-list-item>
                         <mat-divider></mat-divider>
 
-                        <h3 mat-subheader> <img class="money">Precio</h3>
-                        <mat-list-item>
-                            <h3 mat-line>Aqui va la variable para mostrar el precio</h3>
-                            <h4 mat-line></h4>
-                        </mat-list-item>
-
                         <h3 mat-subheader> <img class="checklist">Descripcion</h3>
                         <mat-list-item>
                             <h3 mat-line>Aqui va la variable para mostrar la descripcion</h3>
                             <h4 mat-line></h4>
                         </mat-list-item>
+                   
+                        <h3 mat-subheader>Características:</h3>
 
-                      
-                        
-                        <h3 mat-subheader>Características Adicionales:</h3>
-                       
-                         <mat-list-item>
-                            
-                            <h4 mat-line></h4>
-                            <h3 mat-list-icon>hola</h3>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td><h3>Baños</h3></td>
+                                    <td><h3>Recamaras</h3></td>
+                                    <td><h3>Cochera</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>m^2</h3></td>
+                                    <td><h3>Jardin</h3></td>
+                                    <td><h3>Pisos</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>Bodega</h3></td>
+                                    <td><h3>Cisterna</h3></td>
+                                    <td><h3>Piscina</h3></td>
+                                </tr>
+                                            <!-- Puedes agregar más filas según sea necesario -->
+                            </table>  
+                            <h3 mat-subheader>Informacion Adicional</h3>
+                            <div class="xd">
+                                <mat-tab-group>
+                                    <mat-tab label="Características"> 
+                                        <h4>Salon social</h4>
+                                        <h4>Fuente</h4>
+                                        <h4>Sala de juegos</h4>
+                                        <h4>Cocina</h4>
                                     
-                            </mat-list-item>
-
-                            
-                                <mat-list-item>
-                            
-                                    <h4 mat-line></h4>
-                                    <h3 mat-list-icon>hola2</h3>
                                     
-                                </mat-list-item>
+                                    </mat-tab>
+                                    <mat-tab label="Servicios"> 
+                                        <h4>Agua</h4>
+                                        <h4>Luz</h4>
+                                        <h4>Wi-fi</h4>
+                                        <h4>Gas</h4>
 
-                         
+                                    </mat-tab>
+                                
+                                 </mat-tab-group>
+                             </div>
+                             
 
-                        
 
                      </mat-list>
+                     
+
+
+                     
 
 
                      <!-- ******************************* -->
@@ -114,6 +142,9 @@
                                 <textarea id="comentarios" name="comentarios">Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad. </textarea>
                             </div>
                             <button mat-raised-button color="accent">Enviar <img class="plane"></button>
+                            <div>
+                            <button mat-raised-button color="green" class="whatsapp">Enviar un mensaje por WhatsApp <img class="plane"></button>
+                            </div>
                         </form>
                 </form>
             </div>
@@ -123,3 +154,4 @@
     <div class="divider"></div>
 
 </div>
+

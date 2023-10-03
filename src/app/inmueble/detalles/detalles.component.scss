@@ -1,3 +1,5 @@
+
+
 .detalles h2{
     font-size: 30px;
     color: #264D5E;
@@ -16,6 +18,11 @@
 
  }
 
+
+td{
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
 
 .divider {
@@ -145,7 +152,14 @@
     transform: scale(0.9); /* Reduce el tamaño del botón al hacer clic */
   }
 
-
+  .xd {
+    
+    background-color: #575A5C;
+    font-size: 18px; /* Cambia el tamaño de fuente a 18px (ajusta según tus preferencias) */
+  }
+  mat-tap{
+    background-color: #ffffff;
+  }
 
 
 
@@ -167,14 +181,14 @@ img{
 #caja{
     
 
-    border: 1px solid #b3b2b2; /* Borde de la caja de 1 píxel con color gris*/
+    border: 2px solid #2c2c2c; /* Borde de la caja de 1 píxel con color gris*/
     margin: 0px auto 50px; /* Margen vertical y horizontal para centrar */
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 16px;
     width: 450px; /* Ancho maximo de la caja */
     text-align: center;
-    background-color: #959193;
+    background-color: #ffffff;
  
       
 }

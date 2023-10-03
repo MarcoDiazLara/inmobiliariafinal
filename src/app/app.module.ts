@@ -22,7 +22,10 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
+import { WebComponent } from './web/web.component';
+import { WebModule } from './web/web.module';
 
 
 
@@ -33,7 +36,7 @@ import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
-    MenugloguedoComponent,
+    MenugloguedoComponent
 
 
    
@@ -59,6 +62,10 @@ import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
      MatToolbarModule,
      MatListModule,
      MatMenuModule,
+     MatGridListModule,
+     MatTabsModule,
+    
+     
      
 
 

@@ -12,6 +12,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import { NgFor } from '@angular/common';
   import { MatDividerModule } from '@angular/material/divider';
   import { FormControl } from '@angular/forms';
+import { WebModule } from '../web/web.module';
 
 
 
@@ -34,6 +35,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
     MatFormFieldModule,
     MatInputModule, MatSelectModule,MatRadioModule,NgFor,
     MatDividerModule,
+    WebModule,
 
     
     
