@@ -53,7 +53,7 @@ import { MatListModule } from '@angular/material/list';
      AppRoutingModule,
      InmuebleComponent,
      MatStepperModule,
-     MatToolbarModule
+     MatToolbarModule,
      MatListModule,
      
 
