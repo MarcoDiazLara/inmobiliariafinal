@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './cliente.component';
-import { InmuebleComponent } from '../inmueble/inmueble.component';
+import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CambiopasswordComponent } from './ventanaemergente/cambiopassword/cambiopassword.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
@@ -12,8 +12,8 @@ const routes: Routes = [
     component:ClienteComponent,
     children: [
       {
-          path: 'usuario',
-          component: InmuebleComponent,
+          path: 'inmueble',
+          component: InmueblesComponent,
       },
       {
         path:'perfil',

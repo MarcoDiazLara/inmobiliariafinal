@@ -9,11 +9,10 @@ import { AgentesModule } from './agentes/agentes.module';
 import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
-
-
 import { ClienteModule } from './cliente/cliente.module';
+
+import { AltaBrokersComponent } from './master-admin/modals/alta-brokers/alta-brokers.component';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
-import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 
 
 const routes: Routes = [
@@ -37,6 +36,10 @@ const routes: Routes = [
     path: 'index',
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
+  {
+    path: 'cliente',
+    loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
+  },
   
   {
     path:'login',
@@ -46,6 +49,10 @@ const routes: Routes = [
   {
     path:'registro',
     component: RegistroComponent
+  },
+  {
+    path: 'altaBroker', 
+    component: AltaBrokersComponent
   },
   
 
@@ -58,8 +65,6 @@ const routes: Routes = [
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
  
-
-
  
   {
     path:'Inmueble',
@@ -80,8 +85,8 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'index',
     pathMatch: 'full'
-}
-];
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,{ useHash: true })],
