@@ -43,6 +43,23 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarUsuario.php', params, { headers });
   }
 
+// p_nom_inmueble,p_desc_inmueble,p_calle,p_num_ext,p_num_int,p_terreno,p_construccion,p_recamara,p_bano,p_cocina
+// p_num_pisos,p_antiguedad,p_acabados,p_alberca,p_jardin,p_gym,p_roof,p_estacionamiento,p_ubi_maps,p_pic_1
+// p_pic_2,p_pic_3,p_pic_4,p_pic_5,p_360,p_video,p_id_asentamiento,p_id_tipo_inmueble
+
+  registrarInmuebles(p_nom_inmueble: string, p_desc_inmueble: string, p_calle: string, p_num_ext: string,p_num_int: string,
+  p_terreno: string, p_construccion: string,p_recamara: string, p_bano: string,p_cocina: string,p_num_pisos: string,p_antiguedad: string,
+  p_acabados: string, p_alberca:string, p_jardin: string, p_gym:string, p_roof:string,p_estacionamiento: string,p_ubi_maps: string,
+  p_pic_1: string, p_pic_2: string, p_pic_3:string,p_pic_4: string, p_pic_5: string, p_360:string, p_video: string, p_id_asentamiento: number,
+  p_id_tipo_inmueble:number){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_nom_inmueble='+p_nom_inmueble+ '&p_desc_inmueble='+p_desc_inmueble+'&p_calle='+p_calle+'&p_num_ext='+p_num_ext+'&p_num_int='+p_num_int+'&p_terreno='+p_terreno+
+    '&p_construccion='+p_construccion+'&p_recamara='+p_recamara+'&p_bano='+p_bano+'&p_cocina='+p_cocina+'&p_num_pisos='+p_num_pisos+'&p_antiguedad='+p_antiguedad+
+    '&p_acabados='+p_acabados+'&p_alberca='+p_alberca+'&p_jardin='+p_jardin+'&p_gym='+p_gym+'&p_roof='+p_roof+'&p_estacionamiento='+p_estacionamiento+'&p_ubi_maps='+p_ubi_maps+
+    '&p_pic_1='+p_pic_1+'&p_pic_2='+p_pic_2+'&p_pic_3='+p_pic_3+'&p_pic_4='+p_pic_4+'&p_pic_5='+p_pic_5+'&p_360='+p_360+'&p_video='+p_video+'&p_id_asentamiento='+p_id_asentamiento+'&p_id_tipo_inmueble='+p_id_tipo_inmueble;
+    return this.httpclient.post(this.url + 'insertarInmueble.php', params, { headers });
+  }
+
   tipoInmueble(){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'xrsxryw1y21';
@@ -66,4 +83,6 @@ export class HttpService {
     let params = "p_estado="+p_estado + "&p_municipio="+p_municipio;
     return this.httpclient.post(this.url + 'mostarAsentamiento.php', params, { headers });
   }
+
+
 }
