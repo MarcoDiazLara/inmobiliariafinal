@@ -9,18 +9,11 @@ import { NotificacionesComponent } from './notificaciones/notificaciones.compone
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-// import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
-
-// import { MatInputModule } from '@angular/material/input';
-
-
-
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -37,8 +30,8 @@ import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
-    PerfilComponent,
     ClienteComponent,
+    PerfilComponent,
     CambiopasswordComponent,
     SeguimientoComponent,
     NotificacionesComponent,

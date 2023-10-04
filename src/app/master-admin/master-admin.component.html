@@ -1,0 +1,39 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">NOMBRE DE USUARIO</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"[fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+
+          <mat-nav-list> <!--lista de menu lateral-->
+
+              <div id="sombras" style="text-align: center;width: -webkit-fill-available;" mat-list-item *ngFor="let nav of fillerNav">
+      
+                  <a mat-list-item [routerLink]="nav.route" (click)="salir(nav.number)">
+                    
+                    <div>
+                      <mat-icon style="font-size: 30px;">{{nav.icon}}</mat-icon>
+                    </div>
+        
+                    <div style="padding: 0 0 0 15px;">
+                      <p style="margin: 0 0 0px;">{{nav.label}}</p>
+                    </div>
+        
+                  </a>
+      
+              </div>
+    
+          </mat-nav-list>
+      
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+          <router-outlet></router-outlet>  
+      </mat-sidenav-content>
+      
+  </mat-sidenav-container>
+
+</div>

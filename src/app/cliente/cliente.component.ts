@@ -9,16 +9,16 @@ import { Router } from '@angular/router';
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.scss']
 })
+
 export class ClienteComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
-  fillerNav = [
-    { name: "Perfil", route: "perfil",icon: "person" , label: "PERFIL",number:'0' },
-    { name: "Seguimiento", route: "seguimiento",icon: "perm_contact_calendar" , label: "SEGUMIENTO",number:'0' },
+     fillerNav = [
+    { name: "Perfil", route: "clientePerfil",icon: "person" , label: "PERFIL",number:'0' },
+    { name: "Seguimiento", route: "seguimiento",icon: "perm_contact_calendar" , label: "SEGUMIENTO",number:'0'},
     { name: "Notificaciones", route: "notificaciones",icon: "person" , label: "NOTIFICACIONES",number:'0' },
     { name: "Inmuebles", route: "inmueble",icon: "home" , label: "Inmueble",number:'0' },
     { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'}
-
   ];
 
   private _mobileQueryListener: () => void;

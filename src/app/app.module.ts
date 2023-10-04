@@ -25,12 +25,14 @@ import { MatListModule } from '@angular/material/list';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
+  
 
 
    
@@ -56,11 +58,6 @@ import { MatListModule } from '@angular/material/list';
      MatToolbarModule,
      MatListModule,
      
-
-
-  
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

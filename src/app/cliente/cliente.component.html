@@ -1,8 +1,7 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
-
-  <mat-toolbar color="primary" class="example-toolbar">
+  <mat-toolbar class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">ALMA ROSA JIMENEZ GONZALEZ</h1>
+    <h1 class="example-app-name">NOMBRE DE USUARIO</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -11,7 +10,7 @@
 
           <mat-nav-list> <!--lista de menu lateral-->
 
-              <div style="text-align: center;width: -webkit-fill-available;" mat-list-item *ngFor="let nav of fillerNav">
+              <div id="sombras" style="text-align: center;width: -webkit-fill-available;" mat-list-item *ngFor="let nav of fillerNav">
       
                   <a mat-list-item [routerLink]="nav.route" (click)="salir(nav.number)">
                     

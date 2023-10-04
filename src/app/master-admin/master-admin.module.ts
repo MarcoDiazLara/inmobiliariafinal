@@ -2,41 +2,55 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MasterAdminRoutingModule } from './master-admin-routing.module';
 import { MasterAdminComponent } from './master-admin.component';
-import { AltaBrokersComponent } from './modals/alta-brokers/alta-brokers.component';
-import { PerfilComponent } from './perfil/perfil.component';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgFor} from '@angular/common';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+
 import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
+/*tablas */
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 
-import {MatNativeDateModule} from '@angular/material/core';
 
 
 
 
 @NgModule({
   declarations: [
-    MasterAdminComponent,
-    AltaBrokersComponent,
-    PerfilComponent
-  ],
+  MasterAdminComponent,
+  
+],
   imports: [
     CommonModule,
     MasterAdminRoutingModule,
-    FormControl, 
-    FormsModule, 
-    ReactiveFormsModule,
-    NgFor,
     MatSelectModule,
+    FormsModule,
     MatFormFieldModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatNativeDateModule,
-
- 
- 
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatTableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule
+    
+    
   ]
 })
 export class MasterAdminModule { }

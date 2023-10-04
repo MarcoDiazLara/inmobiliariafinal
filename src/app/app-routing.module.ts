@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { WebComponent } from './web/web.component';
-import { MasterAdminModule } from './master-admin/master-admin.module';
+
 import { CompanyAdminModule } from './company-admin/company-admin.module';
 import { BrokersModule } from './brokers/brokers.module';
 import { AgentesModule } from './agentes/agentes.module';
@@ -10,16 +10,16 @@ import { WebModule } from './web/web.module';
 import { RegistroComponent } from './registro/registro.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { ClienteModule } from './cliente/cliente.module';
-
-import { AltaBrokersComponent } from './master-admin/modals/alta-brokers/alta-brokers.component';
+import { MasterAdminModule } from './master-admin/master-admin.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
+import { PerfilComponent } from './master-admin/perfil/perfil.component';
 
 
 
 const routes: Routes = [
   {
     path: 'superUsuario',
-    loadChildren: ()=> import('./master-admin/master-admin.module').then(m =>m.MasterAdminModule)
+    loadChildren: ()=> import('./master-admin/master-admin.module').then(m=>m.MasterAdminModule)
   },
   {
     path: 'inmobiliaria',
@@ -41,22 +41,6 @@ const routes: Routes = [
     path: 'cliente',
     loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
   },
-  
-  {
-    path:'login',
-    component: LoginComponent
-  },
-
-  {
-    path:'registro',
-    component: RegistroComponent
-  },
-  {
-    path: 'altaBroker', 
-    component: AltaBrokersComponent
-  },
-  
-
   {
     path: 'cliente',
     loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
@@ -65,8 +49,14 @@ const routes: Routes = [
     path: 'web',
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
- 
- 
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path:'registro',
+    component: RegistroComponent
+  },
   {
     path:'Inmueble',
     component:InmuebleComponent
@@ -75,8 +65,6 @@ const routes: Routes = [
     path:'Detalles', 
     component: DetallesComponent
   },
-
-
   { 
     path: '**',
     redirectTo: 'index',

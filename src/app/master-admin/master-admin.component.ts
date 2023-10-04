@@ -1,41 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { AltaBrokersComponent } from './modals/alta-brokers/alta-brokers.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-
-
+//sidenav
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import { Router } from '@angular/router';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-master-admin',
   templateUrl: './master-admin.component.html',
   styleUrls: ['./master-admin.component.scss'],
-  standalone: true,
-  imports: [
-    MatFormFieldModule,
-     MatSelectModule, 
-  ],
-  
-     
+  // standalone: true,
+  // imports: [
+  //   MatFormFieldModule,
+  //   MatSelectModule,
+  // ]
 })
 
+export class MasterAdminComponent  implements OnDestroy {
+  mobileQuery: MediaQueryList;
 
-export class MasterAdminComponent implements OnInit {
+     fillerNav = [
+    { name: "Perfil", route: "perfil",icon: "person" , label: "PERFIL",number:'0' },
+    { name: "altabroker", route: "altabroker",icon: "perm_contact_calendar" , label: "ALTA",number:'0'},
+    { name: "Notificaciones", route: "notificaciones",icon: "person" , label: "NOTIFICACIONES",number:'0' },
+    { name: "Inmuebles", route: "inmueble",icon: "home" , label: "Inmueble",number:'0' },
+    { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'}
+  ];
 
-  constructor(public dialog: MatDialog) { }
+  private _mobileQueryListener: () => void;
 
-  ngOnInit(): void {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  
-  openMasterAdmin(){
-    ////console.log("idBodegaCat: "+idBodegaCat+" categoria: "+categoria+" status: "+status);
-    const dialogRef = this.dialog.open(AltaBrokersComponent,{
-      // data:{},
-      width: '60vh',
-      height: 'auto',
-      // disableClose: true
-    });
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  shouldRun=true;
+
+  public salir(op:any) {
+
+    // alert("diste clic en salir"+op);
   }
 
 }
+
+
+
