@@ -11,6 +11,10 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import { HttpService } from '../services/http/http.service';
   import { NgFor } from '@angular/common';
   import { MatDividerModule } from '@angular/material/divider';
+  import { FormControl } from '@angular/forms';
+import { WebModule } from '../web/web.module';
+
+
 
 
 
@@ -31,6 +35,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
     MatFormFieldModule,
     MatInputModule, MatSelectModule,MatRadioModule,NgFor,
     MatDividerModule,
+    WebModule,
 
     
     
@@ -38,8 +43,19 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   
 })
 export class InmuebleComponent implements OnInit {
+// Define un FormControl con validadores para números
+numberFormControl = new FormControl('', [
+  Validators.required,
+  Validators.pattern(/^-?\d*(\.\d+)?$/) // Acepta números enteros y decimales
+]);
+
+
+
+
   fileName: string ="";
   isLinear = false;
+
+  cheks: any[] = [];
 
   inmuebles: Inmuebles[] =[];
   inmueble!: Inmuebles;
@@ -159,6 +175,8 @@ xd(){
 
   }
 
+  
+
   subirInmueble(){
     let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
     let p_desc_inmueble = this.tercerFormGroup.value.p_desc;
@@ -189,8 +207,19 @@ xd(){
     let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
     let p_id_tipo_inmueble = this.firstFormGroup.value.pId_Tipo_Inmueble;
     
+    this.cheks = [p_alberca1,p_jardin1, p_gym1, p_estacionamiento, p_cocina1, p_roof ];
 
-    
+ 
+
+    for(let i = 0 ; i < 6 ; i++){
+
+      if(this.cheks[i] != true){
+        this.cheks[i] = false;
+      }
+    }
+
+
+
     this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
       p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados,p_alberca1, p_jardin1,p_gym1,
       p_roof,p_estacionamiento, p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble
@@ -204,23 +233,6 @@ xd(){
   }
 
        
- 
-
-
-
-
-
-
-  
-
-  // firstFormGroup = this.formBuilder.group({
-  //   firstCtrl: ['', Validators.required],
-  // });
-  // secondFormGroup = this.formBuilder.group({
-  //   secondCtrl: ['', Validators.required],
-  // });
- 
- 
 
   constructor(private formBuilder: FormBuilder
     , private httpService: HttpService) {}

@@ -20,6 +20,15 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
+import { WebComponent } from './web/web.component';
+import { WebModule } from './web/web.module';
+
+import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 
 
 
@@ -32,10 +41,9 @@ import { MatListModule } from '@angular/material/list';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
+    MenugloguedoComponent,
+    VistadeinmuebleComponent,
   
-
-
-   
   ],
   imports: [
      BrowserModule,
@@ -57,7 +65,9 @@ import { MatListModule } from '@angular/material/list';
      MatStepperModule,
      MatToolbarModule,
      MatListModule,
-     
+     MatMenuModule,
+     MatGridListModule,
+     MatTabsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

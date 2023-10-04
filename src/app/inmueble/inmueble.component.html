@@ -104,6 +104,7 @@
     <hr class="custom-hr">
     <br>
     <h2 class="text-center">Datos Generales</h2>
+    <br>
       <form  class="form-horizontal" style="margin:0 auto" [formGroup]="tercerFormGroup">
 
           <div style="display: flex; justify-content: center; align-items: center;" >
@@ -112,6 +113,7 @@
                   <input formControlName="p_nom_inmu" matInput placeholder="Nombre de inmueble" >
               </mat-form-field>    
           </div>
+          <br>
           <!-- ----------------------------------------------------------------- -->
          <!-- Textarea with class .w-25 -->
          <div class="d-flex justify-content-center">
@@ -123,6 +125,7 @@
           
           </div>
         </div>
+        <br>
         <!-- ------------------------------------------------------------------- -->
         <div style="display: flex; justify-content: center; align-items: center;">
          <mat-form-field style="margin-right: 10px;">
@@ -135,7 +138,7 @@
               <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
                </mat-form-field>
             </div>
-
+            <br>
          <!-- ---------------------------------------------------------- -->
          <div style="display: flex; justify-content: center; align-items: center;">
       
@@ -151,7 +154,7 @@
       </div>
 
   <!-- ------------------------------------------------------------------ -->
-
+ <br>
   <div style="display: flex; justify-content: center; align-items: center;">
       <mat-form-field style="margin-right: 10px;">
           <mat-label> Numero de Recamaras   </mat-label>
@@ -172,6 +175,27 @@
   
                          
   </div>
+  <br>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="example-container">
+      <mat-form-field style="margin-right: 15px;">
+        <input matInput [formControl]="numberFormControl" placeholder="Años de Antiguedad">
+        <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
+        <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <mat-form-field style="margin-right: 10px;">
+      <mat-label>Acabados   </mat-label>
+      <input matInput placeholder=" Numero de Recamaras  " >
+       </mat-form-field>
+ </div>
+ <br>
+ <br>
+<hr>
+<br>
+<br>
 
   <!-- ----------------------------------------------------------------------- -->
   <div class="text-center">
@@ -264,7 +288,113 @@
       
       </form>
   </mat-step>
-  
+   <!-- ------------------------------------------------------------------------------------- -->
+  <mat-step  [stepControl]="secondFormGroup" label="Costos">
+    <br>
+      <hr class="custom-hr">
+      <br>
+      <h2 class="text-center">Costos</h2>
+      <br>
+      <br>
+      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="firstFormGroup">
+      
+        <div style="display: flex; justify-content: center; align-items: center;">
+
+        <div class="example-container">
+          <mat-form-field style="margin-right: 15px;">
+            <input matInput [formControl]="numberFormControl" placeholder="Ingrese Precio minimo">
+            <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
+            <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field style="margin-right: 15px;">
+            <input matInput [formControl]="numberFormControl" placeholder="Ingrese Precio maximo">
+            <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
+            <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+          </mat-form-field>
+        </div>
+         </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div style="display: flex; justify-content: center; align-items: center;">
+          <div class="example-container">
+            <mat-form-field >
+              <input matInput [formControl]="numberFormControl" placeholder=" Precio Final">
+              <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
+              <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+            </mat-form-field>
+          </div>
+
+
+
+
+
+
+
+
+         </div>
+
+
+
+
+
+
+
+        
+        <br>
+        <br>
+        <br>
+                   <div class="d-flex justify-content-center align-items-center">
+                       <button mat-button matStepperPrevious>Atras</button>
+                       <button mat-button matStepperNext>Continuar</button>
+                     </div>
+      
+      
+      
+      
+      
+      
+      </form>
+  </mat-step>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- ----------------------------------------------------------------- -->
   <mat-step>

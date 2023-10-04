@@ -12,8 +12,10 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
 import { ClienteModule } from './cliente/cliente.module';
 import { MasterAdminModule } from './master-admin/master-admin.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
+
 import { PerfilComponent } from './master-admin/perfil/perfil.component';
 
+import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 
 
 const routes: Routes = [
@@ -58,12 +60,16 @@ const routes: Routes = [
     component: RegistroComponent
   },
   {
-    path:'Inmueble',
-    component:InmuebleComponent
+    path: 'inmueble',
+    loadChildren: ()=> import('./inmueble/inmueble.module').then(m =>m.InmuebleModule)
   },
   {
     path:'Detalles', 
     component: DetallesComponent
+  },
+  {
+    path:'menu2', 
+    component: MenugloguedoComponent
   },
   { 
     path: '**',

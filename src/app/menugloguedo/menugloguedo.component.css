@@ -1,0 +1,55 @@
+.line-separator{
+    border: 5px solid #264d5e;
+}
+
+.size-icon{
+  font-size: 24px;;
+}
+
+.btn-outline-inmo {
+    --bs-btn-color: #264D5E;
+    --bs-btn-border-color: #264D5E;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #264D5E;
+    --bs-btn-hover-border-color: #264D5E;
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #264D5E;
+    --bs-btn-active-border-color: #264D5E;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #264D5E;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #264D5E;
+    --bs-gradient: none;
+  }
+
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
+  .container-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-dropdown .btn {
+    border-radius: 50%; /* Hace que el botón sea circular */
+    width: 40px; /* Ajusta el tamaño del botón según tus necesidades */
+    height: 40px;
+  }
+
+  .profile-dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
+  }

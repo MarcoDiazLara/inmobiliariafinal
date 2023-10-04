@@ -1,5 +1,4 @@
 
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -8,7 +7,7 @@
 <!-- Aqui ya va el contenido de los respectivos inmuebles -->
 <div class="detalles">
     <div class="d-flex align-items-center">
-        <button mat-raised-button color="accent"><img class="backarrow">Regresar</button>
+        <button (click)="back()" mat-raised-button color="accent"><img class="backarrow">Regresar</button>
         <h2 class="mb-0 ml-3">Nombre del Inmueble</h2>
     </div>
     
@@ -18,44 +17,90 @@
               <!-- Tu contenido dentro del div -->
                 <div class="Imgmuestra">
                     <img src="assets/6.jpg">
-                    <h2> (insertar carrusel con imagenes desde la base de datos)</h2>
+                    <h2> (insertar carrusel con imagenes) </h2>
 
 
                 <div class="caracteristicas">
-                   
+                    
+                    <button class="round-button"><img class="favorite"></button>
+                    <button class="round-button"><img class="share"></button>
+                    <button class="round-button"><img class="other"></button>
+
                     <mat-list>
+                        <h3 mat-subheader> <img class="money">Venta MXN</h3>
+                        <mat-list-item ><h3 mat-line>Aqui va la variable para mostrar el precio</h3></mat-list-item>
+                        <h3 mat-subheader> <img class="money">Renta MXN</h3>
+                        <mat-list-item ><h3 mat-line>Aqui va la variable para mostrar el precio</h3></mat-list-item>
 
                         <h3 mat-subheader> <img class="map"> Lugar</h3>
                         <mat-list-item >
-                           <mat-icon mat-list-icon>folder</mat-icon>
-                           <h4 mat-line> hola</h4>
-                           <p mat-line class="demo-2">cd</p>
-                           <mat-divider [inset]="true" ></mat-divider>
+                           <h3 mat-line>Aqui va la variable para mostrar el lugar</h3>
+                           <h4 mat-line></h4>
                         </mat-list-item>
                         <mat-divider></mat-divider>
 
-                        <h3 mat-subheader>Precio</h3>
+                        <h3 mat-subheader> <img class="checklist">Descripcion</h3>
                         <mat-list-item>
-                           <mat-icon mat-list-icon>note</mat-icon>
-                           <h4 mat-line></h4>
-                           <p mat-line class="demo-2">  </p>
+                            <h3 mat-line>Aqui va la variable para mostrar la descripcion</h3>
+                            <h4 mat-line></h4>
                         </mat-list-item>
+                   
+                        <h3 mat-subheader>Características:</h3>
 
-                        <h3 mat-subheader>Descripcion</h3>
-                        <mat-list-item>
-                           <mat-icon mat-list-icon>note</mat-icon>
-                           <h4 mat-line></h4>
-                           <p mat-line class="demo-2">  </p>
-                        </mat-list-item>
-                        
-                        <h3 mat-subheader>Características Adicionales:</h3>
-                        <mat-list-item>
-                           <mat-icon mat-list-icon>note</mat-icon>
-                           <h4 mat-line></h4>
-                           <p mat-line class="demo-2">  </p>
-                        </mat-list-item>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td><h3>Baños</h3></td>
+                                    <td><h3>Recamaras</h3></td>
+                                    <td><h3>Cochera</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>m^2</h3></td>
+                                    <td><h3>Jardin</h3></td>
+                                    <td><h3>Pisos</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>Bodega</h3></td>
+                                    <td><h3>Cisterna</h3></td>
+                                    <td><h3>Piscina</h3></td>
+                                </tr>
+                                            <!-- Puedes agregar más filas según sea necesario -->
+                            </table>  
+                            <h3 mat-subheader>Informacion Adicional</h3>
+                            <div class="xd">
+                                <mat-tab-group>
+                                    <mat-tab label="Características"> 
+                                        <h4>Salon social</h4>
+                                        <h4>Fuente</h4>
+                                        <h4>Sala de juegos</h4>
+                                        <h4>Cocina</h4>
+                                    
+                                    
+                                    </mat-tab>
+                                    <mat-tab label="Servicios"> 
+                                        <h4>Agua</h4>
+                                        <h4>Luz</h4>
+                                        <h4>Wi-fi</h4>
+                                        <h4>Gas</h4>
+
+                                    </mat-tab>
+                                
+                                 </mat-tab-group>
+                             </div>
+                             
+
 
                      </mat-list>
+
+
+                     <!-- ******************************* -->
+                     
+                      
+
                     <!-- <ul>
                         <p> <img class="wc">2 Baño(s)</p>
                         <p> <img class="garage"> 1 Cochera(s)</p>
@@ -92,6 +137,9 @@
                                 <textarea id="comentarios" name="comentarios">Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad. </textarea>
                             </div>
                             <button mat-raised-button color="accent">Enviar <img class="plane"></button>
+                            <div>
+                            <button mat-raised-button color="green" class="whatsapp">Enviar un mensaje por WhatsApp <img class="plane"></button>
+                            </div>
                         </form>
                 </form>
             </div>
@@ -100,4 +148,7 @@
     
     <div class="divider"></div>
 
+    
 </div>
+ 
+

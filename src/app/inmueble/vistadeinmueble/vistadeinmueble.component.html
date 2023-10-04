@@ -1,0 +1,280 @@
+
+<!--****************************************************-->
+<!--****************************************************-->
+<!--****************************************************-->
+<!-- Esta es la pagina de los resultados de la busqueda -->
+<!--****************************************************-->
+<!--****************************************************-->
+<!--****************************************************-->
+
+
+
+
+
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+
+  <div class="navbar">
+   
+          
+    <div>  
+         
+      <div class="divider"></div>
+
+    <div class="buscador">
+    <input class="form-control" type="search" (click)="toggleSearch()" placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar">
+    <ul *ngIf="showSearch" class="dropdown-search">
+      <li><span> Sin Coincidencias...</span></li> 
+    </ul>
+    <button class="btn btn-outline-secondary" type="submit">
+        <img class="lupa">
+    </button>
+
+
+    <div class="dropdown ps-4 pe-4" >
+    <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
+      <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
+       <div *ngIf="showPrecio" class="dropdown-precio ">
+            <form class="ps-4 pe-4">
+              <div class="mb-3">
+                <input type="text" class="form-control" id="nombre" placeholder="Desde">
+              </div>
+              <div class="mb-3">
+                
+                <input type="text" class="form-control" id="nombre" placeholder="Hasta">
+              </div>
+              <button type="button" name="aplicar" class="btn-secondary"> Aplicar</button>
+            </form>
+       </div> 
+    </div>
+
+    <div>
+    <button class="btn btn-outline-secondary me-2"  (click)="toggleToferta()">Tipo de Oferta <img class="arrow1"></button>
+      <ul *ngIf="showToferta" class="dropdown-Toferta">
+        <li><a>Venta</a></li>
+        <li><a>Renta</a></li>
+        <li><a>Remate</a></li>
+        <li><a>En construcción</a></li>
+      </ul>
+    </div>
+
+    <div>
+    <button class="btn btn-outline-secondary me-2" (click)="toggleInmueble()">Inmueble <img class="arrow1"></button>
+      <ul *ngIf="showInmueble" class="dropdown-inmueble">
+        <li><a>Departamento</a></li>
+        <li><a>Rancho</a></li>
+        <li><a>Oficina</a></li>
+        <li><a>Casa</a></li>
+        <li><a>Local Comercial</a></li>
+        <li><a>Bodega Comercial</a></li>
+
+
+      </ul>
+    </div>
+
+    <div>
+      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()">Recamaras <img class="arrow1"></button>
+      <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
+        <li><a>1</a></li>
+        <li><a>2</a></li>
+        <li><a>3</a></li>
+        <li><a>4</a></li>
+        <li><a>+5</a></li>
+      </ul>
+    </div>
+    <div>
+         <!-- Button trigger modal -->
+        <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Filtros <img class="filter"></button>
+    </div>
+    <div>
+
+     
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+   
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+ <!-- Lista de Resultados -->
+
+<div>
+    <div class="ListResult">
+      <h2>
+        <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
+        y quitar los parentesis para poder mostrar una interfaz mas asosiada al usuario xd
+        Encontramos este --->
+        (<span id="tipoInmueble"></span>) 
+        disponible en Puebla(<span id="lugar"></span>)
+        para (<span id="usuarioP"></span>)  
+      </h2>
+
+    </div>
+<!-- resultados.component.html -->
+<div class="container">
+    <div class="row">
+
+
+
+      <div class="col-md-6">
+        <div class="producto">
+          <table class="table">
+            <thead class="productstyle">
+              <td colspan="2"><h2>Departamento en Puebla</h2></td>
+              <td colspan="1"><h2>$3,500 MX</h2></td>
+            </thead>
+            <thead>
+              <td><img src="assets/departamento-pequeno.jpg" alt="img" class="imgresult"></td>
+              <td colspan="2">
+                <h1>Magnolia 66</h1>
+                <h4>San Antonio, San Martin Texmelucan</h4>
+                <h3>Se renta Departamento de Dos pisos, Para personas Solas, en San Martin Texmelucan</h3>
+              </td>
+
+            </thead>
+            <thead>
+              <td>
+                <div>
+                  <button (click)="detalles()" class="btn btn-secondary container">Más Información</button>
+                </div>  
+              </td>
+              
+
+            </thead>
+          </table>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6">
+        <div class="producto">
+          <table class="table">
+            <thead class="productstyle">
+              <td colspan="2"><h2>Duplex en Colima</h2></td>
+              <td colspan="1"><h2>$4,500 MX</h2></td>
+            </thead>
+            <thead>
+              <td><img src="assets/departamento.jpg" alt="img" class="imgresult"></td>
+              <td colspan="2">
+                <h1>Tamangandapio 4</h1>
+                <h4>San jeromino, Piedras grandes</h4>
+                <h3>Se renta Duplex, Para personas Solas, en Piedras grandes</h3>
+              </td>
+
+            </thead>
+            <thead>
+              <td>
+                <div>
+                  <button class="btn btn-secondary container">Más Información</button>
+                  <div>
+                      
+                  </div>
+                </div>  
+              </td>
+              
+
+            </thead>
+          </table>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6">
+        <div class="producto">
+          <table class="table">
+            <thead class="productstyle">
+              <td colspan="2"><h2>Departamento en Puebla</h2></td>
+              <td colspan="1"><h2>$3,500 MX</h2></td>
+            </thead>
+            <thead>
+              <td><img src="assets/Casa.jpg" alt="img" class="imgresult"></td>
+              <td colspan="2">
+                <h1>Magnolia 66</h1>
+                <h4>San Antonio, San Martin Texmelucan</h4>
+                <h3>Se renta Departamento de Dos pisos, Para personas Solas, en San Martin Texmelucan</h3>
+              </td>
+
+            </thead>
+            <thead>
+              <td>
+                <div>
+                  <button class="btn btn-secondary container ">Más Información</button>
+                </div>  
+              </td>
+              
+
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="producto">
+          <table class="table">
+            <thead class="productstyle">
+              <td colspan="2"><h2>Departamento en Puebla</h2></td>
+              <td colspan="1"><h2>$3,500 MX</h2></td>
+            </thead>
+            <thead>
+              <td><img src="assets/s.jpg" alt="img" class="imgresult"></td>
+              <td colspan="2">
+                <h1>Magnolia 66</h1>
+                <h4>San Antonio, San Martin Texmelucan</h4>
+                <h3>Se renta Departamento de Dos pisos, Para personas Solas, en San Martin Texmelucan</h3>
+              </td>
+
+            </thead>
+            <thead>
+              <td>
+                <div>
+                  <button class="btn btn-secondary container">Más Información</button>
+                </div>  
+              </td>
+              
+
+            </thead>
+          </table>
+        </div>
+      </div>
+
+
+
+
+    
+
+</div>
+
+
+
+

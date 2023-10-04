@@ -1,3 +1,5 @@
+
+
 .detalles h2{
     font-size: 30px;
     color: #264D5E;
@@ -16,6 +18,11 @@
 
  }
 
+
+td{
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
 
 .divider {
@@ -38,8 +45,8 @@
 /* aqui van los iconos traidos desde internet */
 
 .backarrow{
-    background: url('https://api.iconify.design/ei/arrow-up.svg?color=%2307732d&rotate=270deg') no-repeat center center / contain;
-    content: url('https://api.iconify.design/ei/arrow-up.svg?color=%2307732d&rotate=270deg');
+    background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
     background-size: cover; /* Tamaño de la imagen */
     background-position: center; /* Posición de la imagen */
     background-repeat: no-repeat; /* Evita la repetición */
@@ -49,8 +56,8 @@
 }
 
 .plane{
-    background: url('https://api.iconify.design/cib/telegram-plane.svg?color=%2351bc57') no-repeat center center / contain;
-    content: url('https://api.iconify.design/cib/telegram-plane.svg?color=%2351bc57');
+    background: url('https://api.iconify.design/fa/send.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/fa/send.svg?color=%23264d5e');
     background-size: cover; /* Tamaño de la imagen */
     background-position: center; /* Posición de la imagen */
     background-repeat: no-repeat; /* Evita la repetición */
@@ -69,7 +76,90 @@
     margin-right: 8px;
 }
 
+.money{
+    background: url('https://api.iconify.design/solar/hand-money-outline.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/solar/hand-money-outline.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.checklist{
+    background: url('https://api.iconify.design/material-symbols/checklist.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/material-symbols/checklist.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
 
+.favorite{
+    background: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e');
+   
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    
+}
+.share{
+    background: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+  
+}
+.other{
+    background: url('https://api.iconify.design/icon-park-outline/other.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/icon-park-outline/other.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+}
+
+
+
+
+.round-button {
+    width: 50px; 
+    height: 50px;
+    background-color: #959193; 
+    border-radius: 50%; 
+    margin-right: 25px;
+    font-size: 2em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease; 
+  }
+  
+  /* Estilo cuando se pasa el ratón por encima del botón */
+  .round-button:hover {
+    background-color: #38B6E3; /* Cambia el color de fondo al pasar el ratón por encima */
+  }
+  .round-button:active {
+    transform: scale(0.9); /* Reduce el tamaño del botón al hacer clic */
+  }
+
+  .xd {
+    
+    background-color: #575A5C;
+    font-size: 18px; /* Cambia el tamaño de fuente a 18px (ajusta según tus preferencias) */
+  }
+  mat-tap{
+    background-color: #ffffff;
+  }
 
 
 
@@ -91,14 +181,14 @@ img{
 #caja{
     
 
-    border: 1px solid #b3b2b2; /* Borde de la caja de 1 píxel con color gris*/
+    border: 2px solid #2c2c2c; /* Borde de la caja de 1 píxel con color gris*/
     margin: 0px auto 50px; /* Margen vertical y horizontal para centrar */
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 16px;
     width: 450px; /* Ancho maximo de la caja */
     text-align: center;
-    background-color: #959193;
+    background-color: #ffffff;
  
       
 }
