@@ -63,10 +63,7 @@ const routes: Routes = [
     path: 'inmueble',
     loadChildren: ()=> import('./inmueble/inmueble.module').then(m =>m.InmuebleModule)
   },
-  {
-    path:'Detalles', 
-    component: DetallesComponent
-  },
+
   {
     path:'menu2', 
     component: MenugloguedoComponent
