@@ -86,8 +86,8 @@ toggleSearch() {
 }
 
 
-detalle(){
-  this.router.navigate(['/details-inm']);
+detalles(){
+  this.router.navigate(['/inmueble/detalles']);
 
 }
 

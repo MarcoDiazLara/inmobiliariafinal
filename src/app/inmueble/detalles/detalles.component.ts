@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalles',
@@ -8,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallesComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router:Router) { }
+
+
+  back(){
+    this.router.navigate(["/inmueble/vista"]);
+  }
+
   ngOnInit(): void {
   }
 
