@@ -313,6 +313,7 @@
     .producto {
       border: 1px solid #575a5c;
       width: 100%;
+      height: 350px;
       border-radius: 5px;
       padding: 20px;
       margin-bottom: 20px;
