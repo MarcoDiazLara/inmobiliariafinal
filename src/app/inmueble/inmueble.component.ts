@@ -8,11 +8,13 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import {MatSelectModule} from '@angular/material/select';
   import {MatRadioModule} from '@angular/material/radio';
   import { Inmuebles,Estados, Municipios, Asentamiento } from '../services/Interface/Interfaces';
-  import { HttpService } from '../services/http/http.service';
+  import { HttpService} from '../services/http/http.service';
   import { NgFor } from '@angular/common';
   import { MatDividerModule } from '@angular/material/divider';
   import { FormControl } from '@angular/forms';
 import { WebModule } from '../web/web.module';
+import { HttpClient } from '@angular/common/http';
+
 
 
 
@@ -44,12 +46,20 @@ import { WebModule } from '../web/web.module';
 })
 export class InmuebleComponent implements OnInit {
 // Define un FormControl con validadores para números
+
+
+constructor(private formBuilder: FormBuilder
+  , private httpService: HttpService,
+  private httpClient: HttpClient) {}
+
+
 numberFormControl = new FormControl('', [
   Validators.required,
   Validators.pattern(/^-?\d*(\.\d+)?$/) // Acepta números enteros y decimales
 ]);
 
-
+  imageForm!: FormGroup;
+  selectedImages!: FileList;
 
 
   fileName: string ="";
@@ -73,6 +83,10 @@ numberFormControl = new FormControl('', [
   ngOnInit(){
     this.obtenerDatosInmuebles();
     
+    //Imagenes
+    this.imageForm = this.formBuilder.group({
+      images: [''],
+    });
   
     this.firstFormGroup = this.formBuilder.group({
      pId_Tipo_Inmueble: ['',[Validators.required]]
@@ -161,23 +175,10 @@ xd(){
 }
 
 
-  onFileSelected(event: any): void {
-    const file = event.target.files[0];
-    if (file) {
-      this.fileName = file.name;
-      // Aquí puedes realizar acciones adicionales con el archivo seleccionado, como enviarlo a un servidor.
-      console.log(file.name);
-    } else {
-      this.fileName = "";
-    }
-
-
-
-  }
-
   
 
   subirInmueble(){
+    this.subir_imagenes();
     let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
     let p_desc_inmueble = this.tercerFormGroup.value.p_desc;
     let p_calle1 = this.secondFormGroup.value.p_calle;
@@ -197,11 +198,11 @@ xd(){
     let p_roof = this.tercerFormGroup.value.p_roof;
     let p_estacionamiento = this.tercerFormGroup.value.p_esta;
     let p_ubi_maps = "Hola ";
-    let p_pic_1 = "imagen 1";
-    let p_pic_2 = "imagen 2";
-    let p_pic_3 = "imagen 3";
-    let p_pic_4 = "imagen 4";
-    let p_pic_5 = "imagen 5";
+    let p_pic_1 = this.selectedImages[0].name;
+    let p_pic_2 = this.selectedImages[1].name;
+    let p_pic_3 = this.selectedImages[2].name;
+    let p_pic_4 = this.selectedImages[3].name;
+    let p_pic_5 = this.selectedImages[4].name;
     let p_360 = "imagen 360";
     let p_video = "video 1";
     let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
@@ -234,8 +235,21 @@ xd(){
 
        
 
-  constructor(private formBuilder: FormBuilder
-    , private httpService: HttpService) {}
+  onFileChange(event: any): void {
+    this.selectedImages = event.target.files;
+  }
+
+  subir_imagenes(): void {
+    const formData = new FormData();
+    for (let i = 0; i < this.selectedImages.length; i++) {
+      formData.append('images[]', this.selectedImages[i]);
+    }
+
+    this.httpClient.post('http://localhost/servicios/subirArchivo.php', formData)
+      .subscribe((response) => {
+       console.log(1);
+      });
+  }
 
 
 

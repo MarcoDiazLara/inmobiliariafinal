@@ -6,9 +6,9 @@ import { DetallesComponent } from './detalles/detalles.component';
 
 const routes: Routes = [
  
+  { path: '', redirectTo: 'inmueble', pathMatch: 'full' },
   {
-
-    path:'',component:InmuebleComponent
+    path:'inmueble', component:InmuebleComponent
   },
 
   {
