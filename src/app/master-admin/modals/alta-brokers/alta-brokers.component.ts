@@ -4,11 +4,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { NgFor } from '@angular/common';
 import {FormControl} from '@angular/forms';
+import {Validators} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {NgIf} from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {MatIconModule} from '@angular/material/icon';
 
 
 @Component({
@@ -22,24 +23,21 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     FormsModule, 
     ReactiveFormsModule, 
     NgFor,
-    NgIf,
-    MatFormFieldModule, 
+    NgIf, 
     MatInputModule, 
     MatDatepickerModule, 
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
-    
-
 })
-
-
 
 export class AltaBrokersComponent implements OnInit {
 
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-
+   
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   constructor() { }
 
   ngOnInit(): void {
