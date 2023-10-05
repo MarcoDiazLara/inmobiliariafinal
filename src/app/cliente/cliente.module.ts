@@ -31,7 +31,6 @@ import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     ClienteComponent,
-    PerfilComponent,
     CambiopasswordComponent,
     SeguimientoComponent,
     NotificacionesComponent,

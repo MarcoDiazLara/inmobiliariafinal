@@ -84,5 +84,17 @@ export class HttpService {
     return this.httpclient.post(this.url + 'mostarAsentamiento.php', params, { headers });
   }
 
+  obtenerAsesores(p_nombre : string){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_nombre="+p_nombre;
+    return this.httpclient.post(this.url + 'buscarUsuAsesor.php', params, { headers });
+  }
+
+  eliminarAsesores(p_id_usuario : string){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id_usuario="+p_id_usuario;
+    return this.httpclient.post(this.url + 'eliminarAsesorUsuario.php', params, { headers });
+  }
+
 
 }

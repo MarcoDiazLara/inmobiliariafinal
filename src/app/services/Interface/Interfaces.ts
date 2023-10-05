@@ -17,3 +17,10 @@ export interface Asentamiento{
     id_Asentamiento: string
     Asentamiento: string
 };
+
+export interface Asesores{
+    Nombres: string,
+    Apellido_Paterno: string,
+    Apellido_Materno: string,
+    Id_Usuario: string
+};
