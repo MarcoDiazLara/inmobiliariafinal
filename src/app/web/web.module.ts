@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { AtajosComponent } from './atajos/atajos.component';
 import { DescargaComponent } from './descarga/descarga.component';
+import { MenugloguedoComponent } from '../menugloguedo/menugloguedo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DescargaComponent } from './descarga/descarga.component';
     MenuComponent,
     BuscadorComponent,
     AtajosComponent,
-    DescargaComponent
+    DescargaComponent,
+    MenugloguedoComponent
   ],
   imports: [
     CommonModule,

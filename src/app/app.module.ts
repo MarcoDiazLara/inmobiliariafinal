@@ -42,7 +42,7 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
-    MenugloguedoComponent,
+  
     VistadeinmuebleComponent,
   
   ],

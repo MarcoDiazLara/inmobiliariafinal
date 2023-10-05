@@ -33,8 +33,8 @@ login(){
       if(data==2){
         alert("contraseña incorrecta");
       }else{
-       this.router.navigate(["/menu2"]);
-
+        this.httpService.setGlobalVariable(true);
+       this.router.navigate(["/index"]);
       }
     }
   });
