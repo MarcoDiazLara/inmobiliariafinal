@@ -29,8 +29,10 @@ import { DescargaComponent } from './descarga/descarga.component';
     MatIconModule
   ],
   exports:[
+    WebComponent,
     FooterComponent,
     DescargaComponent,
+    MenuComponent,
   ],
 
 })

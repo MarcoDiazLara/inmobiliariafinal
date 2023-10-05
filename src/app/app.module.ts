@@ -22,6 +22,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -67,7 +68,8 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
      MatListModule,
      MatMenuModule,
      MatGridListModule,
-     MatTabsModule,    
+     MatTabsModule,   
+     MatPaginatorModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -128,6 +128,25 @@ td{
 }
 
 
+.wc{
+    background: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
 
 
 .round-button {
@@ -157,6 +176,8 @@ td{
     background-color: #575A5C;
     font-size: 18px; /* Cambia el tamaño de fuente a 18px (ajusta según tus preferencias) */
   }
+
+  
   mat-tap{
     background-color: #ffffff;
   }
