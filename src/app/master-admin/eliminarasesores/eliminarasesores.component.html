@@ -5,7 +5,7 @@
         <div class="form-group">
           <label for="searchInput">Buscar Asesor:</label>
           <div class="input-group">
-            <input type="text" class="form-control" id="searchInput" placeholder="Ingrese el nombre del asesor" [(ngModel)]="searchTerm">
+            <input  type="text" class="form-control" id="searchInput" placeholder="Ingrese el nombre del asesor" [(ngModel)]="searchTerm">
             
             <div class="input-group-append">
               <button class="btn btn-primary" (click)="buscarAsesor()">Buscar</button>
@@ -23,11 +23,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let asesor of asesores">
-              <td>{{ asesor.nombre }}</td>
+            <tr *ngFor="let asesor of asesores" >
+              <td>{{ asesor.Nombres + " "+ asesor.Apellido_Paterno +" "+ asesor.Apellido_Materno }}</td>
               <td>
 
-                <button class="btn custom-button" (click)="mostrarConfirmacion(asesor)">
+                <button class="btn custom-button" (click)="mostrarConfirmacion(asesor.Nombres+ ' '+ asesor.Apellido_Paterno +' '+ asesor.Apellido_Materno, asesor.Id_Usuario)">
                   <p class="paragraph"> Eliminar </p> 
                   &nbsp;&nbsp;
                    <span class="icon-wrapper">
@@ -45,7 +45,7 @@
     <div class="row" *ngIf="confirmacionVisible">
       <div class="col-md-6">
         <div class="alert alert-warning">
-          <p>¿Está seguro de que desea eliminar a {{ asesorSeleccionado?.nombre }}?</p>
+          <p>¿Está seguro de que desea eliminar a {{ asesorSeleccionado }}?</p>
           <button class="btn btn-danger" (click)="eliminarAsesor()">Sí</button>
           <button class="btn btn-secondary" (click)="cancelarEliminar()">Cancelar</button>
         </div>
