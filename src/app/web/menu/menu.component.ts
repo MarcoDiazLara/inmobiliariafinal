@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpService } from 'src/app/services/http/http.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,14 +9,68 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+ 
+  isLoggedIn: boolean = false;
+
+ 
+
+  constructor(private router: Router,private httpService: HttpService){
+ 
+  }
+
+  ngOnInit() {
+    this.isLoggedIn = this.httpService.getGlobalVariable();
+  }
 
   Login(){
-    this.router.navigate(['login']);
+    
+    this.router.navigate(['/login']);
+
+ }
+ contactos(){
+
+  this.router.navigate(['web/contacto']);
+
+ }
+
+ directo(){
+  this.router.navigate(['web/particula']);
+
+ }
+ corredor(){
+  this.router.navigate(['web/Inmobiliariacorredor']);
  }
 
 
- constructor(private router: Router){}
-  ngOnInit(): void {
+ desarrolo(){
+  this.router.navigate(['web/Constructoradesarrolladora']);
+
+
+ }
+
+ cerrar(){
+  //this.httpService.setGlobalVariable(false);
+  this.httpService.cerrarSesion().subscribe((resp: any)=>{},(err)=>{
+    console.log(err);
+   
+  });
+
+ }
+
+
+ 
+  @ViewChild('ventanaEmergente') ventanaEmergente: any;
+
+  abrirVentanaEmergente(): void {
+    this.ventanaEmergente.nativeElement.style.display = 'block';
   }
+
+  cerrarVentanaEmergente(): void {
+    this.ventanaEmergente.nativeElement.style.display = 'none';
+  }
+
+ 
+
+
 
 }

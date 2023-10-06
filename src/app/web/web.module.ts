@@ -8,9 +8,22 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+
 import { BuscadorComponent } from './buscador/buscador.component';
 import { AtajosComponent } from './atajos/atajos.component';
 import { DescargaComponent } from './descarga/descarga.component';
+
+import { MenugloguedoComponent } from '../menugloguedo/menugloguedo.component';
+
+import { ContactoComponent } from './contacto/contacto.component';
+import { ParticulaComponent } from './particula/particula.component';
+import { InmobiliariacorredorComponent } from './inmobiliariacorredor/inmobiliariacorredor.component';
+import { ConstructoradesarrolladoraComponent } from './constructoradesarrolladora/constructoradesarrolladora.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,17 +33,31 @@ import { DescargaComponent } from './descarga/descarga.component';
     BuscadorComponent,
     AtajosComponent,
     DescargaComponent,
+    MenugloguedoComponent,
+    ContactoComponent,
+    ParticulaComponent,
+    InmobiliariacorredorComponent,
+      ConstructoradesarrolladoraComponent,
+
+
+
   ],
   imports: [
     CommonModule,
     WebRoutingModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+     ReactiveFormsModule,
   ],
   exports:[
+    WebComponent,
     FooterComponent,
     DescargaComponent,
+    WebComponent,
+    MenuComponent
+    
   ],
 
 })

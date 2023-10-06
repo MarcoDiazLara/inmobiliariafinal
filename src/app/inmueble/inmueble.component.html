@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 
 <mat-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
@@ -11,7 +12,7 @@
             <h3 class="text-center">Tipo de operación</h3>
             <div style="display: flex; justify-content: center; align-items: center;">
               <mat-radio-group aria-label="Select an option">
-                <mat-radio-button style="margin-right: 10px;" value="1">Comprar</mat-radio-button>
+                <mat-radio-button style="margin-right: 10px;" value="1">Rentar</mat-radio-button>
                 <mat-radio-button style="margin-right: 10px;" value="2">Vender</mat-radio-button>
               </mat-radio-group>
             </div>
@@ -367,14 +368,19 @@
     <br>
       <hr class="custom-hr">
       <br>
+
     <h1 class="text-center">Muestranos tu inmueble</h1>
+
     <br>
-    <form [formGroup]="imageForm">
-      <input accept="image/*"  type="file" name="images" (change)="onFileChange($event)" multiple>
+    <div class="d-flex justify-content-center align-items-center">
+    <form class="form-horizontal" [formGroup]="imageForm">
+      <input  class="form-control" accept="image/*"  type="file" name="images" (change)="onFileChange($event)" multiple>
       
     </form>
+    </div>
   <br>
   <br>
+
     <div class="d-flex justify-content-center align-items-center">
       <button mat-button matStepperPrevious>Atras</button>
       <button mat-button (click)="subirInmueble()">Aceptar</button>
@@ -383,3 +389,4 @@
 </mat-stepper>
       
     
+<app-footer></app-footer>

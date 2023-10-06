@@ -22,12 +22,13 @@
     "@angular/router": "^14.2.0",
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
     "@popperjs/core": "^2.11.8",
+    "angular-responsive-carousel": "^2.1.2",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "jquery": "^3.7.1",
     "ngx-bootstrap": "^0.0.1",
     "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.6.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

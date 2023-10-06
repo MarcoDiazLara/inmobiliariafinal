@@ -9,6 +9,8 @@ export class HttpService {
 
   url = "http://localhost/servicios/";
 
+  public variableGlobal: boolean = false;
+
   constructor(
     private httpclient: HttpClient
   ) { }
@@ -94,6 +96,20 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = "p_id_usuario="+p_id_usuario;
     return this.httpclient.post(this.url + 'eliminarAsesorUsuario.php', params, { headers });
+  }
+
+  setGlobalVariable(value: boolean) {
+    this.variableGlobal = value;
+  }
+
+  getGlobalVariable() {
+    return this.variableGlobal;
+  }
+
+  cerrarSesion(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "assdfghjk";
+    return this.httpclient.post(this.url + 'cerrarSesion.php', params, { headers });
   }
 
 

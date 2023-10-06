@@ -1,10 +1,12 @@
-
-
 .detalles h2{
     font-size: 30px;
     color: #264D5E;
 
  }
+ .caracteristicas .items {
+   text-align: right;
+}
+
 
  .caracteristicas h3{
     font-size: 20px;
@@ -128,38 +130,110 @@ td{
 }
 
 
+.wc{
+    background: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.room{
+    background: url('https://api.iconify.design/fluent/bed-20-regular.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/fluent/bed-20-regular.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.car{
+    background: url('https://api.iconify.design/ant-design/car-outlined.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/ant-design/car-outlined.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.rule{
+    background: url('https://api.iconify.design/clarity/ruler-pencil-line.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/clarity/ruler-pencil-line.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.garden{
+    background: url('https://api.iconify.design/guidance/garden.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/guidance/garden.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.floor{
+    background: url('https://api.iconify.design/material-symbols/floor-rounded.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/material-symbols/floor-rounded.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.warehouse{
+    background: url('https://api.iconify.design/ph/warehouse-light.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/ph/warehouse-light.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.tank{
+    background: url('https://api.iconify.design/icon-park-outline/water.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/icon-park-outline/water.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.pool{
+    background: url('https://api.iconify.design/ic/round-pool.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/ic/round-pool.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+.wapp{
+    background: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
 
 
-.round-button {
-    width: 50px; 
-    height: 50px;
-    background-color: #959193; 
-    border-radius: 50%; 
-    margin-right: 25px;
-    font-size: 2em;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer; 
-    border: none;
-    outline: none;
-    transition: background-color 0.3s ease; 
-  }
-  
-  /* Estilo cuando se pasa el ratón por encima del botón */
-  .round-button:hover {
-    background-color: #38B6E3; /* Cambia el color de fondo al pasar el ratón por encima */
-  }
-  .round-button:active {
-    transform: scale(0.9); /* Reduce el tamaño del botón al hacer clic */
-  }
-
-  .xd {
-    
-    background-color: #575A5C;
-    font-size: 18px; /* Cambia el tamaño de fuente a 18px (ajusta según tus preferencias) */
-  }
-  mat-tap{
-    background-color: #ffffff;
-  }
 
 
 
@@ -181,12 +255,13 @@ img{
 #caja{
     
 
-    border: 2px solid #2c2c2c; /* Borde de la caja de 1 píxel con color gris*/
+    border: 1px solid #38B6E3; /* Borde de la caja de 1 píxel con color gris*/
     margin: 0px auto 50px; /* Margen vertical y horizontal para centrar */
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 16px;
     width: 450px; /* Ancho maximo de la caja */
+    height: 1200px;
     text-align: center;
     background-color: #ffffff;
  
@@ -238,3 +313,212 @@ textarea {
   }
 
 
+  .mat-raised-button .WhatsApp{
+    margin-top: 15px;
+    background-color: #25d366;
+  }
+
+
+
+
+
+/*---------funcion del boton favoritos------------*/
+
+  .favoriteButton {
+    border: none;
+    border-radius: 50%;
+    background: #eb81bd;
+    padding: 1rem;
+    overflow: hidden;
+    outline: none;
+    margin: 0.5rem;
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+    position: relative;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .favoriteButton:hover {
+    -webkit-transform: scale(1.1) translateY(-3px);
+            transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  }
+  
+  .favoriteButton svg {
+    display: block;
+    fill: #264d5e;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+
+  /*---------funcion del boton Other------------*/
+
+  .otherButton {
+    border: none;
+    border-radius: 50%;
+    background: #959193;
+    padding: 1rem;
+    overflow: hidden;
+    outline: none;
+    margin: 0.5rem;
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+    position: relative;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .otherButton:hover {
+    -webkit-transform: scale(1.1) translateY(-3px);
+            transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  }
+  
+  .otherButton svg {
+    display: block;
+    fill: #264d5e;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+
+
+
+
+
+/*---------funcion del boton share------------*/
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+.challenge {
+  width: 541px;
+  height: 22px;
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  top: 569.5px;
+  left: 755px;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+.challenge .number {
+  float: right;
+}
+.challenge .daily {
+  float: left;
+}
+
+.content{
+    text-align: right;
+}
+
+.content .shareButton.main .share, .content .shareButton.main .close, .content .shareButton.main .check {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+}
+.content .shareButton.main .share, .content .shareButton.main.open .close, .content .shareButton.main.sent .check {
+  -webkit-transform: rotate(0) scale(1);
+          transform: rotate(0) scale(1);
+  opacity: 1;
+}
+.content .shareButton.main .close, .content .shareButton.main.open .share, .content .shareButton.main .check, .content .shareButton.main.sent .share {
+  opacity: 0;
+  -webkit-transform: rotate(90deg) scale(0);
+          transform: rotate(90deg) scale(0);
+}
+
+.shareButton, .shareButton.open {
+  border: none;
+  border-radius: 50%;
+  background: #959193;
+  padding: 1rem;
+  overflow: hidden;
+  outline: none;
+  margin: 0.5rem;
+  width: 24px;
+  height: 24px;
+  box-sizing: content-box;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  position: relative;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.shareButton:hover, .shareButton.open:hover {
+  -webkit-transform: scale(1.1) translateY(-3px);
+          transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.shareButton svg, .shareButton.open svg {
+  display: block;
+  fill: #264d5e;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.fb, .shareButton.open.ig {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.tw, .shareButton.open.tw {
+  -webkit-transition-delay: 50ms;
+          transition-delay: 50ms;
+}
+
+.ig, .shareButton.open.fb {
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+.fb, .tw, .ig {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.fb svg, .tw svg, .ig svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+  

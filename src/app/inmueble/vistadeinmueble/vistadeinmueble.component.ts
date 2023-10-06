@@ -15,6 +15,7 @@ export class VistadeinmuebleComponent implements OnInit {
   public showRecamaras: boolean = false;
   public showSearch: boolean = false;
   public showPrecioEjemplo: boolean= false;
+  public showFiltros: boolean=false;
 
   constructor( private el: ElementRef, private router:Router) { }
 
@@ -23,13 +24,14 @@ export class VistadeinmuebleComponent implements OnInit {
   onDocumentClick(event: MouseEvent) {
     // Verifica si el clic no fue dentro del botón de Precio ni dentro de la lista de Precio
     if (!this.el.nativeElement.querySelector('.navbar').contains(event.target) &&
-        !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search' ).contains(event.target)) {
+        !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search., .dropdown-Filtros' ).contains(event.target)) {
       // Si se hizo clic fuera del botón y fuera de la lista de Precio, oculta la lista
       this.showPrecio = false;
       this.showToferta = false;
       this.showInmueble = false;
       this.showRecamaras = false;
       this.showSearch = false;
+      this.showFiltros =false;
 
 
     }
@@ -43,6 +45,7 @@ togglePrecio() {
   this.showInmueble = false;
   this.showRecamaras = false;
   this.showSearch = false;
+  this.showFiltros =false;
 }
 
 // Función para mostrar/ocultar la lista de Tipo de Oferta
@@ -53,6 +56,7 @@ toggleToferta() {
   this.showInmueble = false;
   this.showRecamaras = false;
   this.showSearch = false;
+  this.showFiltros =false;
 }
 
 // Función para mostrar/ocultar la lista de Inmueble
@@ -63,6 +67,7 @@ toggleInmueble() {
   this.showToferta = false;
   this.showRecamaras = false;
   this.showSearch = false;
+  this.showFiltros =false;
 }
 
 // Función para mostrar/ocultar la lista de Recamaras
@@ -73,6 +78,7 @@ toggleRecamaras() {
   this.showToferta = false;
   this.showInmueble = false;
   this.showSearch = false;
+  this.showFiltros =false;
 }
 
 // Función para mostrar/ocultar la barra de resultados de escritura en busqueda
@@ -83,12 +89,23 @@ toggleSearch() {
   this.showToferta = false;
   this.showInmueble = false;
   this.showRecamaras = false;
+  this.showFiltros =false;
+}
+// Función para mostrar/ocultar la barra de resultados de escritura en busqueda
+toggleFiltros() {
+  this.showFiltros = !this.showFiltros;
+  // Oculta las otras listas
+  this.showPrecio = false;
+  this.showToferta = false;
+  this.showInmueble = false;
+  this.showRecamaras = false;
+  this.showSearch = false;
 }
 
 
 detalles(){
   this.router.navigate(['/inmueble/detalles']);
-
+ 
 }
 
 

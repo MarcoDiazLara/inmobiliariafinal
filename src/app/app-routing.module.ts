@@ -63,6 +63,7 @@ const routes: Routes = [
     path:'menu2', 
     component: MenugloguedoComponent
   },
+  
   { 
     path: '**',
     redirectTo: 'index',

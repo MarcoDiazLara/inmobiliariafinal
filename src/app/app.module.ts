@@ -22,6 +22,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -29,6 +30,8 @@ import { WebComponent } from './web/web.component';
 import { WebModule } from './web/web.module';
 
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -41,7 +44,7 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
-    MenugloguedoComponent,
+  
     VistadeinmuebleComponent,
   
   ],
@@ -67,7 +70,10 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
      MatListModule,
      MatMenuModule,
      MatGridListModule,
-     MatTabsModule,    
+     MatTabsModule,   
+     MatPaginatorModule,
+     MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
