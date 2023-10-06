@@ -1,0 +1,64 @@
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Espacio igual entre las tarjetas */
+  }
+  
+  .card {
+    flex: 1; /* Distribuye el espacio disponible entre las tarjetas */
+    border: 2px solid #575A5C;
+    margin: 10px; /* Margen entre las tarjetas */
+  }
+  
+  .card-content {
+    padding: 20px; /* Espacio para el contenido de la tarjeta */
+  }
+   
+  h3{
+    font-size: 24px; /* Tamaño de fuente */
+    color: #264D5E; /* Color de texto */
+    font-weight: bold; /* Peso de la fuente (negrita) */
+    text-align: center; /* Alineación del texto (centrado) */
+    margin-bottom: 10px; /* Margen inferior */
+  }
+
+   h2{
+
+    font-size: 30px; /* Tamaño de fuente */
+    color: black; /* Color de texto */
+    font-weight: bold; /* Peso de la fuente (negrita) */
+    text-align: center; /* Alineación del texto (centrado) */
+    margin-bottom: 10px; /* Margen inferior */
+
+
+
+   }
+
+   h1{
+
+    font-size: 30px; /* Tamaño de fuente */
+    color: black; /* Color de texto */
+    font-weight: bold; /* Peso de la fuente (negrita) */
+    text-align: center; /* Alineación del texto (centrado) */
+    margin-bottom: 10px; /* Margen inferior */
+
+
+   }
+
+
+
+   h4{
+
+    font-size: 26px; /* Tamaño de fuente */
+    color: black; /* Color de texto */
+          /* Peso de la fuente (negrita) */
+    text-align: center; /* Alineación del texto (centrado) */
+    margin-bottom: 10px; /* Margen inferior */
+
+
+   }
+ 
+  
+  
+ 
+
+  

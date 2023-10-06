@@ -7,6 +7,8 @@ import { DetallesCarruselComponent } from './detalles/detalles-carrusel/detalles
 
 
 
+
+
 @NgModule({
   declarations: [
     
