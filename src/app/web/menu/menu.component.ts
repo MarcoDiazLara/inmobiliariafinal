@@ -11,7 +11,16 @@ import { HttpService } from 'src/app/services/http/http.service';
 export class MenuComponent implements OnInit {
  
   isLoggedIn: boolean = false;
-  
+
+ 
+
+  constructor(private router: Router,private httpService: HttpService){
+ 
+  }
+
+  ngOnInit() {
+    this.isLoggedIn = this.httpService.getGlobalVariable();
+  }
 
   Login(){
     
@@ -49,13 +58,7 @@ export class MenuComponent implements OnInit {
  }
 
 
- constructor(private router: Router,private httpService: HttpService){
  
-  }
-
-  ngOnInit() {
-    this.isLoggedIn = this.httpService.getGlobalVariable();
-  }
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
 
   abrirVentanaEmergente(): void {

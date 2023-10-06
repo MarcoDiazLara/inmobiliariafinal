@@ -19,6 +19,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ParticulaComponent } from './particula/particula.component';
 import { InmobiliariacorredorComponent } from './inmobiliariacorredor/inmobiliariacorredor.component';
 import { ConstructoradesarrolladoraComponent } from './constructoradesarrolladora/constructoradesarrolladora.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -44,7 +46,9 @@ import { ConstructoradesarrolladoraComponent } from './constructoradesarrollador
     WebRoutingModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+     ReactiveFormsModule,
   ],
   exports:[
     WebComponent,
