@@ -368,14 +368,19 @@
     <br>
       <hr class="custom-hr">
       <br>
+
     <h1 class="text-center">Muestranos tu inmueble</h1>
+
     <br>
-    <form [formGroup]="imageForm">
-      <input accept="image/*"  type="file" name="images" (change)="onFileChange($event)" multiple>
+    <div class="d-flex justify-content-center align-items-center">
+    <form class="form-horizontal" [formGroup]="imageForm">
+      <input  class="form-control" accept="image/*"  type="file" name="images" (change)="onFileChange($event)" multiple>
       
     </form>
+    </div>
   <br>
   <br>
+
     <div class="d-flex justify-content-center align-items-center">
       <button mat-button matStepperPrevious>Atras</button>
       <button mat-button (click)="subirInmueble()">Aceptar</button>
