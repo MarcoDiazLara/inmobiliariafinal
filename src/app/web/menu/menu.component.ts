@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 
@@ -11,11 +11,40 @@ import { HttpService } from 'src/app/services/http/http.service';
 export class MenuComponent implements OnInit {
  
   isLoggedIn: boolean = false;
-  
+
+ 
+
+  constructor(private router: Router,private httpService: HttpService){
+ 
+  }
+
+  ngOnInit() {
+    this.isLoggedIn = this.httpService.getGlobalVariable();
+  }
 
   Login(){
     
     this.router.navigate(['/login']);
+
+ }
+ contactos(){
+
+  this.router.navigate(['web/contacto']);
+
+ }
+
+ directo(){
+  this.router.navigate(['web/particula']);
+
+ }
+ corredor(){
+  this.router.navigate(['web/Inmobiliariacorredor']);
+ }
+
+
+ desarrolo(){
+  this.router.navigate(['web/Constructoradesarrolladora']);
+
 
  }
 
@@ -29,12 +58,19 @@ export class MenuComponent implements OnInit {
  }
 
 
- constructor(private router: Router,private httpService: HttpService){
  
+  @ViewChild('ventanaEmergente') ventanaEmergente: any;
+
+  abrirVentanaEmergente(): void {
+    this.ventanaEmergente.nativeElement.style.display = 'block';
   }
 
-  ngOnInit() {
-    this.isLoggedIn = this.httpService.getGlobalVariable();
+  cerrarVentanaEmergente(): void {
+    this.ventanaEmergente.nativeElement.style.display = 'none';
   }
+
+ 
+
+
 
 }
