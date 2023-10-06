@@ -54,7 +54,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     WebComponent,
     FooterComponent,
     DescargaComponent,
-    WebComponent
+    WebComponent,
+    MenuComponent
     
   ],
 

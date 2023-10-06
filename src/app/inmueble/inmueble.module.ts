@@ -6,12 +6,16 @@ import { WebModule } from '../web/web.module';
 
 
 
+
+
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     InmuebleRoutingModule,
     WebModule,
+    
      
  
   ]

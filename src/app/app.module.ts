@@ -72,7 +72,7 @@ import { MatDialogModule } from '@angular/material/dialog';
      MatGridListModule,
      MatTabsModule,   
      MatPaginatorModule,
-     MatDialogModule 
+     MatDialogModule
 
   ],
   providers: [],
