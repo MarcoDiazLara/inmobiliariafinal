@@ -116,3 +116,7 @@
   .btn:hover svg path {
     fill: #007ACC;
   }
+  .botonera {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los botones */
+}
