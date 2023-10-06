@@ -4,6 +4,7 @@ import { InmuebleComponent } from './inmueble.component';
 import { VistadeinmuebleComponent } from './vistadeinmueble/vistadeinmueble.component';
 import { DetallesComponent } from './detalles/detalles.component';
 
+
 const routes: Routes = [
  
   { path: '', redirectTo: 'inmueble', pathMatch: 'full' },
@@ -19,8 +20,7 @@ const routes: Routes = [
   {
     path: 'detalles', 
     component: DetallesComponent
-  }
-  
+  },
 
 
 ];
