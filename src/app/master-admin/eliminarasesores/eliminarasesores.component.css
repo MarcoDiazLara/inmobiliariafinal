@@ -75,3 +75,44 @@
    button:active .icon svg {
     transform: scale(0.8);
    }
+
+/* 
+   ---------------------------------------------- */
+
+   .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #007ACC;
+    outline: 3px #007ACC solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  
+  .btn .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
+  
+  .btn svg path {
+    transition: 400ms;
+  }
+  
+  .btn:hover {
+    background-color: transparent;
+  }
+  
+  .btn:hover .text {
+    color: #007ACC;
+  }
+  
+  .btn:hover svg path {
+    fill: #007ACC;
+  }

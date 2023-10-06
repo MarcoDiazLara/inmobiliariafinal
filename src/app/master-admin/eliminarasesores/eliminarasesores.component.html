@@ -41,8 +41,12 @@
       <div class="col-md-6">
         <div class="alert alert-warning">
           <p>¿Está seguro de que desea eliminar a {{ asesorSeleccionado }}?</p>
-          <button class="btn btn-danger" (click)="eliminarAsesor()">Sí</button>
-          <button class="btn btn-secondary" (click)="cancelarEliminar()">Cancelar</button>
+          <button class="btn" (click)="eliminarAsesor()">
+            <p class="text">si</p>
+            </button>
+          <button class="btn " (click)="cancelarEliminar()">
+            
+            <p class="text">Cancelar</p></button>
         </div>
       </div>
     </div>
