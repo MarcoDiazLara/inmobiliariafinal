@@ -12,9 +12,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormGroup, } from '@angular/forms';
+import {MatDialog, MatDialogModule,MatDialogRef } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { PasswordComponent } from '../ventanaemergente/password/password.component';
 
-
-
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-perfil',
@@ -24,7 +29,7 @@ import {FormGroup, } from '@angular/forms';
   imports: [
     MatFormFieldModule, 
     MatSelectModule, 
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule, 
     NgFor,
     NgIf, 
@@ -33,25 +38,47 @@ import {FormGroup, } from '@angular/forms';
     MatNativeDateModule,
     MatIconModule,
     MatCheckboxModule,
+    MatButtonModule,
+    MatDialogModule,
+  
     
   ],
 })
 
-export class PerfilComponent implements OnInit {
 
-emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+export class PerfilComponent implements OnInit {
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   ngOnInit(): void {
   }
 
-  signin: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required ]),
-    password: new FormControl('', [Validators.required, Validators.min(3) ])
-  });
-  hide = true;
-  get emailInput() { return this.signin.get('email'); }
-  get passwordInput() { return this.signin.get('password'); }  
+  // Apartado Dialog Pantalla Emergente 
+  
+
+  constructor(public dialog: MatDialog) {}
+
+  
+  openpassword (){
+    
+
+
+    const dialogRef = this.dialog.open(PasswordComponent,{
+      width: '60vh',
+      height: 'auto',
+      disableClose: true
+    });
+  }
+
+
+
+  openDialog(): void {
+    
+  }
+
+ 
 }
+
+
 
 
 

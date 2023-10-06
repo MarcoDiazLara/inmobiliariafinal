@@ -19,7 +19,7 @@ import { DescargaComponent } from './descarga/descarga.component';
     MenuComponent,
     BuscadorComponent,
     AtajosComponent,
-    DescargaComponent
+    DescargaComponent,
   ],
   imports: [
     CommonModule,

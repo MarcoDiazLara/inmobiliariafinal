@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ClienteRoutingModule } from './cliente-routing.module';
 import { ClienteComponent } from './cliente.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { CambiopasswordComponent } from './ventanaemergente/cambiopassword/cambiopassword.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
@@ -25,16 +24,19 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { PasswordComponent } from './ventanaemergente/password/password.component';
 /end/
 
 
 @NgModule({
   declarations: [
     ClienteComponent,
-    CambiopasswordComponent,
+    // PerfilComponent,
     SeguimientoComponent,
-    NotificacionesComponent,
-    InmueblesComponent
+    // NotificacionesComponent,
+    InmueblesComponent,
+    PasswordComponent,
+  
   ],
   imports: [
     CommonModule,

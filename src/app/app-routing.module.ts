@@ -44,10 +44,6 @@ const routes: Routes = [
     loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
   },
   {
-    path: 'cliente',
-    loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
-  },
-  {
     path: 'web',
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
@@ -63,7 +59,6 @@ const routes: Routes = [
     path: 'inmueble',
     loadChildren: ()=> import('./inmueble/inmueble.module').then(m =>m.InmuebleModule)
   },
-
   {
     path:'menu2', 
     component: MenugloguedoComponent

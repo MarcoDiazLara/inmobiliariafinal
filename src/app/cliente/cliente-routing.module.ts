@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './cliente.component';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { CambiopasswordComponent } from './ventanaemergente/cambiopassword/cambiopassword.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { PasswordComponent } from './ventanaemergente/password/password.component';
 
 const routes: Routes = [
   {
@@ -13,27 +13,24 @@ const routes: Routes = [
     component:ClienteComponent,
     children: [
       {
-          path: 'inmueble',
-          component: InmueblesComponent,
+        path: 'inmueble',
+        component: InmueblesComponent,
       },
       {
         path:'clientePerfil',
         component: PerfilComponent,
       },
-
-      {
-        path:'password',
-        component: CambiopasswordComponent,
-      },
-
       {
         path:'seguimiento',
         component: SeguimientoComponent,
       },
-
       {
         path:'notificaciones',
         component: NotificacionesComponent,
+      },
+      {
+        path:'password',
+        component: PasswordComponent,
       },
     ],
   }

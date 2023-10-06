@@ -10,6 +10,8 @@ import {NgIf} from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
+import { FormBuilder, FormGroup,} from '@angular/forms';
+
 
 
 @Component({
@@ -27,7 +29,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule, 
     MatDatepickerModule, 
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
   ],
 })
 
@@ -42,6 +44,22 @@ export class AltaBrokersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  signin: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.email, Validators.required ]),
+    password: new FormControl('', [Validators.required, Validators.min(3) ])
+  });
+  hide = true;
+  get emailInput() { return this.signin.get('email'); }
+  get passwordInput() { return this.signin.get('password'); }  
+
+  selectedFile: any = null;
+
+onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0] ?? null;
+
+}
+
 
 
 
