@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 
+
 @Component({
   selector: 'app-web',
   templateUrl: './web.component.html',
@@ -10,7 +11,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 export class WebComponent implements OnInit {
   
  
-  constructor(
+  constructor (
     private router:Router, 
   ) { }
 
@@ -22,4 +23,16 @@ export class WebComponent implements OnInit {
    
     this.router.navigate(["/login"], { replaceUrl: true });
   }
-}
+  
+  }
+
+
+
+
+
+
+
+
+
+
+

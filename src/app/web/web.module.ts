@@ -11,7 +11,16 @@ import { MenuComponent } from './menu/menu.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { AtajosComponent } from './atajos/atajos.component';
 import { DescargaComponent } from './descarga/descarga.component';
+
 import { MenugloguedoComponent } from '../menugloguedo/menugloguedo.component';
+
+import { ContactoComponent } from './contacto/contacto.component';
+import { ParticulaComponent } from './particula/particula.component';
+import { InmobiliariacorredorComponent } from './inmobiliariacorredor/inmobiliariacorredor.component';
+import { ConstructoradesarrolladoraComponent } from './constructoradesarrolladora/constructoradesarrolladora.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +30,13 @@ import { MenugloguedoComponent } from '../menugloguedo/menugloguedo.component';
     BuscadorComponent,
     AtajosComponent,
     DescargaComponent,
-    MenugloguedoComponent
+  MenugloguedoComponent,
+ ContactoComponent,
+ ParticulaComponent,
+ InmobiliariacorredorComponent,
+ ConstructoradesarrolladoraComponent,
+
+
   ],
   imports: [
     CommonModule,

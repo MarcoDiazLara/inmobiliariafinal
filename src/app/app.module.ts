@@ -30,6 +30,8 @@ import { WebComponent } from './web/web.component';
 import { WebModule } from './web/web.module';
 
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -69,7 +71,9 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
      MatMenuModule,
      MatGridListModule,
      MatTabsModule,   
-     MatPaginatorModule, 
+     MatPaginatorModule,
+     MatDialogModule 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
