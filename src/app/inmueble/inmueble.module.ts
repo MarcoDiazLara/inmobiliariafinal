@@ -8,6 +8,7 @@ import { WebModule } from '../web/web.module';
 
 
 
+
 @NgModule({
   declarations: [
   ],
@@ -15,6 +16,7 @@ import { WebModule } from '../web/web.module';
     CommonModule,
     InmuebleRoutingModule,
     WebModule,
+  
     
      
  
