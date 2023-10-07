@@ -24,6 +24,19 @@
   
       text-align: left;
   }
+
+  .h4filtros{
+    margin-top: 25px;
+    font-weight: 450; 
+    
+  }
+
+  .opcfiltros{
+    margin-bottom: 10px;
+  }
+  .opcfiltros2{
+    margin-bottom: 10px;
+  }
   
   
   .navbar .divider {
@@ -254,7 +267,8 @@
     }
     
     .dropdown-Filtros {
-  
+      max-height: 550px; /* Establece la altura máxima deseada */
+      overflow-y: auto; /* Activa el desplazamiento vertical */
       list-style: none;
       margin-right: 0;
       padding: 0;
