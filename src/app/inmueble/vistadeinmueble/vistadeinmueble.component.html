@@ -82,7 +82,58 @@
             <!-- Button trigger modal -->
             <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
             <ul *ngIf="showFiltros" class="dropdown-Filtros">
-              <li><a>1</a></li>
+
+              <form class="ps-4 pe-4">
+
+                <h4>Palabras clave</h4>
+                <input type="text" class="form-control" placeholder="Ejem. piscina, jardin, duplex, etc...">
+
+
+
+
+
+              <h4>Generales</h4>  
+              <div style="display: flex; flex-direction: column;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="example-margin">Escuelas cercanas</mat-checkbox>
+                  <mat-checkbox class="example-margin">Permite mascotas</mat-checkbox>
+                </section>
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                  <mat-checkbox class="example-margin">Disabled</mat-checkbox>
+                </section>
+              
+              </div>
+
+              <input type="text" class="form-control" placeholder="Desde">
+
+              <h4>Vigilancia</h4> 
+
+              <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+                <mat-radio-button value="1"  style="margin-bottom: 5px;">Cámaras 24/7</mat-radio-button> 
+                <mat-radio-button value="2">Portero de día/noche</mat-radio-button>
+              </mat-radio-group>
+
+
+
+              </form>     
+                
+
+
+
+
+                
+              
+              
+              
+              
+              
+
+
+
+
+
+
               <li><a>2</a></li>
               <li><a>3</a></li>
               <li><a>4</a></li>

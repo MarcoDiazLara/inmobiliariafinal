@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {NgFor} from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,10 @@ import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatChipsModule} from '@angular/material/chips';
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -49,6 +54,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   
   ],
   imports: [
+     NgFor,
      BrowserModule,
      BrowserAnimationsModule,
      HttpClientModule,
@@ -72,7 +78,9 @@ import { MatDialogModule } from '@angular/material/dialog';
      MatGridListModule,
      MatTabsModule,   
      MatPaginatorModule,
-     MatDialogModule
+     MatDialogModule,
+     MatChipsModule,
+     MatCheckboxModule,
 
   ],
   providers: [],

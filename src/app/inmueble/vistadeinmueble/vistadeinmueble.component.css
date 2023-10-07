@@ -67,8 +67,8 @@
    /* Estilo de los iconos de los botones */
   
    .lupa{
-      background: url('https://api.iconify.design/iconamoon/search-fill.svg?color=%23044504') no-repeat center center / contain;
-      content: url('https://api.iconify.design/iconamoon/search-fill.svg?color=%23044504');
+      background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
+      content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
       background-size: cover; /* Tamaño de la imagen */
       background-position: center; /* Posición de la imagen */
       background-repeat: no-repeat; /* Evita la repetición */
@@ -258,14 +258,13 @@
       list-style: none;
       margin-right: 0;
       padding: 0;
-      position: absolute;
+      width: 450px;
       border-radius: 5px;
       background-color: #fff; /* Fondo de la lista */
       border: 1px solid #ccc; /* Borde de la lista */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
       z-index: 1; /* Asegura que la lista esté por encima de otros elementos */
       position: absolute; /* Establece el posicionamiento absoluto */
-      margin-top: 40px;
     }
     
     /* Estilo para los elementos de la lista */
@@ -279,24 +278,6 @@
       background-color: #f0f0f0; /* Cambio de color al pasar el mouse sobre elementos de lista */
     }
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -366,4 +347,12 @@
       padding: 0%; 
       
     }
+
+
+
+
+  
+ 
+    
+
     

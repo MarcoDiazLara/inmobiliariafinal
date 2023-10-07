@@ -2,10 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {  ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
+
+
+
+
 @Component({
   selector: 'app-vistadeinmueble',
   templateUrl: './vistadeinmueble.component.html',
-  styleUrls: ['./vistadeinmueble.component.css']
+  styleUrls: ['./vistadeinmueble.component.css'],
+  
 })
 export class VistadeinmuebleComponent implements OnInit {
   title = 'ProyectoPrueba';
@@ -16,6 +21,9 @@ export class VistadeinmuebleComponent implements OnInit {
   public showSearch: boolean = false;
   public showPrecioEjemplo: boolean= false;
   public showFiltros: boolean=false;
+
+
+
 
   constructor( private el: ElementRef, private router:Router) { }
 
