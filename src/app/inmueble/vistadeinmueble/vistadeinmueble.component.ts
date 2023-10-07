@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {  ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {startWith, map} from 'rxjs/operators';
 
 
 
@@ -13,6 +16,22 @@ import { Router } from '@angular/router';
   
 })
 export class VistadeinmuebleComponent implements OnInit {
+  control = new FormControl('');
+  streets: string[] = [
+  'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial',
+  'Farmacia', 'Hospital publico', 'privado', 'Parques',
+  'Mercado', 'Unidad Deportiva', 'Roof Garden', 'Jardines',
+  'Salón social', 'Bussines center', 'Biblioteca', 'Áreas deportivas',
+  'Cisterna', 'Amueblado', 'Jardin', 'Cochera',
+  'Internet', 'wi-fi', 'Salón Social', 'Biblioteca',
+
+
+
+
+];
+  filteredStreets: Observable<string[]>;
+
+
   title = 'ProyectoPrueba';
   public showPrecio: boolean = false;
   public showToferta: boolean = false;
@@ -25,7 +44,9 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  constructor( private el: ElementRef, private router:Router) { }
+  constructor( private el: ElementRef, private router:Router) { 
+    this.filteredStreets = new Observable<string[]>();
+  }
 
 
   @HostListener('document:click', ['$event'])
@@ -118,25 +139,28 @@ detalles(){
 
 
 
+// Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
+ngOnInit(): void {
+    this.filteredStreets = this.control.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+  }
 
 
 
 
+  // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
+  private _filter(value: string): string[] {
+    const filterValue = this._normalizeValue(value);
+    return this.streets.filter(street => this._normalizeValue(street).includes(filterValue));
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  ngOnInit(): void {
+// Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
+  private _normalizeValue(value: string): string {
+    return value.toLowerCase().replace(/\s/g, '');
   }
 
 }
+

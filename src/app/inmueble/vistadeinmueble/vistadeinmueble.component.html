@@ -33,13 +33,13 @@
           <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
           <div *ngIf="showPrecio" class="dropdown-precio ">
                 <form class="ps-4 pe-4">
-                    <div class="mb-3">
+                    <div class="mb-3" style="margin-top: 25px;">
                       <input type="text" class="form-control" id="nombre" placeholder="Desde">
                     </div>
                     <div class="mb-3">              
                       <input type="text" class="form-control" id="nombre" placeholder="Hasta">
                     </div>
-                    <button type="button" name="aplicar" class="btn-secondary"> Aplicar</button>
+                    <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;" > Aplicar</button>
                 </form>
           </div> 
         </div>
@@ -90,7 +90,29 @@
               <form class="ps-4 pe-4">
 
                 <h4 class="h4filtros">Palabras clave</h4>
-                <input type="text" class="form-control" placeholder="Ejem. piscina, jardin, duplex, etc...">
+                <input type="text"
+                  placeholder="Ej. amueblado, jardin, cochera "
+                  [formControl]="control"
+                  [matAutocomplete]="auto"
+                  class="form-control">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+                    {{street}}
+                  </mat-option>
+                </mat-autocomplete>
+
+
+                <h4 class="h4filtros">Interacción</h4> 
+                <div style="flex: 3; text-align: center;">
+                  <button mat-stroked-button style="margin-left: 5px;"><img class="VR"> Vista 360°</button>
+                  <button mat-stroked-button  style="margin-left: 5px;" ><img class="multi"> Multimedia</button>
+                  <button mat-stroked-button  style="margin-left: 5px;" ><img class="planos">Planos</button>
+
+                </div>
+
+
+
+
 
               <h4 class="h4filtros">Establecimientos públicos cercanos</h4>  
               <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
@@ -167,7 +189,7 @@
 
               <h4 class="h4filtros">Vigilancia</h4> 
               <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
-                <mat-radio-button class="opcfiltros" value="1"  style="margin-bottom: 5px;">Cámaras 24/7</mat-radio-button> 
+                <mat-radio-button class="opcfiltros" value="1">Cámaras 24/7</mat-radio-button> 
                 <mat-radio-button class="opcfiltros" value="2">Portero de día/noche</mat-radio-button>
               </mat-radio-group>
 
@@ -184,6 +206,30 @@
                     <mat-option value="two">+20 años</mat-option>
                   </mat-select>
                 </mat-radio-button>
+
+
+                <h4 class="h4filtros">Tipo de anunciante</h4> 
+                <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+                  <mat-radio-button class="opcfiltros" value="2">Todos</mat-radio-button>
+                  <mat-radio-button class="opcfiltros" value="1">Inmobiliaria</mat-radio-button> 
+                  <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
+                </mat-radio-group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
               </mat-radio-group>
