@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InmuebleRoutingModule } from './inmueble-routing.module';
 import { WebModule } from '../web/web.module';
+
 import { DetallesCarruselComponent } from './detalles/detalles-carrusel/detalles-carrusel.component';
 
 
@@ -16,10 +17,10 @@ import { DetallesCarruselComponent } from './detalles/detalles-carrusel/detalles
   imports: [
     CommonModule,
     InmuebleRoutingModule,
-    WebModule
-  ],
-  exports: [
-   
+    WebModule,
+    
+     
+ 
   ]
 })
 export class InmuebleModule { }
