@@ -1,171 +1,182 @@
-<!-- <p>alta-brokers works!</p> -->
-<div class="contendoralta">   
-  <div class="container-fluid">
+<div class="col-md-12">
+  <form class="insertar-dialog-content" [formGroup]="formGeneral">
+
     <div class="row">
-    <div class="perfilmenu" >
-     
-      <h2> REGISTRO </h2>
-
-        <div class="row">
-          <div class="col-md-6">
-            <h5> Seleccionar tipo de usuario</h5>
-            <mat-form-field class="ordenausuario">
-              <mat-label>Selecionar usuario</mat-label>
-              <mat-select [formControl]="toppings" multiple>
-                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div> 
-        <div class="col-md-6">
-          <h5> Seleccionar tipo de usuario</h5>
-          <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-<input hidden (change)="onFileSelected($event)" #fileInput type="file">
-<span class="file-name">{{selectedFile?.name}}</span>
-        </div>
-      </div> 
-
-
-    <!-- Nombre  Apellidos  Fecha de Nacimiento -->
-
-        <div class="row">
-          <div class="col-md-3">
-            <h5> Nombre</h5>
-            <mat-form-field class="ordenaform">
-              <input matInput >
-            </mat-form-field>
-          </div>
-
-          <div class="col-md-3">
-            <h5> Apellido Paterno </h5>
-            <mat-form-field class="ordenaform">
-              <input matInput>
-            </mat-form-field>
-          </div>
-
-          <div class="col-md-3 ">
-            <h5> Apellido Materno </h5>
-            <mat-form-field class="ordenaform">
-              <input matInput>
-            </mat-form-field>
-          </div>
-
-          <div class="col-md-3 ">
-            <h5> CURP </h5>
-            <mat-form-field class="ordenaform">
-              <input matInput>
-            </mat-form-field>
-          </div>
-        </div>
- 
-
-        <!-- Email  Celular  Casa  Oficina -->
-
-         <div class="row">
-          <div class="col-md-3">
-            <h5> RFC </h5>
-            <mat-form-field class="ordenaform">
-              <input matInput>
-            </mat-form-field>
-            
-          </div>
-
-          <div class="col-md-3">
-            <h5> Contacto Principal</h5>
-            <form class="example-form">
-              <mat-form-field class="example-full-width ordenaform">
-                <mat-label>Celular</mat-label>
-                <span matPrefix>+52 &nbsp;</span>
-                <input type="tel" matInput placeholder="555-555-1234">
-                <mat-icon matSuffix>mode_edit</mat-icon>
-              </mat-form-field>
-            </form>
-          </div>
-
-          <div class="col-md-3">
-            <h5> Contacto de Emergencia</h5>
-            <form class="example-form">
-              <mat-form-field class="example-full-width ordenaform">
-                <mat-label>Telephone</mat-label>
-                <span matPrefix>+222 &nbsp;</span>
-                <input type="tel" matInput placeholder="555-555-1234">
-                <mat-icon matSuffix>mode_edit</mat-icon>
-              </mat-form-field>
-            </form>
-          </div>
-
-          <div class="col-md-3">
-            <h5> Email</h5>
-            <form class="example-form">
-              <mat-form-field class="example-full-width ordenaform">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                  Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Email is <strong>required</strong>
-                </mat-error>
-              </mat-form-field>
-            </form>
-          </div>
-        </div>
-
-        <!-- Calle Estado Municipio -->
-
-        <div class="row">
-          <div class="col-md-3">
-            <h5> Nombre de usuario</h5>
-            <mat-form-field class="ordenaform">
-              <input matInput>
-            </mat-form-field>
-          </div>
-
-          <div class="col-md-3">
-            <h5> Descripcion de usuario </h5>
-            <mat-form-field class="example-full-width ordenaform">
-              <textarea matInput rows ="1"></textarea>
-            </mat-form-field>
-          </div>
-
-          <div class="col-md-3">
-            <h5> Password </h5>
-              <form [formGroup]="signin">
-                <mat-form-field class="inputpassword">
-                 <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
-                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                 <mat-hint *ngIf="!passwordInput">Enter your password</mat-hint>
-                 </mat-form-field>
-              </form>
-          </div>
-
-          <div class="col-md-3">
-            <h5> Estatus</h5>
-            <mat-form-field class="ordenaform">
-              <mat-label>Selecionar usuario</mat-label>
-              <mat-select [formControl]="toppings" multiple>
-                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-           
-          </div>
-        </div>
-        <br>
-        <br>
-          <div class="row">
-            <div class="col-md-12  ordenaboton">
-              <button class="btn btn-outline-inmo me-2" type="submit">
-                <i class="bi bi-floppy2"></i> Guardar
-              </button>
-              <button class="btn btn-outline-inmo me-2" type="submit">
-                <i class="bi bi-x-circle-fill"></i> Cancelar
-              </button>
-            </div>
-          </div>
-          
-        </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label style="margin-left: 6%;">Selecciona Usuario </mat-label>
+          <mat-select formControlName="seleccionausuario" required>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+          <mat-error>
+            Estatus
+          </mat-error>
+        </mat-form-field>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="" formControlName="nombre">
+          <mat-label>
+            <b>Nombre</b></mat-label>
+          <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
+            El nombre es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="" formControlName="apellidopaterno">
+          <mat-label>
+            <b>Apellido Paterno</b></mat-label>
+          <mat-error *ngIf="this.formGeneral.get('apellidopaterno')?.hasError('required')">
+            Apellido Paterno<strong>Obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="" formControlName="apellidomaterno">
+          <mat-label>
+            <b> apellidomaterno </b></mat-label>
+          <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
+            Apellido Paterno <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3 ">
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="" formControlName="curp">
+          <mat-label>
+            <b>CURP</b></mat-label>
+          <mat-error *ngIf="this.formGeneral.get('curp')?.hasError('required')">
+            CURP <strong>Obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <mat-form-field appearance="fill">
+        <input matInput type="text" placeholder="" formControlName="rfc">
+        <mat-label>
+            <b>RFC</b></mat-label>
+        <mat-error *ngIf="this.formGeneral.get('rfc')?.hasError('required')">
+            RFC <strong>Obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    
+    <div class="col-md-3">
+      <mat-form-field appearance="fill">
+        <mat-label><b>Contacto Principal</b></mat-label>
+        <input matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10" style="margin-left:6%;">
+        <mat-error *ngIf="this.formGeneral.get('contactoprincipal')?.hasError('required')">
+            El número de teléfono <strong>es requerido</strong>
+        </mat-error>
+    </mat-form-field>
+    </div>
+
+
+    <div class="col-md-3">
+      <mat-form-field appearance="fill">
+        <mat-label><b>Contacto Emergencia</b></mat-label>
+        <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10" style="margin-left:6%;">
+        <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
+            El número de Emergencia <strong>es requerido</strong>
+        </mat-error>
+      </mat-form-field>    
+    </div>
+   
+
+    <div class="col-md-3 alinea">
+      <mat-form-field appearance="legacy" style="width: 95%;">
+        <mat-label style="margin-left: 6%;">Correo</mat-label>
+        <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+        <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
+            Correo es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-3 alinea">
+      <mat-form-field appearance="fill">
+        <input matInput type="text" placeholder="" formControlName="nombreusuario">
+        <mat-label>
+            <b>Nombre Usuario </b></mat-label>
+        <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
+            Nombre Usuario <strong>Obligatorio</strong>
+        </mat-error>
+      </mat-form-field> 
+    </div>
+
+    <div class="col-md-3 alinea">
+      <mat-form-field appearance="fill">
+        <mat-label> Contraseña </mat-label>
+        <input matInput type="text" [type]="hide2 ? 'password' : 'text'"  formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'hide2 password'" [attr.aria-pressed]="hide2">
+            <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        <mat-error *ngIf="this.formGeneral.get('password')?.hasError('required')">
+            Ingrese una contraseña es <strong>obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
   
-  
+    <div class="col-md-3 alineaestatus">
+      <mat-form-field class="example-full-width ">
+        <mat-label  style="margin-left: 6%;">Estatus</mat-label>
+            <mat-select  formControlName="estatus" required>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+       <mat-error>
+         Estatus
+       </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <mat-form-field appearance="fill">
+        <textarea matInput type="text" placeholder="" formControlName="descripcionusuario"></textarea>
+        <mat-label>
+            <b>Descripcion Usuario</b></mat-label>
+        <mat-error *ngIf="this.formGeneral.get('descripcionusuario')?.hasError('required')">
+            RFC <strong>Obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div style="margin-top: 3%;">
+        <div style="padding: 20px 0 20px 0;text-align: center;">
+           <p style="font-size: 130%;font-weight: 550;">Imagen Usuario </p>
+        </div>
+        <mat-icon>wallpaper</mat-icon>
+       <div>
+         <input #imageInput class="form-control" type="file" accept="image/*"  formControlName="imageInput">
+         <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')" >
+            Seleccione una imagen <strong>es obligatorio</strong>
+         </mat-error>
+       </div>
+    </div>
+  </div> 
+</div>
+</form>
+<br>
+<div class="col-md-6 cssbutton">
+<button mat-button type="submit" (click)="Guardardatos()" [class.spinner]="loading" [disabled]="loading" color="secondary">
+    <span>{{ loading ? 'Cargando...' : 'Registrar' }}</span>
+</button>
+</div>
+</div>

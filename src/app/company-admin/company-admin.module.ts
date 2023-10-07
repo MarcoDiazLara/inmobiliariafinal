@@ -21,11 +21,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AltainmoComponent } from './altainmo/altainmo.component';
+import { AltasocioComponent } from './altasocio/altasocio.component';
 /end/
 
 @NgModule({
   declarations: [
-    CompanyAdminComponent
+    CompanyAdminComponent,
+    // AltasocioComponent,
+    // AltainmoComponent,
   ],
   imports: [
     CommonModule,

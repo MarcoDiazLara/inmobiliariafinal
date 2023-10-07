@@ -24,7 +24,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { PasswordComponent } from './ventanaemergente/password/password.component';
+import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
+import { ClientepasswordComponent } from './ventanaemergente/clientepassword/clientepassword.component';
 /end/
 
 
@@ -35,8 +36,7 @@ import { PasswordComponent } from './ventanaemergente/password/password.componen
     SeguimientoComponent,
     // NotificacionesComponent,
     InmueblesComponent,
-    PasswordComponent,
-  
+    ClientepasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -44,13 +44,12 @@ import { PasswordComponent } from './ventanaemergente/password/password.componen
     ClienteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule,
-    MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
     MatStepperModule,
     MatInputModule,
+    MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
@@ -58,7 +57,10 @@ import { PasswordComponent } from './ventanaemergente/password/password.componen
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule,
+    
   ]
+
 })
 export class ClienteModule { }
+
+

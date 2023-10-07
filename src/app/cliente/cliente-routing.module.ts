@@ -5,7 +5,6 @@ import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
-import { PasswordComponent } from './ventanaemergente/password/password.component';
 
 const routes: Routes = [
   {
@@ -27,10 +26,6 @@ const routes: Routes = [
       {
         path:'notificaciones',
         component: NotificacionesComponent,
-      },
-      {
-        path:'password',
-        component: PasswordComponent,
       },
     ],
   }
