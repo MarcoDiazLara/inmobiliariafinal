@@ -76,9 +76,6 @@ toppings = new FormControl('');
       contactoemergencia: ['', [Validators.required]],
       email: ['', [Validators.required]],
       nombreusuario: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      estatus: ['', [Validators.required]],
-      descripcionusuario: ['', [Validators.required]],
       imageInput: ['', [Validators.required]],
     });
   }
@@ -87,8 +84,6 @@ toppings = new FormControl('');
 
   openpassword (){
     
-
-
     const dialogRef = this.dialog.open(ClientepasswordComponent,{
       width: '60vh',
       height: 'auto',
@@ -113,12 +108,10 @@ toppings = new FormControl('');
       let contactoemergencia = this.formGeneral.value.contactoemergencia;
       let email = this.formGeneral.value.email;
       let nombreusuario = this.formGeneral.value.nombreusuario;
-      let estatus = this.formGeneral.value.estatus;
-      let descripcionusuario = this.formGeneral.value.descripcionusuario;
       let imageInput = this.formGeneral.value.imageInput;
 
 
-      alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'estatus' + estatus + 'descripcionusuario'+ descripcionusuario + 'imageInput' + imageInput); 
+      alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'imageInput' + imageInput); 
       
      }
 }

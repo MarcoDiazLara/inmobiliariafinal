@@ -1,8 +1,8 @@
 <div class="col-md-12">
   <form class="insertar-dialog-content" [formGroup]="formGeneral">
     <div class="row">
-        <div class="col-md-4 x">
-          <mat-form-field appearance="fill">
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="x">
             <input matInput type="text" placeholder="" formControlName="nombrerazons">
             <mat-label>
               <b>Nombre Razon Social</b></mat-label>
@@ -11,9 +11,10 @@
             </mat-error>
           </mat-form-field>
         </div>
-
-
-        <div class="col-md-4">
+    </div>
+       
+    <div class="row">
+        <div class="col-md-6">
             <mat-form-field appearance="legacy" style="width: 95%;">
                 <mat-label style="margin-left: 6%;"> RFC </mat-label>
                 <input matInput type="text" placeholder="Correo electronico" formControlName="rfcempresa">
@@ -23,7 +24,7 @@
               </mat-form-field>
         </div> 
   
-        <div class="col-md-4">
+        <div class="col-md-6">
             <mat-form-field appearance="legacy" style="width: 95%;">
                 <mat-label style="margin-left: 6%;">Correo</mat-label>
                 <input matInput type="email" placeholder="Correo electronico" formControlName="email">
@@ -32,11 +33,12 @@
                 </mat-error>
               </mat-form-field>
         </div>
-    </div>
+      </div>
+   
 
     <div class="row">
         <div class="col-md-3">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="x">
                 <mat-label><b>Contacto Empresa</b></mat-label>
                 <input matInput type="text" placeholder="Telefono" formControlName="contactoempresa" maxlength="10" style="margin-left:6%;">
                 <mat-error *ngIf="this.formGeneral.get('contactoempresa')?.hasError('required')">
@@ -46,7 +48,7 @@
         </div>
 
         <div class="col-md-3">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="x">
               <input matInput type="text" placeholder="" formControlName="calle">
               <mat-label>
                   <b>Calle</b></mat-label>
@@ -57,7 +59,7 @@
         </div>
         
         <div class="col-md-3 ">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="x">
               <input matInput type="text" placeholder="" formControlName="numext">
               <mat-label>
                 <b>NUM_EXT</b></mat-label>
@@ -68,7 +70,7 @@
         </div>
       
          <div class="col-md-3">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="x">
              <input matInput type="text" placeholder="" formControlName="numint">
               <mat-label>
               <b>NUM_INT</b></mat-label>
