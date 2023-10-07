@@ -38,17 +38,7 @@
     margin-bottom: 10px;
     
   }
-      /* Cambiar el color de fondo y el borde del mat-checkbox a verde */
-.mat-checkbox-checked.mat-accent .mat-checkbox-background, 
-.mat-checkbox-ripple.mat-ripple-accent {
-  background-color: #4CAF50; /* Cambia el color de fondo a verde */
-  border-color: #4CAF50; /* Cambia el color del borde a verde */
-}
 
-/* Cambiar el color de la marca de verificación dentro del mat-checkbox a blanco (opcional) */
-.mat-checkbox-checked.mat-accent .mat-checkbox-inner-container::after {
-  background-color: #fff; /* Cambia el color de la marca de verificación a blanco (opcional) */
-}
  
   
   
@@ -149,7 +139,10 @@
   }
   
 
-
+  .mat-button-toggle{
+    color: #003453;
+    
+  }
 
 
 

@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
 import {MatInputModule} from '@angular/material/input';
@@ -25,7 +26,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {Observable} from 'rxjs';
@@ -82,10 +84,10 @@ import { MatDialogModule } from '@angular/material/dialog';
      MatTabsModule,   
      MatPaginatorModule,
      MatDialogModule,
-     MatChipsModule,
      MatCheckboxModule,
      MatAutocompleteModule,
      ReactiveFormsModule,
+     MatButtonToggleModule,
 
   ],
   providers: [],

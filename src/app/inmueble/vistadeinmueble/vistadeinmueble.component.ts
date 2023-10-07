@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
