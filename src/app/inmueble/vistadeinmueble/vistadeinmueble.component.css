@@ -89,8 +89,9 @@
       height: 27px;
    }
    .arrow1{
-      background: url('https://api.iconify.design/iconamoon/arrow-up-2-fill.svg?color=%23044504&rotate=180deg') no-repeat center center / contain;
-      content: url('https://api.iconify.design/iconamoon/arrow-up-2-fill.svg?color=%23044504&rotate=180deg');
+    background: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg') no-repeat center center / contain;
+    content: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg');
+      
       background-size: cover; /* Tamaño de la imagen */
       background-position: center; /* Posición de la imagen */
       background-repeat: no-repeat; /* Evita la repetición */
@@ -278,7 +279,7 @@
       border: 1px solid #ccc; /* Borde de la lista */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
       z-index: 1; /* Asegura que la lista esté por encima de otros elementos */
-      position: absolute; /* Establece el posicionamiento absoluto */
+      position:absolute; /* Establece el posicionamiento absoluto */
     }
     
     /* Estilo para los elementos de la lista */
