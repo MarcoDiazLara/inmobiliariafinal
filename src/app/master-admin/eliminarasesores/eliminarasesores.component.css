@@ -15,7 +15,7 @@
   
   /* ------------------------------------------------- */
 
-  button {
+  /* button {
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -74,12 +74,12 @@
    
    button:active .icon svg {
     transform: scale(0.8);
-   }
+   } */
 
 /* 
    ---------------------------------------------- */
 
-   .btn {
+   /* .btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,9 +118,11 @@
   }
   .botonera {
     display: flex;
-    justify-content: space-between; /* Espacio entre los botones */
+    justify-content: space-between; 
 }
 .btn {
-  float: left; /* o float: right; */
-  margin-right: 10px; /* Espacio entre los botones */
-}
+  float: left; 
+  margin-right: 10px; 
+} */
+
+

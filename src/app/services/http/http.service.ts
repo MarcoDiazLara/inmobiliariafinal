@@ -112,5 +112,9 @@ export class HttpService {
     return this.httpclient.post(this.url + 'cerrarSesion.php', params, { headers });
   }
 
+  mostrarInmuebles() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'consultarInmueble.php',  { headers });
+  }
 
 }

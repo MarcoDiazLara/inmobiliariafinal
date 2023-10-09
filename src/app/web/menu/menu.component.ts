@@ -50,11 +50,16 @@ export class MenuComponent implements OnInit {
 
  cerrar(){
   //this.httpService.setGlobalVariable(false);
-  this.httpService.cerrarSesion().subscribe((resp: any)=>{},(err)=>{
-    console.log(err);
-   
-  });
-
+  const itemsToRemove =[
+    "Nombre_Usuario",
+    "Id_Usuario",
+    "Id_Tipo_Usuario"
+  ];
+  itemsToRemove.forEach( item => {
+    localStorage.removeItem(item);
+  })
+  this.httpService.setGlobalVariable(false);
+  this.router.navigate(["/web"]);
  }
 
 

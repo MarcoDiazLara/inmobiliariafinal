@@ -1,221 +1,328 @@
-
-    <!--****************************************************-->
-    <!--****************************************************-->
-    <!--****************************************************-->
-    <!-- Esta es la pagina de los resultados de la busqueda -->
-    <!--****************************************************-->
-    <!--****************************************************-->
-    <!--****************************************************-->
-
+<!--****************************************************-->
+<!--****************************************************-->
+<!--****************************************************-->
+<!-- Esta es la pagina de los resultados de la busqueda -->
+<!--****************************************************-->
+<!--****************************************************-->
+<!--****************************************************-->
 
 
 
-    
-      <div class="navbar">
-      
-              
-        <div>  
-            
-          <div class="divider"></div>
 
-        <div class="buscador">
-        <input class="form-control" type="search" (click)="toggleSearch()" placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar">
-        <ul *ngIf="showSearch" class="dropdown-search">
-          <li><span> Sin Coincidencias...</span></li> 
+
+<div class="navbar">
+
+
+  <div>
+
+    <div class="divider"></div>
+
+    <div class="buscador">
+      <input class="form-control" type="search" (click)="toggleSearch()" placeholder="Ingresa tu ciudad o Localidad"
+        aria-label="Buscar">
+      <ul *ngIf="showSearch" class="dropdown-search">
+        <li><span> Sin Coincidencias...</span></li>
+      </ul>
+      <button class="btn btn-outline-secondary" type="submit">
+        <img class="lupa">
+      </button>
+
+
+      <div class="dropdown ps-4 pe-4">
+        <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
+        <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
+        <div *ngIf="showPrecio" class="dropdown-precio ">
+          <form class="ps-4 pe-4">
+
+            <div class="mb-3" style="margin-top: 25px;">
+
+              <input type="text" class="form-control" id="nombre" placeholder="Desde">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="nombre" placeholder="Hasta">
+            </div>
+
+            <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-outline-secondary me-2" (click)="toggleToferta()">Tipo de Oferta <img
+            class="arrow1"></button>
+        <ul *ngIf="showToferta" class="dropdown-Toferta">
+          <li><a>Venta</a></li>
+          <li><a>Renta</a></li>
+          <li><a>Remate</a></li>
+          <li><a>En construcción</a></li>
         </ul>
-        <button class="btn btn-outline-secondary" type="submit">
-            <img class="lupa">
-        </button>
+      </div>
 
-
-        <div class="dropdown ps-4 pe-4" >
-          <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
-          <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
-          <div *ngIf="showPrecio" class="dropdown-precio ">
-                <form class="ps-4 pe-4">
-                    <div class="mb-3">
-                      <input type="text" class="form-control" id="nombre" placeholder="Desde">
-                    </div>
-                    <div class="mb-3">              
-                      <input type="text" class="form-control" id="nombre" placeholder="Hasta">
-                    </div>
-                    <button type="button" name="aplicar" class="btn-secondary"> Aplicar</button>
-                </form>
-          </div> 
-        </div>
-
-        <div>
-        <button class="btn btn-outline-secondary me-2"  (click)="toggleToferta()">Tipo de Oferta <img class="arrow1"></button>
-          <ul *ngIf="showToferta" class="dropdown-Toferta">
-            <li><a>Venta</a></li>
-            <li><a>Renta</a></li>
-            <li><a>Remate</a></li>
-            <li><a>En construcción</a></li>
-          </ul>
-        </div>
-
-        <div>
+      <div>
         <button class="btn btn-outline-secondary me-2" (click)="toggleInmueble()">Inmueble <img class="arrow1"></button>
-          <ul *ngIf="showInmueble" class="dropdown-inmueble">
-            <li><a>Departamento</a></li>
-            <li><a>Rancho</a></li>
-            <li><a>Oficina</a></li>
-            <li><a>Casa</a></li>
-            <li><a>Local Comercial</a></li>
-            <li><a>Bodega Comercial</a></li>
+        <ul *ngIf="showInmueble" class="dropdown-inmueble">
+          <li><a>Departamento</a></li>
+          <li><a>Rancho</a></li>
+          <li><a>Oficina</a></li>
+          <li><a>Casa</a></li>
+          <li><a>Local Comercial</a></li>
+          <li><a>Bodega Comercial</a></li>
 
 
-          </ul>
-        </div>
-
-        <div>
-          <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()">Recamaras <img class="arrow1"></button>
-          <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
-            <li><a>1</a></li>
-            <li><a>2</a></li>
-            <li><a>3</a></li>
-            <li><a>4</a></li>
-            <li><a>+5</a></li>
-          </ul>
-        </div>
-        <div>
-            <!-- Button trigger modal -->
-            <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
-            <ul *ngIf="showFiltros" class="dropdown-Filtros">
-              <li><a>1</a></li>
-              <li><a>2</a></li>
-              <li><a>3</a></li>
-              <li><a>4</a></li>
-              <li><a>+5</a></li>
-            </ul>
-        </div>
-        <div>
-
-        
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
+        </ul>
       </div>
+
+      <div>
+        <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()">Recamaras <img
+            class="arrow1"></button>
+        <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
+          <li><a>1</a></li>
+          <li><a>2</a></li>
+          <li><a>3</a></li>
+          <li><a>4</a></li>
+          <li><a>+5</a></li>
+        </ul>
+      </div>
+      <div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
+          data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
+        <ul *ngIf="showFiltros" class="dropdown-Filtros">
+
+
+          <form class="ps-4 pe-4">
+
+            <h4 class="h4filtros">Palabras clave</h4>
+            <input type="text" placeholder="Ej. amueblado, jardin, cochera " [formControl]="control"
+              [matAutocomplete]="auto" class="form-control">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+                {{street}}
+              </mat-option>
+            </mat-autocomplete>
+
+
+            <h4 class="h4filtros">Interacción</h4>
+            <div style="flex: 3; text-align: center;">
+              <button mat-stroked-button style="margin-left: 5px;"><img class="VR"> Vista 360°</button>
+              <button mat-stroked-button style="margin-left: 5px;"><img class="multi"> Multimedia</button>
+              <button mat-stroked-button style="margin-left: 5px;"><img class="planos">Planos</button>
+
+            </div>
+            <h4 class="h4filtros">Establecimientos públicos cercanos</h4>
+            <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
+              <div style="flex: 1;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="opcfiltros2">Guarderia</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Escuela</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Gimnasio</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Centro comercial</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Farmacia</mat-checkbox>
+                </section>
+              </div>
+              <div style="flex: 1;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="opcfiltros2">Hospital publico</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Hospital privado</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Parques</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Mercado</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Unidad Deportiva</mat-checkbox>
+                </section>
+              </div>
+            </div>
+
+            <h4 class="h4filtros">Servicios</h4>
+            <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
+              <div style="flex: 1;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="opcfiltros2">Servicios basicos (agua/luz)</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Internet/ Wi-Fi</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Seguridad privada</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Calefacción</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Aire acondicionado</mat-checkbox>
+                </section>
+              </div>
+              <div style="flex: 1;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="opcfiltros2">Estacionamiento para visitas</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Cisterna</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Gas estacionario</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Telefonía</mat-checkbox>
+                </section>
+              </div>
+            </div>
+
+            <h4 class="h4filtros">Baños</h4>
+
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle>1</mat-button-toggle>
+              <mat-button-toggle>2</mat-button-toggle>
+              <mat-button-toggle>3</mat-button-toggle>
+              <mat-button-toggle>4</mat-button-toggle>
+              <mat-button-toggle>+5</mat-button-toggle>
+            </mat-button-toggle-group>
+
+
+
+
+
+            <h4 class="h4filtros">Entretenimiento</h4>
+            <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
+              <div style="flex: 1;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="opcfiltros2">Roof Garden</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Jardines</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Salón social</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Bussines center</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Biblioteca</mat-checkbox>
+                </section>
+              </div>
+              <div style="flex: 1;">
+                <section class="example-section" style="display: flex; flex-direction: column;">
+                  <mat-checkbox class="opcfiltros2">Despacho</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Salón de usos múltiples</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Sala de juegos infantil</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Áreas deportivas</mat-checkbox>
+                  <mat-checkbox class="opcfiltros2">Unidad Deportiva</mat-checkbox>
+                </section>
+              </div>
+            </div>
+
+
+
+
+
+
+
+            <input type="text" class="form-control" placeholder="Desde">
+
+            <h4 class="h4filtros">Vigilancia</h4>
+            <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+              <mat-radio-button class="opcfiltros" value="1">Cámaras 24/7</mat-radio-button>
+              <mat-radio-button class="opcfiltros" value="2">Portero de día/noche</mat-radio-button>
+            </mat-radio-group>
+
+            <h4 class="h4filtros">Antigüedad</h4>
+            <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+              <mat-radio-button class="opcfiltros" value="1">En construcción</mat-radio-button>
+              <mat-radio-button class="opcfiltros" value="2">Por Estrenar</mat-radio-button>
+              <mat-radio-button value="3">
+                <mat-select placeholder="Más de un año">
+                  <mat-option value="one">1-5 años</mat-option>
+                  <mat-option value="two">5-10 años</mat-option>
+                  <mat-option value="two">10-15 años</mat-option>
+                  <mat-option value="two">15-20 años</mat-option>
+                  <mat-option value="two">+20 años</mat-option>
+                </mat-select>
+              </mat-radio-button>
+
+
+              <h4 class="h4filtros">Tipo de anunciante</h4>
+              <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+                <mat-radio-button class="opcfiltros" value="2">Todos</mat-radio-button>
+                <mat-radio-button class="opcfiltros" value="1">Inmobiliaria</mat-radio-button>
+                <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
+              </mat-radio-group>
+
+
+            </mat-radio-group>
+
+          </form>
+
+          <li style="margin-top: 25px;"><button mat-raised-button>Limpiar filtros</button></li>
+        </ul>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     </div>
-      
-        </div>
-      </div>
-      </div>
-    </div>
+  </div>
+</div>
+</div>
 
 
 
 
 
-    <!-- Lista de Resultados -->
+<!-- Lista de Resultados -->
 
-    <div>
-        <div class="ListResult">
-          <h2>
-            <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
+<div>
+  <div class="ListResult">
+    <h2>
+      <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
             y quitar los parentesis para poder mostrar una interfaz mas asosiada al usuario xd
             Encontramos este --->
-            (<span id="tipoInmueble"></span>) 
-            disponible en Puebla(<span id="lugar"></span>)
-            para (<span id="usuarioP"></span>)  
-          </h2>
+      (<span id="tipoInmueble"></span>)
+      disponible en Puebla(<span id="lugar"></span>)
+      para (<span id="usuarioP"></span>)
+    </h2>
 
+  </div>
+  <!-- resultados.component.html -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" *ngFor="let res of datosInmueble">
+        <div class="producto">
+          <table class="table">
+            <thead class="productstyle">
+              <td colspan="2">
+                <h2>{{res.Nombre_Publicacion}}</h2>
+              </td>
+              <td colspan="1">
+
+                <h2>${{res.Precio_Final}}</h2>
+              </td>
+            </thead>
+            <thead>
+              <td><img src="assets/img/departamento-pequeno.jpg" alt="img" class="imgresult"></td>
+             
+              <td colspan="2">
+                <h1>{{res.Estado}}</h1>
+                <h4>San Antonio, San Martin Texmelucan</h4>
+                <h3>{{res.Descripcion_Publicacion}}</h3>
+              </td>
+            </thead>
+            <thead>
+              <td>
+                <div>
+                  <button (click)="detalles()" class="btn btn-secondary container">Más Información</button>
+                </div>
+              </td>
+            </thead>
+          </table>
         </div>
-    <!-- resultados.component.html -->
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="producto">
-              <table class="table">
-                <thead class="productstyle">
-                  <td colspan="2"><h2>Departamento en Puebla</h2></td>
-                  <td colspan="1"><h2>$3,500 MX</h2></td>
-                </thead>
-                  <thead>
-                    <td><img src="assets/departamento-pequeno.jpg" alt="img" class="imgresult"></td>
-                      <td colspan="2">
-                        <h1>Magnolia 66</h1>
-                        <h4>San Antonio, San Martin Texmelucan</h4>
-                        <h3>Se renta Departamento de Dos pisos, Para personas Solas, en San Martin Texmelucan</h3>
-                      </td>
-                  </thead>
-                <thead>
-                  <td>
-                    <div>
-                      <button (click)="detalles()" class="btn btn-secondary container">Más Información</button>
-                    </div>  
-                  </td>
-                </thead>
-              </table>
-            </div>
-          </div>
-          
-
-
-
-          <div class="col-md-6">
-            <div class="producto">
-              <table class="table">
-                <thead class="productstyle">
-                  <td colspan="2"><h2>Duplex en Colima</h2></td>
-                  <td colspan="1"><h2>$4,500 MX</h2></td>
-                </thead>
-                <thead>
-                  <td><img src="assets/departamento.jpg" alt="img" class="imgresult"></td>
-                  <td colspan="2">
-                    <h1>Tamangandapio 4</h1>
-                    <h4>San jeromino, Piedras grandes</h4>
-                    <h3>Se renta Duplex, Para personas Solas, en Piedras grandes</h3>
-                  </td>
-
-                </thead>
-                <thead>
-                  <td>
-                    <div>
-                      <button class="btn btn-secondary container">Más Información</button>
-                      <div>
-                          
-                      </div>
-                    </div>  
-                  </td>
-                  
-
-                </thead>
-              </table>
-            </div>
-          </div>
-      
-            </div>
-            
-          </div>
-
-
-
+      </div>
+   </div>
 
     </div>
-    
-    
-
-    <mat-paginator [length]="100"
-    [pageSize]="10"
-    [pageSizeOptions]="[5, 10, 25, 100]"
-    aria-label="Select page">
-    </mat-paginator>
 
 
+
+
+</div>
+
+
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+</mat-paginator>

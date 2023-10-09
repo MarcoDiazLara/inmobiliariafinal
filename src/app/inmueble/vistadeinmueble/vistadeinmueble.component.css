@@ -24,6 +24,22 @@
   
       text-align: left;
   }
+
+  .h4filtros{
+    margin-top: 25px;
+    font-weight: 450; 
+    
+  }
+
+  .opcfiltros{
+    margin-bottom: 10px;
+  }
+  .opcfiltros2{
+    margin-bottom: 10px;
+    
+  }
+
+ 
   
   
   .navbar .divider {
@@ -67,8 +83,8 @@
    /* Estilo de los iconos de los botones */
   
    .lupa{
-      background: url('https://api.iconify.design/iconamoon/search-fill.svg?color=%23044504') no-repeat center center / contain;
-      content: url('https://api.iconify.design/iconamoon/search-fill.svg?color=%23044504');
+      background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
+      content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
       background-size: cover; /* Tamaño de la imagen */
       background-position: center; /* Posición de la imagen */
       background-repeat: no-repeat; /* Evita la repetición */
@@ -76,8 +92,9 @@
       height: 27px;
    }
    .arrow1{
-      background: url('https://api.iconify.design/iconamoon/arrow-up-2-fill.svg?color=%23044504&rotate=180deg') no-repeat center center / contain;
-      content: url('https://api.iconify.design/iconamoon/arrow-up-2-fill.svg?color=%23044504&rotate=180deg');
+    background: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg') no-repeat center center / contain;
+    content: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg');
+      
       background-size: cover; /* Tamaño de la imagen */
       background-position: center; /* Posición de la imagen */
       background-repeat: no-repeat; /* Evita la repetición */
@@ -93,9 +110,54 @@
       width: 20px;
       height: 20px;
    }
+  .VR{
+    background: url('https://api.iconify.design/fluent-mdl2/video-360-generic.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/fluent-mdl2/video-360-generic.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 20px;
+    height: 20px;
+  }
+  .multi{
+    background: url('https://api.iconify.design/fluent/video-20-regular.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/fluent/video-20-regular.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 20px;
+    height: 20px;
+  }
+  .planos{
+    background: url('https://api.iconify.design/ic/outline-design-services.svg?color=%23264d5e') no-repeat center center / contain;
+    content: url('https://api.iconify.design/ic/outline-design-services.svg?color=%23264d5e');
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 20px;
+    height: 20px;
+  }
   
-  
-  
+
+  .mat-button-toggle{
+    color: #003453;
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   /* estilo del input del buscador */
    .form-control{
@@ -139,7 +201,14 @@
     .dropdown-precio li:hover {
       background-color: #f0f0f0; /* Cambio de color al pasar el mouse sobre elementos de lista */
     }
-  
+
+
+
+
+
+
+
+
   
     .ListResult{
       padding-top: 10px;
@@ -254,18 +323,18 @@
     }
     
     .dropdown-Filtros {
-  
+      max-height: 550px; /* Establece la altura máxima deseada */
+      overflow-y: auto; /* Activa el desplazamiento vertical */
       list-style: none;
       margin-right: 0;
       padding: 0;
-      position: absolute;
+      width: 450px;
       border-radius: 5px;
       background-color: #fff; /* Fondo de la lista */
       border: 1px solid #ccc; /* Borde de la lista */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
       z-index: 1; /* Asegura que la lista esté por encima de otros elementos */
-      position: absolute; /* Establece el posicionamiento absoluto */
-      margin-top: 40px;
+      position:absolute; /* Establece el posicionamiento absoluto */
     }
     
     /* Estilo para los elementos de la lista */
@@ -282,24 +351,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
   .ListResult{
       margin-top: 250px; /* Igualar la altura del componente de navegación */
@@ -313,9 +364,9 @@
     .producto {
       border: 1px solid #575a5c;
       width: 100%;
-      height: 350px;
+      height: 400px;
       border-radius: 5px;
-      padding: 20px;
+      padding: 13px;
       margin-bottom: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
@@ -366,4 +417,14 @@
       padding: 0%; 
       
     }
+
+   
+
+
+
+
+  
+ 
+    
+
     

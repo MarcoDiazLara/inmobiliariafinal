@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inmobewise';
+ 
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnloadHandler(event: any): void {
+    // Código para eliminar datos del localStorage
+    localStorage.clear(); // Esto borrará todos los datos del localStorage
+  }
+
 }
