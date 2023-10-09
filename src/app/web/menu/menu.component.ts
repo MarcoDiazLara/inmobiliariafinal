@@ -48,6 +48,11 @@ export class MenuComponent implements OnInit {
 
  }
 
+
+
+
+
+
  cerrar(){
   //this.httpService.setGlobalVariable(false);
   this.httpService.cerrarSesion().subscribe((resp: any)=>{},(err)=>{
