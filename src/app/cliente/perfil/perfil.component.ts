@@ -64,7 +64,6 @@ toppings = new FormControl('');
     
     ) {}
  
- 
   ngOnInit(): void {
     this.formGeneral = this.formBuilder.group({
       nombre: ['', [Validators.required]],
@@ -109,7 +108,6 @@ toppings = new FormControl('');
       let email = this.formGeneral.value.email;
       let nombreusuario = this.formGeneral.value.nombreusuario;
       let imageInput = this.formGeneral.value.imageInput;
-
 
       alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'imageInput' + imageInput); 
       

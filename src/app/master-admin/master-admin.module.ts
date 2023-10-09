@@ -20,7 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { EliminarasesoresComponent } from './eliminarasesores/eliminarasesores.component';
+import {EliminarasesoresComponent} from './eliminarasesores/eliminarasesores.component';
 
 
 

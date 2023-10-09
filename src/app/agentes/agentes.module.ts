@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AgentesRoutingModule } from './agentes-routing.module';
-import { MenuComponent } from './menu/menu.component';
-import { PerfilComponent } from './perfil/perfil.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +22,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AgentesComponent } from './agentes.component';
+import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component';
+import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agentepassword.component';
 /end/
 
 
@@ -32,8 +32,9 @@ import { AgentesComponent } from './agentes.component';
 @NgModule({
   declarations: [
     AgentesComponent,
-    MenuComponent,
-    PerfilComponent,
+    PerfilagentesComponent,
+    AgentepasswordComponent,
+
     
   ],
   imports: [
