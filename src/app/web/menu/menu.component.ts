@@ -55,16 +55,30 @@ export class MenuComponent implements OnInit {
 
  cerrar(){
   //this.httpService.setGlobalVariable(false);
-  this.httpService.cerrarSesion().subscribe((resp: any)=>{},(err)=>{
-    console.log(err);
-   
-  });
-
+  const itemsToRemove =[
+    "Nombre_Usuario",
+    "Id_Usuario",
+    "Id_Tipo_Usuario"
+  ];
+  itemsToRemove.forEach( item => {
+    localStorage.removeItem(item);
+  })
+  this.httpService.setGlobalVariable(false);
+  this.router.navigate(["/web"]);
  }
 
 
  
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
+
+  abrir(){
+    if(this.isLoggedIn){
+      this.router.navigate(["/inmueble/inmueble"]);
+    }
+    else{
+      this.abrirVentanaEmergente();
+    }
+  }
 
   abrirVentanaEmergente(): void {
     this.ventanaEmergente.nativeElement.style.display = 'block';

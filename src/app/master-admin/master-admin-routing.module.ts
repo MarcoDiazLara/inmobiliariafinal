@@ -14,14 +14,10 @@ children:[
   path:'altabroker',
   component:AltaBrokersComponent
 },
-
 {
-
-  path:'eliminar',
+ path:'eliminar',
   component:EliminarasesoresComponent
-
 }
-
 ]
 }
 ];
