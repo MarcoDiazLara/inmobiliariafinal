@@ -59,7 +59,7 @@ export class MenuComponent implements OnInit {
     localStorage.removeItem(item);
   })
   this.httpService.setGlobalVariable(false);
-  this.router.navigate(["/login"]);
+  this.router.navigate(["/web"]);
  }
 
 
