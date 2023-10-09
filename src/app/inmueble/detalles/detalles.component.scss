@@ -571,8 +571,26 @@ textarea {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
-  
 
+
+
+
+
+
+
+
+
+  
+.recorridovr{
+  background: url('https://api.iconify.design/bi/badge-vr-fill.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/bi/badge-vr-fill.svg?color=%23264d5e');
+  background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 50px;
+    height: 50px;
+
+}
 
 
 
