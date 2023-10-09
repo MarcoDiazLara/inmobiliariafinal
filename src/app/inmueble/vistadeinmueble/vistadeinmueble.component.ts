@@ -5,6 +5,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 import {MatChipsModule} from '@angular/material/chips';
+import { HttpService } from 'src/app/services/http/http.service';
 
 
 
@@ -32,6 +33,7 @@ export class VistadeinmuebleComponent implements OnInit {
 ];
   filteredStreets: Observable<string[]>;
 
+  datosInmueble: any[] = [];
 
   title = 'ProyectoPrueba';
   public showPrecio: boolean = false;
@@ -45,7 +47,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  constructor( private el: ElementRef, private router:Router) { 
+  constructor( private el: ElementRef, private router:Router , private  http:HttpService) { 
     this.filteredStreets = new Observable<string[]>();
   }
 
@@ -141,11 +143,14 @@ detalles(){
 
 
 // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
-ngOnInit(): void {
-    this.filteredStreets = this.control.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
+ngOnInit() {
+    
+
+    this.http.mostrarInmuebles().subscribe((data:any)=>{
+      
+      this.datosInmueble = data; 
+  
+      });
   }
 
 
