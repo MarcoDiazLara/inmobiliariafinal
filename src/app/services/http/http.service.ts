@@ -116,4 +116,5 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.httpclient.post(this.url + 'consultarInmueble.php',  { headers });
   }
+
 }

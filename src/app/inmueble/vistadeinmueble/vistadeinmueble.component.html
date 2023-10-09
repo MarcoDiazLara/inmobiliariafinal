@@ -33,12 +33,15 @@
         <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
         <div *ngIf="showPrecio" class="dropdown-precio ">
           <form class="ps-4 pe-4">
+
             <div class="mb-3" style="margin-top: 25px;">
+
               <input type="text" class="form-control" id="nombre" placeholder="Desde">
             </div>
             <div class="mb-3">
               <input type="text" class="form-control" id="nombre" placeholder="Hasta">
             </div>
+
             <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
           </form>
         </div>
@@ -80,8 +83,6 @@
           <li><a>+5</a></li>
         </ul>
       </div>
-
-
       <div>
 
         <!-- Button trigger modal -->
@@ -109,11 +110,6 @@
               <button mat-stroked-button style="margin-left: 5px;"><img class="planos">Planos</button>
 
             </div>
-
-
-
-
-
             <h4 class="h4filtros">Establecimientos públicos cercanos</h4>
             <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
               <div style="flex: 1;">
@@ -230,31 +226,40 @@
               </mat-radio-group>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </mat-radio-group>
 
           </form>
 
           <li style="margin-top: 25px;"><button mat-raised-button>Limpiar filtros</button></li>
         </ul>
-      </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     </div>
   </div>
+</div>
 </div>
 
 
@@ -286,11 +291,13 @@
                 <h2>{{res.Nombre_Publicacion}}</h2>
               </td>
               <td colspan="1">
+
                 <h2>${{res.Precio_Final}}</h2>
               </td>
             </thead>
             <thead>
-              <td><img src="assets/departamento-pequeno.jpg" alt="img" class="imgresult"></td>
+              <td><img src="assets/img/departamento-pequeno.jpg" alt="img" class="imgresult"></td>
+             
               <td colspan="2">
                 <h1>{{res.Estado}}</h1>
                 <h4>San Antonio, San Martin Texmelucan</h4>
@@ -307,16 +314,14 @@
           </table>
         </div>
       </div>
+   </div>
 
     </div>
-
-  </div>
 
 
 
 
 </div>
-
 
 
 <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">

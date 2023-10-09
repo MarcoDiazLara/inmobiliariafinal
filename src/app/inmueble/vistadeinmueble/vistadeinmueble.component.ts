@@ -11,6 +11,8 @@ import { HttpService } from 'src/app/services/http/http.service';
 
 
 
+
+
 @Component({
   selector: 'app-vistadeinmueble',
   templateUrl: './vistadeinmueble.component.html',
@@ -43,6 +45,7 @@ export class VistadeinmuebleComponent implements OnInit {
   public showSearch: boolean = false;
   public showPrecioEjemplo: boolean= false;
   public showFiltros: boolean=false;
+
 
 
 
@@ -135,15 +138,15 @@ toggleFiltros() {
 }
 
 
+
 detalles(){
   this.router.navigate(['/inmueble/detalles']);
  
 }
 
 
-
 // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
-ngOnInit() {
+ngOnInit(): void {
     
 
     this.http.mostrarInmuebles().subscribe((data:any)=>{
@@ -167,6 +170,7 @@ ngOnInit() {
   private _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');
   }
+
 
 }
 
