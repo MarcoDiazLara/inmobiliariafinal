@@ -66,6 +66,15 @@ export class MenuComponent implements OnInit {
  
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
 
+  abrir(){
+    if(this.isLoggedIn){
+      this.router.navigate(["/inmueble/inmueble"]);
+    }
+    else{
+      this.abrirVentanaEmergente();
+    }
+  }
+
   abrirVentanaEmergente(): void {
     this.ventanaEmergente.nativeElement.style.display = 'block';
   }
