@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-brokerpassword',
   templateUrl: './brokerpassword.component.html',
-  styleUrls: ['./brokerpassword.component.scss'],
+  styleUrls: ['./brokerpassword.component.css'],
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,ReactiveFormsModule],
 })
