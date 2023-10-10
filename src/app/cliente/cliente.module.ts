@@ -28,6 +28,11 @@ import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
 import { ClientepasswordComponent } from './ventanaemergente/clientepassword/clientepassword.component';
 /end/
 
+import { WebModule } from '../web/web.module';
+import { MenuComponent } from '../web/menu/menu.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,11 +42,12 @@ import { ClientepasswordComponent } from './ventanaemergente/clientepassword/cli
     // NotificacionesComponent,
     InmueblesComponent,
     ClientepasswordComponent,
+
   ],
   imports: [
     CommonModule,
     MatToolbarModule,
-    ClienteRoutingModule,
+    
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -57,8 +63,13 @@ import { ClientepasswordComponent } from './ventanaemergente/clientepassword/cli
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    WebModule,
+    ClienteRoutingModule,
     
-  ]
+  ],exports:[
+    ClienteComponent
+    
+  ],
 
 })
 export class ClienteModule { }

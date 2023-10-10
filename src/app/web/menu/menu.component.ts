@@ -83,6 +83,10 @@ export class MenuComponent implements OnInit {
     this.ventanaEmergente.nativeElement.style.display = 'none';
   }
 
+  Editar(){
+    this.router.navigate(["cliente/cliente/clientePerfil"]),{ replaceUrl: true };
+  }
+
  
 
 

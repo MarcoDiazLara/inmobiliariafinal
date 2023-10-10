@@ -38,10 +38,13 @@ export class ClientepasswordComponent implements OnInit {
    if (this.formGeneral){
     let contrasena = this.formGeneral.value.password;
     let contrasena2 = this.formGeneral.value.password2;
-    alert('password: '+ contrasena + 'password2: ' + contrasena2); 
+    let Id_Usuario = localStorage.getItem("Id_Usuario");
+  
     
     if(contrasena == contrasena2){
-      alert("Son iguales los password")  
+      this.httpService.cambiarContra(Id_Usuario,contrasena).subscribe(()=>{ alert("Se ha cambiado la contraseña");});
+      
+      this.closeDialog();
     }
     else{
       alert("Las contraseñas no son iguales")
