@@ -40,7 +40,6 @@ import { WebModule } from './web/web.module';
 
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { BlogComponent } from './blog/blog.component';
 
 
 
@@ -55,9 +54,8 @@ import { BlogComponent } from './blog/blog.component';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
-  
     VistadeinmuebleComponent,
-        BlogComponent,
+ 
 
   
   ],

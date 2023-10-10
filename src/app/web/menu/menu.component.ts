@@ -48,6 +48,12 @@ export class MenuComponent implements OnInit {
 
  }
 
+ blog(){
+  this.router.navigate(['web/blog']);
+
+ }
+
+
 
 
 
