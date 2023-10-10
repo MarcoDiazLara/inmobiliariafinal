@@ -59,6 +59,7 @@ toppings = new FormControl('');
   loading = false;
   hide2 = true;
   datos!: infoUsuario;
+  datos2!: infoUsuario;
 
 
    constructor(public dialog: MatDialog,
@@ -130,6 +131,17 @@ obtenerInfo(){
   }else{
     
     this.datos = data;
+    this.obtenerInfo2();
+  }})
+}
+obtenerInfo2(){
+  this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
+  {if(data ==201){
+    alert("Error al leer usuario");
+  }else{
+    
+    this.datos.Nombre_Usuario = data.Nombre_Usuario;
+    this.datos.Img_Profile = data.Img_Profile;
   }})
 }
  

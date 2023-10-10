@@ -130,4 +130,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'obtenerInfoUsuario.php', params, { headers });
   }
 
+  obtenerInfoUsuario2(p_id: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id="+p_id;
+    return this.httpclient.post(this.url + 'obtenerInfoUsuario2.php', params, { headers });
+  }
+
 }
