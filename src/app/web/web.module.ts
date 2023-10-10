@@ -20,6 +20,9 @@ import { ParticulaComponent } from './particula/particula.component';
 import { InmobiliariacorredorComponent } from './inmobiliariacorredor/inmobiliariacorredor.component';
 import { ConstructoradesarrolladoraComponent } from './constructoradesarrolladora/constructoradesarrolladora.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MapsComponent } from './maps/maps.component';
+import { ClienteComponent } from '../cliente/cliente.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 
@@ -37,25 +40,32 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactoComponent,
     ParticulaComponent,
     InmobiliariacorredorComponent,
-      ConstructoradesarrolladoraComponent,
+    ConstructoradesarrolladoraComponent,
+    MapsComponent,
+    BlogComponent,
+     
+      
+      
+     
 
 
 
   ],
   imports: [
     CommonModule,
-    WebRoutingModule,
+    
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
     FormsModule,
      ReactiveFormsModule,
+     WebRoutingModule,
+     
   ],
   exports:[
     WebComponent,
     FooterComponent,
     DescargaComponent,
-    WebComponent,
     MenuComponent
     
   ],

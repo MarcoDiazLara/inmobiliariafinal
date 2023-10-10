@@ -48,6 +48,18 @@ export class MenuComponent implements OnInit {
 
  }
 
+ blog(){
+  this.router.navigate(['web/blog']);
+
+ }
+
+
+
+
+
+
+
+
  cerrar(){
   //this.httpService.setGlobalVariable(false);
   const itemsToRemove =[
@@ -66,12 +78,25 @@ export class MenuComponent implements OnInit {
  
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
 
+  abrir(){
+    if(this.isLoggedIn){
+      this.router.navigate(["/inmueble/inmueble"]);
+    }
+    else{
+      this.abrirVentanaEmergente();
+    }
+  }
+
   abrirVentanaEmergente(): void {
     this.ventanaEmergente.nativeElement.style.display = 'block';
   }
 
   cerrarVentanaEmergente(): void {
     this.ventanaEmergente.nativeElement.style.display = 'none';
+  }
+
+  Editar(){
+    this.router.navigate(["cliente/cliente/clientePerfil"]),{ replaceUrl: true };
   }
 
  

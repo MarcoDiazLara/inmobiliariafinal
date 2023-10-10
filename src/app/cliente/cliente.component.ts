@@ -28,6 +28,7 @@ export class ClienteComponent implements OnDestroy {
     { name: "Notificaciones", route: "notificaciones",icon: "person" , label: "NOTIFICACIONES",number:'0' },
     { name: "Salir",route: "index",icon: "logout", label: "SALIR" ,number:'1'}
 
+
   ];
 
   private _mobileQueryListener: () => void;

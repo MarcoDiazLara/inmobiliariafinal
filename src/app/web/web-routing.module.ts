@@ -6,6 +6,9 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ParticulaComponent } from './particula/particula.component';
 import { InmobiliariacorredorComponent } from './inmobiliariacorredor/inmobiliariacorredor.component';
 import { ConstructoradesarrolladoraComponent } from './constructoradesarrolladora/constructoradesarrolladora.component';
+import { ClienteComponent } from '../cliente/cliente.component';
+import { MapsComponent } from './maps/maps.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
 
@@ -45,7 +48,21 @@ const routes: Routes = [
     component:ConstructoradesarrolladoraComponent
 
 
+  },
+  {
+    path: 'maps',
+    component: MapsComponent
+  },
+  {
+    path: 'cliente',
+    component: ClienteComponent
+  },
+  
+  {
+    path: 'blog',
+    component: BlogComponent
   }
+  
 
 
 

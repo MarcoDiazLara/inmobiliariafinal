@@ -4,6 +4,7 @@ import { BrokersRoutingModule } from './brokers-routing.module';
 import { BrokersComponent } from './brokers.component';
 import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
 
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 
@@ -22,12 +23,22 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
+import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
+import { ProspectosComponent } from './prospectos/prospectos.component';
+import { ReasignarasesoresComponent } from './reasignarasesores/reasignarasesores.component';
+import { AgendarcitaComponent } from './agendarcita/agendarcita.component';
+import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
 /end/
 
 @NgModule({
   declarations: [
     BrokersComponent,
-    PerfilbrokersComponent
+   
+    NotificacionbrokerComponent,
+    ProspectosComponent,
+    ReasignarasesoresComponent,
+    AgendarcitaComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -49,6 +60,8 @@ import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    BrokerpasswordComponent,
+    PerfilbrokersComponent,
   ]
 })
 export class BrokersModule { }

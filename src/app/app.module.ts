@@ -47,14 +47,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
-  
     VistadeinmuebleComponent,
+ 
+
   
   ],
   imports: [
@@ -88,8 +90,10 @@ import { MatDialogModule } from '@angular/material/dialog';
      MatAutocompleteModule,
      ReactiveFormsModule,
      MatButtonToggleModule,
+     
 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

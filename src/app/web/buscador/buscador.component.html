@@ -41,12 +41,12 @@
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
                                     <span class="input-group-addon">
-                                        <button class="btn btn-outline-inmo" type="submit">Buscar</button>
+                                        <button class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusqueda()">Buscar</button>
                                     </span>
                                 </div>
                             </div>
                             <div class="input-group group-btn content-center">
-                                <button class="btn btn-outline-inmo form-control" type="submit"><i
+                                <button (click)="PageMap()" class="btn btn-outline-inmo form-control" type="submit"><i
                                         class="bi bi-geo-alt-fill"></i></button>
                             </div>
                         </form>
@@ -75,12 +75,12 @@
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
                                     <span class="input-group-addon">
-                                        <button class="btn btn-outline-inmo" type="submit">Buscar</button>
+                                        <button  class="btn btn-outline-inmo" type="submit">Buscar</button>
                                     </span>
                                 </div>
                             </div>
                             <div class="input-group group-btn content-center">
-                                <button class="btn btn-outline-inmo form-control" type="submit"><i
+                                <button (click)="PageMap()" class="btn btn-outline-inmo form-control" type="submit"><i
                                         class="bi bi-geo-alt-fill"></i></button>
                             </div>
                         </form>

@@ -65,3 +65,118 @@ max-width: 1320px;
 margin-right: auto;
 margin-left: auto;
 }
+
+
+//nueva hoja xd
+
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+  padding: 10px;
+
+
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 160px;
+  background-color: #fff;
+  
+}
+
+.custom-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-trigger .dropdown-item-text {
+  color: black; /* Puedes cambiar "red" al color que desees */
+}
+
+
+//lista desplegable
+
+
+
+
+
+
+.nav__list{
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.nav__list a{
+	display:block;
+
+	text-decoration:none;
+
+
+	
+}
+
+.nav__list li{
+	position: relative;
+	float:  left;
+	margin: 0;
+	padding: 0;
+}
+
+.nav__list li:hover{
+	background-color: white;
+  
+
+}
+
+.nav__list ul{
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fff;
+	padding: 0;
+	list-style: none;
+   border: 1px solid #959193 ;
+}
+
+.nav__list ul li{
+	float: none;
+	width: 200px;
+}
+
+.nav__list ul a{
+	line-height: 120%;
+	padding: 10px 15px;
+}
+
+.nav__list ul ul{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	background-color: #fff;
+}
+
+.nav__list li:hover > ul{
+	display: block;
+}

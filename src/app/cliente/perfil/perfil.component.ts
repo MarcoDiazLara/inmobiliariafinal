@@ -19,6 +19,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder } from '@angular/forms';
 import { WebModule } from 'src/app/web/web.module';
 // import { infoUsuario } from 'src/app/services/Interface/Interfaces';
+import { infoUsuario } from 'src/app/services/Interface/Interfaces';
 
 
 
@@ -60,6 +61,9 @@ toppings = new FormControl('');
   hide2 = true;
   // datos!: infoUsuario;
   // datos2!: infoUsuario;
+  datos!: infoUsuario;
+  datos2!: infoUsuario;
+
 
 
    constructor(public dialog: MatDialog,
@@ -71,7 +75,8 @@ toppings = new FormControl('');
     ) {}
  
   ngOnInit(): void {
-    // this.obtenerInfo();
+
+    this.obtenerInfo();
 
     this.formGeneral = this.formBuilder.group({
       nombre: ['', [Validators.required]],
@@ -124,25 +129,26 @@ toppings = new FormControl('');
      }
 }
 
-// obtenerInfo(){
-//   this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
-//   {if(data ==201){
-//     alert("Error al leer usuario");
-//   }else{
+
+obtenerInfo(){
+  this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
+  {if(data ==201){
+    alert("Error al leer usuario");
+  }else{
     
-//     this.datos = data;
-//     this.obtenerInfo2();
-//   }})
-// }
-// obtenerInfo2(){
-//   this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
-//   {if(data ==201){
-//     alert("Error al leer usuario");
-//   }else{
+    this.datos = data;
+    this.obtenerInfo2();
+  }})
+}
+obtenerInfo2(){
+  this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
+  {if(data ==201){
+    alert("Error al leer usuario");
+  }else{
     
-//     this.datos.Nombre_Usuario = data.Nombre_Usuario;
-//     this.datos.Img_Profile = data.Img_Profile;
-//   }})
-// }
+    this.datos.Nombre_Usuario = data.Nombre_Usuario;
+    this.datos.Img_Profile = data.Img_Profile;
+  }})
+}
  
 }

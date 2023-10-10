@@ -7,10 +7,15 @@ import { AgendarcitaclienteComponent } from './agendarcitacliente/agendarcitacli
 import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { WebComponent } from '../web/web.component';
+
 
 const routes: Routes = [
+
+  { path: '', redirectTo: 'cliente', pathMatch: 'full' },
+  
   {
-    path: '',
+    path: 'cliente',
     component:ClienteComponent,
     children: [
       {
@@ -38,7 +43,12 @@ const routes: Routes = [
         component: CambioasesorclienteComponent,
       },
     ],
+  },
+  {
+    path: "index",
+    component: WebComponent
   }
+  
 ];
 
 @NgModule({

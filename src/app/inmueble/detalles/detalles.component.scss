@@ -235,7 +235,57 @@ td{
 
 
 
+// carrusel abajo de la imagen grande
 
+
+.carrusel2 {
+  overflow: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  margin: 1rem;
+  width: 100%;
+}
+
+.carrusel2:hover > :not(:hover) {
+  opacity: 0.2;
+}
+
+.title {
+  width: 100%;
+  display: inline-block;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.carruselimg{
+  border-radius: 10px;
+  width: 100%; /* Ancho del contenedor */
+  height: 100%; /* Alto del contenedor */
+  overflow: hidden; /* Recorta el contenido que desborda el contenedor */
+  border: none; /* Borde opcional */
+}
+
+
+
+
+button{
+  background-color: #8ec3d9;
+}
 
 
 .datos{
@@ -521,4 +571,37 @@ textarea {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
+
+
+
+
+
+
+
+
+
   
+.recorridovr{
+  background: url('https://api.iconify.design/bi/badge-vr-fill.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/bi/badge-vr-fill.svg?color=%23264d5e');
+  background-size: cover; /* Tamaño de la imagen */
+    background-position: center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    width: 50px;
+    height: 50px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

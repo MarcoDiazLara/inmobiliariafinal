@@ -30,6 +30,11 @@ import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesor
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 /end/
 
+import { WebModule } from '../web/web.module';
+import { MenuComponent } from '../web/menu/menu.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,11 +45,11 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
     // PerfilclienteComponent,
+
   ],
   imports: [
     CommonModule,
     MatToolbarModule,
-    ClienteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -60,8 +65,13 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    WebModule,
+    ClienteRoutingModule,
     
-  ]
+  ],exports:[
+    ClienteComponent
+    
+  ],
 
 })
 export class ClienteModule { }

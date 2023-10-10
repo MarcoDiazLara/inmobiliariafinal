@@ -24,3 +24,18 @@ export interface Asesores{
     Apellido_Materno: string,
     Id_Usuario: string
 };
+
+export interface infoUsuario{
+   
+        Apellido_Paterno: "",
+        Apellido_Materno: "",
+        Nombres: "",
+        RFC: "",
+        CURP: "",
+        Contacto_Principal: "",
+        Contacto_Emergencia: "",
+        Email: "",
+        Updated_By: "",
+        Img_Profile: "",
+        Nombre_Usuario: "" 
+};
