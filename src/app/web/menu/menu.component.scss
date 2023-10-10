@@ -115,14 +115,9 @@ margin-left: auto;
 //lista desplegable
 
 
-body{
-	font-family:"HelveticaNeue", Arial,sans-serif;
-	margin: 0;
-}
 
-.nav{
-	margin-top:15px;
-}
+
+
 
 .nav__list{
 	float: left;
@@ -134,12 +129,11 @@ body{
 
 .nav__list a{
 	display:block;
-	color:#333;
+
 	text-decoration:none;
-	font-weight:700;
-	font-size:12px;
-	line-height:32px;
-	padding:0 15px;
+
+
+	
 }
 
 .nav__list li{
@@ -150,7 +144,9 @@ body{
 }
 
 .nav__list li:hover{
-	background-color: gray;
+	background-color: white;
+  
+
 }
 
 .nav__list ul{
@@ -161,6 +157,7 @@ body{
 	background-color: #fff;
 	padding: 0;
 	list-style: none;
+   border: 1px solid #959193 ;
 }
 
 .nav__list ul li{
