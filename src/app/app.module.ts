@@ -54,8 +54,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     RegistroComponent,
     DetallesComponent,
-  
     VistadeinmuebleComponent,
+ 
 
   
   ],

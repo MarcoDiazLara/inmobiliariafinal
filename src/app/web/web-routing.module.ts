@@ -8,6 +8,7 @@ import { InmobiliariacorredorComponent } from './inmobiliariacorredor/inmobiliar
 import { ConstructoradesarrolladoraComponent } from './constructoradesarrolladora/constructoradesarrolladora.component';
 import { ClienteComponent } from '../cliente/cliente.component';
 import { MapsComponent } from './maps/maps.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
 
@@ -53,8 +54,13 @@ const routes: Routes = [
     component: MapsComponent
   },
   {
-    path: "cliente",
+    path: 'cliente',
     component: ClienteComponent
+  },
+  
+  {
+    path: 'blog',
+    component: BlogComponent
   }
   
 

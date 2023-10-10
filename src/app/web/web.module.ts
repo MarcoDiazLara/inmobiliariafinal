@@ -22,6 +22,7 @@ import { ConstructoradesarrolladoraComponent } from './constructoradesarrollador
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapsComponent } from './maps/maps.component';
 import { ClienteComponent } from '../cliente/cliente.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 
@@ -39,8 +40,9 @@ import { ClienteComponent } from '../cliente/cliente.component';
     ContactoComponent,
     ParticulaComponent,
     InmobiliariacorredorComponent,
-      ConstructoradesarrolladoraComponent,
-      MapsComponent,
+    ConstructoradesarrolladoraComponent,
+    MapsComponent,
+    BlogComponent,
      
       
       
@@ -64,7 +66,6 @@ import { ClienteComponent } from '../cliente/cliente.component';
     WebComponent,
     FooterComponent,
     DescargaComponent,
-    WebComponent,
     MenuComponent
     
   ],
