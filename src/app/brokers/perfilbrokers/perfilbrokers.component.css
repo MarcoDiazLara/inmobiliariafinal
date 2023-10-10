@@ -1,0 +1,42 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+
+
+ 
+
+  /* Cambia el color del encabezado */
+  h2 {
+    color: #333; /* Cambia el color a tu preferencia */
+    font-size: 40px; 
+  }
+
+  /* Cambia el color de fondo de los campos de entrada */
+
+
+  /* Cambia el color del texto de las etiquetas de los campos de entrada */
+  mat-label {
+    color: #264D5E; /* Cambia el color a tu preferencia */
+
+  }
+  
+
+  /* Cambia el color del texto de los botones */
+  .btn {
+    background-color: #264D5E;
+    color: white;
+  }
+
+
+  

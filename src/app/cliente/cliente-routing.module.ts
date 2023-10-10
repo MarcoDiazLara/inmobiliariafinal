@@ -5,10 +5,14 @@ import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { WebComponent } from '../web/web.component';
 
 const routes: Routes = [
+
+  { path: '', redirectTo: 'cliente', pathMatch: 'full' },
+  
   {
-    path: '',
+    path: 'cliente',
     component:ClienteComponent,
     children: [
       {
@@ -28,7 +32,12 @@ const routes: Routes = [
         component: NotificacionesComponent,
       },
     ],
+  },
+  {
+    path: "index",
+    component: WebComponent
   }
+  
 ];
 
 @NgModule({

@@ -17,6 +17,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { ClientepasswordComponent } from '../ventanaemergente/clientepassword/clientepassword.component'
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder } from '@angular/forms';
+import { WebModule } from 'src/app/web/web.module';
+import { infoUsuario } from 'src/app/services/Interface/Interfaces';
+
 
 
 
@@ -41,6 +44,7 @@ import { FormBuilder } from '@angular/forms';
     MatCheckboxModule,
     MatButtonModule,
     MatDialogModule, 
+    WebModule
   ],
 })
 
@@ -54,6 +58,7 @@ toppings = new FormControl('');
   formGeneral!:FormGroup;
   loading = false;
   hide2 = true;
+  datos!: infoUsuario;
 
 
    constructor(public dialog: MatDialog,
@@ -65,6 +70,8 @@ toppings = new FormControl('');
     ) {}
  
   ngOnInit(): void {
+    this.obtenerInfo();
+
     this.formGeneral = this.formBuilder.group({
       nombre: ['', [Validators.required]],
       apellidopaterno: ['', [Validators.required]],
@@ -77,6 +84,8 @@ toppings = new FormControl('');
       nombreusuario: ['', [Validators.required]],
       imageInput: ['', [Validators.required]],
     });
+     
+   
   }
 
   // Apartado Dialog Pantalla Emergente 
@@ -114,6 +123,15 @@ toppings = new FormControl('');
      }
 }
 
+obtenerInfo(){
+  this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
+  {if(data ==201){
+    alert("Error al leer usuario");
+  }else{
+    
+    this.datos = data;
+  }})
+}
  
 }
 

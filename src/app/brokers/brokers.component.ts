@@ -13,11 +13,14 @@ export class BrokersComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
   fillerNav = [
-    { name: "Perfil", route: "perfil",icon: "person" , label: "PERFIL",number:'0' },
-    { name: "BROKERS", route: "seguimiento",icon: "person" , label: "BROKER",number:'0' },
-    // { name: "Notificaciones", route: "notificaciones",icon: "person" , label: "NOTIFICACIONES",number:'0' },
+    { name: "Perfil", route: "perfil",icon: "person" , label: "Perfil",number:'0' },
+    { name: "BROKERS", route: "seguimiento",icon: "person" , label: "Broker",number:'0' },
+     { name: "Notificaciones", route: "notificacionbroker",icon: "notifications" , label: "Notificaciones",number:'0' },
+     { name: "prospecto", route: "prospectos",icon: "supervisor_account" , label: "Prospectos",number:'0' },
+     { name: "reasignar", route: "reasignarasesores",icon: "assignment" , label: "Reasignar",number:'0' },
+     { name: "Agendar", route: " Agendarcita ",icon: "calendar_today", label: "Agendar Cita",number:'0' },
     // { name: "Inmuebles", route: "inmueble",icon: "home" , label: "Inmueble",number:'0' },
-    { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'}
+    { name: "Salir",icon: "logout", label: "Salir" ,number:'1'}
 
   ];
 

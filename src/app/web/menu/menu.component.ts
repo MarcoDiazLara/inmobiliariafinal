@@ -53,6 +53,7 @@ export class MenuComponent implements OnInit {
 
 
 
+
  cerrar(){
   //this.httpService.setGlobalVariable(false);
   const itemsToRemove =[
@@ -86,6 +87,10 @@ export class MenuComponent implements OnInit {
 
   cerrarVentanaEmergente(): void {
     this.ventanaEmergente.nativeElement.style.display = 'none';
+  }
+
+  Editar(){
+    this.router.navigate(["cliente/cliente/clientePerfil"]),{ replaceUrl: true };
   }
 
  

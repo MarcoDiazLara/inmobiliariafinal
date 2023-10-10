@@ -33,11 +33,63 @@
                   </a>
               </li>
               <!--Menu Servicios-->
-              <li class="nav-item mx-1">
+
+
+              <nav class="nav">
+                <ul class="nav__list">
+                
+                  <li>
+                    <a href="#">Servicios</a>
+                    <ul>
+                      <li>
+                        <a href="">Sub Menu 1</a>
+                        <ul>
+                          <li><a href="">Sub Menu del menu 1</a></li>
+                          <li><a href="">Sub Menu del menu 2</a></li>
+                          <li><a href="">Sub Menu del menu 3</a></li>
+                          <li><a href="">Sub Menu del menu 4</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="">Sub Menu 2</a></li>
+                      <li><a href="">Sub Menu 3</a></li>
+                      <li><a href="">Sub Menu 4</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+
+          
+              <!-- <div class="custom-dropdown">
+                <div id="dropdownMenuButton" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                  <span class="dropdown-item-text">Servicios</span>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="Editar()">Editar Perfil</a> 
+                  
+                  <a class="dropdown-item" href="#">Panel de Control</a>
+                  <a class="dropdown-item" href="#" (click)="cerrar()">Cerrar Sesion</a>
+                </div>
+              </div> -->
+
+
+               <!-- <div class="dropdown">
+                <button  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  
+                  <li><span class="dropdown-item-text">Servicios</span></li>
+                 
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item"  (click)="Editar()">Editar Perfil</a>
+                  <a class="dropdown-item" href="#">Panel de Control</a>
+                  <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
+                </div>
+              </div> -->
+              <!-- <li class="nav-item mx-1">
                   <a class="nav-link" role="button" aria-expanded="false">
                       Servicios
                   </a>
-              </li>
+              </li> -->
+            
               <!--Menu Inmobiliarias-->
               <li class="nav-item mx-1">
                   <a class="nav-link" role="button" aria-expanded="false">
@@ -46,7 +98,7 @@
               </li>
               <!--Menu Forma Parte de Nosotros-->
               <li class="nav-item mx-1">
-                  <a class="nav-link" role="button" aria-expanded="false">
+                  <a  class="nav-link" role="button" aria-expanded="false">
                       Blog
                   </a>
               </li>
@@ -123,7 +175,7 @@
                   <i class="bi bi-person-circle m-1 size-icon"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Editar Perfil</a>
+                  <a class="dropdown-item"  (click)="Editar()">Editar Perfil</a>
                   <a class="dropdown-item" href="#">Panel de Control</a>
                   <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
                 </div>

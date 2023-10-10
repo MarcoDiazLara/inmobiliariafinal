@@ -47,6 +47,9 @@ export class BuscadorComponent implements OnInit {
     this.router.navigate(["/inmueble/vista"]);
   }
 
-  
+  PageMap(){
+    this.router.navigate(["/web/maps"]);
+    
+  }
 
 }

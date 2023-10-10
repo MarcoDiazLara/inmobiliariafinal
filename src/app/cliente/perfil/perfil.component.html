@@ -9,9 +9,9 @@
           <mat-icon>wallpaper</mat-icon>
          <div>
            <input #imageInput class="form-control" type="file" accept="image/*"  formControlName="imageInput">
-           <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')" >
+            <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')" >
               Seleccione una imagen <strong>es obligatorio</strong>
-           </mat-error>
+           </mat-error> 
          </div>
       </div>
       </div>
@@ -33,7 +33,7 @@
       <div class="row">
         <div class="col-md-3">
           <mat-form-field appearance="fill">
-            <input matInput type="text" placeholder="" formControlName="nombre">
+            <input matInput type="text" placeholder="" formControlName="nombre" [(ngModel)]="datos.Nombres">
             <mat-label>
               <b>Nombre</b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
@@ -44,7 +44,7 @@
   
         <div class="col-md-3">
           <mat-form-field appearance="fill">
-            <input matInput type="text" placeholder="" formControlName="apellidopaterno">
+            <input matInput type="text" placeholder="" formControlName="apellidopaterno" [(ngModel)]="datos.Apellido_Paterno">
             <mat-label>
               <b>Apellido Paterno</b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('apellidopaterno')?.hasError('required')">
@@ -55,7 +55,7 @@
   
         <div class="col-md-3">
           <mat-form-field appearance="fill">
-            <input matInput type="text" placeholder="" formControlName="apellidomaterno">
+            <input matInput type="text" placeholder="" formControlName="apellidomaterno" [(ngModel)]="datos.Apellido_Materno">
             <mat-label>
               <b> apellidomaterno </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
@@ -66,7 +66,7 @@
   
         <div class="col-md-3 ">
           <mat-form-field appearance="fill">
-            <input matInput type="text" placeholder="" formControlName="curp">
+            <input matInput type="text" placeholder="" formControlName="curp" [(ngModel)]="datos.CURP">
             <mat-label>
               <b>CURP</b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('curp')?.hasError('required')">
@@ -79,7 +79,7 @@
     <div class="row">
       <div class="col-md-3">
         <mat-form-field appearance="fill">
-          <input matInput type="text" placeholder="" formControlName="rfc">
+          <input matInput type="text" placeholder="" formControlName="rfc" [(ngModel)]="datos.RFC">
           <mat-label>
               <b>RFC</b></mat-label>
           <mat-error *ngIf="this.formGeneral.get('rfc')?.hasError('required')">
@@ -92,7 +92,7 @@
       <div class="col-md-3">
         <mat-form-field appearance="fill">
           <mat-label><b>Contacto Principal</b></mat-label>
-          <input matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10" style="margin-left:6%;">
+          <input matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10" style="margin-left:6%;" [(ngModel)]="datos.Contacto_Principal">
           <mat-error *ngIf="this.formGeneral.get('contactoprincipal')?.hasError('required')">
               El número de teléfono <strong>es requerido</strong>
           </mat-error>
@@ -103,7 +103,7 @@
       <div class="col-md-3">
         <mat-form-field appearance="fill">
           <mat-label><b>Contacto Emergencia</b></mat-label>
-          <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10" style="margin-left:6%;">
+          <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10" style="margin-left:6%;" [(ngModel)]="datos.Contacto_Emergencia">
           <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
               El número de Emergencia <strong>es requerido</strong>
           </mat-error>
@@ -114,7 +114,7 @@
       <div class="col-md-3 alinea">
         <mat-form-field appearance="legacy" style="width: 95%;">
           <mat-label style="margin-left: 6%;">Correo</mat-label>
-          <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+          <input matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datos.Email">
           <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
               Correo es <strong>requerido</strong>
           </mat-error>
@@ -125,7 +125,7 @@
     <div class="row">
       <div class="col-md-3 alinea">
         <mat-form-field appearance="fill">
-          <input matInput type="text" placeholder="" formControlName="nombreusuario">
+          <input matInput type="text" placeholder="" formControlName="nombreusuario" >
           <mat-label>
               <b>Nombre Usuario </b></mat-label>
           <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
@@ -150,7 +150,7 @@
      <br>
     <div class="row">
       <div class="col-md-6 cssbutton">
-        <button mat-raised-button>Actualizar</button>
+        <button (click)="Guardardatos()" mat-raised-button>Actualizar</button>
       </div> 
       <div class="col-md-6 cssbutton">
         <button mat-raised-button color="#264D5E" (click)="openpassword()">cambio de Password</button>

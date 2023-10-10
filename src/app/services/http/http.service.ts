@@ -118,4 +118,16 @@ export class HttpService {
     return this.httpclient.post(this.url + 'consultarInmueble.php',  { headers });
   }
 
+  cambiarContra(p_id: any, password: string){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id="+p_id + "&password="+password;
+    return this.httpclient.post(this.url + 'cambiarContrasena.php', params, { headers });
+  }
+
+  obtenerInfoUsuario(p_id: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id="+p_id;
+    return this.httpclient.post(this.url + 'obtenerInfoUsuario.php', params, { headers });
+  }
+
 }
