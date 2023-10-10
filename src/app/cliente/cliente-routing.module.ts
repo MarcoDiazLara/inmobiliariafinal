@@ -6,6 +6,7 @@ import { SeguimientoclienteComponent } from './seguimientocliente/seguimientocli
 import { AgendarcitaclienteComponent } from './agendarcitacliente/agendarcitacliente.component';
 import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path:'Perfil',
         component: PerfilclienteComponent,
+      },
+      {
+        path:'Perfil',
+        component: PerfilComponent,
       },
       {
         path:'notificacion',
