@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './cliente.component';
-import { InmueblesComponent } from './inmuebles/inmuebles.component';
-import { PerfilComponent } from './perfil/perfil.component';
-import { SeguimientoComponent } from './seguimiento/seguimiento.component';
-import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { NotificacionesclienteComponent } from './notificacionescliente/notificacionescliente.component';
+import { SeguimientoclienteComponent } from './seguimientocliente/seguimientocliente.component';
+import { AgendarcitaclienteComponent } from './agendarcitacliente/agendarcitacliente.component';
+import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
+import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 
 const routes: Routes = [
   {
@@ -12,20 +13,24 @@ const routes: Routes = [
     component:ClienteComponent,
     children: [
       {
-        path: 'inmueble',
-        component: InmueblesComponent,
+        path:'Perfil',
+        component: PerfilclienteComponent,
       },
       {
-        path:'clientePerfil',
-        component: PerfilComponent,
+        path:'notificacion',
+        component: NotificacionesclienteComponent,
       },
       {
         path:'seguimiento',
-        component: SeguimientoComponent,
+        component: SeguimientoclienteComponent,
       },
       {
-        path:'notificaciones',
-        component: NotificacionesComponent,
+        path:'agendacita',
+        component: AgendarcitaclienteComponent,
+      },
+      {
+        path:'reasignacion',
+        component: CambioasesorclienteComponent,
       },
     ],
   }
