@@ -94,7 +94,7 @@
           <form class="ps-4 pe-4">
 
             <h4 class="h4filtros">Palabras clave</h4>
-            <input type="text" placeholder="Ej. amueblado, jardin, cochera " [formControl]="control"
+            <input type="text" placeholder="Ej. amueblado, jardin, cochera" [formControl]="control"
               [matAutocomplete]="auto" class="form-control">
             <mat-autocomplete #auto="matAutocomplete">
               <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
