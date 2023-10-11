@@ -17,8 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ClientepasswordComponent } from '../ventanaemergente/clientepassword/clientepassword.component'
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder } from '@angular/forms';
-import { WebModule } from 'src/app/web/web.module';
-// import { infoUsuario } from 'src/app/services/Interface/Interfaces';
+import { WebModule } from 'src/app/web/web.module'
 import { infoUsuario } from 'src/app/services/Interface/Interfaces';
 
 

@@ -32,6 +32,7 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
 
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -45,6 +46,7 @@ import { MenuComponent } from '../web/menu/menu.component';
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
     // PerfilclienteComponent,
+    // PerfilComponent,
 
   ],
   imports: [
@@ -68,9 +70,9 @@ import { MenuComponent } from '../web/menu/menu.component';
     WebModule,
     ClienteRoutingModule,
     
-  ],exports:[
-    ClienteComponent
-    
+  ],
+  exports:[
+    ClienteComponent 
   ],
 
 })
