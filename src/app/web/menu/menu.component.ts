@@ -96,7 +96,7 @@ export class MenuComponent implements OnInit {
   }
 
   Editar(){
-    this.router.navigate(["cliente/cliente/clientePerfil"]),{ replaceUrl: true };
+    this.router.navigate(["cliente/cliente/Perfil"]),{ replaceUrl: true };
   }
 
  

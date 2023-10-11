@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ClientepasswordComponent } from '../ventanaemergente/clientepassword/clientepassword.component'
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder } from '@angular/forms';
+import { infoUsuario } from 'src/app/services/Interface/Interfaces';
 
 
 @Component({
@@ -50,6 +51,9 @@ export class PerfilclienteComponent implements OnInit {
   loading = false;
   hide2 = true;
 
+  datos!: infoUsuario;
+  datos2!: infoUsuario;
+
   constructor(public dialog: MatDialog,
 
     private formBuilder: FormBuilder,
@@ -59,6 +63,8 @@ export class PerfilclienteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.obtenerInfo();
     this.formGeneral = this.formBuilder.group({
       nombre:['',[Validators.required]],
       apellidopaterno:['',[Validators.required]],
@@ -109,7 +115,27 @@ export class PerfilclienteComponent implements OnInit {
     }
   }
 
-
+  obtenerInfo(){
+    this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
+    {if(data ==201){
+      alert("Error al leer usuario");
+    }else{
+      
+      this.datos = data;
+      this.obtenerInfo2();
+    }})
+  }
+  obtenerInfo2(){
+    this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
+    {if(data ==201){
+      alert("Error al leer usuario");
+    }else{
+      
+      this.datos.Nombre_Usuario = data.Nombre_Usuario;
+      this.datos.Img_Profile = data.Img_Profile;
+    }})
+  }
+   
   
 
 

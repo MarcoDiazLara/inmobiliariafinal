@@ -16,7 +16,7 @@ export class ClienteComponent implements OnDestroy {
   nombre : any;
  
      fillerNav = [
-    { name: "Perfil", route: "Perfil",icon: "person" , label: "PERFIL",number:'0' },
+    { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
     { name: "Notificaciones", route: "notificacion",icon: "notifications" , label: "Notificaciones",number:'0' },
     { name: "seguimientocliente", route: "seguimiento",icon: "content_paste_search" , label: "Seguimiento",number:'0' },
     { name: "agendarcitacliente", route: "agendacita",icon: "calendar_today" , label: "Agendar Cita",number:'0' },
