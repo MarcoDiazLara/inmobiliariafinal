@@ -99,6 +99,7 @@ export class PerfilclienteComponent implements OnInit {
 
 
     if (this.formGeneral) {
+      let id = localStorage.getItem("Id_Usuario");
       let nombre = this.formGeneral.value.nombre;
       let apellidopaterno = this.formGeneral.value.apellidopaterno;
       let apellidomaterno = this.formGeneral.value.apellidomaterno;
@@ -109,8 +110,14 @@ export class PerfilclienteComponent implements OnInit {
       let email = this.formGeneral.value.email;
       let nombreusuario = this.formGeneral.value.nombreusuario;
       let imageInput = this.formGeneral.value.imageInput;
-
-      alert('nombre: ' + nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: ' + apellidomaterno + 'curp: ' + curp + 'rfc: ' + rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: ' + contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'imageInput' + imageInput);
+  //id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario , imageInput
+      this.httpService.updateInfoUsuario(id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario ).subscribe((data : any)=>{
+        if(data ==1){
+          alert("Se actualizo usuario");
+        }else{
+          alert("Error al actualizar");
+        }
+      })
 
     }
   }

@@ -136,4 +136,12 @@ export class HttpService {
     return this.httpclient.post(this.url + 'obtenerInfoUsuario2.php', params, { headers });
   }
 
+  updateInfoUsuario(p_id: any, p_nombres: any, p_a_paterno: any,  p_a_materno: any, p_CURP: any,
+    p_RFC: any, p_tel_principal: any,p_tel_emer: any,p_correo: any, p_nombre_usu: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id="+p_id +"&p_nombres="+p_nombres +"&p_a_paterno="+p_a_paterno+"&p_a_materno="+p_a_materno+"&p_CURP="+p_CURP+"&p_RFC="+p_RFC+
+    "&p_tel_principal="+p_tel_principal +"&p_tel_emer="+p_tel_emer+"&p_correo="+p_correo+"&p_nombre_usu="+p_nombre_usu;
+    return this.httpclient.post(this.url + 'sp_web_updateInfoUsuario.php', params, { headers });
+  }
+
 }
