@@ -58,8 +58,6 @@ toppings = new FormControl('');
   formGeneral!:FormGroup;
   loading = false;
   hide2 = true;
-  // datos!: infoUsuario;
-  // datos2!: infoUsuario;
   datos!: infoUsuario;
   datos2!: infoUsuario;
 

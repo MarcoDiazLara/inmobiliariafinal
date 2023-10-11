@@ -57,34 +57,50 @@
             </mat-form-field>
         </div>
         <div class="col-md-4">
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-            <mat-form-field appearance="fill" style="width: 100%;">
-            <textarea matInput rows ="3"  type="text" placeholder="" formControlName="motivocliente"></textarea>
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <textarea matInput rows ="1"  type="text" placeholder="" formControlName="motivocliente"></textarea>
             <mat-label><b> Motivo </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('motivocliente')?.hasError('required')">
             Descripcion<strong>Obligatorio</strong>
             </mat-error>
             </mat-form-field>
         </div>
-        <div class="col-md-6">
-              <mat-form-field style="width: 100%;">
-              <mat-label><b>Fecha de cita</b></mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="fechacita">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="this.formGeneral.get('fechacita')?.hasError('required')">
-               Fecha<strong>Obligatorio</strong>
-              </mat-error>
-              </mat-form-field>
-               
+      </div>
+
+      <div class="row">
+
+    
+        <div class="col-md-4">
+          <mat-form-field  style="width: 100%;">
+            <mat-label><b>Fecha de cita</b></mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fechacita">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="this.formGeneral.get('fechacita')?.hasError('required')">
+             Fecha<strong>Obligatorio</strong>
+            </mat-error>
+            </mat-form-field> 
+        </div>
+
+      </div>
+
+       <br>
+       <br>
+
+      <div class="row">
+        <div class="col-md-4 ">
+           <mat-form-field style="width: 100%;">
+           <mat-label><b>Hora de la Cita</b></mat-label>
+           <input matInput type="time" formControlName="horacita">
+           <mat-error *ngIf="this.formGeneral.get('horacita')?.hasError('required')">
+            La hora es  <strong> requerida </strong>
+           </mat-error>
+          </mat-form-field>
         </div>
       </div>
+       <br>
+       <br>
       <div class="row">
         <div class="col-md-6 ">
           <button mat-raised-button (click)="Guardardatos()">Agendar cita</button>

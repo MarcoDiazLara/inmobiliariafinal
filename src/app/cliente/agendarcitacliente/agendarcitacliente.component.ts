@@ -67,6 +67,7 @@ export class AgendarcitaclienteComponent implements OnInit {
       contactoprincipal: ['', [Validators.required]],
       motivocliente:['',[Validators.required]],
       fechacita:['',[Validators.required]],
+      horacita:['',[Validators.required]],
   });
   }
 
@@ -81,9 +82,11 @@ export class AgendarcitaclienteComponent implements OnInit {
       let email = this.formGeneral.value.email;
       let motivocliente = this.formGeneral.value.motivocliente;
       let fechacita = this.formGeneral.value.fechacita;
+      let horacita = this.formGeneral.value.horacita;
+
       
 
-      alert('nombre: ' + nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: ' + apellidomaterno + 'contactoprincipal: ' + contactoprincipal + 'email: ' + email );
+      alert('nombre: ' + nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: ' + apellidomaterno + 'contactoprincipal: ' + contactoprincipal + 'email: ' + email + 'motivocliente'+ motivocliente + 'fechacita'+ fechacita + 'horacita' + horacita);
 
     }
   }
