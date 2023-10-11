@@ -1,0 +1,119 @@
+.nav {
+    display: flex;
+    align-items: center; /* Centramos verticalmente */
+    margin-left: 40px;
+  }
+
+  .nav img {
+    margin-right: 120px; /* Espacio entre la imagen y los enlaces de navegación */
+
+  }
+  .nav-link {
+    color:#959193; /* Cambia "red" al color que desees */
+  }
+  
+  .card{
+    border: 0px solid white; /* Agregar un borde verde */
+
+
+}
+h2{
+
+  color: #959193;
+  font-size: 30px; 
+  text-align: center;
+}
+
+
+h3{
+
+  color: black;
+  font-size: 25px; 
+  text-align: center;
+
+}
+.car-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente las tarjetas */
+}
+
+.car {
+  width: 30%; /* Ajusta el ancho de las tarjetas según tus necesidades */
+  border: 1px solid #ccc; /* Borde opcional */
+  padding: 20px; /* Espaciado opcional */
+  margin: 30px; /* Margen opcional */
+
+}
+.car{
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+
+  position: relative;
+
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+ }
+ 
+ .car-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+ }
+ 
+ .car-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #38B6E3;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+ }
+ 
+ .text-body {
+  color: rgb(134, 134, 134);
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-size: 1.5em;
+  font-weight: bold;
+ }
+ 
+ /*Hover*/
+ .car:hover {
+  border-color: #38B6E3;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+ }
+ 
+ .car:hover .car-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+ }
+ 
+ .car-image {
+  width: 100%; /* Modifica el ancho de la imagen según tus necesidades */
+  height: auto; /* Mantiene la relación de aspecto original */
+}
+ 
+
+
+
+
+
+
+
+
+
+
+

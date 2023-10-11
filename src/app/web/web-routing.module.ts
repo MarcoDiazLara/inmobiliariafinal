@@ -9,6 +9,7 @@ import { ConstructoradesarrolladoraComponent } from './constructoradesarrollador
 import { ClienteComponent } from '../cliente/cliente.component';
 import { MapsComponent } from './maps/maps.component';
 import { BlogComponent } from './blog/blog.component';
+import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,12 @@ const routes: Routes = [
     path:'contacto',
     component:ContactoComponent
     
+  },
+  {
+
+    path:'Guiarentar',
+    component:GuiarentarComponent
+
   },
 
 

@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapsComponent } from './maps/maps.component';
 import { ClienteComponent } from '../cliente/cliente.component';
 import { BlogComponent } from './blog/blog.component';
+import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 
 
 
@@ -43,6 +44,7 @@ import { BlogComponent } from './blog/blog.component';
     ConstructoradesarrolladoraComponent,
     MapsComponent,
     BlogComponent,
+    GuiarentarComponent,
      
       
       
