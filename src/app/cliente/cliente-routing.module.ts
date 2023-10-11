@@ -18,10 +18,7 @@ const routes: Routes = [
     path: 'cliente',
     component:ClienteComponent,
     children: [
-      {
-        path:'Perfil',
-        component: PerfilclienteComponent,
-      },
+      
       {
         path:'Perfil',
         component: PerfilComponent,

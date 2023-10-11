@@ -17,13 +17,13 @@ export class ClienteComponent implements OnDestroy {
  
      fillerNav = [
 
-    // { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
+     { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
     // { name: "Notificaciones", route: "notificacion",icon: "notifications" , label: "Notificaciones",number:'0' },
     // { name: "seguimientocliente", route: "seguimiento",icon: "content_paste_search" , label: "Seguimiento",number:'0' },
     // { name: "agendarcitacliente", route: "agendacita",icon: "calendar_today" , label: "Agendar Cita",number:'0' },
     // { name: "cambioasesorcliente", route: "reasignacion",icon: "assignment" , label: "Reasignar",number:'0' },
     // { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'}
-    { name: "Perfil", route: "clientePerfil",icon: "person" , label: "PERFIL",number:'0' },
+    //{ name: "Perfil", route: "clientePerfil",icon: "person" , label: "PERFIL",number:'0' },
     { name: "Seguimiento", route: "seguimiento",icon: "perm_contact_calendar" , label: "SEGUMIENTO",number:'0'},
     { name: "Notificaciones", route: "notificaciones",icon: "person" , label: "NOTIFICACIONES",number:'0' },
     { name: "Salir",route: "index",icon: "logout", label: "SALIR" ,number:'1'}
