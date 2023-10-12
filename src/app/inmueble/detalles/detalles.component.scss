@@ -28,9 +28,9 @@ td{
 
 
 .divider {
-    height: 20px; /* Altura de la línea */
-    background-color: #264D5E; /* Color de fondo de la línea (puedes cambiarlo) */
-    margin: 0; /* Margen cero para evitar espacios innecesarios */
+    height: 20px;
+    background-color: #264D5E;
+    margin: 0; 
 }
 .detalles{
     width: 100%;
@@ -44,199 +44,98 @@ td{
 
 }
 
-/* aqui van los iconos traidos desde internet */
+.backarrow, .plane, .map, .money, .checklist, .favorite, .share,
+.other, .wc, .room, .car, .rule, .garden, .floor, .warehouse, .tank,
+.pool, .wapp
+{
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+
+}
 
 .backarrow{
     background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-
 }
 
 .plane{
     background: url('https://api.iconify.design/fa/send.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/fa/send.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
 }
 
 .map{
     background: url('https://api.iconify.design/carbon/map.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/carbon/map.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 
 .money{
     background: url('https://api.iconify.design/solar/hand-money-outline.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/solar/hand-money-outline.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .checklist{
     background: url('https://api.iconify.design/material-symbols/checklist.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/material-symbols/checklist.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 
 .favorite{
     background: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e');
-   
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    
+    content: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e');    
 }
 .share{
     background: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-  
+    content: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e');  
 }
 .other{
     background: url('https://api.iconify.design/icon-park-outline/other.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/icon-park-outline/other.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
 }
 
 
 .wc{
     background: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 
 .room{
     background: url('https://api.iconify.design/fluent/bed-20-regular.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/fluent/bed-20-regular.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .car{
     background: url('https://api.iconify.design/ant-design/car-outlined.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/ant-design/car-outlined.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .rule{
     background: url('https://api.iconify.design/clarity/ruler-pencil-line.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/clarity/ruler-pencil-line.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .garden{
     background: url('https://api.iconify.design/guidance/garden.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/guidance/garden.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 
 .floor{
     background: url('https://api.iconify.design/material-symbols/floor-rounded.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/material-symbols/floor-rounded.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .warehouse{
     background: url('https://api.iconify.design/ph/warehouse-light.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/ph/warehouse-light.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .tank{
     background: url('https://api.iconify.design/icon-park-outline/water.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/icon-park-outline/water.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .pool{
     background: url('https://api.iconify.design/ic/round-pool.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/ic/round-pool.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
 .wapp{
     background: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e');
-    background-size: cover; /* Tamaño de la imagen */
-    background-position: center; /* Posición de la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
 }
-
-
-
-// carrusel abajo de la imagen grande
-
 
 .carrusel2 {
   overflow: auto;
@@ -274,14 +173,11 @@ td{
 
 .carruselimg{
   border-radius: 10px;
-  width: 100%; /* Ancho del contenedor */
-  height: 100%; /* Alto del contenedor */
-  overflow: hidden; /* Recorta el contenido que desborda el contenedor */
-  border: none; /* Borde opcional */
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden; 
+  border: none; 
 }
-
-
-
 
 button{
   background-color: #8ec3d9;
@@ -303,23 +199,18 @@ img{
 }
 
 #caja{
-    
-
-    border: 1px solid #38B6E3; /* Borde de la caja de 1 píxel con color gris*/
-    margin: 0px auto 50px; /* Margen vertical y horizontal para centrar */
+    border: 1px solid #38B6E3;
+    margin: 0px auto 50px; 
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 16px;
-    width: 450px; /* Ancho maximo de la caja */
+    width: 450px;
     height: 1200px;
     text-align: center;
     background-color: #ffffff;
  
       
 }
-
- /* Estilos CSS para dar formato al formulario */
-
 .form-group {
     margin-bottom: 20px;
 }
@@ -345,35 +236,25 @@ textarea {
     height: 150px;
 }
 
-/* Contenedor que recorta la imagen */
 .imagen-recortada {
     border-radius: 15px;
-    width: 100%; /* Ancho del contenedor */
-    height: 400px; /* Alto del contenedor */
-    overflow: hidden; /* Recorta el contenido que desborda el contenedor */
-    border: 1px solid #ccc; /* Borde opcional */
+    width: 100%; 
+    height: 400px;
+    overflow: hidden; 
+    border: 1px solid #ccc; 
     margin-bottom: 10px;
   }
 
-  /* Estilo de la imagen recortada */
   .imagen-recortada img {
-    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
-    height: 100%; /* Mantiene la relación de aspecto original */
-    object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
   }
-
 
   .mat-raised-button .WhatsApp{
     margin-top: 15px;
     background-color: #25d366;
   }
-
-
-
-
-
-/*---------funcion del boton favoritos------------*/
-
   .favoriteButton {
     border: none;
     border-radius: 50%;
@@ -398,7 +279,6 @@ textarea {
             transform: scale(1.1) translateY(-3px);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   }
-  
   .favoriteButton svg {
     display: block;
     fill: #264d5e;
@@ -410,10 +290,6 @@ textarea {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-
-
-  /*---------funcion del boton Other------------*/
-
   .otherButton {
     border: none;
     border-radius: 50%;
@@ -450,17 +326,6 @@ textarea {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-
-
-
-
-
-
-/*---------funcion del boton share------------*/
-
-
-
-
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 .challenge {
   width: 541px;
@@ -570,17 +435,7 @@ textarea {
   opacity: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
-}
-
-
-
-
-
-
-
-
-
-  
+} 
 .recorridovr{
   background: url('https://api.iconify.design/bi/badge-vr-fill.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/bi/badge-vr-fill.svg?color=%23264d5e');
@@ -591,17 +446,3 @@ textarea {
     height: 50px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

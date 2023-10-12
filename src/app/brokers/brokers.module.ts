@@ -37,7 +37,7 @@ import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.compone
     NotificacionbrokerComponent,
     ProspectosComponent,
     ReasignarasesoresComponent,
-    AgendarcitaComponent,
+    
   
   ],
   imports: [
@@ -62,6 +62,7 @@ import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.compone
     MatFormFieldModule,
     BrokerpasswordComponent,
     PerfilbrokersComponent,
+    AgendarcitaComponent,
   ]
 })
 export class BrokersModule { }

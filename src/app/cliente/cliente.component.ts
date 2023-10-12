@@ -41,7 +41,7 @@ export class ClienteComponent implements OnDestroy {
 
   public salir(op:any) {
 
-    // alert("diste clic en salir"+op);
+    this.router.navigate(["/web"]);
   }
 
 }
