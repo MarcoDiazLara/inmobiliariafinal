@@ -15,8 +15,8 @@ export class CompanyAdminComponent implements OnDestroy {
 
      fillerNav = [
     { name: "Perfil", route: "perfil",icon: "person" , label: "PERFIL",number:'0' },
-    { name: "Altainmobiliaria", route: "altainmo",icon: "perm_contact_calendar" , label: "Alta de usuarios",number:'0'},
-    { name: "altasocio", route: "altasocio",icon: "perm_contact_calendar" , label: "Alta de socios",number:'0'},
+    { name: "altabrokers", route: "altabrokers",icon: "perm_contact_calendar" , label: "Alta de brokers",number:'0'},
+  
     
   ];
 

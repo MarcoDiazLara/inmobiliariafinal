@@ -21,6 +21,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {EliminarasesoresComponent} from './eliminarasesores/eliminarasesores.component';
+import { AltausuarioComponent } from './altausuario/altausuario.component';
+import { AltasocioComponent } from './altasocio/altasocio.component';
 
 
 
@@ -30,6 +32,8 @@ import {EliminarasesoresComponent} from './eliminarasesores/eliminarasesores.com
   declarations: [
   MasterAdminComponent,
   EliminarasesoresComponent,
+  // AltasocioComponent,
+  // AltausuarioComponent,
   
 ],
   imports: [

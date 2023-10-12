@@ -42,7 +42,7 @@ import { MenuComponent } from '../web/menu/menu.component';
     ClienteComponent,
     ClientepasswordComponent,
     NotificacionesclienteComponent,
-    SeguimientoclienteComponent,
+    // SeguimientoclienteComponent,
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
     // PerfilclienteComponent,
