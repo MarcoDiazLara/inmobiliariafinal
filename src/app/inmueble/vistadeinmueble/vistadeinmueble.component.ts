@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import {  ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
@@ -45,12 +45,17 @@ export class VistadeinmuebleComponent implements OnInit {
   public showSearch: boolean = false;
   public showPrecioEjemplo: boolean= false;
   public showFiltros: boolean=false;
+  selectedValue = '';
+ // Definir un arreglo de opciones
+ options: string[] = ["Sin Coincidencias...","Opción 1", "Opción 2", "Opción 3", "Opción 4"
+ ,"Opción 5", "Opción 6", "Opción 7", "Opción 8"
+ ,"Opción 9", "Opción 10", "Opción 11", "Opción 12"
+ ,"Opción 13", "Opción 14", "Opción 15", "Opción 16"];
 
 
 
 
-
-  constructor( private el: ElementRef, private router:Router , private  http:HttpService) { 
+  constructor( private el: ElementRef, private router:Router , private  http:HttpService, private renderer: Renderer2) { 
     this.filteredStreets = new Observable<string[]>();
   }
 
@@ -126,6 +131,13 @@ toggleSearch() {
   this.showRecamaras = false;
   this.showFiltros =false;
 }
+selectOption(value: string) {
+  this.selectedValue = value;
+  this.showSearch = false;
+}
+
+
+
 // Función para mostrar/ocultar la barra de resultados de escritura en busqueda
 toggleFiltros() {
   this.showFiltros = !this.showFiltros;

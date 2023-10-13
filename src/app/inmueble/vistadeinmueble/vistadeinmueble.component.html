@@ -18,10 +18,10 @@
     <div class="divider"></div>
 
     <div class="buscador">
-      <input class="form-control" type="search" (click)="toggleSearch()" placeholder="Ingresa tu ciudad o Localidad"
+      <input class="form-control" type="search" (click)="toggleSearch()"  [value]="selectedValue" placeholder="Ingresa tu ciudad o Localidad"
         aria-label="Buscar">
       <ul *ngIf="showSearch" class="dropdown-search">
-        <li><span> Sin Coincidencias...</span></li>
+        <li *ngFor="let option of options" (click)="selectOption(option)">{{ option }}</li>
       </ul>
       <button class="btn btn-outline-secondary" type="submit">
         <img class="lupa">
@@ -163,6 +163,16 @@
               <mat-button-toggle>+5</mat-button-toggle>
             </mat-button-toggle-group>
 
+            <h4 class="h4filtros">Estacionamiento</h4>
+
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle>1</mat-button-toggle>
+              <mat-button-toggle>2</mat-button-toggle>
+              <mat-button-toggle>3</mat-button-toggle>
+              <mat-button-toggle>4</mat-button-toggle>
+              <mat-button-toggle>+5</mat-button-toggle>
+            </mat-button-toggle-group>
+
 
 
 
@@ -190,13 +200,6 @@
             </div>
 
 
-
-
-
-
-
-            <input type="text" class="form-control" placeholder="Desde">
-
             <h4 class="h4filtros">Vigilancia</h4>
             <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
               <mat-radio-button class="opcfiltros" value="1">Cámaras 24/7</mat-radio-button>
@@ -215,18 +218,38 @@
                   <mat-option value="two">15-20 años</mat-option>
                   <mat-option value="two">+20 años</mat-option>
                 </mat-select>
-              </mat-radio-button>
-
-
-              <h4 class="h4filtros">Tipo de anunciante</h4>
-              <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
-                <mat-radio-button class="opcfiltros" value="2">Todos</mat-radio-button>
-                <mat-radio-button class="opcfiltros" value="1">Inmobiliaria</mat-radio-button>
-                <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
-              </mat-radio-group>
-
-
+              </mat-radio-button>   
             </mat-radio-group>
+
+            <h4 class="h4filtros">Fecha de Publicación</h4>
+            <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+              <mat-radio-button class="opcfiltros" value="1">Reciente</mat-radio-button>
+              <mat-radio-button class="opcfiltros" value="2">Última Semana</mat-radio-button>
+              <mat-radio-button value="3">
+                <mat-select placeholder="Más de una semana">
+                  <mat-option value="one">1-2 Semanas</mat-option>
+                  <mat-option value="two">2-3 Semanas</mat-option>
+                  <mat-option value="two">3-4 Semanas</mat-option>
+                  <mat-option value="two">+1 Mes</mat-option>
+                </mat-select>
+              </mat-radio-button>   
+            </mat-radio-group>
+
+
+
+
+
+            <h4 class="h4filtros">Tipo de anunciante</h4>
+            <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
+              <mat-radio-button class="opcfiltros" value="2">Todos</mat-radio-button>
+              <mat-radio-button class="opcfiltros" value="1">Inmobiliaria</mat-radio-button>
+              <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
+            </mat-radio-group>
+
+
+
+
+
 
           </form>
 
