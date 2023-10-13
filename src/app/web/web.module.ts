@@ -24,6 +24,7 @@ import { MapsComponent } from './maps/maps.component';
 import { ClienteComponent } from '../cliente/cliente.component';
 import { BlogComponent } from './blog/blog.component';
 import { GuiarentarComponent } from './guiarentar/guiarentar.component';
+import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 
 
 
@@ -45,6 +46,7 @@ import { GuiarentarComponent } from './guiarentar/guiarentar.component';
     MapsComponent,
     BlogComponent,
     GuiarentarComponent,
+    // RematehipotecarioComponent,
      
       
       

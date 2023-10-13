@@ -10,6 +10,7 @@ import { ClienteComponent } from '../cliente/cliente.component';
 import { MapsComponent } from './maps/maps.component';
 import { BlogComponent } from './blog/blog.component';
 import { GuiarentarComponent } from './guiarentar/guiarentar.component';
+import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 
 const routes: Routes = [
 
@@ -35,7 +36,6 @@ const routes: Routes = [
     component:GuiarentarComponent
 
   },
-
 
   {
 
@@ -68,6 +68,10 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent
+  },
+  {
+    path: 'Remate',
+    component: RematehipotecarioComponent
   }
   
 
