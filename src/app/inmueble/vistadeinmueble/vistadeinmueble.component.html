@@ -18,28 +18,10 @@
     <div class="divider"></div>
 
     <div class="buscador">
-      <input class="form-control" type="search" (click)="toggleSearch()" placeholder="Ingresa tu ciudad o Localidad"
+      <input class="form-control" type="search" (click)="toggleSearch()"  [value]="selectedValue" placeholder="Ingresa tu ciudad o Localidad"
         aria-label="Buscar">
       <ul *ngIf="showSearch" class="dropdown-search">
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        
-
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
-        <li><span> Sin Coincidencias...</span></li>
+        <li *ngFor="let option of options" (click)="selectOption(option)">{{ option }}</li>
       </ul>
       <button class="btn btn-outline-secondary" type="submit">
         <img class="lupa">
