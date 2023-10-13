@@ -1,97 +1,170 @@
-<div class="col-md-12">
-    <h1>AGENDA TU CITA</h1>
-    <h2> Fácil Rápido y Seguro</h2>
-    <h3>Solo necesitamos algunos datos adicionales para confirmar tu cita. </h3>
-   <form class="insertar-dialog-content" [formGroup]="formGeneral">
-      <div class="row">
-        <div class="col-md-4">
+<mat-stepper orientation="vertical">
+  <!-- APARTADO ONE -->
+  <mat-step>
+    <ng-template matStepLabel>Registra tus datos</ng-template>
+    <ng-template matStepContent>
+      <h1>AGENDA TU CITA</h1>
+      <div class="col-md-12 ">
+
+        <div class="col-md-12 ">
+          <div class="contenedortext">
+            <h2> Fácil Rápido y Seguro</h2>
+            <h3>Solo necesitamos algunos datos adicionales para confirmar tu cita. </h3>
+          </div>
+          <div class="contenedorimagen">
+            <img src="../../../assets/img/Datos_personales.png">
+          </div>
+        </div>
+
+        <form class="insertar-dialog-content" [formGroup]="formGeneral">
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="fill" style="width: 100%;">
+                <input matInput type="text" placeholder="" formControlName="nombre">
+                <mat-label>
+                  <b>Nombre</b></mat-label>
+                <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
+                  El nombre es <strong>obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label><b>Correo</b></mat-label>
+                <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+                <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
+                  Correo es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label><b>Contacto Principal</b></mat-label>
+                <input matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10"
+                  style="margin-left:6%;">
+                <mat-error *ngIf="this.formGeneral.get('contactoprincipal')?.hasError('required')">
+                  El número de teléfono <strong>es requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 ">
+            </div>
+            <div class="col-md-6 ">
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </ng-template>
+  </mat-step>
+
+  <!-- APARTADO TWO -->
+
+  <mat-step>
+    <ng-template matStepLabel>Escribe un motivo</ng-template>
+    <ng-template matStepContent>
+      <form class="insertar-dialog-content" [formGroup]="formGeneral">
+        <div class="row">
+          <div class="col-md-12 ">
+            <div class="contenedortext">
+              <h2> Fácil Rápido y Seguro</h2>
+              <h3>Escribe el motivo por el cual agendas una cita </h3>
+            </div>
+            <div class="contenedorimagen1">
+              <img src="../../../assets/img/Motivo_cita.png">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
             <mat-form-field appearance="fill" style="width: 100%;">
-              <input matInput type="text" placeholder="" formControlName="nombre">
-              <mat-label>
-              <b>Nombre</b></mat-label>
-              <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
-              El nombre es <strong>obligatorio</strong>
+              <textarea matInput rows="2" type="text" placeholder="" formControlName="motivocliente"></textarea>
+              <mat-label><b> Motivo </b></mat-label>
+              <mat-error *ngIf="this.formGeneral.get('motivocliente')?.hasError('required')">
+                Descripcion<strong>Obligatorio</strong>
               </mat-error>
             </mat-form-field>
+          </div>
         </div>
-        <div class="col-md-4">
-          <mat-form-field appearance="fill" style="width: 100%;">
-            <mat-label><b>Correo</b></mat-label>
-            <input matInput type="email" placeholder="Correo electronico" formControlName="email">
-            <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
-            Correo es <strong>requerido</strong>
-            </mat-error>
-          </mat-form-field> 
-        </div>
-
-        <div class="col-md-4">
-          <mat-form-field appearance="fill" style="width: 100%;">
-            <mat-label><b>Contacto Principal</b></mat-label>
-            <input matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10"
-            style="margin-left:6%;">
-            <mat-error *ngIf="this.formGeneral.get('contactoprincipal')?.hasError('required')">
-            El número de teléfono <strong>es requerido</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-
-       </div>
-   
-      <div class="row">
         
-        <div class="col-md-4">
-          <mat-form-field appearance="fill" style="width: 100%;">
-            <textarea matInput rows ="3"  type="text" placeholder="" formControlName="motivocliente"></textarea>
-            <mat-label><b> Motivo </b></mat-label>
-            <mat-error *ngIf="this.formGeneral.get('motivocliente')?.hasError('required')">
-            Descripcion<strong>Obligatorio</strong>
-            </mat-error>
-            </mat-form-field> 
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6 ">
+
+          </div>
+          <div class="col-md-6 ">
+            <button mat-button matStepperPrevious>Anterior</button>
+            <button mat-button matStepperNext>Siguiente</button>
+          </div>
         </div>
-        <div class="col-md-4">
-          <mat-form-field  style="width: 100%;">
+      </form>
+
+
+    </ng-template>
+  </mat-step>
+
+  <!-- APARTADO THREE -->
+  <mat-step>
+    <ng-template matStepLabel>Fecha y Hora</ng-template>
+    <form class="insertar-dialog-content" [formGroup]="formGeneral">
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="contenedortext">
+            <h2> Fácil Rápido y Seguro</h2>
+            <h3> Registra la hora y la fecha de tu cita </h3>
+          </div>
+          <div class="contenedorimagen1">
+            <img src="../../../assets/img/fecha_cita.png">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field style="width: 100%;">
             <mat-label><b>Fecha de cita</b></mat-label>
             <input matInput [matDatepicker]="picker" formControlName="fechacita">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="this.formGeneral.get('fechacita')?.hasError('required')">
-             Fecha<strong>Obligatorio</strong>
-            </mat-error>
-          </mat-form-field> 
-        </div>
-        
-        <div class="col-md-4">
-          <mat-form-field class="tamañoinut"style="width: 100%; margin-top: 9%;">
-            <mat-label class="tamañoletra"><b>Hora de la Cita</b></mat-label>
-            <input matInput  type="time" formControlName="horacita">
-            <mat-error *ngIf="this.formGeneral.get('horacita')?.hasError('required')">
-             La hora es  <strong> requerida </strong>
+              Fecha<strong>Obligatorio</strong>
             </mat-error>
           </mat-form-field>
         </div>
 
+        <div class="col-md-3">
+          <mat-form-field class="tamañoinut" style="width: 100%; margin-top: 13%;">
+            <mat-label class="tamañoletra"><b>Hora de la Cita</b></mat-label>
+            <input matInput type="time" formControlName="horacita">
+            <mat-error *ngIf="this.formGeneral.get('horacita')?.hasError('required')">
+              La hora es <strong> requerida </strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
-
-      <div class="row">
-          <div class="col-md-4">
-          
-          </div>
-          <div class="col-md-4 ">
-            
-          </div>
-          <div class="col-md-4">
-          
-          </div>
-      </div>
-       <br>
-       <br>
+      <br>
+      <br>
+      <br>
       <div class="row">
         <div class="col-md-6 ">
+
+        </div>
+        <div class="col-md-6 ">
+          <button mat-button matStepperPrevious> Atras </button>
           <button mat-raised-button (click)="Guardardatos()">Agendar cita</button>
         </div>
       </div>
     </form>
 
-    
-</div>
+  </mat-step>
+</mat-stepper>

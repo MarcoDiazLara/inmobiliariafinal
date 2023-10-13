@@ -1,0 +1,53 @@
+.contenedorgeneral{
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+}
+
+h1{
+    font-size: 25px;
+    font-weight: 700;
+    color: #264D5E;
+    text-align: center;
+    margin-top: 8%;
+}
+
+.avisoasesor{
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+}
+
+.contenedortext{
+    width: 70%;
+    height: auto;
+    float: left;
+}
+
+  .contenedorimagen{
+    width: 30%;
+    height: auto;
+    float: left;
+}
+
+  .contenedorimagen img {
+    width: 40%;
+    height: 40%;
+}
+.contenedorone{
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.alineabutton{
+    margin-top: 5%; 
+    text-align: center;
+}
+
+button{
+    width: 30%;
+    background-color: #264D5E;
+    color: white;
+}

@@ -1,45 +1,113 @@
-<mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-  </mat-form-field>
-  
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
-    <!-- Id_Seguimiento Column -->
-    <ng-container matColumnDef="Id_Seguimiento">
-      <th mat-header-cell *matHeaderCellDef> N° Seguimiento </th>
-      <td mat-cell *matCellDef="let element"> {{element.Id_Seguimiento}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="Picture1">
-      <th mat-header-cell *matHeaderCellDef> Inmueble </th>
-      <td mat-cell *matCellDef="let element"> <img src="../../../assets/img/{{element.Picture1}} " style="width: 50%;"></td>
-    </ng-container>
-  
-    <!-- Prospecto_Interesado Column -->
-    <ng-container matColumnDef="Prospecto_Interesado">
-      <th mat-header-cell *matHeaderCellDef> Persona Interesada </th>
-      <td mat-cell *matCellDef="let element"> {{element.Prospecto_Interesado}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="Fecha_Realizacion">
-      <th mat-header-cell *matHeaderCellDef> Fecha de Realizacion </th>
-      <td mat-cell *matCellDef="let element"> {{element.Fecha_Realizacion}} </td>
-    </ng-container>
 
-     <ng-container matColumnDef="Estatus_Seguimiento">
-      <th mat-header-cell *matHeaderCellDef> Estatus </th>
-      <td mat-cell *matCellDef="let element"> {{element.Estatus_Seguimiento}} </td>
-    </ng-container> 
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-    <!-- Row shown when there is no matching data. -->
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-    </tr>
-  </table>
+<div class="contenedorgeneral">
+<mat-tab-group fitInkBarToContent>
+<!-- PAG ONE -->
+  <mat-tab label="Compra-Venta">
+    <div class="contenedorvisita">
+    <h1>SEGUIMIENTO COMPRA-VENTA</h1>
+    <p>El primer paso a seguir para el proceso de compra venta, es el siguiente:</p>
+      <ul>
+        <li>
+          <p>Identifica que inmueble estas buscando.</p>
+        </li>
+        <li>
+          <p>Para que tu propiedad sea la ideal debes tomar en cuenta, el numero de habitaciones, si deseas que tenga estacionamiento, terraza, balcón o patio. </p>
+        </li>
+        <li>
+          <p>La zona en la que quieres que se ubique el inmueble.</p>
+        </li>
+        <li>
+          <p>Considerar los ingresos con los que se cuenta, tomando en cuenta los gastos de la inmobiliaria, el impuesto de registro, la escrituración y los honorarios del notario.</p>
+        </li>
+        <li>
+          <p>Estimación de gastos por mes. Contemplar el gasto que realizas en los servicios básicos, además la parte fundamental el pago mensual del crédito.</p>
+        </li>
+      </ul>
+      <div class="contenedorimagen">
+      <img src="../../../assets/img/compra-venta.png">
+      </div>
+  </div>
+    
+  </mat-tab>
+
+<!-- PAG TWO -->
+  <mat-tab label="Visita tu Propiedad">
+    <div class="contenedorvisita">
+      <h1> VISITA LA PROPIEDAD DE TU INTERES </h1>
+      <p>Cuando evalúas una propiedad, es importante visitarla antes, para conocer la propiedad y ver si la zona en la que se encuentra esta dentro de tus expectativas.</p>
+        <ul>
+          <li>
+            <p>Visita la propiedad con alguien de confianza para poder tener claros los diferentes puntos de vista de acuerdo a lo que esperas de la propiedad.</p>
+          </li>
+          <li>
+            <p>Visítala las veces que sea necesaria para tomar en cuenta, los sitios de tu interés cercanos, transporte público, comercios, escuelas y hospitales. </p>
+          </li>
+          <li>
+            <p>Solicita la factura de los servicios y gastos.</p>
+          </li>
+          <li>
+            <p>Verifica que el inmueble este en un estado adecuado en infraestructura (Grietas en la pared, Humedad) y servicios
+              (agua, gas, calentador de agua).</p>
+          </li>
+        </ul>
+        <div class="contenedorimagen">
+        <img src="../../../assets/img/visita.png">
+        </div>
+        <br>
+        <br>
+        
+        <h1> HAZ UNA OFERTA </h1>
+        <p>¿Encontraste la propiedad que se adecua a tus necesidades y presupuesto?<br>
+          Cuando realizas una oferta refleja la voluntad de compra y funciona como reserva, la cual el vendedor puede aceptar o rechazar <br>
+          En caso de aceptar, el inmueble debe sacarse del mercado para seguir con los trámites correspondientes a la compra; en caso de arrepentirse, el vendedor deberá devolver el monto de dinero del apartado entregado previamente.
+          </p>
+    </div>
+      
+  </mat-tab>
+
+  <!-- PAG THREE -->
+  <mat-tab label="Firma compra-venta">
+    <div class="contenedorvisita">
+      <h1> CONTRATO PRIVADO DE COMPRA-VENTA </h1>
+      <p>Documento de seguridad bilateral, que compromete al vendedor y al comprador a realizar la transacción, previo a la firma de las escrituras ante un notario público.<br>
+        Se firma el contrato privado y se hace entrega de una cantidad de dinero como parte del pago del precio total, normalmente corresponde al X% del precio final. Si el comprador anula el contrato, perdería la cantidad entregada. En caso de que el propietario se arrepienta, tendrá que devolver el doble de lo recibido, a menos que se indique lo contrario en el contrato.
+        En el documento queda establecido el precio, la fecha o plazo de la escrituración, la designación del notario, la identificación del inmueble, los datos personales, precio total de la propiedad, cantidad adelantada, cláusulas y firmas.<br>
+        Ten en cuenta que el proceso de escrituración ante el Registro Público de la Propiedad y el Comercio puede tardar tres semanas aproximadamente, desde que se entreguen los documentos al notario hasta la firma de la escritura del inmueble.<br><br>
+        Escrituración: Acto formal que establece la compra y venta de la propiedad donde la operación queda efectuada legalmente. Como comprador puedes elegir qué notario público quieres que lleve adelante la operación y es uno de los gastos que debes contemplar.
+        Antes de la escrituración, el notario se encarga de hacer un estudio y revisión previa de títulos, aspectos jurídicos e impositivos para posteriormente inscribir al inmueble en el Registro Público de la Propiedad y el Comercio (RPPC) de la localidad que corresponda.
+      </p>
+        <h4> La documentación que necesitarás para poder escriturar es: </h4>
+        <ul>
+          <li>
+            <p>Título de la propiedad original inscrito en el RPPC.</p>
+          </li>
+          <li>
+            <p>Contrato privado de compra-venta, en caso de haberse firmado.</p>
+          </li>
+          <li>
+            <p>Avalúo vigente.</p>
+          </li>
+          <li>
+            <p>Documentos personales de las partes involucradas (acta de nacimiento, identificación oficial y, en caso de estar casado, acta de matrimonio y la identificación oficial del cónyuge).</p>
+          </li>
+          <li>
+            <p>Carta de autorización de crédito, la cual te debe ser entregada por la institución financiera a la que lo hayas solicitado
+              En la adquisición de un departamento o casa en condominio se necesita además la copia del régimen de propiedad en condominio, así como una constancia de no adeudos emitidos por el administrador del condominio.</p>
+          </li>
+        </ul>
+        <div class="contenedorimagen">
+        <img src="../../../assets/img/contrato.png">
+        </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Contacta a un asesor"> <div class="contenedorvisita">
+    <h1> CONTACTANOS</h1>
+ 
+      <div class="contenedorimagen">
+      <img src="../../../assets/img/contactoagente.png">
+      </div>
+  </div></mat-tab>
+</mat-tab-group>
+</div>
+
   

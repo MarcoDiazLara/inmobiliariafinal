@@ -1,1 +1,108 @@
+<div class="container-fluit">
+    <form class="insertar-dialog-content" [formGroup]="formGeneral">
+        <div class="contenedorgeneral">
+            <div class="col-md-12">
+                <div class="contenedortext">
+                    <h1> MI ASESOR </h1>
+                </div>
+                <div class="contenedorimagen">
+                    <img src="../../../assets/img/cambio_asesor.png">
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-form-field appearance="legacy" style="width: 95%;">
+                        <mat-label><b>Nombre Asesor</b></mat-label>
+                        <input matInput type="text" placeholder="Nombre" formControlName="nombreasesor">
+                        <mat-error *ngIf="this.formGeneral.get('nombreasesor')?.hasError('required')">
+                            <strong></strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="legacy" style="width: 95%;">
+                        <mat-label><b>Apellido Paterno</b></mat-label>
+                        <input matInput type="text" placeholder="Nombre" formControlName="apellidopaterno">
+                        <mat-error *ngIf="this.formGeneral.get('apellidopaterno')?.hasError('required')">
+                            <strong></strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="legacy" style="width: 95%;">
+                        <mat-label><b>Apellido Materno</b></mat-label>
+                        <input matInput type="text" placeholder="Nombre" formControlName="apellidomaterno">
+                        <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
+                            <strong></strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contenedorone">
+                        <!-- <div class="row">
+                            <div class="col-md-6">
+                             <h4>Le dio la informacion Correcta</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width ">
+                                    <mat-label  style="margin-left: 6%;"> Estatus </mat-label>
+                                        <mat-select  formControlName="estatus" required >
+                                          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                                        </mat-select>
+                                  </mat-form-field>
+                            </div>
+
+                        </div> -->
+
+                         <h4>Al solicitar una reasignacion de asesor, se mandara una solicitud con los motivos por el
+                            cual quiere realizar el cambio.</h4>
+                        <ul>
+                            <li>
+                                <p>Se hara una verificacion del su proceso.</p>
+                            </li>
+                            <li>
+                                <p>Se pondran en contacto con su asesor actualmente asignado, para retomar su proceso.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Se verificara la lista de asesores disponibles para una pronta respuesta.</p>
+                            </li>
+                        </ul>
+
+                        <h4>Motivos de Reasigancion de asesor.</h4>
+                        <ul>
+                            <li>
+                                <p>Escriba la razon por la cual quiere realizar su cambio de asesor.</p>
+                            </li>
+                            <li>
+                                <p>Envie su solicitud.</p>
+                            </li>
+                            
+                        </ul> 
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field appearance="fill" style="width: 95%;">
+                        <textarea matInput rows="4" type="text" placeholder=""
+                            formControlName="motivosolicitud"></textarea>
+                        <mat-label>
+                            <mat-icon>user</mat-icon><b> Descripcion  </b></mat-label>
+                        <mat-error *ngIf="this.formGeneral.get('motivosolicitud')?.hasError('required')">
+                            <strong>Obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 alineabutton">
+                    <button mat-raised-button (click)="Guardardatos()">Enviar Solicitud</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
