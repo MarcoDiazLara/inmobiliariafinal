@@ -47,7 +47,10 @@ export class VistadeinmuebleComponent implements OnInit {
   public showFiltros: boolean=false;
   selectedValue = '';
  // Definir un arreglo de opciones
- options: string[] = ["Sin Coincidencias...","Opción 1", "Opción 2", "Opción 3", "Opción 4"];
+ options: string[] = ["Sin Coincidencias...","Opción 1", "Opción 2", "Opción 3", "Opción 4"
+ ,"Opción 5", "Opción 6", "Opción 7", "Opción 8"
+ ,"Opción 9", "Opción 10", "Opción 11", "Opción 12"
+ ,"Opción 13", "Opción 14", "Opción 15", "Opción 16"];
 
 
 
