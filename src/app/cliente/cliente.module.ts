@@ -29,7 +29,6 @@ import { AgendarcitaclienteComponent } from './agendarcitacliente/agendarcitacli
 import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 /end/
-
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
 
@@ -42,11 +41,10 @@ import { MenuComponent } from '../web/menu/menu.component';
     ClienteComponent,
     ClientepasswordComponent,
     NotificacionesclienteComponent,
-    SeguimientoclienteComponent,
+    // SeguimientoclienteComponent,
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
     // PerfilclienteComponent,
-    // PerfilComponent,
 
   ],
   imports: [

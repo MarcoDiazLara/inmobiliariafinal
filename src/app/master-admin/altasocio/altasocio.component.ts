@@ -12,7 +12,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-altasocio',
   templateUrl: './altasocio.component.html',
@@ -32,7 +31,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   ]
 })
 export class AltasocioComponent implements OnInit {
-  
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
@@ -44,11 +42,13 @@ export class AltasocioComponent implements OnInit {
   loading = false;
   hide2 = true;
 
+
   constructor(
     private formBuilder: FormBuilder,
     // private dialog: MatDialog,
     private httpService: HttpService,
   ) { }
+
 
   ngOnInit(): void {
     this.formGeneral = this.formBuilder.group({
@@ -81,5 +81,6 @@ export class AltasocioComponent implements OnInit {
       
      }
 }
+
 
 }

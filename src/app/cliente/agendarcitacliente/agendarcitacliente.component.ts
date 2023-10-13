@@ -17,6 +17,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder } from '@angular/forms';
 import {JsonPipe} from '@angular/common';
 import { validateVerticalPosition } from '@angular/cdk/overlay';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @Component({
@@ -38,6 +39,7 @@ import { validateVerticalPosition } from '@angular/cdk/overlay';
     MatCheckboxModule,
     MatButtonModule,
     JsonPipe,
+    MatStepperModule,
   ],
 
 })
@@ -67,6 +69,7 @@ export class AgendarcitaclienteComponent implements OnInit {
       contactoprincipal: ['', [Validators.required]],
       motivocliente:['',[Validators.required]],
       fechacita:['',[Validators.required]],
+      horacita:['',[Validators.required]],
   });
   }
 
@@ -81,9 +84,11 @@ export class AgendarcitaclienteComponent implements OnInit {
       let email = this.formGeneral.value.email;
       let motivocliente = this.formGeneral.value.motivocliente;
       let fechacita = this.formGeneral.value.fechacita;
+      let horacita = this.formGeneral.value.horacita;
+
       
 
-      alert('nombre: ' + nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: ' + apellidomaterno + 'contactoprincipal: ' + contactoprincipal + 'email: ' + email );
+      alert('nombre: ' + nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: ' + apellidomaterno + 'contactoprincipal: ' + contactoprincipal + 'email: ' + email + 'motivocliente'+ motivocliente + 'fechacita'+ fechacita + 'horacita' + horacita);
 
     }
   }

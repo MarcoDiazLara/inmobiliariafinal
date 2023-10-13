@@ -12,10 +12,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
-  selector: 'app-altainmo',
-  templateUrl: './altainmo.component.html',
-  styleUrls: ['./altainmo.component.scss'],
+  selector: 'app-alta-brokers',
+  templateUrl: './alta-brokers.component.html',
+  styleUrls: ['./alta-brokers.component.scss'],
   standalone: true,
   imports: [
     MatFormFieldModule, 
@@ -31,7 +32,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     
   ],
 })
-export class AltainmoComponent implements OnInit {
+export class AltaBrokersComponent implements OnInit {
 
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
@@ -39,20 +40,16 @@ export class AltainmoComponent implements OnInit {
    
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   
-
+  
   formGeneral!:FormGroup;
   loading = false;
   hide2 = true;
-
 
   constructor(
     private formBuilder: FormBuilder,
     // private dialog: MatDialog,
     private httpService: HttpService,
   ) { }
-
-
-
 
   ngOnInit(): void {
     this.formGeneral = this.formBuilder.group({
