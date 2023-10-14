@@ -180,16 +180,15 @@
   <div style="display: flex; justify-content: center; align-items: center;">
     <div class="example-container">
       <mat-form-field style="margin-right: 15px;">
-        <input matInput [formControl]="numberFormControl" placeholder="Años de Antiguedad">
-        <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
-        <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+        <input matInput formControlName="p_anti" placeholder="Años de Antiguedad">
+       
       </mat-form-field>
     </div>
 
 
     <mat-form-field style="margin-right: 10px;">
       <mat-label>Acabados   </mat-label>
-      <input matInput placeholder=" Numero de Recamaras  " >
+      <input formControlName="p_acabados" matInput placeholder=" Numero de Recamaras  " >
        </mat-form-field>
  </div>
  <br>
@@ -297,22 +296,20 @@
       <h2 class="text-center">Costos</h2>
       <br>
       <br>
-      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="firstFormGroup">
+      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="secondFormGroup">
       
         <div style="display: flex; justify-content: center; align-items: center;">
 
         <div class="example-container">
           <mat-form-field style="margin-right: 15px;">
-            <input matInput [formControl]="numberFormControl" placeholder="Ingrese Precio minimo">
-            <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
-            <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+            <input formControlName="p_prec_min" matInput placeholder="Ingrese Precio minimo">
+            
           </mat-form-field>
         </div>
         <div class="example-container">
           <mat-form-field style="margin-right: 15px;">
-            <input matInput [formControl]="numberFormControl" placeholder="Ingrese Precio maximo">
-            <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
-            <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+            <input formControlName="p_prec_max" matInput placeholder="Ingrese Precio maximo">
+            
           </mat-form-field>
         </div>
          </div>
@@ -323,9 +320,8 @@
          <div style="display: flex; justify-content: center; align-items: center;">
           <div class="example-container">
             <mat-form-field >
-              <input matInput [formControl]="numberFormControl" placeholder=" Precio Final">
-              <mat-error *ngIf="numberFormControl.hasError('required')">El campo es requerido</mat-error>
-              <mat-error *ngIf="numberFormControl.hasError('pattern')">Ingrese un número válido</mat-error>
+              <input formControlName="p_prec_final" matInput  placeholder=" Precio Final">
+              
             </mat-form-field>
           </div>
 
