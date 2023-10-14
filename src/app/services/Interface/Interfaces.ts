@@ -1,5 +1,5 @@
 export interface Inmuebles{
-    id_Tipo_Inmueble: string
+    Id_Tipo_Inmueble: string
     Tipo_Inmueble: string
   };
 
@@ -14,7 +14,7 @@ export interface Municipios{
 };
 
 export interface Asentamiento{
-    id_Asentamiento: string
+    id_asentamiento: string
     Asentamiento: string
 };
 

@@ -35,7 +35,7 @@ login(){
       }else{
        
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
-        localStorage.setItem("Id_Usuario", data.id_Usuario);
+        localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
         this.httpService.setGlobalVariable(true);
         this.router.navigate(["/index"]);

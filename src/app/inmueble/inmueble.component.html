@@ -23,7 +23,7 @@
                 <mat-label>Tipo de inmueble</mat-label>
 
                   <mat-select formControlName="pId_Tipo_Inmueble">
-                    <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
+                    <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
                     }}
                   </mat-option>
                      </mat-select>
@@ -78,7 +78,7 @@
           <mat-form-field style="margin-right: 10px;"> 
               <mat-label>Asentamiento</mat-label>
                 <mat-select formControlName="pId_asentamiento">
-                  <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_Asentamiento}}">{{ Ase.Asentamiento
+                  <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_asentamiento}}">{{ Ase.Asentamiento
                   }}
                 </mat-option>
                    </mat-select>

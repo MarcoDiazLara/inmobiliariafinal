@@ -127,7 +127,7 @@ export class PerfilclienteComponent implements OnInit {
     {if(data ==201){
       alert("Error al leer usuario");
     }else{
-      
+      console.log(data);
       this.datos = data;
       this.obtenerInfo2();
     }})

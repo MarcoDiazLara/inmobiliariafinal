@@ -7,7 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HttpService {
 
-  url = "http://localhost/servicios/";
+  url = "https://inmobiliaria.arvispace.com/servicios/";
+  //url = "localhost/servicios/";
 
   public variableGlobal: boolean = false;
 
@@ -143,5 +144,7 @@ export class HttpService {
     "&p_tel_principal="+p_tel_principal +"&p_tel_emer="+p_tel_emer+"&p_correo="+p_correo+"&p_nombre_usu="+p_nombre_usu;
     return this.httpclient.post(this.url + 'sp_web_updateInfoUsuario.php', params, { headers });
   }
+
+  
 
 }
