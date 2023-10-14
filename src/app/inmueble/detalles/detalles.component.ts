@@ -9,8 +9,23 @@ import { HttpService } from 'src/app/services/http/http.service';
   
 })
 export class DetallesComponent implements OnInit {
+  imagenesCarrusel: string[] = [
+    'assets/img/alquilar.jpg',
+    'assets/img/contratos.jpeg',
+    'assets/img/departamento-pequeno.jpg',
+    'assets/img/deposito.jpg',
+    'assets/img/Slide-1.jpg',
+    'assets/img/Slide-3.jpg',
+  ];
 
+  
 
+  imagenPrincipalUrl: string = 'assets/img/Houses-bro.png';
+
+  cambiarImagen(imagenUrl: string) {
+    this.imagenPrincipalUrl = imagenUrl;
+  }
+  
 
 
 
@@ -43,6 +58,8 @@ export class DetallesComponent implements OnInit {
     
 
   }
+
+  
 
 }
 
