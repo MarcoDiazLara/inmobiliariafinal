@@ -4,7 +4,7 @@ import { InmuebleRoutingModule } from './inmueble-routing.module';
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
 
-import { DetallesCarruselComponent } from './detalles/detalles-carrusel/detalles-carrusel.component';
+
 
 
 
