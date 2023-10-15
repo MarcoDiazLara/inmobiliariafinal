@@ -7,8 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HttpService {
 
-  url = "https://inmobiliaria.arvispace.com/servicios/";
-  //url = "http://localhost/servicios/";
+  //url = "https://inmobiliaria.arvispace.com/servicios/";
+  url = "http://localhost/servicios/";
 
   public variableGlobal: boolean = false;
 

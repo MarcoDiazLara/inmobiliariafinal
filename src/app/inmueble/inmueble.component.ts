@@ -183,7 +183,7 @@ xd(){
   
 
   subirInmueble(){
-    //this.subir_imagenes();
+    this.subir_imagenes();
     let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
     let p_desc_inmueble = this.tercerFormGroup.value.p_desc;
     let p_calle1 = this.secondFormGroup.value.p_calle;
@@ -255,9 +255,9 @@ xd(){
       formData.append('images[]', this.selectedImages[i]);
     }
 
-    this.httpClient.post('http://localhost/servicios/subirArchivo.php', formData)
+    this.httpClient.post('http://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-       console.log(1);
+       console.log(response);
       });
   }
 
