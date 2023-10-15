@@ -20,10 +20,6 @@ import { HttpClient } from '@angular/common/http';
 
 
 
-
-
-
-
 @Component({
   selector: 'app-inmueble',
   templateUrl: './inmueble.component.html',
