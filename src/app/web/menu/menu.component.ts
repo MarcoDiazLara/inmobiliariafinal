@@ -53,6 +53,9 @@ export class MenuComponent implements OnInit {
 
  }
 
+ home(){
+  this.router.navigate(['/web']);
+ }
 
 
 

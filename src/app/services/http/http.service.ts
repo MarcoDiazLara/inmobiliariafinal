@@ -119,6 +119,17 @@ export class HttpService {
     return this.httpclient.post(this.url + 'consultarInmueble.php',  { headers });
   }
 
+  mostrarMunicipios(Municipio: String) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params='Estado='+Municipio;
+    return this.httpclient.post(this.url + 'ser_select_municipio.php', params,  { headers });
+  }
+
+  mostrarTipoInmueble() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'consultarTipoInmueble.php',  { headers });
+  }
+
   cambiarContra(p_id: any, password: string){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = "p_id="+p_id + "&password="+password;
