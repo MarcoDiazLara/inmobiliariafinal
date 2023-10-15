@@ -95,7 +95,10 @@ numberFormControl = new FormControl('', [
       pId_estado: ['',[Validators.required]],
       pId_municipio: ['',[Validators.required]],
       pId_asentamiento: ['',[Validators.required]],
-      p_calle: ['',[Validators.required]]
+      p_calle: ['',[Validators.required]],
+      p_prec_min: ['',[Validators.required]] ,
+      p_prec_max: ['',[Validators.required]] ,
+      p_prec_final: ['',[Validators.required]]
      })
     this.tercerFormGroup = this.formBuilder.group({
       p_nom_inmu:  ['',[Validators.required]],
@@ -113,6 +116,8 @@ numberFormControl = new FormControl('', [
       p_cocina:['',[Validators.required]],
       p_alberca: ['',[Validators.required]],
       p_roof: ['',[Validators.required]],
+      p_anti: ['',[Validators.required]],
+      p_acabados: ['',[Validators.required]]
     })
 
   }
@@ -190,8 +195,8 @@ xd(){
     let p_bano = this.tercerFormGroup.value.p_banos;
     let p_cocina1 = this.tercerFormGroup.value.p_cocina;
     let p_num_pisos = this.tercerFormGroup.value.p_pisos;
-    let p_antiguedad = "2";
-    let p_acabados = "Nose xd";
+    let p_antiguedad = this.tercerFormGroup.value.p_anti;
+    let p_acabados1 = this.tercerFormGroup.value.p_acabados;
     let p_alberca1 = this.tercerFormGroup.value.p_alberca;
     let p_jardin1 = this.tercerFormGroup.value.p_jardin;
     let p_gym1 = this.tercerFormGroup.value.p_gym; 
@@ -207,7 +212,10 @@ xd(){
     let p_video = "video 1";
     let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
     let p_id_tipo_inmueble = this.firstFormGroup.value.pId_Tipo_Inmueble;
-    let p_update = localStorage.getItem("Nombre_Usuario");
+    let p_update = localStorage.getItem("Id_Usuario");
+    let p_prec_min1 = this.secondFormGroup.value.p_prec_min;
+    let p_prec_max1 = this.secondFormGroup.value.p_prec_max;
+    let p_prec_final1 = this.secondFormGroup.value.p_prec_final;
     
     this.cheks = [p_alberca1,p_jardin1, p_gym1, p_estacionamiento, p_cocina1, p_roof ];
 
@@ -223,12 +231,13 @@ xd(){
 
 
     this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
-      p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados,p_alberca1, p_jardin1,p_gym1,
-      p_roof,p_estacionamiento, p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update
-      ).subscribe((data: any) =>{
+      p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados1,p_alberca1, p_jardin1,p_gym1,
+      p_roof,p_estacionamiento, p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
+      p_prec_final1).subscribe((data: any) =>{
       if(data == 1){
         alert("Se subio el inmueble");
       } else{
+
         alert("Error al subir inmueble");
       }
        })
@@ -246,9 +255,9 @@ xd(){
       formData.append('images[]', this.selectedImages[i]);
     }
 
-    this.httpClient.post('http://localhost/servicios/subirArchivo.php', formData)
+    this.httpClient.post('http://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-       console.log(1);
+       console.log(response);
       });
   }
 

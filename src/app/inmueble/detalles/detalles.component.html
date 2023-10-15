@@ -19,27 +19,13 @@
             <div class="col-md-6">
               <!-- Tu contenido dentro del div -->
                 <div class="Imgmuestra">
-                    <img src="assets/6.jpg">
+                    <!-- <img id="imagenPrincipal" src="assets/img/Houses-bro.png"> -->
+                    <img [src]="imagenPrincipalUrl" alt="Imagen principal">
 
                     <div class="carrusel2">
-                        <div class="card">
-                          <img src="assets/img/Houses-bro.png" class="carruselimg">
-                        </div>
-                        <div class="card">
-                            <img src="assets/img/Houses-bro.png" class="carruselimg">
-                        </div>
-                        <div class="card">
-                            <img src="assets/img/Houses-bro.png" class="carruselimg">
-                        </div>                    
-                        <div class="card">
-                            <img src="assets/img/Houses-bro.png" class="carruselimg">
-                        </div>
-                        <div class="card">
-                            <img src="assets/img/Houses-bro.png" class="carruselimg">
-                        </div>                    
-                        <div class="card">
-                            <img src="assets/img/Houses-bro.png" class="carruselimg">
-                        </div>
+                        <div class="card" *ngFor="let imagen of imagenesCarrusel" (click)="cambiarImagen(imagen)">
+                            <img [src]="imagen" class="carruselimg">
+                          </div>
                     </div>
 
 
