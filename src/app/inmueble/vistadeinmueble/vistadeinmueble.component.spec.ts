@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VistadeinmuebleComponent } from './vistadeinmueble.component';
 
+import { WebModule } from 'src/app/web/web.module';
+
 describe('VistadeinmuebleComponent', () => {
   let component: VistadeinmuebleComponent;
   let fixture: ComponentFixture<VistadeinmuebleComponent>;

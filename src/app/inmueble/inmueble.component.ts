@@ -12,11 +12,8 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import { NgFor } from '@angular/common';
   import { MatDividerModule } from '@angular/material/divider';
   import { FormControl } from '@angular/forms';
-import { WebModule } from '../web/web.module';
 import { HttpClient } from '@angular/common/http';
-
-
-
+import { WebModule } from '../web/web.module';
 
 
 
@@ -37,11 +34,11 @@ import { HttpClient } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule, MatSelectModule,MatRadioModule,NgFor,
     MatDividerModule,
-    WebModule,
-
+    WebModule
     
     
   ],
+  
   
 })
 export class InmuebleComponent implements OnInit {
