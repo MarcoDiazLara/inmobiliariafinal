@@ -19,9 +19,9 @@
 
     <div class="buscador">
       <input class="form-control" type="search" (click)="toggleSearch()"  [value]="selectedValue" placeholder="Ingresa tu ciudad o Localidad"
-        aria-label="Buscar">
+        aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
       <ul *ngIf="showSearch" class="dropdown-search">
-        <li *ngFor="let option of options" (click)="selectOption(option)">{{ option }}</li>
+        <li *ngFor="let option of datosMunicipios" (click)="selectOption(option)">{{ option.Estado }}</li>
       </ul>
       <button class="btn btn-outline-secondary" type="submit">
         <img class="lupa">
@@ -59,14 +59,10 @@
       </div>
 
       <div>
-        <button class="btn btn-outline-secondary me-2" (click)="toggleInmueble()">Inmueble <img class="arrow1"></button>
+        <button class="btn btn-outline-secondary me-2" (click)="mostrarTipoInmueble()" (click)="toggleInmueble()">Inmueble <img class="arrow1"></button>
         <ul *ngIf="showInmueble" class="dropdown-inmueble">
-          <li><a>Departamento</a></li>
-          <li><a>Rancho</a></li>
-          <li><a>Oficina</a></li>
-          <li><a>Casa</a></li>
-          <li><a>Local Comercial</a></li>
-          <li><a>Bodega Comercial</a></li>
+          <li *ngFor="let opcion of datosTipoInmueble"><a>{{opcion.Tipo_Inmueble}}</a></li>
+          
 
 
         </ul>
@@ -319,7 +315,7 @@
               </td>
             </thead>
             <thead>
-              <td><img src="assets/img/departamento-pequeno.jpg" alt="img" class="imgresult"></td>
+              <td><img src="assets/img/departamento-pequeno.jpg" width="250px" height="250px" alt="img" ></td>
              
               <td colspan="2">
                 <h1>{{res.Estado}}</h1>
@@ -336,9 +332,12 @@
             </thead>
           </table>
         </div>
+        
       </div>
-   </div>
+      
 
+   </div>
+   <div class="p-2"></div>
     </div>
 
 

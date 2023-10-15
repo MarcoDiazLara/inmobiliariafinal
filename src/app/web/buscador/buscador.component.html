@@ -18,14 +18,12 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active m-3 p-3" id="compra" role="tabpanel" aria-labelledby="compra-tab">
                     <div class="content-center">
-                        <form [formGroup]="firstFormGroup" class="form-control content-center">
+                        <form [formGroup]="firstFormGroup" class="form-control content-center" (ngSubmit)="onSubmit()">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="bi bi-building size-icon"></i></span>
-                                
-                                <select label="Selecciona tipo de inmueble"  formControlName="pId_Tipo_Inmueble"
+                                <select class="form-select" label="Selecciona tipo de inmueble"  formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" (ngModelChange)="cambioTpropiedad($event)"
                                     class="custom-select me-3 shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
-                                    >
-                                    
+                                    >                                  
                                     <option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
                                     }} </option>
                                 </select>
@@ -36,12 +34,12 @@
                                         class="input-group-text shadow bg-white rounded border border-info font-Roboto-Condensed"
                                         id="inputGroup">Ubicación</span>
                                 </div>
-                                <input type="text"
+                                <input type="text" formControlName="pUbicacion" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)"
                                     class="shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
                                     <span class="input-group-addon">
-                                        <button class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusqueda()">Buscar</button>
+                                        <button class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaC()">Buscar</button>
                                     </span>
                                 </div>
                             </div>
@@ -57,7 +55,7 @@
                         <form  [formGroup]="firstFormGroup" class="form-control content-center">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="bi bi-building size-icon"></i></span>
-                                <select formControlName="pId_Tipo_Inmueble"
+                                <select formControlName="pId_Tipo_Inmueble" formControlName="pId_Tipo_Inmueble"
                                     class="custom-select me-3 shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     >
                                     <option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
@@ -70,7 +68,7 @@
                                         class="input-group-text shadow bg-white rounded border border-info font-Roboto-Condensed"
                                         id="inputGroup">Ubicación</span>
                                 </div>
-                                <input type="text"
+                                <input type="text" 
                                     class="shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
@@ -80,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="input-group group-btn content-center">
-                                <button (click)="PageMap()" class="btn btn-outline-inmo form-control" type="submit"><i
+                                <button class="btn btn-outline-inmo form-control" type="submit"><i
                                         class="bi bi-geo-alt-fill"></i></button>
                             </div>
                         </form>

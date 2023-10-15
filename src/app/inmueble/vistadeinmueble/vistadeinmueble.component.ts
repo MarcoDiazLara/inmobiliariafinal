@@ -36,6 +36,10 @@ export class VistadeinmuebleComponent implements OnInit {
   filteredStreets: Observable<string[]>;
 
   datosInmueble: any[] = [];
+  datosMunicipios: any[] = [];
+  datosTipoInmueble: any[] = [];
+  municipios='';
+  tipoinmuebles='';
 
   title = 'ProyectoPrueba';
   public showPrecio: boolean = false;
@@ -51,6 +55,7 @@ export class VistadeinmuebleComponent implements OnInit {
  ,"Opción 5", "Opción 6", "Opción 7", "Opción 8"
  ,"Opción 9", "Opción 10", "Opción 11", "Opción 12"
  ,"Opción 13", "Opción 14", "Opción 15", "Opción 16"];
+
 
 
 
@@ -183,6 +188,26 @@ ngOnInit(): void {
     return value.toLowerCase().replace(/\s/g, '');
   }
 
+  mostrarMunicipios(){
+    this.http.mostrarMunicipios(this.municipios).subscribe((data:any)=>{
+
+      this.datosMunicipios = data;
+
+    });
+  }
+  mostrarTipoInmueble(){
+    this.http.mostrarTipoInmueble().subscribe((data:any)=>{
+
+      this.datosTipoInmueble = data;
+
+    });
+  }
+  mostrarIDMunicipio(id:number):void{
+    console.log(id);
+  }
+  /*botonSeleccionado(opcion:number){
+    console.log( 'El usuario mostro:'opcion );
+  }*/
 
 }
 
