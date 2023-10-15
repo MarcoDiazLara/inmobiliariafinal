@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { WebModule } from 'src/app/web/web.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 
@@ -12,9 +10,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.scss'],
   standalone: true,
-  imports:[
-    BrowserModule,
-    BrowserAnimationsModule, // Importa BrowserAnimationsModule para que las animaciones de Angular Material funcionen
+  imports:[ // Importa BrowserAnimationsModule para que las animaciones de Angular Material funcionen
     MatListModule,  // Importa MatListModule para usar <mat-list-item> y <mat-list>
     MatTabsModule,  
     WebModule,
