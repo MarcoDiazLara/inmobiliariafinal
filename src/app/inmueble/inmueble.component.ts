@@ -17,10 +17,6 @@ import { WebModule } from '../web/web.module';
 
 
 
-
-
-
-
 @Component({
   selector: 'app-inmueble',
   templateUrl: './inmueble.component.html',
