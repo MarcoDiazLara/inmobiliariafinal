@@ -26,7 +26,7 @@ import { BlogComponent } from './blog/blog.component';
 import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 
-
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -64,6 +64,7 @@ import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecari
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
+     GoogleMapsModule
      
   ],
   exports:[

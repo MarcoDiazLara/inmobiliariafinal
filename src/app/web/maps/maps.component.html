@@ -1,4 +1,13 @@
 <app-menu></app-menu>
-
-
+<div class="font-Roboto-Condensed">
+    <div class="p-2"></div>
+    <h1 class="fw-bold text-center title-map">Inmuebles Cerca de Ti</h1>
+    <div id="map" class="mx-5">
+        <google-map width="100%" height="450px" [zoom]="zoom" [center]="center">
+            <map-marker *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label" >
+            </map-marker>
+          </google-map> 
+    </div>
+</div>
+<div class="p-2"></div>
 <app-footer></app-footer>
