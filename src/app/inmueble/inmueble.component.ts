@@ -196,11 +196,11 @@ xd(){
     let p_roof = this.tercerFormGroup.value.p_roof;
     let p_estacionamiento = this.tercerFormGroup.value.p_esta;
     let p_ubi_maps = "Hola ";
-    let p_pic_1 = this.selectedImages[0].name;
-    let p_pic_2 = this.selectedImages[1].name;
-    let p_pic_3 = this.selectedImages[2].name;
-    let p_pic_4 = this.selectedImages[3].name;
-    let p_pic_5 = this.selectedImages[4].name;
+    let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[0].name;
+    let p_pic_2 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[1].name;
+    let p_pic_3 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[2].name;
+    let p_pic_4 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[3].name;
+    let p_pic_5 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[4].name;
     let p_360 = "imagen 360";
     let p_video = "video 1";
     let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
