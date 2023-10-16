@@ -1,4 +1,38 @@
 button{
-    background-color: #264D5E;
-    color: white;
-  }
+  width: 30%;
+  background-color: #264D5E;
+  color: white;
+  justify-content: center;
+  margin-left: 5%;
+}
+
+.tamañoletra{
+  font-size: 18px;
+}
+
+.contenedortext{
+  width: 70%;
+  height: auto;
+  float: left;
+}
+.contenedorimagen{
+  width: 30%;
+  height: auto;
+  float: left;
+}
+
+.contenedorimagen img {
+  width: 50%;
+  height: 50%;
+}
+
+.contenedorimagen1{
+  width: 30%;
+  height: auto;
+  float: left;
+}
+
+.contenedorimagen1 img {
+  width: 60%;
+  height: 60%;
+}
