@@ -14,6 +14,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { WebModule } from '../web/web.module';
+import { Router } from '@angular/router';
 
 
 
@@ -43,7 +44,8 @@ export class InmuebleComponent implements OnInit {
 
 constructor(private formBuilder: FormBuilder
   , private httpService: HttpService,
-  private httpClient: HttpClient) {}
+  private httpClient: HttpClient,
+  private router: Router) {}
 
 
 numberFormControl = new FormControl('', [
@@ -229,6 +231,8 @@ xd(){
       p_prec_final1).subscribe((data: any) =>{
       if(data == 1){
         alert("Se subio el inmueble");
+        this.router.navigate(["/web"]);
+        
       } else{
 
         alert("Error al subir inmueble");
