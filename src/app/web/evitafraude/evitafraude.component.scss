@@ -1,0 +1,30 @@
+.contenedorgeneral{
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+}
+
+.contenedortext{
+    width: 70%;
+    height: auto;
+    float: left;
+    padding: 25px 25px 25px 25px;
+    text-align: justify;
+}
+
+.contenedorlogo{
+    width: 30%;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+.contenedorlogo img{
+    width: 70%;
+    height: 70%;
+    
+}
+h1{
+    font-size: 25px;
+    color: #264D5E;
+    font-weight: bold;
+}
