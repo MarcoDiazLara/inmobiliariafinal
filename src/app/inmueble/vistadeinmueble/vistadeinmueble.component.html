@@ -13,12 +13,12 @@
   <div class="divider"></div>
 
   <div class="buscador">
-    <input class="form-control" type="search" (click)="toggleSearch()"
+    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
       placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios">
-    <ul *ngIf="showSearch" class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios" ><a>{{ option.Estado }}</a></li>
+    <ul  class="dropdown-search">
+      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)"><a>{{ option.Estado }}</a></li>
     </ul>
-    <button class="btn btn-outline-secondary" type="submit">
+    <button class="btn btn-outline-secondary" type="submit" (click)="obtenerValorInput()">
       <img class="lupa">
     </button>
 
@@ -280,11 +280,11 @@
     <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
               y quitar los parentesis para poder mostrar una interfaz mas asosiada al usuario xd
               Encontramos este --->
-    (<span id="tipoInmueble"></span>)
+   <!-- (<span id="tipoInmueble"></span>)
     disponible en Puebla(<span id="lugar"></span>)
-    para (<span id="usuarioP"></span>)
+    para (<span id="usuarioP"></span>)-->
     <button mat-raised-button class="button-back" (click)="back()"><img class="backarrow">Regresar</button>
-  </h1>
+  </h1> 
   
 </div>
 
