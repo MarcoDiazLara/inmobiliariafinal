@@ -1,11 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
+import { WebModule } from 'src/app/web/web.module';
+import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.scss'],
+  standalone: true,
+  imports:[ // Importa BrowserAnimationsModule para que las animaciones de Angular Material funcionen
+    MatListModule,  // Importa MatListModule para usar <mat-list-item> y <mat-list>
+    MatTabsModule,  
+    WebModule,
+  ],
   
 })
 export class DetallesComponent implements OnInit {
