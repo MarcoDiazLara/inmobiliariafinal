@@ -16,6 +16,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 
 
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
+import { RematehipotecarioComponent } from './web/rematehipotecario/rematehipotecario.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path:'menu2', 
     component: MenugloguedoComponent
+  },
+  {
+    path:'Remate', 
+    component: RematehipotecarioComponent
   },
   
   { 
