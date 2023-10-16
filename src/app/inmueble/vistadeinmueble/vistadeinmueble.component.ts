@@ -47,8 +47,8 @@ export class VistadeinmuebleComponent implements OnInit {
     , "Opción 13", "Opción 14", "Opción 15", "Opción 16"];
 
   action: String | undefined;
-  tpropiedad: String | undefined;
-  ubicacion: String | undefined;
+  tpropiedad!: Number;
+  ubicacion!: String;
 
 
 
@@ -158,13 +158,6 @@ export class VistadeinmuebleComponent implements OnInit {
   // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
   ngOnInit(): void {
 
-
-    this.http.mostrarInmuebles().subscribe((data: any) => {
-
-      this.datosInmueble = data;
-
-    });
-
     this.route.queryParams.subscribe(params => {
       console.log('Query Params: ', params);
 
@@ -175,8 +168,19 @@ export class VistadeinmuebleComponent implements OnInit {
       console.log('Action: ',this.action);
       console.log('Propiedad: ',this.tpropiedad);
       console.log('Ubicacion: ',this.ubicacion);
+
+      
+
     }
     );
+
+    this.http.mostrarInmuebles(this.ubicacion,this.tpropiedad).subscribe((data: any) => {
+
+      this.datosInmueble = data;
+
+    });
+
+
   }
 
 

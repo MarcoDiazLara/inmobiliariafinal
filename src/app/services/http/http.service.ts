@@ -114,9 +114,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'cerrarSesion.php', params, { headers });
   }
 
-  mostrarInmuebles() {
+  mostrarInmuebles(Ubicacion: String, TipoPropiedad: Number) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'consultarInmueble.php',  { headers });
+    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad; 
+    return this.httpclient.post(this.url + 'consultarInmueble.php',  params, { headers });
   }
 
   mostrarMunicipios(Municipio: String) {
