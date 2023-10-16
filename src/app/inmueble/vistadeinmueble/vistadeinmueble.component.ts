@@ -3,10 +3,8 @@ import { ElementRef, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
-import { MatChipsModule } from '@angular/material/chips';
 import { HttpService } from 'src/app/services/http/http.service';
-import { WebModule } from 'src/app/web/web.module';
+
 
 @Component({
   selector: 'app-vistadeinmueble',
@@ -40,6 +38,7 @@ export class VistadeinmuebleComponent implements OnInit {
   public showPrecioEjemplo: boolean = false;
   public showFiltros: boolean = false;
   selectedValue = '';
+  municipioSeleccionado: string = '';
   // Definir un arreglo de opciones
  
 
@@ -56,10 +55,14 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
   @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
+  
+  
+  /*onDocumentClick(event: MouseEvent) {
     // Verifica si el clic no fue dentro del botón de Precio ni dentro de la lista de Precio
     if (!this.el.nativeElement.querySelector('.navbar').contains(event.target) &&
-      !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search., .dropdown-Filtros').contains(event.target)) {
+      !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search., .dropdown-Filtros').contains(event.target))
+      
+      {
       // Si se hizo clic fuera del botón y fuera de la lista de Precio, oculta la lista
       this.showPrecio = false;
       this.showToferta = false;
@@ -69,6 +72,16 @@ export class VistadeinmuebleComponent implements OnInit {
       this.showFiltros = false;
 
 
+    }
+  }*/
+
+  onDocumentClick(event: Event): void {
+    // Aquí puedes realizar acciones cuando se hace clic en cualquier lugar del documento.
+    // Puedes verificar si el clic ocurrió dentro de un elemento específico utilizando el método `contains`.
+
+    if (!this.el.nativeElement.contains(event.target)) {
+      // El clic ocurrió fuera del elemento del componente.
+      // Puedes realizar acciones específicas en este caso.
     }
   }
 
@@ -125,6 +138,8 @@ export class VistadeinmuebleComponent implements OnInit {
     this.showInmueble = false;
     this.showRecamaras = false;
     this.showFiltros = false;
+
+    
   }
   selectOption(value: string) {
     this.selectedValue = value;
@@ -213,6 +228,19 @@ export class VistadeinmuebleComponent implements OnInit {
     console.log(id);
   }
 
+  obtenerValorInput() {
+    const inputElement = document.getElementById('miInput') as HTMLInputElement;
+    if (inputElement) {
+      const valorInput = inputElement.value;
+      console.log(valorInput);
+    }
+  }
+
+   
+  
+    seleccionarMunicipio(municipios: string) {
+      this.municipioSeleccionado = municipios;
+    }
   back() {
     this.router.navigate(["/web"]);
   }
