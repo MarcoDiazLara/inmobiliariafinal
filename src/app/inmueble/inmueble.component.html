@@ -204,8 +204,91 @@
  <br>
   
   <div style="display: flex; justify-content: center; align-items: center;">
+    
 
-    <label>
+    <mat-form-field style="margin-right: 10px;">
+      <mat-label>Gimnasio</mat-label>
+      <mat-select formControlName="p_gym">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+          </mat-option>
+      </mat-select>
+      <mat-icon matSuffix>
+          <img src="assets/img/gimna.png"  alt="Icono" width="30" height="30">
+      </mat-icon>
+  </mat-form-field>
+
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Estacionamiento</mat-label>
+    <mat-select formControlName="p_esta">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/coche.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+</mat-form-field>
+
+
+<mat-form-field style="margin-right: 10px;">
+  <mat-label>Jardin</mat-label>
+  <mat-select formControlName="p_jardin">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+      </mat-option>
+  </mat-select>
+  <mat-icon matSuffix>
+      <img src="assets/img/terraza.png"  alt="Icono" width="28" height="28">
+  </mat-icon>
+</mat-form-field>
+  
+<mat-form-field style="margin-right: 10px;">
+<mat-label>Cocina Integral</mat-label>
+<mat-select formControlName="p_cocina">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+    </mat-option>
+</mat-select>
+<mat-icon matSuffix>
+    <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
+</mat-icon>
+</mat-form-field>
+</div>
+  
+<br>
+<br>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Alberca</mat-label>
+    <mat-select  formControlName="p_alberca"    >
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/nadando.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+  </mat-form-field>
+  
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Roof Garden</mat-label>
+    <mat-select    formControlName="p_roof"                >
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/techo.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+  </mat-form-field>
+
+
+
+
+    <!-- <label>
       <input formControlName="p_gym" class="radio-input" type="checkbox">
           <span class="radio-tile">
               <span class="radio-icon">
@@ -276,8 +359,8 @@
           </span>
           <span class="radio-label">Roof Garden</span>
       </span>
-</label> 
-</div>
+</label>  -->
+</div> 
 <br>
 <br>
 <br>

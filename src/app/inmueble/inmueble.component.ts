@@ -16,7 +16,10 @@ import { HttpClient } from '@angular/common/http';
 import { WebModule } from '../web/web.module';
 import { Router } from '@angular/router';
 
-
+interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-inmueble',
@@ -40,6 +43,15 @@ import { Router } from '@angular/router';
 })
 export class InmuebleComponent implements OnInit {
 // Define un FormControl con validadores para números
+
+foods: Food[] = [
+  {value: '', viewValue: '1'},
+  {value: '', viewValue: '2'},
+  {value: '', viewValue: '3'},
+  {value: '', viewValue: '4'},
+  {value: '', viewValue: '5'},
+];
+
 
 
 constructor(private formBuilder: FormBuilder

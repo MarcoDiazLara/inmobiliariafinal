@@ -31,6 +31,7 @@ export class BuscadorComponent implements OnInit {
       pId_Tipo_Inmueble: ['', [Validators.required]],
       pUbicacion: ['', [Validators.required]]
     })
+    this.tpropiedad = '0';
   }
 
   obtenerDatosInmuebles() {
