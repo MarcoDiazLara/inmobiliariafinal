@@ -66,6 +66,19 @@ export class MenuComponent implements OnInit {
   this.router.navigate(['/web']);
  }
 
+ RemateHipotecario(){
+
+  this.router.navigate(['web/Remate']);
+
+ }
+ EvitaFraude(){
+
+  this.router.navigate(['web/EvitaFraude']);
+
+ }
+
+
+
 
 
 

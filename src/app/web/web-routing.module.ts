@@ -75,7 +75,7 @@ const routes: Routes = [
     component: RematehipotecarioComponent
   },
   {
-    path: 'Fraude',
+    path: 'EvitaFraude',
     component: EvitafraudeComponent
   },
 ];
