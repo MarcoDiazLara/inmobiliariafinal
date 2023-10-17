@@ -12,6 +12,7 @@ import { BlogComponent } from './blog/blog.component';
 import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
+import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
 
 const routes: Routes = [
 
@@ -51,11 +52,8 @@ const routes: Routes = [
   },
 
   {
-
     path:'Constructoradesarrolladora',
     component:ConstructoradesarrolladoraComponent
-
-
   },
   {
     path: 'maps',
@@ -77,6 +75,10 @@ const routes: Routes = [
   {
     path: 'EvitaFraude',
     component: EvitafraudeComponent
+  },
+  {
+    path: 'QuieresComprar',
+    component: QuierescomprarComponent
   },
 ];
 
