@@ -28,6 +28,13 @@ export class VistadeinmuebleComponent implements OnInit {
   datosTipoInmueble: any[] = [];
   municipios = '';
   tipoinmuebles = '';
+  data:any={
+    ubicacion:'',
+    inmueble: '',
+    tipoAccion:'',
+    precioHasta:'',
+    precioDesde:''
+  }
 
   title = 'ProyectoPrueba';
   public showPrecio: boolean = false;
@@ -192,6 +199,13 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
 
+    
+    this.http.mostrarTipoInmueble().subscribe((data: any) => {
+
+      this.datosTipoInmueble = data;
+
+    });
+  
 
   }
 
@@ -217,13 +231,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
   }
-  mostrarTipoInmueble() {
-    this.http.mostrarTipoInmueble().subscribe((data: any) => {
-
-      this.datosTipoInmueble = data;
-
-    });
-  }
+ 
   mostrarIDMunicipio(id: number): void {
     console.log(id);
   }
@@ -247,6 +255,17 @@ export class VistadeinmuebleComponent implements OnInit {
   /*botonSeleccionado(opcion:number){
     console.log( 'El usuario mostro:'opcion );
   }*/
+
+  mostrar(){
+
+    this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
+      let mostrar = JSON.stringify(data);
+      alert(mostrar);
+
+      this.datosInmueble =[];
+
+    });
+  }
 
 }
 
