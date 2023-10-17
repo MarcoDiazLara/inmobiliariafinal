@@ -6,6 +6,7 @@ import { WebComponent } from './web.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 
@@ -28,6 +29,7 @@ import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecari
 
 import { GoogleMapsModule } from '@angular/google-maps';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
+import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
 
 
 
@@ -48,6 +50,7 @@ import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
     BlogComponent,
     GuiarentarComponent,
     EvitafraudeComponent,
+    // QuierescomprarComponent,
     // RematehipotecarioComponent,
      
       
@@ -63,6 +66,7 @@ import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
+    MatTabsModule,
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
