@@ -34,31 +34,76 @@
               </li>
               <!--Menu Servicios-->
 
-             
-            
                 <ul class="nav__list">
                 
                   <li class="nav-item mx-1">
                     <a  class="nav-link" role="button" aria-expanded="false">Servicios</a>
-                    <ul>
+                    <ul class="dropdown-menu">
+
+                      <li> <a class="dropdown-item" href="#"> Arrendamiento seguro &raquo;</a>
+                      <ul class="submenu dropdown-menu ">
+                        <li><a  (click)="Guiarentar()"class="dropdown-item" >¿Qué se requiere para alquilar?</a></li>
+                      </ul>
+                      </li>
+
+                      <li> <a class="dropdown-item" href="#"> Te explica InmobeWise &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Servicio</a></li>
+                          <li><a class="dropdown-item" href="#">Que necesito para comprar</a></li>
+                          <li><a class="dropdown-item" href="#"> Que necesito para vender </a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li> <a class="dropdown-item" href="#"> Toma en cuenta &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a (click)="RemateHipotecario()" class="dropdown-item">Remates Hipotecarios</a></li>
+                          <li><a (click)="EvitaFraude()" class="dropdown-item" >Evita Fraude</a></li>
+                        </ul>
+                      </li>
+
+                      <li> <a class="dropdown-item" href="#"> Cambios Recientes &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Servicio</a></li>
+                          <li><a class="dropdown-item" href="#">Que necesito para comprar</a></li>
+                          <li><a class="dropdown-item" href="#"> Que necesito para vender </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <!-- <ul>
                       <li>
                         <a >Arrendamiento seguro</a>
                         <ul>
                           <li><a ></a></li>
                           <li><a >¿Qué se requiere para alquilar?</a></li>
-                          <!-- <li><a >Sub Menu del menu 3</a></li>
-                          <li><a >Sub Menu del menu 4</a></li> -->
+
+                        <li><a >Sub Menu del menu 3</a></li>
+                          <li><a >Sub Menu del menu 4</a></li> 
+
                         </ul>
                       </li> 
-                      <li><a>Te explica inmuebles</a></li>
-                      <li><a >Tomar en cuenta importante</a></li>
+                       <li><a>Te explica inmuebles</a></li>
+                      <li>
+                        <a >Tomar en cuenta importante</a>
+                        <ul>
+                          <li><a ></a></li>
+                          <li><a >Remates Hipotecario</a></li>
+                          <hr>
+                          <li><a >Evitar un fraude</a></li>
+                          <li><a ></a></li>
+                        </ul>
+                      </li>
+
                       <li><a >Cambios recientes</a></li>
-                    </ul>
+                    </ul> -->
                   </li>
                 </ul>
           
+<!-- End Servicios -->
 
-            
+
+
               <!--Menu Inmobiliarias-->
               <li class="nav-item mx-1">
                   <a class="nav-link" role="button" aria-expanded="false">
@@ -82,7 +127,7 @@
       </div>
       <div class="d-flex p-2 bd-highlight">
           <form class="d-flex mx-2" >
-            <button  class="btn btn-outline-inmo font-Roboto-Condensed my-1 mx-1" type="button"  (click)="abrir()">
+            <button  class="btn btn-outline-inmo ordenabutton font-Roboto-Condensed my-1 mx-1" type="button"  (click)="abrir()">
                 <i class="bi bi-house-up-fill m-1 size-icon"></i> Sube tu Propiedad
             </button>
   <!-- tu-componente.component.html o en un archivo separado -->
@@ -133,7 +178,7 @@
             <i class="bi bi-house-up-fill m-1 size-icon"></i> Sube tu Propiedad
         </button>  -->
               <ul *ngIf="!isLoggedIn">
-              <button class="btn btn-outline-inmo font-Roboto-Condensed my-1 mx-1" (click)="Login()" type="submit">
+              <button class="btn btn-outline-inmo ordenabutton1 font-Roboto-Condensed my-1 mx-1" (click)="Login()" type="submit">
                   <i class="bi bi-person-circle m-1 size-icon" ></i> Acceder
               </button>
             </ul>
@@ -145,7 +190,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item"  (click)="Editar()">Editar Perfil</a>
-                  <a class="dropdown-item" href="#">Panel de Control</a>
+                  <a class="dropdown-item" (click)="Panel()">Panel de Control</a>
                   <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
                 </div>
               </div>

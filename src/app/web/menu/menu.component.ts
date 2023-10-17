@@ -3,12 +3,16 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 
 
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
+
  
   isLoggedIn: boolean = false;
 
@@ -30,6 +34,11 @@ export class MenuComponent implements OnInit {
  contactos(){
 
   this.router.navigate(['web/contacto']);
+
+ }
+ Guiarentar(){
+
+  this.router.navigate(['web/Guiarentar']);
 
  }
 
@@ -102,8 +111,14 @@ export class MenuComponent implements OnInit {
     this.router.navigate(["cliente/cliente/Perfil"]),{ replaceUrl: true };
   }
 
- 
+  Panel(){
+    let entrada = localStorage.getItem("Id_Tipo_Usuario");
+    if(entrada == "6"){
+      this.router.navigate(["/superUsuario"]);
+    }
 
+  }
+  
 
 
 }

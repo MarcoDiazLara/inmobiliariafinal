@@ -27,6 +27,7 @@ import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
+import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 
 
 
@@ -46,6 +47,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MapsComponent,
     BlogComponent,
     GuiarentarComponent,
+    EvitafraudeComponent,
     // RematehipotecarioComponent,
      
       

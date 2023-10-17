@@ -11,6 +11,7 @@ import { MapsComponent } from './maps/maps.component';
 import { BlogComponent } from './blog/blog.component';
 import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
+import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 
 const routes: Routes = [
 
@@ -72,13 +73,11 @@ const routes: Routes = [
   {
     path: 'Remate',
     component: RematehipotecarioComponent
-  }
-  
-
-
-
-
-
+  },
+  {
+    path: 'EvitaFraude',
+    component: EvitafraudeComponent
+  },
 ];
 
 @NgModule({

@@ -16,5 +16,8 @@ export class RematehipotecarioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // back() {
+  //   this.router.navigate(["/web"]);
+  // }
 
 }
