@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule, MatExpansionPanel} from '@angular/material/expansion';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -91,7 +92,8 @@ import { MatDialogModule } from '@angular/material/dialog';
      MatAutocompleteModule,
      ReactiveFormsModule,
      MatButtonToggleModule,
-WebModule
+     MatExpansionModule,
+     WebModule
 
   ],
   exports: [WebModule],
