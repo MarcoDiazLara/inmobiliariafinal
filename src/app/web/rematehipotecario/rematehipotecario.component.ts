@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rematehipotecario',
@@ -12,12 +13,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 })
 export class RematehipotecarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  
+  ) { }
 
   ngOnInit(): void {
+    
   }
-  // back() {
-  //   this.router.navigate(["/web"]);
-  // }
+  
+  Index() {
+    this.router.navigate(["/web"]);
+  }
+ 
 
 }
