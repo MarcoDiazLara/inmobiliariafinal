@@ -36,6 +36,11 @@ export class MenuComponent implements OnInit {
   this.router.navigate(['web/contacto']);
 
  }
+ Guiarentar(){
+
+  this.router.navigate(['web/guiarentar']);
+
+ }
 
  directo(){
   this.router.navigate(['web/particula']);
