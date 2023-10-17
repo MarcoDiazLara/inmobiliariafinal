@@ -111,7 +111,25 @@ export class MenuComponent implements OnInit {
     this.router.navigate(["cliente/cliente/Perfil"]),{ replaceUrl: true };
   }
 
+  Panel(){
+    let entrada = localStorage.getItem("Id_Tipo_Usuario");
+    if(entrada == "6"){
+      this.router.navigate(["/superUsuario"]);
+    }
 
+  }
+  
+  RemateHipotecario(){
+
+    this.router.navigate(['web/Remate']);
+  
+   }
+   EvitaFraude(){
+  
+    this.router.navigate(['web/EvitaFraude']);
+  
+   }
+ 
   
 
 

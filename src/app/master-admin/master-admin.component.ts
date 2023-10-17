@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 
 export class MasterAdminComponent  implements OnDestroy {
   mobileQuery: MediaQueryList;
+  nombre: any;
 
      fillerNav = [
     { name: "altabroker", route: "altabroker",icon: "perm_contact_calendar" , label: "ALTA",number:'0'},
@@ -34,6 +35,7 @@ export class MasterAdminComponent  implements OnDestroy {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    this.nombre = localStorage.getItem("Nombre_Usuario");
   }
 
   ngOnDestroy(): void {

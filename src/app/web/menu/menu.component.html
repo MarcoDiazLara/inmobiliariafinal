@@ -57,8 +57,8 @@
 
                       <li> <a class="dropdown-item" href="#"> Toma en cuenta &raquo; </a>
                         <ul class="submenu dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Remates Hipotecarios</a></li>
-                          <li><a class="dropdown-item" href="#">Evita Fraude</a></li>
+                          <li><a (click)="RemateHipotecario()" class="dropdown-item">Remates Hipotecarios</a></li>
+                          <li><a (click)="EvitaFraude()" class="dropdown-item" >Evita Fraude</a></li>
                         </ul>
                       </li>
 
@@ -190,7 +190,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item"  (click)="Editar()">Editar Perfil</a>
-                  <a class="dropdown-item" href="#">Panel de Control</a>
+                  <a class="dropdown-item" (click)="Panel()">Panel de Control</a>
                   <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
                 </div>
               </div>

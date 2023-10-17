@@ -447,26 +447,22 @@
   /* Cambio de color al pasar el mouse sobre elementos de lista */
 }
 
+
+
 .dropdown-Filtros {
-  max-height: 550px;
-  /* Establece la altura máxima deseada */
-  overflow-y: auto;
-  /* Activa el desplazamiento vertical */
+  max-height: 550px;/* Establece la altura máxima deseada */
+  overflow-y: auto; /* Activa el desplazamiento vertical */
   list-style: none;
   margin-right: 0;
   padding: 0;
   width: 450px;
   border-radius: 5px;
-  background-color: #fff;
-  /* Fondo de la lista */
-  border: 1px solid #ccc;
-  /* Borde de la lista */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  z-index: 1;
-  /* Asegura que la lista esté por encima de otros elementos */
-  position: absolute;
-  /* Establece el posicionamiento absoluto */
+  background-color: #fff; /* Fondo de la lista */
+  border: 1px solid #ccc; /* Borde de la lista */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 1;/* Asegura que la lista esté por encima de otros elementos */
+  position: absolute;/* Establece el posicionamiento absoluto */
+  left: 57%;
 }
 
 /* Estilo para los elementos de la lista */
@@ -482,6 +478,14 @@
   background-color: #f0f0f0;
   /* Cambio de color al pasar el mouse sobre elementos de lista */
 }
+
+
+
+
+
+
+
+
 
 
 
