@@ -56,13 +56,6 @@ import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactul
     // QuierescomprarComponent,
     NovedadesactulidadComponent,
     // RematehipotecarioComponent,
-     
-      
-      
-     
-
-
-
   ],
   imports: [
     CommonModule,
