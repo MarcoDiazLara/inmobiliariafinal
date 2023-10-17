@@ -18,7 +18,7 @@
     <ul  class="dropdown-search">
       <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Estado)"><a>{{ option.estado }}</a></li>
     </ul>
-    <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
+    <button class="btn btn-outline-secondary" type="submit" (change)="mostrar()">
       <img class="lupa">
     </button>
 
