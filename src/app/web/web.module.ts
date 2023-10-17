@@ -28,6 +28,7 @@ import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecari
 
 import { GoogleMapsModule } from '@angular/google-maps';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
+import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 
 
 
@@ -48,6 +49,7 @@ import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
     BlogComponent,
     GuiarentarComponent,
     EvitafraudeComponent,
+    NovedadesactulidadComponent,
     // RematehipotecarioComponent,
      
       

@@ -13,6 +13,8 @@ import { HttpService } from 'src/app/services/http/http.service';
 
 })
 export class VistadeinmuebleComponent implements OnInit {
+  
+
   control = new FormControl('');
   streets: string[] = [
     'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial',
@@ -44,6 +46,9 @@ export class VistadeinmuebleComponent implements OnInit {
   public showSearch: boolean = false;
   public showPrecioEjemplo: boolean = false;
   public showFiltros: boolean = false;
+  public showEntretenimiento: boolean = false;
+
+
   selectedValue = '';
   municipioSeleccionado: string = '';
   // Definir un arreglo de opciones
@@ -91,6 +96,14 @@ export class VistadeinmuebleComponent implements OnInit {
       // Puedes realizar acciones específicas en este caso.
     }
   }*/
+
+
+// Función para mostrar/ocultar la lista de Precio
+toggleEntertaiment() {
+  this.showEntretenimiento = !this.showEntretenimiento;
+}
+
+
 
   // Función para mostrar/ocultar la lista de Precio
   togglePrecio() {

@@ -83,12 +83,20 @@
     </div>
     <div>
 
+
+
+
+
       <!-- Button trigger modal -->
+      
       <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
         data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
+
+
+
       <ul *ngIf="showFiltros" class="dropdown-Filtros">
 
-
+     
         <form class="ps-4 pe-4">
 
           <h4 class="h4filtros">Palabras clave</h4>
@@ -171,31 +179,57 @@
             <mat-button-toggle>+5</mat-button-toggle>
           </mat-button-toggle-group>
 
-
-
-
-
           <h4 class="h4filtros">Entretenimiento</h4>
-          <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
-            <div style="flex: 1;">
-              <section class="example-section" style="display: flex; flex-direction: column;">
-                <mat-checkbox class="opcfiltros2">Roof Garden</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Jardines</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Salón social</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Bussines center</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Biblioteca</mat-checkbox>
-              </section>
-            </div>
-            <div style="flex: 1;">
-              <section class="example-section" style="display: flex; flex-direction: column;">
-                <mat-checkbox class="opcfiltros2">Despacho</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Salón de usos múltiples</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Sala de juegos infantil</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Áreas deportivas</mat-checkbox>
-                <mat-checkbox class="opcfiltros2">Unidad Deportiva</mat-checkbox>
-              </section>
-            </div>
+
+          <div>
+              <h5 class="h4filtros">Cocina integral</h5>
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle>1</mat-button-toggle>
+                <mat-button-toggle>2</mat-button-toggle>
+                <mat-button-toggle>3</mat-button-toggle>
+                <mat-button-toggle>4</mat-button-toggle>
+                <mat-button-toggle>+5</mat-button-toggle>
+              </mat-button-toggle-group>
+              <h5 class="h4filtros">Alberca</h5>
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle>1</mat-button-toggle>
+                <mat-button-toggle>2</mat-button-toggle>
+                <mat-button-toggle>3</mat-button-toggle>
+                <mat-button-toggle>4</mat-button-toggle>
+                <mat-button-toggle>+5</mat-button-toggle>
+              </mat-button-toggle-group>
+              <h5 class="h4filtros">Jardin</h5>
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle>1</mat-button-toggle>
+                <mat-button-toggle>2</mat-button-toggle>
+                <mat-button-toggle>3</mat-button-toggle>
+                <mat-button-toggle>4</mat-button-toggle>
+                <mat-button-toggle>+5</mat-button-toggle>
+              </mat-button-toggle-group>
+              <h5 class="h4filtros">Gimnasios</h5>
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle>1</mat-button-toggle>
+                <mat-button-toggle>2</mat-button-toggle>
+                <mat-button-toggle>3</mat-button-toggle>
+                <mat-button-toggle>4</mat-button-toggle>
+                <mat-button-toggle>+5</mat-button-toggle>
+              </mat-button-toggle-group>
+              <h5 class="h4filtros">Roof Garden</h5>
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle>1</mat-button-toggle>
+                <mat-button-toggle>2</mat-button-toggle>
+                <mat-button-toggle>3</mat-button-toggle>
+                <mat-button-toggle>4</mat-button-toggle>
+                <mat-button-toggle>+5</mat-button-toggle>
+              </mat-button-toggle-group>
+              
           </div>
+
+
+
+
+          
+
 
 
           <h4 class="h4filtros">Vigilancia</h4>
@@ -244,14 +278,13 @@
             <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
           </mat-radio-group>
 
-
-
-
-
-
         </form>
+     
+    
 
-        <li style="margin-top: 25px;"><button mat-raised-button>Limpiar filtros</button></li>
+        <li style="margin-top: 25px;" class="fixed-item"><button mat-raised-button>Limpiar filtros</button></li>
+   
+        
       </ul>
 
 
