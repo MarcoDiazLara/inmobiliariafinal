@@ -3,12 +3,16 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 
 
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
+
  
   isLoggedIn: boolean = false;
 
@@ -102,8 +106,8 @@ export class MenuComponent implements OnInit {
     this.router.navigate(["cliente/cliente/Perfil"]),{ replaceUrl: true };
   }
 
- 
 
+  
 
 
 }
