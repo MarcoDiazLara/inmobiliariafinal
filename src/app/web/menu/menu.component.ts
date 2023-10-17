@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit {
  }
  Guiarentar(){
 
-  this.router.navigate(['web/guiarentar']);
+  this.router.navigate(['web/Guiarentar']);
 
  }
 

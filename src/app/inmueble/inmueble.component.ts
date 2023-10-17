@@ -45,11 +45,12 @@ export class InmuebleComponent implements OnInit {
 // Define un FormControl con validadores para números
 
 foods: Food[] = [
-  {value: '', viewValue: '1'},
-  {value: '', viewValue: '2'},
-  {value: '', viewValue: '3'},
-  {value: '', viewValue: '4'},
-  {value: '', viewValue: '5'},
+  {value: '0', viewValue: '0'},
+  {value: '1', viewValue: '1'},
+  {value: '2', viewValue: '2'},
+  {value: '3', viewValue: '3'},
+  {value: '4', viewValue: '4'},
+  {value: '5', viewValue: '5'},
 ];
 
 
@@ -223,18 +224,8 @@ xd(){
     let p_prec_min1 = this.secondFormGroup.value.p_prec_min;
     let p_prec_max1 = this.secondFormGroup.value.p_prec_max;
     let p_prec_final1 = this.secondFormGroup.value.p_prec_final;
-    
-    this.cheks = [p_alberca1,p_jardin1, p_gym1, p_estacionamiento, p_cocina1, p_roof ];
-
  
-
-    for(let i = 0 ; i < 6 ; i++){
-
-      if(this.cheks[i] != true){
-        this.cheks[i] = false;
-      }
-    }
-
+    
 
 
     this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
