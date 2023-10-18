@@ -42,6 +42,11 @@ export class MenuComponent implements OnInit {
 
  }
 
+ inmobiliarias(){
+  this.router.navigate(['web/inmobiliarias']);
+
+ }
+
  directo(){
   this.router.navigate(['web/particula']);
 
@@ -115,6 +120,8 @@ export class MenuComponent implements OnInit {
     let entrada = localStorage.getItem("Id_Tipo_Usuario");
     if(entrada == "6"){
       this.router.navigate(["/superUsuario"]);
+    }else if (entrada == "2"){
+      this.router.navigate(["/usuario/perfil"]);
     }
 
   }
@@ -128,6 +135,9 @@ export class MenuComponent implements OnInit {
   
     this.router.navigate(['web/EvitaFraude']);
   
+   }
+   Quierescomprar(){
+    this.router.navigate(['web/QuieresComprar'])
    }
  
   

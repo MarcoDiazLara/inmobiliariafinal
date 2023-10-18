@@ -48,9 +48,8 @@
 
                       <li> <a class="dropdown-item" href="#"> Te explica InmobeWise &raquo; </a>
                         <ul class="submenu dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Servicio</a></li>
-                          <li><a class="dropdown-item" href="#">Que necesito para comprar</a></li>
-                          <li><a class="dropdown-item" href="#"> Que necesito para vender </a>
+                          <li><a (click)="Quierescomprar()" class="dropdown-item">¿Quieres comprar?</a></li>
+                          <li><a class="dropdown-item">¿Quieres vender?</a>
                           </li>
                         </ul>
                       </li>
@@ -62,14 +61,6 @@
                         </ul>
                       </li>
 
-                      <li> <a class="dropdown-item" href="#"> Cambios Recientes &raquo; </a>
-                        <ul class="submenu dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Servicio</a></li>
-                          <li><a class="dropdown-item" href="#">Que necesito para comprar</a></li>
-                          <li><a class="dropdown-item" href="#"> Que necesito para vender </a>
-                          </li>
-                        </ul>
-                      </li>
                     </ul>
                     <!-- <ul>
                       <li>
@@ -106,7 +97,7 @@
 
               <!--Menu Inmobiliarias-->
               <li class="nav-item mx-1">
-                  <a class="nav-link" role="button" aria-expanded="false">
+                  <a   (click)="inmobiliarias()"class="nav-link" role="button" aria-expanded="false">
                       Inmobiliarias
                   </a>
               </li>

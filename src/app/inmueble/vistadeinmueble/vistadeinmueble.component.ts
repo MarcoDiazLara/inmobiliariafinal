@@ -14,6 +14,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 })
 export class VistadeinmuebleComponent implements OnInit {
   
+  panelOpenState = false;
 
   control = new FormControl('');
   streets: string[] = [
@@ -69,7 +70,7 @@ export class VistadeinmuebleComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   
   
-  /*onDocumentClick(event: MouseEvent) {
+  onDocumentClick(event: MouseEvent) {
     // Verifica si el clic no fue dentro del botón de Precio ni dentro de la lista de Precio
     if (!this.el.nativeElement.querySelector('.navbar').contains(event.target) &&
       !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search., .dropdown-Filtros').contains(event.target))
@@ -85,9 +86,9 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
     }
-  }*/
+  }
 
-  onDocumentClick(event: Event): void {
+  /*onDocumentClick(event: Event): void {
     // Aquí puedes realizar acciones cuando se hace clic en cualquier lugar del documento.
     // Puedes verificar si el clic ocurrió dentro de un elemento específico utilizando el método `contains`.
 
@@ -95,7 +96,7 @@ export class VistadeinmuebleComponent implements OnInit {
       // El clic ocurrió fuera del elemento del componente.
       // Puedes realizar acciones específicas en este caso.
     }
-  }
+  }*/
 
 
 // Función para mostrar/ocultar la lista de Precio
@@ -271,11 +272,19 @@ toggleEntertaiment() {
 
   mostrar(){
 
+
+   
     this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
       let mostrar = JSON.stringify(data);
       alert(mostrar);
 
+      
+      
+      location.reload();
+    
       this.datosInmueble =[];
+
+      
 
     });
   }

@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { Router } from '@angular/router';
+import { WebModule } from '../web.module';
 
 @Component({
   selector: 'app-rematehipotecario',
   templateUrl: './rematehipotecario.component.html',
   styleUrls: ['./rematehipotecario.component.scss'],
-  standalone: true,
-  imports: [
-    MatTabsModule
-  ],
+  
 })
 export class RematehipotecarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  
+  ) { }
 
   ngOnInit(): void {
+    
   }
-  // back() {
-  //   this.router.navigate(["/web"]);
-  // }
+  
+  Index() {
+    this.router.navigate(["web"]);
+  }
+ 
 
 }
