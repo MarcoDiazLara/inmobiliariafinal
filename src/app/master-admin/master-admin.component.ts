@@ -26,7 +26,7 @@ export class MasterAdminComponent  implements OnDestroy {
     { name: "eliminarasesores", route: "eliminaasesores",icon: "person" , label: "ELIMINAUSUARIO",number:'0' },
     { name: "altausuario", route: "altausuario",icon: "home" , label: "Alta usuario",number:'0' },
     { name: "altasocio", route: "altasocio",icon: "home" , label: "Alta socio",number:'0' },
-    { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'}
+    { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'}
   ];
 
   private _mobileQueryListener: () => void;
@@ -46,7 +46,7 @@ export class MasterAdminComponent  implements OnDestroy {
 
   public salir(op:any) {
 
-    // alert("diste clic en salir"+op);
+    //this.router.navigate(["/web"]);
   }
 
 }
