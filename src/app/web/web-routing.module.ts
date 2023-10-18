@@ -43,6 +43,14 @@ const routes: Routes = [
     component:GuiarentarComponent
 
   },
+  {
+
+  path:'inmobiliarias',
+  component:InmobiliariasComponent
+
+  },
+          
+
 
   {
 

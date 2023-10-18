@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { tipoUsuario } from 'src/app/services/Interface/Interfaces';
+import { LocalizedString } from '@angular/compiler';
 
 
 
@@ -69,6 +70,7 @@ export class AltausuarioComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerTipoUsuario();
       this.formGeneral = this.formBuilder.group({
+        seleccionausuario: ['',[Validators.required]],
         nombre: ['', [Validators.required]],
         apellidopaterno: ['', [Validators.required]],
         apellidomaterno: ['', [Validators.required]],
@@ -92,6 +94,7 @@ export class AltausuarioComponent implements OnInit {
       let nombre = this.formGeneral.value.nombre;
       let apellidopaterno = this.formGeneral.value.apellidopaterno;
       let apellidomaterno = this.formGeneral.value.apellidomaterno;
+      let contra = this.formGeneral.value.password;
       let curp = this.formGeneral.value.curp;
       let rfc = this.formGeneral.value.rfc;
       let contactoprincipal = this.formGeneral.value.contactoprincipal;
@@ -102,8 +105,23 @@ export class AltausuarioComponent implements OnInit {
       let descripcionusuario = this.formGeneral.value.descripcionusuario;
       let imageInput = this.formGeneral.value.imageInput;
 
+      let typeuser = this.formGeneral.value.seleccionausuario;
 
-      alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'estatus' + estatus + 'descripcionusuario'+ descripcionusuario + 'imageInput' + imageInput); 
+      let id = localStorage.getItem("Id_Usuario");
+
+      this.httpService.registroCompletoBroker(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra
+        ,email,contactoprincipal,contactoemergencia,typeuser ,estatus ,id ,descripcionusuario ,rfc, curp,id ).subscribe((data: any)=>{
+        if(data == 0){
+          alert("Error al insertar usuario");
+        }else{
+          if(data == 2){
+            alert("Error al insertar informacion");
+          }else{
+            alert("Se ha insertado un nuevo usuario");
+          }
+        }
+      })
+      
       
      }
 }

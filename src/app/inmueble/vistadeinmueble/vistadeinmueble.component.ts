@@ -13,19 +13,19 @@ import { HttpService } from 'src/app/services/http/http.service';
 
 })
 export class VistadeinmuebleComponent implements OnInit {
+  public showPrecio: boolean = false;
+  public showToferta: boolean = false;
+  public showInmueble: boolean = false;
+  public showRecamaras: boolean = false;
+  public showSearch: boolean = false;
+  public showPrecioEjemplo: boolean = false;
+  public showFiltros: boolean = false;
 
-
-  
   panelOpenState = false;
-
+  
   control = new FormControl('');
   streets: string[] = [
-    'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial',
-    'Farmacia', 'Hospital publico', 'privado', 'Parques',
-    'Mercado', 'Unidad Deportiva', 'Roof Garden', 'Jardines',
-    'Salón social', 'Bussines center', 'Biblioteca', 'Áreas deportivas',
-    'Cisterna', 'Amueblado', 'Jardin', 'Cochera',
-    'Internet', 'wi-fi', 'Salón Social', 'Biblioteca'];
+    'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial'];
   filteredStreets: Observable<string[]>;
   firstFormGroup!: FormGroup;
 
@@ -56,16 +56,7 @@ export class VistadeinmuebleComponent implements OnInit {
     
 
   }
-
   title = 'ProyectoPrueba';
-  public showPrecio: boolean = false;
-  public showToferta: boolean = false;
-  public showInmueble: boolean = false;
-  public showRecamaras: boolean = false;
-  public showSearch: boolean = false;
-  public showPrecioEjemplo: boolean = false;
-  public showFiltros: boolean = false;
-  public showEntretenimiento: boolean = false;
 
 
   selectedValue = '';
@@ -114,14 +105,6 @@ export class VistadeinmuebleComponent implements OnInit {
       // Puedes realizar acciones específicas en este caso.
     }
   }*/
-
-
-  // Función para mostrar/ocultar la lista de Precio
-  toggleEntertaiment() {
-    this.showEntretenimiento = !this.showEntretenimiento;
-  }
-
-
 
   // Función para mostrar/ocultar la lista de Precio
   togglePrecio() {
@@ -179,6 +162,21 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
   }
+  // Función para mostrar/ocultar la barra de resultados de escritura en busqueda
+  toggleFiltros() {
+    this.showFiltros = !this.showFiltros;
+    // Oculta las otras listas
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showSearch = false;
+  }
+
+
+
+
+
   getDireccion(direccion: string) {
     console.log(direccion);
 
@@ -193,16 +191,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  // Función para mostrar/ocultar la barra de resultados de escritura en busqueda
-  toggleFiltros() {
-    this.showFiltros = !this.showFiltros;
-    // Oculta las otras listas
-    this.showPrecio = false;
-    this.showToferta = false;
-    this.showInmueble = false;
-    this.showRecamaras = false;
-    this.showSearch = false;
-  }
+
 
 
 
@@ -309,21 +298,25 @@ export class VistadeinmuebleComponent implements OnInit {
     this.datosInmueble = [];
 
     this.http.busquedaAvanzada(this.data.ubicacion, this.data.recamaras, this.data.inmueble, '', '', this.data.pMax, this.data.pMin, this.data.tipoAccion, '', '').subscribe((data: any) => {
+
       /*let mostrar = JSON.stringify(data);
       alert(mostrar);*/
     data= this.datosInmueble ;
 
+  
 
 
+      /*this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
+        let mostrar = JSON.stringify(data);
+        alert(mostrar);
 
-      
+      location.reload();
+    
+      this.datosInmueble =[];*/
 
-      //this.datosInmueble = data;
-
-
-
-    });
-  }
+                });
+              
+            }
 
 }
 
