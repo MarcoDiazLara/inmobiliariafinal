@@ -13,6 +13,15 @@ import { HttpService } from 'src/app/services/http/http.service';
 
 })
 export class VistadeinmuebleComponent implements OnInit {
+  public showPrecio: boolean = false;
+  public showToferta: boolean = false;
+  public showInmueble: boolean = false;
+  public showRecamaras: boolean = false;
+  public showSearch: boolean = false;
+  public showPrecioEjemplo: boolean = false;
+  public showFiltros: boolean = false;
+  public showEntretenimiento: boolean = false;
+
 
 
   
@@ -40,16 +49,7 @@ export class VistadeinmuebleComponent implements OnInit {
     precioHasta: '',
     precioDesde: ''
   }
-
   title = 'ProyectoPrueba';
-  public showPrecio: boolean = false;
-  public showToferta: boolean = false;
-  public showInmueble: boolean = false;
-  public showRecamaras: boolean = false;
-  public showSearch: boolean = false;
-  public showPrecioEjemplo: boolean = false;
-  public showFiltros: boolean = false;
-  public showEntretenimiento: boolean = false;
 
 
   selectedValue = '';

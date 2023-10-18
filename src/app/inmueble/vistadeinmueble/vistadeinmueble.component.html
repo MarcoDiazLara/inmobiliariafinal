@@ -3,7 +3,6 @@
 <div class="navbar">
   
   <div [formGroup]="firstFormGroup" class="buscador">
-<<<<<<< Updated upstream
     <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
       placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
     <ul  class="dropdown-search">
@@ -14,14 +13,6 @@
     </button> 
 
     
-=======
-      <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
-        placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
-        <ul  class="dropdown-search">
-          <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
-        </ul>
-      <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()"><img class="lupa"></button> 
->>>>>>> Stashed changes
 
     <div class="dropdown ps-4 pe-4">
       <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
@@ -62,7 +53,7 @@
     </div> -->
 
     <div>
-
+ 
       
       <select  [(ngModel)]="data.inmueble">
         <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
@@ -87,13 +78,8 @@
 
 
       
-<<<<<<< Updated upstream
       <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
         data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados<img class="filter"></button>
-=======
-      <button type="button" class=" btn btn-outline-secondary me-2" data-target="#exampleModal"
-        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
->>>>>>> Stashed changes
 
 
 
