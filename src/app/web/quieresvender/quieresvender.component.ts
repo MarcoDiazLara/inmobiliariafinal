@@ -5,11 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-quieresvender',
   templateUrl: './quieresvender.component.html',
-  styleUrls: ['./quieresvender.component.scss'],
-  standalone: true,
-  imports: [
-    MatTabsModule,
-  ],
+  styleUrls: ['./quieresvender.component.scss'] 
 })
 export class QuieresvenderComponent implements OnInit {
 

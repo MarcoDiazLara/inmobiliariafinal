@@ -134,8 +134,8 @@ export class MenuComponent implements OnInit {
    Quierescomprar(){
     this.router.navigate(['web/QuieresComprar'])
    }
- 
-  
-
+   Quieresvender(){
+    this.router.navigate(['web/QuieresComprar'])
+   }
 
 }
