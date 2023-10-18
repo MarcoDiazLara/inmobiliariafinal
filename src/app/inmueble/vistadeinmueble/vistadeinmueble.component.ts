@@ -27,7 +27,9 @@ export class VistadeinmuebleComponent implements OnInit {
   streets: string[] = [
     'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial'];
   filteredStreets: Observable<string[]>;
+
   firstFormGroup!: FormGroup;
+  
   datosInmueble: any[] = [];
   datosMunicipios: any[] = [];
   datosTipoInmueble: any[] = [];

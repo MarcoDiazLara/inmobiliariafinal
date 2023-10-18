@@ -9,12 +9,6 @@ import { MatTabsModule } from '@angular/material/tabs';
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.scss'],
-  standalone: true,
-  imports:[ // Importa BrowserAnimationsModule para que las animaciones de Angular Material funcionen
-    MatListModule,  // Importa MatListModule para usar <mat-list-item> y <mat-list>
-    MatTabsModule,  
-    WebModule,
-  ],
   
 })
 export class DetallesComponent implements OnInit {
