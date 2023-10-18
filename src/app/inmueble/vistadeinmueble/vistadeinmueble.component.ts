@@ -20,7 +20,6 @@ export class VistadeinmuebleComponent implements OnInit {
   public showSearch: boolean = false;
   public showPrecioEjemplo: boolean = false;
   public showFiltros: boolean = false;
-  public showEntretenimiento: boolean = false;
 
   panelOpenState = false;
   
@@ -95,14 +94,6 @@ export class VistadeinmuebleComponent implements OnInit {
       // Puedes realizar acciones específicas en este caso.
     }
   }*/
-
-
-  // Función para mostrar/ocultar la lista de Precio
-  toggleEntertaiment() {
-    this.showEntretenimiento = !this.showEntretenimiento;
-  }
-
-
 
   // Función para mostrar/ocultar la lista de Precio
   togglePrecio() {
