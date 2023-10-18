@@ -131,6 +131,9 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['web/EvitaFraude']);
   
    }
+   Quierescomprar(){
+    this.router.navigate(['web/QuieresComprar'])
+   }
  
   
 

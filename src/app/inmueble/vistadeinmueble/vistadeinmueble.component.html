@@ -8,7 +8,7 @@
 
  <app-menu></app-menu>
 
-<div class="navbar content-center">
+<div class="filtrosxr">
 
   <div class="divider"></div>
 
@@ -44,7 +44,7 @@
 
     <div>
       
-      <select  placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
+      <select class="btn btn-outline-secondary" placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
         <option value="venta">Venta</option>
         <option value="renta">Renta</option>
         <option value="remate">Remate</option>
@@ -64,7 +64,7 @@
     <div>
 
       
-      <select   [(ngModel)]="data.inmueble" placeholder="Inmueble" >
+      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble" placeholder="Inmueble" >
         <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
@@ -90,7 +90,7 @@
       <!-- Button trigger modal -->
       
       <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
-        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
+        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados<img class="filter"></button>
 
 
 
@@ -179,9 +179,16 @@
             <mat-button-toggle>+5</mat-button-toggle>
           </mat-button-toggle-group>
 
-          <h4 class="h4filtros">Entretenimiento</h4>
-
-          <div>
+          
+        
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false"
+                                 style="margin-top: 25px;">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h4 class="h4filtros">Entretenimiento</h4>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
               <h5 class="h4filtros">Cocina integral</h5>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
                 <mat-button-toggle>1</mat-button-toggle>
@@ -223,7 +230,16 @@
                 <mat-button-toggle>+5</mat-button-toggle>
               </mat-button-toggle-group>
               
-          </div>
+            </mat-expansion-panel>
+        
+          
+
+
+
+
+
+
+
 
 
 
@@ -313,8 +329,12 @@
 
     </div>
   </div>
+
 </div>
-<div class="p-2"></div>
+
+
+
+
 
 <div class="container">
 <div class="content-right pr-4">

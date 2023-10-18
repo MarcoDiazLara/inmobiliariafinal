@@ -3,28 +3,25 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-rematehipotecario',
-  templateUrl: './rematehipotecario.component.html',
-  styleUrls: ['./rematehipotecario.component.scss'],
+  selector: 'app-quierescomprar',
+  templateUrl: './quierescomprar.component.html',
+  styleUrls: ['./quierescomprar.component.scss'],
   standalone: true,
   imports: [
     MatTabsModule
   ],
 })
-export class RematehipotecarioComponent implements OnInit {
+export class QuierescomprarComponent implements OnInit {
 
   constructor(
     private router: Router
-  
   ) { }
 
   ngOnInit(): void {
-    
   }
-  
+
   Index() {
     this.router.navigate(["/web"]);
   }
- 
 
 }
