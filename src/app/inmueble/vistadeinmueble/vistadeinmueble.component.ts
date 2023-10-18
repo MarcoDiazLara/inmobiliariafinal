@@ -31,16 +31,30 @@ export class VistadeinmuebleComponent implements OnInit {
   firstFormGroup!: FormGroup;
   
   datosInmueble: any[] = [];
+  /*datosMunicipios  llena la lista de busqueda de todos los municipios*/
   datosMunicipios: any[] = [];
+  /*datosTipoInmueble llena el comboBox con los tipos de inmuebles */
   datosTipoInmueble: any[] = [];
+  /*municipios almacena el valor del municpio= San Martin Tex,etc */
   municipios = '';
+  /*tipoinmuebles almacena el valor del tipo de inmueble casa, departamento, etc. */
   tipoinmuebles = '';
+ /*Almacena el id del municipio sleccionado*/
+  estadoSeleccionado:any | null ='';
+  /*Almacena el id del tipoInmueble*/
+  seleccionIdTipoInmueble:any | null='';
+
   data: any = {
     ubicacion: '',
+    recamaras:'',
     inmueble: '',
-    tipoAccion: '',
     precioHasta: '',
-    precioDesde: ''
+    precioDesde: '',
+    tipoAccion: '',
+    bano:'',
+    estacionamiento:''
+    
+
   }
   title = 'ProyectoPrueba';
 
@@ -201,12 +215,10 @@ export class VistadeinmuebleComponent implements OnInit {
       console.log('Propiedad: ', this.tpropiedad);
       console.log('Ubicacion: ', this.ubicacion);
 
-      this.firstFormGroup = this.formBuilder.group({
-        pDireccion: ['', [Validators.required]]
+    });
 
-      });
-
-      
+    this.firstFormGroup = this.formBuilder.group({
+      pDireccion: ['', [Validators.required]]
 
     });
 
@@ -223,7 +235,13 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
 
-   
+    this.firstFormGroup = this.formBuilder.group({
+      pDireccion: ['', [Validators.required]]
+
+    });
+
+    //let datosBusqueda = 
+
 
   }
 
@@ -275,24 +293,29 @@ export class VistadeinmuebleComponent implements OnInit {
   }*/
 
   mostrar() {
-      this.http.busquedaAvanzada(this.data.ubicacion, '', '', '', '', '', '', 'compra', '', '').subscribe((data: any) => {
+
+
+    this.datosInmueble = [];
+
+    this.http.busquedaAvanzada(this.data.ubicacion, this.data.recamaras, this.data.inmueble, '', '', this.data.pMax, this.data.pMin, this.data.tipoAccion, '', '').subscribe((data: any) => {
+
       /*let mostrar = JSON.stringify(data);
       alert(mostrar);*/
+    data= this.datosInmueble ;
 
-      this.datosInmueble = [];
+  
 
-      this.datosInmueble = data;
 
-      this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
+      /*this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
         let mostrar = JSON.stringify(data);
         alert(mostrar);
 
       location.reload();
     
-      this.datosInmueble =[];
+      this.datosInmueble =[];*/
 
                 });
-              });
+              
             }
 
 }
