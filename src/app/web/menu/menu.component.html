@@ -49,7 +49,7 @@
                       <li> <a class="dropdown-item" href="#"> Te explica InmobeWise &raquo; </a>
                         <ul class="submenu dropdown-menu">
                           <li><a (click)="Quierescomprar()" class="dropdown-item">¿Quieres comprar?</a></li>
-                          <li><a class="dropdown-item">¿Quieres vender?</a>
+                          <li><a (click)="Quieresvender()"class="dropdown-item">¿Quieres vender?</a>
                           </li>
                         </ul>
                       </li>
@@ -58,6 +58,13 @@
                         <ul class="submenu dropdown-menu">
                           <li><a (click)="RemateHipotecario()" class="dropdown-item">Remates Hipotecarios</a></li>
                           <li><a (click)="EvitaFraude()" class="dropdown-item" >Evita Fraude</a></li>
+                        </ul>
+                      </li>
+
+                      <li> <a class="dropdown-item" href="#"> Novedades &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a (click)="novedadesactulidad()" class="dropdown-item"> Actualida</a></li>
+                         
                         </ul>
                       </li>
 
@@ -97,7 +104,7 @@
 
               <!--Menu Inmobiliarias-->
               <li class="nav-item mx-1">
-                  <a class="nav-link" role="button" aria-expanded="false">
+                  <a   (click)="inmobiliarias()"  class="nav-link" role="button" aria-expanded="false">
                       Inmobiliarias
                   </a>
               </li>
