@@ -11,6 +11,15 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { tipoUsuario } from 'src/app/services/Interface/Interfaces';
+
+
+
+interface Status {
+  value: string;
+  viewValue: string;
+}
+
 
 @Component({
   selector: 'app-altausuario',
@@ -31,11 +40,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     
   ],
 })
-export class AltausuarioComponent implements OnInit {
 
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+
+export class AltausuarioComponent implements OnInit {
+  typeUsers : tipoUsuario [] = [];
+  typeUser !: tipoUsuario;
+
+
+
+  estados: Status[] = [
+    {value: 'Activo', viewValue: 'Activo'},
+    {value: 'Inactivo', viewValue: 'Inactivo'},
+  ];
+ 
    
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
@@ -50,6 +67,7 @@ export class AltausuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.obtenerTipoUsuario();
       this.formGeneral = this.formBuilder.group({
         nombre: ['', [Validators.required]],
         apellidopaterno: ['', [Validators.required]],
@@ -89,5 +107,17 @@ export class AltausuarioComponent implements OnInit {
       
      }
 }
+
+obtenerTipoUsuario(){
+  this.httpService.obtenerTipoUser().subscribe((resp:any)=>{
+   if(resp !== 201){
+    
+     this.typeUser = resp[0].Id_Tipo_Usuario;
+     this.typeUsers = resp;
+   }
+  },(err)=>{
+   console.log(err);
+  })
+ }
 
 }

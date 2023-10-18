@@ -39,3 +39,8 @@ export interface infoUsuario{
         Img_Profile: "",
         Nombre_Usuario: "" 
 };
+
+export interface tipoUsuario{
+    Id_Tipo_Usuario: "",
+    Tipo_Usuario: ""
+};

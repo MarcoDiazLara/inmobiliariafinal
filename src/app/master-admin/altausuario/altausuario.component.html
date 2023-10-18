@@ -5,7 +5,8 @@
               <mat-form-field class="example-full-width">
                 <mat-label style="margin-left: 6%;"> Selecciona Usuario </mat-label>
                 <mat-select formControlName="seleccionausuario" required>
-                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                  <mat-option *ngFor="let User of typeUsers" value="{{ User.Id_Tipo_Usuario}}">{{ User.Tipo_Usuario
+                  }}</mat-option>
                 </mat-select>
                 <mat-error>
                   Estatus
@@ -133,7 +134,8 @@
              <mat-form-field class="example-full-width ">
               <mat-label  style="margin-left: 6%;"> Estatus </mat-label>
                   <mat-select  formControlName="estatus" required >
-                    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    <mat-option *ngFor="let est of estados" [value]="est.value">
+                      {{est.viewValue}}</mat-option>
                   </mat-select>
             </mat-form-field>
           </div>

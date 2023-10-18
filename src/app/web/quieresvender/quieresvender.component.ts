@@ -3,11 +3,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-quierescomprar',
-  templateUrl: './quierescomprar.component.html',
-  styleUrls: ['./quierescomprar.component.scss']
+  selector: 'app-quieresvender',
+  templateUrl: './quieresvender.component.html',
+  styleUrls: ['./quieresvender.component.scss'] 
 })
-export class QuierescomprarComponent implements OnInit {
+export class QuieresvenderComponent implements OnInit {
 
   constructor(
     private router: Router

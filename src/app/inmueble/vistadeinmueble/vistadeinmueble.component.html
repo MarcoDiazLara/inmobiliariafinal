@@ -8,20 +8,21 @@
 
  <app-menu></app-menu>
 
-<div class="filtrosxr">
-
+<div class="navbar content-center">
+  
   <div class="divider"></div>
-
-  <div class="buscador">
-    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()" [(ngModel)]="data.ubicacion"
-      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios">
+  
+  <div [formGroup]="firstFormGroup" class="buscador">
+    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
+      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
     <ul  class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Estado)"><a>{{ option.estado }}</a></li>
+      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
     </ul>
-    <button class="btn btn-outline-secondary" type="submit" (change)="mostrar()">
+    <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
       <img class="lupa">
-    </button>
+    </button> 
 
+    
 
     <div class="dropdown ps-4 pe-4">
       <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
@@ -31,10 +32,10 @@
 
           <div class="mb-3" style="margin-top: 25px;">
 
-            <input type="text" class="form-control" id="nombre" placeholder="Desde" [(ngModel)]="data.precioDesde">
+            <input type="text" class="form-control" id="nombre" placeholder="Desde" [(ngModel)]="data.precioDesde" >
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" id="nombre" placeholder="Hasta" [(ngModel)]="data.precioHasta"> 
+            <input type="text" class="form-control" id="nombre" placeholder="Hasta" [(ngModel)]="data.precioHasta" > 
           </div>
 
           <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
@@ -44,7 +45,7 @@
 
     <div>
       
-      <select class="btn btn-outline-secondary" placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
+      <select class="selectpicker ps-4 pe-4"  placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
         <option value="venta">Venta</option>
         <option value="renta">Renta</option>
         <option value="remate">Remate</option>
@@ -72,7 +73,7 @@
     </div>
 
     <div>
-      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()">Recamaras <img class="arrow1"></button>
+      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()" >Recamaras <img class="arrow1"></button>
       <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
         <li><a>1</a></li>
         <li><a>2</a></li>
@@ -90,7 +91,7 @@
       <!-- Button trigger modal -->
       
       <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
-        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados<img class="filter"></button>
+        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
 
 
 
@@ -179,16 +180,9 @@
             <mat-button-toggle>+5</mat-button-toggle>
           </mat-button-toggle-group>
 
-          
-        
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false"
-                                 style="margin-top: 25px;">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <h4 class="h4filtros">Entretenimiento</h4>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
+          <h4 class="h4filtros">Entretenimiento</h4>
+
+          <div>
               <h5 class="h4filtros">Cocina integral</h5>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
                 <mat-button-toggle>1</mat-button-toggle>
@@ -230,16 +224,7 @@
                 <mat-button-toggle>+5</mat-button-toggle>
               </mat-button-toggle-group>
               
-            </mat-expansion-panel>
-        
-          
-
-
-
-
-
-
-
+          </div>
 
 
 
@@ -331,10 +316,7 @@
   </div>
 
 </div>
-
-
-
-
+<div class="p-2"></div>
 
 <div class="container">
 <div class="content-right pr-4">
