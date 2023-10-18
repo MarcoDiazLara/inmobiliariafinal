@@ -131,7 +131,7 @@ export class HttpService {
     return this.httpclient.post(this.url + 'consultarTipoInmueble.php',  { headers });
   }
 
-  busquedaAvanzada(idMunicipio: String, recamaras: string, tipoInmueble: String, antiguedad: String, calle: String, Pmax: String,pMin:String,propiedad:String,bano:String,estacionamiento:String) {
+  busquedaAvanzada(idMunicipio: number, recamaras: string, tipoInmueble: String, antiguedad: String, calle: String, Pmax: String,pMin:String,propiedad:String,bano:String,estacionamiento:String) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_Municipio=' + idMunicipio + '&p_Recamara=' + recamaras + '&p_Tipo_Inmueble=' + tipoInmueble + '&p_Antiguedad=' + antiguedad + '&p_calle=' + calle + '&p_max=' + Pmax + '&p_min=' + pMin + '&p_propiedad=' + propiedad + '&p_bano=' + bano + '&p_estacionamiento=' + estacionamiento;
     return this.httpclient.post(this.url + 'Filtros.php', params, { headers });

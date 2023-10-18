@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ElementRef, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
 
@@ -13,6 +13,8 @@ import { HttpService } from 'src/app/services/http/http.service';
 
 })
 export class VistadeinmuebleComponent implements OnInit {
+
+
   
   panelOpenState = false;
 
@@ -25,18 +27,18 @@ export class VistadeinmuebleComponent implements OnInit {
     'Cisterna', 'Amueblado', 'Jardin', 'Cochera',
     'Internet', 'wi-fi', 'Salón Social', 'Biblioteca'];
   filteredStreets: Observable<string[]>;
-
+  firstFormGroup!: FormGroup;
   datosInmueble: any[] = [];
   datosMunicipios: any[] = [];
   datosTipoInmueble: any[] = [];
   municipios = '';
   tipoinmuebles = '';
-  data:any={
-    ubicacion:'',
+  data: any = {
+    ubicacion: '',
     inmueble: '',
-    tipoAccion:'',
-    precioHasta:'',
-    precioDesde:''
+    tipoAccion: '',
+    precioHasta: '',
+    precioDesde: ''
   }
 
   title = 'ProyectoPrueba';
@@ -53,7 +55,7 @@ export class VistadeinmuebleComponent implements OnInit {
   selectedValue = '';
   municipioSeleccionado: string = '';
   // Definir un arreglo de opciones
- 
+
 
   action: String | undefined;
   tpropiedad!: Number;
@@ -62,20 +64,19 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  constructor(private el: ElementRef, private router: Router, private http: HttpService, private renderer: Renderer2, private route: ActivatedRoute) {
+  constructor(private el: ElementRef, private router: Router, private http: HttpService, private renderer: Renderer2, private route: ActivatedRoute, private formBuilder: FormBuilder) {
     this.filteredStreets = new Observable<string[]>();
   }
 
+  
 
   @HostListener('document:click', ['$event'])
-  
-  
+
+
   onDocumentClick(event: MouseEvent) {
     // Verifica si el clic no fue dentro del botón de Precio ni dentro de la lista de Precio
     if (!this.el.nativeElement.querySelector('.navbar').contains(event.target) &&
-      !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search., .dropdown-Filtros').contains(event.target))
-      
-      {
+      !this.el.nativeElement.querySelector('.dropdown-precio, .dropdown-Toferta, .dropdown-inmueble, .dropdown-Recamaras, .dropdown-search, .dropdown-Filtros').contains(event.target)) {
       // Si se hizo clic fuera del botón y fuera de la lista de Precio, oculta la lista
       this.showPrecio = false;
       this.showToferta = false;
@@ -99,10 +100,10 @@ export class VistadeinmuebleComponent implements OnInit {
   }*/
 
 
-// Función para mostrar/ocultar la lista de Precio
-toggleEntertaiment() {
-  this.showEntretenimiento = !this.showEntretenimiento;
-}
+  // Función para mostrar/ocultar la lista de Precio
+  toggleEntertaiment() {
+    this.showEntretenimiento = !this.showEntretenimiento;
+  }
 
 
 
@@ -160,8 +161,15 @@ toggleEntertaiment() {
     this.showRecamaras = false;
     this.showFiltros = false;
 
-    
+
   }
+  getDireccion(direccion: string) {
+    console.log(direccion);
+
+    this.mostrar();
+
+  }
+
   selectOption(value: string) {
     this.selectedValue = value;
     this.showSearch = false;
@@ -198,32 +206,37 @@ toggleEntertaiment() {
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
 
-      console.log('Action: ',this.action);
-      console.log('Propiedad: ',this.tpropiedad);
-      console.log('Ubicacion: ',this.ubicacion);
+      console.log('Action: ', this.action);
+      console.log('Propiedad: ', this.tpropiedad);
+      console.log('Ubicacion: ', this.ubicacion);
+
+      this.firstFormGroup = this.formBuilder.group({
+        pDireccion: ['', [Validators.required]]
+
+      });
 
       
 
-    }
-    );
+    });
 
-    this.http.mostrarInmuebles(this.ubicacion,this.tpropiedad).subscribe((data: any) => {
+    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((data: any) => {
 
       this.datosInmueble = data;
 
     });
 
-    
+
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
 
     });
-  
+
+   
 
   }
 
-
+  
 
 
   // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
@@ -245,7 +258,7 @@ toggleEntertaiment() {
 
     });
   }
- 
+
   mostrarIDMunicipio(id: number): void {
     console.log(id);
   }
@@ -258,11 +271,11 @@ toggleEntertaiment() {
     }
   }
 
-   
-  
-    seleccionarMunicipio(municipios: string) {
-      this.municipioSeleccionado = municipios;
-    }
+
+
+  seleccionarMunicipio(municipios: string) {
+    this.municipioSeleccionado = municipios;
+  }
   back() {
     this.router.navigate(["/web"]);
   }
@@ -270,7 +283,21 @@ toggleEntertaiment() {
     console.log( 'El usuario mostro:'opcion );
   }*/
 
-  mostrar(){
+  mostrar() {
+
+
+
+    this.http.busquedaAvanzada(this.data.ubicacion, '', '', '', '', '', '', 'compra', '', '').subscribe((data: any) => {
+      /*let mostrar = JSON.stringify(data);
+      alert(mostrar);*/
+
+
+
+
+
+      this.datosInmueble = [];
+
+      this.datosInmueble = data;
 
 
    
@@ -287,7 +314,8 @@ toggleEntertaiment() {
       
 
     });
-  }
+  });
+}
 
 }
 

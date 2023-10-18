@@ -9,7 +9,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
-
 import { BuscadorComponent } from './buscador/buscador.component';
 import { AtajosComponent } from './atajos/atajos.component';
 import { DescargaComponent } from './descarga/descarga.component';
@@ -29,10 +28,12 @@ import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecari
 
 import { GoogleMapsModule } from '@angular/google-maps';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
-
 import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
+import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
+
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
+
 
 
 
@@ -55,14 +56,13 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
     GuiarentarComponent,
     EvitafraudeComponent,
     NovedadesactulidadComponent,
-
+    RematehipotecarioComponent,
+    QuieresvenderComponent,
+   
     InmobiliariasComponent,
-    // RematehipotecarioComponent,
-
   ],
   imports: [
     CommonModule,
-    
     MatButtonModule,
     MatDividerModule,
     MatIconModule,

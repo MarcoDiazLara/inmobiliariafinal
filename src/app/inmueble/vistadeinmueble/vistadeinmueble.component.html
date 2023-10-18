@@ -8,20 +8,21 @@
 
  <app-menu></app-menu>
 
-<div class="filtrosxr">
-
+<div class="navbar content-center">
+  
   <div class="divider"></div>
-
-  <div class="buscador">
-    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()" [(ngModel)]="data.ubicacion"
-      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios">
+  
+  <div [formGroup]="firstFormGroup" class="buscador">
+    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
+      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
     <ul  class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Estado)"><a>{{ option.estado }}</a></li>
+      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
     </ul>
     <button class="btn btn-outline-secondary" type="submit" (change)="mostrar()">
       <img class="lupa">
-    </button>
+    </button> 
 
+    
 
     <div class="dropdown ps-4 pe-4">
       <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
@@ -31,10 +32,10 @@
 
           <div class="mb-3" style="margin-top: 25px;">
 
-            <input type="text" class="form-control" id="nombre" placeholder="Desde" [(ngModel)]="data.precioDesde">
+            <input type="text" class="form-control" id="nombre" placeholder="Desde" [(ngModel)]="data.precioDesde" >
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" id="nombre" placeholder="Hasta" [(ngModel)]="data.precioHasta"> 
+            <input type="text" class="form-control" id="nombre" placeholder="Hasta" [(ngModel)]="data.precioHasta" > 
           </div>
 
           <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
@@ -44,7 +45,7 @@
 
     <div>
       
-      <select class="btn btn-outline-secondary" placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
+      <select class="selectpicker ps-4 pe-4"  placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
         <option value="venta">Venta</option>
         <option value="renta">Renta</option>
         <option value="remate">Remate</option>
@@ -64,15 +65,15 @@
     <div>
 
       
-      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble" placeholder="Inmueble" >
-        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
+      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble"> Inmueble
+        <option class="dropdown-inmueble"  *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
     
     </div>
 
     <div>
-      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()">Recamaras <img class="arrow1"></button>
+      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()" >Recamaras <img class="arrow1"></button>
       <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
         <li><a>1</a></li>
         <li><a>2</a></li>

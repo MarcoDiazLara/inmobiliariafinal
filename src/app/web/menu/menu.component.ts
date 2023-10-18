@@ -42,10 +42,7 @@ export class MenuComponent implements OnInit {
 
  }
 
- inmobiliarias(){
-  this.router.navigate(['web/inmobiliarias']);
 
- }
 
  directo(){
   this.router.navigate(['web/particula']);
@@ -139,8 +136,17 @@ export class MenuComponent implements OnInit {
    Quierescomprar(){
     this.router.navigate(['web/QuieresComprar'])
    }
- 
-  
+   Quieresvender(){
+    this.router.navigate(['web/QuieresComprar'])
+   }
+   inmobiliarias(){
 
+    this.router.navigate(['web/inmobiliarias'])
+   }
+  
+    novedadesactulidad(){
+      this.router.navigate(['web/novedadesactulidad'])
+
+    }
 
 }
