@@ -13,12 +13,11 @@ import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
-<<<<<<< HEAD
+
 import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
-=======
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
->>>>>>> 99d0323c91f92b5305c6ed38bc03055a06e10960
+
 
 const routes: Routes = [
 
@@ -87,10 +86,11 @@ const routes: Routes = [
     component: QuierescomprarComponent
   },
   {
-<<<<<<< HEAD
+
     path: 'QuieresVender',
     component: QuieresvenderComponent
-=======
+  },
+  {
        path:'inmobiliarias',
        component: InmobiliariasComponent
 
@@ -100,7 +100,7 @@ const routes: Routes = [
     component:NovedadesactulidadComponent
 
 
->>>>>>> 99d0323c91f92b5305c6ed38bc03055a06e10960
+
   },
 ];
 

@@ -30,11 +30,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
-<<<<<<< HEAD
 import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
-=======
+
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
->>>>>>> 99d0323c91f92b5305c6ed38bc03055a06e10960
+
 
 
 
@@ -58,12 +57,9 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
     EvitafraudeComponent,
     NovedadesactulidadComponent,
     RematehipotecarioComponent,
-<<<<<<< HEAD
     QuieresvenderComponent,
     QuierescomprarComponent,
-=======
-    InmobiliariasComponent
->>>>>>> 99d0323c91f92b5305c6ed38bc03055a06e10960
+    InmobiliariasComponent,
   ],
   imports: [
     CommonModule,
