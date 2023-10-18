@@ -42,9 +42,6 @@
  .filtrosxr{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
  }
- .container{
-  padding-top: 50px;
- }
 
 /* .resultsearch {
   align-items: center;
@@ -52,14 +49,13 @@
 
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   display: block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
   background-color: #ffffff;
   padding:0;
+  margin-top: 89px;
 
 }
 
@@ -149,14 +145,6 @@
 }
 
 
-/* Estilo para el contenedor de los botones */
-.button-container {
-  position: relative;
-  /* Importante para posicionar las listas de forma relativa a este contenedor */
-}
-
-
-
 /* Estilo para las listas */
 
 .dropdown-precio, .dropdown-Toferta,
@@ -218,6 +206,12 @@
 
 /* Estilo personalizado para los resultados de búsqueda */
 
+.container1{
+  padding-top: 230px;
+  padding-left: 25px;
+  padding-right: 25px;
+ }
+
 .producto {
   border: 1px solid #575a5c;
   width: 100%;
@@ -275,4 +269,9 @@
   margin: 0%;
   padding: 0%;
 
+}
+
+.btn.btn-secondary {
+  padding: 10px 20px; 
+  font-size: 16px; 
 }

@@ -323,7 +323,7 @@
 
 
 
-<div class="container">
+<div class="container1">
 <div class="content-right pr-4">
   <h1>
     <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
@@ -361,9 +361,9 @@
           </thead>
           <thead>
             <td>
-              <div>
-                <button (click)="detalles()" class="btn btn-secondary container">Más Información</button>
-              </div>
+              
+                <button (click)="detalles()" class="btn btn-secondary container" id="moreinfo">Más Información</button>
+             
             </td>
           </thead>
         </table>
@@ -378,6 +378,6 @@
 
 
 
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+<mat-paginator style="justify-content: center;" [length]="100" [pageSize]="8" [pageSizeOptions]="[4, 8, 16, 100]" aria-label="Select page">
 </mat-paginator>
 <app-footer></app-footer>

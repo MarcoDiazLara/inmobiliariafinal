@@ -25,12 +25,7 @@ export class VistadeinmuebleComponent implements OnInit {
   
   control = new FormControl('');
   streets: string[] = [
-    'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial',
-    'Farmacia', 'Hospital publico', 'privado', 'Parques',
-    'Mercado', 'Unidad Deportiva', 'Roof Garden', 'Jardines',
-    'Salón social', 'Bussines center', 'Biblioteca', 'Áreas deportivas',
-    'Cisterna', 'Amueblado', 'Jardin', 'Cochera',
-    'Internet', 'wi-fi', 'Salón Social', 'Biblioteca'];
+    'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial'];
   filteredStreets: Observable<string[]>;
   firstFormGroup!: FormGroup;
   datosInmueble: any[] = [];
