@@ -22,9 +22,6 @@ export class VistadeinmuebleComponent implements OnInit {
   public showFiltros: boolean = false;
   public showEntretenimiento: boolean = false;
 
-
-
-  
   panelOpenState = false;
   
   control = new FormControl('');
@@ -163,6 +160,21 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
   }
+  // Función para mostrar/ocultar la barra de resultados de escritura en busqueda
+  toggleFiltros() {
+    this.showFiltros = !this.showFiltros;
+    // Oculta las otras listas
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showSearch = false;
+  }
+
+
+
+
+
   getDireccion(direccion: string) {
     console.log(direccion);
 
@@ -177,16 +189,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  // Función para mostrar/ocultar la barra de resultados de escritura en busqueda
-  toggleFiltros() {
-    this.showFiltros = !this.showFiltros;
-    // Oculta las otras listas
-    this.showPrecio = false;
-    this.showToferta = false;
-    this.showInmueble = false;
-    this.showRecamaras = false;
-    this.showSearch = false;
-  }
+
 
 
 
@@ -284,38 +287,25 @@ export class VistadeinmuebleComponent implements OnInit {
   }*/
 
   mostrar() {
-
-
-
-    this.http.busquedaAvanzada(this.data.ubicacion, '', '', '', '', '', '', 'compra', '', '').subscribe((data: any) => {
+      this.http.busquedaAvanzada(this.data.ubicacion, '', '', '', '', '', '', 'compra', '', '').subscribe((data: any) => {
       /*let mostrar = JSON.stringify(data);
       alert(mostrar);*/
-
-
-
-
 
       this.datosInmueble = [];
 
       this.datosInmueble = data;
 
+      this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
+        let mostrar = JSON.stringify(data);
+        alert(mostrar);
 
-   
-    this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
-      let mostrar = JSON.stringify(data);
-      alert(mostrar);
-
-      
-      
       location.reload();
     
       this.datosInmueble =[];
 
-      
-
-    });
-  });
-}
+                });
+              });
+            }
 
 }
 
