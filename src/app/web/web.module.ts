@@ -32,6 +32,7 @@ import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 
 import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
+import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
 
 
 
@@ -53,9 +54,9 @@ import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactul
     BlogComponent,
     GuiarentarComponent,
     EvitafraudeComponent,
-    // QuierescomprarComponent,
     NovedadesactulidadComponent,
     // RematehipotecarioComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -67,7 +68,10 @@ import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactul
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
-     GoogleMapsModule
+     GoogleMapsModule,
+     QuieresvenderComponent,
+    
+     QuierescomprarComponent,
      
   ],
   exports:[

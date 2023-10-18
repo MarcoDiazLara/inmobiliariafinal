@@ -13,6 +13,7 @@ import { GuiarentarComponent } from './guiarentar/guiarentar.component';
 import { RematehipotecarioComponent } from './rematehipotecario/rematehipotecario.component';
 import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
+import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
 
 const routes: Routes = [
 
@@ -79,6 +80,10 @@ const routes: Routes = [
   {
     path: 'QuieresComprar',
     component: QuierescomprarComponent
+  },
+  {
+    path: 'QuieresVender',
+    component: QuieresvenderComponent
   },
 ];
 
