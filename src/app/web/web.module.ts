@@ -55,12 +55,11 @@ import { QuieresvenderComponent } from './quieresvender/quieresvender.component'
     GuiarentarComponent,
     EvitafraudeComponent,
     NovedadesactulidadComponent,
-    // RematehipotecarioComponent,
-  
+    RematehipotecarioComponent
+
   ],
   imports: [
     CommonModule,
-    
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
@@ -70,10 +69,8 @@ import { QuieresvenderComponent } from './quieresvender/quieresvender.component'
      WebRoutingModule,
      GoogleMapsModule,
      QuieresvenderComponent,
-    
      QuierescomprarComponent,
-     
-  ],
+      ],
   exports:[
     WebComponent,
     FooterComponent,

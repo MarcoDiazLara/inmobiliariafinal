@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BrokersComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
+  nombre: any;
 
   fillerNav = [
     { name: "Perfil", route: "perfil",icon: "person" , label: "Perfil",number:'0' },
@@ -30,6 +31,7 @@ export class BrokersComponent implements OnDestroy {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    this.nombre = localStorage.getItem("Nombre_Usuario");
   }
 
   ngOnDestroy(): void {
@@ -38,8 +40,8 @@ export class BrokersComponent implements OnDestroy {
 
   shouldRun=true;
 
-  public salir(op:any) {
-
+  public salir() {
+    this.router.navigate(["/web"]);
     // alert("diste clic en salir"+op);
   }
 

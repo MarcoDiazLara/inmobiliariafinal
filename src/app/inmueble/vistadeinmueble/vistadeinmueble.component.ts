@@ -14,6 +14,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 })
 export class VistadeinmuebleComponent implements OnInit {
   
+  panelOpenState = false;
 
   control = new FormControl('');
   streets: string[] = [
