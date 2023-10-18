@@ -19,11 +19,6 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 
 
-import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
-
-import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
-
-
 const routes: Routes = [
 
   {
