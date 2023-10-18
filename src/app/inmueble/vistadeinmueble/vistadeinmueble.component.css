@@ -12,7 +12,6 @@
 
 }
 
-
 .producto h3 {
   color: #33383b;
   font-size: 20px;
@@ -47,242 +46,77 @@
   padding-top: 50px;
  }
 
-
-
-.navbar .divider {
-  height: 10px;
-  /* Altura de la línea */
-  background-color: #264D5E;
-  /* Color de fondo de la línea (puedes cambiarlo) */
-  margin: 0;
-  /* Margen cero para evitar espacios innecesarios */
-}
-
-
-/* Estilos de los Div */
-
-.resultsearch {
+/* .resultsearch {
   align-items: center;
-  /* Centra los elementos verticalmente */
-}
+} */
 
 .navbar {
-  /*position: fixed; /* Establece la posición fija */
+  position: fixed;
   top: 0;
-  /* Fija el div en la parte superior de la pantalla */
   left: 0;
-  /* Fija el div en la parte izquierda de la pantalla */
   width: 100%;
-  /* Establece el ancho al 100% de la pantalla */
   display: block;
-  /* Utiliza "flex" en lugar de "flexbox" */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra */
   z-index: 999;
-  /* Asegura que el div esté en la parte superior de otros elementos */
   background-color: #ffffff;
-  padding-left: 0%;
-  padding-top: 0%;
-  padding-bottom: 0%;
-  padding-right: 0%;
+  padding:0;
 
 }
 
 .buscador {
   display: flex;
-  /* hace que la barra de busqueda y el boton esten juntos*/
   padding-top: 25px;
   padding-left: 25px;
   padding-bottom: 25px;
 }
 
 
-
-
 /* Estilo de los iconos de los botones */
+.lupa, .arrow1, .filter, .VR, 
+.multi, .planos, .backarrow{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 27px;
 
+}
 .lupa {
   background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
-  background-size: cover;
-  /* Tamaño de la imagen */
-  background-position: center;
-  /* Posición de la imagen */
-  background-repeat: no-repeat;
-  /* Evita la repetición */
-  width: 27px;
-  height: 27px;
-}
 
+}
 .arrow1 {
   background: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg') no-repeat center center / contain;
   content: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg');
-
-  background-size: cover;
-  /* Tamaño de la imagen */
-  background-position: center;
-  /* Posición de la imagen */
-  background-repeat: no-repeat;
-  /* Evita la repetición */
-  width: 20px;
-  height: 20px;
 }
 
 .filter {
   background: url('https://api.iconify.design/mi/filter.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/mi/filter.svg?color=%23264d5e');
-  background-size: cover;
-  /* Tamaño de la imagen */
-  background-position: center;
-  /* Posición de la imagen */
-  background-repeat: no-repeat;
-  /* Evita la repetición */
-  width: 20px;
-  height: 20px;
 }
 
 .VR {
   background: url('https://api.iconify.design/fluent-mdl2/video-360-generic.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/fluent-mdl2/video-360-generic.svg?color=%23264d5e');
-  background-size: cover;
-  /* Tamaño de la imagen */
-  background-position: center;
-  /* Posición de la imagen */
-  background-repeat: no-repeat;
-  /* Evita la repetición */
-  width: 20px;
-  height: 20px;
 }
 
 .multi {
   background: url('https://api.iconify.design/fluent/video-20-regular.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/fluent/video-20-regular.svg?color=%23264d5e');
-  background-size: cover;
-  /* Tamaño de la imagen */
-  background-position: center;
-  /* Posición de la imagen */
-  background-repeat: no-repeat;
-  /* Evita la repetición */
-  width: 20px;
-  height: 20px;
 }
 
 .planos {
   background: url('https://api.iconify.design/ic/outline-design-services.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/ic/outline-design-services.svg?color=%23264d5e');
-  background-size: cover;
-  /* Tamaño de la imagen */
-  background-position: center;
-  /* Posición de la imagen */
-  background-repeat: no-repeat;
-  /* Evita la repetición */
-  width: 20px;
-  height: 20px;
 }
-
-
-.mat-button-toggle {
-  color: #003453;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* estilo del input del buscador */
-.form-control {
-  width: 300px;
-  height: 40px;
-}
-
-
-/* Estilo para el contenedor de los botones */
-.button-container {
-  position: relative;
-  /* Importante para posicionar las listas de forma relativa a este contenedor */
-}
-
-/* Estilo para los botones */
-.btn {
-  margin-left: 0px;
-}
-
-/* Estilo para las listas */
-.dropdown-precio {
-
-  list-style: none;
-  margin-right: 0%;
-  margin-left: 0%;
-  padding: 0;
-  border-radius: 5px;
-  background-color: #fff;
-  /* Fondo de la lista */
-  border: 1px solid #ccc;
-  /* Borde de la lista */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  z-index: 1;
-  /* Asegura que la lista esté por encima de otros elementos */
-  position: absolute;
-  /* Establece el posicionamiento absoluto */
-}
-
-/* Estilo para los elementos de la lista */
-.dropdown-precio li {
-  padding: 0.5rem 1rem;
-  /* Espaciado interno de elementos de lista */
-  border-bottom: 1px solid #ccc;
-  /* Borde inferior de elementos de lista */
-}
-
-/* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-precio li:hover {
-  background-color: #f0f0f0;
-  /* Cambio de color al pasar el mouse sobre elementos de lista */
-}
-
-
-
 .backarrow {
   background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
 }
 
-.backarrow,
-.plane,
-.map,
-.money,
-.checklist,
-.favorite,
-.share,
-.other,
-.wc,
-.room,
-.car,
-.rule,
-.garden,
-.floor,
-.warehouse,
-.tank,
-.pool,
-.wapp {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 25px;
-  height: 25px;
+.mat-button-toggle {
+  color: #003453;
 
 }
 
@@ -302,206 +136,84 @@
   background-color: #8ec3d9;
 }
 
-
-
 .ListResult {
   padding-top: 10px;
   margin-top: 0%;
 
 }
 
-.dropdown-Toferta {
+/* estilo del input del buscador */
+.form-control {
+  width: 300px;
+  height: 40px;
+}
+
+
+/* Estilo para el contenedor de los botones */
+.button-container {
+  position: relative;
+  /* Importante para posicionar las listas de forma relativa a este contenedor */
+}
+
+
+
+/* Estilo para las listas */
+
+.dropdown-precio, .dropdown-Toferta,
+.dropdown-inmueble, .dropdown-Recamaras, 
+.dropdown-search
+{
 
   list-style: none;
-  margin-right: 0;
+  margin-right: 0%;
+  margin-left: 0%;
   padding: 0;
-  position: absolute;
   border-radius: 5px;
   background-color: #fff;
-  /* Fondo de la lista */
   border: 1px solid #ccc;
-  /* Borde de la lista */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
   z-index: 1;
-  /* Asegura que la lista esté por encima de otros elementos */
   position: absolute;
-  /* Establece el posicionamiento absoluto */
 }
 
 /* Estilo para los elementos de la lista */
-.dropdown-Toferta li {
+.dropdown-precio li, .dropdown-Toferta li,
+.dropdown-inmueble li, .dropdown-Recamaras li,
+.dropdown-search li, .dropdown-Filtros li      
+{
   padding: 0.5rem 1rem;
-  /* Espaciado interno de elementos de lista */
   border-bottom: 1px solid #ccc;
-  /* Borde inferior de elementos de lista */
 }
 
 /* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-Toferta li:hover {
+.dropdown-precio li:hover, .dropdown-Toferta li:hover, 
+.dropdown-inmueble li:hover, .dropdown-Recamaras li:hover,
+.dropdown-search li:hover , .dropdown-Filtros li:hover  
+{
   background-color: #f0f0f0;
-  /* Cambio de color al pasar el mouse sobre elementos de lista */
 }
-
-
-.dropdown-inmueble {
-
-  list-style: none;
-  margin-right: 0;
-  padding: 0;
-  position: absolute;
-  border-radius: 5px;
-  background-color: #fff;
-  /* Fondo de la lista */
-  border: 1px solid #ccc;
-  /* Borde de la lista */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  z-index: 1;
-  /* Asegura que la lista esté por encima de otros elementos */
-  position: absolute;
-  /* Establece el posicionamiento absoluto */
-}
-
-/* Estilo para los elementos de la lista */
-.dropdown-inmueble li {
-  padding: 0.5rem 1rem;
-  /* Espaciado interno de elementos de lista */
-  border-bottom: 1px solid #ccc;
-  /* Borde inferior de elementos de lista */
-}
-
-/* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-inmueble li:hover {
-  background-color: #f0f0f0;
-  /* Cambio de color al pasar el mouse sobre elementos de lista */
-}
-
-
-
-
-.dropdown-Recamaras {
-
-  list-style: none;
-  margin-right: 0;
-  padding: 0;
-  position: absolute;
-  border-radius: 5px;
-  background-color: #fff;
-  /* Fondo de la lista */
-  border: 1px solid #ccc;
-  /* Borde de la lista */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  z-index: 1;
-  /* Asegura que la lista esté por encima de otros elementos */
-  position: absolute;
-  /* Establece el posicionamiento absoluto */
-}
-
-/* Estilo para los elementos de la lista */
-.dropdown-Recamaras li {
-  padding: 0.5rem 1rem;
-  /* Espaciado interno de elementos de lista */
-  border-bottom: 1px solid #ccc;
-  /* Borde inferior de elementos de lista */
-}
-
-/* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-Recamaras li:hover {
-  background-color: #f0f0f0;
-  /* Cambio de color al pasar el mouse sobre elementos de lista */
-}
-
-
-.dropdown-search {
-  max-height: 200px;
-  /* Establece la altura máxima deseada */
-  overflow-y: auto;
-  /* Activa el desplazamiento vertical */
-  list-style: none;
-  width: 400px;
-  margin-right: 0;
-  padding: 0;
-  position: absolute;
-  border-radius: 5px;
-  background-color: #fff;
-  /* Fondo de la lista */
-  /* border: 1px solid #ccc; */
-  /* Borde de la lista */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  z-index: 1;
-  /* Asegura que la lista esté por encima de otros elementos */
-  position: absolute;
-  /* Establece el posicionamiento absoluto */
-  margin-top: 40px;
-}
-
-/* Estilo para los elementos de la lista */
-.dropdown-search li {
-  padding: 0.5rem 1rem;
-  /* Espaciado interno de elementos de lista */
-  border-bottom: 1px solid #ccc;
-  /* Borde inferior de elementos de lista */
-}
-
-/* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-search li:hover {
-  background-color: #f0f0f0;
-  /* Cambio de color al pasar el mouse sobre elementos de lista */
-}
-
 
 
 .dropdown-Filtros {
-  max-height: 550px;/* Establece la altura máxima deseada */
-  overflow-y: auto; /* Activa el desplazamiento vertical */
+  max-height: 550px;
+  overflow-y: auto; 
   list-style: none;
   margin-right: 0;
   padding: 0;
   width: 450px;
   border-radius: 5px;
-  background-color: #fff; /* Fondo de la lista */
-  border: 1px solid #ccc; /* Borde de la lista */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
-  z-index: 1;/* Asegura que la lista esté por encima de otros elementos */
-  position: absolute;/* Establece el posicionamiento absoluto */
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  z-index: 1;
+  position: absolute;
   left: 57%;
 }
 
-/* Estilo para los elementos de la lista */
-.dropdown-Filtros li {
-  padding: 0.5rem 1rem;
-  /* Espaciado interno de elementos de lista */
-  border-bottom: 1px solid #ccc;
-  /* Borde inferior de elementos de lista */
-}
-
-/* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-Filtros li:hover {
-  background-color: #f0f0f0;
-  /* Cambio de color al pasar el mouse sobre elementos de lista */
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 .ListResult {
-  margin-top: 250px;
-  /* Igualar la altura del componente de navegación */
+  margin-top: 250px; /* Igualar la altura del componente de navegación */
 }
-
-
 
 
 /* Estilo personalizado para los resultados de búsqueda */
@@ -528,7 +240,6 @@
 
 .table {
   border: none;
-  /* Elimina el borde de la tabla */
   margin: 0%;
   padding: 0%;
   width: 100%;
@@ -539,7 +250,6 @@
 .table th,
 .table td {
   border: none;
-  /* Elimina el borde de las celdas */
   padding-left: 20px;
 }
 
@@ -547,18 +257,14 @@
   color: #38b6e3;
   font-size: 23px;
   text-indent: 0%;
-  /* Ajusta la sangría izquierda a 20px */
   line-height: 1.2;
-  /* Ajusta el espacio entre líneas (line-height) según tu preferencia */
   margin: 0;
 }
 
 .table h3 {
   font-size: 15px;
   text-indent: 0%;
-  /* Ajusta la sangría izquierda a 20px */
   line-height: 1.2;
-  /* Ajusta el espacio entre líneas (line-height) según tu preferencia */
   margin: 0;
 }
 
