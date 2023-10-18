@@ -64,8 +64,8 @@
     <div>
 
       
-      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble" placeholder="Inmueble" >
-        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
+      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble"> Inmueble
+        <option class="dropdown-inmueble"  *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
     
