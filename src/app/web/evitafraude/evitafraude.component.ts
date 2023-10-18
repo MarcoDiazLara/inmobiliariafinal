@@ -15,7 +15,7 @@ export class EvitafraudeComponent implements OnInit {
   ngOnInit(): void {
   }
   Index() {
-    this.router.navigate(["/web"]);
+    this.router.navigate(["web"]);
   }
 
 }
