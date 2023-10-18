@@ -53,9 +53,8 @@ import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactul
     BlogComponent,
     GuiarentarComponent,
     EvitafraudeComponent,
-    // QuierescomprarComponent,
     NovedadesactulidadComponent,
-    // RematehipotecarioComponent,
+    RematehipotecarioComponent
   ],
   imports: [
     CommonModule,
@@ -67,8 +66,8 @@ import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactul
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
-     GoogleMapsModule
-     
+     GoogleMapsModule,
+     QuierescomprarComponent
   ],
   exports:[
     WebComponent,
