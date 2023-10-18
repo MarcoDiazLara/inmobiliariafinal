@@ -115,6 +115,8 @@ export class MenuComponent implements OnInit {
     let entrada = localStorage.getItem("Id_Tipo_Usuario");
     if(entrada == "6"){
       this.router.navigate(["/superUsuario"]);
+    }else if (entrada == "2"){
+      this.router.navigate(["/usuario/perfil"]);
     }
 
   }

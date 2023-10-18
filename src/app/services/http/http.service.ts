@@ -163,6 +163,12 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_updateInfoUsuario.php', params, { headers });
   }
 
+
+  obtenerTipoUser(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post(this.url + 'obtenerTipoUsuario.php', params, { headers });
+  }
   
 
 }
