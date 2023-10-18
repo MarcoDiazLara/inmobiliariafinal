@@ -17,7 +17,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
   
   panelOpenState = false;
-
+  
   control = new FormControl('');
   streets: string[] = [
     'Guarderia', 'Escuela', 'Gimnasio', 'Centro comercial',

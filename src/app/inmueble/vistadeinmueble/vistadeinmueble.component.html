@@ -1,18 +1,9 @@
-<!--****************************************************-->
-<!--****************************************************-->
-<!--****************************************************-->
-<!-- Esta es la pagina de los resultados de la busqueda -->
-<!--****************************************************-->
-<!--****************************************************-->
-<!--****************************************************-->
+<app-menu></app-menu>
 
- <app-menu></app-menu>
-
-<div class="navbar content-center">
-  
-  <div class="divider"></div>
+<div class="navbar">
   
   <div [formGroup]="firstFormGroup" class="buscador">
+<<<<<<< Updated upstream
     <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
       placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
     <ul  class="dropdown-search">
@@ -23,11 +14,18 @@
     </button> 
 
     
+=======
+      <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
+        placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
+        <ul  class="dropdown-search">
+          <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
+        </ul>
+      <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()"><img class="lupa"></button> 
+>>>>>>> Stashed changes
 
     <div class="dropdown ps-4 pe-4">
       <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
-      <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
-      <div *ngIf="showPrecio" class="dropdown-precio ">
+      <ul *ngIf="showPrecio" class="dropdown-precio">
         <form class="ps-4 pe-4">
 
           <div class="mb-3" style="margin-top: 25px;">
@@ -40,8 +38,9 @@
 
           <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
         </form>
-      </div>
+    </ul>
     </div>
+    
 
     <div>
       
@@ -65,8 +64,8 @@
     <div>
 
       
-      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble"> Inmueble
-        <option class="dropdown-inmueble"  *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
+      <select  [(ngModel)]="data.inmueble">
+        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
     
@@ -87,11 +86,14 @@
 
 
 
-
-      <!-- Button trigger modal -->
       
+<<<<<<< Updated upstream
       <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
         data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados<img class="filter"></button>
+=======
+      <button type="button" class=" btn btn-outline-secondary me-2" data-target="#exampleModal"
+        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados <img class="filter"></button>
+>>>>>>> Stashed changes
 
 
 
