@@ -21,6 +21,7 @@ export class ClienteComponent implements OnDestroy {
     { name: "seguimientocliente", route: "seguimiento",icon: "content_paste_search" , label: "Seguimiento",number:'0' },
     { name: "agendarcitacliente", route: "agendacita",icon: "calendar_today" , label: "Agendar Cita",number:'0' },
     { name: "cambioasesorcliente", route: "reasignacion",icon: "assignment" , label: "Reasignar",number:'0' },
+    { name: "planes", route: "planes",icon: "assignment" , label: "planes",number:'0' },
     { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'},
   ];
 
