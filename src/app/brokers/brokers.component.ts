@@ -21,7 +21,7 @@ export class BrokersComponent implements OnDestroy {
      { name: "reasignar", route: "reasignarasesores",icon: "assignment" , label: "Reasignar",number:'0' },
      { name: "Agendar", route: " Agendarcita ",icon: "calendar_today", label: "Agendar Cita",number:'0' },
     // { name: "Inmuebles", route: "inmueble",icon: "home" , label: "Inmueble",number:'0' },
-    { name: "Salir",icon: "logout", label: "Salir" ,number:'1'}
+    { name: "Salir",route : "web",icon: "logout", label: "Salir" ,number:'1'}
 
   ];
 
@@ -41,7 +41,7 @@ export class BrokersComponent implements OnDestroy {
   shouldRun=true;
 
   public salir() {
-    this.router.navigate(["/web"]);
+    //this.router.navigate(["/web"]);
     // alert("diste clic en salir"+op);
   }
 

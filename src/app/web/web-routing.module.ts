@@ -17,6 +17,7 @@ import { QuierescomprarComponent } from './quierescomprar/quierescomprar.compone
 import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
+import { AgentesComponent } from '../agentes/agentes.component';
 
 
 const routes: Routes = [
@@ -102,6 +103,11 @@ const routes: Routes = [
     path:'novedadesactulidad',
     component:NovedadesactulidadComponent
   },
+  {
+    path: "asesor",
+    component:AgentesComponent
+  }
+
 ];
 
 @NgModule({

@@ -45,7 +45,7 @@ import { NotificacionesagentesComponent } from './notificacionesagentes/notifica
   ],
   imports: [
     CommonModule,
-    AgentesRoutingModule,
+
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -61,6 +61,7 @@ import { NotificacionesagentesComponent } from './notificacionesagentes/notifica
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
+    AgentesRoutingModule,
     NgFor,
     NgIf,
     MatDatepickerModule,
