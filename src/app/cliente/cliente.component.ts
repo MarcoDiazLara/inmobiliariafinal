@@ -23,6 +23,9 @@ export class ClienteComponent implements OnDestroy {
     { name: "cambioasesorcliente", route: "reasignacion",icon: "assignment" , label: "Reasignar",number:'0' },
     { name: "planes", route: "planes",icon: "assignment" , label: "planes",number:'0' },
     { name: "Salir",icon: "logout", label: "SALIR" ,number:'1'},
+
+    { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'},
+
   ];
 
   private _mobileQueryListener: () => void;
@@ -42,7 +45,7 @@ export class ClienteComponent implements OnDestroy {
 
   public salir(op:any) {
 
-    this.router.navigate(["/web"]);
+    
   }
 
 }

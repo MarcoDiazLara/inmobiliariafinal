@@ -58,7 +58,7 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
     NovedadesactulidadComponent,
     RematehipotecarioComponent,
     QuieresvenderComponent,
-    QuierescomprarComponent,
+   
     InmobiliariasComponent,
   ],
   imports: [
@@ -71,8 +71,8 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
      ReactiveFormsModule,
      WebRoutingModule,
      GoogleMapsModule,
-    
-      ],
+     QuierescomprarComponent
+  ],
   exports:[
     WebComponent,
     FooterComponent,

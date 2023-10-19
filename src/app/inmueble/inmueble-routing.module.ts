@@ -20,8 +20,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'detalles', 
-    component: DetallesComponent
+    path: 'detalles', component: DetallesComponent
   },
 
 

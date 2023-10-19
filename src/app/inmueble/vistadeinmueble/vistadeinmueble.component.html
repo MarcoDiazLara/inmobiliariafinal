@@ -1,50 +1,41 @@
-<!--****************************************************-->
-<!--****************************************************-->
-<!--****************************************************-->
-<!-- Esta es la pagina de los resultados de la busqueda -->
-<!--****************************************************-->
-<!--****************************************************-->
-<!--****************************************************-->
+<app-menu></app-menu>
 
- <app-menu></app-menu>
-
-<div class="filtrosxr">
-
-  <div class="divider"></div>
-
-  <div class="buscador">
-    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()" [(ngModel)]="data.ubicacion"
-      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios">
+<div class="navbar">
+  
+  <div [formGroup]="firstFormGroup" class="buscador">
+    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
+      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
     <ul  class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Estado)"><a>{{ option.estado }}</a></li>
+      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
     </ul>
     <button class="btn btn-outline-secondary" type="submit" (change)="mostrar()">
       <img class="lupa">
-    </button>
+    </button> 
 
+    
 
     <div class="dropdown ps-4 pe-4">
       <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
-      <!--<ul *ngIf="showPrecio" class="dropdown-precio">-->
-      <div *ngIf="showPrecio" class="dropdown-precio ">
+      <ul *ngIf="showPrecio" class="dropdown-precio">
         <form class="ps-4 pe-4">
 
           <div class="mb-3" style="margin-top: 25px;">
 
-            <input type="text" class="form-control" id="nombre" placeholder="Desde" [(ngModel)]="data.precioDesde">
+            <input type="text" class="form-control" id="nombre" placeholder="Desde" [(ngModel)]="data.precioDesde" >
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" id="nombre" placeholder="Hasta" [(ngModel)]="data.precioHasta"> 
+            <input type="text" class="form-control" id="nombre" placeholder="Hasta" [(ngModel)]="data.precioHasta" > 
           </div>
 
           <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
         </form>
-      </div>
+    </ul>
     </div>
+    
 
     <div>
       
-      <select class="btn btn-outline-secondary" placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
+      <select class="selectpicker ps-4 pe-4"  placeholder="Tipo Accion" [(ngModel)]="data.tipoAccion" >
         <option value="venta">Venta</option>
         <option value="renta">Renta</option>
         <option value="remate">Remate</option>
@@ -62,9 +53,9 @@
     </div> -->
 
     <div>
-
+ 
       
-      <select class="btn btn-outline-secondary"  [(ngModel)]="data.inmueble" placeholder="Inmueble" >
+      <select  [(ngModel)]="data.inmueble">
         <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
@@ -72,7 +63,7 @@
     </div>
 
     <div>
-      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()">Recamaras <img class="arrow1"></button>
+      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()" >Recamaras <img class="arrow1"></button>
       <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
         <li><a>1</a></li>
         <li><a>2</a></li>
@@ -86,13 +77,9 @@
 
 
 
-
-      <!-- Button trigger modal -->
       
       <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
         data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados<img class="filter"></button>
-
-
 
       <ul *ngIf="showFiltros" class="dropdown-Filtros">
 
@@ -117,7 +104,7 @@
 
           </div>
           <h4 class="h4filtros">Establecimientos públicos cercanos</h4>
-          <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
+          <div style="display: flex; flex-direction: row; margin-bottom: 25px">
             <div style="flex: 1;">
               <section class="example-section" style="display: flex; flex-direction: column;">
                 <mat-checkbox class="opcfiltros2">Guarderia</mat-checkbox>
@@ -336,7 +323,7 @@
 
 
 
-<div class="container">
+<div class="container1">
 <div class="content-right pr-4">
   <h1>
     <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
@@ -374,9 +361,9 @@
           </thead>
           <thead>
             <td>
-              <div>
-                <button (click)="detalles()" class="btn btn-secondary container">Más Información</button>
-              </div>
+              
+                <button (click)="detalles()" class="btn btn-secondary container" id="moreinfo">Más Información</button>
+             
             </td>
           </thead>
         </table>
@@ -391,6 +378,6 @@
 
 
 
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+<mat-paginator style="justify-content: center;" [length]="100" [pageSize]="8" [pageSizeOptions]="[4, 8, 16, 100]" aria-label="Select page">
 </mat-paginator>
 <app-footer></app-footer>

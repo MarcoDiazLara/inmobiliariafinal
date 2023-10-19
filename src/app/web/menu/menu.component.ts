@@ -41,6 +41,8 @@ export class MenuComponent implements OnInit {
 
  }
 
+
+
  directo(){
   this.router.navigate(['web/particula']);
 

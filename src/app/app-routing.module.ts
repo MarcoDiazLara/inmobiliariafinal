@@ -16,7 +16,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 
 
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
-
+import { QuieresvenderComponent } from './web/quieresvender/quieresvender.component';
 
 
 

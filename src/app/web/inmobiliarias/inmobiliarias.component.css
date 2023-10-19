@@ -1,6 +1,8 @@
 /* From uiverse.io by @satyamchaudharydev */
 /* removing default style of button */
-
+h1{
+    margin-left: 80px;  
+}
 .form button {
     border: none;
     background: none;

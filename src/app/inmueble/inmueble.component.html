@@ -112,85 +112,84 @@
               <mat-form-field style="margin-right: 10px;"> 
                   <mat-label>Nombre del Inmueble</mat-label>
                   <input formControlName="p_nom_inmu" matInput placeholder="Nombre de inmueble" >
-              </mat-form-field>    
+              </mat-form-field>   
+              
+              <mat-form-field style="margin-right: 10px;">
+                <mat-label> Numero Interior </mat-label>
+                <input formControlName="p_num_int" matInput placeholder="Numero  Interior " >
+                 </mat-form-field>
+
+                 <mat-form-field style="margin-right: 10px;">
+                  <mat-label>Numero Exterior </mat-label>
+                  <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
+                   </mat-form-field>
+
           </div>
           <br>
           <!-- ----------------------------------------------------------------- -->
-         <!-- Textarea with class .w-25 -->
-         <div class="d-flex justify-content-center">
-          <div class="form-outline w-25 mb-4 mx-auto">
-          <label  class="form-label" for="textAreaExample4">
-            <h4 class="text-center">Describe tu inmueble</h4>
-          </label>
-            <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3"></textarea>
           
-          </div>
-        </div>
+       
         <br>
         <!-- ------------------------------------------------------------------- -->
         <div style="display: flex; justify-content: center; align-items: center;">
-         <mat-form-field style="margin-right: 10px;">
-          <mat-label> Numero Interior </mat-label>
-          <input formControlName="p_num_int" matInput placeholder="Numero  Interior " >
-           </mat-form-field>
-
-           <mat-form-field style="margin-right: 10px;">
-              <mat-label>Numero Exterior </mat-label>
-              <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
+          <mat-form-field style="margin-right: 10px;">
+            <mat-label> Terreno metros  </mat-label>
+            <input formControlName="p_terreno" matInput placeholder="Terreno " >
+             </mat-form-field>
+             <mat-form-field style="margin-right: 10px;">
+              <mat-label> Construccion  </mat-label>
+              <input formControlName="p_constru" matInput placeholder=" Construccion " >
                </mat-form-field>
+               <mat-form-field style="margin-right: 10px;">
+                <mat-label> Numero de Recamaras   </mat-label>
+                <input formControlName="p_num_recamaras" matInput placeholder=" Numero de Recamaras  " >
+                 </mat-form-field>
+        
+           
             </div>
             <br>
          <!-- ---------------------------------------------------------- -->
          <div style="display: flex; justify-content: center; align-items: center;">
-      
           <mat-form-field style="margin-right: 10px;">
-              <mat-label> Terreno metros  </mat-label>
-              <input formControlName="p_terreno" matInput placeholder="Terreno " >
+            <mat-label> Numero de baños  </mat-label>
+            <input formControlName="p_banos" matInput placeholder=" Numero de baños  " >
+             </mat-form-field>
+             <mat-form-field style="margin-right: 10px;">
+              <mat-label> Numero de Pisos  </mat-label>
+              <input formControlName="p_pisos" matInput placeholder=" Numero de Pisos  " >
                </mat-form-field>
+
+               <mat-form-field style="margin-right: 15px;">
+                <input matInput formControlName="p_anti" placeholder="Años de Antiguedad">
+               
+              </mat-form-field>
+         
   
-               <mat-form-field style="margin-right: 10px;">
-                  <mat-label> Construccion  </mat-label>
-                  <input formControlName="p_constru" matInput placeholder=" Construccion " >
-                   </mat-form-field>
+               
       </div>
 
   <!-- ------------------------------------------------------------------ -->
  <br>
   <div style="display: flex; justify-content: center; align-items: center;">
-      <mat-form-field style="margin-right: 10px;">
-          <mat-label> Numero de Recamaras   </mat-label>
-          <input formControlName="p_num_recamaras" matInput placeholder=" Numero de Recamaras  " >
-           </mat-form-field>
-
-                 <mat-form-field style="margin-right: 10px;">
-                  <mat-label> Numero de baños  </mat-label>
-                  <input formControlName="p_banos" matInput placeholder=" Numero de baños  " >
-                   </mat-form-field>
-
-                 
-
-                         <mat-form-field style="margin-right: 10px;">
-                          <mat-label> Numero de Pisos  </mat-label>
-                          <input formControlName="p_pisos" matInput placeholder=" Numero de Pisos  " >
-                           </mat-form-field>
-  
-                         
-  </div>
-  <br>
-  <div style="display: flex; justify-content: center; align-items: center;">
     <div class="example-container">
-      <mat-form-field style="margin-right: 15px;">
-        <input matInput formControlName="p_anti" placeholder="Años de Antiguedad">
-       
-      </mat-form-field>
+     
     </div>
-
-
-    <mat-form-field style="margin-right: 10px;">
+         <mat-form-field style="margin-right: 10px;">
       <mat-label>Acabados   </mat-label>
-      <input formControlName="p_acabados" matInput placeholder=" Numero de Recamaras  " >
+      <input formControlName="p_acabados" matInput placeholder=" Acabados  " >
        </mat-form-field>
+       <!-- Textarea with class .w-25 -->
+        
  </div>
+ <div class="d-flex justify-content-center">
+  <div class="form-outline w-25 mb-4 mx-auto">
+  <label  class="form-label" for="textAreaExample4">
+    <h4 class="text-center">Describe tu inmueble</h4>
+  </label>
+    <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3"></textarea>
+  
+  </div>
+</div>
  <br>
  <br>
 <hr>
@@ -243,23 +242,23 @@
   </mat-icon>
 </mat-form-field>
   
-<mat-form-field style="margin-right: 10px;">
-<mat-label>Cocina Integral</mat-label>
-<mat-select formControlName="p_cocina">
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
-    </mat-option>
-</mat-select>
-<mat-icon matSuffix>
-    <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
-</mat-icon>
-</mat-form-field>
+
 </div>
   
 <br>
 <br>
-
 <div style="display: flex; justify-content: center; align-items: center;">
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Cocina Integral</mat-label>
+    <mat-select formControlName="p_cocina">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+    </mat-form-field>
 
   <mat-form-field style="margin-right: 10px;">
     <mat-label>Alberca</mat-label>
@@ -284,82 +283,6 @@
         <img src="assets/img/techo.png"  alt="Icono" width="30" height="30">
     </mat-icon>
   </mat-form-field>
-
-
-
-
-    <!-- <label>
-      <input formControlName="p_gym" class="radio-input" type="checkbox">
-          <span class="radio-tile">
-              <span class="radio-icon">
-                  <img src="assets/img/gimna.png"  alt="...">
-              </span>
-              <span class="radio-label">Gimnasio</span>
-          </span>
-  </label>
-  &nbsp;
-  &nbsp;
-  &nbsp;
-
-  <label>
-    <input formControlName="p_esta" class="radio-input" type="checkbox">
-        <span class="radio-tile">
-            <span class="radio-icon">
-                <img src="assets/img/coche.png"  alt="...">
-            </span>
-            <span class="radio-label">Estacionamiento</span>
-        </span>
-</label>
-&nbsp;
-&nbsp;
-&nbsp;
-
-<label>
-  <input formControlName="p_jardin" class="radio-input" type="checkbox">
-      <span class="radio-tile">
-          <span class="radio-icon">
-              <img src="assets/img/terraza.png"  alt="...">
-          </span>
-          <span class="radio-label">Jardin</span>
-      </span>
-</label>
-&nbsp;
-&nbsp;
-&nbsp;
-
-<label>
-  <input formControlName="p_cocina" class="radio-input" type="checkbox">
-      <span class="radio-tile">
-          <span class="radio-icon">
-              <img src="assets/img/cocina.png"  alt="...">
-          </span>
-          <span class="radio-label">Cocina Integral</span>
-      </span>
-</label>
-&nbsp;
-&nbsp;
-&nbsp;
-<label>
-  <input formControlName="p_alberca" class="radio-input" type="checkbox">
-      <span class="radio-tile">
-          <span class="radio-icon">
-              <img src="assets/img/nadando.png"  alt="...">
-          </span>
-          <span class="radio-label">Alberca</span>
-      </span>
-</label>
-&nbsp;
-&nbsp;
-&nbsp;
-<label >
-  <input formControlName="p_roof" class="radio-input" type="checkbox" checked>
-      <span class="radio-tile">
-          <span class="radio-icon">
-              <img src="assets/img/techo.png"  alt="...">
-          </span>
-          <span class="radio-label">Roof Garden</span>
-      </span>
-</label>  -->
 </div> 
 <br>
 <br>
@@ -407,23 +330,7 @@
               
             </mat-form-field>
           </div>
-
-
-
-
-
-
-
-
-         </div>
-
-
-
-
-
-
-
-        
+         </div> 
         <br>
         <br>
         <br>
@@ -431,24 +338,15 @@
                        <button mat-button matStepperPrevious>Atras</button>
                        <button mat-button matStepperNext>Continuar</button>
                      </div>
-      
-      
-      
-      
-      
-      
       </form>
   </mat-step>
-
-
   <!-- ----------------------------------------------------------------- -->
   <mat-step>
     <ng-template matStepLabel>Publicar</ng-template>
     <br>
       <hr class="custom-hr">
       <br>
-
-    <h1 class="text-center">Muestranos tu inmueble</h1>
+      <h1 class="text-center">Muestranos tu inmueble</h1>
 
     <br>
     <div class="d-flex justify-content-center align-items-center">
@@ -459,6 +357,104 @@
     </div>
   <br>
   <br>
+  <hr>
+     <h2>  Plan disponible</h2>
+
+     <nav class="navbar">
+      <div class="container">
+        <div class="input-group">
+          <div class="input-group-text">
+              
+            <input class="form-check-input" type="radio" value="" aria-label="Radio for following text input">
+                &nbsp; &nbsp;  plan  gratuito   &nbsp; &nbsp;  &nbsp; &nbsp;  
+          </div>
+        
+          
+          
+        </div>
+      </div>
+    </nav>
+ <br>
+ <h1> Planes para ti </h1>
+    
+     <div class="card-container">
+      <div class="card">
+        <div class="content">
+       
+          <br>
+          <br>
+          <div class="title">Plan Básico</div>
+          <br>
+          <br>
+          <div class="price">$999/mes</div>
+          <br>
+          <div class="description">
+              <p>Características:</p>
+              <ul>
+                  <li>5 Anuncios destacados</li>
+                  <li>Plan con renovacion manual</li>
+                  <li>Volumen de visitas: moderado</li>
+              </ul>
+          </div>
+        </div>
+        <button class="but">
+          Comprar
+        </button>
+      </div>
+    
+      <!-- Repite dos veces más para un total de tres tarjetas -->
+      
+      <div class="card">
+        <div class="content">
+          <br>
+          <br>
+          <div class="title">Plan Intermedio</div>
+          <br>
+          <br>
+          <div class="price">$1499/mes</div>
+          <br>
+          <div class="description">
+              <p>Características:</p>
+      <ul>
+          <li>10 anuncios destacados</li>
+          <li>Plan de renovacion automatica</li>
+          <li>Volumen de visitas: Medio</li>
+      </ul>
+          </div>
+        </div>
+        <button class="but">
+          Comprar
+        </button>
+      </div>
+    
+      <div class="card">
+        <div class="content">
+          <br>
+          <br>
+          <div class="title">Plan Premiums</div>
+          <br>
+          <br>
+          <div class="price">$2999/mes</div>
+          <div class="description">
+              <br>
+             <p>Características:</p>
+            <ul>
+          <li>Anuncios destacados ilimitados</li>
+          <li>Plan de renovacion automatica</li>
+          <li>Volumen de visitas: Maximo</li>
+      </ul>
+           
+          </div>
+        </div>
+        <button class="but">
+          Comprar
+        </button>
+      </div>
+    </div>
+    
+    
+  <br>
+  <br>
 
     <div class="d-flex justify-content-center align-items-center">
       <button mat-button matStepperPrevious>Atras</button>
@@ -466,6 +462,4 @@
     </div>
   </mat-step>
 </mat-stepper>
-      
-    
 <app-footer></app-footer>
