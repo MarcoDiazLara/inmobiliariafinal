@@ -49,21 +49,16 @@ const routes: Routes = [
   component:InmobiliariasComponent
 
   },
-          
-
-
   {
 
     path:'particula',
     component:ParticulaComponent
   },
-
   {
 
     path:'Inmobiliariacorredor',
     component:InmobiliariacorredorComponent
   },
-
   {
     path:'Constructoradesarrolladora',
     component:ConstructoradesarrolladoraComponent
@@ -106,9 +101,6 @@ const routes: Routes = [
   {
     path:'novedadesactulidad',
     component:NovedadesactulidadComponent
-
-
-
   },
 ];
 

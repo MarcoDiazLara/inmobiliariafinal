@@ -6,7 +6,6 @@ import { SeguimientoclienteComponent } from './seguimientocliente/seguimientocli
 import { AgendarcitaclienteComponent } from './agendarcitacliente/agendarcitacliente.component';
 import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
-
 import { WebComponent } from '../web/web.component';
 import { QuierescomprarComponent } from '../web/quierescomprar/quierescomprar.component';
 
