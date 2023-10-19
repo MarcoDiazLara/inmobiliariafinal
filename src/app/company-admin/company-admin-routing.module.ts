@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompanyAdminComponent } from './company-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
+import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'Perfil',
         component: PerfilcompanyAdminComponent,
+      },
+      {
+        path: 'Notificaciones',
+        component: NotificacionescompanyAdminComponent,
       },
     ]
   }

@@ -28,13 +28,18 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminpassword/company-adminpassword.component';
+import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
+import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
+import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
 /end/
 
 @NgModule({
   declarations: [
     CompanyAdminComponent,
     CompanyAdminpasswordComponent,
-    // PerfilcompanyAdminComponent,
+    PerfilcompanyAdminComponent,
+    AltaBrokersComponent,
+    NotificacionescompanyAdminComponent,
   
   ],
   imports: [
@@ -60,12 +65,7 @@ import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminp
     MatNativeDateModule,
     MatDatepickerModule,
     NgIf,
-    NgFor,
-    
-
-
-
-    
+    NgFor,  
   ]
 })
 export class CompanyAdminModule { }
