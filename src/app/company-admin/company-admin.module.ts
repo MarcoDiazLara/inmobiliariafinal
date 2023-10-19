@@ -22,11 +22,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
+import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 /end/
 
 @NgModule({
   declarations: [
     CompanyAdminComponent,
+    PerfilcompanyAdminComponent,
     // AltaBrokersComponent,
     // AltasocioComponent,
   ],

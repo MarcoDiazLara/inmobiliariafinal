@@ -14,6 +14,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import { NgFor } from '@angular/common';
+import {NgIf} from '@angular/common';
+
 
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
@@ -32,7 +35,7 @@ import { AltasocioComponent } from './altasocio/altasocio.component';
   declarations: [
   MasterAdminComponent,
   EliminarasesoresComponent,
-  // AltasocioComponent,
+  AltasocioComponent,
   // AltausuarioComponent,
   
 ],
@@ -54,7 +57,14 @@ import { AltasocioComponent } from './altasocio/altasocio.component';
     MatTableModule,
     MatTableModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    NgFor,
+    NgIf, 
+     
+    
+
+
+    
     
     
   ]

@@ -1,8 +1,9 @@
+<div class="contenedorgeneral">
 <div class="col-md-12">
     <form class="insertar-dialog-content" [formGroup]="formGeneral">
       <div class="row">
-          <div class="col-md-6">
-            <mat-form-field appearance="fill" class="x">
+          <div class="col-md-4">
+            <mat-form-field appearance="fill" class="tamañoinput">
               <input matInput type="text" placeholder="" formControlName="nombrerazons">
               <mat-label>
                 <b>Nombre Razon Social</b></mat-label>
@@ -11,11 +12,11 @@
               </mat-error>
             </mat-form-field>
           </div>
-      </div>
+      
          
-      <div class="row">
-          <div class="col-md-6">
-              <mat-form-field appearance="legacy" style="width: 95%;">
+      
+          <div class="col-md-4">
+              <mat-form-field appearance="legacy" style="width: 95%; margin-top: 3%;">
                   <mat-label><b>RFC</b></mat-label>
                   <input matInput type="text" placeholder="Correo electronico" formControlName="rfcempresa">
                   <mat-error *ngIf="this.formGeneral.get('rfcempresa')?.hasError('required')">
@@ -24,8 +25,8 @@
                 </mat-form-field>
           </div> 
     
-          <div class="col-md-6">
-              <mat-form-field appearance="legacy" style="width: 95%;">
+          <div class="col-md-4">
+              <mat-form-field appearance="legacy" style="width: 95%; margin-top: 3%;">
                   <mat-label><b>Correo</b></mat-label>
                   <input matInput type="email" placeholder="Correo electronico" formControlName="email">
                   <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
@@ -38,7 +39,7 @@
   
       <div class="row">
           <div class="col-md-3">
-              <mat-form-field appearance="fill" class="x">
+              <mat-form-field appearance="fill" class="tamañoinput">
                   <mat-label><b>Contacto Empresa</b></mat-label>
                   <input matInput type="text" placeholder="Telefono" formControlName="contactoempresa" maxlength="10" style="margin-left:6%;">
                   <mat-error *ngIf="this.formGeneral.get('contactoempresa')?.hasError('required')">
@@ -48,7 +49,7 @@
           </div>
   
           <div class="col-md-3">
-              <mat-form-field appearance="fill" class="x">
+              <mat-form-field appearance="fill" class="tamañoinput">
                 <input matInput type="text" placeholder="" formControlName="calle">
                 <mat-label>
                     <b>Calle</b></mat-label>
@@ -59,7 +60,7 @@
           </div>
           
           <div class="col-md-3 ">
-              <mat-form-field appearance="fill" class="x">
+              <mat-form-field appearance="fill" class="tamañoinput">
                 <input matInput type="text" placeholder="" formControlName="numext">
                 <mat-label>
                   <b>NUM_EXT</b></mat-label>
@@ -70,7 +71,7 @@
           </div>
         
            <div class="col-md-3">
-              <mat-form-field appearance="fill" class="x">
+              <mat-form-field appearance="fill" class="tamañoinput">
                <input matInput type="text" placeholder="" formControlName="numint">
                 <mat-label><b>NUM_INT</b></mat-label>
                  <mat-error *ngIf="this.formGeneral.get('numint')?.hasError('required')">
@@ -79,6 +80,56 @@
               </mat-form-field>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field class="example-full-width " class="tamañoinput">
+            <mat-label  style="margin-left: 6%;"><b>Tipo Socio</b></mat-label>
+                <mat-select  formControlName="tipo_socio" required>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+           <mat-error>
+             Estatus
+           </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field class="example-full-width" class="tamañoinput">
+            <mat-label  style="margin-left: 6%;"><b>Estados</b></mat-label>
+                <mat-select  formControlName="estados" required>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+           <mat-error>
+             Estatus
+           </mat-error>
+          </mat-form-field>
+        </div>
+        
+        <div class="col-md-3 ">
+          <mat-form-field class="example-full-width" class="tamañoinput">
+            <mat-label  style="margin-left: 6%;"><b>Municipio</b></mat-label>
+                <mat-select  formControlName="municipio" required>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+           <mat-error>
+             Estatus
+           </mat-error>
+          </mat-form-field>
+        </div>
+      
+         <div class="col-md-3">
+          <mat-form-field class="example-full-width " class="tamañoinput">
+            <mat-label  style="margin-left: 6%;"><b>Asentamientos</b></mat-label>
+                <mat-select  formControlName="asentamientos" required>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+           <mat-error>
+             Estatus
+           </mat-error>
+          </mat-form-field>
+      </div>
+    </div>
   
       <div class="row">
         <div class="col-md-6">
@@ -104,4 +155,5 @@
     </button>
     </div>
     </div>
+  </div>
     

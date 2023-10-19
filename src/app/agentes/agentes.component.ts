@@ -16,6 +16,7 @@ export class AgentesComponent implements OnDestroy {
   fillerNav = [
     { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
     { name: "Menu", route: "menu",icon: "perm_contact_calendar" , label: "MENU",number:'0' },
+    { name: "Menu", route: "Notificaciones",icon: "perm_contact_calendar" , label: "Perfil",number:'0' },
   
   ];
 
