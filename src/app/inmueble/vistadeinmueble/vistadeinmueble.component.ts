@@ -30,6 +30,8 @@ export class VistadeinmuebleComponent implements OnInit {
 
   firstFormGroup!: FormGroup;
   
+ // registerForm: FormGroup;
+  
   datosInmueble: any[] = [];
   /*datosMunicipios  llena la lista de busqueda de todos los municipios*/
   datosMunicipios: any[] = [];
@@ -223,6 +225,7 @@ export class VistadeinmuebleComponent implements OnInit {
       pDireccion: ['', [Validators.required]]
 
     });
+    
 
     this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((data: any) => {
 
