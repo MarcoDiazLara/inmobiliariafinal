@@ -39,7 +39,7 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
   ],
   imports: [
     CommonModule,
-    AgentesRoutingModule,
+
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -55,6 +55,7 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
+    AgentesRoutingModule,
   ]
 })
 export class AgentesModule { }
