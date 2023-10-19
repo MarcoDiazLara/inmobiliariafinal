@@ -44,3 +44,9 @@ export interface tipoUsuario{
     Id_Tipo_Usuario: "",
     Tipo_Usuario: ""
 };
+
+export interface tipoSocio{
+    Id_Tipo_Socio: "",
+    Tipo_Socio: ""
+
+};

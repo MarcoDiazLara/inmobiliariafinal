@@ -180,6 +180,12 @@ export class HttpService {
     +'&p_desc_usu='+p_desc_usu+'&p_RFC='+p_RFC+'&p_CURP='+p_CURP+'&p_creado='+p_creado;
     return this.httpclient.post(this.url + 'insertarUsuarioBroker.php', params, { headers });
   }
+
+  tipoSocio(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post(this.url + 'mostrarTipoSocio.php', params, { headers });
+  }
   
 
 }
