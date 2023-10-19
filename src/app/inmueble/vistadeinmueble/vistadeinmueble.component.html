@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div class="navbar">
-  <form [formGroup]="firstFormGroup" class="form-control content-center" >
+  <form [formGroup]="firstFormGroup" >
   <div [formGroup]="firstFormGroup" class="buscador">
     <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
       placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
