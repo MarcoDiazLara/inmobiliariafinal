@@ -22,6 +22,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AgentesComponent } from './agentes.component';
+import { NgFor } from '@angular/common';
+import { NgIf } from '@angular/common';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component';
 import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agentepassword.component';
 /end/
@@ -56,6 +60,16 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
     MatFormFieldModule,
     MatInputModule,
     AgentesRoutingModule,
+    NgFor,
+    NgIf,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+
+
+
+
+
   ]
 })
 export class AgentesModule { }
