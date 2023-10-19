@@ -56,6 +56,7 @@ export class AltausuarioComponent implements OnInit {
         contactoprincipal: ['', [Validators.required]],
         contactoemergencia: ['', [Validators.required]],
         email: ['', [Validators.required]],
+        nombreusuario: ['',[Validators.required]],
         password: ['', [Validators.required]],
         estatus: ['', [Validators.required]],
         descripcionusuario: ['', [Validators.required]],

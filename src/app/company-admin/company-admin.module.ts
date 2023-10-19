@@ -15,22 +15,27 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
-import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
+import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminpassword/company-adminpassword.component';
 /end/
 
 @NgModule({
   declarations: [
     CompanyAdminComponent,
-    PerfilcompanyAdminComponent,
-    // AltaBrokersComponent,
-    // AltasocioComponent,
+    CompanyAdminpasswordComponent,
+    // PerfilcompanyAdminComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -50,6 +55,17 @@ import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    NgIf,
+    NgFor,
+    
+
+
+
+    
   ]
 })
 export class CompanyAdminModule { }

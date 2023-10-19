@@ -107,6 +107,16 @@
         </div>
       
         <div class="row">
+          <div class="col-md-3 alinea">
+            <mat-form-field appearance="fill">
+              <input matInput type="text" placeholder="" formControlName="nombreusuario">
+              <mat-label>
+                  <mat-icon>user</mat-icon><b> Nombre Usuario </b></mat-label>
+              <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
+                  Nombre Usuario <strong>Obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
       
           <div class="col-md-3 alinea">
             <mat-form-field appearance="fill">
@@ -131,7 +141,7 @@
             </mat-form-field>
           </div>
       
-          <div class="col-md-6">
+          <div class="col-md-3">
             <mat-form-field appearance="fill">
               <textarea matInput type="text" placeholder="" formControlName="descripcionusuario"></textarea>
               <mat-label>
@@ -142,6 +152,8 @@
             </mat-form-field>
           </div>
         </div>
+
+        
       
         <div class="row">
           <div class="col-md-6">
