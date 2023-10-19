@@ -44,3 +44,8 @@ export interface tipoUsuario{
     Id_Tipo_Usuario: "",
     Tipo_Usuario: ""
 };
+
+export interface sendCorreo{
+    Contacto_Principal: "",
+    Email:"",
+};

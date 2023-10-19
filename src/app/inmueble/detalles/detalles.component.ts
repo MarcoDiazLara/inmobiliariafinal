@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
-import { WebModule } from 'src/app/web/web.module';
-import { MatListModule } from '@angular/material/list';
-import { MatTabsModule } from '@angular/material/tabs';
+import { sendCorreo } from 'src/app/services/Interface/Interfaces';
 
 @Component({
   selector: 'app-detalles',
@@ -33,9 +31,17 @@ export class DetallesComponent implements OnInit {
   email: string = '';
   comentarios: string = 'Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad.';
 
-  enviarFormulario() {
-    // Aquí puedes enviar los datos del formulario a través de un servicio HTTP o realizar otras acciones que desees.
+  
+  enviarCorreo(){
+    let id="15";
+    this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
+      console.log(data);
+    });
+
+ 
+
   }
+
 
   enviarWhatsApp() {
     const numeroTelefono = '2227515083'; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
@@ -53,7 +59,7 @@ export class DetallesComponent implements OnInit {
 
   
 
-  constructor( private router:Router) { }
+  constructor( private router:Router, private httpService:HttpService) { }
   
   back(){
     this.router.navigate(["/inmueble/vista"]);
