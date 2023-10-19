@@ -21,16 +21,37 @@ export class DetallesComponent implements OnInit {
     'assets/img/Slide-3.jpg',
   ];
 
-  
-
   imagenPrincipalUrl: string = 'assets/img/Houses-bro.png';
 
   cambiarImagen(imagenUrl: string) {
     this.imagenPrincipalUrl = imagenUrl;
   }
+
+
+  nombre: string = '';
+  telefono: string = '';
+  email: string = '';
+  comentarios: string = 'Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad.';
+
+  enviarFormulario() {
+    // Aquí puedes enviar los datos del formulario a través de un servicio HTTP o realizar otras acciones que desees.
+  }
+
+  enviarWhatsApp() {
+    const numeroTelefono = '2227515083'; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
+    const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+
+    const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+
+     // Abre la URL de WhatsApp en una nueva ventana
+    window.open(urlWhatsApp, '_blank');
+  }
+
+
+
+
+
   
-
-
 
   constructor( private router:Router) { }
   
