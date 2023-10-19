@@ -25,7 +25,7 @@ const routes: Routes = [
     loadChildren: ()=> import('./master-admin/master-admin.module').then(m=>m.MasterAdminModule)
   },
   {
-    path: 'inmobiliaria',
+    path: 'Company',
     loadChildren: ()=> import('./company-admin/company-admin.module').then(m =>m.CompanyAdminModule)
   },
   {

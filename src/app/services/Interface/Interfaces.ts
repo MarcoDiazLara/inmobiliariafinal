@@ -48,5 +48,8 @@ export interface tipoUsuario{
 export interface tipoSocio{
     Id_Tipo_Socio: "",
     Tipo_Socio: ""
-
+};
+export interface sendCorreo{
+    Contacto_Principal: "",
+    Email:"",
 };

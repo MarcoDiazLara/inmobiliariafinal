@@ -1,0 +1,13 @@
+<div class="notification-list-container">
+
+    <div *ngIf="showNotificationList" class="notification-list">
+        <h3>Lista de notificaciones</h3>
+        <ul>
+            <li *ngFor="let notification of notifications">
+                <h4>{{ notification.title }}</h4>
+                <p>{{ notification.summary }}</p>
+                <p class="timestamp">{{ notification.timestamp | date: 'medium' }}</p>
+            </li>
+        </ul>
+    </div>
+</div>

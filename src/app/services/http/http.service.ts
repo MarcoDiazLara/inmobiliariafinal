@@ -186,6 +186,12 @@ export class HttpService {
     let params = 'xrsxryw1y21';
     return this.httpclient.post(this.url + 'mostrarTipoSocio.php', params, { headers });
   }
+  EnviarCorreo(p_id: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id='+p_id;
+    return this.httpclient.post(this.url + 'servicio-correos.php', params, { headers });
+
+  }
   
 
 }

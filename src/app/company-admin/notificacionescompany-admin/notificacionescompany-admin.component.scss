@@ -1,0 +1,39 @@
+.notification-list-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+.notification-list {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.notification-list h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.notification-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.notification-item h4 {
+    color: #007BFF;
+}
+
+.notification-item p {
+    color: #555;
+}
+
+.timestamp {
+    color: #888;
+    font-size: 12px;
+}
