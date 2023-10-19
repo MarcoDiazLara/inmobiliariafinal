@@ -6,9 +6,10 @@
     <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
       placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
     <ul  class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios" (click)="seleccionarMunicipio(municipios)" (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
+      <li *ngFor="let option of datosMunicipios" 
+       (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
     </ul>
-    <button class="btn btn-outline-secondary" type="submit" (change)="mostrar()">
+    <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
       <img class="lupa">
     </button> 
 
@@ -355,7 +356,7 @@
 
             <td colspan="2">
               <h1>{{res.Estado}}</h1>
-              <h4>San Antonio, San Martin Texmelucan</h4>
+              <h4>{{res.Municipio}}</h4>
               <h3>{{res.Descripcion_Publicacion}}</h3>
             </td>
           </thead>

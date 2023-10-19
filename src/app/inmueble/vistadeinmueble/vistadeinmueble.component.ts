@@ -284,6 +284,9 @@ export class VistadeinmuebleComponent implements OnInit {
 
   seleccionarMunicipio(municipios: string) {
     this.municipioSeleccionado = municipios;
+
+    console.log(municipios);
+  
   }
   back() {
     this.router.navigate(["/web"]);
