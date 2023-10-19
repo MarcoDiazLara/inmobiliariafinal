@@ -56,6 +56,7 @@ export class VistadeinmuebleComponent implements OnInit {
     
 
   }
+
   title = 'ProyectoPrueba';
 
 
@@ -68,6 +69,7 @@ export class VistadeinmuebleComponent implements OnInit {
   tpropiedad!: Number;
   ubicacion!: String;
 
+  tippropiedad: String | undefined;
 
 
 
@@ -235,10 +237,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
 
-    this.firstFormGroup = this.formBuilder.group({
-      pDireccion: ['', [Validators.required]]
-
-    });
+   
 
     //let datosBusqueda = 
 
@@ -319,7 +318,12 @@ export class VistadeinmuebleComponent implements OnInit {
 
                 });
               
-            }
+    }
+
+    cambioTpropiedad(tprop:string){
+      console.log('Selecciona Propiedad: ',tprop);
+      this.tippropiedad = tprop;
+    }
 
 }
 
