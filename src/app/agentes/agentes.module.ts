@@ -28,6 +28,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component';
 import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agentepassword.component';
+import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
 /end/
 
 
@@ -38,6 +39,7 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
     AgentesComponent,
     PerfilagentesComponent,
     AgentepasswordComponent,
+    NotificacionesagentesComponent,
 
     
   ],

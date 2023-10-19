@@ -14,6 +14,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import { NgFor } from '@angular/common';
+import {NgIf} from '@angular/common';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
@@ -32,8 +36,8 @@ import { AltasocioComponent } from './altasocio/altasocio.component';
   declarations: [
   MasterAdminComponent,
   EliminarasesoresComponent,
-  // AltasocioComponent,
-  // AltausuarioComponent,
+  AltasocioComponent,
+  AltausuarioComponent,
   
 ],
   imports: [
@@ -54,9 +58,10 @@ import { AltasocioComponent } from './altasocio/altasocio.component';
     MatTableModule,
     MatTableModule,
     MatPaginatorModule,
-    MatInputModule
-    
-    
+    MatInputModule,
+    NgFor,
+    NgIf,
+    MatDatepickerModule 
   ]
 })
 export class MasterAdminModule { }

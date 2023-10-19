@@ -180,6 +180,13 @@ export class HttpService {
     +'&p_desc_usu='+p_desc_usu+'&p_RFC='+p_RFC+'&p_CURP='+p_CURP+'&p_creado='+p_creado;
     return this.httpclient.post(this.url + 'insertarUsuarioBroker.php', params, { headers });
   }
+
+  EnviarCorreo(p_id: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id='+p_id;
+    return this.httpclient.post(this.url + 'servicio-correos.php', params, { headers });
+
+  }
   
 
 }

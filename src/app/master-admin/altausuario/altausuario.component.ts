@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {FormsModule ,ReactiveFormsModule} from '@angular/forms';
-import { NgFor } from '@angular/common';
 import {FormControl} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {NgIf} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatIconModule} from '@angular/material/icon';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { tipoUsuario } from 'src/app/services/Interface/Interfaces';
@@ -25,21 +16,7 @@ interface Status {
 @Component({
   selector: 'app-altausuario',
   templateUrl: './altausuario.component.html',
-  styleUrls: ['./altausuario.component.scss'],
-  standalone: true,
-  imports: [
-    MatFormFieldModule, 
-    MatSelectModule, 
-    FormsModule, 
-    ReactiveFormsModule, 
-    NgFor,
-    NgIf, 
-    MatInputModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule,
-    MatIconModule,
-    
-  ],
+  styleUrls: ['./altausuario.component.scss']
 })
 
 
@@ -79,7 +56,7 @@ export class AltausuarioComponent implements OnInit {
         contactoprincipal: ['', [Validators.required]],
         contactoemergencia: ['', [Validators.required]],
         email: ['', [Validators.required]],
-        nombreusuario: ['', [Validators.required]],
+        nombreusuario: ['',[Validators.required]],
         password: ['', [Validators.required]],
         estatus: ['', [Validators.required]],
         descripcionusuario: ['', [Validators.required]],

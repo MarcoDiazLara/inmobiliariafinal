@@ -117,19 +117,6 @@
       </div>
 
     </div>
-
-    <div class="row">
-      <div class="col-md-3 alinea">
-        <mat-form-field appearance="fill">
-          <input matInput type="text" placeholder="" formControlName="nombreusuario" [(ngModel)]="datos.Nombre_Usuario">
-          <mat-label>
-            <b>Nombre Usuario </b></mat-label>
-          <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
-            Nombre Usuario <strong>Obligatorio</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-    </div>
     <br>
     <br>
     <br>
