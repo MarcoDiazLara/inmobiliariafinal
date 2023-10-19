@@ -31,7 +31,6 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
 /end/
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
-import { ComprarplanesComponent } from './comprarplanes/comprarplanes.component';
 
 
 
@@ -45,7 +44,6 @@ import { ComprarplanesComponent } from './comprarplanes/comprarplanes.component'
     // SeguimientoclienteComponent,
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
-    ComprarplanesComponent,
     // PerfilclienteComponent,
 
   ],

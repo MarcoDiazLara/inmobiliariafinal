@@ -13,8 +13,6 @@ import { ClienteModule } from './cliente/cliente.module';
 import { MasterAdminModule } from './master-admin/master-admin.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 
-
-
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import { QuieresvenderComponent } from './web/quieresvender/quieresvender.component';
 

@@ -9,7 +9,6 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
 
 import { WebComponent } from '../web/web.component';
 import { QuierescomprarComponent } from '../web/quierescomprar/quierescomprar.component';
-import { ComprarplanesComponent } from './comprarplanes/comprarplanes.component';
 
 
 const routes: Routes = [
@@ -40,10 +39,6 @@ const routes: Routes = [
       {
         path:'reasignacion',
         component: CambioasesorclienteComponent,
-      },
-      {
-        path:'planes',
-        component: ComprarplanesComponent,
       },
     ],
   },
