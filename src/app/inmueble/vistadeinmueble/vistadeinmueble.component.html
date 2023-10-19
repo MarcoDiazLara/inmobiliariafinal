@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div class="navbar">
-  
+  <form [formGroup]="firstFormGroup" class="form-control content-center" >
   <div [formGroup]="firstFormGroup" class="buscador">
     <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
       placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" [(ngModel)]="municipios" >
@@ -56,8 +56,8 @@
     <div>
  
       
-      <select  [(ngModel)]="data.inmueble">
-        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
+      <select  [(ngModel)]="data.inmueble" >
+        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Id_Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
     
@@ -317,7 +317,7 @@
 
     </div>
   </div>
-
+</form>
 </div>
 
 
