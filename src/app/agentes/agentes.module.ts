@@ -36,7 +36,7 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
 @NgModule({
   declarations: [
     AgentesComponent,
-    // PerfilagentesComponent,
+    PerfilagentesComponent,
     AgentepasswordComponent,
 
     
