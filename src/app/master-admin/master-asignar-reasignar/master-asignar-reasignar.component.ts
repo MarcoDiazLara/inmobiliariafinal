@@ -64,11 +64,11 @@ export class MasterAsignarReasignarComponent implements OnInit {
   }
   openpassword() {
 
-    const dialogRef = this.dialog.open(this.asignarAsesor, {
-      width: '60vh',
-      height: 'auto',
-      disableClose: true
-    });
+    // const dialogRef = this.dialog.open(this.asignarAsesor, {
+    //   width: '60vh',
+    //   height: 'auto',
+    //   disableClose: true
+    // });
   }
 
   openDialog(): void {
