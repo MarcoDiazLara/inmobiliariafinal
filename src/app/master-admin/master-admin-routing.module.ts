@@ -4,6 +4,7 @@ import { MasterAdminComponent } from './master-admin.component';
 import { EliminarasesoresComponent } from './eliminarasesores/eliminarasesores.component';
 import { AltausuarioComponent } from './altausuario/altausuario.component';
 import { AltasocioComponent } from './altasocio/altasocio.component';
+import { MasterAsignarReasignarComponent } from './master-asignar-reasignar/master-asignar-reasignar.component';
 
 
 const routes: Routes = [ 
@@ -22,6 +23,10 @@ children:[
 {
   path: 'altasocio',
   component: AltasocioComponent,
+},
+{
+  path: 'Asignar-reasignar',
+  component: MasterAsignarReasignarComponent,
 },
 ]
 }

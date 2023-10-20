@@ -22,10 +22,9 @@ export class MasterAdminComponent  implements OnDestroy {
   nombre: any;
 
      fillerNav = [
-    { name: "altabroker", route: "altabroker",icon: "perm_contact_calendar" , label: "ALTA",number:'0'},
-    { name: "eliminarasesores", route: "eliminaasesores",icon: "person" , label: "ELIMINAUSUARIO",number:'0' },
-    { name: "altausuario", route: "altausuario",icon: "home" , label: "Alta usuario",number:'0' },
-    { name: "altasocio", route: "altasocio",icon: "home" , label: "Alta socio",number:'0' },
+    { name: "altausuario", route: "altausuario",icon: "group_add" , label: "Alta usuario",number:'0' },
+    { name: "altasocio", route: "altasocio",icon: "domain_add" , label: "Alta socio",number:'0' },
+    { name: "asignar-re", route: "Asignar-reasignar",icon: "groups" , label: "Asignar-Reasignar",number:'0' },
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'}
   ];
 

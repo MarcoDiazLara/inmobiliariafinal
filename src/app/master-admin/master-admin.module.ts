@@ -33,7 +33,10 @@ import { AltasocioComponent } from './altasocio/altasocio.component';
 import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-admin.component';
 import { MasterAdminpasswordComponent } from './ventanaemergente/master-adminpassword/master-adminpassword.component';
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
+import { MasterAsignarReasignarComponent } from './master-asignar-reasignar/master-asignar-reasignar.component';
 
+import {MatMenuModule} from '@angular/material/menu';
+import { AsignasrasesorComponent } from './ventanaemergente/asignasrasesor/asignasrasesor.component';
 
 
 
@@ -47,6 +50,9 @@ import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin
   PerfilmasterAdminComponent,
   MasterAdminpasswordComponent,
   NotificacionesmasterAdminComponent,
+  AsignasrasesorComponent,
+  // MasterAsignarReasignarComponent,
+  
   
 ],
   imports: [
