@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class CompanyAdminComponent implements OnDestroy {
+  nombre : any;
   mobileQuery: MediaQueryList;
 
      fillerNav = [
@@ -28,6 +29,7 @@ export class CompanyAdminComponent implements OnDestroy {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    this.nombre = localStorage.getItem("Nombre_Usuario");
   }
 
   ngOnDestroy(): void {

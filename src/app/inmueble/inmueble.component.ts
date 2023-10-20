@@ -269,6 +269,7 @@ xd(){
 
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
 
+  
   abrir(){
     if(this.isLoggedIn){
       
