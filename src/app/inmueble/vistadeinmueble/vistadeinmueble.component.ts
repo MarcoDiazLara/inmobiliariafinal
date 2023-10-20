@@ -46,9 +46,9 @@ export class VistadeinmuebleComponent implements OnInit {
   /*Almacena el id del tipoInmueble*/
   seleccionIdTipoInmueble:any | null='';
 
-  data: any = {
+  inmueble: any = {
     ubicacion: '',
-    recamaras:'',
+    recamaras: '',
     inmueble: '',
     precioHasta: '',
     precioDesde: '',
@@ -302,10 +302,12 @@ export class VistadeinmuebleComponent implements OnInit {
 
     this.datosInmueble = [];
 
-    this.http.busquedaAvanzada(this.data.ubicacion, this.data.recamaras, this.data.inmueble, '', '', this.data.pMax, this.data.pMin, this.data.tipoAccion, '', '').subscribe((data: any) => {
+    this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '').subscribe((data: any) => {
 
       /*let mostrar = JSON.stringify(data);
       alert(mostrar);*/
+      console.log(this.inmueble);
+
     data= this.datosInmueble ;
 
   
