@@ -17,6 +17,9 @@ import {MatCardModule} from '@angular/material/card';
 import { NgFor } from '@angular/common';
 import {NgIf} from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 /*tablas */
@@ -27,6 +30,9 @@ import {MatInputModule} from '@angular/material/input';
 import {EliminarasesoresComponent} from './eliminarasesores/eliminarasesores.component';
 import { AltausuarioComponent } from './altausuario/altausuario.component';
 import { AltasocioComponent } from './altasocio/altasocio.component';
+import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-admin.component';
+import { MasterAdminpasswordComponent } from './ventanaemergente/master-adminpassword/master-adminpassword.component';
+import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 
 
 
@@ -38,27 +44,36 @@ import { AltasocioComponent } from './altasocio/altasocio.component';
   EliminarasesoresComponent,
   AltasocioComponent,
   AltausuarioComponent,
+  PerfilmasterAdminComponent,
+  MasterAdminpasswordComponent,
+  NotificacionesmasterAdminComponent,
   
 ],
   imports: [
     CommonModule,
     MasterAdminRoutingModule,
-    MatSelectModule,
     FormsModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatSelectModule,
     MatRadioModule,
     MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
     MatCardModule,
-    MatTableModule,
-    MatTableModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatCardModule,
     MatInputModule,
+    MatDialogModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatNativeDateModule, 
     NgFor,
     NgIf,
     MatDatepickerModule 

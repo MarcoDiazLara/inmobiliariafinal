@@ -134,9 +134,7 @@ export class MenuComponent implements OnInit {
   
    }
    EvitaFraude(){
-  
     this.router.navigate(['web/EvitaFraude']);
-  
    }
    Quierescomprar(){
     this.router.navigate(['web/QuieresComprar'])
@@ -145,13 +143,13 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['web/QuieresComprar'])
    }
    inmobiliarias(){
-
     this.router.navigate(['web/inmobiliarias'])
    }
-  
     novedadesactulidad(){
       this.router.navigate(['web/novedadesactulidad'])
-
-    }
+  }
+  inmueble(){
+    this.router.navigate(['inmueble/vista'])
+  }
 
 }
