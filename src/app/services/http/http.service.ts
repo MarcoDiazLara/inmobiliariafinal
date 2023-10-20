@@ -192,6 +192,14 @@ export class HttpService {
     return this.httpclient.post(this.url + 'servicio-correos.php', params, { headers });
 
   }
+
+  insertarSocio(Nombre_Razon_Social: any,Img_Logo: any,RFC: any,Email: any,Tel_Empresa: any,Calle: any,Num_Ext: any,Num_Int:any,Id_Asentamiento:any,Id_Tipo_Socio: any, v_Id_Usuario: any){
+    //'$vNombre_Razon_Social','$vImg_Logo','$vRFC','$vEmail','$vTel_Empresa','$vCalle','$vNum_Ext','$vNum_Int','$vId_Asentamiento','$vId_Tipo_Socio'
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'Nombre_Razon_Social='+Nombre_Razon_Social+"&Img_Logo="+Img_Logo +"&RFC="+RFC + "&Email="+Email +"&Tel_Empresa="+Tel_Empresa + "&Calle="+Calle +"&Num_Ext="+Num_Ext 
+    +"&Num_Int="+Num_Int +"&Id_Asentamiento="+Id_Asentamiento +"&Id_Tipo_Socio="+Id_Tipo_Socio +"&v_Id_Usuario="+v_Id_Usuario;
+    return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
+  }
   
 
 }

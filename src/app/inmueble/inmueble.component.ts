@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
   import {MatInputModule} from '@angular/material/input';
   import {MatFormFieldModule} from '@angular/material/form-field';
@@ -259,6 +259,36 @@ xd(){
       .subscribe((response) => {
        console.log(response);
       });
+  }
+
+
+  isLoggedIn: boolean = false;
+
+  modalVisible = false; // Inicialmente oculto
+
+
+  @ViewChild('ventanaEmergente') ventanaEmergente: any;
+
+  abrir(){
+    if(this.isLoggedIn){
+      
+    }
+    else{
+      this.abrirVentanaEmergente();
+    }
+  }
+
+  abrirVentanaEmergente(): void {
+    this.ventanaEmergente.nativeElement.style.display = 'block';
+  }
+
+  cerrarVentanaEmergente(): void {
+    this.ventanaEmergente.nativeElement.style.display = 'none';
+  }
+
+
+  mostrarAlerta() {
+    alert('¡Éxito tu pago fue realizado !');
   }
 
 
