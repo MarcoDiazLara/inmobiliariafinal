@@ -74,16 +74,26 @@ export class AltasocioComponent implements OnInit {
       let calle = this.formGeneral.value.calle;
       let numext = this.formGeneral.value.numext; 
       let numint = this.formGeneral.value.numint;
-      let tipo_socio = this.formGeneral.value.numint;
+      let tipo_socio = this.formGeneral.value.tipo_socio;
       let estados = this.formGeneral.value.numint;
       let municipio = this.formGeneral.value.numint;
-      let asentamientos = this.formGeneral.value.numint;
+      let asentamientos = this.formGeneral.value.pId_asentamiento;
+      let Logo = "https://inmobiliaria.arvispace.com/imagenes/unkown.jpg";
+      let id = localStorage.getItem("Id_Usuario");
      
       let imageInput = this.formGeneral.value.imageInput;
 
-
-      alert('nombrerazons: '+ nombrerazons + 'rfcempresa: ' + rfcempresa + 'calle: '+ calle + 'numext: ' + numext +  'contactoempresa: ' + contactoempresa + 'numint: '+ numint + 'email: ' + email  + 'imageInput' + imageInput + 'tipo_socio' + tipo_socio + 'estados' + estados+ 'municipio'+ municipio + 'asentamientos' + asentamientos); 
+      //Nombre_Razon_Social: any,Img_Logo: any,RFC: any,Email: any,Tel_Empresa: any,Calle: any,Num_Ext: any,Num_Int:any,Id_Asentamiento:any,Id_Tipo_Socio: any, v_Id_Usuario: any
+      //alert('nombrerazons: '+ nombrerazons + 'rfcempresa: ' + rfcempresa + 'calle: '+ calle + 'numext: ' + numext +  'contactoempresa: ' + contactoempresa + 'numint: '+ numint + 'email: ' + email  + 'imageInput' + imageInput + 'tipo_socio' + tipo_socio + 'estados' + estados+ 'municipio'+ municipio + 'asentamientos' + asentamientos); 
       
+      this.httpService.insertarSocio(nombrerazons,Logo, rfcempresa,email, contactoempresa,calle, numext, numint, asentamientos, tipo_socio, id).subscribe((data: any)=> {
+        if(data == 1){
+          alert("Se ha insertado el socio");
+        }else{
+          alert("Error al insertar");
+        }
+      })
+
      }
 }
 
