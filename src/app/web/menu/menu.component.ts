@@ -123,7 +123,7 @@ export class MenuComponent implements OnInit {
     }else if( entrada == "4"){
       this.router.navigate(["cliente/cliente/Perfil"]);
     }else if ( entrada == "5"){
-      this.router.navigate(["/inmobiliaria"]);
+      this.router.navigate(["/Company/Perfil"]);
     }
 
   }
