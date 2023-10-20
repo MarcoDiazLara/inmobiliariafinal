@@ -108,7 +108,7 @@ export class PerfilclienteComponent implements OnInit {
       let contactoprincipal = this.formGeneral.value.contactoprincipal;
       let contactoemergencia = this.formGeneral.value.contactoemergencia;
       let email = this.formGeneral.value.email;
-      let nombreusuario = this.formGeneral.value.nombreusuario;
+      let nombreusuario = localStorage.getItem("Id_Usuario");
       let imageInput = this.formGeneral.value.imageInput;
   //id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario , imageInput
       this.httpService.updateInfoUsuario(id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario ).subscribe((data : any)=>{

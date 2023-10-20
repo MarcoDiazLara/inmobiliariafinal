@@ -86,7 +86,7 @@
           <mat-form-field class="example-full-width " class="tamañoinput">
             <mat-label  style="margin-left: 6%;"><b>Tipo Socio</b></mat-label>
                 <mat-select  formControlName="tipo_socio" required>
-                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                  <mat-option *ngFor="let Soci of Socios" value="{{Soci.Id_Tipo_Socio}}">{{Soci.Tipo_Socio}}</mat-option>
                 </mat-select>
            <mat-error>
              Tipo socio
@@ -97,8 +97,9 @@
         <div class="col-md-3">
           <mat-form-field class="example-full-width" class="tamañoinput">
             <mat-label  style="margin-left: 6%;"><b>Estados</b></mat-label>
-                <mat-select  formControlName="estados" required>
-                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                <mat-select  formControlName="pId_estado" required>
+                  <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
+                  }}</mat-option>
                 </mat-select>
            <mat-error>
              Estados
@@ -109,8 +110,9 @@
         <div class="col-md-3 ">
           <mat-form-field class="example-full-width" class="tamañoinput">
             <mat-label  style="margin-left: 6%;"><b>Municipio</b></mat-label>
-                <mat-select  formControlName="municipio" required>
-                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                <mat-select  formControlName="pId_municipio" required>
+                  <mat-option (click)="updateA()" *ngFor="let Mun of municipios" value="{{ Mun.id_Municipio}}">{{ Mun.Municipio
+                  }}</mat-option>
                 </mat-select>
            <mat-error>
              Municipio
@@ -121,8 +123,9 @@
          <div class="col-md-3">
           <mat-form-field class="example-full-width " class="tamañoinput">
             <mat-label  style="margin-left: 6%;"><b>Asentamientos</b></mat-label>
-                <mat-select  formControlName="asentamientos" required>
-                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                <mat-select  formControlName="pId_asentamiento" required>
+                  <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_asentamiento}}">{{ Ase.Asentamiento
+                  }}</mat-option>
                 </mat-select>
            <mat-error>
              Asentamientos

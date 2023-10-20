@@ -181,6 +181,11 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarUsuarioBroker.php', params, { headers });
   }
 
+  tipoSocio(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post(this.url + 'mostrarTipoSocio.php', params, { headers });
+  }
   EnviarCorreo(p_id: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id='+p_id;

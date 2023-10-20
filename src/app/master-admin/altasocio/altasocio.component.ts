@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { tipoSocio, Inmuebles,Estados, Municipios, Asentamiento } from 'src/app/services/Interface/Interfaces';
+
+
 
 @Component({
   selector: 'app-altasocio',
@@ -10,6 +13,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 })
 export class AltasocioComponent implements OnInit {
+  Socio !: tipoSocio;
+  Socios : tipoSocio[] = [];
+  inmuebles: Inmuebles[] =[];
+  inmueble!: Inmuebles;
+  estados: Estados[] =[];
+  estado!: Estados;
+  municipios: Municipios[] =[];
+  municipio!: Municipios;
+
+  asentamientos: Asentamiento[] =[];
+  asentamiento!: Asentamiento;
+
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
@@ -30,6 +45,8 @@ export class AltasocioComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.obtenerTipo();
+    this.obtenerEstado();
     this.formGeneral = this.formBuilder.group({
       nombrerazons: ['', [Validators.required]],
       rfcempresa: ['', [Validators.required]],
@@ -39,9 +56,9 @@ export class AltasocioComponent implements OnInit {
       numext: ['', [Validators.required]],
       numint: ['', [Validators.required]],
       tipo_socio: ['',[Validators.required]],
-      estados: ['',[Validators.required]],
-      municipio:['',[Validators.required]],
-      asentamientos:['',[Validators.required]],
+      pId_estado: ['',[Validators.required]],
+      pId_municipio:['',[Validators.required]],
+      pId_asentamiento:['',[Validators.required]],
       imageInput: ['', [Validators.required]],
     });
   }
@@ -68,6 +85,58 @@ export class AltasocioComponent implements OnInit {
       alert('nombrerazons: '+ nombrerazons + 'rfcempresa: ' + rfcempresa + 'calle: '+ calle + 'numext: ' + numext +  'contactoempresa: ' + contactoempresa + 'numint: '+ numint + 'email: ' + email  + 'imageInput' + imageInput + 'tipo_socio' + tipo_socio + 'estados' + estados+ 'municipio'+ municipio + 'asentamientos' + asentamientos); 
       
      }
+}
+
+obtenerTipo(){
+  this.httpService.tipoSocio().subscribe((data: any) => {
+    if(data !== 201){
+      
+      this.Socio = data[0].Id_Tipo_Socio;
+        this.Socios = data;
+    }
+  },(err)=>{
+   console.log(err);
+  
+  })
+
+}
+
+obtenerEstado(){
+
+  this.httpService.obtenerEstado().subscribe((resp:any)=> {
+    if(resp !== 201){
+      this.estado = resp[0].id_Estado;
+      this.estados = resp;
+    }
+   },(err)=>{
+    console.log(err);
+   })
+ }
+
+ 
+updateM(){
+  this.httpService.obtenerMunicipio(this.formGeneral.value.pId_estado).subscribe((resp:any)=> {
+    if(resp !== 201){
+      this.municipio = resp[0].id_Municipio;
+      this.municipios = resp;
+    }
+   },(err)=>{
+    console.log(err);
+   })
+}
+
+updateA(){
+  this.httpService.obtenerAsentamiento(this.formGeneral.value.pId_estado,
+    this.formGeneral.value.pId_municipio).subscribe((resp:any)=> {
+    if(resp !== 201){
+      this.asentamiento = resp[0].id_Asentamiento;
+      this.asentamientos = resp;
+    }
+   },(err)=>{
+    console.log(err);
+   })
+  
+ 
 }
 
 
