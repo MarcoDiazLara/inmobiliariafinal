@@ -33,9 +33,12 @@ export class DetallesComponent implements OnInit {
 
   
   enviarCorreo(){
-    let id="15";
+    let id="36";
     this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
       console.log(data);
+      
+
+
     });
 
  
@@ -44,13 +47,21 @@ export class DetallesComponent implements OnInit {
 
 
   enviarWhatsApp() {
-    const numeroTelefono = '2227515083'; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
-    const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+    let id="36";
+    this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
+      console.log(data.Contacto_Principal);
+      
+      const numeroTelefono = data.Contacto_Principal;
+      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+  
+      const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+  
+       // Abre la URL de WhatsApp en una nueva ventana
+      window.open(urlWhatsApp, '_blank');
 
-    const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
-
-     // Abre la URL de WhatsApp en una nueva ventana
-    window.open(urlWhatsApp, '_blank');
+    });
+    
+    
   }
 
 
