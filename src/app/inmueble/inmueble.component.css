@@ -916,4 +916,31 @@
 
 
 
+li::before {
+  
+  margin-right: 5px; /* Espacio entre la viñeta y el texto */
+
+}
+i{
+ 
+  font-size: 50px;
+
+
+}
+
+
+/* styles.css */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Añade estilos adicionales según sea necesario */
+}
+
+
+
+
+
 
