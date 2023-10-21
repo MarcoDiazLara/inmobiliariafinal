@@ -1,1 +1,10 @@
-
+<div class="contenedorselect">
+ <form class="insertar-dialog-content" [formGroup]="formGeneral"> 
+    <mat-form-field>
+        <mat-label><b>Toppings</b></mat-label>
+        <mat-select [formControl]="toppings" multiple>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+      </mat-form-field>      
+ </form> 
+</div>
