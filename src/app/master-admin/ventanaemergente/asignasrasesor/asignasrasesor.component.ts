@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -19,9 +20,15 @@ export class AsignasrasesorComponent implements OnInit {
   hide2 = true;
 
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  closeDialog() {
+    this.dialog.closeAll();
   }
 
 }
