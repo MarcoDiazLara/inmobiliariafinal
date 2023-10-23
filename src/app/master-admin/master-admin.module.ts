@@ -50,7 +50,7 @@ import { AsignasrasesorComponent } from './ventanaemergente/asignasrasesor/asign
   MasterAdminpasswordComponent,
   NotificacionesmasterAdminComponent,
   AsignasrasesorComponent,
-  // MasterAsignarReasignarComponent,
+  //MasterAsignarReasignarComponent,
   
   
 ],

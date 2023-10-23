@@ -5,6 +5,8 @@ import { EliminarasesoresComponent } from './eliminarasesores/eliminarasesores.c
 import { AltausuarioComponent } from './altausuario/altausuario.component';
 import { AltasocioComponent } from './altasocio/altasocio.component';
 import { MasterAsignarReasignarComponent } from './master-asignar-reasignar/master-asignar-reasignar.component';
+import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-admin.component';
+import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 
 
 const routes: Routes = [ 
@@ -13,8 +15,12 @@ path:'',
 component:MasterAdminComponent,
 children:[
 {
- path:'eliminar',
-  component:EliminarasesoresComponent
+    path:'perfil',
+     component:PerfilmasterAdminComponent
+},
+{
+  path:'notificaciones',
+   component:NotificacionesmasterAdminComponent
 },
 {
   path: 'altausuario',
