@@ -28,6 +28,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -95,6 +96,7 @@ import { MatDialogModule } from '@angular/material/dialog';
      ReactiveFormsModule,
      MatButtonToggleModule,
      MatExpansionModule,
+     MatCardModule,
      WebModule
 
   ],
