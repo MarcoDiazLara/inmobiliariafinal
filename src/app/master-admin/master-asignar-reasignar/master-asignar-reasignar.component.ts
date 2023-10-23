@@ -3,6 +3,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
+import { HttpService } from 'src/app/services/http/http.service';
 
 export interface PeriodicElement {
 
@@ -36,11 +37,20 @@ export class MasterAsignarReasignarComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  // poner el nombre de una variable
+  datosinmuebles:any[]=[];
+
+
   constructor(
     public dialog: MatDialog,
+    private http:HttpService
+    // Http para jalar el servicio 
   ) { }
 
   ngOnInit(): void {
+    this.http.mostrarReasignacion().subscribe((data:any)=>{
+    this.datosinmuebles=data;
+    });
   }
 
 
