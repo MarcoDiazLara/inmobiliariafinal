@@ -4,6 +4,19 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
+
+interface Status {
+  value: string;
+  viewValue: string;
+}
+
+interface Tipo{
+  value: string;
+  viewValue: string;
+};
+
+
+//broker,asesor
 @Component({
   selector: 'app-alta-brokers',
   templateUrl: './alta-brokers.component.html',
@@ -12,9 +25,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AltaBrokersComponent implements OnInit {
 
+  estados: Status[] = [
+    {value: 'Activo', viewValue: 'Activo'},
+    {value: 'Inactivo', viewValue: 'Inactivo'},
+  ];
+
+  tipos: Tipo[] = [
+    {value: '2', viewValue: 'Broker'},
+    {value: '3', viewValue: 'Asesor'},
+  ];
+
   toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+ 
    
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   
@@ -44,6 +66,7 @@ export class AltaBrokersComponent implements OnInit {
       estatus: ['', [Validators.required]],
       descripcionusuario: ['', [Validators.required]],
       imageInput: ['', [Validators.required]],
+      seleccionausuario:  ['', [Validators.required]],
     });
   }
 
@@ -63,10 +86,26 @@ export class AltaBrokersComponent implements OnInit {
       let estatus = this.formGeneral.value.estatus;
       let descripcionusuario = this.formGeneral.value.descripcionusuario;
       let imageInput = this.formGeneral.value.imageInput;
+      let contra = this.formGeneral.value.password;
+      let id = localStorage.getItem("Id_Usuario");
+      let typeuser = this.formGeneral.value.seleccionausuario;
 
 
-      alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'estatus' + estatus + 'descripcionusuario'+ descripcionusuario + 'imageInput' + imageInput); 
+      //alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'estatus' + estatus + 'descripcionusuario'+ descripcionusuario + 'imageInput' + imageInput); 
       
+      this.httpService.registroCompletoBroker(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra
+        ,email,contactoprincipal,contactoemergencia,typeuser ,estatus ,id ,descripcionusuario ,rfc, curp,id ).subscribe((data: any)=>{
+        if(data == 0){
+          alert("Error al insertar usuario");
+        }else{
+          if(data == 2){
+            alert("Error al insertar informacion");
+          }else{
+            alert("Se ha insertado un nuevo usuario");
+          }
+        }
+      })
+
      }
 }
 

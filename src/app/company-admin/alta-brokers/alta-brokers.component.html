@@ -7,7 +7,8 @@
           <mat-form-field class="example-full-width">
             <mat-label style="margin-left: 6%;"><b>Selecciona Usuario</b></mat-label>
             <mat-select formControlName="seleccionausuario" required>
-              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+              <mat-option *ngFor="let est of tipos" [value]="est.value">
+                {{est.viewValue}}</mat-option>
             </mat-select>
             <mat-error>
               Estatus
@@ -136,7 +137,8 @@
         <mat-form-field class="example-full-width ">
           <mat-label  style="margin-left: 6%;"><b>Estatus</b></mat-label>
               <mat-select  formControlName="estatus" required>
-                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                <mat-option *ngFor="let est of estados" [value]="est.value">
+                  {{est.viewValue}}</mat-option>
               </mat-select>
          <mat-error>
            Estatus
