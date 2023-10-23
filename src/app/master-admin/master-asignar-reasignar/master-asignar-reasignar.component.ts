@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
 import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
 
 export interface PeriodicElement {
@@ -27,17 +23,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-master-asignar-reasignar',
   templateUrl: './master-asignar-reasignar.component.html',
-  styleUrls: ['./master-asignar-reasignar.component.scss'],
-  standalone: true,
-  imports: [
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatTableModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    
-  ],
+  styleUrls: ['./master-asignar-reasignar.component.scss']
 })
 export class MasterAsignarReasignarComponent implements OnInit {
 

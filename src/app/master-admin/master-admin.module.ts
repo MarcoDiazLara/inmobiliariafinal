@@ -50,7 +50,7 @@ import { AsignasrasesorComponent } from './ventanaemergente/asignasrasesor/asign
   MasterAdminpasswordComponent,
   NotificacionesmasterAdminComponent,
   AsignasrasesorComponent,
-  //MasterAsignarReasignarComponent,
+  MasterAsignarReasignarComponent,
   
   
 ],
@@ -64,7 +64,6 @@ import { AsignasrasesorComponent } from './ventanaemergente/asignasrasesor/asign
     MatRadioModule,
     MatStepperModule,
     MatFormFieldModule,
-    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -72,16 +71,14 @@ import { AsignasrasesorComponent } from './ventanaemergente/asignasrasesor/asign
     MatTableModule,
     MatCardModule,
     MatPaginatorModule,
-    MatFormFieldModule,
-    MatCardModule,
     MatInputModule,
     MatDialogModule,
-    MatTableModule,
     MatCheckboxModule,
     MatNativeDateModule, 
     NgFor,
     NgIf,
-    MatDatepickerModule 
+    MatDatepickerModule,
+    MatMenuModule,
   ]
 })
 export class MasterAdminModule { }
