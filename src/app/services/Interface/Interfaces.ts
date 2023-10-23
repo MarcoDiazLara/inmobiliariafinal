@@ -53,3 +53,4 @@ export interface sendCorreo{
     Contacto_Principal: "",
     Email:"",
 };
+

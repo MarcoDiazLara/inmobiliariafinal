@@ -8,37 +8,37 @@
     <!-- Id_Seguimiento Column -->
     <ng-container matColumnDef="Id_InmuebleId_Inmueble">
       <th mat-header-cell *matHeaderCellDef> # </th>
-      <td mat-cell *matCellDef="let element"> {{element.Id_InmuebleId_Inmueble}} </td>
+      <td mat-cell *ngFor="let element for datosinmuebles"> {{element.Id_Inmueble}} </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="Nombre_Inmueble">
       <th mat-header-cell *matHeaderCellDef> Nombre Inmueble </th>
-      <td mat-cell *matCellDef="let element"> {{element.Nombre_Inmueble}} </td>
+      <td mat-cell *ngFor="let element for datosinmuebles"> {{element.Nombre_Inmueble}} </td>
     </ng-container>
   
     <!-- Prospecto_Interesado Column -->
     <ng-container matColumnDef="Calle">
       <th mat-header-cell *matHeaderCellDef> Calle </th>
-      <td mat-cell *matCellDef="let element"> {{element.Calle}} </td>
+      <td mat-cell *ngFor="let element for datosinmuebles"> {{element.Calle}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="Id_Usuario">
       <th mat-header-cell *matHeaderCellDef> Id_Usuario </th>
-      <td mat-cell *matCellDef="let element"> {{element.Id_Usuario}} </td>
+      <td mat-cell *ngFor="let element for datosinmuebles"> {{element.Id_Usuario}} </td>
     </ng-container>
 
      <ng-container matColumnDef="Nombre_Usuario">
       <th mat-header-cell *matHeaderCellDef> Usuario </th>
-      <td mat-cell *matCellDef="let element">   {{element.Nombre_Usuario}} </td>    
+      <td mat-cell *ngFor="let element for datosinmuebles">   {{element.Nombre_Usuario}} </td>    
     </ng-container> 
 
 
 
     <ng-container matColumnDef="botonOption">
         <th mat-header-cell *matHeaderCellDef> Opciones </th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *ngFor="let element for datosinmuebles">
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
               <mat-icon>more_horiz</mat-icon>
             </button>
