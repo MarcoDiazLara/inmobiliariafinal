@@ -3,18 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-master-admin',
   templateUrl: './master-admin.component.html',
   styleUrls: ['./master-admin.component.scss'],
-  // standalone: true,
-  // imports: [
-  //   MatFormFieldModule,
-  //   MatSelectModule,
-  // ]
 })
 
 export class MasterAdminComponent  implements OnDestroy {
