@@ -7,22 +7,6 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { reasignacionA } from 'src/app/services/Interface/Interfaces';
 
 
-export interface PeriodicElement {
-
-  Nombre_Inmueble: string;
-  Id_InmuebleId_Inmueble: number;
-  Calle: string;
-  Id_Usuario: number;
-  // Estatus_Seguimiento:string;
-  Nombre_Usuario:string;
-  botonOption:string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {Id_InmuebleId_Inmueble: 1, Nombre_Inmueble: 'casa3.png', Calle: 'Juan Carlos', Id_Usuario: 23032023,Nombre_Usuario:'group_add',botonOption:''},
-  {Id_InmuebleId_Inmueble: 2, Nombre_Inmueble: 'casa4.png', Calle: 'Juan Carlos', Id_Usuario: 23032024,Nombre_Usuario:'group_add',botonOption:''},  // {Id_InmuebleId_Inmueble: 3, Nombre_Inmueble: 'cocina.png', Calle: 'Juan Carlos', Id_Usuario: 23032023,Nombre_Usuario:'pendiente'},
-];
-
 @Component({
   selector: 'app-master-asignar-reasignar',
   templateUrl: './master-asignar-reasignar.component.html',
@@ -30,14 +14,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MasterAsignarReasignarComponent implements OnInit {
 
-  
-  displayedColumns: string[] = ['Id_Inmueble', 'Nombre_Inmueble', 'Calle', 'Id_Usuario','Nombre_Usuario','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','botonOption'];
   
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
   }
+}
+  
 
   // poner el nombre de una variable
   datosinmuebles: reasignacionA[]=[];
