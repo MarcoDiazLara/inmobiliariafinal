@@ -45,6 +45,7 @@ import { WebModule } from './web/web.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { UnityComponent } from './inmueble/unity/unity.component';
 
 
 
@@ -59,6 +60,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     RegistroComponent,
     VistadeinmuebleComponent,
     DetallesComponent,
+    UnityComponent
        
  
 
