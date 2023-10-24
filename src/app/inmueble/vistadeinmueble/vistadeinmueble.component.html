@@ -9,7 +9,7 @@
       <li *ngFor="let option of datosMunicipios" 
        (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
     </ul>
-    <button class="btn btn-outline-secondary" type="submit">
+    <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
       <img class="lupa">
     </button> 
 
@@ -56,8 +56,8 @@
     <div>
  
       
-      <select  formControlName="Id_Tipo_Inmueble" [(ngModel)]="tippropiedad" (ngModelChange)="cambioTpropiedad($event)">
-        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Id_Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
+      <select  formControlName="pId_Tipo_Inmueble" [(ngModel)]="inmueble.inmueble">
+        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
       </select>
 
     
@@ -352,7 +352,7 @@
             <td colspan="2">
               <h2>{{res.Nombre_Publicacion}}</h2>
             </td>  
-            <td colspan="1">|
+            <td colspan="1">
 
               <h2>${{res.Precio_Final}}</h2>
             </td>
