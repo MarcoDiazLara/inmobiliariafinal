@@ -31,8 +31,8 @@ import { EvitafraudeComponent } from './evitafraude/evitafraude.component';
 import { QuierescomprarComponent } from './quierescomprar/quierescomprar.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
-
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
+
 
 
 
@@ -58,8 +58,9 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
     NovedadesactulidadComponent,
     RematehipotecarioComponent,
     QuieresvenderComponent,
-   
     InmobiliariasComponent,
+
+       
   ],
   imports: [
     CommonModule,

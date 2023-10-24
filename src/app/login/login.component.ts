@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from '../services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
+  formulario!: FormGroup;
 
-  constructor(private router: Router,
+  constructor(private router: Router, 
     private httpService: HttpService,
-    private formBuilder: FormBuilder){}
+    private formBuilder: FormBuilder ){}
 
 
     ngOnInit() {
@@ -21,7 +23,23 @@ export class LoginComponent implements OnInit {
         nombreU: ['',[Validators.required]],
         password: ['',[Validators.required]]
        })
+       this.formulario=this.formBuilder.group({
+        NuevaC: ['', [Validators.required]],
+        correo: ['', [Validators.required]]
+       })
      }
+
+     
+     aceptar(){
+
+       let correo =this.formulario.value.correo;
+       let NuevaC=this.formulario.value.NuevaC;
+       this.httpService.cambiarC(correo,NuevaC).subscribe(()=>{
+
+       this.cerrarVentanaEmergente();
+       })
+     }
+
 
      
 
@@ -48,7 +66,34 @@ registro(){
   this.router.navigate(["/registro"]);
 }
 
- 
+isLoggedIn: boolean = false;
+
+
+@ViewChild('ventanaEmergente') ventanaEmergente: any;
+
+abrir(){
+  if(this.isLoggedIn){
+    
+  }
+  else{
+    this.abrirVentanaEmergente();
+  }
+}
+
+abrirVentanaEmergente(): void {
+  this.ventanaEmergente.nativeElement.style.display = 'block';
+}
+
+cerrarVentanaEmergente(): void {
+  this.ventanaEmergente.nativeElement.style.display = 'none';
+}
+
+
+
+
+
+
+
 
 
 

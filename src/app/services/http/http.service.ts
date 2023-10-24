@@ -200,6 +200,16 @@ export class HttpService {
     +"&Num_Int="+Num_Int +"&Id_Asentamiento="+Id_Asentamiento +"&Id_Tipo_Socio="+Id_Tipo_Socio +"&v_Id_Usuario="+v_Id_Usuario;
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
-  
+   cambiarC( p_correo:any,password:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_correo="+p_correo + "&password="+password;
+    return this.httpclient.post(this.url + 'cambiarC.php', params, { headers });
+
+
+
+
+   }
+   
+
 
 }
