@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
+import { BuscadorComponent } from 'src/app/web/buscador/buscador.component';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class VistadeinmuebleComponent implements OnInit {
   filteredStreets: Observable<string[]>;
 
   firstFormGroup!: FormGroup;
-  
+  precios!: FormGroup
  // registerForm: FormGroup;
   
   datosInmueble: any[] = [];
@@ -46,9 +47,9 @@ export class VistadeinmuebleComponent implements OnInit {
   /*Almacena el id del tipoInmueble*/
   seleccionIdTipoInmueble:any | null='';
 
-  data: any = {
+  inmueble: any = {
     ubicacion: '',
-    recamaras:'',
+    recamaras: '',
     inmueble: '',
     precioHasta: '',
     precioDesde: '',
@@ -64,22 +65,25 @@ export class VistadeinmuebleComponent implements OnInit {
 
   selectedValue = '';
   municipioSeleccionado: string = '';
-  // Definir un arreglo de opciones
+ 
 
 
   action: String | undefined;
   tpropiedad!: Number;
   ubicacion!: String;
+  
+  IDtippropiedad !: Number;
 
+///Almacena la seleccion del formulario
   tippropiedad: String | undefined;
 
 
 
-  constructor(private el: ElementRef, private router: Router, private http: HttpService, private renderer: Renderer2, private route: ActivatedRoute, private formBuilder: FormBuilder) {
+
+  constructor(private el: ElementRef, private router: Router, private http: HttpService, private renderer: Renderer2, private route: ActivatedRoute, private formBuilder: FormBuilder, private Buscador: BuscadorComponent) {
     this.filteredStreets = new Observable<string[]>();
   }
 
-  
 
   @HostListener('document:click', ['$event'])
 
@@ -99,16 +103,6 @@ export class VistadeinmuebleComponent implements OnInit {
 
     }
   }
-
-  /*onDocumentClick(event: Event): void {
-    // Aquí puedes realizar acciones cuando se hace clic en cualquier lugar del documento.
-    // Puedes verificar si el clic ocurrió dentro de un elemento específico utilizando el método `contains`.
-
-    if (!this.el.nativeElement.contains(event.target)) {
-      // El clic ocurrió fuera del elemento del componente.
-      // Puedes realizar acciones específicas en este caso.
-    }
-  }*/
 
   // Función para mostrar/ocultar la lista de Precio
   togglePrecio() {
@@ -181,17 +175,6 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  getDireccion(direccion: string) {
-    console.log(direccion);
-
-    this.mostrar();
-
-  }
-
-  selectOption(value: string) {
-    this.selectedValue = value;
-    this.showSearch = false;
-  }
 
 
 
@@ -222,33 +205,42 @@ export class VistadeinmuebleComponent implements OnInit {
     });
 
     this.firstFormGroup = this.formBuilder.group({
-      pDireccion: ['', [Validators.required]]
+      ubicacion: ['',[Validators.required]],
+      Id_Tipo_Inmueble: ['', [Validators.required]],
+      pAccion :['', [Validators.required]],
+      pRecamaras: ['', [Validators.required]]
+      
 
     });
-    
+    this.precios = this.formBuilder.group({
+      pDesde: ['',[Validators.required]],
+      pHasta: ['',[Validators.required]]
+    })
 
+    
+    
+//Muestra los inmuebles 
     this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((data: any) => {
 
       this.datosInmueble = data;
 
-    });
+    }); 
 
 
+    //LLena el select con los tipos de inmuebles
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
 
     });
 
-   
-
-    //let datosBusqueda = 
-
-
-  }
 
   
-
+    this.Buscador.ResultadoosBusquedaC();
+    const valor = this.Buscador.inmuebles;
+    console.log(valor);    
+  }
+ 
 
   // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
   private _filter(value: string): string[] {
@@ -262,6 +254,7 @@ export class VistadeinmuebleComponent implements OnInit {
     return value.toLowerCase().replace(/\s/g, '');
   }
 
+  //Llena el input con los municipios 
   mostrarMunicipios() {
     this.http.mostrarMunicipios(this.municipios).subscribe((data: any) => {
 
@@ -270,17 +263,8 @@ export class VistadeinmuebleComponent implements OnInit {
     });
   }
 
-  mostrarIDMunicipio(id: number): void {
-    console.log(id);
-  }
 
-  obtenerValorInput() {
-    const inputElement = document.getElementById('miInput') as HTMLInputElement;
-    if (inputElement) {
-      const valorInput = inputElement.value;
-      console.log(valorInput);
-    }
-  }
+ 
 
 
 
@@ -293,40 +277,13 @@ export class VistadeinmuebleComponent implements OnInit {
   back() {
     this.router.navigate(["/web"]);
   }
-  /*botonSeleccionado(opcion:number){
-    console.log( 'El usuario mostro:'opcion );
-  }*/
-
-  mostrar() {
-
-
-    this.datosInmueble = [];
-
-    this.http.busquedaAvanzada(this.data.ubicacion, this.data.recamaras, this.data.inmueble, '', '', this.data.pMax, this.data.pMin, this.data.tipoAccion, '', '').subscribe((data: any) => {
-
-      /*let mostrar = JSON.stringify(data);
-      alert(mostrar);*/
-    data= this.datosInmueble ;
-
-  
-
-
-      /*this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
-        let mostrar = JSON.stringify(data);
-        alert(mostrar);
-
-      location.reload();
-    
-      this.datosInmueble =[];*/
-
-                });
-              
-    }
-
+//Muestra la seleccion del select**
     cambioTpropiedad(tprop:string){
       console.log('Selecciona Propiedad: ',tprop);
       this.tippropiedad = tprop;
+
     }
 
-}
+    
 
+}

@@ -25,7 +25,80 @@
                          <div class="pt-1 mb-4">
                <button class="btn btn-secondary btn-lg" type="button" (click)="login()">Iniciar sesión</button>
              </div>
-             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Olvidaste tu contraseña</a></p>
+             <p class="small mb-5 pb-lg-2"><a class="text-muted"  (click)="abrir()" >Olvidaste tu contraseña</a></p>
+
+             <div class="modal" tabindex="-1" role="dialog" #ventanaEmergente>
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title custom-text" id="myModalLabel"> Cambiar Contraseña</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form [formGroup]="formulario">
+                                    <div class="form-group">
+                                      
+                                        <input  class="form-control" id="currentPassword" formControlName="correo" placeholder="Correo">
+                                        <div *ngIf="formulario?.get('correo')?.hasError('required') && formulario?.get('correo')?.touched" class="error-message">
+                                            Por favor, complete este campo.
+                                          </div>
+                                          </div>
+                                          <br>
+                                          <div class="form-group">
+                                         
+                                            <input type="password" class="form-control"  formControlName="NuevaC" id="NuevaC" placeholder="Nueva Contraseña">
+                                            <div *ngIf="formulario?.get('NuevaC')?.hasError('required') && formulario?.get('NuevaC')?.touched" class="error-message">
+                                                Por favor, complete este campo.
+                                              </div>
+                                          </div>
+                                          <br>
+                                   
+                                  </form>
+                                     <br>
+                                  <div class="pt-1 mb-4">
+                                    <button class="btn btn-secondary btn-lg" (click)="aceptar()" type="button" >Aceptar</button>
+                                  </div>
+
+                                  
+                                  
+                                  
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cerrarVentanaEmergente()">Cerrar</button>
+                              </div>
+                    </div>
+
+
+                </div>
+
+
+             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
              <p>¿No tiene cuenta? <a (click)="registro()" class="link-info">Regístrese aquí</a></p>
                      </form>
                  </div>

@@ -131,9 +131,9 @@ export class HttpService {
     return this.httpclient.post(this.url + 'consultarTipoInmueble.php',  { headers });
   }
 
-  busquedaAvanzada(idMunicipio: number, recamaras: string, tipoInmueble: String, antiguedad: String, calle: String, Pmax: String,pMin:String,propiedad:String,bano:String,estacionamiento:String) {
+  busquedaAvanzada(idMunicipio: String, tipoInmueble: Number, recamaras: String, antiguedad: String, estacionamiento:String,bano:String,p_ubicacion:String) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_id_Municipio=' + idMunicipio + '&p_Recamara=' + recamaras + '&p_Tipo_Inmueble=' + tipoInmueble + '&p_Antiguedad=' + antiguedad + '&p_calle=' + calle + '&p_max=' + Pmax + '&p_min=' + pMin + '&p_propiedad=' + propiedad + '&p_bano=' + bano + '&p_estacionamiento=' + estacionamiento;
+    let params = 'p_id_Municipio=' + idMunicipio +'&p_Tipo_Inmueble=' + tipoInmueble + '&p_Recamara=' + recamaras +  '&p_Antiguedad=' + antiguedad + '&p_estacionamiento=' + estacionamiento +'&p_bano=' + bano +'&p_ubicacion=' + p_ubicacion ;
     return this.httpclient.post(this.url + 'Filtros.php', params, { headers });
   }
 
@@ -201,10 +201,24 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
 
+   cambiarC( p_correo:any,password:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_correo="+p_correo + "&password="+password;
+    return this.httpclient.post(this.url + 'cambiarC.php', params, { headers });
+
+
+
+
+   }
+   
+
+
+
   mostrarReasignacion() {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
   }
   
+
 
 }
