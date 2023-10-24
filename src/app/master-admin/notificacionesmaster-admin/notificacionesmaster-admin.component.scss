@@ -1,39 +1,70 @@
-.notification-list-container {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f7f7f7;
-}
+// .notification-list-container {
+//     margin: 20px;
+//     padding: 10px;
+//     border: 1px solid #ddd;
+//     border-radius: 5px;
+//     background-color: #f7f7f7;
+// }
 
-.notification-list {
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+// .notification-list {
+//     background-color: #fff;
+//     padding: 10px;
+//     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+// }
 
-.notification-list h3 {
-    font-size: 20px;
-    color: #333;
-}
+// .notification-list h3 {
+//     font-size: 20px;
+//     color: #333;
+// }
 
-.notification-item {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-}
+// .notification-item {
+//     margin: 10px 0;
+//     padding: 10px;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//     background-color: #fff;
+// }
 
-.notification-item h4 {
-    color: #007BFF;
-}
+// .notification-item h4 {
+//     color: #007BFF;
+// }
 
-.notification-item p {
-    color: #555;
-}
+// .notification-item p {
+//     color: #555;
+// }
 
-.timestamp {
-    color: #888;
-    font-size: 12px;
+// .timestamp {
+//     color: #888;
+//     font-size: 12px;
+// }
+
+
+// hhhhhhhh
+
+.contenedorTable {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto; 
+
+    .filter {
+        width: 96%;
+        padding: 5px 12px;
+        background: white !important;
+    }
+
+    table {
+        width: 100%;
+        .columnasTable {
+            width: 20%;
+            td.mat-column-star {
+                width: 100%;
+                padding-right: 8px;
+            }
+            th.mat-column-position,
+            td.mat-column-position {
+                padding-left: 10px;
+            }
+        }
+    }
 }
