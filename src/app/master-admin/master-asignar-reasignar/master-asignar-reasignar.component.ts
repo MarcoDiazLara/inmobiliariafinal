@@ -4,6 +4,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
 import { HttpService } from 'src/app/services/http/http.service';
+import { reasignacionA } from 'src/app/services/Interface/Interfaces';
+
 
 export interface PeriodicElement {
 
@@ -29,8 +31,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class MasterAsignarReasignarComponent implements OnInit {
 
   
-  displayedColumns: string[] = ['Id_InmuebleId_Inmueble', 'Nombre_Inmueble', 'Calle', 'Id_Usuario','Nombre_Usuario','botonOption'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['Id_Inmueble', 'Nombre_Inmueble', 'Calle', 'Id_Usuario','Nombre_Usuario','botonOption'];
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -38,9 +40,9 @@ export class MasterAsignarReasignarComponent implements OnInit {
   }
 
   // poner el nombre de una variable
-  datosinmuebles:any[]=[];
+  datosinmuebles: reasignacionA[]=[];
 
-
+  dataSource = new MatTableDataSource(this.datosinmuebles);
   constructor(
     public dialog: MatDialog,
     private http:HttpService
@@ -50,6 +52,7 @@ export class MasterAsignarReasignarComponent implements OnInit {
   ngOnInit(): void {
     this.http.mostrarReasignacion().subscribe((data:any)=>{
     this.datosinmuebles=data;
+    console.log(this.datosinmuebles);
     });
   }
 

@@ -16,6 +16,8 @@ import { HttpClient } from '@angular/common/http';
 import { WebModule } from '../web/web.module';
 import { Router } from '@angular/router';
 
+
+
 interface Food {
   value: string;
   viewValue: string;
@@ -191,6 +193,8 @@ xd(){
   
 
   subirInmueble(){
+    let date = new Date();
+    
     this.subir_imagenes();
     let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
     let p_desc_inmueble = this.tercerFormGroup.value.p_desc;
@@ -211,11 +215,18 @@ xd(){
     let p_roof = this.tercerFormGroup.value.p_roof;
     let p_estacionamiento = this.tercerFormGroup.value.p_esta;
     let p_ubi_maps = "Hola ";
-    let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[0].name;
-    let p_pic_2 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[1].name;
-    let p_pic_3 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[2].name;
-    let p_pic_4 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[3].name;
-    let p_pic_5 = "https://inmobiliaria.arvispace.com/imagenes/" + this.selectedImages[4].name;
+
+  let dia = date.getDate().toString();
+  let mes = (date.getMonth()+1).toString();
+  let anio = date.getFullYear().toString();
+  let nom_aux = dia + mes + anio + localStorage.getItem("Id_Usuario");
+ 
+
+    let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[0].name;
+    let p_pic_2 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[1].name;
+    let p_pic_3 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[2].name;
+    let p_pic_4 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[3].name;
+    let p_pic_5 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[4].name;
     let p_360 = "imagen 360";
     let p_video = "video 1";
     let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;

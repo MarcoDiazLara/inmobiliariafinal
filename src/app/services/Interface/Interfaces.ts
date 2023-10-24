@@ -49,8 +49,22 @@ export interface tipoSocio{
     Id_Tipo_Socio: "",
     Tipo_Socio: ""
 };
+
+
 export interface sendCorreo{
     Contacto_Principal: "",
     Email:"",
 };
+
+
+export interface reasignacionA{
+    Id_Usuario: "",
+    Nombre_Usuario: "",
+    Id_Inmueble: "",
+    
+    Calle: "",
+    Id_Estatus_Publicacion: "",
+    Nombre_Inmueble: "",
+}
+
 
