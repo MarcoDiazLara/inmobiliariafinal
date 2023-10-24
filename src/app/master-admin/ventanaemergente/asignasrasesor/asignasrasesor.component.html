@@ -1,16 +1,21 @@
 <div class="contenedorselect">
  <form class="insertar-dialog-content" [formGroup]="formGeneral"> 
-    <mat-form-field>
+   <h1> Selecciona Asesor</h1>
+  <mat-form-field>
         <mat-label><b>Selecciona Asesor</b></mat-label>
         <mat-select [formControl]="toppings" multiple>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
         </mat-select>
-      </mat-form-field>
-      
-      
-      <button mat-button type="button" [disabled]="loading" color="warn" (click)="closeDialog()">
-        <span>Cancelar</span>
-      </button><br>
+    </mat-form-field>
+     <br> 
+    <button mat-button type="button" [disabled]="loading" color="secondary" (click)="guardarasesor()">
+      <span>Asignar</span>
+    </button>
+     <br>
+    <button mat-button type="button" [disabled]="loading" color="warn" (click)="closeDialog()">
+      <span>Cancelar</span>
+    </button>
+      <br>
 
  </form> 
 </div>

@@ -27,6 +27,8 @@ export class AsignasrasesorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardarasesor() {}
+
   closeDialog() {
     this.dialog.closeAll();
   }
