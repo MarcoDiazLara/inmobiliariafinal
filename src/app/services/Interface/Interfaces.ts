@@ -83,5 +83,9 @@ export interface inmueblesBuscados{
     Id_Publicador: ""
 
 };
+ export interface medioC{
+    id_Medio_Contacto:"",	
+    Medio_Contacto:"",
+ }
 
 
