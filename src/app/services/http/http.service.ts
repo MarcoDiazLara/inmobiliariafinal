@@ -211,12 +211,14 @@ export class HttpService {
 
    }
    
-
-
-
   mostrarReasignacion() {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+  }
+
+  mostrarAsesor() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   }
   
 

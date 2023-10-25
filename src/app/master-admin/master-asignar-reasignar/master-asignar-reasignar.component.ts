@@ -40,6 +40,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   // poner el nombre de una variable
   datosinmuebles: reasignacionA[]=[];
+ 
+ 
 
  
   
@@ -61,9 +63,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
       }
     })
 
+
     this.obtenerUsuarios();
-
-
 
     // this.http.mostrarReasignacion().subscribe((data:any)=>{
     // this.datosinmuebles=data;
@@ -79,8 +80,6 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   obtenerUsuarios(){
 
-
-
     this.httpService.mostrarReasignacion().subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
@@ -89,7 +88,6 @@ export class MasterAsignarReasignarComponent implements OnInit {
         this.adminService.usuarios$.next(data);
       }      
     },
-
     (err) => {
       console.log('Error de conexión');
     }
@@ -102,21 +100,16 @@ export class MasterAsignarReasignarComponent implements OnInit {
     alert("open modal"+element)
   }
   
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
   
-
-
   asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
     alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
 
   }
 
-  
-  
   // mandar a llamar ventana emergente
   openasesor() {
 
