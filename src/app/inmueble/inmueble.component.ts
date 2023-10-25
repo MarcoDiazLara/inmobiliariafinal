@@ -219,8 +219,8 @@ xd(){
   let dia = date.getDate().toString();
   let mes = (date.getMonth()+1).toString();
   let anio = date.getFullYear().toString();
-  let nom_aux = dia + mes + anio + localStorage.getItem("Id_Usuario");
- 
+  let nom_aux =  anio + mes + dia;
+
 
     let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[0].name;
     let p_pic_2 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[1].name;

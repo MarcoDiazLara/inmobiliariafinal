@@ -68,3 +68,20 @@ export interface reasignacionA{
 }
 
 
+export interface inmueblesBuscados{
+    Nombre_Publicacion: "",
+    Precio_Final: "",
+    Descripcion_Publicacion: "",
+    Codigo_Postal: "",
+    id_asentamiento: "",
+    Asentamiento: "",
+    Picture1: "",
+    Tipo_Asentamiento: "",
+    Municipio: "",
+    Estado: "",
+    Id_Inmueble: "",
+    Id_Publicador: ""
+
+};
+
+
