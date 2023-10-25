@@ -5,6 +5,10 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
 import { HttpService } from 'src/app/services/http/http.service';
 import { reasignacionA } from 'src/app/services/Interface/Interfaces';
+import { GlobalService } from 'src/app/services/global/global.service';
+import { MatPaginator } from '@angular/material/paginator';
+
+
 
 
 @Component({
@@ -13,6 +17,20 @@ import { reasignacionA } from 'src/app/services/Interface/Interfaces';
   styleUrls: ['./master-asignar-reasignar.component.scss']
 })
 export class MasterAsignarReasignarComponent implements OnInit {
+
+  usuarios$: any;
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  displayedColumns = [
+    'Nombre_Inmueble',
+    'Calle',
+    'Nombre_Usuario',
+    'btOpciones'
+  ];
+
+  dataSource = new MatTableDataSource<any>([]);
 
   columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','botonOption'];
   
@@ -27,19 +45,63 @@ export class MasterAsignarReasignarComponent implements OnInit {
   
   constructor(
     public dialog: MatDialog,
-    private http:HttpService
+    // private http:HttpService,
+    private httpService: HttpService,
+    private adminService: GlobalService
     // Http para jalar el servicio 
   ) { }
 
-  dataSource:any; 
+ 
 
   ngOnInit(): void {
-    this.http.mostrarReasignacion().subscribe((data:any)=>{
-    this.datosinmuebles=data;
-    console.log(this.datosinmuebles);
-    });
-    this.dataSource = new MatTableDataSource(this.datosinmuebles);
+
+    this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
+      if(usuarios !== null){
+        this.dataSource.data =usuarios;
+      }
+    })
+
+    this.obtenerUsuarios();
+
+
+
+    // this.http.mostrarReasignacion().subscribe((data:any)=>{
+    // this.datosinmuebles=data;
+    // console.log(this.datosinmuebles);
+    // });
+    // this.dataSource = new MatTableDataSource(this.datosinmuebles);
   }
+
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  obtenerUsuarios(){
+
+
+
+    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+      if(data !== 201) {
+        this.adminService.usuarios$.next(data);
+      } else {
+        data = [];
+        this.adminService.usuarios$.next(data);
+      }      
+    },
+
+    (err) => {
+      console.log('Error de conexión');
+    }
+    )
+
+
+  }
+
+  openModalActualizar(element:any){
+    alert("open modal"+element)
+  }
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -52,6 +114,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
     alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
 
   }
+
+  
   
   // mandar a llamar ventana emergente
   openasesor() {
