@@ -6,7 +6,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class GlobalService {
 
   nombre_observable$ = new BehaviorSubject(null);
+  usuarios$ = new BehaviorSubject(null);
+
   constructor() { }
+
+  getUsuariosOb(): Observable<any>{
+    return this.usuarios$.asObservable();
+  }
 
   get_nombre_funcion_observable_Ob(): Observable<any> {
     return this.nombre_observable$.asObservable();

@@ -21,6 +21,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 
 
+
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -33,7 +34,6 @@ import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-ad
 import { MasterAdminpasswordComponent } from './ventanaemergente/master-adminpassword/master-adminpassword.component';
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 import { MasterAsignarReasignarComponent } from './master-asignar-reasignar/master-asignar-reasignar.component';
-
 import {MatMenuModule} from '@angular/material/menu';
 import { AsignasrasesorComponent } from './ventanaemergente/asignasrasesor/asignasrasesor.component';
 

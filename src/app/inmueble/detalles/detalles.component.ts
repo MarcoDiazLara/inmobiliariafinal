@@ -2,11 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
+import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 
+
+
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.scss'],
+  
+ 
+
   
 })
 export class DetallesComponent implements OnInit {
@@ -45,7 +57,6 @@ export class DetallesComponent implements OnInit {
 
   }
 
-
   enviarWhatsApp() {
     let id="36";
     this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
@@ -60,18 +71,20 @@ export class DetallesComponent implements OnInit {
       window.open(urlWhatsApp, '_blank');
 
     });
-    
-    
   }
 
+  constructor( private router:Router, private httpService:HttpService,public dialog: MatDialog) { }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(VentanacitaComponent, {
+     
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+     
+    });
+  }
 
-
-
-  
-
-  constructor( private router:Router, private httpService:HttpService) { }
-  
   back(){
     this.router.navigate(["/inmueble/vista"]);
   }
@@ -95,13 +108,7 @@ export class DetallesComponent implements OnInit {
       });
     }
 
-
-    
-
   }
-
-  
-
 }
 
 

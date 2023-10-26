@@ -364,12 +364,14 @@
               <h1>{{res.Estado}}</h1>
               <h4>{{res.Municipio}}</h4>
               <h3>{{res.Descripcion_Publicacion}}</h3>
+              <h2>{{res.Id_Inmueble}}</h2>
+              <h1>{{res.Id_Publicador}}</h1>
             </td>
           </thead>
           <thead>
             <td>
               
-                <button (click)="detalles()" class="btn btn-secondary container" id="moreinfo">Más Información</button>
+                <button (click)="detalles(res.Id_Inmueble, res.Id_Publicador)" class="btn btn-secondary container" id="moreinfo">Más Información</button>
              
             </td>
           </thead>

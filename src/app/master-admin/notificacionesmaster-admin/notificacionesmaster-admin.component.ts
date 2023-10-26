@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-notificacionesmaster-admin',
   templateUrl: './notificacionesmaster-admin.component.html',
@@ -13,12 +14,36 @@ export class NotificacionesmasterAdminComponent implements OnInit {
       // Agrega más notificaciones según sea necesario
   ];
 
-  constructor() { }
+
+
+
+
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
-    this.toggleNotificationList();
-     }
-     toggleNotificationList() {
+   this.toggleNotificationList();
+
+  }
+
+  
+
+    toggleNotificationList() {
        this.showNotificationList = !this.showNotificationList;
    }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }

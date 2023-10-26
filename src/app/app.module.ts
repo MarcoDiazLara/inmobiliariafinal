@@ -40,18 +40,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { WebComponent } from './web/web.component';
 import { WebModule } from './web/web.module';
 
-
-
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
-
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -60,9 +52,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
     RegistroComponent,
     VistadeinmuebleComponent,
     DetallesComponent,
-    UnityComponent
-       
- 
+    UnityComponent,
 
   
   ],

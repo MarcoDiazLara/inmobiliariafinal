@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
+import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class VistadeinmuebleComponent implements OnInit {
   precios!: FormGroup
  // registerForm: FormGroup;
   
-  datosInmueble: any[] = [];
+  datosInmueble: inmueblesBuscados[] = [];
   /*datosMunicipios  llena la lista de busqueda de todos los municipios*/
   datosMunicipios: any[] = [];
   /*datosTipoInmueble llena el comboBox con los tipos de inmuebles */
@@ -177,8 +178,10 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  detalles() {
-    this.router.navigate(['/inmueble/detalles']);
+  detalles(id_inmu: any, id_usu : any) {
+
+    console.log(id_inmu,id_usu);
+    //this.router.navigate(['/inmueble/detalles']);
 
   }
 
@@ -215,10 +218,10 @@ export class VistadeinmuebleComponent implements OnInit {
     
     
 
-    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((data: any) => {
+    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
-      this.datosInmueble = data;
-
+      this.datosInmueble = resp;
+      console.log(this.datosInmueble);
     }); 
 
     this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
