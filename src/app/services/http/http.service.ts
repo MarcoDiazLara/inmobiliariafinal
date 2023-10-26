@@ -220,5 +220,11 @@ export class HttpService {
   }
   
 
+  mostrarDetalles(p_id_usu: any, p_id_inmu: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id_usu="+p_id_usu + "&p_id_inmu="+p_id_inmu;
+    return this.httpclient.post(this.url + 'obtenerInfoInmu.php', params, { headers });
+  }
+
 
 }

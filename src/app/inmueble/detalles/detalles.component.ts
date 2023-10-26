@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
+import { infoInmuebles } from 'src/app/services/Interface/Interfaces';
 
 @Component({
   selector: 'app-detalles',
@@ -10,13 +11,62 @@ import { sendCorreo } from 'src/app/services/Interface/Interfaces';
   
 })
 export class DetallesComponent implements OnInit {
-  imagenesCarrusel: string[] = [
-    'assets/img/alquilar.jpg',
-    'assets/img/contratos.jpeg',
-    'assets/img/departamento-pequeno.jpg',
-    'assets/img/deposito.jpg',
-    'assets/img/Slide-1.jpg',
-    'assets/img/Slide-3.jpg',
+  
+
+
+  ngOnInit(): void {
+    
+
+    this.route.queryParams.subscribe(params => {
+     
+
+     
+      this.id_inmueble = params['id_inmueble'];
+      this.id_usuario = params['id_usuario'];
+
+    });
+
+    this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
+      this.details = resp[0];
+     this.imagen1 = this.details.Picture1;
+     this.imagen2 = this.details.Picture2;
+      console.log(this.imagen2);
+    })
+
+    const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
+
+    shareButton[0].addEventListener("click", (e) => {
+      for (let i = 0; i < shareButton.length; i++) {
+        shareButton[i].classList.toggle("open");
+        shareButton[0].classList.remove("sent");
+      }
+    });
+
+    for (let i = 1; i < shareButton.length; i++) {
+      shareButton[i].addEventListener("click", (e) => {
+        for (let i = 0; i < shareButton.length; i++) {
+          shareButton[i].classList.toggle("open");
+        }
+        shareButton[0].classList.toggle("sent");
+      });
+    }
+
+
+    
+
+  }
+  imagen1 !: string;
+  imagen2 !: string;
+  details !: infoInmuebles;
+  imagenesCarrusel: any[] = [
+    "https://inmobiliaria.arvispace.com/imagenes/6.jpg",
+    this.imagen1,
+    this.imagen2
+    // this.details.Picture1,
+    // this.details.Picture2,
+    // this.details.Picture3,
+    // this.details.Picture4,
+    // this.details.Picture5
   ];
 
   imagenPrincipalUrl: string = 'assets/img/Houses-bro.png';
@@ -31,7 +81,7 @@ export class DetallesComponent implements OnInit {
   email: string = '';
   comentarios: string = 'Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad.';
 
-  
+  nom_inmu: string = "";
   enviarCorreo(){
     let id="36";
     this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
@@ -70,35 +120,15 @@ export class DetallesComponent implements OnInit {
 
   
 
-  constructor( private router:Router, private httpService:HttpService) { }
+  constructor( private router:Router, private httpService:HttpService,
+    private route: ActivatedRoute,) { }
   
   back(){
     this.router.navigate(["/inmueble/vista"]);
   }
-
-  ngOnInit(): void {
-    const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
-
-    shareButton[0].addEventListener("click", (e) => {
-      for (let i = 0; i < shareButton.length; i++) {
-        shareButton[i].classList.toggle("open");
-        shareButton[0].classList.remove("sent");
-      }
-    });
-
-    for (let i = 1; i < shareButton.length; i++) {
-      shareButton[i].addEventListener("click", (e) => {
-        for (let i = 0; i < shareButton.length; i++) {
-          shareButton[i].classList.toggle("open");
-        }
-        shareButton[0].classList.toggle("sent");
-      });
-    }
-
-
-    
-
-  }
+  id_inmueble!: String;
+  id_usuario!: String;
+  
 
   
 

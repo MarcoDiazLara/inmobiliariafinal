@@ -180,8 +180,8 @@ export class VistadeinmuebleComponent implements OnInit {
 
   detalles(id_inmu: any, id_usu : any) {
 
-    console.log(id_inmu,id_usu);
-    //this.router.navigate(['/inmueble/detalles']);
+    //console.log(id_inmu,id_usu);
+    this.router.navigate(['/inmueble/detalles'], { queryParams: {  'id_inmueble': id_inmu, 'id_usuario': id_usu} });
 
   }
 
@@ -221,7 +221,7 @@ export class VistadeinmuebleComponent implements OnInit {
     this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
       this.datosInmueble = resp;
-      console.log(this.datosInmueble);
+      
     }); 
 
     this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{

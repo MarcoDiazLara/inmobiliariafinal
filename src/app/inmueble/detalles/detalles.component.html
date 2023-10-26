@@ -8,7 +8,7 @@
 <div class="detalles">
     <div class="d-flex align-items-center">
         <button (click)="back()" mat-raised-button><img class="backarrow">Regresar</button>
-        <h2 class="mb-0 ml-3">Nombre del Inmueble</h2>
+        <h2 class="mb-0 ml-3">{{details.Nombre_Inmueble}}</h2>
         <mat-divider></mat-divider>
     </div>
     
@@ -66,14 +66,14 @@
 
                         <h3 mat-subheader> <img class="map"> Lugar</h3>
                         <mat-list-item >
-                           <h3 mat-line>Aqui va la variable para mostrar el lugar</h3>
+                           <h3 mat-line>{{details.Calle +" "+ details.Num_Ext}}</h3>
                            <h4 mat-line></h4>
                         </mat-list-item>
                         <mat-divider></mat-divider>
 
                         <h3 mat-subheader> <img class="checklist">Descripcion</h3>
                         <mat-list-item>
-                            <h3 mat-line>Aqui va la variable para mostrar la descripcion</h3>
+                            <h3 mat-line>{{details.Descripcion_Inmueble}}</h3>
                             <h4 mat-line></h4>
                         </mat-list-item>
                    
@@ -86,19 +86,19 @@
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <td><h3><img class="wc">Baños</h3></td>
-                                    <td><h3><img class="room">Recamaras</h3></td>
-                                    <td><h3><img class="car">Cochera</h3></td>
+                                    <td><h3><img class="wc"> {{details.Bano}} Baños</h3></td>
+                                    <td><h3><img class="room"> {{details.Recamara}} Recamaras</h3></td>
+                                    <td><h3><img class="car"> {{details.Estacionamiento}} Cochera</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h3><img class="rule">m^2</h3></td>
-                                    <td><h3><img class="garden">Jardin</h3></td>
-                                    <td><h3><img class="floor">Pisos</h3></td>
+                                    <td><h3><img class="rule"> {{details.Construccion_M2}} m^2</h3></td>
+                                    <td><h3><img class="garden"> {{details.Jardin}} Jardin</h3></td>
+                                    <td><h3><img class="floor"> {{details.Num_Pisos}} Pisos</h3></td>
                                 </tr>
                                 <tr>
                                     <td><h3><img class="warehouse">Bodega</h3></td>
                                     <td><h3><img class="tank">Cisterna</h3></td>
-                                    <td><h3><img class="pool">Piscina</h3></td>
+                                    <td><h3><img class="pool"> {{details.Alberca}} Piscina</h3></td>
                                 </tr>
                                             <!-- Puedes agregar más filas según sea necesario -->
                             </table>  
