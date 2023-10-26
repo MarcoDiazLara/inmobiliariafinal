@@ -23,7 +23,8 @@ export interface DialogData {
   
 })
 export class DetallesComponent implements OnInit {
-  
+  id_inmueble!: String;
+  id_usuario!: String;
 
 
   ngOnInit(): void {
@@ -129,35 +130,12 @@ export class DetallesComponent implements OnInit {
 
   
 
-  constructor( private router:Router, private httpService:HttpService) { }
+  constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute) { }
   
   back(){
     this.router.navigate(["/inmueble/vista"]);
   }
 
-  ngOnInit(): void {
-    const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
-
-    shareButton[0].addEventListener("click", (e) => {
-      for (let i = 0; i < shareButton.length; i++) {
-        shareButton[i].classList.toggle("open");
-        shareButton[0].classList.remove("sent");
-      }
-    });
-
-    for (let i = 1; i < shareButton.length; i++) {
-      shareButton[i].addEventListener("click", (e) => {
-        for (let i = 0; i < shareButton.length; i++) {
-          shareButton[i].classList.toggle("open");
-        }
-        shareButton[0].classList.toggle("sent");
-      });
-    }
-
-
-    
-
-  }
 
   
 
