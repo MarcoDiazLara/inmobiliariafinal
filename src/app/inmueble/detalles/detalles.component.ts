@@ -2,12 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
+import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+
+
+
 import { infoInmuebles } from 'src/app/services/Interface/Interfaces';
 
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.scss'],
+  
+ 
+
   
 })
 export class DetallesComponent implements OnInit {
@@ -95,7 +107,6 @@ export class DetallesComponent implements OnInit {
 
   }
 
-
   enviarWhatsApp() {
     let id="36";
     this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
@@ -110,8 +121,6 @@ export class DetallesComponent implements OnInit {
       window.open(urlWhatsApp, '_blank');
 
     });
-    
-    
   }
 
 
@@ -120,15 +129,35 @@ export class DetallesComponent implements OnInit {
 
   
 
-  constructor( private router:Router, private httpService:HttpService,
-    private route: ActivatedRoute,) { }
+  constructor( private router:Router, private httpService:HttpService) { }
   
   back(){
     this.router.navigate(["/inmueble/vista"]);
   }
-  id_inmueble!: String;
-  id_usuario!: String;
-  
+
+  ngOnInit(): void {
+    const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
+
+    shareButton[0].addEventListener("click", (e) => {
+      for (let i = 0; i < shareButton.length; i++) {
+        shareButton[i].classList.toggle("open");
+        shareButton[0].classList.remove("sent");
+      }
+    });
+
+    for (let i = 1; i < shareButton.length; i++) {
+      shareButton[i].addEventListener("click", (e) => {
+        for (let i = 0; i < shareButton.length; i++) {
+          shareButton[i].classList.toggle("open");
+        }
+        shareButton[0].classList.toggle("sent");
+      });
+    }
+
+
+    
+
+  }
 
   
 

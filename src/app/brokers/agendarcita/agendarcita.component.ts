@@ -19,9 +19,6 @@ import {JsonPipe} from '@angular/common';
 import { validateVerticalPosition } from '@angular/cdk/overlay';
 import {MatStepperModule} from '@angular/material/stepper';
 
-
-
-
 @Component({
   selector: 'app-agendarcita',
   templateUrl: './agendarcita.component.html',
@@ -49,15 +46,11 @@ export class AgendarcitaComponent implements OnInit {
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-
-
   formGeneral!: FormGroup;
   loading = false;
   hide2 = true;
- 
 
   constructor(  private formBuilder: FormBuilder,) { }
-
 
   ngOnInit(): void {
     this.formGeneral = this.formBuilder.group({
@@ -76,7 +69,6 @@ export class AgendarcitaComponent implements OnInit {
 }
 Guardardatos() {
 
-
   if (this.formGeneral) {
     let nombre = this.formGeneral.value.nombre;
     let apellidopaterno = this.formGeneral.value.apellidopaterno;
@@ -93,4 +85,3 @@ Guardardatos() {
 }
 
 }
-

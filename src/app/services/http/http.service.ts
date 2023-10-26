@@ -218,6 +218,11 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
   }
+  mostrarContacto(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post(this.url + 'mostrarcontacto.php', params, { headers });
+  }
   
 
   mostrarDetalles(p_id_usu: any, p_id_inmu: any){

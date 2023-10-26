@@ -83,6 +83,10 @@ Tipo_Asentamiento: ""
 id_asentamiento: ""
 
 };
+ export interface medioC{
+    id_Medio_Contacto:"",	
+    Medio_Contacto:"",
+ }
 
 
 export interface infoInmuebles{
