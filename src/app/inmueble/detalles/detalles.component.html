@@ -50,11 +50,14 @@
                             </div>
 
                     <mat-list>
+                        <ul *ngIf="Venta">
                         <h3 mat-subheader> <img class="money">Venta MXN</h3>
                         <mat-list-item ><h3 mat-line>Aqui va la variable para mostrar el precio</h3></mat-list-item>
+                    </ul>
+                    <ul *ngIf="!Venta">
                         <h3 mat-subheader> <img class="money">Renta MXN</h3>
                         <mat-list-item ><h3 mat-line>Aqui va la variable para mostrar el precio</h3></mat-list-item>
-
+                    </ul>
                         <h3 mat-subheader> <img class="map"> Lugar</h3>
                         <mat-list-item >
                            <h3 mat-line>{{details.Calle +" "+ details.Num_Ext}}</h3>
