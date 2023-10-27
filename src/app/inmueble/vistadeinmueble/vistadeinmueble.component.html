@@ -1,115 +1,33 @@
 <app-menu></app-menu>
 
-<div class="navbar"> 
-  
-  <div [formGroup]="firstFormGroup" class="buscador">
-    <input  id="miInput" class="form-control" type="search" (click)="toggleSearch()"
-      placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" formControlName="ubicacion" [(ngModel)]="inmueble.ubicacion" >
-    <ul  class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios" 
-       (click)="seleccionarMunicipio(option.id_Municipio)"><a>{{ option.estado }}</a></li>
-    </ul>
-    <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
-      <img class="lupa">
-    </button> 
-
-    
-
-    <div class="dropdown ps-4 pe-4">
-      <button class="btn btn-outline-secondary" (click)="togglePrecio()">Precio <img class="arrow1"></button>
-      <ul *ngIf="showPrecio" class="dropdown-precio">
-        <form [formGroup]="precios" class="ps-4 pe-4">
-
-          <div class="mb-3" style="margin-top: 25px;">
-
-            <input type="text" class="form-control" formControlName="pDesde" placeholder="Desde" [(ngModel)]="inmueble.precioDesde" >
-          </div>
-          <div class="mb-3">
-            <input type="text" class="form-control" formControlName="pHasta" placeholder="Hasta" [(ngModel)]="inmueble.precioHasta" > 
-          </div>
-
-          <button mat-stroked-button type="button" name="aplicar" style="margin-bottom: 25px;"> Aplicar</button>
-        </form>
-    </ul>
-    </div>
-    
-
-    <div>
-      
-      <select class="selectpicker ps-4 pe-4"  placeholder="Tipo Accion" formControlName="pAccion" [(ngModel)]="inmueble.tipoAccion" >
-        <option value="venta">Venta</option>
-        <option value="renta">Renta</option>
-        <option value="remate">Remate</option>
-        <option value="construccion">En construcción</option>
-      </select>
-    </div>
-
-    <!---<div>
-      <button class="btn btn-outline-secondary me-2" (click)="toggleInmueble()" >Inmueble <img class="arrow1"></button>
-      <ul *ngIf="showInmueble" class="dropdown-inmueble">
-        <li *ngFor="let opcion of datosTipoInmueble"><a>{{opcion.Tipo_Inmueble}}</a></li>
 
 
-      </ul>
-    </div> -->
+<div class="navbar">
 
-    <div>
- 
-      
-      <select  formControlName="pId_Tipo_Inmueble" [(ngModel)]="inmueble.inmueble">
-        <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
-      </select>
+  <input  class="inputBuscador" placeholder="Ingresa tu ciudad o Localidad">
 
-    
-    </div>
-
-    <!--<div>
-      <button class="btn btn-outline-secondary me-2" (click)="toggleRecamaras()" >Recamaras <img class="arrow1"></button>
-      <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
-        <li><a>1</a></li>
-        <li><a>2</a></li>
-        <li><a>3</a></li>
-        <li><a>4</a></li>
-        <li><a>+5</a></li>
-      </ul>
-    
-    </div>
-    -->
-    <select  formControlName="pRecamaras" [(ngModel)]="inmueble.pRecamaras">
-      <option *ngFor="let opcion of datosTipoInmueble" value="{{opcion.Tipo_Inmueble}}">{{opcion.Tipo_Inmueble}} </option>
-    </select>
-    <div>
+  <button class="buttonnavbar" mat-stroked-button><img class="lupa"></button>
+  <button class="buttonnavbar" mat-stroked-button>Precio<img class="navarrow"></button>
+  <button class="buttonnavbar" mat-stroked-button>Tipo de Oferta<img class="navarrow"></button>
+  <button class="buttonnavbar" mat-stroked-button>Inmueble<img class="navarrow"></button>
+  <button class="buttonnavbar" mat-stroked-button>Recamaras<img class="navarrow"></button>
+  <button id="toggleAdvancedFiltros" class="buttonnavbar" mat-stroked-button>Filtros avanzados <img class="filter"></button> 
+  <ul class="dropdown-Filtros">
+    <ul class="content-advancedfilters">
+      <h4 class="h4filtros">Palabras clave</h4>
+      <input type="text" placeholder="Ej. amueblado, jardin, cochera" class="form-control">
 
 
 
+      <h4 class="h4filtros">Interacción</h4>
+      <div style="flex: 3; text-align: center;">
+        <button mat-stroked-button style="margin-left: 5px;"><img class="VR"> Recorrido VR</button>
+        <button mat-stroked-button style="margin-left: 5px;"><img class="multi"> Multimedia</button>
+        <button mat-stroked-button style="margin-left: 5px;"><img class="planos">Planos</button>
 
-      
-      <button type="button" class=" btn btn-outline-secondary me-2" data-toggle="modal" data-target="#exampleModal"
-        data-whatever="@mdo" (click)="toggleFiltros()">Filtros avanzados<img class="filter"></button>
+      </div>
 
-      <ul *ngIf="showFiltros" class="dropdown-Filtros">
-
-     
-        <form class="ps-4 pe-4">
-
-          <h4 class="h4filtros">Palabras clave</h4>
-          <input type="text" placeholder="Ej. amueblado, jardin, cochera" [formControl]="control"
-            [matAutocomplete]="auto" class="form-control">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
-              {{street}}
-            </mat-option>
-          </mat-autocomplete>
-
-
-          <h4 class="h4filtros">Interacción</h4>
-          <div style="flex: 3; text-align: center;">
-            <button mat-stroked-button style="margin-left: 5px;"><img class="VR"> Recorrido VR</button>
-            <button mat-stroked-button style="margin-left: 5px;"><img class="multi"> Multimedia</button>
-            <button mat-stroked-button style="margin-left: 5px;"><img class="planos">Planos</button>
-
-          </div>
-          <h4 class="h4filtros">Establecimientos públicos cercanos</h4>
+       <h4 class="h4filtros">Establecimientos públicos cercanos</h4>
           <div style="display: flex; flex-direction: row; margin-bottom: 25px">
             <div style="flex: 1;">
               <section class="example-section" style="display: flex; flex-direction: column;">
@@ -227,20 +145,6 @@
         
           
 
-
-
-
-
-
-
-
-
-
-
-          
-
-
-
           <h4 class="h4filtros">Vigilancia</h4>
           <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
             <mat-radio-button class="opcfiltros" value="1">Cámaras 24/7</mat-radio-button>
@@ -287,41 +191,16 @@
             <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
           </mat-radio-group>
 
-        </form>
-     
-    
-
-        <li style="margin-top: 25px;" class="fixed-item"><button mat-raised-button>Limpiar filtros</button></li>
-   
-        
-      </ul>
 
 
+    </ul>
+    <form class="limpiarFiltros"><button mat-raised-button>Limpiar filtros</button></form>
+  </ul>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+  <button class="buttonnavbar" mat-stroked-button  style="margin-left: 70px; margin-right: 0px;" (click)="back()">Regresar<img class="backarrow"></button>
+ 
 
 
-    </div>
-  </div>
 </div>
 
 
@@ -330,17 +209,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container1">
-<div class="content-right pr-4">
-  <h1>
-    <!-- para la parte de base de datos remplazar los id para mandar a llamar los campos 
-              y quitar los parentesis para poder mostrar una interfaz mas asosiada al usuario xd
-              Encontramos este --->
-   <!-- (<span id="tipoInmueble"></span>)
-    disponible en Puebla(<span id="lugar"></span>)
-    para (<span id="usuarioP"></span>)-->
-    <button mat-raised-button class="button-back" (click)="back()"><img class="backarrow">Regresar</button>
-  </h1> 
+<div class="content-right pr-4"> 
   
 </div>
 
@@ -369,7 +254,7 @@
           <thead>
             <td>
               
-                <button (click)="detalles()" class="btn btn-secondary container" id="moreinfo">Más Información</button>
+                <button (click)="detalles(res.Id_Inmueble, res.Id_Publicador)" class="btn btn-secondary container" id="moreinfo">Más Información</button>
              
             </td>
           </thead>

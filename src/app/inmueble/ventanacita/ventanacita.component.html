@@ -1,0 +1,118 @@
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button> -->
+  <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Registra tus datos</ng-template>
+        <hr>
+        <h1 class="text-center">AGENDA TU CITA</h1>
+           <h3 class="text-center">Fácil, Rápido y Seguro</h3>
+               <p class="text-center">Solo necesitamos algunos datos adicionales para confirmar tu cita.</p>
+               <div style="display: flex; justify-content: center; align-items: center;">
+                <mat-form-field style="margin-right: 10px;">
+                  <mat-label >Nombre</mat-label>
+                  <input formControlName="p_Nombre" matInput>
+                 
+               </mat-form-field>
+              <!-- --------------------------------------------------------- -->
+              <mat-form-field >
+                <mat-label>Correo</mat-label>
+                <input  formControlName="p_Email" matInput type="email" placeholder="Correo electronico" >
+               
+              </mat-form-field>
+                </div>
+                  <!-- --------------------------------------------------------- -->
+                  <div style="display: flex; justify-content: center; align-items: center;">
+                    <mat-form-field  style="margin-right: 10px;">
+                      <mat-label>Telefono</mat-label>
+                   <input   formControlName="p_Telefono"type="tel" matInput placeholder="555-555-1234">
+                      <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field style="margin-right: 10px;">
+                        <mat-label>Medio de Contacto</mat-label>
+                        <mat-select formControlName="p_Id_Medio_Contacto">
+                          <mat-option *ngFor="let food of medioC" [value]="food.id_Medio_Contacto">
+                            {{food.Medio_Contacto}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+
+
+
+
+                  </div>
+       
+        <div class="d-flex justify-content-center align-items-center">
+          <button mat-button matStepperNext>Aceptar</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Motivo</ng-template>
+        <ng-template matStepLabel>Motivo</ng-template>
+                <h3 class="text-center">
+                  Escribe el motivo por el cual agendas una cita</h3>
+                  <br>
+                 <div class="d-flex justify-content-center align-items-center">
+                 
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Mensaje</mat-label>
+                      <input formControlName="p_Mensaje" matInput #message maxlength="256" placeholder="Ex. I need help with...">
+                     <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                    </mat-form-field>
+                 
+                    
+                 </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <button mat-button matStepperPrevious>Atras</button>
+          <button mat-button matStepperNext>Aceptar</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="terceroFormGroup">
+    
+      <ng-template matStepLabel>Fecha y Hora </ng-template>
+<form  [formGroup]="terceroFormGroup">
+  <div class="d-flex justify-content-center align-items-center">
+
+    <mat-form-field style="margin-right: 10px;" >
+      <mat-label>Choose a date</mat-label>
+      <input   formControlName="p_Fecha"  matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!-- <mat-form-field  style="margin-right: 10px;">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input  formControlName="p_Fecha" matStartDate placeholder="Start date">
+        <input  formControlName="p_FechaF" matEndDate placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field> -->
+
+    <mat-form-field style="margin-right: 10px;" >
+      <mat-label >Hora de la Cita</mat-label>
+      <input formControlName="p_Hora" matInput type="time" >
+     
+    </mat-form-field>
+
+         </div>
+</form>
+ <div style="display: flex; justify-content: center; align-items: center;">
+        <button mat-button matStepperPrevious>Cancelar</button>
+        <button (click)="open()"  mat-button  > Aceptar </button>
+      </div>
+  
+    </mat-step>
+  
+  </mat-stepper>
+  
+  
+

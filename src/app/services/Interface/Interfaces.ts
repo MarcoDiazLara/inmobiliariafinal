@@ -75,3 +75,64 @@ export interface asignacionA{
 }
 
 
+export interface inmueblesBuscados{
+    Asentamiento: "",
+Codigo_Postal: "",
+Descripcion_Publicacion: "",
+Estado: "",
+Id_Inmueble: "",
+Id_Publicador: ""
+Municipio: ""
+Nombre_Publicacion: ""
+Picture1: ""
+Precio_Final: ""
+Tipo_Asentamiento: ""
+id_asentamiento: ""
+
+};
+ export interface medioC{
+    id_Medio_Contacto:"",	
+    Medio_Contacto:"",
+ }
+
+
+export interface infoInmuebles{
+    Nombre_Inmueble: "",
+        Descripcion_Inmueble: "",
+        Calle: "",
+        Num_Ext: "",
+        Num_Int: "",
+        Terreno_M2: "",
+        Construccion_M2: "",
+        Recamara: "",
+        Bano: "",
+        Cocina_Integral: "",
+        Num_Pisos: "",
+        Antiguedad: "",
+        Acabados: "",
+        Alberca: "",
+        Jardin: "",
+        Gimnasio: "",
+        Roof_Garden: "",
+        Estacionamiento: "",
+        Ubicacion_Maps: "",
+        Picture1: "",
+        Picture2: "",
+        Picture3: "",
+        Picture4: "",
+        Picture5: "",
+        p360: "",
+        Video: "",
+        Id_Asentamiento: "",
+        Id_Tipo_Inmueble: "",
+        Id_Usuario: "",
+        Nombre_Usuario: "",
+        Img_Profile: "",
+        Contacto_Principal: "",
+        Email: "",
+        Nombre_Publicacion: "",
+        Descripcion_Publicacion: "",
+        Id_Tipo_Publicacion: String,
+        Precio_Final:""
+};
+

@@ -99,7 +99,8 @@ numberFormControl = new FormControl('', [
     });
   
     this.firstFormGroup = this.formBuilder.group({
-     pId_Tipo_Inmueble: ['',[Validators.required]]
+     pId_Tipo_Inmueble: ['',[Validators.required]],
+     pId_Tipo_Publicacion: ['',[Validators.required]]
     })
     this.secondFormGroup = this.formBuilder.group({
       pId_estado: ['',[Validators.required]],
@@ -219,8 +220,8 @@ xd(){
   let dia = date.getDate().toString();
   let mes = (date.getMonth()+1).toString();
   let anio = date.getFullYear().toString();
-  let nom_aux = dia + mes + anio + localStorage.getItem("Id_Usuario");
- 
+  let nom_aux =  anio + mes + dia;
+
 
     let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[0].name;
     let p_pic_2 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[1].name;
@@ -235,6 +236,8 @@ xd(){
     let p_prec_min1 = this.secondFormGroup.value.p_prec_min;
     let p_prec_max1 = this.secondFormGroup.value.p_prec_max;
     let p_prec_final1 = this.secondFormGroup.value.p_prec_final;
+    let p_Id_Tipo = this.firstFormGroup.value.pId_Tipo_Publicacion;
+    
  
     
 
@@ -242,7 +245,7 @@ xd(){
     this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
       p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados1,p_alberca1, p_jardin1,p_gym1,
       p_roof,p_estacionamiento, p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
-      p_prec_final1).subscribe((data: any) =>{
+      p_prec_final1,p_Id_Tipo).subscribe((data: any) =>{
       if(data == 1){
         alert("Se subio el inmueble");
         this.router.navigate(["/web"]);

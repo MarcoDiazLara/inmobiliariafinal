@@ -1,82 +1,77 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
+import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 
+
+
+import { infoInmuebles } from 'src/app/services/Interface/Interfaces';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.scss'],
   
-})
-export class DetallesComponent implements OnInit {
-  imagenesCarrusel: string[] = [
-    'assets/img/alquilar.jpg',
-    'assets/img/contratos.jpeg',
-    'assets/img/departamento-pequeno.jpg',
-    'assets/img/deposito.jpg',
-    'assets/img/Slide-1.jpg',
-    'assets/img/Slide-3.jpg',
-  ];
-
-  imagenPrincipalUrl: string = 'assets/img/Houses-bro.png';
-
-  cambiarImagen(imagenUrl: string) {
-    this.imagenPrincipalUrl = imagenUrl;
-  }
-
-
-  nombre: string = '';
-  telefono: string = '';
-  email: string = '';
-  comentarios: string = 'Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad.';
-
-  
-  enviarCorreo(){
-    let id="36";
-    this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
-      console.log(data);
-      
-
-
-    });
-
  
 
-  }
-
-
-  enviarWhatsApp() {
-    let id="36";
-    this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
-      console.log(data.Contacto_Principal);
-      
-      const numeroTelefono = data.Contacto_Principal;
-      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
   
-      const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
-  
-       // Abre la URL de WhatsApp en una nueva ventana
-      window.open(urlWhatsApp, '_blank');
+})
+export class DetallesComponent implements OnInit {
 
-    });
-    
-    
-  }
+
+
+Venta: Boolean = false;
 
 
 
 
 
-  
 
-  constructor( private router:Router, private httpService:HttpService) { }
-  
-  back(){
-    this.router.navigate(["/inmueble/vista"]);
-  }
+  id_inmueble!: String;
+  id_usuario!: String;
+
 
   ngOnInit(): void {
+    
+
+    this.route.queryParams.subscribe(params => {
+     
+
+     
+      this.id_inmueble = params['id_inmueble'];
+      this.id_usuario = params['id_usuario'];
+
+    });
+
+    this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
+      this.details = resp[0];
+      this.imagenPrincipalUrl = this.details.Picture1;
+     this.imagen1 = this.details.Picture1;
+     this.imagen2 = this.details.Picture2;
+     this.imagen3 = this.details.Picture3;
+     this.imagen4 = this.details.Picture4;
+     this.imagen5 = this.details.Picture5;
+     let tipo = this.details.Id_Tipo_Publicacion;
+     if(tipo = "1"){
+        this.Venta = true;
+     }
+
+     this.imagenesCarrusel = [
+      this.imagen1,
+      this.imagen2,
+      this.imagen3,
+      this.imagen4,
+      this.imagen5,
+    ];
+      
+    })
+
     const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
 
     shareButton[0].addEventListener("click", (e) => {
@@ -99,6 +94,82 @@ export class DetallesComponent implements OnInit {
     
 
   }
+  imagen1 !: string;
+  imagen2 !: string;
+  imagen3 !: string;
+  imagen4 !: string;
+  imagen5 !: string;
+  
+  details !: infoInmuebles;
+  imagenesCarrusel: any[] = [
+    
+  ];
+
+  imagenPrincipalUrl: string ="";
+
+  cambiarImagen(imagenUrl: string) {
+    this.imagenPrincipalUrl = imagenUrl;
+  }
+
+
+  nombre: string = '';
+  telefono: string = '';
+  email: string = '';
+  comentarios: string = 'Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad.';
+
+  nom_inmu: string = "";
+  enviarCorreo(){
+    let id="36";
+    this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
+      console.log(data);
+      
+
+
+    });
+
+ 
+
+  }
+
+  enviarWhatsApp() {
+    let id="36";
+    this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
+      console.log(data.Contacto_Principal);
+      
+      const numeroTelefono = this.details.Contacto_Principal;
+      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+  
+      const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+  
+       // Abre la URL de WhatsApp en una nueva ventana
+      window.open(urlWhatsApp, '_blank');
+
+    });
+  }
+
+
+
+
+
+  
+
+  constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute, public dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(VentanacitaComponent, {
+    
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    
+    });
+  }
+  
+  back(){
+    this.router.navigate(["/inmueble/vista"]);
+  }
+
 
   
 
