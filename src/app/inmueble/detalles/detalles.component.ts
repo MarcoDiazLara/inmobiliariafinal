@@ -26,7 +26,7 @@ export class DetallesComponent implements OnInit {
 
 
 
-
+Venta: Boolean = false;
 
 
 
@@ -51,11 +51,17 @@ export class DetallesComponent implements OnInit {
 
     this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
       this.details = resp[0];
+      this.imagenPrincipalUrl = this.details.Picture1;
      this.imagen1 = this.details.Picture1;
      this.imagen2 = this.details.Picture2;
      this.imagen3 = this.details.Picture3;
      this.imagen4 = this.details.Picture4;
      this.imagen5 = this.details.Picture5;
+     let tipo = this.details.Id_Tipo_Publicacion;
+     if(tipo = "1"){
+        this.Venta = true;
+     }
+
      this.imagenesCarrusel = [
       this.imagen1,
       this.imagen2,
@@ -63,7 +69,7 @@ export class DetallesComponent implements OnInit {
       this.imagen4,
       this.imagen5,
     ];
-      console.log(this.imagen2);
+      
     })
 
     const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
@@ -99,7 +105,7 @@ export class DetallesComponent implements OnInit {
     
   ];
 
-  imagenPrincipalUrl: string = 'assets/img/Houses-bro.png';
+  imagenPrincipalUrl: string ="";
 
   cambiarImagen(imagenUrl: string) {
     this.imagenPrincipalUrl = imagenUrl;

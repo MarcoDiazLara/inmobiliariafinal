@@ -124,6 +124,8 @@ export interface infoInmuebles{
         Contacto_Principal: "",
         Email: "",
         Nombre_Publicacion: "",
-        Descripcion_Publicacion: ""
+        Descripcion_Publicacion: "",
+        Id_Tipo_Publicacion: String,
+        Precio_Final:""
 };
 
