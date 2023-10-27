@@ -3,10 +3,14 @@
    <h1> Selecciona Asesor</h1>
   <mat-form-field>
         <mat-label><b>Selecciona Asesor</b></mat-label>
-        <mat-select [formControl]="toppings" multiple>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+        <mat-select formControlName="Nombres" >
+          <mat-option *ngFor="let Asesor of asesores" [value]="Asesor.Id_Usuario">{{Asesor.Nombres}}</mat-option>
         </mat-select>
+        <mat-error>
+          Tipo Asesor
+        </mat-error>
     </mat-form-field>
+
      <br> 
     <button mat-button type="button" [disabled]="loading" color="secondary" (click)="guardarasesor()">
       <span>Asignar</span>

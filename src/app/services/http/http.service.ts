@@ -194,6 +194,23 @@ export class HttpService {
 
   }
 
+   cambiarC( p_correo:any,password:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_correo="+p_correo + "&password="+password;
+    return this.httpclient.post(this.url + 'cambiarC.php', params, { headers });
+
+   }
+   
+  mostrarReasignacion() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+  }
+
+  mostrarAsesor() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
+  }
+
   insertarSocio(Nombre_Razon_Social: any,Img_Logo: any,RFC: any,Email: any,Tel_Empresa: any,Calle: any,Num_Ext: any,Num_Int:any,Id_Asentamiento:any,Id_Tipo_Socio: any, v_Id_Usuario: any){
     //'$vNombre_Razon_Social','$vImg_Logo','$vRFC','$vEmail','$vTel_Empresa','$vCalle','$vNum_Ext','$vNum_Int','$vId_Asentamiento','$vId_Tipo_Socio'
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -202,29 +219,20 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
 
-   cambiarC( p_correo:any,password:any){
+  insertarasesor(Id_Publicacion: any,Id_Usuarios: any,){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_correo="+p_correo + "&password="+password;
-    return this.httpclient.post(this.url + 'cambiarC.php', params, { headers });
-
-
-
-
-   }
-   
-
-
-
-  mostrarReasignacion() {
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+    let params = 'Id_Publicacion='+Id_Publicacion+"&Id_Usuarios="+Id_Usuarios 
+    return this.httpclient.post(this.url + 'sp_web_insertar_asesor_asignacion.php', params, { headers });
   }
+
+
   mostrarContacto(){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'xrsxryw1y21';
     return this.httpclient.post(this.url + 'mostrarcontacto.php', params, { headers });
   }
   
+
 
   mostrarDetalles(p_id_usu: any, p_id_inmu: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
