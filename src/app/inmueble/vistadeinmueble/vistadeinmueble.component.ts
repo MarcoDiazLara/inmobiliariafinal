@@ -15,7 +15,7 @@ import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 })
 
 export class VistadeinmuebleComponent implements OnInit {
-
+  panelOpenState = false;
   
   control = new FormControl('');
   

@@ -15,11 +15,20 @@
   color: #264D5E;
   border-color: #264D5E;
   transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
 }
 .buttonnavbar:hover{
   background-color: #264D5E;
-  color: #ffffff;
+  color: #ffffff; 
 }
+
+.buttonnavbar:hover .navarrow,
+.buttonnavbar:hover .filter,
+.buttonnavbar:hover .backarrow {
+  filter: brightness(100);
+}
+
+
 
 /* estilo del input del buscador */
 .inputBuscador {
@@ -29,12 +38,6 @@
   border: 1px solid #264D5E;
   transition: border-color 0.3s;
 }
-.inputBuscador:focus {
-  border-color: #007bff;
-  background-color: #f0f0f0;
-}
-
-
 
 
 .producto h1 {
@@ -81,27 +84,30 @@
 
 
 /* Estilo de los iconos de los botones */
-.lupa, .arrow1, .filter, .VR, 
+.lupa, .filter, .VR, .navarrow,  
 .multi, .planos, .backarrow{
   background-size: cover;
   width: 27px;
   height: 27px;
 }
+.navarrow{
+  background: url('https://api.iconify.design/ic/baseline-keyboard-arrow-down.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/ic/baseline-keyboard-arrow-down.svg?color=%23264d5e');
+  transition: color 0.3s;
+}
+
 
 .lupa {
   background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
   
 }
-.arrow1 {
-  background: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg') no-repeat center center / contain;
-  content: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg');
-  
-}
+
 
 .filter {
   background: url('https://api.iconify.design/mi/filter.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/mi/filter.svg?color=%23264d5e');
+  transition: color 0.3s;
 }
 
 .VR {
@@ -121,6 +127,7 @@
 .backarrow {
   background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
+  transition: color 0.3s;
 }
 
 
@@ -163,8 +170,7 @@
 
 /* Estilo para los elementos de la lista */
 .dropdown-precio li, .dropdown-Toferta li,
-.dropdown-inmueble li, .dropdown-Recamaras li,
-.dropdown-Filtros li      
+.dropdown-inmueble li, .dropdown-Recamaras li      
 {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #ccc;
@@ -181,19 +187,29 @@
 
 .dropdown-Filtros {
   max-height: 550px;
-  overflow-y: auto; 
-  list-style: none;
-  margin-right: 0;
-  padding: 0;
-  width: 450px;
+  width: auto;
   border-radius: 5px;
   background-color: #fff; 
   border: 1px solid #ccc; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   z-index: 1;
   position: absolute;
-  left: 57%;
+  margin: 0px;
+  padding: 0px;
+  
 }
+.content-advancedfilters{
+  max-height: 495px;
+  overflow-y: auto; 
+  list-style: none;
+  margin: 10px;
+
+}
+.limpiarFiltros{
+  padding: 8px;
+  background-color: #2285ab;
+  border-radius: 5px;
+ }
 
 
 .ListResult {
