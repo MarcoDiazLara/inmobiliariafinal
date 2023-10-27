@@ -68,7 +68,7 @@ export interface reasignacionA{
 }
 
 export interface asignacionA{
-    Id_Tipo_Usuario: "",
+    Id_Usuario: "",
     Nombres: "",
     Apellido_Paterno: "",
     Apellido_Materno: "",

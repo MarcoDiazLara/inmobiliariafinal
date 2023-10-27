@@ -7,6 +7,9 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { reasignacionA } from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 
@@ -19,6 +22,8 @@ import { MatPaginator } from '@angular/material/paginator';
 export class MasterAsignarReasignarComponent implements OnInit {
 
   usuarios$: any;
+
+  formGeneral!:FormGroup; 
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -35,21 +40,21 @@ export class MasterAsignarReasignarComponent implements OnInit {
   columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','botonOption'];
   
 
-  
-  
+
 
   // poner el nombre de una variable
   datosinmuebles: reasignacionA[]=[];
  
  
 
- 
   
   constructor(
     public dialog: MatDialog,
-    // private http:HttpService,
+    private http:HttpService,
     private httpService: HttpService,
-    private adminService: GlobalService
+    private adminService: GlobalService,
+    private formBuilder: FormBuilder,
+    private router:Router
     // Http para jalar el servicio 
   ) { }
 
@@ -61,16 +66,24 @@ export class MasterAsignarReasignarComponent implements OnInit {
       if(usuarios !== null){
         this.dataSource.data =usuarios;
       }
-    })
+    });
+       
 
+    // this.formGeneral = this.formBuilder.group({
+    //   prueba: ['', [Validators.required]]
+    // });
+    
+    //   let prueba = this.formGeneral.value.prueba;
+     
+    
 
     this.obtenerUsuarios();
 
-    // this.http.mostrarReasignacion().subscribe((data:any)=>{
-    // this.datosinmuebles=data;
-    // console.log(this.datosinmuebles);
-    // });
-    // this.dataSource = new MatTableDataSource(this.datosinmuebles);
+    this.http.mostrarReasignacion().subscribe((data:any)=>{
+    this.datosinmuebles=data;
+    console.log(this.datosinmuebles);
+    });
+    this.dataSource = new MatTableDataSource(this.datosinmuebles);
   }
 
 
@@ -111,7 +124,11 @@ export class MasterAsignarReasignarComponent implements OnInit {
   }
 
   // mandar a llamar ventana emergente
-  openasesor() {
+
+  openasesor(id_inmo:any ) {
+    localStorage.setItem("id_publicacion",id_inmo);
+    
+   
 
     const dialogRef = this.dialog.open(AsignasrasesorComponent, {
       width: '60vh',

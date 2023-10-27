@@ -75,8 +75,8 @@ export class AltasocioComponent implements OnInit {
       let numext = this.formGeneral.value.numext; 
       let numint = this.formGeneral.value.numint;
       let tipo_socio = this.formGeneral.value.tipo_socio;
-      let estados = this.formGeneral.value.numint;
-      let municipio = this.formGeneral.value.numint;
+      let estados = this.formGeneral.value.estados;
+      let municipio = this.formGeneral.value.municipio;
       let asentamientos = this.formGeneral.value.pId_asentamiento;
       let Logo = "https://inmobiliaria.arvispace.com/imagenes/unkown.jpg";
       let id = localStorage.getItem("Id_Usuario");
