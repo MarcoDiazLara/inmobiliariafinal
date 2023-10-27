@@ -5,12 +5,21 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
 import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
 @Component({
   selector: 'app-vistadeinmueble',
   templateUrl: './vistadeinmueble.component.html',
   styleUrls: ['./vistadeinmueble.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1 })),
+      state('out', style({ opacity: 0 })),
+      transition('in => out', animate('200ms ease-out')),
+      transition('out => in', animate('200ms ease-in')),
+    ]),
+  ],
 
 })
 
@@ -18,7 +27,6 @@ export class VistadeinmuebleComponent implements OnInit {
   ///////// NO MOVER LA FUNCION DE OCULTAR Y MOSTRAR LAS LISTAS DE LOS BOTONES DE LA BUSQUEDA ///////////////
 
   panelOpenState = false;
-
   showFilters: boolean = false;
 
   toggleFilters() {
