@@ -24,7 +24,8 @@
 
 .buttonnavbar:hover .navarrow,
 .buttonnavbar:hover .filter,
-.buttonnavbar:hover .backarrow {
+.buttonnavbar:hover .backarrow,
+.buttonnavbar:hover .lupa {
   filter: brightness(100);
 }
 
@@ -100,7 +101,7 @@
 .lupa {
   background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
-  
+  transition: color 0.3s;
 }
 
 
