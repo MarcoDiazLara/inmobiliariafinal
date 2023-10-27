@@ -1,3 +1,13 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding:25px;
+  margin-top: 80px;
+
+}
 .buttonnavbar{
   width: auto;
   height: 40px;
@@ -64,39 +74,23 @@
 }
 
 
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  display: block;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  padding:25px;
-  margin-top: 80px;
-
-}
-
-
-
-
 /* Estilo de los iconos de los botones */
 .lupa, .arrow1, .filter, .VR, 
 .multi, .planos, .backarrow{
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 27px;
   height: 27px;
-
 }
+
 .lupa {
   background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
-
+  
 }
 .arrow1 {
   background: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg') no-repeat center center / contain;
   content: url('https://api.iconify.design/iconamoon/arrow-up-2-light.svg?color=%23264d5e&rotate=180deg');
+  
 }
 
 .filter {
