@@ -11,8 +11,8 @@
   <button class="buttonnavbar" mat-stroked-button>Tipo de Oferta<img class="navarrow"></button>
   <button class="buttonnavbar" mat-stroked-button>Inmueble<img class="navarrow"></button>
   <button class="buttonnavbar" mat-stroked-button>Recamaras<img class="navarrow"></button>
-  <button id="toggleAdvancedFiltros" class="buttonnavbar" mat-stroked-button>Filtros avanzados <img class="filter"></button> 
-  <ul class="dropdown-Filtros">
+  <button (click)="toggleFilters()" class="buttonnavbar" mat-stroked-button>Filtros avanzados <img class="filter"></button> 
+  <ul *ngIf="showFilters" class="dropdown-Filtros">
     <ul class="content-advancedfilters">
       <h4 class="h4filtros">Palabras clave</h4>
       <input type="text" placeholder="Ej. amueblado, jardin, cochera" class="form-control">

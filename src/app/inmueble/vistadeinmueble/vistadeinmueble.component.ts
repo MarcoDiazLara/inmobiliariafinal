@@ -15,7 +15,14 @@ import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 })
 
 export class VistadeinmuebleComponent implements OnInit {
+
   panelOpenState = false;
+  
+  showFilters: boolean = false;
+
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+  }
   
   control = new FormControl('');
   
@@ -71,6 +78,7 @@ export class VistadeinmuebleComponent implements OnInit {
     
   }
 
+  
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
@@ -78,6 +86,8 @@ export class VistadeinmuebleComponent implements OnInit {
 
   }
 
+
+  
 
   ngOnInit(): void {
 

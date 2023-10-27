@@ -195,6 +195,7 @@
   z-index: 1;
   position: absolute; 
   padding-left: 2px;
+  
 }
 .content-advancedfilters{
   max-height: 450px;
@@ -203,8 +204,6 @@
   padding-right: 25px;
   padding-left: 25px;
 }
-
-
 .limpiarFiltros{
   padding: 8px;
   background-color: none;
