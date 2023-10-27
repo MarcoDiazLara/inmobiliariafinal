@@ -23,6 +23,16 @@ export interface DialogData {
   
 })
 export class DetallesComponent implements OnInit {
+
+
+
+
+
+
+
+
+
+
   id_inmueble!: String;
   id_usuario!: String;
 
@@ -137,7 +147,18 @@ export class DetallesComponent implements OnInit {
 
   
 
-  constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute) { }
+  constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute, public dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(VentanacitaComponent, {
+    
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    
+    });
+  }
   
   back(){
     this.router.navigate(["/inmueble/vista"]);
