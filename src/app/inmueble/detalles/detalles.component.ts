@@ -43,6 +43,16 @@ export class DetallesComponent implements OnInit {
       this.details = resp[0];
      this.imagen1 = this.details.Picture1;
      this.imagen2 = this.details.Picture2;
+     this.imagen3 = this.details.Picture3;
+     this.imagen4 = this.details.Picture4;
+     this.imagen5 = this.details.Picture5;
+     this.imagenesCarrusel = [
+      this.imagen1,
+      this.imagen2,
+      this.imagen3,
+      this.imagen4,
+      this.imagen5,
+    ];
       console.log(this.imagen2);
     })
 
@@ -70,16 +80,13 @@ export class DetallesComponent implements OnInit {
   }
   imagen1 !: string;
   imagen2 !: string;
+  imagen3 !: string;
+  imagen4 !: string;
+  imagen5 !: string;
+  
   details !: infoInmuebles;
   imagenesCarrusel: any[] = [
-    "https://inmobiliaria.arvispace.com/imagenes/6.jpg",
-    this.imagen1,
-    this.imagen2
-    // this.details.Picture1,
-    // this.details.Picture2,
-    // this.details.Picture3,
-    // this.details.Picture4,
-    // this.details.Picture5
+    
   ];
 
   imagenPrincipalUrl: string = 'assets/img/Houses-bro.png';
@@ -113,7 +120,7 @@ export class DetallesComponent implements OnInit {
     this.httpService.EnviarCorreo(id).subscribe((data:any)=>{
       console.log(data.Contacto_Principal);
       
-      const numeroTelefono = data.Contacto_Principal;
+      const numeroTelefono = this.details.Contacto_Principal;
       const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
   
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;

@@ -99,7 +99,8 @@ numberFormControl = new FormControl('', [
     });
   
     this.firstFormGroup = this.formBuilder.group({
-     pId_Tipo_Inmueble: ['',[Validators.required]]
+     pId_Tipo_Inmueble: ['',[Validators.required]],
+     pId_Tipo_Publicacion: ['',[Validators.required]]
     })
     this.secondFormGroup = this.formBuilder.group({
       pId_estado: ['',[Validators.required]],
