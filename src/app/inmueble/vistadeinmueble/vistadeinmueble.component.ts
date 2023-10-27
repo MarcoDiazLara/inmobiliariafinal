@@ -71,21 +71,6 @@ export class VistadeinmuebleComponent implements OnInit {
     
   }
 
-
-  @HostListener('document:click', ['$event'])
-
-
- 
-
-
-
-
-
-
-
-
-
-
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
@@ -94,7 +79,6 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
 
-  // Función para el autocompletado de las caracteristicas en el boton de filtros avanzados
   ngOnInit(): void {
 
     this.route.queryParams.subscribe(params => {
