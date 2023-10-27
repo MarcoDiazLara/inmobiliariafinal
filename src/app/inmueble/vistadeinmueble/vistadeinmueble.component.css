@@ -11,7 +11,7 @@
 .buttonnavbar{
   width: auto;
   height: 40px;
-  margin-right: 50px;
+  margin-right: 30px;
   color: #264D5E;
   border-color: #264D5E;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -26,6 +26,12 @@
   width: 300px;
   height: 40px;
   border-radius: 5px;
+  border: 1px solid #264D5E;
+  transition: border-color 0.3s;
+}
+.inputBuscador:focus {
+  border-color: #007bff;
+  background-color: #f0f0f0;
 }
 
 
@@ -141,8 +147,7 @@
 /* Estilo para las listas */
 
 .dropdown-precio, .dropdown-Toferta,
-.dropdown-inmueble, .dropdown-Recamaras, 
-.dropdown-search
+.dropdown-inmueble, .dropdown-Recamaras
 {
   list-style: none;
   margin-right: 0%;
@@ -159,7 +164,7 @@
 /* Estilo para los elementos de la lista */
 .dropdown-precio li, .dropdown-Toferta li,
 .dropdown-inmueble li, .dropdown-Recamaras li,
-.dropdown-search li, .dropdown-Filtros li      
+.dropdown-Filtros li      
 {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #ccc;
@@ -168,7 +173,7 @@
 /* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
 .dropdown-precio li:hover, .dropdown-Toferta li:hover, 
 .dropdown-inmueble li:hover, .dropdown-Recamaras li:hover,
-.dropdown-search li:hover , .dropdown-Filtros li:hover  
+.dropdown-Filtros li:hover  
 {
   background-color: #f0f0f0;
 }
