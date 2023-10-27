@@ -15,15 +15,16 @@ import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 })
 
 export class VistadeinmuebleComponent implements OnInit {
+  ///////// NO MOVER LA FUNCION DE OCULTAR Y MOSTRAR LAS LISTAS DE LOS BOTONES DE LA BUSQUEDA ///////////////
 
   panelOpenState = false;
-  
+
   showFilters: boolean = false;
 
   toggleFilters() {
     this.showFilters = !this.showFilters;
   }
-  
+  ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
   
 
