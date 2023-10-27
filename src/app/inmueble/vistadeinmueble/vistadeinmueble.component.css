@@ -1,3 +1,26 @@
+.buttonnavbar{
+  width: auto;
+  height: 40px;
+  margin-right: 50px;
+  color: #264D5E;
+  border-color: #264D5E;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.buttonnavbar:hover{
+  background-color: #264D5E;
+  color: #ffffff;
+}
+
+/* estilo del input del buscador */
+.inputBuscador {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+
+
+
 .producto h1 {
   color: #162f39;
   font-size: 30px;
@@ -39,13 +62,8 @@
   margin-bottom: 10px;
 
 }
- .filtrosxr{
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
- }
 
-/* .resultsearch {
-  align-items: center;
-} */
+
 
 .navbar {
   position: fixed;
@@ -53,17 +71,12 @@
   display: block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  padding:0;
+  padding:25px;
   margin-top: 80px;
 
 }
 
-.buscador {
-  display: flex;
-  padding-top: 25px;
-  padding-left: 25px;
-  padding-bottom: 25px;
-}
+
 
 
 /* Estilo de los iconos de los botones */
@@ -110,10 +123,7 @@
   content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
 }
 
-.mat-button-toggle {
-  color: #003453;
 
-}
 
 .content-right {
   display: flex;
@@ -131,17 +141,7 @@
   background-color: #8ec3d9;
 }
 
-.ListResult {
-  padding-top: 10px;
-  margin-top: 0%;
 
-}
-
-/* estilo del input del buscador */
-.form-control {
-  width: 300px;
-  height: 40px;
-}
 
 
 /* Estilo para las listas */
@@ -150,7 +150,6 @@
 .dropdown-inmueble, .dropdown-Recamaras, 
 .dropdown-search
 {
-
   list-style: none;
   margin-right: 0%;
   margin-left: 0%;
@@ -270,7 +269,3 @@
 
 }
 
-.btn.btn-secondary {
-  padding: 10px 20px; 
-  font-size: 16px; 
-}
