@@ -196,7 +196,17 @@
   z-index: 1;
   position: absolute; 
   padding-left: 2px;
+  top: 105%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  right: 15%;
+ 
   
+}
+.filters-container {
+  position: relative;
+  display: inline-block;
+}
+ul.in {
+  display: block; 
 }
 .content-advancedfilters{
   max-height: 450px;
@@ -283,4 +293,5 @@
   padding: 0%;
 
 }
+
 
