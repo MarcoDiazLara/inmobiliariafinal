@@ -197,7 +197,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
       /*let mostrar = JSON.stringify(data);
       alert(mostrar);*/
-      console.log(this.inmueble);
+      //console.log(this.inmueble);
 
     data= this.datosInmueble ;
 
