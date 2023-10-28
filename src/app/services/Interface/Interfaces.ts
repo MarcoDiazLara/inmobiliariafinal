@@ -67,6 +67,13 @@ export interface reasignacionA{
     Nombre_Inmueble: "",
 }
 
+export interface asignacionA{
+    Id_Usuario: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: "",
+}
+
 
 export interface inmueblesBuscados{
     Asentamiento: "",
