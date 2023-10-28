@@ -67,6 +67,13 @@ export interface reasignacionA{
     Nombre_Inmueble: "",
 }
 
+export interface asignacionA{
+    Id_Usuario: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: "",
+}
+
 
 export interface inmueblesBuscados{
     Asentamiento: "",
@@ -124,6 +131,8 @@ export interface infoInmuebles{
         Contacto_Principal: "",
         Email: "",
         Nombre_Publicacion: "",
-        Descripcion_Publicacion: ""
+        Descripcion_Publicacion: "",
+        Id_Tipo_Publicacion: String,
+        Precio_Final:""
 };
 

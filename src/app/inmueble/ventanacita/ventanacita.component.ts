@@ -96,7 +96,7 @@ export class VentanacitaComponent implements OnInit {
     let p_Mensaje=this.secondFormGroup.value.p_Mensaje;
     let p_Fecha= this.terceroFormGroup.value.p_Fecha;
    
-    let p_Hora=this.terceroFormGroup.value.p_Hora;
+    let p_Hora:string = this.firstFormGroup.get('p_Hora')?.value;
     let dia = p_Fecha.getDate().toString();
  
     
@@ -107,18 +107,19 @@ export class VentanacitaComponent implements OnInit {
 
   let nom_aux =  anio  +"-"+ mes  +  "-"+ dia;
   // console.log(nom_aux);
-        console.log("Nombre"+p_Nombre+"Email"+p_Email+"Telefono"+p_Telefono+"Contacto"+p_Id_Medio_Contacto
-    +"Mensaje"+p_Mensaje+"Fecha"+p_Mensaje+"Fecha"+p_Fecha+"Hora"+p_Hora)
-  this.httpService.AgendaCita(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,
-    p_Id_Usuario).subscribe((data:any)=>{
-       if (data=1){
+    //     console.log("Nombre: "+p_Nombre+"Email: "+p_Email+"Telefono: "+p_Telefono+"Contacto: "+p_Id_Medio_Contacto
+    // +"Mensaje: "+p_Mensaje+"Fecha: "+nom_aux+"Hora: "+p_Hora+ "id_Uduario: "+ p_Id_Usuario + "id_Pub: "+p_Id_Publicacion);
+  this.httpService.AgendaCita(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,p_Id_Usuario).subscribe((resp:any)=>{
+    console.log("Respuesta del servicio:", resp);
+    if (resp==1){
         alert("Se Agendo Cita")
         
        } else{
        alert("No se agendo")
-
        }
 
+  }, (err) => {
+    console.log(err);
   })
 
   }

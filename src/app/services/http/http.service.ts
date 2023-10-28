@@ -55,13 +55,13 @@ export class HttpService {
   p_terreno: string, p_construccion: string,p_recamara: string, p_bano: string,p_cocina: string,p_num_pisos: string,p_antiguedad: string,
   p_acabados: string, p_alberca:string, p_jardin: string, p_gym:string, p_roof:string,p_estacionamiento: string,p_ubi_maps: string,
   p_pic_1: string, p_pic_2: string, p_pic_3:string,p_pic_4: string, p_pic_5: string, p_360:string, p_video: string, p_id_asentamiento: number,
-  p_id_tipo_inmueble:number,p_update: any,p_prec_min:any,p_prec_max: any,p_prec_final: any){
+  p_id_tipo_inmueble:number,p_update: any,p_prec_min:any,p_prec_max: any,p_prec_final: any, p_id_Tipo: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_nom_inmueble='+p_nom_inmueble+ '&p_desc_inmueble='+p_desc_inmueble+'&p_calle='+p_calle+'&p_num_ext='+p_num_ext+'&p_num_int='+p_num_int+'&p_terreno='+p_terreno+
     '&p_construccion='+p_construccion+'&p_recamara='+p_recamara+'&p_bano='+p_bano+'&p_cocina='+p_cocina+'&p_num_pisos='+p_num_pisos+'&p_antiguedad='+p_antiguedad+
     '&p_acabados='+p_acabados+'&p_alberca='+p_alberca+'&p_jardin='+p_jardin+'&p_gym='+p_gym+'&p_roof='+p_roof+'&p_estacionamiento='+p_estacionamiento+'&p_ubi_maps='+p_ubi_maps+
     '&p_pic_1='+p_pic_1+'&p_pic_2='+p_pic_2+'&p_pic_3='+p_pic_3+'&p_pic_4='+p_pic_4+'&p_pic_5='+p_pic_5+'&p_360='+p_360+'&p_video='+p_video+'&p_id_asentamiento='+p_id_asentamiento+'&p_id_tipo_inmueble='+p_id_tipo_inmueble
-    +'&p_update='+p_update +'&p_prec_min='+p_prec_min +'&p_prec_max='+p_prec_max +'&p_prec_final='+p_prec_final;
+    +'&p_update='+p_update +'&p_prec_min='+p_prec_min +'&p_prec_max='+p_prec_max +'&p_prec_final='+p_prec_final+'&p_id_Tipo='+p_id_Tipo;
     return this.httpclient.post(this.url + 'insertarInmueble.php', params, { headers });
   }
 
@@ -194,6 +194,23 @@ export class HttpService {
 
   }
 
+   cambiarC( p_correo:any,password:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_correo="+p_correo + "&password="+password;
+    return this.httpclient.post(this.url + 'cambiarC.php', params, { headers });
+
+   }
+   
+  mostrarReasignacion() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+  }
+
+  mostrarAsesor() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
+  }
+
   insertarSocio(Nombre_Razon_Social: any,Img_Logo: any,RFC: any,Email: any,Tel_Empresa: any,Calle: any,Num_Ext: any,Num_Int:any,Id_Asentamiento:any,Id_Tipo_Socio: any, v_Id_Usuario: any){
     //'$vNombre_Razon_Social','$vImg_Logo','$vRFC','$vEmail','$vTel_Empresa','$vCalle','$vNum_Ext','$vNum_Int','$vId_Asentamiento','$vId_Tipo_Socio'
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -202,23 +219,13 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
 
-   cambiarC( p_correo:any,password:any){
+  insertarasesor(Id_Publicacion: any,Id_Usuarios: any,){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_correo="+p_correo + "&password="+password;
-    return this.httpclient.post(this.url + 'cambiarC.php', params, { headers });
-
-
-
-
-   }
-   
-
-
-
-  mostrarReasignacion() {
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+    let params = 'Id_Publicacion='+Id_Publicacion+"&Id_Usuarios="+Id_Usuarios 
+    return this.httpclient.post(this.url + 'sp_web_insertar_asesor_asignacion.php', params, { headers });
   }
+
+
   mostrarContacto(){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'xrsxryw1y21';
@@ -226,26 +233,20 @@ export class HttpService {
   }
   
 
+
   mostrarDetalles(p_id_usu: any, p_id_inmu: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = "p_id_usu="+p_id_usu + "&p_id_inmu="+p_id_inmu;
     return this.httpclient.post(this.url + 'obtenerInfoInmu.php', params, { headers });
   }
 
-  AgendaCita(
-    p_Fecha:any,p_Hora:any,p_Email:any,p_Id_Medio_Contacto:any, p_Nombre:any,p_Telefono:any,
-    p_Mensaje:any,p_Id_Publicacion:any,p_Id_Usuario:any
-
-  ){
+  AgendaCita(p_Fecha:any,p_Hora:any,p_Email:any,p_Id_Medio_Contacto:any, p_Nombre:any,p_Telefono:any,
+    p_Mensaje:any,p_Id_Publicacion:any,p_Id_Usuario:any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = "p_Fecha="+p_Fecha + "&p_Hora="+p_Hora+ "&p_Email"+ p_Email+"&p_Id_Medio_Contacto="+
     p_Id_Medio_Contacto+"&p_Nombre="+p_Nombre+"&p_Telefono="+p_Telefono+"&p_Mensaje="+p_Mensaje+ 
     "&p_Id_Publicacion="+p_Id_Publicacion+"&p_Id_Usuario="+p_Id_Usuario;
     return this.httpclient.post(this.url + 'AgendraCita.php', params, { headers });
-
-
-
-
   }
 
 
