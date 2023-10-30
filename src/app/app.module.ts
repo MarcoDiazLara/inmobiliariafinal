@@ -55,12 +55,9 @@ import { PubliComponent } from './web/blog/publi/publi.component';
     VistadeinmuebleComponent,
     DetallesComponent,
     UnityComponent,
-<<<<<<< Updated upstream
-=======
     PubliComponent
        
 
->>>>>>> Stashed changes
 
   
   ],

@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-  constructor( 
-    private routing:Router
-    ) { }
+  constructor(  private routing:Router ) {  }
 
   ngOnInit(): void {
   }

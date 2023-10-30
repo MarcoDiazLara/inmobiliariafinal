@@ -10,11 +10,7 @@ import { PlanesComponent } from './planes/planes/planes.component';
 
 @NgModule({
   declarations: [
-<<<<<<< Updated upstream
-   
-=======
     PlanesComponent
->>>>>>> Stashed changes
   ],
   imports: [
     CommonModule,
