@@ -74,44 +74,27 @@
       </form>
     </mat-step>
     <mat-step [stepControl]="terceroFormGroup">
-    
-      <ng-template matStepLabel>Fecha y Hora </ng-template>
-<form  [formGroup]="terceroFormGroup">
+    <ng-template matStepLabel>Fecha y Hora </ng-template>
+    <form  [formGroup]="terceroFormGroup">
   <div class="d-flex justify-content-center align-items-center">
-
-    <mat-form-field style="margin-right: 10px;" >
+       <mat-form-field style="margin-right: 10px;" >
       <mat-label>Choose a date</mat-label>
       <input   formControlName="p_Fecha"  matInput [matDatepicker]="picker">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <!-- <mat-form-field  style="margin-right: 10px;">
-      <mat-label>Enter a date range</mat-label>
-      <mat-date-range-input [rangePicker]="picker">
-        <input  formControlName="p_Fecha" matStartDate placeholder="Start date">
-        <input  formControlName="p_FechaF" matEndDate placeholder="End date">
-      </mat-date-range-input>
-      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-date-range-picker #picker></mat-date-range-picker>
-    </mat-form-field> -->
-
-    <mat-form-field style="margin-right: 10px;" >
+     <mat-form-field style="margin-right: 10px;" >
       <mat-label >Hora de la Cita</mat-label>
       <input formControlName="p_Hora" matInput type="time" >
-     
-    </mat-form-field>
-
-         </div>
-</form>
- <div style="display: flex; justify-content: center; align-items: center;">
+       </mat-form-field>
+        </div>
+        </form>
+        <div style="display: flex; justify-content: center; align-items: center;">
         <button mat-button matStepperPrevious>Cancelar</button>
         <button (click)="open()"  mat-button  > Aceptar </button>
       </div>
-  
     </mat-step>
-  
   </mat-stepper>
   
   
