@@ -18,10 +18,16 @@ import { QuieresvenderComponent } from './quieresvender/quieresvender.component'
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 import { AgentesComponent } from '../agentes/agentes.component';
+<<<<<<< Updated upstream
 import { PlanbbComponent } from './planbb/planbb.component';
 import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { PlubibComponent } from './plubib/plubib.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
+=======
+import { Component } from '@fullcalendar/core/preact';
+import { PlanesComponent } from './blog/planes/planes/planes.component';
+
+>>>>>>> Stashed changes
 
 const routes: Routes = [
 
@@ -78,13 +84,17 @@ const routes: Routes = [
   
   {
     path: 'blog',
-    component: BlogComponent
+    loadChildren: ()=> import('./blog/blog.module').then(m =>m.BlogModule)
   },
+<<<<<<< Updated upstream
   {
     path:'planbb',
     component: PlanbbComponent
   },
   {
+=======
+ {
+>>>>>>> Stashed changes
     path: 'Remate',
     component: RematehipotecarioComponent
   },
@@ -131,7 +141,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+
+  ],
   exports: [RouterModule]
 })
 export class WebRoutingModule { }

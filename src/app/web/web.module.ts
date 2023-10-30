@@ -32,10 +32,14 @@ import { QuierescomprarComponent } from './quierescomprar/quierescomprar.compone
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
+<<<<<<< Updated upstream
 import { PlanbbComponent } from './planbb/planbb.component';
 import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
+=======
+import { BlogRoutingModule } from './blog/blog-routing.module';
+>>>>>>> Stashed changes
 
 
 
@@ -80,6 +84,7 @@ import { PlubibComponent } from './plubib/plubib.component';
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
+     BlogRoutingModule,
      GoogleMapsModule,
      QuierescomprarComponent
   ],
