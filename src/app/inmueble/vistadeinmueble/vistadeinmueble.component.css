@@ -169,7 +169,6 @@
   position: absolute;
 }
 
-/* Estilo para los elementos de la lista */
 .dropdown-precio li, .dropdown-Toferta li,
 .dropdown-inmueble li, .dropdown-Recamaras li      
 {
@@ -179,8 +178,8 @@
 
 /* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
 .dropdown-precio li:hover, .dropdown-Toferta li:hover, 
-.dropdown-inmueble li:hover, .dropdown-Recamaras li:hover,
-.dropdown-Filtros li:hover  
+.dropdown-inmueble li:hover, .dropdown-Recamaras li:hover
+ 
 {
   background-color: #f0f0f0;
 }
