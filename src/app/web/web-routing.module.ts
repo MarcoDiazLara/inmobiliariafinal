@@ -18,7 +18,10 @@ import { QuieresvenderComponent } from './quieresvender/quieresvender.component'
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 import { AgentesComponent } from '../agentes/agentes.component';
-
+import { PlanbbComponent } from './planbb/planbb.component';
+import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
+import { PlubibComponent } from './plubib/plubib.component';
+import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 
 const routes: Routes = [
 
@@ -78,6 +81,10 @@ const routes: Routes = [
     component: BlogComponent
   },
   {
+    path:'planbb',
+    component: PlanbbComponent
+  },
+  {
     path: 'Remate',
     component: RematehipotecarioComponent
   },
@@ -106,7 +113,20 @@ const routes: Routes = [
   {
     path: "asesor",
     component:AgentesComponent
+  },
+  {
+    path: "recorrido",
+    component:RecorvirtbComponent
+  },
+  {
+    path: "publib",
+    component:PlubibComponent
+  },
+  {
+    path: "desarrollob",
+    component:DesarrollobComponent
   }
+
 
 ];
 

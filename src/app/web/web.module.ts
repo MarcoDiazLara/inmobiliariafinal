@@ -32,6 +32,10 @@ import { QuierescomprarComponent } from './quierescomprar/quierescomprar.compone
 import { NovedadesactulidadComponent } from './novedadesactulidad/novedadesactulidad.component';
 import { QuieresvenderComponent } from './quieresvender/quieresvender.component';
 import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component';
+import { PlanbbComponent } from './planbb/planbb.component';
+import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
+import { DesarrollobComponent } from './desarrollob/desarrollob.component';
+import { PlubibComponent } from './plubib/plubib.component';
 
 
 
@@ -53,12 +57,17 @@ import { InmobiliariasComponent } from './inmobiliarias/inmobiliarias.component'
     ConstructoradesarrolladoraComponent,
     MapsComponent,
     BlogComponent,
+    PlanbbComponent,
     GuiarentarComponent,
     EvitafraudeComponent,
     NovedadesactulidadComponent,
     RematehipotecarioComponent,
     QuieresvenderComponent,
     InmobiliariasComponent,
+    RecorvirtbComponent,
+    DesarrollobComponent,
+    PlubibComponent,
+    
 
        
   ],
