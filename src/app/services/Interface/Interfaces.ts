@@ -133,6 +133,7 @@ export interface infoInmuebles{
         Nombre_Publicacion: "",
         Descripcion_Publicacion: "",
         Id_Tipo_Publicacion: String,
-        Precio_Final:""
+        Precio_Final:"",
+        Id_Publicacion:"",
 };
 

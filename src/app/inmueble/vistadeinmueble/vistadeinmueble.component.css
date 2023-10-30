@@ -29,6 +29,31 @@
   filter: brightness(100);
 }
 
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10px; /* Altura de la sombra en la parte superior */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  padding:30px;
+  margin-top: 80px;
+}
+
+.paginador{
+  margin: 20px;
+  width: auto;
+  height: 40px;
+  color: #264D5E;
+  border-color: #264D5E;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+.paginador:hover{
+  background-color: #264D5E;
+  color: #ffffff; 
+}
 
 
 /* estilo del input del buscador */
