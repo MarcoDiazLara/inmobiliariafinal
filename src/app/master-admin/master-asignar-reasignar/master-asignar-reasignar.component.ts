@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-master-asignar-reasignar',
   templateUrl: './master-asignar-reasignar.component.html',
@@ -32,12 +33,13 @@ export class MasterAsignarReasignarComponent implements OnInit {
     'Nombre_Inmueble',
     'Calle',
     'Nombre_Usuario',
+    'Asesor',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Asesor','botonOption'];
   
 
 

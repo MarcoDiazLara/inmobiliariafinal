@@ -40,6 +40,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { WebComponent } from './web/web.component';
 import { WebModule } from './web/web.module';
 
+
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';

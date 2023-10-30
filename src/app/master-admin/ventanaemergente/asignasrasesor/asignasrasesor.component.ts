@@ -8,6 +8,13 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { __param } from 'tslib';
 import { ActivatedRoute } from '@angular/router';
 
+
+// Alerta
+
+import Swal from 'sweetalert2';
+
+
+
 @Component({
   selector: 'app-asignasrasesor',
   templateUrl: './asignasrasesor.component.html',
@@ -54,19 +61,28 @@ export class AsignasrasesorComponent implements OnInit {
       let Nombres = this.formGeneral.value.Nombres;
       let Id_Publicacion = localStorage.getItem("id_publicacion");
       console.log(Id_Publicacion);
-    
-    
 
+     
       
       this.http.insertarasesor( Id_Publicacion,Nombres).subscribe((data: any)=> {
         if(data == 1){
-          alert("Se ha insertado el asesor");
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'El asesor fue asignado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    
+          
           this.closeDialog();
         }
         else{
           alert("Error al insertar");
         }
       });
+
+
 
    }
    
