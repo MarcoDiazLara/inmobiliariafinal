@@ -233,7 +233,7 @@
 </div>
 
   <div class="row">
-    <div class="col-md-6" *ngFor="let res of datosInmueble">
+    <div class="col-md-6" *ngFor="let res of datosInmueble.slice((paginaActual - 1) * elementosPorPagina, paginaActual * elementosPorPagina)">
       <div class="producto">
         <table class="table">
           <thead class="productstyle">
@@ -269,12 +269,14 @@
 </div>
 
 
-<pre>
-  {{inmueble | json}}
-</pre>
 
 
 
-<mat-paginator style="justify-content: center;" [length]="100" [pageSize]="8" [pageSizeOptions]="[4, 8, 16, 100]" aria-label="Select page">
-</mat-paginator>
+<div class="pagination">
+  <button class="paginador" (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+  <span>{{paginaActual}} / {{totalPaginas()}}</span>
+  <button class="paginador" (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas()">Siguiente</button>
+</div>
+
+
 <app-footer></app-footer>
