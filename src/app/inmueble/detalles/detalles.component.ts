@@ -33,7 +33,7 @@ Venta: Boolean = false;
 
 
 
-  id_inmueble!: String;
+  id_inmueble!: string;
   id_usuario!: String;
 
 
@@ -156,7 +156,9 @@ Venta: Boolean = false;
   constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   openDialog(): void {
+    localStorage.setItem("Publicacion",this.details.Id_Publicacion);
     const dialogRef = this.dialog.open(VentanacitaComponent, {
+
     
     });
 
