@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    private routing:Router
+    ) { }
 
   ngOnInit(): void {
   }
 
+  openPlanbb(){
+    this.routing.navigate(['./web/planbb'])
+  }
+
+  openPublib(){
+    this.routing.navigate(['./web/publib'])
+  }
+  
+  openDesarrollob(){
+    this.routing.navigate(['./web/desarrollob'])
+  }
+
+  openRecorridoVirtual(){
+    this.routing.navigate(['./web/recorrido'])
+  }
 }
