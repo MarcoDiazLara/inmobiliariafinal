@@ -29,6 +29,7 @@ import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatSliderModule} from '@angular/material/slider';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -65,6 +66,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
      MatIconModule,
      MatDividerModule,
      MatButtonModule,
+     MatSliderModule,
     // NgbModule,
      FormsModule,
      ReactiveFormsModule,
