@@ -30,10 +30,15 @@ export class VistadeinmuebleComponent implements OnInit {
 
   panelOpenState = false;
   showFilters: boolean = false;
+  showPrecio: boolean = false;
 
   toggleFilters() {
     this.showFilters = !this.showFilters;
   }
+  togglePrecio(){
+    this.showPrecio = !this.showPrecio;
+  }
+
   ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
   
