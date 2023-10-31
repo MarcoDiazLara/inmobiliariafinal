@@ -187,10 +187,10 @@ export class HttpService {
     let params = 'xrsxryw1y21';
     return this.httpclient.post(this.url + 'mostrarTipoSocio.php', params, { headers });
   }
-  EnviarCorreo(p_id: any){
+  EnviarCorreo(Correo_destino: any, mensaje: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_id='+p_id;
-    return this.httpclient.post(this.url + 'servicio-correos.php', params, { headers });
+    let params = 'Correo_destino='+Correo_destino+ "&mensaje="+mensaje;
+    return this.httpclient.post(this.url + 'EnviaCorreo.php', params, { headers });
 
   }
 
@@ -240,21 +240,26 @@ export class HttpService {
     return this.httpclient.post(this.url + 'obtenerInfoInmu.php', params, { headers });
   }
 
-  AgendaCita(
-    p_Fecha:any,p_Hora:any,p_Email:any,p_Id_Medio_Contacto:any, p_Nombre:any,p_Telefono:any,
-    p_Mensaje:any,p_Id_Publicacion:any,p_Id_Usuario:any
 
-  ){
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_Fecha="+p_Fecha + "&p_Hora="+p_Hora+ "&p_Email"+ p_Email+"&p_Id_Medio_Contacto="+
-    p_Id_Medio_Contacto+"&p_Nombre="+p_Nombre+"&p_Telefono="+p_Telefono+"&p_Mensaje="+p_Mensaje+ 
-    "&p_Id_Publicacion="+p_Id_Publicacion+"&p_Id_Usuario="+p_Id_Usuario;
-    return this.httpclient.post(this.url + 'AgendraCita.php', params, { headers });
-
-
+  AgendarC(p_Fecha:any,p_Hora:any,p_Email:any,p_Id_Medio_Contacto:any,p_Nombre:any,
+      p_Telefono:any,p_Mensaje:any,p_Id_Publicacion:any,p_Id_Usuario:any){
+        let headers: any = new HttpHeaders({ 'Content-Type':'application/x-www-form-urlencoded'});
+        let params="p_Fecha="+p_Fecha+"&p_Hora="+p_Hora+"&p_Email="+p_Email+"&p_Id_Medio_Contacto="+p_Id_Medio_Contacto
+        +"&p_Nombre="+p_Nombre+"&p_Telefono="+p_Telefono+"&p_Mensaje="+p_Mensaje+"&p_Id_Publicacion="+p_Id_Publicacion
+        +"&p_Id_Usuario="+p_Id_Usuario;
+        return this.httpclient.post(this.url+'AgendraCita.php', params,{ headers });
 
 
   }
+
+  // AgendaCita(p_Fecha:any,p_Hora:any,p_Email:any,p_Id_Medio_Contacto:any, p_Nombre:any,p_Telefono:any,
+  //   p_Mensaje:any,p_Id_Publicacion:any,p_Id_Usuario:any){
+  //   let headers: any = new HttpHeaders({ 'Content-Type':'application/x-www-form-urlencoded'});
+  //   let params="p_Fecha="+p_Fecha+"&p_Hora="+p_Hora+"&p_Email"+p_Email+"&p_Id_Medio_Contacto="
+  //   +p_Id_Medio_Contacto+"&p_Nombre="+p_Nombre+"&p_Telefono="+p_Telefono+"&p_Mensaje="+p_Mensaje+
+  //   "&p_Id_Publicacion="+p_Id_Publicacion+"&p_Id_Usuario="+p_Id_Usuario;
+  //   return this.httpclient.post(this.url+'AgendraCita.php', params,{ headers });
+  // }
 
 
 }

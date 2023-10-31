@@ -24,10 +24,36 @@
 
 .buttonnavbar:hover .navarrow,
 .buttonnavbar:hover .filter,
-.buttonnavbar:hover .backarrow {
+.buttonnavbar:hover .backarrow,
+.buttonnavbar:hover .lupa {
   filter: brightness(100);
 }
 
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10px; /* Altura de la sombra en la parte superior */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  padding:30px;
+  margin-top: 80px;
+}
+
+.paginador{
+  margin: 20px;
+  width: auto;
+  height: 40px;
+  color: #264D5E;
+  border-color: #264D5E;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+.paginador:hover{
+  background-color: #264D5E;
+  color: #ffffff; 
+}
 
 
 /* estilo del input del buscador */
@@ -100,7 +126,7 @@
 .lupa {
   background: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/heroicons/map-pin.svg?color=%23264d5e');
-  
+  transition: color 0.3s;
 }
 
 
@@ -148,15 +174,27 @@
   background-color: #8ec3d9;
 }
 
-
+.dropdown-Precio {
+  max-height: 550px;
+  width: 550px;
+  border-radius: 5px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  z-index: 1;
+  position: absolute; 
+  padding-left: 2px;
+  top: 100%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  left: 0;
+}
 
 
 /* Estilo para las listas */
 
-.dropdown-precio, .dropdown-Toferta,
+.dropdown-Toferta,
 .dropdown-inmueble, .dropdown-Recamaras
 {
-  list-style: none;
+
   margin-right: 0%;
   margin-left: 0%;
   padding: 0;
@@ -165,11 +203,10 @@
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  position: absolute;
+
 }
 
-/* Estilo para los elementos de la lista */
-.dropdown-precio li, .dropdown-Toferta li,
+.dropdown-Precio li, .dropdown-Toferta li,
 .dropdown-inmueble li, .dropdown-Recamaras li      
 {
   padding: 0.5rem 1rem;
@@ -177,9 +214,9 @@
 }
 
 /* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-precio li:hover, .dropdown-Toferta li:hover, 
-.dropdown-inmueble li:hover, .dropdown-Recamaras li:hover,
-.dropdown-Filtros li:hover  
+.dropdown-Precio li:hover, .dropdown-Toferta li:hover, 
+.dropdown-inmueble li:hover, .dropdown-Recamaras li:hover
+ 
 {
   background-color: #f0f0f0;
 }
@@ -195,6 +232,16 @@
   z-index: 1;
   position: absolute; 
   padding-left: 2px;
+  top: 105%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  right: 15%;
+}
+
+.filters-container {
+  position: relative;
+  display: inline-block;
+}
+ul.in {
+  display: block; 
 }
 .content-advancedfilters{
   max-height: 450px;
@@ -203,14 +250,11 @@
   padding-right: 25px;
   padding-left: 25px;
 }
-
-
 .limpiarFiltros{
   padding: 8px;
   background-color: none;
   border-radius: 5px;
  }
-
 
 .ListResult {
   margin-top: 250px; /* Igualar la altura del componente de navegación */
@@ -283,4 +327,5 @@
   padding: 0%;
 
 }
+
 

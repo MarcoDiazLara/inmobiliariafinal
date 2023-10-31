@@ -29,6 +29,7 @@ import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatSliderModule} from '@angular/material/slider';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -45,6 +46,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
+import { PubliComponent } from './web/blog/publi/publi.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,9 @@ import { UnityComponent } from './inmueble/unity/unity.component';
     VistadeinmuebleComponent,
     DetallesComponent,
     UnityComponent,
+    PubliComponent
+       
+
 
   
   ],
@@ -66,6 +71,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
      MatIconModule,
      MatDividerModule,
      MatButtonModule,
+     MatSliderModule,
     // NgbModule,
      FormsModule,
      ReactiveFormsModule,

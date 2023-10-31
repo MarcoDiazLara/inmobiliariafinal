@@ -5,18 +5,41 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
 import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
 @Component({
   selector: 'app-vistadeinmueble',
   templateUrl: './vistadeinmueble.component.html',
   styleUrls: ['./vistadeinmueble.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1 })),
+      state('out', style({ opacity: 0 })),
+      transition('in => out', animate('200ms ease-out')),
+      transition('out => in', animate('200ms ease-in')),
+    ]),
+  ],
 
 })
 
 export class VistadeinmuebleComponent implements OnInit {
+  ///////// NO MOVER LA FUNCION DE OCULTAR Y MOSTRAR LAS LISTAS DE LOS BOTONES DE LA BUSQUEDA ///////////////
+   paginaActual = 1; // Página actual
+  elementosPorPagina = 8; // Número de elementos por página
+
   panelOpenState = false;
-  
+  showFilters: boolean = false;
+  showPrecio: boolean = false;
+
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+  }
+  togglePrecio(){
+    this.showPrecio = !this.showPrecio;
+  }
+
+  ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
   
 
@@ -71,13 +94,16 @@ export class VistadeinmuebleComponent implements OnInit {
     
   }
 
+  
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
-    this.router.navigate(['/inmueble/detalles'], { queryParams: {  'id_inmueble': id_inmu, 'id_usuario': id_usu} });
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion } });
 
   }
 
+
+  
 
   ngOnInit(): void {
 
@@ -178,7 +204,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
       /*let mostrar = JSON.stringify(data);
       alert(mostrar);*/
-      console.log(this.inmueble);
+      //console.log(this.inmueble);
 
     data= this.datosInmueble ;
 
@@ -202,4 +228,36 @@ export class VistadeinmuebleComponent implements OnInit {
       this.tippropiedad = tprop;
 
 }
+
+
+/// este es el codigo del paginador de los resultados///
+paginaAnterior() {
+  if (this.paginaActual > 1) {
+    this.paginaActual--;
+    this.scrollToTop(); 
+  }
+}
+
+paginaSiguiente() {
+  if (this.paginaActual < this.totalPaginas()) {
+    this.paginaActual++;
+    this.scrollToTop(); 
+  }
+}
+
+totalPaginas(): number {
+  return Math.ceil(this.datosInmueble.length / this.elementosPorPagina);
+}
+scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
+/// aqui termina el codigo del paginador de los resultados///
+
+
+
+
+
+
+
 }
