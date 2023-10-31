@@ -36,7 +36,14 @@
       </ul>
   </div>
 
-  <button class="buttonnavbar" mat-stroked-button>Recamaras<img class="navarrow"></button>
+  <div class="Precio-container">
+    <button (click)="toggleRecamaras()" class="buttonnavbar" mat-stroked-button>Recamaras<img class="navarrow"></button>
+      <ul *ngIf="showRecamaras" class="dropdown-Precio">
+        <ul class="content-Precio">
+          <h4>recamaras funciona</h4>
+        </ul>
+      </ul>
+  </div>
 
 
 
