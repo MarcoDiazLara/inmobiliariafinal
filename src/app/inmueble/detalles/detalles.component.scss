@@ -66,6 +66,22 @@ td{
 .backarrow{
     background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
+    transition: color 0.3s ease;
+}
+.buttonback{
+  width: auto;
+  height: 40px;
+  color: #264D5E;
+  border-color: #264D5E;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+.buttonback:hover{
+  background-color: #264D5E;
+  color: #ffffff; 
+}
+.buttonback:hover .backarrow {
+  filter: brightness(100);
 }
 
 .plane{
@@ -185,11 +201,6 @@ td{
   overflow: hidden; 
   border: none; 
 }
-
-button{
-  background-color: #8ec3d9;
-}
-
 
 .datos{
     margin-top: 30px;

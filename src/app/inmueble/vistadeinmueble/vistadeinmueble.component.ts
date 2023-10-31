@@ -25,13 +25,20 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 export class VistadeinmuebleComponent implements OnInit {
   ///////// NO MOVER LA FUNCION DE OCULTAR Y MOSTRAR LAS LISTAS DE LOS BOTONES DE LA BUSQUEDA ///////////////
+   paginaActual = 1; // Página actual
+  elementosPorPagina = 8; // Número de elementos por página
 
   panelOpenState = false;
   showFilters: boolean = false;
+  showPrecio: boolean = false;
 
   toggleFilters() {
     this.showFilters = !this.showFilters;
   }
+  togglePrecio(){
+    this.showPrecio = !this.showPrecio;
+  }
+
   ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
   
@@ -221,4 +228,36 @@ export class VistadeinmuebleComponent implements OnInit {
       this.tippropiedad = tprop;
 
 }
+
+
+/// este es el codigo del paginador de los resultados///
+paginaAnterior() {
+  if (this.paginaActual > 1) {
+    this.paginaActual--;
+    this.scrollToTop(); 
+  }
+}
+
+paginaSiguiente() {
+  if (this.paginaActual < this.totalPaginas()) {
+    this.paginaActual++;
+    this.scrollToTop(); 
+  }
+}
+
+totalPaginas(): number {
+  return Math.ceil(this.datosInmueble.length / this.elementosPorPagina);
+}
+scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
+/// aqui termina el codigo del paginador de los resultados///
+
+
+
+
+
+
+
 }
