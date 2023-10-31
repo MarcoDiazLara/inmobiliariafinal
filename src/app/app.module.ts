@@ -56,12 +56,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
     VistadeinmuebleComponent,
     DetallesComponent,
     UnityComponent,
-<<<<<<< Updated upstream
-
-       
-=======
     
->>>>>>> Stashed changes
 
 
   

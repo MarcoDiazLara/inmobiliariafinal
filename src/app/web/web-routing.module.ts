@@ -24,10 +24,7 @@ import { PlubibComponent } from './plubib/plubib.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { Component } from '@fullcalendar/core/preact';
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 
 const routes: Routes = [
 
@@ -137,13 +134,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-<<<<<<< Updated upstream
   imports: [ RouterModule.forChild(routes)
-
   ],
-=======
-  imports: [ ],
->>>>>>> Stashed changes
   exports: [RouterModule]
 })
 export class WebRoutingModule { }
