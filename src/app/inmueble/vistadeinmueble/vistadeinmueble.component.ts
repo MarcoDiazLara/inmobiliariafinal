@@ -146,9 +146,6 @@ export class VistadeinmuebleComponent implements OnInit {
 
   ngOnInit(): void {
 
-   
-
-
     this.route.queryParams.subscribe(params => {
       console.log('Query Params: ', params);
 
