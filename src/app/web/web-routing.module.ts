@@ -23,9 +23,13 @@ import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { PlubibComponent } from './plubib/plubib.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { Component } from '@fullcalendar/core/preact';
+<<<<<<< HEAD
 import { PlanesComponent } from './blog/planes/planes/planes.component';
 import { TerminosComponent } from './terminos/terminos.component';
+=======
+>>>>>>> c3e8fadedd4e214b5a37580257e7dab358a31d8c
 
+     
 
 const routes: Routes = [
 
@@ -141,7 +145,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forChild(routes)
-
   ],
   exports: [RouterModule]
 })

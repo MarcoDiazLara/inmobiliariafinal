@@ -36,8 +36,12 @@ import { PlanbbComponent } from './planbb/planbb.component';
 import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
+<<<<<<< HEAD
 import { BlogRoutingModule } from './blog/blog-routing.module';
 import { TerminosComponent } from './terminos/terminos.component';
+=======
+
+>>>>>>> c3e8fadedd4e214b5a37580257e7dab358a31d8c
 
 
 
@@ -83,7 +87,6 @@ import { TerminosComponent } from './terminos/terminos.component';
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
-     BlogRoutingModule,
      GoogleMapsModule,
      QuierescomprarComponent
   ],
