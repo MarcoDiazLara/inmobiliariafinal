@@ -25,19 +25,33 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 export class VistadeinmuebleComponent implements OnInit {
   ///////// NO MOVER LA FUNCION DE OCULTAR Y MOSTRAR LAS LISTAS DE LOS BOTONES DE LA BUSQUEDA ///////////////
-   paginaActual = 1; // Página actual
+  paginaActual = 1; // Página actual
   elementosPorPagina = 8; // Número de elementos por página
 
   panelOpenState = false;
-  showFilters: boolean = false;
+  
   showPrecio: boolean = false;
+  showToferta: boolean = false;
+  showInmueble: boolean = false;
+  showRecamaras: boolean = false;
+  showFilters: boolean = false;
 
-  toggleFilters() {
-    this.showFilters = !this.showFilters;
-  }
   togglePrecio(){
     this.showPrecio = !this.showPrecio;
   }
+  toggleToferta(){
+    this.showToferta = !this.showToferta;
+  }
+  toggleInmueble(){
+    this.showInmueble = !this.showInmueble;
+  }
+  toggleRecamaras(){
+    this.showRecamaras = !this.showRecamaras;
+  }
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+  }
+  
 
   ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
