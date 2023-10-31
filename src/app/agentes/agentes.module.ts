@@ -29,6 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component';
 import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agentepassword.component';
 import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 /end/
 
 
@@ -40,6 +41,7 @@ import { NotificacionesagentesComponent } from './notificacionesagentes/notifica
     PerfilagentesComponent,
     AgentepasswordComponent,
     NotificacionesagentesComponent,
+    CalendarioComponent,
 
     
   ],

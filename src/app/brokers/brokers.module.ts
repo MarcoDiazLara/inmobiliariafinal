@@ -28,6 +28,7 @@ import { ProspectosComponent } from './prospectos/prospectos.component';
 import { ReasignarasesoresComponent } from './reasignarasesores/reasignarasesores.component';
 import { AgendarcitaComponent } from './agendarcita/agendarcita.component';
 import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 /end/
 
 @NgModule({
@@ -37,6 +38,7 @@ import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.compone
     NotificacionbrokerComponent,
     ProspectosComponent,
     ReasignarasesoresComponent,
+    CalendarioComponent,
     
   
   ],

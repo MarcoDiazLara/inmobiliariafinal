@@ -37,6 +37,8 @@ import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
 
+import { TerminosComponent } from './terminos/terminos.component';
+
 
 
 
@@ -68,6 +70,7 @@ import { PlubibComponent } from './plubib/plubib.component';
     RecorvirtbComponent,
     DesarrollobComponent,
     PlubibComponent,
+    TerminosComponent,
     
 
        
