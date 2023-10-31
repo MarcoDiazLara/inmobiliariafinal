@@ -38,18 +38,43 @@ export class VistadeinmuebleComponent implements OnInit {
 
   togglePrecio(){
     this.showPrecio = !this.showPrecio;
+    // Cierra los otros elementos
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
   }
   toggleToferta(){
     this.showToferta = !this.showToferta;
+     // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
   }
   toggleInmueble(){
     this.showInmueble = !this.showInmueble;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
   }
   toggleRecamaras(){
     this.showRecamaras = !this.showRecamaras;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showFilters = false;
   }
   toggleFilters() {
     this.showFilters = !this.showFilters;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
   }
   
 
