@@ -213,16 +213,12 @@ margin-left: auto;
 
 
 
-// @media(min-width:700px){
-//   .ordenabutton{
-//     width: 81%;
-//     height: 71%;
-//     align-content: flex-start;
-//   }
+ @media(min-width:400px){
+  .ordenabutton{
+    width: 81%;
+    height: 71%;
   
-//   .ordenabutton1{
-//     width: 50%;
-//     height: 88%;
-//     align-content: flex-start;
-//   }
-// }
+  }
+  
+
+}
