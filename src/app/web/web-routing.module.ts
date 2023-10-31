@@ -24,7 +24,7 @@ import { PlubibComponent } from './plubib/plubib.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { Component } from '@fullcalendar/core/preact';
 
-
+     
 
 const routes: Routes = [
 
