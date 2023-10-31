@@ -37,6 +37,7 @@ import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
 import { BlogRoutingModule } from './blog/blog-routing.module';
+import { TerminosComponent } from './terminos/terminos.component';
 
 
 
@@ -68,6 +69,7 @@ import { BlogRoutingModule } from './blog/blog-routing.module';
     RecorvirtbComponent,
     DesarrollobComponent,
     PlubibComponent,
+    TerminosComponent,
     
 
        

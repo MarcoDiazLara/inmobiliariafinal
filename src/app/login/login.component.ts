@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpService } from '../services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -46,10 +47,18 @@ export class LoginComponent implements OnInit {
 login(){
   this.httpService.iniciarSesion(this.formLogin.value.nombreU,this.formLogin.value.password).subscribe((data: any)=> {
     if(data== 0){
-      alert("usuario no existe");
+      // alert("usuario no existe");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se encuentra ninguna cuenta asociada a este nombre de usuario.',
+       
+      })
     }else{
       if(data==2){
-        alert("contraseña incorrecta");
+
+
+        // alert("contraseña incorrecta");
       }else{
        
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);

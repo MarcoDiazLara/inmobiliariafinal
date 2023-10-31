@@ -13,6 +13,7 @@ import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpService } from 'src/app/services/http/http.service';
 import { medioC } from 'src/app/services/Interface/Interfaces';
+import Swal from 'sweetalert2';
 
 
 
@@ -56,11 +57,30 @@ export class VentanacitaComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<VentanacitaComponent> ,
-    private formBuilder: FormBuilder,private httpService:HttpService
+    private formBuilder: FormBuilder,private httpService:HttpService,
+    private dialog:MatDialog,
   ) { }
   onNoClick(): void {
     this.dialogRef.close();
   }
+   
+  CerraDialogo(){
+   this.dialog.closeAll();
+
+   }
+
+
+
+        
+
+
+
+
+
+
+
+
+
 
   ngOnInit(): void {
     this.firstFormGroup=this.formBuilder.group({
@@ -118,7 +138,15 @@ export class VentanacitaComponent implements OnInit {
   this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,p_Id_Usuario).subscribe((resp:any)=>{
     console.log("Respuesta del servicio:", resp);
     if (resp==1){
-        alert("Se Agendo Cita")
+        // alert("Se Agendo Cita")
+
+        Swal.fire(
+          'Exitosamente!',
+          'Se ha registrado una cita en el sistema',
+          'success'
+          
+        )
+
         
        } else{
        alert("No se agendo")
