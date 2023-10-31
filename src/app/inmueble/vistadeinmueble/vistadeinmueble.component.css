@@ -174,15 +174,27 @@
   background-color: #8ec3d9;
 }
 
-
+.dropdown-Precio {
+  max-height: 550px;
+  width: 550px;
+  border-radius: 5px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  z-index: 1;
+  position: absolute; 
+  padding-left: 2px;
+  top: 100%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  left: 0;
+}
 
 
 /* Estilo para las listas */
 
-.dropdown-precio, .dropdown-Toferta,
+.dropdown-Toferta,
 .dropdown-inmueble, .dropdown-Recamaras
 {
-  list-style: none;
+
   margin-right: 0%;
   margin-left: 0%;
   padding: 0;
@@ -191,10 +203,10 @@
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  position: absolute;
+
 }
 
-.dropdown-precio li, .dropdown-Toferta li,
+.dropdown-Precio li, .dropdown-Toferta li,
 .dropdown-inmueble li, .dropdown-Recamaras li      
 {
   padding: 0.5rem 1rem;
@@ -202,7 +214,7 @@
 }
 
 /* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-precio li:hover, .dropdown-Toferta li:hover, 
+.dropdown-Precio li:hover, .dropdown-Toferta li:hover, 
 .dropdown-inmueble li:hover, .dropdown-Recamaras li:hover
  
 {
@@ -222,9 +234,8 @@
   padding-left: 2px;
   top: 105%; /* Alinear el borde superior de la lista con el borde inferior del botón */
   right: 15%;
- 
-  
 }
+
 .filters-container {
   position: relative;
   display: inline-block;
@@ -244,7 +255,6 @@ ul.in {
   background-color: none;
   border-radius: 5px;
  }
-
 
 .ListResult {
   margin-top: 250px; /* Igualar la altura del componente de navegación */

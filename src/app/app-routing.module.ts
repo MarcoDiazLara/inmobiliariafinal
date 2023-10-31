@@ -47,6 +47,7 @@ const routes: Routes = [
     path: 'web',
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
   },
+
   {
     path:'login',
     component: LoginComponent
@@ -59,6 +60,7 @@ const routes: Routes = [
     path: 'inmueble',
     loadChildren: ()=> import('./inmueble/inmueble.module').then(m =>m.InmuebleModule)
   },
+  
   {
     path:'menu2', 
     component: MenugloguedoComponent

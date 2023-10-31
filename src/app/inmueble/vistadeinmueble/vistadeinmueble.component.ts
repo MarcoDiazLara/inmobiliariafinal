@@ -30,10 +30,15 @@ export class VistadeinmuebleComponent implements OnInit {
 
   panelOpenState = false;
   showFilters: boolean = false;
+  showPrecio: boolean = false;
 
   toggleFilters() {
     this.showFilters = !this.showFilters;
   }
+  togglePrecio(){
+    this.showPrecio = !this.showPrecio;
+  }
+
   ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
   
@@ -93,7 +98,7 @@ export class VistadeinmuebleComponent implements OnInit {
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
-    this.router.navigate(['/inmueble/detalles'], { queryParams: {  'id_inmueble': id_inmu, 'id_usuario': id_usu} });
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion } });
 
   }
 
