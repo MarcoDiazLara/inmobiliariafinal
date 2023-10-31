@@ -23,7 +23,6 @@ import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { PlubibComponent } from './plubib/plubib.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { Component } from '@fullcalendar/core/preact';
-import { PlanesComponent } from './blog/planes/planes/planes.component';
 
 
 const routes: Routes = [

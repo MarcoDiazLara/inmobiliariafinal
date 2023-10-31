@@ -46,7 +46,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
-import { PubliComponent } from './web/blog/publi/publi.component';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { PubliComponent } from './web/blog/publi/publi.component';
     VistadeinmuebleComponent,
     DetallesComponent,
     UnityComponent,
-    PubliComponent
+
        
 
 
