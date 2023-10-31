@@ -1,15 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3" style="background-color: blue;">
+    <div class="col-md-3 " style="border: 1px solid; border-color: #8F8B8A; "  >
       <h4>Inmuebles Asignados</h4>
     </div>
-    <div class="col-md-3" style="background-color: aquamarine;">
+    <div class="col-md-3" style="border: 1px solid; border-color: #8F8B8A;  ">
       <label></label>
     </div>
-    <div class="col-md-3" style="background-color: blue;">
+    <div class="col-md-3" style="border: 1px solid; border-color: #8F8B8A;">
       <h4>Inmuebles Pendientes por Asignar</h4>
     </div>
-    <div class="col-md-3" style="background-color: aquamarine;">
+    <div class="col-md-3" style="border: 1px solid; border-color: #8F8B8A;">
       <label></label>
     </div>
 
@@ -89,10 +89,25 @@
     </tr>
 
   </table>
-  <div class="paginador">
-    <mat-paginator [length]="100" [pageSize]="10" 
-    [pageSizeOptions]="[5, 10, 25, 100]" 
-    aria-label="Select page">
-    </mat-paginator>
-  </div>
+  
+  
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4">
+        <mat-paginator [length]="100" [pageSize]="10" 
+        [pageSizeOptions]="[5, 10, 25, 100]" 
+        aria-label="">
+        </mat-paginator>
+      </div>
+      
+      <div class="col-md-4">
+      </div>
+
+    </div>
+  </div> 
+
 </div>
