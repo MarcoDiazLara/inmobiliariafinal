@@ -146,7 +146,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.addClickOutsideListener();//esta es una funcionalidad de los botones, no borrar xd
+   
 
 
     this.route.queryParams.subscribe(params => {
@@ -295,34 +295,5 @@ scrollToTop() {
 }
 
 /// aqui termina el codigo del paginador de los resultados///
-
-
-addClickOutsideListener() {
-  document.addEventListener('click', this.onDocumentClick.bind(this));
-}
-
-onDocumentClick(event: MouseEvent) {
-  if (!this.el.nativeElement.contains(event.target)) {
-    // Si el clic ocurre fuera del elemento actual, cierra los botones
-    this.closeButtons();
-  }
-}
-
-closeButtons() {
-  // Establece todas tus variables "show" en false
-  this.showPrecio = false;
-  this.showToferta = false;
-  this.showInmueble = false;
-  this.showRecamaras = false;
-  this.showFilters = false;
-}
-ngOnDestroy() {
-  document.removeEventListener('click', this.onDocumentClick.bind(this));
-}
-
-
-
-
-
 
 }
