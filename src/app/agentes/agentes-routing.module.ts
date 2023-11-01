@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgentesComponent } from './agentes.component';
 import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component';
 import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 const routes: Routes = [
   {
     path:'',
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path:'Notificaciones',
         component: NotificacionesagentesComponent,
+      },
+      {
+        path:'Calendario',
+        component: CalendarioComponent,
       },
     ],
   }
