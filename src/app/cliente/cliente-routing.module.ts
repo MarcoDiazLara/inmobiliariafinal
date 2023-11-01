@@ -8,6 +8,7 @@ import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesor
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 import { WebComponent } from '../web/web.component';
 import { QuierescomprarComponent } from '../web/quierescomprar/quierescomprar.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,14 @@ const routes: Routes = [
         path:'reasignacion',
         component: CambioasesorclienteComponent,
       },
+      {
+        path:'calendario',
+        component:CalendarioComponent,
+
+
+
+      },
+
     ],
   },
   {

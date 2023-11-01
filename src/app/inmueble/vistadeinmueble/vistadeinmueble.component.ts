@@ -25,19 +25,58 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 export class VistadeinmuebleComponent implements OnInit {
   ///////// NO MOVER LA FUNCION DE OCULTAR Y MOSTRAR LAS LISTAS DE LOS BOTONES DE LA BUSQUEDA ///////////////
-   paginaActual = 1; // Página actual
+  paginaActual = 1; // Página actual
   elementosPorPagina = 8; // Número de elementos por página
 
   panelOpenState = false;
-  showFilters: boolean = false;
+  
   showPrecio: boolean = false;
+  showToferta: boolean = false;
+  showInmueble: boolean = false;
+  showRecamaras: boolean = false;
+  showFilters: boolean = false;
 
-  toggleFilters() {
-    this.showFilters = !this.showFilters;
-  }
   togglePrecio(){
     this.showPrecio = !this.showPrecio;
+    // Cierra los otros elementos
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
   }
+  toggleToferta(){
+    this.showToferta = !this.showToferta;
+     // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
+  }
+  toggleInmueble(){
+    this.showInmueble = !this.showInmueble;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
+  }
+  toggleRecamaras(){
+    this.showRecamaras = !this.showRecamaras;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showFilters = false;
+  }
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+  }
+  
 
   ///////////////////////////////////////////// AQUI TERMINA XD //////////////////////////////////////
   control = new FormControl('');
@@ -253,11 +292,5 @@ scrollToTop() {
 }
 
 /// aqui termina el codigo del paginador de los resultados///
-
-
-
-
-
-
 
 }
