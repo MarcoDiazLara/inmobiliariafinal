@@ -115,7 +115,7 @@ export class MenuComponent implements OnInit {
   Panel(){
     let entrada = localStorage.getItem("Id_Tipo_Usuario");
     if(entrada == "6" || entrada == "1"){
-      this.router.navigate(["/superUsuario"]);
+      this.router.navigate(["/superUsuario/perfil"]);
     }else if (entrada == "2"){
       this.router.navigate(["/usuario/perfil"]);
     }else if (entrada == "3"){
