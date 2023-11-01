@@ -32,7 +32,7 @@ public Venta: Boolean = false;
 
 
 
-
+  vista_360 !: string;
   id_inmueble!: string;
   id_usuario!: String;
   tpropiedad!: Number;
@@ -60,7 +60,9 @@ public Venta: Boolean = false;
     this.imagen4 = this.details.Picture4;
     this.imagen5 = this.details.Picture5;
     this.tipo = this.details.Id_Tipo_Publicacion;
-    console.log(this.tipo);
+    this.vista_360 = this.details[360];
+  
+   
 
      if(this.tipo == "1" || this.tipo == "3"){
         this.Venta = !this.Venta;

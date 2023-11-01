@@ -262,4 +262,10 @@ export class HttpService {
   // }
 
 
+  generaCodigo(p_codigo: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_codigo='+p_codigo;
+    return this.httpclient.post(this.url + 'mostrarcontacto.php', params, { headers });  
+  }
+
 }

@@ -121,7 +121,7 @@ export interface infoInmuebles{
         Picture3: "",
         Picture4: "",
         Picture5: "",
-        p360: "",
+        360: "",
         Video: "",
         Id_Asentamiento: "",
         Id_Tipo_Inmueble: "",
