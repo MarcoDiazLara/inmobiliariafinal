@@ -7,21 +7,46 @@
   <input  class="inputBuscador" placeholder="Ingresa tu ciudad o Localidad">
 
   <button class="buttonnavbar" mat-stroked-button><img class="lupa"></button>
-  <button class="buttonnavbar" mat-stroked-button>Precio<img class="navarrow"></button>
-    <div class="filters-container">
-      <ul *ngIf="showPrecio" class="dropdown-Precio">
-        <ul class="content-advancedfilters">
-          <h4>precio funciona!!!</h4>
-
-        </ul>
-
+  
+  <div class="Precio-container">
+    <button (click)="togglePrecio()" class="buttonnavbar" mat-stroked-button>Precio<img class="navarrow"></button>
+    <ul *ngIf="showPrecio" class="dropdown-Precio">
+      <ul class="content-Precio">
+        <h4>precio funciona</h4>
       </ul>
 
-    </div>
-  
-  <button class="buttonnavbar" mat-stroked-button>Tipo de Oferta<img class="navarrow"></button>
-  <button class="buttonnavbar" mat-stroked-button>Inmueble<img class="navarrow"></button>
-  <button class="buttonnavbar" mat-stroked-button>Recamaras<img class="navarrow"></button>
+    </ul>
+  </div>
+
+  <div class="Precio-container">
+    <button (click)="toggleToferta()" class="buttonnavbar" mat-stroked-button>Tipo de Oferta<img class="navarrow"></button>
+    <ul *ngIf="showToferta" class="dropdown-Precio">
+      <ul class="content-Precio">
+        <h4>tipo de oferta funciona</h4>
+      </ul>
+    </ul>
+  </div>
+
+  <div class="Precio-container">
+    <button (click)="toggleInmueble()" class="buttonnavbar" mat-stroked-button>Inmueble<img class="navarrow"></button>
+      <ul *ngIf="showInmueble" class="dropdown-Precio">
+        <ul class="content-Precio">
+          <h4>Inmueble funciona</h4>
+        </ul>
+      </ul>
+  </div>
+
+  <div class="Precio-container">
+    <button (click)="toggleRecamaras()" class="buttonnavbar" mat-stroked-button>Recamaras<img class="navarrow"></button>
+      <ul *ngIf="showRecamaras" class="dropdown-Precio">
+        <ul class="content-Precio">
+          <h4>recamaras funciona</h4>
+        </ul>
+      </ul>
+  </div>
+
+
+
     <div class="filters-container">
       <button (click)="toggleFilters()" class="buttonnavbar" mat-stroked-button>Filtros avanzados <img class="filter"></button> 
         <ul *ngIf="showFilters" [@fadeInOut]="showFilters ? 'in' : 'out'" class="dropdown-Filtros">

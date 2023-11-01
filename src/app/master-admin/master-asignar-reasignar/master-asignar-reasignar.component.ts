@@ -127,8 +127,9 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   // mandar a llamar ventana emergente
 
-  openasesor(id_inmo:any ) {
+  openasesor(id_inmo:any,asesor:any ) {
     localStorage.setItem("id_publicacion",id_inmo);
+    localStorage.setItem("Asesor",asesor);
     
    
 
