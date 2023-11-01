@@ -31,6 +31,8 @@ import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminp
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
 import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
+import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
+import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
 /end/
 
 @NgModule({
@@ -40,6 +42,8 @@ import { NotificacionescompanyAdminComponent } from './notificacionescompany-adm
     PerfilcompanyAdminComponent,
     AltaBrokersComponent,
     NotificacionescompanyAdminComponent,
+    CompanyAsignarReasignarComponent,
+    CompAsignarAsesorComponent,
   
   ],
   imports: [
