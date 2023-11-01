@@ -228,7 +228,11 @@ xd(){
     let p_pic_3 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[2].name;
     let p_pic_4 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[3].name;
     let p_pic_5 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[4].name;
-    let p_360 = "imagen 360";
+   
+      let aux = this.generateRandomCombination();
+      
+    
+    let p_360 = aux;
     let p_video = "video 1";
     let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
     let p_id_tipo_inmueble = this.firstFormGroup.value.pId_Tipo_Inmueble;
@@ -308,6 +312,21 @@ xd(){
 
 
 
+
+   generateRandomCombination() {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let combination = '';
+  
+    for (let i = 0; i < 5; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      combination += characters.charAt(randomIndex);
+    }
+  
+    return combination;
+    // console.log(combination);
+  }
+  
+  
 
 
  

@@ -36,7 +36,7 @@ public Venta: Boolean = false;
 
 
 
-
+  vista_360 !: string;
   id_inmueble!: string;
   id_usuario!: String;
   tpropiedad!: Number;
@@ -65,7 +65,9 @@ public Venta: Boolean = false;
     this.imagen4 = this.details.Picture4;
     this.imagen5 = this.details.Picture5;
     this.tipo = this.details.Id_Tipo_Publicacion;
-    console.log(this.tipo);
+    this.vista_360 = this.details[360];
+  
+   
 
      if(this.tipo == "1" || this.tipo == "3"){
         this.Venta = !this.Venta;
@@ -127,19 +129,34 @@ public Venta: Boolean = false;
   comentarios: string = 'Hola, buenas tardes me interesa esta propiedad y quisiera ponerme en contacto con usted para poder agendar una fecha y hora para visitar dicha propiedad.';
 
   nom_inmu: string = "";
+
+
   enviarCorreo(){
+    if (!this.nombre || !this.telefono || !this.email) {
+      Swal.fire('Por favor complete todos los campos obligatorios antes de enviar el formulario.');
+  } else{
     
     let correo = this.details.Email;
     let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
     this.httpService.EnviarCorreo(correo,mensaje).subscribe((data: any) =>{
-      alert("Se envio el correo");
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Enviado',
+        showConfirmButton: false,
+        timer: 1500
+      })
     })
+   }
 
   }
 
   enviarWhatsApp() {
    
-      
+    if (!this.nombre || !this.telefono || !this.email) {
+      Swal.fire('Por favor complete todos los campos obligatorios antes de enviar el formulario.');
+  } else{
       
       const numeroTelefono = this.details.Contacto_Principal;
       const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
@@ -148,6 +165,7 @@ public Venta: Boolean = false;
   
        // Abre la URL de WhatsApp en una nueva ventana
       window.open(urlWhatsApp, '_blank');
+  }
 
   }
 
