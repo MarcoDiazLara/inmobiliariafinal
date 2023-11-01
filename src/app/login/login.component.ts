@@ -57,8 +57,14 @@ login(){
     }else{
       if(data==2){
 
-
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Contraseña incorrecta',
+         
+        })
         // alert("contraseña incorrecta");
+
       }else{
        
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
