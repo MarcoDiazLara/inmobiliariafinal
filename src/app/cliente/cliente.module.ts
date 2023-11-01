@@ -31,6 +31,7 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
 /end/
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 
 
@@ -44,6 +45,7 @@ import { MenuComponent } from '../web/menu/menu.component';
     // SeguimientoclienteComponent,
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
+    CalendarioComponent,
     // PerfilclienteComponent,
 
   ],

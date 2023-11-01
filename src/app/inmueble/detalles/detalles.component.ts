@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
 import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 
 
@@ -24,6 +25,9 @@ export interface DialogData {
 })
 export class DetallesComponent implements OnInit {
 
+  isLoggedIn: boolean= false;
+
+
 
 
 public Venta: Boolean = false;
@@ -42,13 +46,14 @@ public Venta: Boolean = false;
 
 
   ngOnInit(): void {
-    
+     this.isLoggedIn=this.httpService.getGlobalVariable();
 
     this.route.queryParams.subscribe(params => { 
       this.id_inmueble = params['id_inmueble'];
       this.id_usuario = params['id_usuario'];
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
+    
     });
 
     this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
@@ -157,23 +162,39 @@ public Venta: Boolean = false;
   constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   openDialog(): void {
-    localStorage.setItem("Publicacion",this.details.Id_Publicacion);
-    const dialogRef = this.dialog.open(VentanacitaComponent, {
+     if(this.isLoggedIn){
+      localStorage.setItem("Publicacion",this.details.Id_Publicacion);
+      const dialogRef = this.dialog.open(VentanacitaComponent, {
 
-    
-    });
-
+      });
+      
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     
     });
+    }else[Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Inicia sesión',
+  
+    })]
+   
+
   }
   
+
+
+
+
+
+
+
+
   back(){
     this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion}});
   }
 
-
+   
   
 
 }

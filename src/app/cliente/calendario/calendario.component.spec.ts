@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PubliComponent } from './publi.component';
+import { CalendarioComponent } from './calendario.component';
 
-describe('PubliComponent', () => {
-  let component: PubliComponent;
-  let fixture: ComponentFixture<PubliComponent>;
+describe('CalendarioComponent', () => {
+  let component: CalendarioComponent;
+  let fixture: ComponentFixture<CalendarioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PubliComponent ]
+      declarations: [ CalendarioComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PubliComponent);
+    fixture = TestBed.createComponent(CalendarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

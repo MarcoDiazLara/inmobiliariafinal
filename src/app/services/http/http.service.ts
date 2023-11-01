@@ -211,6 +211,14 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   }
 
+
+  updateReasignaAsesor(p_Id_Publicacion: any, p_Id_Usuario: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_Id_Publicacion="+p_Id_Publicacion +"&p_Id_Usuario="+p_Id_Usuario;
+    return this.httpclient.post(this.url + 'sp_web_actualiza_asesor_asignado.php', params, { headers });
+  }
+
+
   insertarSocio(Nombre_Razon_Social: any,Img_Logo: any,RFC: any,Email: any,Tel_Empresa: any,Calle: any,Num_Ext: any,Num_Int:any,Id_Asentamiento:any,Id_Tipo_Socio: any, v_Id_Usuario: any){
     //'$vNombre_Razon_Social','$vImg_Logo','$vRFC','$vEmail','$vTel_Empresa','$vCalle','$vNum_Ext','$vNum_Int','$vId_Asentamiento','$vId_Tipo_Socio'
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });

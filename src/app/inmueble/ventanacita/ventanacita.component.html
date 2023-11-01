@@ -91,7 +91,7 @@
         </div>
         </form>
         <div style="display: flex; justify-content: center; align-items: center;">
-        <button mat-button matStepperPrevious>Cancelar</button>
+        <button mat-button (click)="CerraDialogo()">Cancelar</button>
         <button (click)="open()"  mat-button  > Aceptar </button>
       </div>
     </mat-step>

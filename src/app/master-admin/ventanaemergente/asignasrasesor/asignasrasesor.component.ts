@@ -24,6 +24,7 @@ export class AsignasrasesorComponent implements OnInit {
 
 
   asesores:asignacionA[]=[];
+  Nombres: any;
 
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
@@ -58,13 +59,13 @@ export class AsignasrasesorComponent implements OnInit {
 
   guardarasesor() {
     if (this.formGeneral){
-      let Nombres = this.formGeneral.value.Nombres;
+      this.Nombres = this.formGeneral.value.Nombres;
       let Id_Publicacion = localStorage.getItem("id_publicacion");
       console.log(Id_Publicacion);
 
      
       
-      this.http.insertarasesor( Id_Publicacion,Nombres).subscribe((data: any)=> {
+      this.http.insertarasesor( Id_Publicacion,this.Nombres).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',
@@ -85,15 +86,61 @@ export class AsignasrasesorComponent implements OnInit {
 
 
    }
-   
 
 
 }
 
+updateReasignaAsesor(){
+  // this.http.updateReasignaAsesor( ).subscribe((resp:any)=> {
+  //   if(resp !== 201){
+  //     this.asesores = resp[0].Id_Usuario;
+  //     this.asesores = resp;
+  //   }
+  //  },(err)=>{
+  //   console.log(err);
+  //  })
+
+
+}
+
+
+prueba(){
+  let Id_Publicacion = localStorage.getItem("id_publicacion");
+  let asesor = localStorage.getItem("Asesor");
+  this.Nombres = this.formGeneral.value.Nombres;
+ 
+
+  if (asesor!=null){
+
+    this.http.updateReasignaAsesor(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
+      if(resp == 1){
+
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'El asesor fue reasignado',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.closeDialog();
+  
+      }else{
+        alert("Error al actualizar");
+      }
+  });
+    
+ 
+}else{
+
+  this.guardarasesor()
+  
+}
+}
+
+
   closeDialog() {
     this.dialog.closeAll();
   }
-
 
 
 }

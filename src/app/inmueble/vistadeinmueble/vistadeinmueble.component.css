@@ -155,9 +155,6 @@
   content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
   transition: color 0.3s;
 }
-
-
-
 .content-right {
   display: flex;
   justify-content: right;
@@ -174,9 +171,12 @@
   background-color: #8ec3d9;
 }
 
-.dropdown-Precio {
-  max-height: 550px;
-  width: 550px;
+
+
+
+.dropdown-Precio  {
+  height: auto;
+  width: auto;
   border-radius: 5px;
   background-color: #fff; 
   border: 1px solid #ccc; 
@@ -184,45 +184,11 @@
   z-index: 1;
   position: absolute; 
   padding-left: 2px;
-  top: 100%; /* Alinear el borde superior de la lista con el borde inferior del botón */
-  left: 0;
+  top: 105%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  left: 0%;
 }
 
-
-/* Estilo para las listas */
-
-.dropdown-Toferta,
-.dropdown-inmueble, .dropdown-Recamaras
-{
-
-  margin-right: 0%;
-  margin-left: 0%;
-  padding: 0;
-  border-radius: 5px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-
-}
-
-.dropdown-Precio li, .dropdown-Toferta li,
-.dropdown-inmueble li, .dropdown-Recamaras li      
-{
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
-}
-
-/* Estilo para los elementos de la lista al pasar el mouse sobre ellos */
-.dropdown-Precio li:hover, .dropdown-Toferta li:hover, 
-.dropdown-inmueble li:hover, .dropdown-Recamaras li:hover
- 
-{
-  background-color: #f0f0f0;
-}
-
-
-.dropdown-Filtros {
+.dropdown-Filtros  {
   max-height: 550px;
   width: 550px;
   border-radius: 5px;
@@ -240,6 +206,10 @@
   position: relative;
   display: inline-block;
 }
+.Precio-container {
+  position: relative;
+  display: inline-block;
+}
 ul.in {
   display: block; 
 }
@@ -250,18 +220,41 @@ ul.in {
   padding-right: 25px;
   padding-left: 25px;
 }
+.content-Precio{
+  overflow-y: auto; 
+  list-style: none;
+  padding-right: 25px;
+  padding-left: 25px;
+ 
+}
+
 .limpiarFiltros{
   padding: 8px;
   background-color: none;
   border-radius: 5px;
  }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .ListResult {
-  margin-top: 250px; /* Igualar la altura del componente de navegación */
+  margin-top: 250px; 
 }
 
 
-/* Estilo personalizado para los resultados de búsqueda */
 
 .container1{
   padding-top: 230px;

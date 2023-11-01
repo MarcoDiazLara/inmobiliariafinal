@@ -36,7 +36,9 @@ import { PlanbbComponent } from './planbb/planbb.component';
 import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
-import { BlogRoutingModule } from './blog/blog-routing.module';
+
+import { TerminosComponent } from './terminos/terminos.component';
+
 
 
 
@@ -68,6 +70,7 @@ import { BlogRoutingModule } from './blog/blog-routing.module';
     RecorvirtbComponent,
     DesarrollobComponent,
     PlubibComponent,
+    TerminosComponent,
     
 
        
@@ -81,7 +84,6 @@ import { BlogRoutingModule } from './blog/blog-routing.module';
     FormsModule,
      ReactiveFormsModule,
      WebRoutingModule,
-     BlogRoutingModule,
      GoogleMapsModule,
      QuierescomprarComponent
   ],

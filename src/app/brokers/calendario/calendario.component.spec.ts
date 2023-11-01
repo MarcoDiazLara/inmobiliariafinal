@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecovirtComponent } from './recovirt.component';
+import { CalendarioComponent } from './calendario.component';
 
-describe('RecovirtComponent', () => {
-  let component: RecovirtComponent;
-  let fixture: ComponentFixture<RecovirtComponent>;
+describe('CalendarioComponent', () => {
+  let component: CalendarioComponent;
+  let fixture: ComponentFixture<CalendarioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecovirtComponent ]
+      declarations: [ CalendarioComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RecovirtComponent);
+    fixture = TestBed.createComponent(CalendarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
