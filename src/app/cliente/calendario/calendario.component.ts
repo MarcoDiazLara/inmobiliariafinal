@@ -1,21 +1,9 @@
-import { Component, OnInit , AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import { ElementRef, ViewChild } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
 import { mostrarcita } from 'src/app/services/Interface/Interfaces';
-
-
-const MIS_EVENTOS = [
-  {
-    title: 'Evento 1',
-    date: '2023-10-11'
-  },
-  {
-    title:'Evento 2',
-    date:'2023-10-15'
-  }
-];
+import timeGridPlugin from '@fullcalendar/timegrid';
 
 
 @Component({
@@ -23,41 +11,52 @@ const MIS_EVENTOS = [
   templateUrl: './calendario.component.html',
   styleUrls: ['./calendario.component.scss']
 })
-export class CalendarioComponent implements  AfterViewInit { 
+export class CalendarioComponent implements AfterViewInit {
 
-  constructor (private httpService: HttpService){}
+  constructor(private httpService: HttpService) {}
 
-  Mcita:mostrarcita[]= [];
-  
-
-  mostrarFormulario = false;
-  nuevaCita = { fecha: '', titulo: '' };
-  citas: any[] = MIS_EVENTOS;
+  Mcita: mostrarcita[] = [];
 
   ngAfterViewInit(): void {
-    this.httpService.mostrarCita(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
-      this.Mcita=data;
-      // console.log(data);
-    })
-    const calendarEl = document.getElementById('calendar');
-     if (!calendarEl) {
-      console.error("Elemento '#calendar' no encontrado.");
-     return;
-    }
-   const calendar = new Calendar(calendarEl, {
-    plugins: [dayGridPlugin],
-    initialView: 'dayGridMonth',
-    events: this.citas // Cargar citas existentes
-  });
-  calendar.render();
-  }
-  
+    this.httpService.mostrarCita(localStorage.getItem("Id_Usuario")).subscribe((data: any) => {
+      this.Mcita = data;
+      console.log("citas=" + this.Mcita);
 
- 
-  
-  
-   
- }
+      const events = this.Mcita.map(event => {
+        return {
+          title: event.Nombre,
+          start: event.Fecha
+        };
+      });
+
+      console.log("eventos", events);
+
+      const calendarEl = document.getElementById('calendar');
+      if (!calendarEl) {
+        console.error("Elemento '#calendar' no encontrado.");
+        return;
+      }
+
+      const calendar = new Calendar(calendarEl, {
+      // Cargar citas existentes
+        plugins: [dayGridPlugin],
+       
+        initialView: 'dayGridMonth',
+        views: {
+          customMonth: {
+            type: 'dayGrid',
+            duration: { months: 12 }, // Puedes ajustar el rango según tus necesidades
+          }
+        },
+        
+        events: events // Cargar citas existentes
+      });
+       
+      calendar.render();
+    });
+  }
+}
+
  
   
 
