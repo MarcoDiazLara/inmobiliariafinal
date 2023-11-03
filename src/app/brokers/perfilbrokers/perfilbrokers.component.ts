@@ -14,13 +14,12 @@ import { HttpService } from 'src/app/services/http/http.service';
 @Component({
   selector: 'app-perfilbrokers',
   templateUrl: './perfilbrokers.component.html',
-  styleUrls: ['./perfilbrokers.component.css'],
-  standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule,ReactiveFormsModule, MatDialogModule ]
+  styleUrls: ['./perfilbrokers.component.css']
 })
 export class PerfilbrokersComponent implements OnInit {
   
   datos!: infoUsuario;
+  imagen !: string;
   
   formPerfil!: FormGroup;
   constructor(public dialog: MatDialog,
@@ -41,6 +40,7 @@ export class PerfilbrokersComponent implements OnInit {
  
 
   ngOnInit(): void {
+
     this.obtenerInfo();
     this.formPerfil = this.formBuilder.group({
       nombre:['',[Validators.required]],
@@ -61,7 +61,13 @@ export class PerfilbrokersComponent implements OnInit {
       alert("Error al leer usuario");
     }else{
       this.datos = data;
+      
     }})
+
+    this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data: any) =>{
+      this.imagen = data.Img_Profile;
+      
+    })
   }
 
   actualizar(){
