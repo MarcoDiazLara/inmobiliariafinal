@@ -27,6 +27,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
 import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminpassword/company-adminpassword.component';
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
@@ -69,7 +70,8 @@ import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-ases
     MatNativeDateModule,
     MatDatepickerModule,
     NgIf,
-    NgFor,  
+    NgFor, 
+    MatMenuModule, 
   ]
 })
 export class CompanyAdminModule { }
