@@ -93,7 +93,8 @@ id_asentamiento: ""
  export interface medioC{
     id_Medio_Contacto:"",	
     Medio_Contacto:"",
- }
+ };
+
 
 
 export interface infoInmuebles{
@@ -136,4 +137,23 @@ export interface infoInmuebles{
         Precio_Final:"",
         Id_Publicacion:"",
 };
+
+export interface mostrarcita{
+         Nombre_Publicacion: "",
+        Calle: "",
+        Num_Ext: "",
+        Num_Int: "",
+        Fecha: "",
+        Hora: "",
+        Email: "",
+        Nombre: "",
+        Telefono: "",
+        Mensaje: "",
+        Id_Usuario: "",
+        Id_Medio_Contacto: "",
+        Id_Publicacion: ""
+
+};
+
+
 
