@@ -256,10 +256,14 @@ obtenerLocalizacion(){
 
     
 
-  let dia = date.getDate().toString();
+  let dia = date.getDate();
+  let dia1 = date.getDate().toString();;
+  if(dia < 10 ){
+    dia1 = "0" + dia1;
+  }
   let mes = (date.getMonth()+1).toString();
   let anio = date.getFullYear().toString();
-  let nom_aux =  anio + mes + dia;
+  let nom_aux =  anio + mes + dia1;
 
 
     let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[0].name;
