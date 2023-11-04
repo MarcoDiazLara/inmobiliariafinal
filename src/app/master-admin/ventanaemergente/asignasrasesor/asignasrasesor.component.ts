@@ -106,8 +106,8 @@ updateReasignaAsesor(){
 
 prueba(){
   let Id_Publicacion = localStorage.getItem("id_publicacion");
-  let asesor = localStorage.getItem("Asesor");
-  let valor = localStorage.getItem("mi_valor")
+  //let asesor = localStorage.getItem("Asesor");
+  let valor = localStorage.getItem("mi_valor");
   this.Nombres = this.formGeneral.value.Nombres;
  
 
