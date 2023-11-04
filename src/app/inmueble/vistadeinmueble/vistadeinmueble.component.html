@@ -3,10 +3,16 @@
 
 
 <div class="navbar">
-
-  <input  class="inputBuscador" placeholder="Ingresa tu ciudad o Localidad">
-
-  <button class="buttonnavbar" mat-stroked-button><img class="lupa"></button>
+  <div class="Precio-container">
+    <input  class="inputBuscador" (click)="toggleBuscar()" placeholder="Ingresa tu ciudad o Localidad">
+    <button class="buttonnavbar" mat-stroked-button><img class="lupa"></button>
+      <ul *ngIf="showBuscar" class="dropdown-Buscar">
+        <ul class="content-Precio">
+          <h4>Sin coincidencias....</h4>
+        </ul>
+      </ul>
+  </div>
+ 
   
   <div class="Precio-container">
     <button (click)="togglePrecio()" class="buttonnavbar" mat-stroked-button>Precio<img class="navarrow"></button>

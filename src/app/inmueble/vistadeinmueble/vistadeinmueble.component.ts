@@ -30,15 +30,27 @@ export class VistadeinmuebleComponent implements OnInit {
 
   panelOpenState = false;
   
+  showBuscar: boolean = false;
   showPrecio: boolean = false;
   showToferta: boolean = false;
   showInmueble: boolean = false;
   showRecamaras: boolean = false;
   showFilters: boolean = false;
 
+  toggleBuscar(){
+    this.showBuscar = !this.showBuscar;
+    // Cierra los otros elementos
+    this.showPrecio = false;
+    this.showToferta = false;
+    this.showInmueble = false;
+    this.showRecamaras = false;
+    this.showFilters = false;
+  }
+
   togglePrecio(){
     this.showPrecio = !this.showPrecio;
     // Cierra los otros elementos
+    this.showBuscar = false;
     this.showToferta = false;
     this.showInmueble = false;
     this.showRecamaras = false;
@@ -47,6 +59,7 @@ export class VistadeinmuebleComponent implements OnInit {
   toggleToferta(){
     this.showToferta = !this.showToferta;
      // Cierra los otros elementos
+    this.showBuscar = false;
     this.showPrecio = false;
     this.showInmueble = false;
     this.showRecamaras = false;
@@ -55,6 +68,7 @@ export class VistadeinmuebleComponent implements OnInit {
   toggleInmueble(){
     this.showInmueble = !this.showInmueble;
     // Cierra los otros elementos
+    this.showBuscar = false;
     this.showPrecio = false;
     this.showToferta = false;
     this.showRecamaras = false;
@@ -63,6 +77,7 @@ export class VistadeinmuebleComponent implements OnInit {
   toggleRecamaras(){
     this.showRecamaras = !this.showRecamaras;
     // Cierra los otros elementos
+    this.showBuscar = false;
     this.showPrecio = false;
     this.showToferta = false;
     this.showInmueble = false;
@@ -71,6 +86,7 @@ export class VistadeinmuebleComponent implements OnInit {
   toggleFilters() {
     this.showFilters = !this.showFilters;
     // Cierra los otros elementos
+    this.showBuscar = false;
     this.showPrecio = false;
     this.showToferta = false;
     this.showInmueble = false;
