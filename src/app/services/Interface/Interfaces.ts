@@ -139,7 +139,7 @@ export interface infoInmuebles{
 };
 
 export interface mostrarcita{
-         Nombre_Publicacion: "",
+        Nombre_Publicacion: "",
         Calle: "",
         Num_Ext: "",
         Num_Int: "",
