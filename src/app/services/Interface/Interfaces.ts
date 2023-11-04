@@ -66,6 +66,12 @@ export interface reasignacionA{
     Id_Estatus_Publicacion: "",
     Nombre_Inmueble: "",
 }
+export interface AsigarReAsignar{
+    
+    Nombre_Publicacion: "",
+    No_asignados: "",
+    Asignados: "",
+}
 
 export interface asignacionA{
     Id_Usuario: "",

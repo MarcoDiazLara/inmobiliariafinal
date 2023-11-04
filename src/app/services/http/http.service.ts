@@ -211,6 +211,11 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   }
 
+  AsesoresAginados_NoAsigandos() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php', { headers });
+  }
+
 
   updateReasignaAsesor(p_Id_Publicacion: any, p_Id_Usuario: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
