@@ -175,6 +175,37 @@
 
 
 .dropdown-Precio  {
+  height: 200px;
+  width: 450px;
+  border-radius: 5px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  z-index: 1;
+  position: absolute; 
+  top: 105%; 
+  left: 0%;
+  padding: 0%;
+}
+.MMPrecio {
+  margin: 0%;
+  width: 100%;
+}
+
+.MMPrecio td {
+  border: none; 
+  text-align: center; 
+}
+
+
+.MMPrecio tr:first-child {
+  color: #264D5E;
+  font-weight: bold; 
+}
+
+
+
+.dropdown-Recamaras  {
   height: auto;
   width: auto;
   border-radius: 5px;
@@ -223,9 +254,7 @@ ul.in {
 .content-Precio{
   overflow-y: auto; 
   list-style: none;
-  padding-right: 25px;
-  padding-left: 25px;
- 
+
 }
 
 .limpiarFiltros{
