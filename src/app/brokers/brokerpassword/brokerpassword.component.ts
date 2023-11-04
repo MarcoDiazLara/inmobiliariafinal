@@ -12,9 +12,8 @@ import { HttpService } from 'src/app/services/http/http.service';
 @Component({
   selector: 'app-brokerpassword',
   templateUrl: './brokerpassword.component.html',
-  styleUrls: ['./brokerpassword.component.css'],
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,ReactiveFormsModule],
+  styleUrls: ['./brokerpassword.component.css']
+  
 })
 export class BrokerpasswordComponent implements OnInit {
   formGeneral!:FormGroup;
