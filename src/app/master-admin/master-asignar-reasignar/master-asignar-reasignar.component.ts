@@ -83,7 +83,7 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
     this.http.mostrarReasignacion().subscribe((data:any)=>{
     this.datosinmuebles=data;
-    console.log(this.datosinmuebles);
+    //console.log(this.datosinmuebles);
     });
     this.dataSource = new MatTableDataSource(this.datosinmuebles);
   }
@@ -128,8 +128,23 @@ export class MasterAsignarReasignarComponent implements OnInit {
   // mandar a llamar ventana emergente
 
   openasesor(id_inmo:any,asesor:any ) {
+
+  const valorCelda = asesor;
+
+// Verifica si el valor de la celda está vacío o no
+if (valorCelda !== null) {
+  // Almacena el valor en el localStorage
+  localStorage.setItem("mi_valor", "1");
+ 
+} else {
+  localStorage.setItem("mi_valor", "2");
+  
+}
+
     localStorage.setItem("id_publicacion",id_inmo);
-    localStorage.setItem("Asesor",asesor);
+    localStorage.setItem("Asesor", asesor );
+
+
     
    
 
