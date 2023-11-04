@@ -5,6 +5,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
 import { HttpService } from 'src/app/services/http/http.service';
 import { reasignacionA } from 'src/app/services/Interface/Interfaces';
+import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
@@ -46,6 +47,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   // poner el nombre de una variable
   datosinmuebles: reasignacionA[]=[];
+
+  datosAsesores: AsigarReAsignar[]=[];
  
  
 
@@ -69,7 +72,13 @@ export class MasterAsignarReasignarComponent implements OnInit {
         this.dataSource.data =usuarios;
       }
     });
+
        
+    this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
+      this.datosAsesores=data;
+    
+    });
+
 
     // this.formGeneral = this.formBuilder.group({
     //   prueba: ['', [Validators.required]]
@@ -83,9 +92,12 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
     this.http.mostrarReasignacion().subscribe((data:any)=>{
     this.datosinmuebles=data;
-    console.log(this.datosinmuebles);
+    //console.log(this.datosinmuebles);
     });
     this.dataSource = new MatTableDataSource(this.datosinmuebles);
+
+
+    
   }
 
 
@@ -128,8 +140,23 @@ export class MasterAsignarReasignarComponent implements OnInit {
   // mandar a llamar ventana emergente
 
   openasesor(id_inmo:any,asesor:any ) {
+
+  const valorCelda = asesor;
+
+// Verifica si el valor de la celda está vacío o no
+if (valorCelda !== null) {
+  // Almacena el valor en el localStorage
+  localStorage.setItem("mi_valor", "1");
+ 
+} else {
+  localStorage.setItem("mi_valor", "2");
+  
+}
+
     localStorage.setItem("id_publicacion",id_inmo);
-    localStorage.setItem("Asesor",asesor);
+    localStorage.setItem("Asesor", asesor );
+
+
     
    
 
