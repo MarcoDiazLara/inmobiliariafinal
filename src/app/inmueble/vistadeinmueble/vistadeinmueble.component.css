@@ -175,8 +175,8 @@
 
 
 .dropdown-Precio  {
-  height: 200px;
-  width: 450px;
+  height: auto;
+  width: auto;
   border-radius: 5px;
   background-color: #fff; 
   border: 1px solid #ccc; 
@@ -186,10 +186,6 @@
   top: 105%; 
   left: 0%;
   padding: 0%;
-}
-.MMPrecio {
-  margin: 0%;
-  width: 100%;
 }
 
 .MMPrecio td {
@@ -202,6 +198,31 @@
   color: #264D5E;
   font-weight: bold; 
 }
+ul.content-Precio{
+  padding: 15px;
+}
+
+
+.Toferta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+}
+.custom-checkbox .mat-checkbox-background,
+.custom-checkbox .mat-checkbox-frame {
+  background-color: #264D5E; /* Cambia el color de fondo al amarillo (#FFD700) */
+  border-color: #264D5E; /* Cambia el color del borde al amarillo (#FFD700) */
+}
+
+.custom-checkbox .mat-checkbox-ripple {
+  background-color: rgba(71, 145, 182, 0.2); /* Cambia el color de la animación de clic al amarillo (#FFD700) */
+}
+
+
+
+
+
+
 
 
 

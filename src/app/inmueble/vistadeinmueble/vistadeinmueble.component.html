@@ -37,7 +37,7 @@
             </td>
           </tr>
         </table>
-      
+        <button class="buttonnavbar" mat-stroked-button>Buscar</button>
       </ul>
 
     </ul>
@@ -47,7 +47,13 @@
     <button (click)="toggleToferta()" class="buttonnavbar" mat-stroked-button>Tipo de Oferta<img class="navarrow"></button>
     <ul *ngIf="showToferta" class="dropdown-Precio">
       <ul class="content-Precio">
-        <h4>tipo de oferta funciona</h4>
+        <section class="Toferta-section" style="margin-bottom: 20px;">
+          <mat-checkbox color="primary">Renta</mat-checkbox>
+          <mat-checkbox color="primary">Comprar</mat-checkbox>
+          <mat-checkbox color="primary">Remates</mat-checkbox>
+          <mat-checkbox color="primary">En Construcción</mat-checkbox>
+        </section>
+        <button class="buttonnavbar" mat-stroked-button>Buscar</button>
       </ul>
     </ul>
   </div>
@@ -100,20 +106,20 @@
                 <div style="display: flex; flex-direction: row; margin-bottom: 25px">
                   <div style="flex: 1;">
                     <section class="example-section" style="display: flex; flex-direction: column;">
-                      <mat-checkbox class="opcfiltros2">Guarderia</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Escuela</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Gimnasio</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Centro comercial</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Farmacia</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Guarderia</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Escuela</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Gimnasio</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Centro comercial</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Farmacia</mat-checkbox>
                     </section>
                   </div>
                   <div style="flex: 1;">
                     <section class="example-section" style="display: flex; flex-direction: column;">
-                      <mat-checkbox class="opcfiltros2">Hospital publico</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Hospital privado</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Parques</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Mercado</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Unidad Deportiva</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Hospital publico</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Hospital privado</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Parques</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Mercado</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Unidad Deportiva</mat-checkbox>
                     </section>
                   </div>
                 </div>
