@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule, MatExpansionPanel} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -95,6 +96,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
      MatButtonToggleModule,
      MatExpansionModule,
      MatCardModule,
+     MatChipsModule,
      WebModule
 
   ],
