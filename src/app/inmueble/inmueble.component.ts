@@ -15,6 +15,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
 import { HttpClient } from '@angular/common/http';
 import { WebModule } from '../web/web.module';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 
@@ -71,6 +72,9 @@ numberFormControl = new FormControl('', [
   imageForm!: FormGroup;
   selectedImages!: FileList;
 
+ 
+  public center = { lat: 24, lng: 12 };
+
 
   fileName: string ="";
   isLinear = false;
@@ -89,10 +93,18 @@ numberFormControl = new FormControl('', [
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   tercerFormGroup!: FormGroup;
+  bandera: number = 0;
+  latitud: number = 0.0000;
+  longitud: number = 0.0000;
+  p_ubi_maps: string = "0.00000,0.00000";
+
 
   ngOnInit(){
     this.obtenerDatosInmuebles();
     
+    
+
+
     //Imagenes
     this.imageForm = this.formBuilder.group({
       images: [''],
@@ -190,6 +202,26 @@ xd(){
   console.log(this.tercerFormGroup.value.p_gym);
 }
 
+obtenerLocalizacion(){
+  if (!navigator.geolocation) {
+    alert('Geolocalización No Compatible');
+  }
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    const coords = position.coords;
+    console.log('lat: ', position.coords.latitude, ' long: ', position.coords.longitude);
+    this.latitud = position.coords.latitude;
+    this.longitud = position.coords.longitude;
+    this.bandera = 1;
+    Swal.fire(
+      'Exitosamente!',
+      'Haz sido localizado',
+      'success'
+      
+    )
+  });
+}
+
 
   
 
@@ -215,7 +247,14 @@ xd(){
     let p_gym1 = this.tercerFormGroup.value.p_gym; 
     let p_roof = this.tercerFormGroup.value.p_roof;
     let p_estacionamiento = this.tercerFormGroup.value.p_esta;
-    let p_ubi_maps = "Hola ";
+    
+    
+    if(this.bandera){
+      this.p_ubi_maps = this.latitud + "," + this.longitud;
+
+    }
+
+    
 
   let dia = date.getDate().toString();
   let mes = (date.getMonth()+1).toString();
@@ -248,8 +287,8 @@ xd(){
 
     this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
       p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados1,p_alberca1, p_jardin1,p_gym1,
-      p_roof,p_estacionamiento, p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
-      p_prec_final1,p_Id_Tipo).subscribe((data: any) =>{
+      p_roof,p_estacionamiento, this.p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
+      p_prec_final1,p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) =>{
       if(data == 1){
         alert("Se subio el inmueble");
         this.router.navigate(["/web"]);
