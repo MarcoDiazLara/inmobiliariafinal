@@ -56,6 +56,7 @@ export class AsignasrasesorComponent implements OnInit {
 
     
   }
+  
 
   guardarasesor() {
     if (this.formGeneral){
@@ -90,18 +91,6 @@ export class AsignasrasesorComponent implements OnInit {
 
 }
 
-updateReasignaAsesor(){
-  // this.http.updateReasignaAsesor( ).subscribe((resp:any)=> {
-  //   if(resp !== 201){
-  //     this.asesores = resp[0].Id_Usuario;
-  //     this.asesores = resp;
-  //   }
-  //  },(err)=>{
-  //   console.log(err);
-  //  })
-
-
-}
 
 
 prueba(){
