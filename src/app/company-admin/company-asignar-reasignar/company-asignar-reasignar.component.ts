@@ -56,6 +56,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
         this.dataSource.data =usuarios;
@@ -75,7 +76,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
     this.http.mostrarReasignacion().subscribe((data:any)=>{
     this.datosinmuebles=data;
-    console.log(this.datosinmuebles);
+    //console.log(this.datosinmuebles);
     });
     this.dataSource = new MatTableDataSource(this.datosinmuebles);
   }
@@ -116,23 +117,36 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   }
 
-  // mandar a llamar ventana emergente
+   // mandar a llamar ventana emergente
 
-  openasesor(id_inmo:any,asesor:any ) {
-    localStorage.setItem("id_publicacion",id_inmo);
-    localStorage.setItem("Asesor",asesor);
-    
+   openasesor(id_inmo:any,asesor:any ) {
+
+    const valorCelda = asesor;
+  
+  // Verifica si el valor de la celda está vacío o no
+  if (valorCelda !== null) {
+    // Almacena el valor en el localStorage
+    localStorage.setItem("mi_valor", "1");
    
-
-    const dialogRef = this.dialog.open(CompAsignarAsesorComponent, {
-      width: '60vh',
-      height: 'auto',
-      disableClose: true
-    });
+  } else {
+    localStorage.setItem("mi_valor", "2");
+    
   }
+  
+      localStorage.setItem("id_publicacion",id_inmo);
+      localStorage.setItem("Asesor", asesor );
 
-  openDialog(): void {
+      const dialogRef = this.dialog.open(CompAsignarAsesorComponent, {
+        width: '60vh',
+        height: 'auto',
+        disableClose: true
+      });
+    }
+  
+    openDialog(): void {
+  
+    }
+  
 
-  }
 
 }
