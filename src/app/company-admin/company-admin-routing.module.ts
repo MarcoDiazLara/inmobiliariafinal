@@ -4,6 +4,8 @@ import { CompanyAdminComponent } from './company-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
+import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
+import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,10 @@ const routes: Routes = [
       {
         path: 'Notificaciones',
         component: NotificacionescompanyAdminComponent,
+      },
+      {
+        path: 'Asignar-reasignar',
+        component: CompanyAsignarReasignarComponent,
       },
     ]
   }

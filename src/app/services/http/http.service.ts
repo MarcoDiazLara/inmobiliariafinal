@@ -275,5 +275,11 @@ export class HttpService {
     let params = 'p_codigo='+p_codigo;
     return this.httpclient.post(this.url + 'mostrarcontacto.php', params, { headers });  
   }
+mostrarCita(p_Id_Usuario:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_Id_Usuario='+p_Id_Usuario;
+  return this.httpclient.post(this.url + 'mostrarcita.php', params, { headers }); 
+  
+}
 
 }

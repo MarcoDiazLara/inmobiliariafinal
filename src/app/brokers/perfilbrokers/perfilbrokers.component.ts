@@ -14,9 +14,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 @Component({
   selector: 'app-perfilbrokers',
   templateUrl: './perfilbrokers.component.html',
-  styleUrls: ['./perfilbrokers.component.css'],
-  standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule,ReactiveFormsModule, MatDialogModule ]
+  styleUrls: ['./perfilbrokers.component.css']
 })
 export class PerfilbrokersComponent implements OnInit {
   

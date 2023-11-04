@@ -1,21 +1,16 @@
 <div class="container-fluit">
   <div class="perfilcontenedor">
+    <br>
+    <br>
+    <br>
     <div class="row">
       <div class="col-md-12">
-        <form class="insertar-dialog-content" [formGroup]="formGeneral">
-          <div style="margin-top: 3%;">
-            <div style="padding: 20px 0 20px 0;text-align: center;">
-              <p style="font-size: 130%;font-weight: 550;">Imagen Usuario </p>
-            </div>
-            <mat-icon>wallpaper</mat-icon>
-            <div>
-              <input #imageInput class="form-control" type="file" accept="image/*" formControlName="imageInput" >
-              <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')">
-                Seleccione una imagen <strong>es obligatorio</strong>
-              </mat-error>
-            </div>
-          </div>
-        </form>
+        <div class="left box-primary">
+          <img class="image" src="https://yt3.ggpht.com/-Y4ybONkbdYA/AAAAAAAAAAI/AAAAAAAAAAA/SCMi3HFru2w/s100-c-k-no-rj-c0xffffff/photo.jpg" alt="" />
+         <br>
+         <br>
+         <a  class="btn btn-primary btn-block"><b>Editar foto</b></a>
+        </div>
       </div>
     </div>
   </div>
