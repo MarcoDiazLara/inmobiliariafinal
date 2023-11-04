@@ -175,6 +175,19 @@
 }
 
 
+.dropdown-Buscar  {
+  height: auto;
+  width: 300px;
+  border-radius: 5px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  z-index: 1;
+  position: absolute; 
+  top: 105%; 
+  left: 0%;
+  padding: 0%;
+}
 
 
 .dropdown-Precio  {
