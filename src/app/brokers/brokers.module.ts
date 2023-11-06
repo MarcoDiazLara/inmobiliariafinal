@@ -23,13 +23,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
-// import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
 import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
-import { ProspectosComponent } from './prospectos/prospectos.component';
 import { ReasignarasesoresComponent } from './reasignarasesores/reasignarasesores.component';
-import { AgendarcitaComponent } from './agendarcita/agendarcita.component';
 import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
 /end/
 
 @NgModule({
@@ -37,11 +35,10 @@ import { CalendarioComponent } from './calendario/calendario.component';
     PerfilbrokersComponent,
     BrokersComponent,
     NotificacionbrokerComponent,
-    ProspectosComponent,
     ReasignarasesoresComponent,
     CalendarioComponent,
     BrokerpasswordComponent,
-    // AgendarcitaComponent,
+    AltaAsesorComponent,
     
   
   ],
