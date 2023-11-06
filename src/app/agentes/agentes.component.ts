@@ -19,7 +19,9 @@ export class AgentesComponent implements OnDestroy {
     { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
     { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0' },
     { name: "Menu", route: "Calendario",icon: "perm_contact_calendar" , label: "Calendario",number:'0' },
+    { name: "Hito", route: "Hitoagente",icon: "event" , label: "Fecha Hito",number:'0' },
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'},
+    
   
   ];
 
