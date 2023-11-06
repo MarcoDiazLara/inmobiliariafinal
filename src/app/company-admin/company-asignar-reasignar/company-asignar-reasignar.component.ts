@@ -146,6 +146,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 if (valorCelda !== null) {
   // Almacena el valor en el localStorage
   localStorage.setItem("mi_valor", "1");
+
  
 } else {
   localStorage.setItem("mi_valor", "2");
