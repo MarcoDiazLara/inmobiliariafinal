@@ -16,8 +16,8 @@ export class BrokersComponent implements OnDestroy {
   fillerNav = [
     { name: "Perfil", route: "perfil", icon: "person", label: "Perfil", number: '0' },
     { name: "Notificaciones", route: "notificacionbroker", icon: "notifications", label: "Notificaciones", number: '0' },
-    { name: "reasignar", route: "reasignarasesores", icon: "assignment", label: "Reasignar", number: '0' },
     { name: "Alta", route: "Alta", icon: "group_add", label: "Alta", number: '0' },
+    { name: "asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
     { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
 
   ];
