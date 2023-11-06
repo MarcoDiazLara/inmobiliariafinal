@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { InmuebleRoutingModule } from './inmueble-routing.module';
 import { WebModule } from '../web/web.module';
 import { VentanacitaComponent } from './ventanacita/ventanacita.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 
 
@@ -21,7 +23,8 @@ import { VentanacitaComponent } from './ventanacita/ventanacita.component';
     CommonModule,
     InmuebleRoutingModule,
     WebModule,
-    VentanacitaComponent
+    VentanacitaComponent,
+    GoogleMapsModule
  
   ],
   exports: [

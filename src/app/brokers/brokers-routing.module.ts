@@ -2,54 +2,41 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrokersComponent } from './brokers.component';
 import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
-import { ProspectosComponent } from './prospectos/prospectos.component';
-import { ReasignarasesoresComponent } from './reasignarasesores/reasignarasesores.component';
-import { AgendarcitaComponent } from './agendarcita/agendarcita.component';
 import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
+import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
+import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
 
 const routes: Routes = [
 
-   
+
 
 
   {
-    path:'',
-    component:BrokersComponent,
-    children:[
+    path: '',
+    component: BrokersComponent,
+    children: [
 
       {
-           path:'perfil',
-           component:PerfilbrokersComponent,
-
-
+        path: 'perfil',
+        component: PerfilbrokersComponent,
       },
       {
         path: 'notificacionbroker',
         component: NotificacionbrokerComponent,
       },
-
       {
-        path:'prospectos',
-        component:ProspectosComponent,
-      },
-
-      {
-
-       path:'reasignarasesores',
-           component:ReasignarasesoresComponent,
+        path: 'Alta',
+        component: AltaAsesorComponent,
       },
       {
-          path:' Agendarcita ',
-          component:AgendarcitaComponent,
-
-      }
-
-
+        path: 'asignar-reasignar',
+        component: BrokersAsignarReasignarComponent,
+      },
     ]
   },
 
 
-  
+
 
 
 ];

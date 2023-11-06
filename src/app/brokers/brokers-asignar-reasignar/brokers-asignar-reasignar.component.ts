@@ -1,4 +1,4 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -10,19 +10,16 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompAsignarAsesorComponent } from '../ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
-
-
+import { BroAsignarAsesorComponent } from '../ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
 
 
 
 @Component({
-  selector: 'app-company-asignar-reasignar',
-  templateUrl: './company-asignar-reasignar.component.html',
-  styleUrls: ['./company-asignar-reasignar.component.scss']
+  selector: 'app-brokers-asignar-reasignar',
+  templateUrl: './brokers-asignar-reasignar.component.html',
+  styleUrls: ['./brokers-asignar-reasignar.component.scss']
 })
-export class CompanyAsignarReasignarComponent implements OnInit {
-
+export class BrokersAsignarReasignarComponent implements OnInit {
   usuarios$: any;
 
   formGeneral!:FormGroup; 
@@ -49,9 +46,6 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   datosAsesores: AsigarReAsignar[]=[];
  
- 
-
-  
   constructor(
     public dialog: MatDialog,
     private http:HttpService,
@@ -62,10 +56,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     // Http para jalar el servicio 
   ) { }
 
- 
-
   ngOnInit(): void {
-
     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
         this.dataSource.data =usuarios;
@@ -94,16 +85,10 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     //console.log(this.datosinmuebles);
     });
     this.dataSource = new MatTableDataSource(this.datosinmuebles);
-
-
-    
   }
-
-
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
   obtenerUsuarios(){
 
     this.httpService.mostrarReasignacion().subscribe((data:any)=>{
@@ -130,92 +115,44 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
-  
-  asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
-    alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
+asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
+  alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
 
-  }
+}
 
-  // mandar a llamar ventana emergente
+// mandar a llamar ventana emergente
 
-  openasesor(id_inmo:any,asesor:any ) {
+openasesor(id_inmo:any,asesor:any ) {
 
-  const valorCelda = asesor;
+const valorCelda = asesor;
 
 // Verifica si el valor de la celda está vacío o no
 if (valorCelda !== null) {
-  // Almacena el valor en el localStorage
-  localStorage.setItem("mi_valor", "1");
+// Almacena el valor en el localStorage
+localStorage.setItem("mi_valor", "1");
 
- 
+
 } else {
-  localStorage.setItem("mi_valor", "2");
+localStorage.setItem("mi_valor", "2");
+
+}
+
+  localStorage.setItem("id_publicacion",id_inmo);
+  localStorage.setItem("Asesor", asesor );
+
+
   
-}
-
-    localStorage.setItem("id_publicacion",id_inmo);
-    localStorage.setItem("Asesor", asesor );
-
-
-    
-   
-
-    const dialogRef = this.dialog.open(CompAsignarAsesorComponent, {
-      width: '60vh',
-      height: 'auto',
-      disableClose: true
-    });
-  }
-
-  openDialog(): void {
-
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
+  const dialogRef = this.dialog.open(BroAsignarAsesorComponent, {
+    width: '60vh',
+    height: 'auto',
+    disableClose: true
+  });
+}
 
+openDialog(): void {
+
+}
+
+}

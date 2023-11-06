@@ -30,6 +30,7 @@ import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component'
 import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agentepassword.component';
 import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
 /end/
 
 
@@ -42,6 +43,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
     AgentepasswordComponent,
     NotificacionesagentesComponent,
     CalendarioComponent,
+    FechaHitoAgentesComponent,
 
     
   ],
