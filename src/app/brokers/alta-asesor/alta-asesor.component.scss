@@ -1,0 +1,82 @@
+.contenedorgeneral{
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  
+  .insertar-dialog h1 {
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .insertar-dialog-content mat-form-field {
+      background-color: transparent !important;
+      width: 100%;
+      margin: 10px 0px;
+      input {
+          color: black;
+      } 
+    }
+    
+    .insertar-dialog-content input {
+    color: black;
+    }
+  
+     button {
+      display: block;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 3% !important;
+    }
+    
+      button:disabled {
+    span {
+      color: #9a8d8d;
+    }
+    }
+    
+    ::ng-deep {
+    .mat-form-field.mat-focused .mat-form-field-label {
+      color: #0c6291f7 !important;
+    }
+    }
+    
+    @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+    }
+    
+    .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #0c6291f7;
+    animation: spinner 0.6s ease-out infinite;
+    }
+  
+    .alineaestatus{
+      margin-top: 2%;
+    }
+    
+    .alinea{
+      margin-top: 1%;
+    }
+  
+  
+    .cssbutton button{
+      width: 20%;
+      background-color: #264D5E;
+      color: #ffffff;
+      
+    }
+    
