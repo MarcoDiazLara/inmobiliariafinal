@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
   import {MatInputModule} from '@angular/material/input';
   import {MatFormFieldModule} from '@angular/material/form-field';
@@ -16,6 +17,7 @@ import { HttpClient } from '@angular/common/http';
 import { WebModule } from '../web/web.module';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -37,7 +39,9 @@ interface Food {
     MatFormFieldModule,
     MatInputModule, MatSelectModule,MatRadioModule,NgFor,
     MatDividerModule,
-    WebModule
+    WebModule,
+    GoogleMapsModule,
+    CommonModule
     
     
   ],
@@ -55,6 +59,7 @@ foods: Food[] = [
   {value: '4', viewValue: '4'},
   {value: '5', viewValue: '5'},
 ];
+
 
 
 
@@ -100,6 +105,7 @@ numberFormControl = new FormControl('', [
 
 
   ngOnInit(){
+    
     this.obtenerDatosInmuebles();
     
     
@@ -249,10 +255,9 @@ obtenerLocalizacion(){
     let p_estacionamiento = this.tercerFormGroup.value.p_esta;
     
     
-    if(this.bandera){
+   
       this.p_ubi_maps = this.latitud + "," + this.longitud;
 
-    }
 
     
 
@@ -261,9 +266,13 @@ obtenerLocalizacion(){
   if(dia < 10 ){
     dia1 = "0" + dia1;
   }
-  let mes = (date.getMonth()+1).toString();
+  let mes = (date.getMonth()+1);
+  let mes1 = (date.getMonth()+1).toString();
+  if(mes < 10){
+    mes1 = "0"+mes1;
+  }
   let anio = date.getFullYear().toString();
-  let nom_aux =  anio + mes + dia1;
+  let nom_aux =  anio + mes1 + dia1;
 
 
     let p_pic_1 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[0].name;
@@ -305,6 +314,55 @@ obtenerLocalizacion(){
   }
 
        
+  mapOptions: google.maps.MapOptions = {
+    center: { lat: 20, lng: -98 }, // Coordenadas iniciales del mapa
+    zoom: 6, // Nivel de zoom inicial
+  };
+
+ 
+  // onMapClick(event: google.maps.MapMouseEvent) {
+  //   // Aquí puedes agregar el código para crear un marcador en la ubicación del clic
+  //   if (event.latLng) {
+  //     const lat = event.latLng.lat();
+  //     const lng = event.latLng.lng();
+  //     console.log(`Latitud: ${lat}, Longitud: ${lng}`);
+  //   } else {
+  //     console.log('No se pudo obtener la posición.');
+  //   }
+  // }
+
+  activeMarker: any = null;
+  map: google.maps.Map | null = null;
+  onMapClick(event: google.maps.MapMouseEvent) {
+    // Aquí puedes agregar el código para crear un marcador en la ubicación del clic
+    if (event.latLng) {
+      const lat = event.latLng.lat();
+      const lng = event.latLng.lng();
+      console.log(`Latitud: ${lat}, Longitud: ${lng}`);
+      this.latitud = event.latLng.lat();
+      this.longitud =  event.latLng.lng();
+    
+      const newMarker = {
+        position: { lat, lng },
+        label: 'Inmueble',
+      };
+
+      // Borra el marcador activo anterior, si existe
+      if (this.activeMarker) {
+        this.activeMarker = null;
+      }
+
+      // Establece el nuevo marcador como activo
+      this.activeMarker = newMarker;
+      
+     
+    } else {
+      console.log('No se pudo obtener la posición.');
+    }
+  }
+
+ 
+  
 
   onFileChange(event: any): void {
     this.selectedImages = event.target.files;
