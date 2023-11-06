@@ -102,7 +102,7 @@ prueba(){
 
   if (valor=="1"){
 
-    console.log("Actualizar");
+    //console.log("Actualizar");
     this.http.updateReasignaAsesor(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
       if(resp == 1){
 
@@ -124,7 +124,7 @@ prueba(){
 }else if(valor=="2"){
 
   
-  this.guardarasesor()
+  this.guardarasesor();
   
 }
 }
