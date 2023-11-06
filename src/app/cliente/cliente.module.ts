@@ -32,6 +32,10 @@ import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component'
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -46,7 +50,9 @@ import { CalendarioComponent } from './calendario/calendario.component';
     // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
     CalendarioComponent,
+    DialogComponent,
     // PerfilclienteComponent,
+    
 
   ],
   imports: [
@@ -69,6 +75,8 @@ import { CalendarioComponent } from './calendario/calendario.component';
     MatFormFieldModule,
     WebModule,
     ClienteRoutingModule,
+    MatDialogModule
+    
     
   ],
   exports:[
