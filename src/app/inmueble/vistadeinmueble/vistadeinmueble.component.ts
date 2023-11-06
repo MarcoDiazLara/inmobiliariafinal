@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
-import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
+import { Inmuebles, inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
@@ -106,7 +106,7 @@ export class VistadeinmuebleComponent implements OnInit {
   /*datosMunicipios  llena la lista de busqueda de todos los municipios*/
   datosMunicipios: any[] = [];
   /*datosTipoInmueble llena el comboBox con los tipos de inmuebles */
-  datosTipoInmueble: any[] = [];
+  datosTipoInmueble: Inmuebles[] = [];
   /*municipios almacena el valor del municpio= San Martin Tex,etc */
   municipios = '';
   /*tipoinmuebles almacena el valor del tipo de inmueble casa, departamento, etc. */
@@ -129,11 +129,12 @@ export class VistadeinmuebleComponent implements OnInit {
 
   }
 
+  //Municipio Seleccionado
+  selectedItem: any;
   title = 'ProyectoPrueba';
 
 
-  selectedValue = '';
-  municipioSeleccionado: string = '';
+  
   // Definir un arreglo de opciones
 
 
@@ -157,6 +158,11 @@ export class VistadeinmuebleComponent implements OnInit {
 
   }
 
+  seleccionarItem(item: any) {
+    this.selectedItem = item;
+
+    console.log(item);
+  }
 
   
 
@@ -237,12 +243,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
 
 
-  seleccionarMunicipio(municipios: string) {
-    this.municipioSeleccionado = municipios;
-
-    console.log(municipios);
   
-  }
   back() {
     this.router.navigate(["/web"]);
   }
