@@ -78,11 +78,11 @@
       <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
         <ul class="content-Precio">
           <mat-radio-group style="display: flex; flex-direction: column; padding: 10px;">
-            <mat-radio-button value="1" class="opcfiltros3">1</mat-radio-button>
-            <mat-radio-button value="2" class="opcfiltros3">2</mat-radio-button>
-            <mat-radio-button value="3" class="opcfiltros3">3</mat-radio-button>
-            <mat-radio-button value="4" class="opcfiltros3">4</mat-radio-button>
-            <mat-radio-button value="5" class="opcfiltros3">+5</mat-radio-button>
+            <mat-radio-button value="1" color="primary" class="opcfiltros3">1</mat-radio-button>
+            <mat-radio-button value="2" color="primary" class="opcfiltros3">2</mat-radio-button>
+            <mat-radio-button value="3" color="primary" class="opcfiltros3">3</mat-radio-button>
+            <mat-radio-button value="4" color="primary" class="opcfiltros3">4</mat-radio-button>
+            <mat-radio-button value="5" color="primary" class="opcfiltros3">+5</mat-radio-button>
           </mat-radio-group>
           <button class="buttonnavbar" mat-stroked-button style="margin-bottom: 5px;" >Limpiar</button>
         </ul>
@@ -134,19 +134,19 @@
                 <div style="display: flex; flex-direction: row; margin-bottom: 25px;">
                   <div style="flex: 1;">
                     <section class="example-section" style="display: flex; flex-direction: column;">
-                      <mat-checkbox class="opcfiltros2">Servicios basicos (agua/luz)</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Internet/ Wi-Fi</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Seguridad privada</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Calefacción</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Aire acondicionado</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Servicios basicos (agua/luz)</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Internet/ Wi-Fi</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Seguridad privada</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Calefacción</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Aire acondicionado</mat-checkbox>
                     </section>
                   </div>
                   <div style="flex: 1;">
                     <section class="example-section" style="display: flex; flex-direction: column;">
-                      <mat-checkbox class="opcfiltros2">Estacionamiento para visitas</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Cisterna</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Gas estacionario</mat-checkbox>
-                      <mat-checkbox class="opcfiltros2">Telefonía</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Estacionamiento para visitas</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Cisterna</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Gas estacionario</mat-checkbox>
+                      <mat-checkbox color="primary" class="opcfiltros2">Telefonía</mat-checkbox>
                     </section>
                   </div>
                 </div>
@@ -228,16 +228,16 @@
 
                 <h4 class="h4filtros">Vigilancia</h4>
                 <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
-                  <mat-radio-button class="opcfiltros" value="1">Cámaras 24/7</mat-radio-button>
-                  <mat-radio-button class="opcfiltros" value="2">Portero de día/noche</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="1">Cámaras 24/7</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="2">Portero de día/noche</mat-radio-button>
                 </mat-radio-group>
 
                 <h4 class="h4filtros">Antigüedad</h4>
                 <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
-                  <mat-radio-button class="opcfiltros" value="1">En construcción</mat-radio-button>
-                  <mat-radio-button class="opcfiltros" value="2">Por Estrenar</mat-radio-button>
-                  <mat-radio-button value="3">
-                    <mat-select placeholder="Más de un año">
+                  <mat-radio-button color="primary" class="opcfiltros" value="1">En construcción</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="2">Por Estrenar</mat-radio-button>
+                  <mat-radio-button color="primary" value="3">
+                    <mat-select  placeholder="Más de un año">
                       <mat-option value="one">1-5 años</mat-option>
                       <mat-option value="two">5-10 años</mat-option>
                       <mat-option value="two">10-15 años</mat-option>
@@ -249,10 +249,10 @@
 
                 <h4 class="h4filtros">Fecha de Publicación</h4>
                 <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
-                  <mat-radio-button class="opcfiltros" value="1">Reciente</mat-radio-button>
-                  <mat-radio-button class="opcfiltros" value="2">Última Semana</mat-radio-button>
-                  <mat-radio-button value="3">
-                    <mat-select placeholder="Más de una semana">
+                  <mat-radio-button color="primary" class="opcfiltros" value="1">Reciente</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="2">Última Semana</mat-radio-button>
+                  <mat-radio-button color="primary" value="3">
+                    <mat-select color="primary" placeholder="Más de una semana">
                       <mat-option value="one">1-2 Semanas</mat-option>
                       <mat-option value="two">2-3 Semanas</mat-option>
                       <mat-option value="two">3-4 Semanas</mat-option>
@@ -267,9 +267,9 @@
 
                 <h4 class="h4filtros">Tipo de anunciante</h4>
                 <mat-radio-group aria-label="Select an option" style="display: flex; flex-direction: column;">
-                  <mat-radio-button class="opcfiltros" value="2">Todos</mat-radio-button>
-                  <mat-radio-button class="opcfiltros" value="1">Inmobiliaria</mat-radio-button>
-                  <mat-radio-button class="opcfiltros" value="2">Trado directo</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="2">Todos</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="1">Inmobiliaria</mat-radio-button>
+                  <mat-radio-button color="primary" class="opcfiltros" value="2">Trado directo</mat-radio-button>
                 </mat-radio-group>
 
 
