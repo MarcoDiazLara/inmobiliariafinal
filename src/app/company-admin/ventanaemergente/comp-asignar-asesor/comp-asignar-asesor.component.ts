@@ -85,11 +85,12 @@ export class CompAsignarAsesorComponent implements OnInit {
   
   prueba(){
     let Id_Publicacion = localStorage.getItem("id_publicacion");
-    let asesor = localStorage.getItem("Asesor");
+    //let asesor = localStorage.getItem("Asesor");
+    let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
    
   
-    if (asesor!=null){
+    if (valor=="1"){
   
       this.http.updateReasignaAsesor(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
         if(resp == 1){
@@ -109,9 +110,9 @@ export class CompAsignarAsesorComponent implements OnInit {
     });
       
    
-  }else{
+  }else if(valor=="2"){
   
-    this.guardarasesor()
+    this.guardarasesor();
     
   }
   }

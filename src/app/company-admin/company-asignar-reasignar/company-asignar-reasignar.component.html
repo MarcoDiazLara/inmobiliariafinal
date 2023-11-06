@@ -1,20 +1,18 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" *ngFor="let res of datosAsesores">
     <div class="col-md-3" style="border: 1px solid; border-color:#8F8B8A;">
       <h4>Inmuebles Asignados</h4>
     </div>
     <div class="col-md-3" style="border: 1px solid; border-color:#8F8B8A;">
-      <label></label>
+      <label style="margin-top: 2%;"><b>{{res.Asignados}}</b></label>
     </div>
     <div class="col-md-3" style="border: 1px solid; border-color:#8F8B8A;">
       <h4>Inmuebles Pendientes por Asignar</h4>
     </div>
     <div class="col-md-3" style="border: 1px solid; border-color:#8F8B8A;">
-      <label></label>
+      <label style="margin-top: 2%;"><b>{{res.No_asignados}}</b></label>
     </div>
-
   </div>
-  
 </div>
 
 <mat-form-field appearance="standard" class="filter">
@@ -54,7 +52,7 @@
 
     <ng-container matColumnDef="Nombre_Usuario">
       <th mat-header-cell *matHeaderCellDef>Usuario</th>
-      <td mat-cell *matCellDef="let element" > {{element.Nombres}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.Nombres}} </td>
     </ng-container>
 
 
@@ -72,17 +70,13 @@
           <mat-icon>more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-        <!-- <button mat-menu-item (click)="asignarAsesor(element.Id_Inmueble,element.Id_Usuario)">
+          <!-- <button mat-menu-item (click)="asignarAsesor(element.Id_Inmueble,element.Id_Usuario)">
                       <mat-icon style="color:#960aaf;">app_registration</mat-icon>
-                      <span>Asignar Asesor</span>
-
-        </button> -->
-          <button class="buttonasignar" mat-raised-button (click)="openasesor(element.Id_Publicacion,element.Asesor)">
-
-                    </button> 
+                      <span>Asignar Asesor</span> 
+               </button> -->
           <button class="buttonasignar" mat-raised-button (click)="openasesor(element.Id_Publicacion, element.Asesor)">
-
-            Asignar Asesor </button>
+            Asignar Asesor 
+          </button>
         </mat-menu>
     </ng-container>
 
