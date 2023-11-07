@@ -289,8 +289,21 @@ ul.in {
   border-radius: 5px;
  }
 
+ .content-Inmueble {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
 
+.content-Inmueble:hover {
+  background-color: #dcdcdc;
 
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
 
 
 
