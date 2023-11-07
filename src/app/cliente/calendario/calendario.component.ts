@@ -5,6 +5,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { mostrarcita } from 'src/app/services/Interface/Interfaces';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import esLocale from '@fullcalendar/core/locales/es';
 
 
 @Component({
@@ -56,6 +57,7 @@ export class CalendarioComponent implements AfterViewInit {
         initialView: 'dayGridMonth',
         showNonCurrentDates: true,
         events: evento,
+        locale: esLocale, // Establece el idioma en español
         eventClick: this.mostrarVentanaEmergente.bind(this), // Manejador de clic en eventos
       });
 
