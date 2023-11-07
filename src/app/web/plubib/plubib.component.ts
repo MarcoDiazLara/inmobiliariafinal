@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-plubib',
   templateUrl: './plubib.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlubibComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private router:Router ) {  }
 
   ngOnInit(): void {
   }
-
+  back(){
+    this.router.navigate(["/web/blog"]);
+  }
 }
