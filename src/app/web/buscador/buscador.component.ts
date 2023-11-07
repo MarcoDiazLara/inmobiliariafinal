@@ -69,7 +69,7 @@ export class BuscadorComponent implements OnInit {
   }
 
   PageMap() {
-    this.router.navigate(["/web/maps"]);
+    this.router.navigate(["/web/maps"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
 
   }
 
