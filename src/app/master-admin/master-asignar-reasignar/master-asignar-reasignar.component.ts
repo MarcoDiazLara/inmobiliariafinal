@@ -158,7 +158,6 @@ if (valorCelda !== null) {
 
 
     
-   
 
     const dialogRef = this.dialog.open(AsignasrasesorComponent, {
       width: '60vh',

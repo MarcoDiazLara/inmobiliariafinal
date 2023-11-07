@@ -7,6 +7,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { __param } from 'tslib';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 // Alerta
@@ -40,6 +41,7 @@ export class AsignasrasesorComponent implements OnInit {
     private http:HttpService,
     private formBuilder: FormBuilder,
     private route:ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -130,9 +132,22 @@ prueba(){
 }
 
 
-  closeDialog() {
+  
+
+  closeDialog(){
     this.dialog.closeAll();
-  }
+    //this.httpService.setGlobalVariable(false);
+    const itemsToRemove =[
+      "Nombre_Usuario",
+      "Id_Usuario",
+      "Id_Tipo_Usuario"
+    ];
+    itemsToRemove.forEach( item => {
+      localStorage.removeItem(item);
+    })
+    this.http.setGlobalVariable(false);
+    this.router.navigate(["/Asignar-reasignar"]);
+   }
 
 
 }
