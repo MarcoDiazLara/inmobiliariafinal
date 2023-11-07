@@ -1,0 +1,21 @@
+
+<h2 mat-dialog-title>Información de la fecha</h2>
+<mat-dialog-content>
+  <p>Has seleccionado la fecha: {{ data.fecha }}</p>
+  <p>Nombre: {{ data.Nombre }}</p>
+  <p>Calle: {{ data.Calle }}</p>
+  <p>Num_Ext:  {{ data. Num_Ext}}</p>
+  <p> Num_Int:  {{ data.Num_Int }} </p>
+ <p> Email:  {{ data.Email }}</p>
+ <p> Telefono: {{ data.Telefono }}</p>
+  <p> Mensaje: {{ data.Mensaje }}</p> 
+  <p>Nombre Publicacion {{data.Nombre_Publicacion}}</p>
+  <p> Id Usuario {{data.Id_Usuario}}</p>
+  <p> Medio de contacto {{ data.Medio_Contacto}}</p>
+  <p> Hora {{data.Hora}}</p>
+  <!-- Agrega más contenido de la ventana emergente según sea necesario -->
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cerrarVentanaEmergente()">Cerrar</button>
+</mat-dialog-actions>
+

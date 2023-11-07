@@ -119,9 +119,16 @@ export class VentanacitaComponent implements OnInit {
     let p_Fecha= this.terceroFormGroup.value.p_Fecha;
   
     let p_Hora= this.terceroFormGroup.value.p_Hora;
-    let dia = p_Fecha.getDate().toString();
- 
-   let mes = (p_Fecha.getMonth()+1).toString();
+    let dia = p_Fecha.getDate();
+    let dia1 =  p_Fecha.getDate().toString();;
+      if(dia < 10 ){
+        dia1 = "0" + dia1;
+  }
+   let mes = (p_Fecha.getMonth()+1);
+   let mes1=(p_Fecha.getMonth()+1).toString();
+    if(mes < 10 ){
+      mes1="0"+mes1;
+    }
   let anio = p_Fecha.getFullYear().toString();
 
   let p_Id_Usuario=localStorage.getItem("Id_Usuario");
@@ -130,8 +137,8 @@ export class VentanacitaComponent implements OnInit {
 
   // let nom_aux= "2023"+"-"+ "09"+ "-" +"09";
 
- let nom_aux =  anio  +"-"+ mes  +  "-"+ dia;
-
+ let nom_aux =  anio  +"-"+ mes1  +  "-"+ dia1;
+   
   // console.log(nom_aux);
     //     console.log("Nombre: "+p_Nombre+"Email: "+p_Email+"Telefono: "+p_Telefono+"Contacto: "+p_Id_Medio_Contacto
     // +"Mensaje: "+p_Mensaje+"Fecha: "+nom_aux+"Hora: "+p_Hora+ "id_Uduario: "+ p_Id_Usuario + "id_Pub: "+p_Id_Publicacion);

@@ -145,6 +145,7 @@ export interface infoInmuebles{
 };
 
 export interface mostrarcita{
+         Id_Prospecto: "",
         Nombre_Publicacion: "",
         Calle: "",
         Num_Ext: "",
@@ -156,7 +157,7 @@ export interface mostrarcita{
         Telefono: "",
         Mensaje: "",
         Id_Usuario: "",
-        Id_Medio_Contacto: "",
+        Medio_Contacto: "",
         Id_Publicacion: ""
 
 };
