@@ -129,8 +129,8 @@ export class VistadeinmuebleComponent implements OnInit {
 
   }
 
-  //Municipio Seleccionado
-  selectedItem: any;
+  //Municipio Seleccionado en el input
+  selectedMunicipio: any;
   title = 'ProyectoPrueba';
 
 
@@ -159,7 +159,7 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   seleccionarItem(item: any) {
-    this.selectedItem = item;
+    this.selectedMunicipio = item;
 
     console.log(item);
   }
@@ -216,10 +216,6 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
 
-   
-
-    //let datosBusqueda = 
-
 
   }
 
@@ -247,9 +243,6 @@ export class VistadeinmuebleComponent implements OnInit {
   back() {
     this.router.navigate(["/web"]);
   }
-  /*botonSeleccionado(opcion:number){
-    console.log( 'El usuario mostro:'opcion );
-  }*/
 
   mostrar() {
 
@@ -258,34 +251,13 @@ export class VistadeinmuebleComponent implements OnInit {
 
     this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
-      /*let mostrar = JSON.stringify(data);
-      alert(mostrar);*/
-      //console.log(this.inmueble);
+     
 
     data= this.datosInmueble ;
 
-  
-
-
-      /*this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
-        let mostrar = JSON.stringify(data);
-        alert(mostrar);
-
-      location.reload();
-    
-      this.datosInmueble =[];*/
-
-                });
+    });
               
     }
-//Muestra la seleccion del select**
-    cambioTpropiedad(tprop:string){
-      console.log('Selecciona Propiedad: ',tprop);
-      this.tippropiedad = tprop;
-
-}
-
-
 /// este es el codigo del paginador de los resultados///
 paginaAnterior() {
   if (this.paginaActual > 1) {
