@@ -5,6 +5,13 @@
   margin-top: 3%;
 }
 
+h4{
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  color: #264D5E;
+}
+
 button {
     display: block;
     width: 100%;
@@ -49,6 +56,10 @@ button {
 .tamañoinput{
   width: 95%;
 }
+.tamaño{
+  width: 95%;
+  margin-top: 2%;
+}
   
   .alinea{
     margin-top: 1%;
@@ -60,5 +71,9 @@ button {
     background-color: #264D5E;
     color: #ffffff;
     
+  }
+
+  .alineaestatus{
+    margin-top: 2%;
   }
   

@@ -60,6 +60,19 @@ export class AltasocioComponent implements OnInit {
       pId_municipio:['',[Validators.required]],
       pId_asentamiento:['',[Validators.required]],
       imageInput: ['', [Validators.required]],
+      // Apartado de Usuario
+      nombre: ['', [Validators.required]],
+      apellidopaterno: ['', [Validators.required]],
+      apellidomaterno: ['', [Validators.required]],
+      curp: ['', [Validators.required]],
+      rfc: ['', [Validators.required]],
+      contactoprincipal: ['', [Validators.required]],
+      contactoemergencia: ['', [Validators.required]],
+      nombreusuario: ['',[Validators.required]],
+      password: ['', [Validators.required]],
+      estatus: ['', [Validators.required]],
+      descripcionusuario: ['', [Validators.required]],
+      imageUsua: ['', [Validators.required]],
     });
   }
 
