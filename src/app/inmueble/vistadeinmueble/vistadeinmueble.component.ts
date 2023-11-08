@@ -131,6 +131,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
   //Municipio Seleccionado en el input
   selectedMunicipio: any;
+  idMunicipio:any;
   title = 'ProyectoPrueba';
 
 
@@ -160,10 +161,13 @@ export class VistadeinmuebleComponent implements OnInit {
 
   seleccionarItem(item: any) {
     this.selectedMunicipio = item;
-
-    console.log(item);
+    console.log(item, this.idMunicipio);
   }
-
+  
+  mostrarIDMunicipio(idM: number): void {
+    this.idMunicipio = idM;
+    console.log(this.idMunicipio);
+  }
   
 
   ngOnInit(): void {
@@ -203,11 +207,11 @@ export class VistadeinmuebleComponent implements OnInit {
       
     }); 
 
-    this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+    // this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
       
-      this.datosInmueble = data;
+    //   this.datosInmueble = data;
 
-    });
+    // });
 
 
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
@@ -215,6 +219,10 @@ export class VistadeinmuebleComponent implements OnInit {
       this.datosTipoInmueble = data;
 
     });
+
+   
+
+    //let datosBusqueda = 
 
 
   }
@@ -224,16 +232,14 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   mostrarMunicipios() {
-    this.http.mostrarMunicipios(this.municipios).subscribe((data: any) => {
+    this.http.mostrarMunicipios(this.selectedMunicipio).subscribe((data: any) => {
 
       this.datosMunicipios = data;
 
     });
   }
 
-  mostrarIDMunicipio(id: number): void {
-    console.log(id);
-  }
+  
 
  
 
@@ -243,21 +249,46 @@ export class VistadeinmuebleComponent implements OnInit {
   back() {
     this.router.navigate(["/web"]);
   }
+  /*botonSeleccionado(opcion:number){
+    console.log( 'El usuario mostro:'opcion );
+  }*/
 
   mostrar() {
 
 
     this.datosInmueble = [];
 
-    this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
+    this.http.busquedaAvanzada(this.idMunicipio, this.inmueble.inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
 
-     
+      
+      /*let mostrar = JSON.stringify(data);
+      alert(mostrar);*/
+      //console.log(this.inmueble);
 
-    data= this.datosInmueble ;
+     this.datosInmueble = datos;
 
-    });
+  
+
+
+      /*this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
+        let mostrar = JSON.stringify(data);
+        alert(mostrar);
+
+      location.reload();
+    
+      this.datosInmueble =[];*/
+
+                });
               
     }
+//Muestra la seleccion del select**
+    cambioTpropiedad(tprop:string){
+      console.log('Selecciona Propiedad: ',tprop);
+      this.tippropiedad = tprop;
+
+}
+
+
 /// este es el codigo del paginador de los resultados///
 paginaAnterior() {
   if (this.paginaActual > 1) {
