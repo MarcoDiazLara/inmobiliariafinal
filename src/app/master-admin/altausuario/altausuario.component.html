@@ -20,8 +20,7 @@
             <div class="col-md-3">
               <mat-form-field appearance="fill">
                 <input matInput type="text" placeholder="" formControlName="nombre">
-                <mat-label>
-                  <mat-icon>user</mat-icon><b>Nombre</b></mat-label>
+                <mat-label><b>Nombre</b></mat-label>
                 <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
                   El nombre es <strong>obligatorio</strong>
                 </mat-error>
@@ -41,8 +40,7 @@
             <div class="col-md-3">
               <mat-form-field appearance="fill">
                 <input matInput type="text" placeholder="" formControlName="apellidomaterno">
-                <mat-label>
-                  <mat-icon>user</mat-icon><b> Apellido Materno </b></mat-label>
+                <mat-label><b> Apellido Materno </b></mat-label>
                 <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
                   Apellido Paterno <strong>obligatorio</strong>
                 </mat-error>
@@ -64,8 +62,7 @@
           <div class="col-md-3">
             <mat-form-field appearance="fill">
               <input matInput type="text" placeholder="" formControlName="rfc">
-              <mat-label>
-                  <mat-icon>user</mat-icon><b> RFC </b></mat-label>
+              <mat-label><b> RFC </b></mat-label>
               <mat-error *ngIf="this.formGeneral.get('rfc')?.hasError('required')">
                   RFC <strong>Obligatorio</strong>
               </mat-error>
@@ -110,8 +107,7 @@
           <div class="col-md-3 alinea">
             <mat-form-field appearance="fill">
               <input matInput type="text" placeholder="" formControlName="nombreusuario">
-              <mat-label>
-                  <mat-icon>user</mat-icon><b> Nombre Usuario </b></mat-label>
+              <mat-label><b> Nombre Usuario </b></mat-label>
               <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
                   Nombre Usuario <strong>Obligatorio</strong>
               </mat-error>
