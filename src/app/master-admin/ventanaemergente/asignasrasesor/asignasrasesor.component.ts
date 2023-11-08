@@ -129,24 +129,23 @@ prueba(){
   this.guardarasesor();
   
 }
+
 }
 
 
-  
 
   closeDialog(){
+    localStorage.removeItem("id_publicacion,mi_valor")
     this.dialog.closeAll();
-    //this.httpService.setGlobalVariable(false);
-    const itemsToRemove =[
-      "Nombre_Usuario",
-      "Id_Usuario",
-      "Id_Tipo_Usuario"
-    ];
-    itemsToRemove.forEach( item => {
-      localStorage.removeItem(item);
-    })
-    this.http.setGlobalVariable(false);
-    this.router.navigate(["/Asignar-reasignar"]);
+
+    // const itemsToRemove =[
+    //   "id_publicacion",
+    //   "mi_valor"
+    // ];
+    // itemsToRemove.forEach( item => {
+    //   localStorage.removeItem(item);
+    // })
+    
    }
 
 
