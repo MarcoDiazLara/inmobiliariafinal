@@ -1,0 +1,22 @@
+.container-fluit {
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+  }
+  
+  .container2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .encabezado,
+  .funciones,
+  .calendario,
+  .detallesfecha {
+    flex-basis: 23%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  

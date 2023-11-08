@@ -93,7 +93,9 @@ Nombre_Publicacion: ""
 Picture1: ""
 Precio_Final: ""
 Tipo_Asentamiento: ""
-id_asentamiento: ""
+id_asentamiento: "",
+latitud: number,
+longitud: number
 
 };
  export interface medioC{

@@ -50,6 +50,17 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     line-height: 1.2; }
   
+    .otherButton svg {
+      display: block;
+      fill: #264d5e;
+      width: 24px;
+      height: 24px;
+      opacity: 1;
+      -webkit-transition: all 150ms;
+      transition: all 150ms;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
   
     @media screen and (prefers-reduced-motion: reduce) {
       .btn {
@@ -244,6 +255,11 @@ h1, h2, h3, h4, h5, h6 {
   
   img {
     max-width: 100%; }
-  
+   
+    .backarrow{
+      background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
+      content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
+      transition: color 0.3s ease;
+  }
   
   

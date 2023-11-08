@@ -11,7 +11,8 @@ import esLocale from '@fullcalendar/core/locales/es';
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
-  styleUrls: ['./calendario.component.scss']
+  styleUrls: ['./calendario.component.css' ]
+  // ,'./fullcalendar-custom.css'
 })
 export class CalendarioComponent implements AfterViewInit {
   constructor(private httpService: HttpService, private dialog: MatDialog) {}
@@ -19,7 +20,7 @@ export class CalendarioComponent implements AfterViewInit {
   Mcita: mostrarcita[] = [];
 
   ngAfterViewInit(): void {
-    this.httpService.mostrarCita("15").subscribe((data: any) => {
+    this.httpService.mostrarCita(localStorage.getItem("Id_Usuario")).subscribe((data: any) => {
       this.Mcita = data;
 
       const evento = this.Mcita.map(event => {
@@ -53,6 +54,7 @@ export class CalendarioComponent implements AfterViewInit {
         validRange: {
           start: '2023-01-01',
           end: '2023-12-31',
+         
         },
         initialView: 'dayGridMonth',
         showNonCurrentDates: true,

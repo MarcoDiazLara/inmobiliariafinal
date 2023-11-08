@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WebModule } from '../web.module';
+import { Route, Router, ActivatedRoute } from '@angular/router';
+import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
+import { HttpService } from 'src/app/services/http/http.service';
 
 @Component({
   selector: 'app-maps',
@@ -11,12 +14,43 @@ export class MapsComponent  {
   public zoom: number;
   public center = { lat: 24, lng: 12 };
 
-  constructor() {
+  action: String | undefined;
+  tpropiedad!: Number;
+  ubicacion!: String;
+
+  datosInmueble: inmueblesBuscados[] = [];
+
+  constructor(private router: Router, private route: ActivatedRoute
+    , private http: HttpService) {
     this.markers = [];
     this.zoom = 12;
   }
 
   ngOnInit() {
+
+    this.route.queryParams.subscribe(params => {
+      console.log('Query Params: ', params);
+
+      this.action = params['action'];
+      this.tpropiedad = params['tpropiedad'];
+      this.ubicacion = params['ubicacion'];
+
+      console.log('Action: ', this.action);
+      console.log('Propiedad: ', this.tpropiedad);
+      console.log('Ubicacion: ', this.ubicacion);
+
+    });
+
+    this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+      
+      this.datosInmueble = data;
+      console.log(this.datosInmueble);
+      this.createMarkers();
+      console.log(this.markers);
+
+    });
+
+    
     if (!navigator.geolocation) {
       alert('Geolocalización No Compatible');
     }
@@ -33,9 +67,35 @@ export class MapsComponent  {
         },
         label: {
           color: "black",
-          text: "You're here"
+          text: "Estas Aqui"
          }
       })
     });
+  }
+  createMarkers() {
+    this.datosInmueble.forEach(inmueble => {
+      this.markers.push({
+        position: {
+          lat: Number(inmueble.latitud),
+          lng: Number(inmueble.longitud),
+        },
+        label: {
+          color: "black",
+          text: inmueble.Nombre_Publicacion
+         }
+        
+        
+      });
+    });
+  }
+
+  openDetails(marker: any) {
+    // Encuentra el inmueble correspondiente a partir de los datos de los marcadores.
+    const inmueble = this.datosInmueble.find(data => data.latitud == marker.position.lat && data.longitud == marker.position.lng);
+    if (inmueble) {
+      // Navega al componente "detalles" y pasa los parámetros necesarios
+      
+     this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': inmueble.Id_Inmueble, 'id_usuario': inmueble.Id_Publicador, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion }} );
+    }
   }
 }

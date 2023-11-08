@@ -300,7 +300,7 @@ obtenerLocalizacion(){
 
     this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
       p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados1,p_alberca1, p_jardin1,p_gym1,
-      p_roof,p_estacionamiento, this.p_ubi_maps,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
+      p_roof,p_estacionamiento,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
       p_prec_final1,p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) =>{
       if(data == 1){
         alert("Se subio el inmueble");
@@ -320,16 +320,6 @@ obtenerLocalizacion(){
   };
 
  
-  // onMapClick(event: google.maps.MapMouseEvent) {
-  //   // Aquí puedes agregar el código para crear un marcador en la ubicación del clic
-  //   if (event.latLng) {
-  //     const lat = event.latLng.lat();
-  //     const lng = event.latLng.lng();
-  //     console.log(`Latitud: ${lat}, Longitud: ${lng}`);
-  //   } else {
-  //     console.log('No se pudo obtener la posición.');
-  //   }
-  // }
 
   activeMarker: any = null;
   map: google.maps.Map | null = null;

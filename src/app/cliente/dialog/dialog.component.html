@@ -1,18 +1,80 @@
 
-<h2 mat-dialog-title>Información de la fecha</h2>
+<h2 mat-dialog-title style="text-align: center;">Información de la Cita</h2>
+
 <mat-dialog-content>
-  <p>Has seleccionado la fecha: {{ data.fecha }}</p>
-  <p>Nombre: {{ data.Nombre }}</p>
-  <p>Calle: {{ data.Calle }}</p>
-  <p>Num_Ext:  {{ data. Num_Ext}}</p>
-  <p> Num_Int:  {{ data.Num_Int }} </p>
- <p> Email:  {{ data.Email }}</p>
- <p> Telefono: {{ data.Telefono }}</p>
-  <p> Mensaje: {{ data.Mensaje }}</p> 
-  <p>Nombre Publicacion {{data.Nombre_Publicacion}}</p>
-  <p> Id Usuario {{data.Id_Usuario}}</p>
-  <p> Medio de contacto {{ data.Medio_Contacto}}</p>
-  <p> Hora {{data.Hora}}</p>
+  <div class="col-md">
+    <hr>
+    <h4 style="text-align: center;">
+      <i class="bi bi-person-vcard"></i> Datos personales </h4>
+    <hr>
+    <p>Id Usuario {{ data.Id_Usuario }}</p>
+    <p>Nombre: {{ data.Nombre }}</p>
+    <p>Email: {{ data.Email }}</p>
+    <p>Telefono: {{ data.Telefono }}</p>
+    <hr>
+    <h4 style="text-align: center;"> <i class="bi bi-pencil"></i>  Datos de Publicacion  </h4>
+    <hr>
+    <p>Nombre Publicacion {{ data.Nombre_Publicacion }}</p>
+    <p>Calle: {{ data.Calle }}</p>
+    <p>Num_Int: {{ data.Num_Int }}</p>
+    <p>Num_Ext: {{ data.Num_Ext }}</p>
+    <hr>
+    <h4 style="text-align: center;">
+      <i class="bi bi-chat-dots"></i>  Datos de la Cita
+  </h4>
+     <hr>
+
+     <p> fecha: {{ data.fecha }}</p>
+      <p>Hora {{ data.Hora }}</p>
+      <p>Medio de contacto {{ data.Medio_Contacto }}</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="col-md">
+    <p>Nombre: {{ data.Nombre }}</p>
+    <p>Id Usuario {{ data.Id_Usuario }}</p>
+    <p>Email: {{ data.Email }}</p>
+</div> -->
+  
+
+  
+
+
+
+
+
+  
+  <!-- <div class="two-column-container">
+   
+      <p>Has seleccionado la fecha: {{ data.fecha }}</p>
+      <p>Nombre: {{ data.Nombre }}</p>
+      <p>Calle: {{ data.Calle }}</p>
+      <p>Num_Ext: {{ data.Num_Ext }}</p>
+      <p>Num_Int: {{ data.Num_Int }}</p>
+      <p>Email: {{ data.Email }}</p>
+      <p>Telefono: {{ data.Telefono }}</p>
+   
+ 
+      <p>Mensaje: {{ data.Mensaje }}</p>
+      <p>Nombre Publicacion {{ data.Nombre_Publicacion }}</p>
+      <p>Id Usuario {{ data.Id_Usuario }}</p>
+      <p>Medio de contacto {{ data.Medio_Contacto }}</p>
+      <p>Hora {{ data.Hora }}</p>
+ 
+  </div> -->
+  
   <!-- Agrega más contenido de la ventana emergente según sea necesario -->
 </mat-dialog-content>
 <mat-dialog-actions>
