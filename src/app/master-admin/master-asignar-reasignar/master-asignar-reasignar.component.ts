@@ -177,8 +177,7 @@ if (valorCelda !== null) {
     itemsToRemove.forEach( item => {
       localStorage.removeItem(item);
     })
-    this.http.setGlobalVariable(false);
-    this.router.navigate(["superUsuario"]);
+
   }
 
   

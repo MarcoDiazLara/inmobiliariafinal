@@ -135,8 +135,9 @@ prueba(){
 
 
   closeDialog(){
-    localStorage.removeItem("id_publicacion,mi_valor")
     this.dialog.closeAll();
+    localStorage.removeItem("id_publicacion,mi_valor")
+    
 
     // const itemsToRemove =[
     //   "id_publicacion",

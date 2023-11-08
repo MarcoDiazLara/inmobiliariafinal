@@ -24,10 +24,23 @@ import {MatInputModule} from '@angular/material/input';
 import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
 import { ClientepasswordComponent } from './ventanaemergente/clientepassword/clientepassword.component';
 import { NotificacionesclienteComponent } from './notificacionescliente/notificacionescliente.component';
-import { SeguimientoclienteComponent } from './seguimientocliente/seguimientocliente.component';
-import { AgendarcitaclienteComponent } from './agendarcitacliente/agendarcitacliente.component';
 import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
+
+
+
+
+
+import { NgFor } from '@angular/common';
+import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormGroup, } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { HttpService } from 'src/app/services/http/http.service';
+import { FormBuilder } from '@angular/forms';
 /end/
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
@@ -46,12 +59,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     ClienteComponent,
     ClientepasswordComponent,
     NotificacionesclienteComponent,
-    // SeguimientoclienteComponent,
-    // AgendarcitaclienteComponent,
     CambioasesorclienteComponent,
     CalendarioComponent,
     DialogComponent,
-    // PerfilclienteComponent,
+    PerfilclienteComponent,
     
 
   ],
