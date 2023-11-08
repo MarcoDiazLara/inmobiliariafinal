@@ -98,7 +98,7 @@
           <div class="col-md-3 alinea">
             <mat-form-field appearance="legacy" style="width: 95%;">
               <mat-label style="margin-left: 6%;"> <b> Correo </b></mat-label>
-              <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+              <input matInput type="correo" placeholder="Correo electronico" formControlName="correo">
               <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
                   Correo es <strong>requerido</strong>
               </mat-error>
