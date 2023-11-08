@@ -4,27 +4,29 @@
 
 <div class="navbar">
   <div class="Precio-container">
-    <input  class="inputBuscador" type="search" (keyup)="mostrarMunicipios()"  (click)="toggleBuscar()" placeholder="Ingresa tu ciudad o Localidad" [(ngModel)]="selectedMunicipio">
-    <button class="buttonnavbar" mat-stroked-button><img class="lupa"></button>
+    <input  class="inputBuscador" (click)="toggleBuscar()" placeholder="Ingresa tu ciudad o Localidad" (keyup)="mostrarMunicipios()" [(ngModel)]="selectedMunicipio" type="search" >
+    <button class="buttonnavbar" mat-stroked-button (click)="mostrar()"><img class="lupa"></button>
       <ul class="dropdown-Buscar" *ngIf="showBuscar"> 
-        <!-- <li  > -->
-        <ul class="content-Precio" *ngFor="let option of datosMunicipios" (click)="seleccionarItem(option.estado)">
+        
+        <ul class="content-Precio"  *ngFor="let option of datosMunicipios" (click)="seleccionarItem(option.estado) " (click)="mostrarIDMunicipio(option.id_Municipio)"   >
            {{option.estado}} 
-        </ul>
-      <!-- </li> -->
+        </ul> 
+      
       </ul>
   </div>
-
-  <!-- <div [formGroup]="firstFormGroup" class="buscador">
-    <input  id="miInput" class="form-control" type="search" 
-      placeholder="Prueba" aria-label="Buscar" (keyup)="mostrarMunicipios()" formControlName="ubicacion" [(ngModel)]="inmueble.ubicacion" >
-    <ul  class="dropdown-search">
-      <li *ngFor="let option of datosMunicipios"></li>
-    </ul>
-    <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
-      <img class="lupa">
-    </button>  -->
  
+  <!-- <div>
+    <input  id="miInput" class="form-control" type="search" (click)="toggleBuscar()"
+    placeholder="Ingresa tu ciudad o Localidad" aria-label="Buscar" (keyup)="mostrarMunicipios()" formControlName="ubicacion" [(ngModel)]="inmueble.ubicacion" >
+  <ul  class="dropdown-search">
+    <li *ngFor="let option of datosMunicipios" 
+     ><a>{{ option.estado }}</a></li>
+  </ul>
+  <button class="btn btn-outline-secondary" type="submit" (click)="mostrar()">
+    <img class="lupa">
+  </button>
+
+  </div> -->
   
   <div class="Precio-container">
     <button (click)="togglePrecio()" class="buttonnavbar" mat-stroked-button>Precio<img class="navarrow"></button>
