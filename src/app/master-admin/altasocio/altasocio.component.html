@@ -17,7 +17,7 @@
 
 
         <div class="col-md-4">
-          <mat-form-field appearance="legacy" style="width: 95%; margin-top: 3%;">
+          <mat-form-field appearance="fill" style="width: 95%;">
             <mat-label><b>RFC</b></mat-label>
             <input matInput type="text" placeholder="Correo electronico" formControlName="rfcempresa">
             <mat-error *ngIf="this.formGeneral.get('rfcempresa')?.hasError('required')">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-md-4">
-          <mat-form-field appearance="legacy" style="width: 95%; margin-top: 3%;">
+          <mat-form-field appearance="fill" style="width: 95%;">
             <mat-label><b>Correo</b></mat-label>
             <input matInput type="email" placeholder="Correo electronico" formControlName="email">
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
@@ -83,8 +83,8 @@
       <br>
       <div class="row" style="margin-top: 1%;">
         <div class="col-md-3">
-          <mat-form-field class="example-full-width " class="tamañoinput">
-            <mat-label style="margin-left: 6%;"><b>Tipo Socio</b></mat-label>
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Tipo Socio</b></mat-label>
             <mat-select formControlName="tipo_socio" required>
               <mat-option *ngFor="let Soci of Socios" value="{{Soci.Id_Tipo_Socio}}">{{Soci.Tipo_Socio}}</mat-option>
             </mat-select>
@@ -95,8 +95,8 @@
         </div>
        <br>
         <div class="col-md-3">
-          <mat-form-field class="example-full-width" class="tamañoinput">
-            <mat-label style="margin-left: 6%;"><b>Estados</b></mat-label>
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label ><b>Estados</b></mat-label>
             <mat-select formControlName="pId_estado" required>
               <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
                 }}</mat-option>
@@ -108,8 +108,8 @@
         </div>
 
         <div class="col-md-3 ">
-          <mat-form-field class="example-full-width" class="tamañoinput">
-            <mat-label style="margin-left: 6%;"><b>Municipio</b></mat-label>
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Municipio</b></mat-label>
             <mat-select formControlName="pId_municipio" required>
               <mat-option (click)="updateA()" *ngFor="let Mun of municipios" value="{{ Mun.id_Municipio}}">{{
                 Mun.Municipio
@@ -122,8 +122,8 @@
         </div>
 
         <div class="col-md-3">
-          <mat-form-field class="example-full-width " class="tamañoinput">
-            <mat-label style="margin-left: 6%;"><b>Asentamientos</b></mat-label>
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Asentamientos</b></mat-label>
             <mat-select formControlName="pId_asentamiento" required>
               <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_asentamiento}}">{{ Ase.Asentamiento
                 }}</mat-option>
@@ -225,10 +225,10 @@
 
 
         <div class="col-md-3 alinea">
-          <mat-form-field appearance="legacy" class="tamaño" style="margin-top: 6%;">
+          <mat-form-field appearance="fill" class="tamaño">
             <input matInput type="email" placeholder="Correo electronico" formControlName="email">
             <br>
-            <mat-label style="margin-left: 4%;"><b> Correo </b></mat-label>
+            <mat-label><b> Correo </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
               Correo es <strong>requerido</strong>
             </mat-error>

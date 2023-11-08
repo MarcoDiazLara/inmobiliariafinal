@@ -3,8 +3,8 @@
     <form class="insertar-dialog-content" [formGroup]="formGeneral">
         <div class="row">
             <div class="col-md-6">
-              <mat-form-field class="example-full-width">
-                <mat-label style="margin-left: 6%;"><b> Selecciona Usuario </b> </mat-label>
+              <mat-form-field appearance="fill">
+                <mat-label><b> Selecciona Usuario </b> </mat-label>
                 <mat-select formControlName="seleccionausuario" required>
                   <mat-option *ngFor="let User of typeUsers" value="{{ User.Id_Tipo_Usuario}}">{{ User.Tipo_Usuario
                   }}</mat-option>
@@ -87,7 +87,7 @@
           <div class="col-md-3">
             <mat-form-field appearance="fill">
               <mat-label><b> Contacto Emergencia </b></mat-label>
-              <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10" style="margin-left:6%;">
+              <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10">
               <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
                   El número de Emergencia <strong>es requerido</strong>
               </mat-error>
@@ -95,10 +95,10 @@
           </div>
          
       
-          <div class="col-md-3 alinea">
-            <mat-form-field appearance="legacy" style="width: 95%;">
-              <mat-label style="margin-left: 6%;"> <b> Correo </b></mat-label>
-              <input matInput type="correo" placeholder="Correo electronico" formControlName="correo">
+          <div class="col-md-3">
+            <mat-form-field appearance="fill" style="width: 95%;">
+              <mat-label><b> Correo </b></mat-label>
+              <input matInput type="correo" placeholder="Correo electronico" formControlName="email">
               <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
                   Correo es <strong>requerido</strong>
               </mat-error>
@@ -131,9 +131,9 @@
             </mat-form-field>
           </div>
         
-          <div class="col-md-3 alineaestatus">
-             <mat-form-field class="example-full-width ">
-              <mat-label  style="margin-left: 6%;"><b> Estatus </b> </mat-label>
+          <div class="col-md-3">
+             <mat-form-field appearance="fill">
+              <mat-label ><b> Estatus </b> </mat-label>
                   <mat-select  formControlName="estatus" required >
                     <mat-option *ngFor="let est of estados" [value]="est.value">
                       {{est.viewValue}}</mat-option>
@@ -143,11 +143,10 @@
       
           <div class="col-md-3">
             <mat-form-field appearance="fill">
-              <textarea matInput type="text" placeholder="" formControlName="descripcionusuario"></textarea>
-              <mat-label>
-                  <mat-icon>user</mat-icon><b> Descripcion Usuario </b></mat-label>
+              <textarea matInput rows="1" type="text" placeholder="" formControlName="descripcionusuario"></textarea>
+              <mat-label><b> Descripcion Usuario </b></mat-label>
               <mat-error *ngIf="this.formGeneral.get('descripcionusuario')?.hasError('required')">
-                  RFC <strong>Obligatorio</strong>
+                  Descripcion <strong>Obligatorio</strong>
               </mat-error>
             </mat-form-field>
           </div>
