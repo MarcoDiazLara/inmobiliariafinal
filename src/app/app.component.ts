@@ -14,4 +14,5 @@ export class AppComponent {
     localStorage.clear(); // Esto borrará todos los datos del localStorage
   }
 
+  
 }

@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
@@ -71,6 +72,7 @@ import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agent
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
+    MatGridListModule,
 
 
 
