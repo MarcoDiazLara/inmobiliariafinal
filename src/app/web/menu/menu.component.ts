@@ -152,8 +152,11 @@ export class MenuComponent implements OnInit {
     novedadesactulidad(){
       this.router.navigate(['web/novedadesactulidad'])
   }
-  inmueble(){
-    this.router.navigate(['inmueble/vista'])
+
+  ubicacion: String | undefined;
+  tpropiedad: String | undefined;
+  inmueble(entrada: number, tipo : number){
+    this.router.navigate(["/inmueble/vista"],{ queryParams: { 'action': 'compra', 'tpropiedad': entrada, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': tipo} });
   }
 
 
