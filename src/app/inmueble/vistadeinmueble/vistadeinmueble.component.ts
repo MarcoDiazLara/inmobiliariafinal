@@ -120,13 +120,12 @@ export class VistadeinmuebleComponent implements OnInit {
 
   //Municipio Seleccionado en el input
   selectedMunicipio: any;
-<<<<<<< HEAD
+
   idMunicipio:any | null ='';
   municipio:any | null =''; //valor que se almacena en el localStorage
   id_Tipo_Inmueble:any | null ='';// Valor que se almacena en el localStorage
   idTipoInmueble:any | null ='';
-=======
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
+
   title = 'ProyectoPrueba';
 
 
@@ -157,7 +156,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
   seleccionarItem(item: any) {
     this.selectedMunicipio = item;
-<<<<<<< HEAD
+
     console.log(item);
   }
   
@@ -183,10 +182,7 @@ export class VistadeinmuebleComponent implements OnInit {
     localStorage.setItem("id_Municipio", '');
     else 'hola';
     console.log( this.idTipoInmueble);
-=======
 
-    console.log(item);
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
   }
 
   
@@ -242,8 +238,6 @@ export class VistadeinmuebleComponent implements OnInit {
     }
 
     
-
-<<<<<<< HEAD
     this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
       this.datosInmueble = resp;
@@ -251,14 +245,13 @@ export class VistadeinmuebleComponent implements OnInit {
     }); 
 
     
-=======
+
 
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
 
     });
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
 
 
   }
@@ -275,19 +268,19 @@ export class VistadeinmuebleComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
-  mostrarDatosInmueble()
-  {
+
+  mostrarDatosInmueble(){
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
 
     });
-=======
-  mostrarIDMunicipio(id: number): void {
-    console.log(id);
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
   }
+
+  // mostrarIDMunicipio(id: number): void {
+  //   console.log(id);
+
+  // }
 
  
 
@@ -297,15 +290,14 @@ export class VistadeinmuebleComponent implements OnInit {
   back() {
     this.router.navigate(["/web"]);
   }
-<<<<<<< HEAD
+
   /*botonSeleccionado(opcion:number){
     console.log( 'El usuario mostro:'opcion );
   }*/
   limpiarFiltros(){
     this.datosInmueble = [];
   }
-=======
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
+
 
   mostrar() {
 
@@ -313,21 +305,21 @@ export class VistadeinmuebleComponent implements OnInit {
     this.limpiarFiltros()
     
 
-<<<<<<< HEAD
+
     this.municipio = localStorage.getItem("id_Municipio");
     this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
 
     this.http.busquedaAvanzada(this.municipio, this.id_Tipo_Inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
-=======
-    this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
+// =======
+//     this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
      
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
 
-    data= this.datosInmueble ;
+
+    datos= this.datosInmueble ;
 
     });
-<<<<<<< HEAD
+
 
     const itemsToRemove =[
       "id_Municipio",
@@ -336,8 +328,7 @@ export class VistadeinmuebleComponent implements OnInit {
     itemsToRemove.forEach( item => {
       localStorage.removeItem(item);
     });
-=======
->>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
+
               
     }
 /// este es el codigo del paginador de los resultados///
