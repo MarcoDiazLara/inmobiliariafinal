@@ -14,12 +14,12 @@ import { Router } from '@angular/router';
 
 
 
-
 @Component({
   selector: 'app-master-asignar-reasignar',
   templateUrl: './master-asignar-reasignar.component.html',
   styleUrls: ['./master-asignar-reasignar.component.scss']
 })
+
 export class MasterAsignarReasignarComponent implements OnInit {
 
   usuarios$: any;
@@ -42,16 +42,12 @@ export class MasterAsignarReasignarComponent implements OnInit {
   columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Asesor','botonOption'];
   
 
-
-
   // poner el nombre de una variable
   datosinmuebles: reasignacionA[]=[];
 
   datosAsesores: AsigarReAsignar[]=[];
  
  
-
-  
   constructor(
     public dialog: MatDialog,
     private http:HttpService,
