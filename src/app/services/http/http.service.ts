@@ -280,11 +280,31 @@ export class HttpService {
     let params = 'p_codigo='+p_codigo;
     return this.httpclient.post(this.url + 'mostrarcontacto.php', params, { headers });  
   }
+
 mostrarCita(p_Id_Usuario:any){
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
   let params = 'p_Id_Usuario='+p_Id_Usuario;
   return this.httpclient.post(this.url + 'mostrarcita.php', params, { headers }); 
   
 }
+
+InmuRecientes(Ubicacion: String, TipoPropiedad: Number){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad;
+  return this.httpclient.post(this.url + 'ObtenerInmuRecientes.php', params, { headers });
+}
+
+RentaDepReci(Ubicacion: String, TipoPropiedad: Number){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad;
+  return this.httpclient.post(this.url + 'RentDeparRecientes.php', params, { headers });
+}
+
+BajoPrecInmu(Ubicacion: String, TipoPropiedad: Number){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad;
+  return this.httpclient.post(this.url + 'BajoPrecInmu.php', params, { headers });
+}
+
 
 }

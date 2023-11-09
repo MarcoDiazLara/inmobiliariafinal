@@ -4,6 +4,7 @@ import { InmuebleRoutingModule } from './inmueble-routing.module';
 import { WebModule } from '../web/web.module';
 import { VentanacitaComponent } from './ventanacita/ventanacita.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
 
 
 
@@ -18,6 +19,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     
   
    
+  
+    MenuinmuebleComponent
   ],
   imports: [
     CommonModule,

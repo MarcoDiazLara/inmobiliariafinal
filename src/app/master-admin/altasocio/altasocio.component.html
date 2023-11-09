@@ -1,162 +1,316 @@
 <div class="contenedorgeneral">
-<div class="col-md-12">
+  <h4> DATOS DEL SOCIO </h4>
+  <div class="col-md-12">
+
     <form class="insertar-dialog-content" [formGroup]="formGeneral">
       <div class="row">
-          <div class="col-md-4">
-            <mat-form-field appearance="fill" class="tamañoinput">
-              <input matInput type="text" placeholder="" formControlName="nombrerazons">
-              <mat-label>
-                <b>Nombre Razon Social</b></mat-label>
-              <mat-error *ngIf="this.formGeneral.get('nombrerazons')?.hasError('required')">
-                El nombre es <strong>obligatorio</strong>
-              </mat-error>
-            </mat-form-field>
-          </div>
-      
-         
-      
-          <div class="col-md-4">
-              <mat-form-field appearance="legacy" style="width: 95%; margin-top: 3%;">
-                  <mat-label><b>RFC</b></mat-label>
-                  <input matInput type="text" placeholder="Correo electronico" formControlName="rfcempresa">
-                  <mat-error *ngIf="this.formGeneral.get('rfcempresa')?.hasError('required')">
-                      RFC <strong>requerido</strong>
-                  </mat-error>
-                </mat-form-field>
-          </div> 
-    
-          <div class="col-md-4">
-              <mat-form-field appearance="legacy" style="width: 95%; margin-top: 3%;">
-                  <mat-label><b>Correo</b></mat-label>
-                  <input matInput type="email" placeholder="Correo electronico" formControlName="email">
-                  <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
-                      Correo es <strong>requerido</strong>
-                  </mat-error>
-                </mat-form-field>
-          </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="nombrerazons">
+            <mat-label><b>Nombre Razon Social</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('nombrerazons')?.hasError('required')">
+              El nombre es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
         </div>
-     
-  
-      <div class="row">
-          <div class="col-md-3">
-              <mat-form-field appearance="fill" class="tamañoinput">
-                  <mat-label><b>Contacto Empresa</b></mat-label>
-                  <input matInput type="text" placeholder="Telefono" formControlName="contactoempresa" maxlength="10" style="margin-left:6%;">
-                  <mat-error *ngIf="this.formGeneral.get('contactoempresa')?.hasError('required')">
-                      El número de teléfono <strong>es requerido</strong>
-                  </mat-error>
-              </mat-form-field>
-          </div>
-  
-          <div class="col-md-3">
-              <mat-form-field appearance="fill" class="tamañoinput">
-                <input matInput type="text" placeholder="" formControlName="calle">
-                <mat-label>
-                    <b>Calle</b></mat-label>
-                <mat-error *ngIf="this.formGeneral.get('calle')?.hasError('required')">
-                    Calle <strong>Obligatorio</strong>
-                </mat-error>
-              </mat-form-field>
-          </div>
-          
-          <div class="col-md-3 ">
-              <mat-form-field appearance="fill" class="tamañoinput">
-                <input matInput type="text" placeholder="" formControlName="numext">
-                <mat-label>
-                  <b>NUM_EXT</b></mat-label>
-                <mat-error *ngIf="this.formGeneral.get('numext')?.hasError('required')">
-                  NUM_EXT <strong>Obligatorio</strong>
-                </mat-error>
-              </mat-form-field>
-          </div>
-        
-           <div class="col-md-3">
-              <mat-form-field appearance="fill" class="tamañoinput">
-               <input matInput type="text" placeholder="" formControlName="numint">
-                <mat-label><b>NUM_INT</b></mat-label>
-                 <mat-error *ngIf="this.formGeneral.get('numint')?.hasError('required')">
-                NUM_INT<strong>Obligatorio</strong>
-               </mat-error>
-              </mat-form-field>
+
+
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>RFC</b></mat-label>
+            <input matInput type="text" placeholder="Correo electronico" formControlName="rfcempresa">
+            <mat-error *ngIf="this.formGeneral.get('rfcempresa')?.hasError('required')">
+              RFC <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>Correo</b></mat-label>
+            <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+            <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
+              Correo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
         </div>
       </div>
+      <br>
 
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Contacto Empresa</b></mat-label>
+            <input matInput type="text" placeholder="Telefono" formControlName="contactoempresa" maxlength="10">
+            <mat-error *ngIf="this.formGeneral.get('contactoempresa')?.hasError('required')">
+              El número de teléfono <strong>es requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="calle">
+            <mat-label><b>Calle</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('calle')?.hasError('required')">
+              Calle <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3 ">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="numext">
+            <mat-label>
+              <b>NUM_EXT</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('numext')?.hasError('required')">
+              NUM_EXT <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="numint">
+            <mat-label><b>NUM_INT</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('numint')?.hasError('required')">
+              NUM_INT<strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <br>
       <div class="row" style="margin-top: 1%;">
         <div class="col-md-3">
-          <mat-form-field class="example-full-width " class="tamañoinput">
-            <mat-label  style="margin-left: 6%;"><b>Tipo Socio</b></mat-label>
-                <mat-select  formControlName="tipo_socio" required>
-                  <mat-option *ngFor="let Soci of Socios" value="{{Soci.Id_Tipo_Socio}}">{{Soci.Tipo_Socio}}</mat-option>
-                </mat-select>
-           <mat-error>
-             Tipo socio
-           </mat-error>
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Tipo Socio</b></mat-label>
+            <mat-select formControlName="tipo_socio" required>
+              <mat-option *ngFor="let Soci of Socios" value="{{Soci.Id_Tipo_Socio}}">{{Soci.Tipo_Socio}}</mat-option>
+            </mat-select>
+            <mat-error>
+              Tipo socio
+            </mat-error>
+          </mat-form-field>
+        </div>
+       <br>
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label ><b>Estados</b></mat-label>
+            <mat-select formControlName="pId_estado" required>
+              <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
+                }}</mat-option>
+            </mat-select>
+            <mat-error>
+              Estados
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3 ">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Municipio</b></mat-label>
+            <mat-select formControlName="pId_municipio" required>
+              <mat-option (click)="updateA()" *ngFor="let Mun of municipios" value="{{ Mun.id_Municipio}}">{{
+                Mun.Municipio
+                }}</mat-option>
+            </mat-select>
+            <mat-error>
+              Municipio
+            </mat-error>
           </mat-form-field>
         </div>
 
         <div class="col-md-3">
-          <mat-form-field class="example-full-width" class="tamañoinput">
-            <mat-label  style="margin-left: 6%;"><b>Estados</b></mat-label>
-                <mat-select  formControlName="pId_estado" required>
-                  <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
-                  }}</mat-option>
-                </mat-select>
-           <mat-error>
-             Estados
-           </mat-error>
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b>Asentamientos</b></mat-label>
+            <mat-select formControlName="pId_asentamiento" required>
+              <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_asentamiento}}">{{ Ase.Asentamiento
+                }}</mat-option>
+            </mat-select>
+            <mat-error>
+              Asentamientos
+            </mat-error>
           </mat-form-field>
         </div>
-        
-        <div class="col-md-3 ">
-          <mat-form-field class="example-full-width" class="tamañoinput">
-            <mat-label  style="margin-left: 6%;"><b>Municipio</b></mat-label>
-                <mat-select  formControlName="pId_municipio" required>
-                  <mat-option (click)="updateA()" *ngFor="let Mun of municipios" value="{{ Mun.id_Municipio}}">{{ Mun.Municipio
-                  }}</mat-option>
-                </mat-select>
-           <mat-error>
-             Municipio
-           </mat-error>
-          </mat-form-field>
-        </div>
-      
-         <div class="col-md-3">
-          <mat-form-field class="example-full-width " class="tamañoinput">
-            <mat-label  style="margin-left: 6%;"><b>Asentamientos</b></mat-label>
-                <mat-select  formControlName="pId_asentamiento" required>
-                  <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_asentamiento}}">{{ Ase.Asentamiento
-                  }}</mat-option>
-                </mat-select>
-           <mat-error>
-             Asentamientos
-           </mat-error>
-          </mat-form-field>
       </div>
-    </div>
-  
+
       <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+          <div style="margin-top: 5%;">
+            <div style="padding: 20px 0 20px 0;text-align: center;">
+              <p style="font-size: 130%;font-weight: 550;">Imagen Logo </p>
+            </div>
+            <mat-icon>wallpaper</mat-icon>
+            <div>
+              <input #imageInput class="form-control" type="file" accept="image/*" formControlName="imageInput">
+              <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')">
+                Seleccione una imagen <strong>es obligatorio</strong>
+              </mat-error>
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+       <br>
+      <!-- Apartado Informacion de usuario -->
+      <h4> DATOS DEL USUARIO </h4>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="nombre">
+            <mat-label><b>Nombre</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
+              El nombre es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="apellidopaterno">
+            <mat-label><b>Apellido Paterno</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('apellidopaterno')?.hasError('required')">
+              Apellido Paterno<strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="apellidomaterno">
+            <mat-label><b> Apellido Materno </b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
+              Apellido Paterno <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3 ">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <input matInput type="text" placeholder="" formControlName="curp">
+            <mat-label><b>CURP</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('curp')?.hasError('required')">
+              CURP <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamaño" style="margin-top: 6%;">
+            <input matInput type="text" placeholder="" formControlName="rfc">
+            <mat-label><b> RFC </b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('rfc')?.hasError('required')">
+              RFC <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamaño" style="margin-top: 6%;">
+            <mat-label><b> Contacto Emergencia </b></mat-label>
+            <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10">
+            <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
+              El número de Emergencia <strong>es requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-md-3 alinea">
+          <mat-form-field appearance="fill" class="tamaño">
+            <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+            <br>
+            <mat-label><b> Correo </b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
+              Correo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3 alinea">
+          <mat-form-field appearance="fill" class="tamaño">
+            <input matInput type="text" placeholder="" formControlName="nombreusuario">
+            <mat-label><b> Nombre Usuario </b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
+              Nombre Usuario <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+       <br>
+      <div class="row">
+        <div class="col-md-3 alinea">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <mat-label><b> Contraseña </b></mat-label>
+            <input matInput type="text" [type]="hide2 ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'hide2 password'"
+              [attr.aria-pressed]="hide2">
+              <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="this.formGeneral.get('password')?.hasError('required')">
+              Ingrese una contraseña es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- <div class="col-md-3 alineaestatus">
+             <mat-form-field class="example-full-width ">
+              <mat-label  style="margin-left: 6%;"><b> Estatus </b> </mat-label>
+                  <mat-select  formControlName="estatus" required >
+                    <mat-option *ngFor="let est of estados" [value]="est.value">
+                      {{est.viewValue}}</mat-option>
+                  </mat-select>
+            </mat-form-field>
+          </div> -->
+
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+            <textarea matInput type="text" placeholder="" formControlName="descripcionusuario"></textarea>
+            <mat-label><b> Descripcion Usuario </b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('descripcionusuario')?.hasError('required')">
+              Descripcion <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+
+        </div>
         <div class="col-md-6">
           <div style="margin-top: 3%;">
             <div style="padding: 20px 0 20px 0;text-align: center;">
-               <p style="font-size: 130%;font-weight: 550;">Imagen Logo </p>
+              <p style="font-size: 130%;font-weight: 550;">Imagen Usuario</p>
             </div>
             <mat-icon>wallpaper</mat-icon>
-           <div>
-             <input #imageInput class="form-control" type="file" accept="image/*"  formControlName="imageInput">
-             <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')" >
+            <div>
+              <input #imageInput class="form-control" type="file" accept="image/*" formControlName="imageUsua">
+              <mat-error *ngIf="this.formGeneral.get('imageUsua')?.hasError('required')">
                 Seleccione una imagen <strong>es obligatorio</strong>
-             </mat-error>
-           </div>
+              </mat-error>
+            </div>
+          </div>
         </div>
-      </div> 
-    </div>
+      </div>
+
+
     </form>
     <br>
     <div class="col-md-6 cssbutton">
-    <button mat-button type="submit" (click)="Guardardatos()" [class.spinner]="loading" [disabled]="loading" color="secondary">
+      <button mat-button type="submit" (click)="Guardardatos()" [class.spinner]="loading" [disabled]="loading"
+        color="secondary">
         <span>{{ loading ? 'Cargando...' : 'Registrar' }}</span>
-    </button>
-    </div>
+      </button>
     </div>
   </div>
-    
+</div>

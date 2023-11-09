@@ -60,6 +60,20 @@ export class AltasocioComponent implements OnInit {
       pId_municipio:['',[Validators.required]],
       pId_asentamiento:['',[Validators.required]],
       imageInput: ['', [Validators.required]],
+      // Apartado de Usuario
+      nombre: ['', [Validators.required]],
+      apellidopaterno: ['', [Validators.required]],
+      apellidomaterno: ['', [Validators.required]],
+      curp: ['', [Validators.required]],
+      rfc: ['', [Validators.required]],
+      correo: ['', [Validators.required]],
+      contactoprincipal: ['', [Validators.required]],
+      contactoemergencia: ['', [Validators.required]],
+      nombreusuario: ['',[Validators.required]],
+      password: ['', [Validators.required]],
+      estatus: ['', [Validators.required]],
+      descripcionusuario: ['', [Validators.required]],
+      imageUsua: ['', [Validators.required]],
     });
   }
 
@@ -83,10 +97,26 @@ export class AltasocioComponent implements OnInit {
      
       let imageInput = this.formGeneral.value.imageInput;
 
+      // Apartado de Informacion Usuarios
+
+      let nombre = this.formGeneral.value.nombre;
+      let apellidopaterno = this.formGeneral.value.apellidopaterno;
+      let apellidomaterno = this.formGeneral.value.apellidomaterno;
+      let contra = this.formGeneral.value.password;
+      let curp = this.formGeneral.value.curp;
+      let rfc = this.formGeneral.value.rfc;
+      let correo = this.formGeneral.value.rfc;
+      let contactoprincipal = this.formGeneral.value.contactoprincipal;
+      let contactoemergencia = this.formGeneral.value.contactoemergencia;
+      let nombreusuario = this.formGeneral.value.nombreusuario;
+      let estatus = this.formGeneral.value.estatus;
+      let descripcionusuario = this.formGeneral.value.descripcionusuario;
+      let imageUsua = this.formGeneral.value.imageUsua;
+
       //Nombre_Razon_Social: any,Img_Logo: any,RFC: any,Email: any,Tel_Empresa: any,Calle: any,Num_Ext: any,Num_Int:any,Id_Asentamiento:any,Id_Tipo_Socio: any, v_Id_Usuario: any
       //alert('nombrerazons: '+ nombrerazons + 'rfcempresa: ' + rfcempresa + 'calle: '+ calle + 'numext: ' + numext +  'contactoempresa: ' + contactoempresa + 'numint: '+ numint + 'email: ' + email  + 'imageInput' + imageInput + 'tipo_socio' + tipo_socio + 'estados' + estados+ 'municipio'+ municipio + 'asentamientos' + asentamientos); 
       
-      this.httpService.insertarSocio(nombrerazons,Logo, rfcempresa,email, contactoempresa,calle, numext, numint, asentamientos, tipo_socio, id).subscribe((data: any)=> {
+      this.httpService.insertarSocio(nombrerazons,Logo, rfcempresa,email, contactoempresa,calle, numext, numint, asentamientos, tipo_socio, id,).subscribe((data: any)=> {
         if(data == 1){
           alert("Se ha insertado el socio");
         }else{

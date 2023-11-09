@@ -120,10 +120,13 @@ export class VistadeinmuebleComponent implements OnInit {
 
   //Municipio Seleccionado en el input
   selectedMunicipio: any;
+<<<<<<< HEAD
   idMunicipio:any | null ='';
   municipio:any | null =''; //valor que se almacena en el localStorage
   id_Tipo_Inmueble:any | null ='';// Valor que se almacena en el localStorage
   idTipoInmueble:any | null ='';
+=======
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
   title = 'ProyectoPrueba';
 
 
@@ -136,6 +139,7 @@ export class VistadeinmuebleComponent implements OnInit {
   ubicacion!: String;
 
   tippropiedad: String | undefined;
+  bandera!: number;
 
 
 
@@ -147,12 +151,13 @@ export class VistadeinmuebleComponent implements OnInit {
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
-    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion } });
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion, 'bandera': this.bandera } });
 
   }
 
   seleccionarItem(item: any) {
     this.selectedMunicipio = item;
+<<<<<<< HEAD
     console.log(item);
   }
   
@@ -178,7 +183,12 @@ export class VistadeinmuebleComponent implements OnInit {
     localStorage.setItem("id_Municipio", '');
     else 'hola';
     console.log( this.idTipoInmueble);
+=======
+
+    console.log(item);
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
   }
+
   
   limpiarCampos(){
 
@@ -192,6 +202,7 @@ export class VistadeinmuebleComponent implements OnInit {
       this.action = params['action'];
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
+      this.bandera = params['bandera'];
 
       console.log('Action: ', this.action);
       console.log('Propiedad: ', this.tpropiedad);
@@ -201,8 +212,38 @@ export class VistadeinmuebleComponent implements OnInit {
 
    
     
+    if(this.bandera == 4){
+      this.http.InmuRecientes(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+        this.datosInmueble = resp;
+      })
+    } else if (this.bandera == 1){
+      this.http.RentaDepReci(this.ubicacion, 2).subscribe((resp:any) => {
+        this.datosInmueble = resp;
+      })
+
+    }else if (this.bandera == 2){
+      this.http.BajoPrecInmu(this.ubicacion, this.tpropiedad).subscribe((resp:any)=>{
+        this.datosInmueble = resp;
+      })
+    }else if(this.bandera == 3){
+
+    } else {
+      this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+
+        this.datosInmueble = resp;
+        
+      }); 
+  
+      this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+        
+        this.datosInmueble = data;
+  
+      });
+    }
+
     
 
+<<<<<<< HEAD
     this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
       this.datosInmueble = resp;
@@ -210,10 +251,14 @@ export class VistadeinmuebleComponent implements OnInit {
     }); 
 
     
+=======
 
-   
+    this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
-    //let datosBusqueda = 
+      this.datosTipoInmueble = data;
+
+    });
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
 
 
   }
@@ -223,13 +268,14 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   mostrarMunicipios() {
-    this.http.mostrarMunicipios(this.selectedMunicipio).subscribe((data: any) => {
+    this.http.mostrarMunicipios(this.municipios).subscribe((data: any) => {
 
       this.datosMunicipios = data;
 
     });
   }
 
+<<<<<<< HEAD
   mostrarDatosInmueble()
   {
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
@@ -237,6 +283,10 @@ export class VistadeinmuebleComponent implements OnInit {
       this.datosTipoInmueble = data;
 
     });
+=======
+  mostrarIDMunicipio(id: number): void {
+    console.log(id);
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
   }
 
  
@@ -247,12 +297,15 @@ export class VistadeinmuebleComponent implements OnInit {
   back() {
     this.router.navigate(["/web"]);
   }
+<<<<<<< HEAD
   /*botonSeleccionado(opcion:number){
     console.log( 'El usuario mostro:'opcion );
   }*/
   limpiarFiltros(){
     this.datosInmueble = [];
   }
+=======
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
 
   mostrar() {
 
@@ -260,14 +313,21 @@ export class VistadeinmuebleComponent implements OnInit {
     this.limpiarFiltros()
     
 
+<<<<<<< HEAD
     this.municipio = localStorage.getItem("id_Municipio");
     this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
 
     this.http.busquedaAvanzada(this.municipio, this.id_Tipo_Inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
+=======
+    this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
-     this.datosInmueble = datos;
+     
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
+
+    data= this.datosInmueble ;
 
     });
+<<<<<<< HEAD
 
     const itemsToRemove =[
       "id_Municipio",
@@ -276,16 +336,10 @@ export class VistadeinmuebleComponent implements OnInit {
     itemsToRemove.forEach( item => {
       localStorage.removeItem(item);
     });
+=======
+>>>>>>> 446efd436184f4a9fbcd8a033f11e756ca2bd5dd
               
     }
-//Muestra la seleccion del select**
-    cambioTpropiedad(tprop:string){
-      console.log('Selecciona Propiedad: ',tprop);
-      this.tippropiedad = tprop;
-
-}
-
-
 /// este es el codigo del paginador de los resultados///
 paginaAnterior() {
   if (this.paginaActual > 1) {
