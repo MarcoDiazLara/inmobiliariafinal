@@ -143,6 +143,7 @@ export class VistadeinmuebleComponent implements OnInit {
   ubicacion!: String;
 
   tippropiedad: String | undefined;
+  bandera!: number;
 
 
 
@@ -154,7 +155,7 @@ export class VistadeinmuebleComponent implements OnInit {
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
-    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion } });
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion, 'bandera': this.bandera } });
 
   }
 
@@ -174,6 +175,7 @@ export class VistadeinmuebleComponent implements OnInit {
       this.action = params['action'];
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
+      this.bandera = params['bandera'];
 
       console.log('Action: ', this.action);
       console.log('Propiedad: ', this.tpropiedad);
@@ -195,19 +197,34 @@ export class VistadeinmuebleComponent implements OnInit {
     })
 
     
+    if(this.bandera == 4){
+      this.http.InmuRecientes(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+        this.datosInmueble = resp;
+      })
+    } else if (this.bandera == 1){
+      this.http.RentaDepReci(this.ubicacion, 2).subscribe((resp:any) => {
+        this.datosInmueble = resp;
+      })
+
+    }else if (this.bandera == 2){
+      this.http.BajoPrecInmu(this.ubicacion, this.tpropiedad).subscribe((resp:any)=>{
+        this.datosInmueble = resp;
+      })
+    }else {
+      this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+
+        this.datosInmueble = resp;
+        
+      }); 
+  
+      this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+        
+        this.datosInmueble = data;
+  
+      });
+    }
+
     
-
-    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
-
-      this.datosInmueble = resp;
-      
-    }); 
-
-    this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
-      
-      this.datosInmueble = data;
-
-    });
 
 
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
