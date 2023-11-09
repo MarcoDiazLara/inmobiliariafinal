@@ -1,6 +1,5 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
 import { HttpService } from 'src/app/services/http/http.service';

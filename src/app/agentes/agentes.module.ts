@@ -32,6 +32,7 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
 import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
+import { InventarioagentesComponent } from './inventarioagentes/inventarioagentes.component';
 /end/
 
 
@@ -45,6 +46,7 @@ import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agent
     NotificacionesagentesComponent,
     CalendarioComponent,
     FechaHitoAgentesComponent,
+    InventarioagentesComponent,
 
     
   ],
@@ -73,10 +75,6 @@ import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agent
     MatNativeDateModule,
     MatButtonModule,
     MatGridListModule,
-
-
-
-
 
   ]
 })

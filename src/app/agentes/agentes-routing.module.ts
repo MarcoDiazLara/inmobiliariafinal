@@ -5,6 +5,7 @@ import { PerfilagentesComponent } from './perfilagentes/perfilagentes.component'
 import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
+import { InventarioagentesComponent } from './inventarioagentes/inventarioagentes.component';
 const routes: Routes = [
   {
     path:'',
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'Hitoagente', 
         component: FechaHitoAgentesComponent,
+      },
+      {
+        path: 'Inventario', 
+        component: InventarioagentesComponent,
       }
     ],
   }
