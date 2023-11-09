@@ -34,13 +34,14 @@ export class InventarioagentesComponent implements OnInit {
     'Nombre_Inmueble',
     'Calle',
     'Nombre_Usuario',
+    'Id_Usuario',
     'Asesor',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Asesor','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Id_Usuario','Asesor','botonOption'];
 
 
   // poner el nombre de una variable
@@ -174,6 +175,6 @@ if (valorCelda !== null) {
     })
 
   }
-  
+
   }
 
