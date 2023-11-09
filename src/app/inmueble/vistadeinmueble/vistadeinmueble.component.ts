@@ -222,7 +222,9 @@ export class VistadeinmuebleComponent implements OnInit {
         this.datosInmueble = resp;
       })
     }else if(this.bandera == 3){
-
+        this.http.Remates(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+          this.datosInmueble = resp;
+        })
     } else {
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 

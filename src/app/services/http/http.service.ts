@@ -307,4 +307,10 @@ BajoPrecInmu(Ubicacion: String, TipoPropiedad: Number){
 }
 
 
+Remates(Ubicacion: String, TipoPropiedad: Number){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad;
+  return this.httpclient.post(this.url + 'Remates.php', params, { headers });
+}
+
 }
