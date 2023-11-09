@@ -7,6 +7,9 @@ import { MenuComponent } from '../web/menu/menu.component';
 import { FooterComponent } from '../web/footer/footer.component';
 import { UnityComponent } from './unity/unity.component';
 import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
+import { AvisosComponent } from './avisos/avisos.component';
+import { InteresadosComponent } from './interesados/interesados.component';
+import { ContratosComponent } from './contratos/contratos.component';
 
 
 const routes: Routes = [
@@ -29,8 +32,20 @@ const routes: Routes = [
   },
   {
     path:'menuinmueble', component:MenuinmuebleComponent
-  }
+  },
+  {
+    path:'avisos', component:AvisosComponent
 
+  },
+  {
+
+    path:'interesados',component:InteresadosComponent
+  },
+  {
+    path:'contratos', component:ContratosComponent
+
+  }
+   
 
 
 ];

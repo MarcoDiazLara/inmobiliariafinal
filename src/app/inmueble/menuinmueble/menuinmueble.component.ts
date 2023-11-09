@@ -51,5 +51,19 @@ export class MenuinmuebleComponent  {
     this.router.navigate(['inmueble/menuinmueble']);
   }
 
+  Avisos(){
+    this.router.navigate(['inmueble/avisos']);
+    
+  }
+  Interesados(){
+    this.router.navigate(['inmueble/interesados']);
+  }
+
+  Contratos()
+{
+  this.router.navigate(['inmueble/contratos']);
+
+
+}
 
 }
