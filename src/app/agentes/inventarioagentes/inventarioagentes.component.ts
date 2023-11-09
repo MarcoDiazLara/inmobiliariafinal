@@ -9,15 +9,16 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InmuebledetallesComponent } from '../ventanaemergente/inmuebledetalles/inmuebledetalles.component';
+
+
 
 
 
 @Component({
   selector: 'app-inventarioagentes',
   templateUrl: './inventarioagentes.component.html',
-  styleUrls: ['./inventarioagentes.component.scss'],
-
-
+  styleUrls: ['./inventarioagentes.component.scss']
 })
 
 export class InventarioagentesComponent implements OnInit {
@@ -58,6 +59,7 @@ export class InventarioagentesComponent implements OnInit {
   ) { }
 
 
+  
   ngOnInit(): void {
 
     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
@@ -92,6 +94,8 @@ export class InventarioagentesComponent implements OnInit {
 
     
   }
+  
+  
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
@@ -150,30 +154,26 @@ if (valorCelda !== null) {
 
     
 
-  //   const dialogRef = this.dialog.open(AsignasrasesorComponent, {
-  //     width: '60vh',
-  //     height: 'auto',
-  //     disableClose: true
-  //   });
-  // }
-
-  // openDialog(): void {
-  //   this.dialog.closeAll();
-  //   //this.httpService.setGlobalVariable(false);
-  //   const itemsToRemove =[
-  //     "id_publicacion",
-  //     "mi_valor",
-  //     "Asesor",
-  //   ];
-  //   itemsToRemove.forEach( item => {
-  //     localStorage.removeItem(item);
-  //   })
-
-  // }
+    const dialogRef = this.dialog.open(InmuebledetallesComponent, {
+      width: '60vh',
+      height: 'auto',
+      disableClose: true
+    });
   }
 
+  openDialog(): void {
+    this.dialog.closeAll();
+    //this.httpService.setGlobalVariable(false);
+    const itemsToRemove =[
+      "id_publicacion",
+      "mi_valor",
+      "Asesor",
+    ];
+    itemsToRemove.forEach( item => {
+      localStorage.removeItem(item);
+    })
+
+  }
   
+  }
 
- 
-
-}

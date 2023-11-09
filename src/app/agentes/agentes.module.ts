@@ -18,10 +18,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 /*tablas */
-import {MatTableModule} from '@angular/material/table';
+
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
 import { AgentesComponent } from './agentes.component';
 import { NgFor } from '@angular/common';
 import { NgIf } from '@angular/common';
@@ -33,6 +35,7 @@ import { NotificacionesagentesComponent } from './notificacionesagentes/notifica
 import { CalendarioComponent } from './calendario/calendario.component';
 import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
 import { InventarioagentesComponent } from './inventarioagentes/inventarioagentes.component';
+import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/inmuebledetalles.component';
 /end/
 
 
@@ -47,12 +50,12 @@ import { InventarioagentesComponent } from './inventarioagentes/inventarioagente
     CalendarioComponent,
     FechaHitoAgentesComponent,
     InventarioagentesComponent,
+    InmuebledetallesComponent,
 
     
   ],
   imports: [
     CommonModule,
-
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -64,7 +67,6 @@ import { InventarioagentesComponent } from './inventarioagentes/inventarioagente
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
@@ -75,6 +77,8 @@ import { InventarioagentesComponent } from './inventarioagentes/inventarioagente
     MatNativeDateModule,
     MatButtonModule,
     MatGridListModule,
+    MatTableModule,
+    MatMenuModule,
 
   ]
 })

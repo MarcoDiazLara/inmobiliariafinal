@@ -47,7 +47,6 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   datosAsesores: AsigarReAsignar[]=[];
  
- 
   constructor(
     public dialog: MatDialog,
     private http:HttpService,
