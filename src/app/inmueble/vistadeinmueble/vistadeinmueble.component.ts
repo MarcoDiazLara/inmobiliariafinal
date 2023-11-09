@@ -131,7 +131,6 @@ export class VistadeinmuebleComponent implements OnInit {
 
   //Municipio Seleccionado en el input
   selectedMunicipio: any;
-  idMunicipio:any;
   title = 'ProyectoPrueba';
 
 
@@ -162,13 +161,10 @@ export class VistadeinmuebleComponent implements OnInit {
 
   seleccionarItem(item: any) {
     this.selectedMunicipio = item;
-    console.log(item, this.idMunicipio);
+
+    console.log(item);
   }
-  
-  mostrarIDMunicipio(idM: number): void {
-    this.idMunicipio = idM;
-    console.log(this.idMunicipio);
-  }
+
   
 
   ngOnInit(): void {
@@ -214,7 +210,9 @@ export class VistadeinmuebleComponent implements OnInit {
       this.http.BajoPrecInmu(this.ubicacion, this.tpropiedad).subscribe((resp:any)=>{
         this.datosInmueble = resp;
       })
-    }else {
+    }else if(this.bandera == 3){
+
+    } else {
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
         this.datosInmueble = resp;
@@ -230,31 +228,12 @@ export class VistadeinmuebleComponent implements OnInit {
 
     
 
-<<<<<<< HEAD
-=======
-    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
-
-      this.datosInmueble = resp;
-      
-    }); 
-
-    // this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
-      
-    //   this.datosInmueble = data;
-
-    // });
-
->>>>>>> dae8a8acf64fdb734ec083ed5758cde5f9e53609
 
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
 
     });
-
-   
-
-    //let datosBusqueda = 
 
 
   }
@@ -264,14 +243,16 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   mostrarMunicipios() {
-    this.http.mostrarMunicipios(this.selectedMunicipio).subscribe((data: any) => {
+    this.http.mostrarMunicipios(this.municipios).subscribe((data: any) => {
 
       this.datosMunicipios = data;
 
     });
   }
 
-  
+  mostrarIDMunicipio(id: number): void {
+    console.log(id);
+  }
 
  
 
@@ -281,46 +262,21 @@ export class VistadeinmuebleComponent implements OnInit {
   back() {
     this.router.navigate(["/web"]);
   }
-  /*botonSeleccionado(opcion:number){
-    console.log( 'El usuario mostro:'opcion );
-  }*/
 
   mostrar() {
 
 
     this.datosInmueble = [];
 
-    this.http.busquedaAvanzada(this.idMunicipio, this.inmueble.inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
+    this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
-      
-      /*let mostrar = JSON.stringify(data);
-      alert(mostrar);*/
-      //console.log(this.inmueble);
+     
 
-     this.datosInmueble = datos;
+    data= this.datosInmueble ;
 
-  
-
-
-      /*this.http.busquedaAvanzada(this.data.ubicacion,'',this.data.tpropiedad,'','','','',this.data.action,'','').subscribe((data: any) => {
-        let mostrar = JSON.stringify(data);
-        alert(mostrar);
-
-      location.reload();
-    
-      this.datosInmueble =[];*/
-
-                });
+    });
               
     }
-//Muestra la seleccion del select**
-    cambioTpropiedad(tprop:string){
-      console.log('Selecciona Propiedad: ',tprop);
-      this.tippropiedad = tprop;
-
-}
-
-
 /// este es el codigo del paginador de los resultados///
 paginaAnterior() {
   if (this.paginaActual > 1) {
