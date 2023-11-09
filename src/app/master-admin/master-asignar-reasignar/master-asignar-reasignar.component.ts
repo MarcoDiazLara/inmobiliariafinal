@@ -158,7 +158,6 @@ if (valorCelda !== null) {
 
 
     
-   
 
     const dialogRef = this.dialog.open(AsignasrasesorComponent, {
       width: '60vh',
@@ -168,6 +167,18 @@ if (valorCelda !== null) {
   }
 
   openDialog(): void {
+    this.dialog.closeAll();
+    //this.httpService.setGlobalVariable(false);
+    const itemsToRemove =[
+      "id_publicacion",
+      "mi_valor",
+      "Asesor",
+    ];
+    itemsToRemove.forEach( item => {
+      localStorage.removeItem(item);
+    })
 
   }
+
+  
 }
