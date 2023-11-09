@@ -313,4 +313,10 @@ Remates(Ubicacion: String, TipoPropiedad: Number){
   return this.httpclient.post(this.url + 'Remates.php', params, { headers });
 }
 
+MenuFiltros(Ubicacion: String, TipoPropiedad: Number, p_tipo_Pub: Number){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_tipo_Pub='+ p_tipo_Pub;
+  return this.httpclient.post(this.url + 'ConsultaMenu.php', params, { headers });
+}
+
 }
