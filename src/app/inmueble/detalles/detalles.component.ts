@@ -41,6 +41,7 @@ public Venta: Boolean = false;
   id_usuario!: String;
   tpropiedad!: Number;
   ubicacion!: String;
+  bandera!: number;
 
   tipo !: String;
 
@@ -53,6 +54,7 @@ public Venta: Boolean = false;
       this.id_usuario = params['id_usuario'];
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
+      this.bandera = params['bandera'];
     
     });
 
@@ -207,7 +209,7 @@ public Venta: Boolean = false;
 
 
   back(){
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion}});
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': this.bandera}});
   }
 
    
