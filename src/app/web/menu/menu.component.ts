@@ -127,6 +127,10 @@ export class MenuComponent implements OnInit {
     }
 
   }
+
+  Espacio(){
+    this.router.navigate(['inmueble/menuinmueble']);
+  }
   
   RemateHipotecario(){
 
@@ -148,8 +152,9 @@ export class MenuComponent implements OnInit {
     novedadesactulidad(){
       this.router.navigate(['web/novedadesactulidad'])
   }
-  inmueble(){
-    this.router.navigate(['inmueble/vista'])
+  inmueble(entrada: number){
+    this.router.navigate(["/inmueble/vista"],{ queryParams: { 'action': 'compra', 'tpropiedad': entrada, 'ubicacion': "", 'bandera': 0} });
   }
+
 
 }

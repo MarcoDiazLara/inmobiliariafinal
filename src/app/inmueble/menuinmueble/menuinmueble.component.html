@@ -1,1 +1,74 @@
-<p>menuinmueble works!</p>
+<nav class= "navbar navbar-expand-lg bg-body-tertiary font-Roboto-Condensed">
+    <div class="container">
+        <a class="navbar-brand" ><img class="me-4"
+                src="assets/img/logo.png" width="70px" height="60px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent"> -->
+            <!-- <ul class="navbar-nav "> -->
+                <ul class="navbar-nav mx-5 mb-2 mb-lg-0">
+                <!--Menu Avisos-->
+                <li class="nav-item mx-1">
+                    <a     class="nav-link" role="button" aria-expanded="false">
+                      Avisos
+                    </a>
+                </li>
+                </ul>
+                <ul class="navbar-nav mx-5 mb-2 mb-lg-0">
+                <!--Menu Interesados -->
+                <li class="nav-item mx-1">
+                    <a  class="nav-link" role="button" aria-expanded="false">
+                        Interesados
+                    </a>
+                </li>
+                </ul>
+                <ul class="navbar-nav mx-5 mb-2 mb-lg-0">
+                <!--Menu Contrataciones-->
+                <li  class="nav-item mx-1">
+                    <a   class="nav-link" role="button" aria-expanded="false" >
+                        Contrataciones
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+        <div style="margin-top: 15px;" class="d-flex p-2 bd-highlight">
+            <form class="d-flex mx-2" >
+
+                <!-- <button  style="margin-top: 10px;" class="btn btn-secondary ml-auto mr-3" type="button">Nuevo Botón</button> -->
+              <button style="margin-top: 10px;" class="btn btn-outline-inmo ordenabutton font-Roboto-Condensed my-1 mx-1" type="button"  >
+                <i class="bi bi-cart  m-1 size-icon"></i>     Comprar
+              </button>
+    
+                <ul >
+                <!-- <button class="btn btn-outline-inmo ordenabutton1 font-Roboto-Condensed my-1 mx-1" type="submit">
+                    <i class="bi bi-person-circle m-1 size-icon" ></i> Acceder
+                </button> -->
+
+
+
+                <div class="dropdown">
+            
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Perfil
+                      <i class="bi bi-person-circle m-1 size-icon"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" (click)="Editar()">Editar Perfil</a>
+                      <a class="dropdown-item" (click)="Panel()">Panel de Control</a>
+                      <a class="dropdown-item" (click)="Espacio()" >Mi espacio</a>
+                      <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
+                    </div>
+                  </div>
+           
+           
+              </ul>
+             
+            </form>
+        </div>
+    </div>
+  </nav>
+  <div class="separator"></div>

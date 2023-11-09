@@ -33,6 +33,12 @@ export class AtajosComponent implements OnInit {
     this.router.navigate(["/inmueble/vista"],{ queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': bandera} });
   }
 
+  ResultadoosBusqueda3(){
+    let bandera = 3;
+    this.tpropiedad = '0';
+    this.router.navigate(["/inmueble/vista"],{ queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': bandera} });
+  }
+
 
   ngOnInit(): void {
   }
