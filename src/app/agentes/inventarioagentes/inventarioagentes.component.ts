@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-inventarioagentes',
   templateUrl: './inventarioagentes.component.html',
-  styleUrls: ['./inventarioagentes.component.scss']
+  styleUrls: ['./inventarioagentes.component.scss'],
+
 
 })
 
@@ -109,6 +110,7 @@ export class InventarioagentesComponent implements OnInit {
       console.log('Error de conexión');
     }
     )
+
 
   }
 
