@@ -3,15 +3,16 @@
       <h4>Encabezado</h4>
     </div>
     <div class="container2">
-      <div class="funciones">
-        <h4>Funciones</h4>
-      </div>
       <div class="calendario">
         <h4>Calendario</h4>
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+        <p>Selected date: {{selected}}</p>
+        
       </div>
     </div>
     <div class="detallesfecha">
       <h4>Detalles de la Fecha</h4>
     </div>
   </div>
-  

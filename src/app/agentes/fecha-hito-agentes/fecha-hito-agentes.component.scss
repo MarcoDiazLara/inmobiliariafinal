@@ -10,13 +10,16 @@
   }
   
   .encabezado,
-  .funciones,
-  .calendario,
   .detallesfecha {
     flex-basis: 23%;
     padding: 10px;
     border: 1px solid #ddd;
     background-color: #f5f5f5;
     text-align: center;
+  }
+  .calendario{
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
   }
   

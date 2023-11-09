@@ -106,7 +106,7 @@ export class VistadeinmuebleComponent implements OnInit {
   /*datosMunicipios  llena la lista de busqueda de todos los municipios*/
   datosMunicipios: any[] = [];
   /*datosTipoInmueble llena el comboBox con los tipos de inmuebles */
-  datosTipoInmueble: Inmuebles[] = [];
+  datosTipoInmueble: any[] = [];
   /*municipios almacena el valor del municpio= San Martin Tex,etc */
   municipios = '';
   /*tipoinmuebles almacena el valor del tipo de inmueble casa, departamento, etc. */
@@ -116,21 +116,16 @@ export class VistadeinmuebleComponent implements OnInit {
   /*Almacena el id del tipoInmueble*/
   seleccionIdTipoInmueble:any | null='';
 
-  inmueble: any = {
-    ubicacion: '',
-    recamaras: '',
-    inmueble: '',
-    precioHasta: '',
-    precioDesde: '',
-    tipoAccion: '',
-    bano:'',
-    estacionamiento:''
-    
-
-  }
+  
 
   //Municipio Seleccionado en el input
   selectedMunicipio: any;
+
+  idMunicipio:any | null ='';
+  municipio:any | null =''; //valor que se almacena en el localStorage
+  id_Tipo_Inmueble:any | null ='';// Valor que se almacena en el localStorage
+  idTipoInmueble:any | null ='';
+
   title = 'ProyectoPrueba';
 
 
@@ -165,8 +160,36 @@ export class VistadeinmuebleComponent implements OnInit {
 
     console.log(item);
   }
+  
+  mostrarIDMunicipio(idM: number): void {
+    this.idMunicipio = idM;
+    this.toggleBuscar();
+    localStorage.setItem("id_Municipio",this.idMunicipio);
+
+
+    if(this.id_Tipo_Inmueble.value == null)
+    localStorage.setItem("id_Tipo_Inmueble", '');
+    else 'hola';
+
+    console.log(this.idMunicipio, this.id_Tipo_Inmueble.value);
+
+  }
+  mostrarIDTipoInmueble(idTipo:number): void{
+    this.idTipoInmueble=idTipo;
+    this.toggleInmueble();
+    localStorage.setItem("id_Tipo_Inmueble", this.idTipoInmueble);
+
+    if(this.idMunicipio.value == null)
+    localStorage.setItem("id_Municipio", '');
+    else 'hola';
+    console.log( this.idTipoInmueble);
+
+  }
 
   
+  limpiarCampos(){
+
+  }
 
   ngOnInit(): void {
 
@@ -185,19 +208,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
 
-    this.firstFormGroup = this.formBuilder.group({
-      ubicacion: ['',[Validators.required]],
-      Id_Tipo_Inmueble: ['', [Validators.required]],
-      pAccion :['', [Validators.required]],
-      pRecamaras: ['', [Validators.required]]
-      
-
-    });
-    this.precios = this.formBuilder.group({
-      pDesde: ['',[Validators.required]],
-      pHasta: ['',[Validators.required]]
-    })
-
+   
     
     if(this.bandera == 4){
       this.http.InmuRecientes(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
@@ -239,6 +250,13 @@ export class VistadeinmuebleComponent implements OnInit {
     }
 
     
+    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+
+      this.datosInmueble = resp;
+      
+    }); 
+
+    
 
 
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
@@ -262,9 +280,19 @@ export class VistadeinmuebleComponent implements OnInit {
     });
   }
 
-  mostrarIDMunicipio(id: number): void {
-    console.log(id);
+
+  mostrarDatosInmueble(){
+    this.http.mostrarTipoInmueble().subscribe((data: any) => {
+
+      this.datosTipoInmueble = data;
+
+    });
   }
+
+  // mostrarIDMunicipio(id: number): void {
+  //   console.log(id);
+
+  // }
 
  
 
@@ -275,18 +303,44 @@ export class VistadeinmuebleComponent implements OnInit {
     this.router.navigate(["/web"]);
   }
 
+  /*botonSeleccionado(opcion:number){
+    console.log( 'El usuario mostro:'opcion );
+  }*/
+  limpiarFiltros(){
+    this.datosInmueble = [];
+  }
+
+
   mostrar() {
 
 
-    this.datosInmueble = [];
+    this.limpiarFiltros()
+    
 
-    this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
+
+    this.municipio = localStorage.getItem("id_Municipio");
+    this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
+
+    this.http.busquedaAvanzada(this.municipio, this.id_Tipo_Inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
+// =======
+//     this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
      
 
-    data= this.datosInmueble ;
+
+    datos= this.datosInmueble ;
 
     });
+
+
+    const itemsToRemove =[
+      "id_Municipio",
+      "id_Tipo_Inmueble"
+    ];
+    itemsToRemove.forEach( item => {
+      localStorage.removeItem(item);
+    });
+
               
     }
 /// este es el codigo del paginador de los resultados///
