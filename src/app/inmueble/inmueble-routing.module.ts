@@ -6,6 +6,7 @@ import { DetallesComponent } from './detalles/detalles.component';
 import { MenuComponent } from '../web/menu/menu.component';
 import { FooterComponent } from '../web/footer/footer.component';
 import { UnityComponent } from './unity/unity.component';
+import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,11 @@ const routes: Routes = [
   },
   {
     path: 'unity', component: UnityComponent
+  },
+  {
+    path:'menuinmueble', component:MenuinmuebleComponent
   }
+
 
 
 ];

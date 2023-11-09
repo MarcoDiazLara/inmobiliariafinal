@@ -127,6 +127,10 @@ export class MenuComponent implements OnInit {
     }
 
   }
+
+  Espacio(){
+    this.router.navigate(['inmueble/menuinmueble']);
+  }
   
   RemateHipotecario(){
 
@@ -151,5 +155,6 @@ export class MenuComponent implements OnInit {
   inmueble(){
     this.router.navigate(['inmueble/vista'])
   }
+
 
 }
