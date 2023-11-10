@@ -245,5 +245,9 @@ h1, h2, h3, h4, h5, h6 {
   img {
     max-width: 100%; }
   
-  
+    .backarrow{
+      background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
+      content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
+      transition: color 0.3s ease;
+  }
   

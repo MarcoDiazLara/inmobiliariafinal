@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-desarrollob',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesarrollobComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private router:Router ) {  }
 
   ngOnInit(): void {
   }
 
+  back(){
+    this.router.navigate(["/web/blog"]);
+  }
 }
