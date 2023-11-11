@@ -15,6 +15,7 @@ import { InmuebledetallesComponent } from '../ventanaemergente/inmuebledetalles/
 
 
 
+
 @Component({
   selector: 'app-inventarioagentes',
   templateUrl: './inventarioagentes.component.html',
@@ -156,8 +157,8 @@ if (valorCelda !== null) {
     
 
     const dialogRef = this.dialog.open(InmuebledetallesComponent, {
-      width: '60vh',
-      height: 'auto',
+      width: '80%',
+      height: 'auto',  
       disableClose: true
     });
   }
