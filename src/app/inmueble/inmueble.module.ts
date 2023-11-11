@@ -5,6 +5,9 @@ import { WebModule } from '../web/web.module';
 import { VentanacitaComponent } from './ventanacita/ventanacita.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
+import { AvisosComponent } from './avisos/avisos.component';
+import { InteresadosComponent } from './interesados/interesados.component';
+import { ContratosComponent } from './contratos/contratos.component';
 
 
 
@@ -20,7 +23,10 @@ import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
   
    
   
-    MenuinmuebleComponent
+    MenuinmuebleComponent,
+                      AvisosComponent,
+                      InteresadosComponent,
+                      ContratosComponent
   ],
   imports: [
     CommonModule,
