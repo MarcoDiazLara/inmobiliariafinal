@@ -1,7 +1,6 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { AsignasrasesorComponent } from '../ventanaemergente/asignasrasesor/asignasrasesor.component';
 import { HttpService } from 'src/app/services/http/http.service';
 import { reasignacionA } from 'src/app/services/Interface/Interfaces';
 import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
@@ -10,17 +9,20 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InmuebledetallesComponent } from '../ventanaemergente/inmuebledetalles/inmuebledetalles.component';
+
+
 
 
 
 
 @Component({
-  selector: 'app-master-asignar-reasignar',
-  templateUrl: './master-asignar-reasignar.component.html',
-  styleUrls: ['./master-asignar-reasignar.component.scss']
+  selector: 'app-inventarioagentes',
+  templateUrl: './inventarioagentes.component.html',
+  styleUrls: ['./inventarioagentes.component.scss']
 })
 
-export class MasterAsignarReasignarComponent implements OnInit {
+export class InventarioagentesComponent implements OnInit {
 
   usuarios$: any;
 
@@ -33,20 +35,21 @@ export class MasterAsignarReasignarComponent implements OnInit {
     'Nombre_Inmueble',
     'Calle',
     'Nombre_Usuario',
+    'Id_Usuario',
     'Asesor',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Asesor','botonOption'];
-  
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Id_Usuario','Asesor','botonOption'];
+
 
   // poner el nombre de una variable
   datosinmuebles: reasignacionA[]=[];
 
   datosAsesores: AsigarReAsignar[]=[];
- 
+
   constructor(
     public dialog: MatDialog,
     private http:HttpService,
@@ -57,8 +60,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
     // Http para jalar el servicio 
   ) { }
 
- 
 
+  
   ngOnInit(): void {
 
     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
@@ -93,8 +96,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
     
   }
-
-
+  
+  
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
@@ -153,9 +156,9 @@ if (valorCelda !== null) {
 
     
 
-    const dialogRef = this.dialog.open(AsignasrasesorComponent, {
-      width: '60vh',
-      height: 'auto',
+    const dialogRef = this.dialog.open(InmuebledetallesComponent, {
+      width: '80%',
+      height: 'auto',  
       disableClose: true
     });
   }
@@ -174,5 +177,5 @@ if (valorCelda !== null) {
 
   }
 
-  
-}
+  }
+

@@ -18,10 +18,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 /*tablas */
-import {MatTableModule} from '@angular/material/table';
+
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
 import { AgentesComponent } from './agentes.component';
 import { NgFor } from '@angular/common';
 import { NgIf } from '@angular/common';
@@ -32,6 +34,8 @@ import { AgentepasswordComponent } from './ventanaemergente/agentepassword/agent
 import { NotificacionesagentesComponent } from './notificacionesagentes/notificacionesagentes.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
+import { InventarioagentesComponent } from './inventarioagentes/inventarioagentes.component';
+import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/inmuebledetalles.component';
 /end/
 
 
@@ -45,12 +49,13 @@ import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agent
     NotificacionesagentesComponent,
     CalendarioComponent,
     FechaHitoAgentesComponent,
+    InventarioagentesComponent,
+    InmuebledetallesComponent,
 
     
   ],
   imports: [
     CommonModule,
-
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -62,7 +67,6 @@ import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agent
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
@@ -73,10 +77,8 @@ import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agent
     MatNativeDateModule,
     MatButtonModule,
     MatGridListModule,
-
-
-
-
+    MatTableModule,
+    MatMenuModule,
 
   ]
 })

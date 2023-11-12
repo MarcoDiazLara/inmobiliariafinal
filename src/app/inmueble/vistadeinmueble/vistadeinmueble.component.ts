@@ -139,6 +139,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
   tippropiedad: String | undefined;
   bandera!: number;
+  tipoP!: number;
 
 
 
@@ -150,7 +151,7 @@ export class VistadeinmuebleComponent implements OnInit {
   detalles(id_inmu: any, id_usu : any) {
 
     //console.log(id_inmu,id_usu);
-    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion, 'bandera': this.bandera } });
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': id_inmu, 'id_usuario': id_usu, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion, 'bandera': this.bandera,'tipoP': this.tipoP } });
 
   }
 
@@ -202,6 +203,7 @@ export class VistadeinmuebleComponent implements OnInit {
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
       this.bandera = params['bandera'];
+      this.tipoP = params['tipoP'];
 
       console.log('Action: ', this.action);
       console.log('Propiedad: ', this.tpropiedad);
@@ -227,7 +229,9 @@ export class VistadeinmuebleComponent implements OnInit {
         this.datosInmueble = resp;
       })
     }else if(this.bandera == 3){
-
+        this.http.Remates(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+          this.datosInmueble = resp;
+        })
     } else {
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
