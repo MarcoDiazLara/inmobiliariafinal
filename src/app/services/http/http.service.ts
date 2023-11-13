@@ -319,8 +319,9 @@ MenuFiltros(Ubicacion: String, TipoPropiedad: Number, p_tipo_Pub: Number){
   return this.httpclient.post(this.url + 'ConsultaMenu.php', params, { headers });
 }
 
-InventarioAsesor() {
+InventarioAsesor(Id_Usuario: any ) {
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_Usuario=' + Id_Usuario;
   return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php', { headers });
 }
 
