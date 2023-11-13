@@ -324,5 +324,10 @@ Favoritos(p_id_usuario: any, p_id_inmueble: String, p_estatus: String){
   let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble + '&p_estatus='+ p_estatus;
   return this.httpclient.post(this.url + 'InsertarLikes.php', params, { headers });
 }
+InventarioAsesor(Id_Usuario: any ) {
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_Usuario=' + Id_Usuario;
+  return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php', { headers });
+}
 
 }

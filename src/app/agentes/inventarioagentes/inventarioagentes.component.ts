@@ -2,17 +2,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
-import { reasignacionA } from 'src/app/services/Interface/Interfaces';
-import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
+import { inventarioAsesores } from 'src/app/services/Interface/Interfaces';
+// import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InmuebledetallesComponent } from '../ventanaemergente/inmuebledetalles/inmuebledetalles.component';
-
-
-
 
 
 
@@ -34,21 +31,21 @@ export class InventarioagentesComponent implements OnInit {
   displayedColumns = [
     'Nombre_Inmueble',
     'Calle',
-    'Nombre_Usuario',
-    'Id_Usuario',
-    'Asesor',
+    'Num_Ext',
+    'Num_Int',
+    'Municipio',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Id_Usuario','Asesor','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Num_Ext','Num_Int','Municipio','botonOption'];
 
 
   // poner el nombre de una variable
-  datosinmuebles: reasignacionA[]=[];
+  datosinventario: inventarioAsesores[]=[];
 
-  datosAsesores: AsigarReAsignar[]=[];
+  
 
   constructor(
     public dialog: MatDialog,
@@ -70,31 +67,7 @@ export class InventarioagentesComponent implements OnInit {
       }
     });
 
-       
-    this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
-      this.datosAsesores=data;
-    
-    });
-
-
-    // this.formGeneral = this.formBuilder.group({
-    //   prueba: ['', [Validators.required]]
-    // });
-    
-    //   let prueba = this.formGeneral.value.prueba;
-     
-    
-
     this.obtenerUsuarios();
-
-    this.http.mostrarReasignacion().subscribe((data:any)=>{
-    this.datosinmuebles=data;
-    //console.log(this.datosinmuebles);
-    });
-    this.dataSource = new MatTableDataSource(this.datosinmuebles);
-
-
-    
   }
   
   
@@ -103,55 +76,40 @@ export class InventarioagentesComponent implements OnInit {
   }
 
   obtenerUsuarios(){
-
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+ let idUsuario = localStorage.getItem("Id_Usuario");
+    this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
+        console.log(idUsuario);
+        ;
       } else {
         data = [];
         this.adminService.usuarios$.next(data);
+        
       }      
     },
     (err) => {
-      console.log('Error de conexión');
+      console.log('Error de conexión',idUsuario);
+
     }
     )
-
-
   }
 
-  openModalActualizar(element:any){
-    alert("open modal"+element)
-  }
+
+
   
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
   
-  asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
-    alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
 
-  }
 
   // mandar a llamar ventana emergente
 
   openasesor(id_inmo:any,asesor:any ) {
 
   const valorCelda = asesor;
-
-// Verifica si el valor de la celda está vacío o no
-if (valorCelda !== null) {
-  // Almacena el valor en el localStorage
-  localStorage.setItem("mi_valor", "1");
- 
-} else {
-  localStorage.setItem("mi_valor", "2");
-  
-}
-
-    localStorage.setItem("id_publicacion",id_inmo);
-    localStorage.setItem("Asesor", asesor );
 
 
     
