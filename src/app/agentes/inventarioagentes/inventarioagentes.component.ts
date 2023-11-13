@@ -71,7 +71,11 @@ export class InventarioagentesComponent implements OnInit {
     this.http.InventarioAsesor().subscribe((data:any)=>{
       this.datosinventario=data;
     });
-    this.dataSource = new MatTableDataSource(this.datosinventario); 
+    this.dataSource = new MatTableDataSource(this.datosinventario);
+    
+    
+
+    
   }
   
   
