@@ -319,4 +319,10 @@ MenuFiltros(Ubicacion: String, TipoPropiedad: Number, p_tipo_Pub: Number){
   return this.httpclient.post(this.url + 'ConsultaMenu.php', params, { headers });
 }
 
+Favoritos(p_id_usuario: any, p_id_inmueble: String, p_estatus: String){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble + '&p_estatus='+ p_estatus;
+  return this.httpclient.post(this.url + 'InsertarLikes.php', params, { headers });
+}
+
 }
