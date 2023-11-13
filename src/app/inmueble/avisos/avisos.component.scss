@@ -1,32 +1,6 @@
-/* Estilos para un botón grande */
-// .btn-grande {
-//     font-size: 20px;
-//     padding: 10px 300px; /* Ajusta el padding según sea necesario */
-// }
-// .btn-primary {
-//     background-color: #ff9900; /* Cambia este valor al color que desees */
-//     color: #ffffff; /* Cambia este valor al color de texto que desees */
-//     border-color: #ff9900; /* Cambia este valor al color de borde que desees */
-
-// }
-// .btn-primary-custom-outline:focus {
-//     outline: none;
-//     border-color: #ff9900; /* Mantén el color del borde que desees */
-//     color: #ff9900; /* Mantén el color de texto que desees */
-// }
-
-// button {
-//     background-color: #4caf50; /* Color de fondo del botón */
-//     color: #ffffff; /* Color del texto del botón */
-//     padding: 10px 20px; /* Ajusta el padding según sea necesario */
-//     font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
-//     border: none;
-//     cursor: pointer;
-//     padding: 10px 250px; /* Ajusta el padding según sea necesario */
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     margin-left: 70px;
-
-// }
+.nav-link.disabled {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  // border: 1px solid #6c757d;
+  border-radius: 0.25rem;
+}

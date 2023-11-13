@@ -36,7 +36,7 @@
           </mat-form-field>
         </div>
       </div>
-      <br>
+      
 
       <div class="row">
         <div class="col-md-3">
@@ -80,7 +80,7 @@
           </mat-form-field>
         </div>
       </div>
-      <br>
+      
       <div class="row" style="margin-top: 1%;">
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
@@ -93,7 +93,7 @@
             </mat-error>
           </mat-form-field>
         </div>
-       <br>
+
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
             <mat-label ><b>Estados</b></mat-label>
@@ -156,7 +156,7 @@
           <br>
         </div>
       </div>
-       <br>
+    
       <!-- Apartado Informacion de usuario -->
       <h4> DATOS DEL USUARIO </h4>
       <br>
@@ -204,7 +204,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <mat-form-field appearance="fill" class="tamaño" style="margin-top: 6%;">
+          <mat-form-field appearance="fill" class="tamaño">
             <input matInput type="text" placeholder="" formControlName="rfc">
             <mat-label><b> RFC </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('rfc')?.hasError('required')">
@@ -214,7 +214,7 @@
         </div>
 
         <div class="col-md-3">
-          <mat-form-field appearance="fill" class="tamaño" style="margin-top: 6%;">
+          <mat-form-field appearance="fill" class="tamaño">
             <mat-label><b> Contacto Emergencia </b></mat-label>
             <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10">
             <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
@@ -227,7 +227,6 @@
         <div class="col-md-3 alinea">
           <mat-form-field appearance="fill" class="tamaño">
             <input matInput type="email" placeholder="Correo electronico" formControlName="email">
-            <br>
             <mat-label><b> Correo </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
               Correo es <strong>requerido</strong>
@@ -274,7 +273,7 @@
 
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
-            <textarea matInput type="text" placeholder="" formControlName="descripcionusuario"></textarea>
+            <textarea matInput rows="1" type="text" placeholder="" formControlName="descripcionusuario"></textarea>
             <mat-label><b> Descripcion Usuario </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('descripcionusuario')?.hasError('required')">
               Descripcion <strong>Obligatorio</strong>
