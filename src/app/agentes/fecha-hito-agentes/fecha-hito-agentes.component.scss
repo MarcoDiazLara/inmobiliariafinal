@@ -1,26 +1,64 @@
-.container {
+h1{
+
+}
+
+h2{
+  color: #264D5E;
+
+}
+h3{
+
+}
+h4{
+  color: #264D5E;
+}
+
+.container-fluit {
   display: flex;
   justify-content: space-between; 
   align-items: flex-start;
 }
 
 .encabezado{
-  background-color: aqua;
+  padding-top: 25px;
+  padding-left: 25px;
+  background-color: #f5f5f5;
   width: 20%;
+  height: 650px;
   justify-content: center;
   align-items: center;
 }
 .calendario{
+  padding-top: 25px;
   width: 50%;
-  background-color: blueviolet;
   justify-content: center;
   align-items: center;
 }
 .detallesfecha {
+  padding-top: 25px;
+  padding-left: 25px;
   width: 30%;
-  background-color: burlywood;
   justify-content: center;
   align-items: center;
+}
+
+.btnAdd {
+  color: #264D5E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 90px;
+  border-radius: 25px;
+  background-color: #fff;
+}
+
+.btnAdd:hover{
+  background-color: #e8e8e8;
+}
+
+.btnAdd mat-icon {
+  margin-right: 5px; 
 }
 
 

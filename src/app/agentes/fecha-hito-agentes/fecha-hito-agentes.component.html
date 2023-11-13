@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container-fluit">
     <div class="encabezado">
-      <h4>Encabezado</h4>
-      <button mat-fab extended (click)="addEvent()"><mat-icon>add</mat-icon></button>
+      <h2>Calendario</h2>
+      <button class="btnAdd" (click)="addEvent()"><mat-icon>add</mat-icon> Crear </button>
       <ul *ngIf="ShowAddEvent" class="ShowAddEvent">
         <ul class="content-addevent">
           <h4>hola</h4>
@@ -11,7 +11,6 @@
     </div>
    
       <div class="calendario">
-        <h4>Calendario</h4>
         <mat-card class="demo-inline-calendar-card">
           <mat-calendar [(selected)]="selected"></mat-calendar>
         </mat-card>
@@ -20,7 +19,7 @@
       </div>
    
     <div class="detallesfecha">
-      <h4>Detalles de la Fecha</h4>
+      <h2>Detalles de Fecha</h2>
       <p>Dato seleccionado: {{selected}}</p>
     </div>
   </div>
