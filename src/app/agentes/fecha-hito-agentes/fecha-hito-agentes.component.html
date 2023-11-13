@@ -1,6 +1,13 @@
-<div class="container-fluit">
+<div class="container">
     <div class="encabezado">
       <h4>Encabezado</h4>
+      <button mat-fab extended (click)="addEvent()"><mat-icon>add</mat-icon></button>
+      <ul *ngIf="ShowAddEvent" class="ShowAddEvent">
+        <ul class="content-addevent">
+          <h4>hola</h4>
+
+        </ul>
+      </ul>
     </div>
    
       <div class="calendario">
@@ -14,6 +21,8 @@
    
     <div class="detallesfecha">
       <h4>Detalles de la Fecha</h4>
-      <p>Selected date: {{selected}}</p>
+      <p>Dato seleccionado: {{selected}}</p>
     </div>
   </div>
+
+  

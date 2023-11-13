@@ -1,31 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
-
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-fecha-hito-agentes',
   templateUrl: './fecha-hito-agentes.component.html',
-  styleUrls: ['./fecha-hito-agentes.component.scss']
+  styleUrls: ['./fecha-hito-agentes.component.scss'],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
+  ]
 })
 export class FechaHitoAgentesComponent implements OnInit {
-  selected: Date = new Date(); 
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
+  ShowAddEvent: boolean = false;
+  selected: Date = new Date();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  addEvent() {
+    this.ShowAddEvent = !this.ShowAddEvent;
+    setTimeout(() => {
+      const modal = document.querySelector('.ShowAddEvent');
+      if (modal) {
+        modal.classList.add('mostrar');
+      }
+    }, 50);
   }
 
+
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }
