@@ -184,6 +184,9 @@ export class VistadeinmuebleComponent implements OnInit {
     else 'hola';
     console.log( this.idTipoInmueble);
 
+
+    // console.log(item);
+
   }
 
   
@@ -206,6 +209,8 @@ export class VistadeinmuebleComponent implements OnInit {
       console.log('Propiedad: ', this.tpropiedad);
       console.log('Ubicacion: ', this.ubicacion);
 
+      
+
     });
 
    
@@ -227,15 +232,7 @@ export class VistadeinmuebleComponent implements OnInit {
         this.http.Remates(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
           this.datosInmueble = resp;
         })
-    } else if (this.bandera == 13){
-      
-      this.http.MenuFiltros(this.ubicacion, this.tpropiedad,this.tipoP).subscribe((resp:any)=> {
-          
-        this.datosInmueble = resp;
-        console.log("Hola"+this.datosInmueble)
-
-      })
-    }else{
+    } else {
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
         this.datosInmueble = resp;
@@ -250,6 +247,8 @@ export class VistadeinmuebleComponent implements OnInit {
     }
 
     
+
+
     this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
       this.datosInmueble = resp;
@@ -265,6 +264,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
     });
 
+    
 
   }
 
@@ -273,25 +273,28 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   mostrarMunicipios() {
-    this.http.mostrarMunicipios(this.municipios).subscribe((data: any) => {
-
+    this.http.mostrarMunicipios(this.selectedMunicipio).subscribe((data: any) => {
+      if (Array.isArray(data)) {
       this.datosMunicipios = data;
-
+      }
+      else {
+        console.error('La respuesta del servicio no es un array:', data);
+      } 
     });
   }
 
 
-  mostrarDatosInmueble(){
+  mostrarDatosInmueble()
+  {
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
 
     });
+
   }
-
-  // mostrarIDMunicipio(id: number): void {
+  //   mostrarIDMunicipio(id: number): void {
   //   console.log(id);
-
   // }
 
  
@@ -311,6 +314,7 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
 
+
   mostrar() {
 
 
@@ -322,13 +326,14 @@ export class VistadeinmuebleComponent implements OnInit {
     this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
 
     this.http.busquedaAvanzada(this.municipio, this.id_Tipo_Inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
-// =======
-//     this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
+
+
+    // this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
      
 
 
-    datos= this.datosInmueble ;
+     datos= this.datosInmueble ;
 
     });
 
@@ -368,3 +373,5 @@ scrollToTop() {
 /// aqui termina el codigo del paginador de los resultados///
 
 }
+
+
