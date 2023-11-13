@@ -61,7 +61,6 @@ export interface reasignacionA{
     Id_Usuario: "",
     Nombre_Usuario: "",
     Id_Inmueble: "",
-    
     Calle: "",
     Id_Estatus_Publicacion: "",
     Nombre_Inmueble: "",
@@ -82,7 +81,7 @@ export interface asignacionA{
 
 
 export interface inmueblesBuscados{
-    Asentamiento: "",
+Asentamiento: "",
 Codigo_Postal: "",
 Descripcion_Publicacion: "",
 Estado: "",
@@ -163,6 +162,18 @@ export interface mostrarcita{
         Id_Publicacion: ""
 
 };
+
+export interface inventarioAsesores {
+    Id_Publicacion:"",
+    Nombre_Publicacion:"",
+    Calle:"",
+    Municipio:"",
+    Nombre:"",
+    id_Usuario:"",
+    Id_Estatus_Publicacion:""
+    Num_Ext:"",
+    Num_Int:""
+}
 
 
 
