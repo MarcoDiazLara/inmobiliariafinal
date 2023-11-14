@@ -327,7 +327,7 @@ Favoritos(p_id_usuario: any, p_id_inmueble: String, p_estatus: String){
 InventarioAsesor(Id_Usuario: any ) {
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
   let params = 'p_id_Usuario=' + Id_Usuario;
-  return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php', { headers });
+  return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php',params, { headers });
 }
 
 }

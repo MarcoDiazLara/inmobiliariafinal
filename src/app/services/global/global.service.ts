@@ -8,6 +8,8 @@ export class GlobalService {
   nombre_observable$ = new BehaviorSubject(null);
   usuarios$ = new BehaviorSubject(null);
 
+  inventarioasesor$ = new BehaviorSubject(null); 
+
   constructor() { }
 
   getUsuariosOb(): Observable<any>{
@@ -16,5 +18,9 @@ export class GlobalService {
 
   get_nombre_funcion_observable_Ob(): Observable<any> {
     return this.nombre_observable$.asObservable();
+  }
+
+  getInventarioAsesorOb(): Observable<any> {
+    return this.inventarioasesor$.asObservable();
   }
 }
