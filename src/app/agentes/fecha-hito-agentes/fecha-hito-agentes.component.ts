@@ -1,7 +1,5 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-fecha-hito-agentes',
