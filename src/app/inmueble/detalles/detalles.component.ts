@@ -204,7 +204,26 @@ public Venta: Boolean = false;
   
 
 
-
+Favoritos(){
+  if(this.isLoggedIn){
+  console.log("Id _ usuario"+ localStorage.getItem("Id_Usuario")+ "Id_Inmueble" + this.id_inmueble);
+  this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.id_inmueble,"1").subscribe((data : any) =>{
+    if(data == 1){
+    
+    Swal.fire({
+  
+      icon: 'success',
+      title: 'Se ha agregado a tus favoritos',
+     
+    })}else{
+      Swal.fire('Este inmueble, ya se encuentra en tus favoritos');
+    }
+  })
+  
+  } else{
+    Swal.fire('Inicia sesion para poder guardar favoritos');
+  } 
+}
 
 
 
