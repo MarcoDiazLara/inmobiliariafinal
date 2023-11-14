@@ -21,7 +21,7 @@ import { InmuebledetallesComponent } from '../ventanaemergente/inmuebledetalles/
 
 export class InventarioagentesComponent implements OnInit {
 
-  usuarios$: any;
+  inventarioasesor$: any;
 
   formGeneral!:FormGroup; 
 
@@ -29,17 +29,24 @@ export class InventarioagentesComponent implements OnInit {
   paginator!: MatPaginator;
 
   displayedColumns = [
-    'Nombre_Inmueble',
+    'Nombre_Publicacion',
     'Calle',
     'Num_Ext',
     'Num_Int',
     'Municipio',
-    'btOpciones'
+    'botonOption'
+    
+
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Num_Ext','Num_Int','Municipio','botonOption'];
+  columnas: string[] = ['Nombre_Publicacion','Calle','Num_Ext','Num_Int','Municipio','botonOption'];
+  
+
+
+
+
 
 
   // poner el nombre de una variable
@@ -61,13 +68,25 @@ export class InventarioagentesComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
-      if(usuarios !== null){
-        this.dataSource.data =usuarios;
+    this.inventarioasesor$ =this.adminService.getInventarioAsesorOb().subscribe((inventarioasesor)=>{
+      if(inventarioasesor !== null){
+        this.dataSource.data =inventarioasesor;
       }
     });
 
-    this.obtenerUsuarios();
+    // let Id_Usuario = localStorage.getItem ('Id_Usuario');   
+    // this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
+    //   data=this.datosinventario;
+    //   console.log("datosinventario"+this.datosinventario);
+
+    // });
+    // this.dataSource = new MatTableDataSource(this.datosinventario);
+    
+    
+
+    
+  this.obtenerInventario();
+
   }
   
   
@@ -75,16 +94,19 @@ export class InventarioagentesComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  obtenerUsuarios(){
- let idUsuario = localStorage.getItem("Id_Usuario");
-    this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
+  obtenerInventario(){
+     let idUsuario = localStorage.getItem("Id_Usuario");
+//  let idUsuario = 19;
+ 
+ this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
+  console.log("datosdeinventario"+data);
       if(data !== 201) {
-        this.adminService.usuarios$.next(data);
+        this.adminService.inventarioasesor$.next(data);
         console.log(idUsuario);
         ;
       } else {
         data = [];
-        this.adminService.usuarios$.next(data);
+        this.adminService.inventarioasesor$.next(data);
         
       }      
     },
@@ -94,6 +116,7 @@ export class InventarioagentesComponent implements OnInit {
     }
     )
   }
+
 
 
 

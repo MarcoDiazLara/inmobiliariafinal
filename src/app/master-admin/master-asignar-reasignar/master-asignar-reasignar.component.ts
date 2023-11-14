@@ -84,10 +84,10 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
     this.obtenerUsuarios();
 
-    this.http.mostrarReasignacion().subscribe((data:any)=>{
-    this.datosinmuebles=data;
-    //console.log(this.datosinmuebles);
-    });
+    // this.http.mostrarReasignacion().subscribe((data:any)=>{
+    // this.datosinmuebles=data;
+    // //console.log(this.datosinmuebles);
+    // });
     this.dataSource = new MatTableDataSource(this.datosinmuebles);
 
 
