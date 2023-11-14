@@ -95,9 +95,8 @@ export class InventarioagentesComponent implements OnInit {
   }
 
   obtenerInventario(){
-//  let idUsuario = localStorage.getItem("Id_Usuario");
- let idUsuario = 19;
- alert("Id_Usuario"+idUsuario)
+     let idUsuario = localStorage.getItem("Id_Usuario");
+//  let idUsuario = 19;
  
  this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
