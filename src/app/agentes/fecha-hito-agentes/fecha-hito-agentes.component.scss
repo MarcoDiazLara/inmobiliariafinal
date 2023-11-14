@@ -1,17 +1,22 @@
-h1{
-
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 h2{
   color: #264D5E;
 
 }
-h3{
 
-}
 h4{
   color: #264D5E;
 }
+
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "lato", sans-serif;
+}
+
 
 .container-fluit {
   display: flex;
@@ -51,6 +56,7 @@ h4{
   width: 90px;
   border-radius: 25px;
   background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btnAdd:hover{
@@ -64,11 +70,9 @@ h4{
 
 .ShowAddEvent {
   height: 500px;
-  width: 400px;
+  width: 700px;
   border-radius: 5px;
-  background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 2;
   position: fixed;
   top: 0;
@@ -76,10 +80,12 @@ h4{
   right: 0;
   bottom: 0;
   margin: auto;
-  padding: 0%;
   opacity: 0;
   transform: scale(0.5);
   transition: opacity 0.3s, transform 0.3s;
+  background-color: white;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
 }
 .ShowAddEvent.mostrar {
   opacity: 1;
@@ -92,4 +98,77 @@ h4{
   list-style: none;
   padding-right: 25px;
   padding-left: 25px;
+  
+}
+
+.inputAsunto{
+  border-radius: 15px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #DADCE0;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+::placeholder {
+  color: transparent;
+}
+.inputAsunto:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: #264D5E;
+}
+.inputAsunto:focus {
+  border: 2px solid #264D5E;
+}
+.inputAsunto:not(:placeholder-shown)+ .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inputContainer {
+  margin-top: 25px;
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+.inputContainer label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #DADCE0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: #264D5E;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.submitBtn:hover {
+  background-color: #4e7f93;
+  transform: translateY(-2px);
 }
