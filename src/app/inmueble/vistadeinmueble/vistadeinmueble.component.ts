@@ -232,28 +232,36 @@ export class VistadeinmuebleComponent implements OnInit {
         this.http.Remates(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
           this.datosInmueble = resp;
         })
-    } else {
+    } else if (this.bandera == 13){
+
+      this.http.MenuFiltros(this.ubicacion, this.tpropiedad,this.tipoP).subscribe((resp:any)=> {
+
+        this.datosInmueble = resp;
+        
+
+      })
+    }else{ 
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
         this.datosInmueble = resp;
         
       }); 
   
-      this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+      // this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
         
-        this.datosInmueble = data;
+      //   this.datosInmueble = data;
   
-      });
+      // });
     }
 
     
 
 
-    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+    // this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
-      this.datosInmueble = resp;
+    //   this.datosInmueble = resp;
       
-    }); 
+    // }); 
 
     
 
