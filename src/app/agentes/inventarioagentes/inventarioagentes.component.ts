@@ -76,6 +76,8 @@ export class InventarioagentesComponent implements OnInit {
     
 
     
+    this.obtenerUsuarios();
+
   }
   
   
@@ -84,17 +86,21 @@ export class InventarioagentesComponent implements OnInit {
   }
 
   obtenerUsuarios(){
-
-    this.httpService.InventarioAsesor().subscribe((data:any)=>{
+ let idUsuario = localStorage.getItem("Id_Usuario");
+    this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
+        console.log(idUsuario);
+        ;
       } else {
         data = [];
         this.adminService.usuarios$.next(data);
+        
       }      
     },
     (err) => {
-      console.log('Error de conexión');
+      console.log('Error de conexión',idUsuario);
+
     }
     )
   }
