@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http/http.service';
+import { Notis } from 'src/app/services/Interface/Interfaces';
+
 
 @Component({
   selector: 'app-notificacionesagentes',
@@ -7,16 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificacionesagentesComponent implements OnInit {
   showNotificationList = false; // Variable para controlar la visibilidad de la lista de notificaciones
-  notifications: any[] = [ // Tu arreglo de notificaciones
-      { title: 'Notificación 1', summary: 'Resumen de la notificación 1', timestamp: new Date() },
-      { title: 'Notificación 2', summary: 'Resumen de la notificación 2', timestamp: new Date() }
-      // Agrega más notificaciones según sea necesario
-  ];
+  notifications: Notis[] = [ ];
 
-  constructor() { }
+  constructor(private httpService : HttpService) { }
 
   ngOnInit(): void {
-    this.toggleNotificationList();
+    this.httpService.getNotis(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
+      
+      this.notifications = data;
+      console.log(this.notifications);
+      // Puedes agregar más lógica aquí si es necesario
+
+      // Mostrar la lista de notificaciones
+      this.toggleNotificationList();
+    })
   }
   toggleNotificationList() {
     this.showNotificationList = !this.showNotificationList;

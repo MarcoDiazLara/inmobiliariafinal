@@ -176,4 +176,16 @@ export interface inventarioAsesores {
 }
 
 
+export interface Notis{
+    Id_Notificaciones: "",
+    Mensaje: "",
+    Id_Publicador: "",
+    Fecha: "",
+    Estado: "",
+    Created_By: "",
+    Created_Date: "",
+    Updated_By: "",
+    Updated_Date: ""
+};
+
 
