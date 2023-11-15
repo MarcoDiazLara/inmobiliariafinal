@@ -130,12 +130,10 @@ export class InventarioagentesComponent implements OnInit {
 
   // mandar a llamar ventana emergente
 
-  openasesor(id_inmo:any,asesor:any ) {
+  openasesor(idPubli:any ) {
 
-  const valorCelda = asesor;
+    localStorage.setItem ('idpublicacion',idPubli);
 
-
-    
 
     const dialogRef = this.dialog.open(InmuebledetallesComponent, {
       width: '80%',
@@ -146,7 +144,6 @@ export class InventarioagentesComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.closeAll();
-    //this.httpService.setGlobalVariable(false);
     const itemsToRemove =[
       "id_publicacion",
       "mi_valor",

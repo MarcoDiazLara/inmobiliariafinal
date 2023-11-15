@@ -4,7 +4,7 @@
                 <h1>Detalles del Inmueble </h1>
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Terrenometros">
+                        <input matInput type="text" placeholder="" formControlName="Terrenometros" [(ngModel)]="detalles.Terreno_M2">
                         <mat-label>
                             <b>Terreno metros</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Terrenometros')?.hasError('required')">
@@ -17,7 +17,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Construccion">
+                        <input matInput type="text" placeholder="" formControlName="Construccion" [(ngModel)]="detalles.Construccion_M2">
                         <mat-label><b>Construccion</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Construccion')?.hasError('required')">
                         <strong>obligatorio</strong>
@@ -30,10 +30,11 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Numero_de_recamaras">
+                        <!-- <input matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datos.Email"> -->
+                        <input matInput type="text" placeholder="" formControlName="Numero_de_recamaras" [(ngModel)]="detalles.Recamara">
                         <mat-label>
                             <b>Numero de recamaras</b></mat-label>
-                        <mat-error *ngIf="this.formGeneral.get('Numero_de_recamaras')?.hasError('required')">
+                        <mat-error *ngIf="this.formGeneral.get('Numero_de_recamaras')?.hasError('required')" >
                             <strong>obligatorio</strong>
                         </mat-error>
                         <mat-icon matSuffix>
@@ -45,7 +46,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Numero_de_baños">
+                        <input matInput type="text" placeholder="" formControlName="Numero_de_baños" [(ngModel)]="detalles.Bano">
                         <mat-label>
                             <b>Numero de baños </b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Numero_de_baños')?.hasError('required')">
@@ -59,7 +60,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Numero_de_pisos">
+                        <input matInput type="text" placeholder="" formControlName="Numero_de_pisos" [(ngModel)]="detalles.Num_Pisos">
                         <mat-label>
                             <b>Numero de pisos </b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Numero_de_pisos')?.hasError('required')">
@@ -73,7 +74,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Años_de_Antiguedad">
+                        <input matInput type="text" placeholder="" formControlName="Años_de_Antiguedad" [(ngModel)]="detalles.Antiguedad">
                         <mat-label>
                             <b>Años de Antiguedad</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Años_de_Antiguedad')?.hasError('required')">
@@ -86,8 +87,8 @@
                 </div>
 
                 <div class="centrarinput2">
-                    <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Acabados">
+                    <mat-form-field appearance="fill" class="textinput"> 
+                        <input matInput type="text" placeholder="" formControlName="Acabados" [(ngModel)]="detalles.Acabados">
                         <mat-label> <b>Acabados</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Acabados')?.hasError('required')">
                             <strong>obligatorio</strong>
@@ -104,7 +105,7 @@
                 <h1>Datos Adicionales</h1>
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Gimnasio">
+                        <input matInput type="text" placeholder="" formControlName="Gimnasio" [(ngModel)]="detalles.Gimnasio">
                         <mat-label><b>Gimnasio</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Gimnasio')?.hasError('required')">
                             <strong>obligatorio</strong>
@@ -117,7 +118,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Estacionamiento">
+                        <input matInput type="text" placeholder="" formControlName="Estacionamiento" [(ngModel)]="detalles.Estacionamiento">
                         <mat-label><b>Estacionamiento </b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Estacionamiento')?.hasError('required')">
                             <strong>obligatorio</strong>
@@ -130,7 +131,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Jardin">
+                        <input matInput type="text" placeholder="" formControlName="Jardin" [(ngModel)]="detalles.Jardin">
                         <mat-label> <b>Jardin</b> </mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Jardin')?.hasError('required')">
                             El nombre es <strong>obligatorio</strong>
@@ -143,7 +144,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Cocina_Integral">
+                        <input matInput type="text" placeholder="" formControlName="Cocina_Integral" [(ngModel)]="detalles.Cocina_Integral">
                         <mat-label><b>Cocina Integral</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Cocina_Integral')?.hasError('required')">
                             <strong>obligatorio</strong>
@@ -156,7 +157,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Alberca">
+                        <input matInput type="text" placeholder="" formControlName="Alberca" [(ngModel)]="detalles.Alberca">
                         <mat-label><b>Alberca</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Alberca')?.hasError('required')">
                             <strong>obligatorio</strong>
@@ -169,7 +170,7 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Roof_Garden">
+                        <input matInput type="text" placeholder="" formControlName="Roof_Garden" [(ngModel)]="detalles.Alberca">
                         <mat-label><b>Roof Garden </b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Roof_Garden')?.hasError('required')">
                             El nombre es <strong>obligatorio</strong>

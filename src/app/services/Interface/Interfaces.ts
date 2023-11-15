@@ -175,5 +175,24 @@ export interface inventarioAsesores {
     Num_Int:""
 }
 
+export interface detallesdelInmueble {
+    Id_Publicacion:"",
+    Nombre_Publicacion:"",
+    Descripcion_Inmueble:"",
+    Terreno_M2:"",
+    Construccion_M2:"",
+    Recamara:"",
+    Bano:"",
+    Cocina_Integral:"",
+    Num_Pisos:"",
+    Antiguedad:"",
+    Acabados:"",
+    Alberca:"",
+    Jardin:"",
+    Gimnasio:"",
+    Roof_Garden:"",
+    Estacionamiento:""
+}
+
 
 

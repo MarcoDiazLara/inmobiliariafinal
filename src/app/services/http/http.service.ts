@@ -330,4 +330,11 @@ InventarioAsesor(Id_Usuario: any ) {
   return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php',params, { headers });
 }
 
+mostrarDetallesInmueble(p_id_publicacion:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'Id_Publicacion='+p_id_publicacion;
+  return this.httpclient.post(this.url + 'consultar_detalle_inmuebles_asesores.php', params, { headers }); 
+  
+}
+
 }
