@@ -66,4 +66,8 @@ export class MenuinmuebleComponent  {
 
 }
 
+home(){
+  this.router.navigate(['/web']);
+ }
+
 }

@@ -1,6 +1,6 @@
 <nav class= "navbar navbar-expand-lg bg-body-tertiary font-Roboto-Condensed">
     <div class="container">
-        <a class="navbar-brand" ><img class="me-4"
+        <a class="navbar-brand"   (click)="home()"><img class="me-4" 
                 src="assets/img/logo.png" width="70px" height="60px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
 
 
                 <div class="dropdown">
-            
+               
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Perfil
                       <i class="bi bi-person-circle m-1 size-icon"></i>
@@ -63,6 +63,9 @@
                       <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
                     </div>
                   </div>
+                  
+                  
+
            
            
               </ul>

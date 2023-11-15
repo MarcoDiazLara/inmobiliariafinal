@@ -49,6 +49,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
     VistadeinmuebleComponent,
     DetallesComponent,
     UnityComponent,
+  
     
 
 
