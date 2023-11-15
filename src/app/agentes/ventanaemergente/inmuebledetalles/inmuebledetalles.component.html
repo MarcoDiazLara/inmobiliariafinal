@@ -4,7 +4,7 @@
                 <h1>Detalles del Inmueble </h1>
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Terrenometros" detalles.Terreno_M2>
+                        <input matInput type="text" placeholder="" formControlName="Terrenometros" [ngModel]="terreno">
                         <mat-label>
                             <b>Terreno metros</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Terrenometros')?.hasError('required')">
@@ -17,21 +17,24 @@
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Construccion" detalles.Construccion_M2>
+                        <input matInput type="text" placeholder="" formControlName="Construccion" [ngModel]="construccion">
+
                         <mat-label><b>Construccion</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Construccion')?.hasError('required')">
-                        <strong>obligatorio</strong>
+                        <!-- <strong>obligatorio</strong> -->
                         </mat-error>
                         <mat-icon matSuffix>
                             <img src="assets/img/construir.png"  alt="Icono" width="25" height="25">
                         </mat-icon>
                     </mat-form-field>
+                    
                 </div>
+                
 
                 <div class="centrarinput">
                     <mat-form-field appearance="fill" class="textinput">
                         <!-- <input matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datos.Email"> -->
-                        <input matInput type="text" placeholder="" formControlName="Numero_de_recamaras" detalles.Recamara>
+                        <input matInput type="text" placeholder="" formControlName="Numero_de_recamaras" [ngModel]="recamaras">
                         <mat-label>
                             <b>Numero de recamaras</b></mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Numero_de_recamaras')?.hasError('required')" >
