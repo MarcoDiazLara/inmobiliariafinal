@@ -14,10 +14,10 @@ export class InmuebledetallesComponent implements OnInit {
 
   detalles!: detallesdelInmueble ;
   Nombre_Publicacion !: string;
-  terreno!: string;
+  Terrenometros!: string;
   construccion!: string ;
   recamaras!: string;
-  baños!: string;
+  banos!: string;
   pisos!:string;
   antiguedad!:string;
   acabados!:string;
@@ -46,10 +46,19 @@ export class InmuebledetallesComponent implements OnInit {
       
       this.detalles = data[0];
       this.Nombre_Publicacion = this.detalles.Nombre_Publicacion;
-      this.terreno= this.detalles.Terreno_M2;
+      this.Terrenometros= this.detalles.Terreno_M2;
       this.construccion= this.detalles.Construccion_M2;
-      
-
+      this.recamaras= this.detalles.Recamara;
+      this.banos=this.detalles.Bano;
+      this.pisos=this.detalles.Num_Pisos;
+      this.antiguedad=this.detalles.Antiguedad;
+      this.acabados=this.detalles.Acabados;
+      this.gimnasio=this.detalles.Gimnasio;
+      this.estacionamiento=this.detalles.Estacionamiento;
+      this.jardin=this.detalles.Jardin;
+      this.alberca=this.detalles.Alberca;
+      this.cocina=this.detalles.Cocina_Integral;
+      this.roof=this.detalles.Roof_Garden
       
       });
 
