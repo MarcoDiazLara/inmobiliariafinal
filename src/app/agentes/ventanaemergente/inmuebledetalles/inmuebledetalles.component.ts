@@ -12,7 +12,23 @@ export class InmuebledetallesComponent implements OnInit {
 
   formGeneral!:FormGroup;
 
-  detalles: detallesdelInmueble []=[];
+  detalles!: detallesdelInmueble ;
+  Nombre_Publicacion !: string;
+  terreno!: string;
+  construccion!: string ;
+  recamaras!: string;
+  baños!: string;
+  pisos!:string;
+  antiguedad!:string;
+  acabados!:string;
+  gimnasio!:string;
+  estacionamiento!:string;
+  jardin!:string;
+  alberca!:string;
+  cocina!:string;
+  roof!:string;
+ 
+  
   id_publicacion: any;
 
   constructor(
@@ -25,10 +41,16 @@ export class InmuebledetallesComponent implements OnInit {
 
     let id_publicacion = localStorage.getItem('idpublicacion');
     
-    this.http.mostrarDetallesInmueble (id_publicacion).subscribe((data:any)=>{
-      this.detalles=data;
-      console.log(this.detalles);
-      console.log(id_publicacion);
+    this.http.mostrarDetallesInmueble(id_publicacion).subscribe((data:any)=>{
+      
+      
+      this.detalles = data[0];
+      this.Nombre_Publicacion = this.detalles.Nombre_Publicacion;
+      this.terreno= this.detalles.Terreno_M2;
+      this.construccion= this.detalles.Construccion_M2;
+      
+
+      
       });
 
 
