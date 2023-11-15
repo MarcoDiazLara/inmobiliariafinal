@@ -52,8 +52,6 @@ export class InmuebledetallesComponent implements OnInit {
 
 }
 
-
-
 closeDialog(){
   this.dialog.closeAll();
 }
