@@ -71,7 +71,7 @@ export class CalendarioComponent implements AfterViewInit {
     const fecha = info.event.start;
     let dia= fecha.getDate().toString();
     let mes= (fecha.getMonth()+1).toString();
-    let anio= (fecha.getFullYear()+1).toString();
+    let anio= fecha.getFullYear().toString();
     let fecha1= dia+ "-" + mes +"-"+ anio;
 
       const Nombre= info.event.title;

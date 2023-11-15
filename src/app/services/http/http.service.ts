@@ -330,11 +330,23 @@ InventarioAsesor(Id_Usuario: any ) {
   return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php',params, { headers });
 }
 
+
 mostrarDetallesInmueble(p_id_publicacion:any){
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
   let params = 'Id_Publicacion='+p_id_publicacion;
   return this.httpclient.post(this.url + 'consultar_detalle_inmuebles_asesores.php', params, { headers }); 
-  
+}
+Notis(p_mensje: any, id_publicador: any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_mensje=' + p_mensje + '&id_publicador=' + id_publicador;
+  return this.httpclient.post(this.url + 'creaNotificacion.php', params, { headers });
+}
+
+getNotis(p_id_usuario: any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_usuario=' + p_id_usuario;
+  return this.httpclient.post(this.url + 'obtenerNotis.php', params, { headers });
+
 }
 
 }

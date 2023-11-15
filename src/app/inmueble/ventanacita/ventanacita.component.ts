@@ -145,7 +145,11 @@ export class VentanacitaComponent implements OnInit {
   this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,p_Id_Usuario).subscribe((resp:any)=>{
     console.log("Respuesta del servicio:", resp);
     if (resp==1){
+      let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
         // alert("Se Agendo Cita")
+        this.httpService.Notis(mensaje, localStorage.getItem("Publicador")).subscribe((resp: any) =>{
+          
+        })
 
         Swal.fire(
           'Exitosamente!',

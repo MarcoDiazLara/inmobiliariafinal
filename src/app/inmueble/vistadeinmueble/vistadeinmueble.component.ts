@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ElementRef, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles, inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MatRadioButton } from '@angular/material/radio';
 
 
 @Component({
@@ -108,13 +109,15 @@ export class VistadeinmuebleComponent implements OnInit {
   /*datosTipoInmueble llena el comboBox con los tipos de inmuebles */
   datosTipoInmueble: any[] = [];
   /*municipios almacena el valor del municpio= San Martin Tex,etc */
-  municipios = '';
-  /*tipoinmuebles almacena el valor del tipo de inmueble casa, departamento, etc. */
-  tipoinmuebles = '';
- /*Almacena el id del municipio sleccionado*/
-  estadoSeleccionado:any | null ='';
-  /*Almacena el id del tipoInmueble*/
-  seleccionIdTipoInmueble:any | null='';
+  
+//   /*tipoinmuebles almacena el valor del tipo de inmueble casa, departamento, etc. */
+//   tipoinmuebles = '';
+//  /*Almacena el id del municipio sleccionado*/
+//   estadoSeleccionado:any | null ='';
+//   /*Almacena el id del tipoInmueble*/
+//   seleccionIdTipoInmueble:any | null='';
+// /*OPCIONES PARA LAS RECAMARAS */
+  opcion1:any;
 
   
 
@@ -128,7 +131,7 @@ export class VistadeinmuebleComponent implements OnInit {
 
   title = 'ProyectoPrueba';
 
-
+ 
   
   // Definir un arreglo de opciones
 
@@ -145,6 +148,8 @@ export class VistadeinmuebleComponent implements OnInit {
 
   constructor(private el: ElementRef, private router: Router, private http: HttpService, private renderer: Renderer2, private route: ActivatedRoute, private formBuilder: FormBuilder) {
     
+    
+  
   }
 
   
@@ -184,11 +189,60 @@ export class VistadeinmuebleComponent implements OnInit {
     else 'hola';
     console.log( this.idTipoInmueble);
 
+    this.limpiarFiltros()
+    
+    
+
+    //this.municipio = localStorage.getItem("id_Municipio");
+    this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
+
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action':'', 'tpropiedad': this.id_Tipo_Inmueble, 'ubicacion': ''} });
+
+    this.http.busquedaAvanzada('', this.id_Tipo_Inmueble , '',  '', '', '', '').subscribe((datos: any) => {
+
+    
+    // this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
+
+     
+    this.datosInmueble =datos ;
+
+    });
 
     // console.log(item);
 
   }
 
+  mostrarRecamaras(recamara:number): void{
+    this.opcion1=recamara;
+    this.toggleInmueble();
+
+    localStorage.setItem("Recamas", this.opcion1);
+
+    // if(this.idMunicipio.value == null)
+    // localStorage.setItem("id_Municipio", '');
+    // else 'hola';
+    // console.log( this.idTipoInmueble);
+
+    this.limpiarFiltros()
+    
+    
+
+    
+    //this.id_Tipo_Inmueble= localStorage.getItem("Recamas")
+
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action':'', 'tpropiedad': this.id_Tipo_Inmueble, 'ubicacion': ''} });
+
+    this.http.busquedaAvanzada('', this.id_Tipo_Inmueble ,this.opcion1 ,  '', '', '', '').subscribe((datos: any) => {
+
+     
+    this.datosInmueble =datos ;
+
+    });
+
+    // console.log(item);
+
+  }
+  
   
   limpiarCampos(){
 
@@ -232,28 +286,36 @@ export class VistadeinmuebleComponent implements OnInit {
         this.http.Remates(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
           this.datosInmueble = resp;
         })
-    } else {
+    } else if (this.bandera == 13){
+
+      this.http.MenuFiltros(this.ubicacion, this.tpropiedad,this.tipoP).subscribe((resp:any)=> {
+
+        this.datosInmueble = resp;
+        
+
+      })
+    }else{ 
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
         this.datosInmueble = resp;
         
       }); 
   
-      this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+      // this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
         
-        this.datosInmueble = data;
+      //   this.datosInmueble = data;
   
-      });
+      // });
     }
 
     
 
 
-    this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
+    // this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
-      this.datosInmueble = resp;
+    //   this.datosInmueble = resp;
       
-    }); 
+    // }); 
 
     
 
@@ -261,6 +323,7 @@ export class VistadeinmuebleComponent implements OnInit {
     this.http.mostrarTipoInmueble().subscribe((data: any) => {
 
       this.datosTipoInmueble = data;
+      console.log(data);
 
     });
 
@@ -320,20 +383,20 @@ export class VistadeinmuebleComponent implements OnInit {
 
     this.limpiarFiltros()
     
-
+    
 
     this.municipio = localStorage.getItem("id_Municipio");
-    this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
+    //this.id_Tipo_Inmueble= localStorage.getItem("id_Tipo_Inmueble")
 
-    this.http.busquedaAvanzada(this.municipio, this.id_Tipo_Inmueble , '',  '', '', '', this.ubicacion).subscribe((datos: any) => {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action':'', 'tpropiedad': 0, 'ubicacion': this.municipio} });
 
+    this.http.busquedaAvanzada(this.municipio, this.id_Tipo_Inmueble , '',  '', '', '', '').subscribe((datos: any) => {
 
+    
     // this.http.busquedaAvanzada(this.inmueble.ubicacion, this.inmueble.inmueble , '2',  '', '', '', this.ubicacion).subscribe((data: any) => {
 
      
-
-
-     datos= this.datosInmueble ;
+    this.datosInmueble =datos ;
 
     });
 

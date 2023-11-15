@@ -67,6 +67,17 @@
   </div>
 
   <div class="Precio-container">
+    <button (click)="toggleInmueble()" class="buttonnavbar" mat-stroked-button>Inmueble<img class="navarrow"></button>
+      <ul *ngIf="showInmueble" class="dropdown-Precio">
+        <ul class="content-Precio">
+          <mat-radio-group style="display: flex; flex-direction: column; padding: 10px;">
+            <mat-radio-button  *ngFor=" let t of datosTipoInmueble" (click)="mostrarIDTipoInmueble(t.id_Tipo_Inmueble)" value={{t.id_Tipo_Inmueble}} class="opcfiltros3">{{t.Tipo_Inmueble}}</mat-radio-button>
+          </mat-radio-group>
+          <button class="buttonnavbar" mat-stroked-button style="margin-bottom: 5px;" >Limpiar</button>
+        </ul>
+      </ul>
+  </div>
+  <!-- <div class="Precio-container">
     <button (click)="toggleInmueble()" (click)="mostrarDatosInmueble()" class="buttonnavbar" mat-stroked-button>Inmueble<img class="navarrow"></button>
     <ul *ngIf="showInmueble" class="dropdown-Precio">
       <ul class="content-Precio">
@@ -74,10 +85,10 @@
           <mat-radio-group >
             <mat-radio-button  class="opcfiltros3" *ngFor=" let t of datosTipoInmueble" (click)="mostrarIDTipoInmueble(t.id_Tipo_Inmueble)" >{{t.Tipo_Inmueble}}</mat-radio-button>
           </mat-radio-group>
-        <!-- <button class="buttonnavbar" mat-stroked-button>Buscar</button> -->
+        <button class="buttonnavbar" mat-stroked-button>Buscar</button> 
       </ul>
     </ul>
-  </div>
+  </div> -->
 
   <!-- <div class="Precio-container">
     <button (click)="toggleInmueble()" class="buttonnavbar"  mat-stroked-button>Inmueble<img class="navarrow"></button>
@@ -110,7 +121,7 @@
       <ul *ngIf="showRecamaras" class="dropdown-Recamaras">
         <ul class="content-Precio">
           <mat-radio-group style="display: flex; flex-direction: column; padding: 10px;">
-            <mat-radio-button value="1" class="opcfiltros3">1</mat-radio-button>
+            <mat-radio-button  name="opcion1" [(ngModel)]="opcion1" [value]="1"  class="opcfiltros3">1</mat-radio-button>
             <mat-radio-button value="2" class="opcfiltros3">2</mat-radio-button>
             <mat-radio-button value="3" class="opcfiltros3">3</mat-radio-button>
             <mat-radio-button value="4" class="opcfiltros3">4</mat-radio-button>
@@ -120,7 +131,7 @@
         </ul>
       </ul>
   </div>
-
+  
 
 
     <div class="filters-container">
