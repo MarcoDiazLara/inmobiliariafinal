@@ -42,8 +42,7 @@ export class InmuebledetallesComponent implements OnInit {
     let id_publicacion = localStorage.getItem('idpublicacion');
     
     this.http.mostrarDetallesInmueble(id_publicacion).subscribe((data:any)=>{
-      
-      
+    
       this.detalles = data[0];
       this.Nombre_Publicacion = this.detalles.Nombre_Publicacion;
       this.Terrenometros= this.detalles.Terreno_M2;
@@ -78,7 +77,6 @@ export class InmuebledetallesComponent implements OnInit {
       Alberca: ['',[Validators.required]],
       Roof_Garden: ['',[Validators.required]],
   })
-
 
 
 }

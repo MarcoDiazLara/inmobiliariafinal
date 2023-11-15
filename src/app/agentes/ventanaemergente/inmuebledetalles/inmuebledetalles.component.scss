@@ -4,14 +4,6 @@
     margin-left: 10%;
 }
 
-// .caracteristicasborder{
-//     width: 90%;
-//     height: auto;
-//     margin-left: 5%;
-//     border-color: black;
-//     border: 1px solid;
-// }
-
 h1{
     font-size: 22px;
     font-weight: 600;
@@ -19,9 +11,16 @@ h1{
     color: #264D5E;
 }
 
-.ordenabutton{
+.ordenabutton button{
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 4%;
     text-align: center;
+    background-color: #264D5E;
+    color: #ffffff;
+    
 }
+
 
 .centrarinput {
     width : 33.3%;
