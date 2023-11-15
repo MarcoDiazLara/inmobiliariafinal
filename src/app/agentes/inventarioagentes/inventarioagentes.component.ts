@@ -133,6 +133,7 @@ export class InventarioagentesComponent implements OnInit {
   openasesor(idPubli:any ) {
 
     localStorage.setItem ('idpublicacion',idPubli);
+    
 
 
     const dialogRef = this.dialog.open(InmuebledetallesComponent, {

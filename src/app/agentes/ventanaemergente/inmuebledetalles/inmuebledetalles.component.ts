@@ -12,7 +12,7 @@ export class InmuebledetallesComponent implements OnInit {
 
   formGeneral!:FormGroup;
 
-  detalles!: detallesdelInmueble;
+  detalles: detallesdelInmueble []=[];
   id_publicacion: any;
 
   constructor(
@@ -23,11 +23,12 @@ export class InmuebledetallesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let id_publicacion = localStorage.getItem("id_publicacion");
+    let id_publicacion = localStorage.getItem('idpublicacion');
     
     this.http.mostrarDetallesInmueble (id_publicacion).subscribe((data:any)=>{
       this.detalles=data;
       console.log(this.detalles);
+      console.log(id_publicacion);
       });
 
 

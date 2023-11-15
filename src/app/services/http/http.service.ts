@@ -333,7 +333,7 @@ InventarioAsesor(Id_Usuario: any ) {
 
 mostrarDetallesInmueble(p_id_publicacion:any){
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  let params = 'Id_Publicacion='+p_id_publicacion;
+  let params = 'Id_Publicacion='+ p_id_publicacion;
   return this.httpclient.post(this.url + 'consultar_detalle_inmuebles_asesores.php', params, { headers }); 
 }
 Notis(p_mensje: any, id_publicador: any){
