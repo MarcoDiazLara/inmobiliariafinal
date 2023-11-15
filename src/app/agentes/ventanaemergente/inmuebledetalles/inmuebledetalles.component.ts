@@ -12,7 +12,23 @@ export class InmuebledetallesComponent implements OnInit {
 
   formGeneral!:FormGroup;
 
-  detalles: detallesdelInmueble []=[];
+  detalles!: detallesdelInmueble ;
+  Nombre_Publicacion !: string;
+  Terrenometros!: string;
+  construccion!: string ;
+  recamaras!: string;
+  banos!: string;
+  pisos!:string;
+  antiguedad!:string;
+  acabados!:string;
+  gimnasio!:string;
+  estacionamiento!:string;
+  jardin!:string;
+  alberca!:string;
+  cocina!:string;
+  roof!:string;
+ 
+  
   id_publicacion: any;
 
   constructor(
@@ -25,10 +41,24 @@ export class InmuebledetallesComponent implements OnInit {
 
     let id_publicacion = localStorage.getItem('idpublicacion');
     
-    this.http.mostrarDetallesInmueble (id_publicacion).subscribe((data:any)=>{
-      this.detalles=data;
-      console.log(this.detalles);
-      console.log(id_publicacion);
+    this.http.mostrarDetallesInmueble(id_publicacion).subscribe((data:any)=>{
+    
+      this.detalles = data[0];
+      this.Nombre_Publicacion = this.detalles.Nombre_Publicacion;
+      this.Terrenometros= this.detalles.Terreno_M2;
+      this.construccion= this.detalles.Construccion_M2;
+      this.recamaras= this.detalles.Recamara;
+      this.banos=this.detalles.Bano;
+      this.pisos=this.detalles.Num_Pisos;
+      this.antiguedad=this.detalles.Antiguedad;
+      this.acabados=this.detalles.Acabados;
+      this.gimnasio=this.detalles.Gimnasio;
+      this.estacionamiento=this.detalles.Estacionamiento;
+      this.jardin=this.detalles.Jardin;
+      this.alberca=this.detalles.Alberca;
+      this.cocina=this.detalles.Cocina_Integral;
+      this.roof=this.detalles.Roof_Garden
+      
       });
 
 
@@ -49,10 +79,7 @@ export class InmuebledetallesComponent implements OnInit {
   })
 
 
-
 }
-
-
 
 closeDialog(){
   this.dialog.closeAll();
