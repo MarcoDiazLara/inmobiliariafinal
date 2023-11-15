@@ -143,6 +143,11 @@ public Venta: Boolean = false;
     let correo = this.details.Email;
     let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
     this.httpService.EnviarCorreo(correo,mensaje).subscribe((data: any) =>{
+      let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`
+      
+      this.httpService.Notis(mensaje2, this.id_usuario ).subscribe((data:any)=>{
+
+      })
 
       Swal.fire({
         position: 'top-end',
@@ -164,8 +169,11 @@ public Venta: Boolean = false;
       
       const numeroTelefono = this.details.Contacto_Principal;
       const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
-  
+      let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+      this.httpService.Notis(mensaje2, this.id_usuario ).subscribe((data:any)=>{
+
+      })
   
        // Abre la URL de WhatsApp en una nueva ventana
       window.open(urlWhatsApp, '_blank');
@@ -184,6 +192,7 @@ public Venta: Boolean = false;
   openDialog(): void {
      if(this.isLoggedIn){
       localStorage.setItem("Publicacion",this.details.Id_Publicacion);
+      localStorage.setItem("Publicador", this.details.Id_Usuario);
       const dialogRef = this.dialog.open(VentanacitaComponent, {
 
       });

@@ -4,8 +4,20 @@
       <button class="btnAdd" (click)="addEvent()"><mat-icon>add</mat-icon> Crear </button>
       <ul *ngIf="ShowAddEvent" class="ShowAddEvent">
         <ul class="content-addevent">
-          <h4>hola</h4>
+            <div class="inputContainer">
+              <input type="text" class="inputAsunto" placeholder="">
+              <label for="" class="label">Asunto</label>
 
+            </div>
+            <div style="display: flex;">
+              <div style="margin-right: 60px;"><h4>fecha de inicio</h4>
+               
+              </div>
+              <div><h4>fecha de cierre</h4>
+               
+              </div>
+            </div>
+            <button class="submitBtn">Añadir</button>          
         </ul>
       </ul>
     </div>
@@ -14,6 +26,7 @@
         <mat-card class="demo-inline-calendar-card">
           <mat-calendar [(selected)]="selected"></mat-calendar>
         </mat-card>
+        
         
         
       </div>
