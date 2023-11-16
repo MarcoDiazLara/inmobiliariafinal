@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 /*tablas */
 
@@ -79,6 +80,7 @@ import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/i
     MatGridListModule,
     MatTableModule,
     MatMenuModule,
+    MatCheckboxModule,
 
   ]
 })
