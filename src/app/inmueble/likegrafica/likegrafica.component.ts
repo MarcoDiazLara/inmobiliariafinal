@@ -2,6 +2,7 @@ import { Component,  Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
+
 @Component({
   selector: 'app-likegrafica',
   templateUrl: './likegrafica.component.html',
@@ -13,9 +14,8 @@ export class LikegraficaComponent  {
     public dialogRef: MatDialogRef<LikegraficaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
-
- 
-
+     
+  
 
 
 }
