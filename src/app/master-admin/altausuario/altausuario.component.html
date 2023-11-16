@@ -10,7 +10,7 @@
                   }}</mat-option>
                 </mat-select>
                 <mat-error>
-                  Estatus
+                  Selecciona Usuario
                 </mat-error>
               </mat-form-field>
             </div>
@@ -42,7 +42,7 @@
                 <input matInput type="text" placeholder="" formControlName="apellidomaterno">
                 <mat-label><b> Apellido Materno </b></mat-label>
                 <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
-                  Apellido Paterno <strong>obligatorio</strong>
+                  Apellido Materno <strong>obligatorio</strong>
                 </mat-error>
               </mat-form-field>
             </div>
