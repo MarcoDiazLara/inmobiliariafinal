@@ -17,7 +17,7 @@
 
 
         <div class="col-md-4">
-          <mat-form-field appearance="fill" style="width: 95%;">
+          <mat-form-field appearance="fill" class="tamañoinput">
             <mat-label><b>RFC</b></mat-label>
             <input matInput type="text" placeholder="Correo electronico" formControlName="rfcempresa">
             <mat-error *ngIf="this.formGeneral.get('rfcempresa')?.hasError('required')">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-md-4">
-          <mat-form-field appearance="fill" style="width: 95%;">
+          <mat-form-field appearance="fill" class="tamañoinput">
             <mat-label><b>Correo</b></mat-label>
             <input matInput type="email" placeholder="Correo electronico" formControlName="email">
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
@@ -36,7 +36,7 @@
           </mat-form-field>
         </div>
       </div>
-      
+
 
       <div class="row">
         <div class="col-md-3">
@@ -80,8 +80,8 @@
           </mat-form-field>
         </div>
       </div>
-      
-      <div class="row" style="margin-top: 1%;">
+
+      <div class="row">
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
             <mat-label><b>Tipo Socio</b></mat-label>
@@ -96,7 +96,7 @@
 
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
-            <mat-label ><b>Estados</b></mat-label>
+            <mat-label><b>Estados</b></mat-label>
             <mat-select formControlName="pId_estado" required>
               <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
                 }}</mat-option>
@@ -146,7 +146,8 @@
             </div>
             <mat-icon>wallpaper</mat-icon>
             <div>
-              <input #imageInput class="form-control" type="file" accept="image/*" (change)="onFileChange($event)" formControlName="imageInput">
+              <input #imageInput class="form-control" type="file" accept="image/*" (change)="onFileChange($event)"
+                formControlName="imageInput">
               <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')">
                 Seleccione una imagen <strong>es obligatorio</strong>
               </mat-error>
@@ -156,7 +157,7 @@
           <br>
         </div>
       </div>
-    
+
       <!-- Apartado Informacion de usuario -->
       <h4> DATOS DEL USUARIO </h4>
       <br>
@@ -186,7 +187,7 @@
             <input matInput type="text" placeholder="" formControlName="apellidomaterno">
             <mat-label><b> Apellido Materno </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
-              Apellido Paterno <strong>obligatorio</strong>
+              Apellido Materno <strong>obligatorio</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -204,7 +205,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <mat-form-field appearance="fill" class="tamaño">
+          <mat-form-field appearance="fill" class="tamañoinput">
             <input matInput type="text" placeholder="" formControlName="rfc">
             <mat-label><b> RFC </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('rfc')?.hasError('required')">
@@ -214,7 +215,7 @@
         </div>
 
         <div class="col-md-3">
-          <mat-form-field appearance="fill" class="tamaño">
+          <mat-form-field appearance="fill" class="tamañoinput">
             <mat-label><b> Contacto Emergencia </b></mat-label>
             <input matInput type="text" placeholder="Telefono" formControlName="contactoemergencia" maxlength="10">
             <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
@@ -225,7 +226,7 @@
 
 
         <div class="col-md-3 alinea">
-          <mat-form-field appearance="fill" class="tamaño">
+          <mat-form-field appearance="fill" class="tamañoinput">
             <input matInput type="email" placeholder="Correo electronico" formControlName="correo">
             <mat-label><b> Correo </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
@@ -235,7 +236,7 @@
         </div>
 
         <div class="col-md-3 alinea">
-          <mat-form-field appearance="fill" class="tamaño">
+          <mat-form-field appearance="fill" class="tamañoinput">
             <input matInput type="text" placeholder="" formControlName="nombreusuario">
             <mat-label><b> Nombre Usuario </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('nombreusuario')?.hasError('required')">
@@ -245,7 +246,7 @@
         </div>
 
       </div>
-       <br>
+      <br>
       <div class="row">
         <div class="col-md-3 alinea">
           <mat-form-field appearance="fill" class="tamañoinput">
@@ -263,13 +264,13 @@
 
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
-           <mat-label ><b> Estatus </b> </mat-label>
-               <mat-select  formControlName="estatus" required >
-                 <mat-option *ngFor="let est of estados1" [value]="est.value">
-                   {{est.viewValue}}</mat-option>
-               </mat-select>
-         </mat-form-field>
-       </div>
+            <mat-label><b> Estatus </b> </mat-label>
+            <mat-select formControlName="estatus" required>
+              <mat-option *ngFor="let est of estados1" [value]="est.value">
+                {{est.viewValue}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
@@ -281,13 +282,10 @@
           </mat-form-field>
         </div>
       </div>
-
-     
-
-
     </form>
     <br>
-    <div class="col-md-6 cssbutton">
+    <br>
+    <div class="col-md-12 cssbutton">
       <button mat-button type="submit" (click)="Guardardatos()" [class.spinner]="loading" [disabled]="loading"
         color="secondary">
         <span>{{ loading ? 'Cargando...' : 'Registrar' }}</span>
