@@ -146,7 +146,7 @@
             </div>
             <mat-icon>wallpaper</mat-icon>
             <div>
-              <input #imageInput class="form-control" type="file" accept="image/*" formControlName="imageInput">
+              <input #imageInput class="form-control" type="file" accept="image/*" (change)="onFileChange($event)" formControlName="imageInput">
               <mat-error *ngIf="this.formGeneral.get('imageInput')?.hasError('required')">
                 Seleccione una imagen <strong>es obligatorio</strong>
               </mat-error>
@@ -226,7 +226,7 @@
 
         <div class="col-md-3 alinea">
           <mat-form-field appearance="fill" class="tamaño">
-            <input matInput type="email" placeholder="Correo electronico" formControlName="email">
+            <input matInput type="email" placeholder="Correo electronico" formControlName="correo">
             <mat-label><b> Correo </b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
               Correo es <strong>requerido</strong>
@@ -261,15 +261,15 @@
           </mat-form-field>
         </div>
 
-        <!-- <div class="col-md-3 alineaestatus">
-             <mat-form-field class="example-full-width ">
-              <mat-label  style="margin-left: 6%;"><b> Estatus </b> </mat-label>
-                  <mat-select  formControlName="estatus" required >
-                    <mat-option *ngFor="let est of estados" [value]="est.value">
-                      {{est.viewValue}}</mat-option>
-                  </mat-select>
-            </mat-form-field>
-          </div> -->
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="tamañoinput">
+           <mat-label ><b> Estatus </b> </mat-label>
+               <mat-select  formControlName="estatus" required >
+                 <mat-option *ngFor="let est of estados1" [value]="est.value">
+                   {{est.viewValue}}</mat-option>
+               </mat-select>
+         </mat-form-field>
+       </div>
 
         <div class="col-md-3">
           <mat-form-field appearance="fill" class="tamañoinput">
@@ -282,25 +282,7 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-
-        </div>
-        <div class="col-md-6">
-          <div style="margin-top: 3%;">
-            <div style="padding: 20px 0 20px 0;text-align: center;">
-              <p style="font-size: 130%;font-weight: 550;">Imagen Usuario</p>
-            </div>
-            <mat-icon>wallpaper</mat-icon>
-            <div>
-              <input #imageInput class="form-control" type="file" accept="image/*" formControlName="imageUsua">
-              <mat-error *ngIf="this.formGeneral.get('imageUsua')?.hasError('required')">
-                Seleccione una imagen <strong>es obligatorio</strong>
-              </mat-error>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
 
     </form>
