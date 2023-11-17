@@ -355,4 +355,24 @@ getNotis(p_id_usuario: any){
 
 }
 
+
+altaSocioCompleto(p_nombres: any, p_a_paterno: any, p_a_materno: any, p_nom_usuario: any, p_contrasena: any, 
+  p_correo: any, p_tel_fijo: any, p_cel: any, p_tipo_usuario: any, p_estatus: any, p_id_admin: any, p_desc_usu: any, p_RFC:any,
+  p_CURP:any, p_creado: any, Nombre_Razon_Social: any, Img_Logo: any, RFC: any, Email: any, Tel_Empresa: any, Calle:any,
+  Num_Ext:any, Num_Int:any, Id_Asentamiento: any, Id_Tipo_Socio: any, v_Id_Usuario: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_nombres=' + p_nombres + '&p_a_paterno=' + p_a_paterno + '&p_a_materno=' + p_a_materno + '&p_nom_usuario=' + p_nom_usuario + '&p_contrasena=' + p_contrasena + '&p_correo=' + p_correo
+    + '&p_tel_fijo=' + p_tel_fijo + '&p_cel=' + p_cel + '&p_tipo_usuario=' + p_tipo_usuario + '&p_estatus=' + p_estatus + '&p_id_admin=' + p_id_admin
+    + '&p_desc_usu=' + p_desc_usu + '&p_RFC=' + p_RFC + '&p_CURP=' + p_CURP + '&p_creado=' + p_creado + '&Nombre_Razon_Social=' + Nombre_Razon_Social + '&Img_Logo=' + Img_Logo
+    + '&RFC=' + RFC + '&Email=' + Email + '&Tel_Empresa=' + Tel_Empresa + '&Calle=' + Calle + '&Num_Ext=' + Num_Ext + '&Num_Int=' + Num_Int + '&Id_Asentamiento=' + Id_Asentamiento
+    + '&Id_Tipo_Socio=' + Id_Tipo_Socio + '&v_Id_Usuario=' + v_Id_Usuario;
+    return this.httpclient.post(this.url + 'InsertarSocioCompleto.php', params, { headers });
+}
+
+
+mostrarInmobiliarias(){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'xrsxryw1y21';
+  return this.httpclient.post(this.url + 'obtenerInmobiliaras.php', params, { headers });
+}
 }

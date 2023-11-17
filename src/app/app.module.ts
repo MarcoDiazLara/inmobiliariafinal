@@ -14,6 +14,7 @@ import {MatExpansionModule, MatExpansionPanel} from '@angular/material/expansion
 import {MatChipsModule} from '@angular/material/chips';
 
 
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
 import {MatInputModule} from '@angular/material/input';
@@ -50,6 +51,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +70,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
      NgFor,
      AsyncPipe,
      BrowserModule,
+     
      BrowserAnimationsModule,
      HttpClientModule,
      MatIconModule,
@@ -99,7 +102,8 @@ import { UnityComponent } from './inmueble/unity/unity.component';
      MatExpansionModule,
      MatCardModule,
      MatChipsModule,
-     WebModule
+     WebModule,
+     
 
   ],
   exports: [WebModule],

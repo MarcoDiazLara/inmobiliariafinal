@@ -4,14 +4,14 @@
   
       <div class="row">
         <div class="col-md-6">
-          <mat-form-field class="example-full-width">
-            <mat-label style="margin-left: 6%;"><b>Selecciona Usuario</b></mat-label>
+          <mat-form-field appearance="fill">
+            <mat-label><b>Selecciona Usuario</b></mat-label>
             <mat-select formControlName="seleccionausuario" required>
               <mat-option *ngFor="let est of tipos" [value]="est.value">
                 {{est.viewValue}}</mat-option>
             </mat-select>
             <mat-error>
-              Estatus
+              Selecciona Usuario
             </mat-error>
           </mat-form-field>
         </div>
@@ -21,8 +21,7 @@
         <div class="col-md-3">
           <mat-form-field appearance="fill">
             <input matInput type="text" placeholder="" formControlName="nombre">
-            <mat-label>
-              <b>Nombre</b></mat-label>
+            <mat-label> <b>Nombre</b> </mat-label>
             <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
               El nombre es <strong>obligatorio</strong>
             </mat-error>
@@ -43,10 +42,9 @@
         <div class="col-md-3">
           <mat-form-field appearance="fill">
             <input matInput type="text" placeholder="" formControlName="apellidomaterno">
-            <mat-label>
-              <b> apellidomaterno </b></mat-label>
+            <mat-label><b>Apellido Materno</b></mat-label>
             <mat-error *ngIf="this.formGeneral.get('apellidomaterno')?.hasError('required')">
-              Apellido Paterno <strong>obligatorio</strong>
+              Apellido Materno <strong>obligatorio</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -98,9 +96,9 @@
       </div>
      
   
-      <div class="col-md-3 alinea">
-        <mat-form-field appearance="legacy" style="width: 95%;">
-          <mat-label style="margin-left: 6%;"><b>Correo</b></mat-label>
+      <div class="col-md-3">
+        <mat-form-field appearance="fill" style="width: 95%;">
+          <mat-label ><b>Correo</b></mat-label>
           <input matInput type="email" placeholder="Correo electronico" formControlName="email">
           <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
               Correo es <strong>requerido</strong>
@@ -110,7 +108,7 @@
     </div>
   
     <div class="row">
-      <div class="col-md-3 alinea">
+      <div class="col-md-3">
         <mat-form-field appearance="fill">
           <input matInput type="text" placeholder="" formControlName="nombreusuario">
           <mat-label><b>Nombre Usuario </b></mat-label>
@@ -120,7 +118,7 @@
         </mat-form-field> 
       </div>
   
-      <div class="col-md-3 alinea">
+      <div class="col-md-3 ">
         <mat-form-field appearance="fill">
           <mat-label><b> Contraseña </b></mat-label>
           <input matInput type="text" [type]="hide2 ? 'password' : 'text'"  formControlName="password">
@@ -133,9 +131,9 @@
         </mat-form-field>
       </div>
     
-      <div class="col-md-3 alineaestatus">
-        <mat-form-field class="example-full-width ">
-          <mat-label  style="margin-left: 6%;"><b>Estatus</b></mat-label>
+      <div class="col-md-3">
+        <mat-form-field appearance="fill" >
+          <mat-label><b>Estatus</b></mat-label>
               <mat-select  formControlName="estatus" required>
                 <mat-option *ngFor="let est of estados" [value]="est.value">
                   {{est.viewValue}}</mat-option>
@@ -148,9 +146,8 @@
   
       <div class="col-md-3">
         <mat-form-field appearance="fill">
-          <textarea matInput type="text" placeholder="" formControlName="descripcionusuario"></textarea>
-          <mat-label>
-              <b>Descripcion Usuario</b></mat-label>
+          <textarea matInput rows="1" type="text" placeholder="" formControlName="descripcionusuario"></textarea>
+          <mat-label><b>Descripcion Usuario</b></mat-label>
           <mat-error *ngIf="this.formGeneral.get('descripcionusuario')?.hasError('required')">
               Descripcion <strong>Obligatorio</strong>
           </mat-error>

@@ -1,5 +1,7 @@
 import { Component,  Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 @Component({
@@ -13,9 +15,8 @@ export class LikegraficaComponent  {
     public dialogRef: MatDialogRef<LikegraficaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
-
- 
-
+     
+  
 
 
 }
