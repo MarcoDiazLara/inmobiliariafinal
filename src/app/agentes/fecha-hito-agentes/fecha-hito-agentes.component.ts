@@ -27,6 +27,25 @@ export class FechaHitoAgentesComponent implements OnInit {
     {value: 'Fuera de servicio-4', viewValue: 'Fuera de Servicio'},
   ];
 
+  Delete(){
+    Swal.fire({
+      title: "¿Estas seguro?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, Descartar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Descartado!",
+          text: "Este evento ha sido descartado.",
+          icon: "success"
+        });
+      }
+    });
+
+  }
 
   addEvent() {
     this.ShowAddEvent = true;
