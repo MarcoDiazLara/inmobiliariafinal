@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { HttpService } from 'src/app/services/http/http.service';
+import { inmobiliaria } from 'src/app/services/Interface/Interfaces';
 
 @Component({
   selector: 'app-inmobiliarias',
@@ -9,13 +11,16 @@ export class InmobiliariasComponent implements OnInit {
   isLoggedIn: boolean = false;
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
 
-  abrir(){
-    if(this.isLoggedIn){
-      
-    }
-    else{
+  inmobiliarias: inmobiliaria[] = [];
+  inmobiliariaSeleccionada!: inmobiliaria;
+  fecha: any;
+  aux:any;
+  abrir(inmobiliaria: inmobiliaria){
+    this.inmobiliariaSeleccionada = inmobiliaria;
+    this.fecha = inmobiliaria.Created_Date;
+    
       this.abrirVentanaEmergente();
-    }
+    
   }
 
   abrirVentanaEmergente(): void {
@@ -23,6 +28,7 @@ export class InmobiliariasComponent implements OnInit {
   }
 
   cerrarVentanaEmergente(): void {
+    
     this.ventanaEmergente.nativeElement.style.display = 'none';
   }
 
@@ -30,9 +36,12 @@ export class InmobiliariasComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+    this.httpService.mostrarInmobiliarias().subscribe((data : any)=> {
+      this.inmobiliarias = data;
+    })
   }
 
 }

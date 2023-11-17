@@ -368,4 +368,11 @@ altaSocioCompleto(p_nombres: any, p_a_paterno: any, p_a_materno: any, p_nom_usua
     + '&Id_Tipo_Socio=' + Id_Tipo_Socio + '&v_Id_Usuario=' + v_Id_Usuario;
     return this.httpclient.post(this.url + 'InsertarSocioCompleto.php', params, { headers });
 }
+
+
+mostrarInmobiliarias(){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'xrsxryw1y21';
+  return this.httpclient.post(this.url + 'obtenerInmobiliaras.php', params, { headers });
+}
 }
