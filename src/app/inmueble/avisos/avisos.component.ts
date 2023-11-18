@@ -6,6 +6,7 @@ import { MenuinmuebleComponent } from '../menuinmueble/menuinmueble.component';
 import { InformacioninmuebleComponent } from '../informacioninmueble/informacioninmueble.component';
 import {ThemePalette} from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
+import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 export interface ChipColor {
   name: string;
@@ -21,6 +22,7 @@ export interface ChipColor {
   // imports: [MatButtonModule, MatDialogModule, MenuinmuebleComponent],
 })
 export class AvisosComponent  {
+  
  
   constructor(public dialog: MatDialog) {}
   openDialog() {
@@ -49,7 +51,11 @@ export class AvisosComponent  {
     this.mostrarTabla = !this.mostrarTabla;
   }
     
+  mostrarFormulario = false;
 
+  toggleFormulario() {
+    this.mostrarFormulario = !this.mostrarFormulario;
+  }
 
 
 

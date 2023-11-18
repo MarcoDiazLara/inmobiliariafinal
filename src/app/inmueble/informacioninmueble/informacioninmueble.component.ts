@@ -21,6 +21,7 @@ export class InformacioninmuebleComponent implements OnInit {
     secondCtrl: ['', Validators.required],
   });
 
+  isLinear = false;
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
