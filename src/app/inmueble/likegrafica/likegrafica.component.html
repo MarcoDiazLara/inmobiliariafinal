@@ -1,5 +1,27 @@
-<h1>Fecha Seleccionada</h1>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <h1>Hola</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center;">
+<p>{{ data.selectedDate | date }}</p>
+</div>
 
 
-<!-- <p>{{ data.selectedDate | date }}</p> -->
-<button mat-button (click)="dialogRef.close()">Cerrar</button>
+
+
+ 
+ <form>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <mat-form-field class="example-full-width" style="width: 300px;">
+        <mat-label>¿Cuántos likes tiene tu propiedad?</mat-label>
+        <div style="display: flex; align-items: center;">
+            <input matInput placeholder="Ex. Pizza" value="90" readonly style="text-align: center;">
+            <div class="like-icon">&#x2764;</div>
+        </div>
+    </mat-form-field>
+</div>
+</form>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <button mat-button (click)="dialogRef.close()">Cerrar</button>
+</div>
+

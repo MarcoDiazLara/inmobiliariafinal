@@ -92,11 +92,11 @@
     </div>
   </div>
   <div class="row justify-content-left align-items-center">
-    <div class="col-sm-3 align-items-center align-middle p-5 color-back">
+    <div class="col-sm-3 align-items-center align-middle p-5 color-back"> 
       <div class="h6"><span class="label label-default">Estado del Anuncio</span></div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Publicado </label>
+        <input  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  >
+        <label class="form-check-label" for="flexRadioDefault2" > Publicado </label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
@@ -111,6 +111,14 @@
       <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
         <label class="form-check-label" for="flexRadioDefault2"> Renta </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2"> Desarrollo </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2"> Remate </label>
       </div>
       <div class="p-2"></div>
       <div class="h6"><span class="label label-default">Tipo de Propiedad</span></div>
@@ -164,7 +172,7 @@
             <p> Creado :</p>
           </div>
           <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <button type="button" class="btn btn-light"><i class="bi bi-pencil-square"></i></button>
+            <button type="button" class="btn btn-light" (click)="InforInmu()"><i class="bi bi-pencil-square"></i></button>
           </div>
         </div>
     </div>
