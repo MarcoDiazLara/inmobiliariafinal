@@ -222,7 +222,7 @@ export interface inmobiliaria{
     Id_Tipo_Socio: "",
     Id_Usuario: "",
     Created_By: "",
-    Created_Date: Date,
+    Created_Date: "",
     Updated_By: "",
     Updated_Date: ""
 };
