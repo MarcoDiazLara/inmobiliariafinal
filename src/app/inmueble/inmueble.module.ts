@@ -15,6 +15,14 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { LikegraficaComponent } from './likegrafica/likegrafica.component';
+import { InformacioninmuebleComponent } from './informacioninmueble/informacioninmueble.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import {MatChipsModule} from '@angular/material/chips';
+import {ReactiveFormsModule} from '@angular/forms';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -24,7 +32,8 @@ import { LikegraficaComponent } from './likegrafica/likegrafica.component';
  InteresadosComponent,
  ContratosComponent,
  LikeComponent,
- LikegraficaComponent
+ LikegraficaComponent,
+ InformacioninmuebleComponent
   ],
   imports: [
     
@@ -37,11 +46,19 @@ import { LikegraficaComponent } from './likegrafica/likegrafica.component';
     MatCardModule,
     MatNativeDateModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule, 
+    MatFormFieldModule, 
+    MatInputModule,
+    MatChipsModule,
 
-
-
+    ReactiveFormsModule,
+    MatStepperModule,
+  
+  
+    
  
+  
   ],
   exports: [
     WebModule

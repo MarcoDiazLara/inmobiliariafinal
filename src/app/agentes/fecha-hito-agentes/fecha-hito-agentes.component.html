@@ -1,6 +1,9 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
 <div class="container-fluit">
     <div class="encabezado">
-      <h2>Calendario</h2>
+      <h1>Calendario</h1>
       <button class="btnAdd" (click)="addEvent()"><mat-icon>add</mat-icon> Crear </button>
       <ul *ngIf="ShowAddEvent" class="ShowAddEvent">
         <div class="barraAzul">Crear un nuevo evento <mat-icon (click)="closeEvent()" >clear</mat-icon></div>
@@ -64,6 +67,11 @@
             </div>          
         </ul>
       </ul>
+      <img class="logoxd" src="assets/img/logo.png">
+
+
+
+
     </div>
    
       <div class="calendario">
@@ -76,8 +84,52 @@
       </div>
    
     <div class="detallesfecha">
-      <h2>Detalles de Fecha</h2>
-      <p>Dato seleccionado: {{selected}}</p>
+      <h2>Detalles de la Fecha</h2>
+      <ul class="content-detallesfecha">
+      <div class="detallestemplate">
+        <div class="barraAzul">Venta de casa  estado: Tentativo
+          <div>
+          <mat-icon (click)="addEvent()">create</mat-icon>
+          <mat-icon (click)="Delete()">delete</mat-icon>
+          </div>
+        </div>
+        <div style="padding: 15px;" >
+          <h3>Fecha programada</h3>
+          <p>Dato seleccionado: {{selected}}</p>
+          <h3>Descripcion</h3>
+          <h4>hola soy una descripcion.</h4>
+        </div>
+      </div>
+      <div class="detallestemplate">
+        <div class="barraAzul">Titulo
+          <div>
+          <mat-icon>create</mat-icon><mat-icon>delete</mat-icon>
+          </div>
+        </div>
+        <div style="padding: 15px;" >
+          <h3>Fecha programada</h3>
+          <p>Dato seleccionado: {{selected}}</p>
+          <h3>Descripcion</h3>
+          <h4>hola soy una descripcion.</h4>
+        </div>
+      </div>
+      <div class="detallestemplate">
+        <div class="barraAzul">Titulo
+          <div>
+          <mat-icon>create</mat-icon><mat-icon>delete</mat-icon>
+          </div>
+        </div>
+        <div style="padding: 15px;" >
+          <h3>Fecha programada</h3>
+          <p>Dato seleccionado: {{selected}}</p>
+          <h3>Descripcion</h3>
+          <h4>hola soy una descripcion.</h4>
+        </div>
+      </div>
+    </ul>
+
+
+
     </div>
   </div>
 

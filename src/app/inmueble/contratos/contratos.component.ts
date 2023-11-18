@@ -12,4 +12,10 @@ export class ContratosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrarTabla = false;
+
+  toggleTabla() {
+    this.mostrarTabla = !this.mostrarTabla;
+  }
+
 }
