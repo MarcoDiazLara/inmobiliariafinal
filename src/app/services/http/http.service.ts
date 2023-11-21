@@ -375,4 +375,11 @@ mostrarInmobiliarias(){
   let params = 'xrsxryw1y21';
   return this.httpclient.post(this.url + 'obtenerInmobiliaras.php', params, { headers });
 }
+
+
+updateImagenes(p_id_usuario: any, p_imagen: any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_usuario=' + p_id_usuario + '&p_imagen='+p_imagen;
+  return this.httpclient.post(this.url + 'ActualizaImagen.php', params, { headers });
+}
 }
