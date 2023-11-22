@@ -89,7 +89,7 @@
       <div class="detallestemplate">
         <div class="barraAzul">Venta de casa  estado: Tentativo
           <div>
-          <mat-icon (click)="addEvent()">create</mat-icon>
+          <mat-icon (click)="EditEvent()">create</mat-icon>
           <mat-icon (click)="Delete()">delete</mat-icon>
           </div>
         </div>
@@ -126,6 +126,69 @@
           <h4>hola soy una descripcion.</h4>
         </div>
       </div>
+    </ul>
+
+    <ul *ngIf="ShowEditEvent" class="ShowAddEvent">
+      <div class="barraAzul">Editar este evento <mat-icon (click)="closeEvent()" >clear</mat-icon></div>
+      <ul class="content-addevent">    
+          <div class="inputContainer">
+            <input type="text" class="inputAsunto" placeholder="">
+            <label for="" class="label">Asunto</label>
+
+          </div>
+            <div style="display: flex;">
+              <div style="margin-right: 20px;">
+                <mat-form-field class="date-field">
+                  <mat-label disabled><h4>fecha de inicio</h4></mat-label>
+                  <div class="date-label-container">
+                    <input matInput [matDatepicker]="inicio">
+                    <mat-datepicker-toggle matIconSuffix [for]="inicio"></mat-datepicker-toggle>
+                  </div>
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker #inicio></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="date-field">
+                  <mat-label disabled><h4>fecha de cierre</h4></mat-label>
+                  <div class="date-label-container">
+                    <input matInput [matDatepicker]="cierre">
+                    <mat-datepicker-toggle matIconSuffix [for]="cierre"></mat-datepicker-toggle>
+                  </div>
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker #cierre></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <input type="text" class="inputDescripcion" placeholder="">
+              <label for="" class="label">Descripcion</label>
+              
+    
+            </div>
+            <div style="display: flex; align-items: center;">
+              <h4>
+                <mat-icon style="vertical-align: -5px; margin-right: 5px;" >notifications_active</mat-icon>
+                Activar Notificaciones 
+                <mat-checkbox color="primary" style="margin-left: 5px;"></mat-checkbox>
+              </h4>
+            </div>
+            <mat-form-field>
+              <mat-label><h4>Estatus</h4></mat-label>
+              <mat-select>
+                <mat-option *ngFor="let estatus of status" [value]="estatus.value">
+                  {{ estatus.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            
+            
+          <div class="BtnEvento">
+          <button class="CancelBtn" (click)="closeEvent()">Cancelar</button> 
+          <button class="submitBtn" (click)="Editnew()">Aceptar</button>
+          </div>          
+      </ul>
     </ul>
 
 
