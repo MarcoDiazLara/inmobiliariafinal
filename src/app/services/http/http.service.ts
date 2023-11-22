@@ -390,4 +390,10 @@ updateImagenes(p_id_usuario: any, p_imagen: any){
   return this.httpclient.post(this.url + 'ActualizaImagen.php', params, { headers });
 }
 
+obtenerPublis(p_id_usuario: any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_usuario=' + p_id_usuario;
+  return this.httpclient.post(this.url + 'obtenerPublis.php', params, { headers });
+}
+
 }
