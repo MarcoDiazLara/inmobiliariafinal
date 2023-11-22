@@ -121,7 +121,12 @@ body {
   list-style: none;
   padding-right: 25px; 
 }
-
+.content-Editevent{
+  max-height: 450px;
+  overflow-y: auto;
+  list-style: none;
+  padding-right: 25px; 
+}
 
 .date-field {
   display: flex;

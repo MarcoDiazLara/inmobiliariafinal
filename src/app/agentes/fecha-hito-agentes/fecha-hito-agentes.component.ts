@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
+import { HttpService } from 'src/app/services/http/http.service';
 
 interface estatus {
   value: string;
@@ -19,6 +20,12 @@ export class FechaHitoAgentesComponent implements OnInit {
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
   selected: Date = new Date();
+  asunto: string = '';
+  fechaInicio: any;
+  fechaCierre: any;
+  Descripcion: string = '';
+  notificacionesActivadas: boolean = false;
+  selectedStatus: any;
   
   status: estatus[] = [
     {value: 'Ninguno-0', viewValue: 'ninguno'},
@@ -64,7 +71,7 @@ export class FechaHitoAgentesComponent implements OnInit {
     }, 100);
    }  
   }
-  
+
   EditEvent() {
     this.ShowEditEvent = true;
     setTimeout(() => {
@@ -78,6 +85,24 @@ export class FechaHitoAgentesComponent implements OnInit {
 
 
   Addnew() {
+    console.log('Asunto:', this.asunto);
+    console.log('fechaInicio:', this.fechaInicio);
+    console.log('fechaCierre:', this.fechaCierre);
+    console.log('Descripcion:', this.Descripcion);
+    console.log('notificacionesActivadas:', this.notificacionesActivadas);
+    console.log('selectedStatus:', this.selectedStatus);
+
+    let dia= this.fechaInicio.getDate().toString();
+    let mes= (this.fechaInicio.getMonth()+1).toString();
+    let anio= this.fechaInicio.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+
+    let dias= this.fechaCierre.getDate().toString();
+    let mess= (this.fechaCierre.getMonth()+1).toString();
+    let anios= this.fechaCierre.getFullYear().toString();
+    let fecha2= anios+ "-" + mess +"-"+ dias;
+
+
     const modal = document.querySelector('.ShowAddEvent');
     if (modal) {
       modal.classList.remove('mostrar');
@@ -121,7 +146,12 @@ export class FechaHitoAgentesComponent implements OnInit {
   }
 
 
-  constructor() {}
+  constructor(private httpservice:HttpService) {
+
+
+
+
+  }
 
   ngOnInit(): void {}
 }
