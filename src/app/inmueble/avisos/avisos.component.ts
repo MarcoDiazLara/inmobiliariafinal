@@ -7,6 +7,9 @@ import { InformacioninmuebleComponent } from '../informacioninmueble/informacion
 import {ThemePalette} from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Publicaciones } from 'src/app/services/Interface/Interfaces';
+import { HttpService } from 'src/app/services/http/http.service';
+import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 
 
 @Component({
@@ -17,10 +20,16 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   // standalone: true,
   // imports: [MatButtonModule, MatDialogModule, MenuinmuebleComponent],
 })
+
+
 export class AvisosComponent  {
   opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
   opcionSeleccionada: string = '';
   isChecked: boolean = false;
+  inmuebles: Inmuebles[] =[];
+  inmueble!: Inmuebles;
+
+  inmuebles1: Publicaciones[] = [];
 
   toppings = this._formBuilder.group({
     pepperoni: false,
@@ -28,7 +37,7 @@ export class AvisosComponent  {
     mushroom: false,
   });
  
-  constructor(public dialog: MatDialog,private _formBuilder: FormBuilder) {}
+  constructor(public dialog: MatDialog,private _formBuilder: FormBuilder, private httpService: HttpService ) {}
   openDialog() {
     const dialogRef = this.dialog.open(LikeComponent);
 
@@ -47,7 +56,12 @@ export class AvisosComponent  {
 
   }
 
-
+ngOnInit(){
+  this.obtenerDatosInmuebles();
+  this.httpService.obtenerPublis(localStorage.getItem("Id_Usuario")).subscribe((data:any) =>{
+    this.inmuebles1 = data;
+  })
+}
   
   mostrarTabla = false;
 
@@ -60,7 +74,17 @@ export class AvisosComponent  {
   toggleFormulario() {
     this.mostrarFormulario = !this.mostrarFormulario;
   }
-
+  obtenerDatosInmuebles(){
+    this.httpService.tipoInmueble().subscribe((resp:any)=>{
+     if(resp !== 201){
+      
+       this.inmueble = resp[0].id_Tipo_Inmueble;
+       this.inmuebles = resp;
+     }
+    },(err)=>{
+     console.log(err);
+    })
+   }
 
 
 }

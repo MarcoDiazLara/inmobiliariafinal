@@ -390,4 +390,16 @@ updateImagenes(p_id_usuario: any, p_imagen: any){
   return this.httpclient.post(this.url + 'ActualizaImagen.php', params, { headers });
 }
 
+obtenerPublis(p_id_usuario: any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_usuario=' + p_id_usuario;
+  return this.httpclient.post(this.url + 'obtenerPublis.php', params, { headers });
+}
+
+ mostrarlikes(p_Id_inmueble:any, p_fecha:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_Id_inmueble=' + p_Id_inmueble + '&p_fecha='+p_fecha;
+  return this.httpclient.post(this.url + 'obtenerLikes.php', params, { headers });
+ }
+
 }

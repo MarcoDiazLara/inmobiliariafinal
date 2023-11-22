@@ -236,3 +236,15 @@ export interface SolicitudCambio{
     Id_Tipo_Usuario:""
 }
 
+
+export interface Publicaciones{
+    Id_Publicacion: "",
+    Nombre_Publicacion: "",
+    Descripcion_Publicacion: "",
+    Id_Estatus_Publicacion: "",
+    Created_By: "",
+    Picture1: "",
+    Nombre_Usuario: "",
+    Estatus_Publicacion: ""
+};
+
