@@ -112,36 +112,31 @@
            <p><mat-checkbox formControlName="extracheese">Desarrollo</mat-checkbox></p>
            <p><mat-checkbox formControlName="extracheese">Remate</mat-checkbox></p>
          </section>
-
-        <!-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Compra </label> -->
       </div>
-      <!-- <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Renta </label>
-      </div> -->
-      <!-- <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Desarrollo </label>
-      </div> -->
-      <!-- <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Remate </label>
-      </div> -->
+    
       <div class="p-2"></div>
       <div class="h6"><span class="label label-default">Tipo de Propiedad</span></div>
       <div class="form-check">
-        <mat-form-field>
+        <mat-form-field >
+          <mat-label>Tipo de inmueble</mat-label>
+
+            <mat-select formControlName="pId_Tipo_Inmueble">
+              <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
+              }}
+            </mat-option>
+               </mat-select>
+                 </mat-form-field>
+        <!-- <mat-form-field>
           <mat-label>Tipo de Propiedad</mat-label>
           <mat-select [(value)]="opcionSeleccionada">
             <mat-option *ngFor="let opcion of opciones" [value]="opcion">{{ opcion }}</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
       
     </div>
     <div class="col-sm-9">
-      <div *ngFor="let inmueble of inmuebles" class="card rounded-start rounded-end">
+      <div *ngFor="let inmueble of inmuebles1" class="card rounded-start rounded-end">
         <div class="row no-gutters">
           <div class="col-sm-4">
             <img class="card-img" [src]="inmueble.Picture1" width="100%" height="100%">
@@ -155,6 +150,9 @@
           </div>
           <div class="col-sm-4" style="display: flex; align-items: center; justify-content: center;">
             <!-- Botones y acciones -->
+            <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"  (click)="openDialog()">
+              <i class="bi bi-heart"></i>&nbsp;&nbsp;
+              Me gusta</button>
           </div>
         </div>
         <hr>
