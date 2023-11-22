@@ -18,8 +18,7 @@
                         <mat-form-field appearance="fill" style="width: 95%;">
                             <mat-label ><b> Selecciona el Inmuble Publicado </b> </mat-label>
                             <mat-select formControlName="Inmueble" required>
-                                <!-- <mat-option *ngFor="let est of estados" [value]="est.value">
-                                    {{est.viewValue}}</mat-option> -->
+                                    <mat-option *ngFor="let solict of solicitud" [value]="solict.Id_Usuario">{{solict.Nombre_Publicacion}}</mat-option>
                             </mat-select>
                         </mat-form-field>
 

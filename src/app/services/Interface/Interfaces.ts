@@ -227,3 +227,12 @@ export interface inmobiliaria{
     Updated_Date: ""
 };
 
+
+export interface SolicitudCambio{
+    Id_Usuario:"",
+    Id_Publicacion:"",
+    Nombre_Publicacion:"",
+    Nombre_Usuario:"",
+    Id_Tipo_Usuario:""
+}
+

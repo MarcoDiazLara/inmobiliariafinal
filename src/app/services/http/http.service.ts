@@ -375,4 +375,11 @@ mostrarInmobiliarias(){
   let params = 'xrsxryw1y21';
   return this.httpclient.post(this.url + 'obtenerInmobiliaras.php', params, { headers });
 }
+
+MostrarInmueblesSolicitud(Id_usuario: any ) {
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_Id_usuario=' + Id_usuario;
+  return this.httpclient.post(this.url + 'consulta_inmueble_solicitud.php',params, { headers });
+}
+
 }
