@@ -17,14 +17,13 @@ interface estatus {
 })
 export class FechaHitoAgentesComponent implements OnInit {
   ShowAddEvent: boolean = false;
+  ShowEditEvent: boolean = false;
   selected: Date = new Date();
   
   status: estatus[] = [
     {value: 'Ninguno-0', viewValue: 'ninguno'},
-    {value: 'Libre-1', viewValue: 'Libre'},
-    {value: 'Tentativo-2', viewValue: 'Tentativo'},
-    {value: 'Ocupado-3', viewValue: 'Ocupado'},
-    {value: 'Fuera de servicio-4', viewValue: 'Fuera de Servicio'},
+    {value: 'Ocupado-1', viewValue: 'Ocupado'},
+    {value: 'Pendiente-2', viewValue: 'Pendiente'},
   ];
 
   Delete(){
@@ -65,6 +64,17 @@ export class FechaHitoAgentesComponent implements OnInit {
     }, 100);
    }  
   }
+  
+  EditEvent() {
+    this.ShowEditEvent = true;
+    setTimeout(() => {
+      const modal = document.querySelector('.ShowAddEvent');
+      if (modal) {
+        modal.classList.add('mostrar');
+      }
+    }, 50);
+  }
+
 
 
   Addnew() {
@@ -88,6 +98,27 @@ export class FechaHitoAgentesComponent implements OnInit {
     });
   }
 
+
+  Editnew() {
+    const modal = document.querySelector('.ShowAddEvent');
+    if (modal) {
+      modal.classList.remove('mostrar');
+      setTimeout(() => {
+        this.ShowAddEvent = false;
+        this.showEditAlert();
+      }, 100);
+    }
+  }
+  
+  showEditAlert() {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Cambios realizados con éxito",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
 
   constructor() {}
