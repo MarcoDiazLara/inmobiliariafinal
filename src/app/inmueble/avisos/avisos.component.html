@@ -8,7 +8,7 @@
   <br>
   <br>
   <br>
-  <br>
+
   
 <div class="row justify-content-center align-items-center">
    
@@ -59,7 +59,7 @@
    </tbody>
  </table>
        </nav>
-
+    
       <div class="cointainer p-4">
       <form>
         <div class="row justify-content-center align-items-center mb-2">
@@ -95,41 +95,50 @@
     <div class="col-sm-3 align-items-center align-middle p-5 color-back"> 
       <div class="h6"><span class="label label-default">Estado del Anuncio</span></div>
       <div class="form-check">
-        <input  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  >
-        <label class="form-check-label" for="flexRadioDefault2" > Publicado </label>
+        <section class="example-section" [formGroup]="toppings">
+         <p><mat-checkbox formControlName="pepperoni">Publicado</mat-checkbox></p>
+          <p><mat-checkbox formControlName="extracheese">Borrador</mat-checkbox></p>
+        
+        </section>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Borrador </label>
-      </div>
+     
       <div class="p-2"></div>
       <div class="h6"><span class="label label-default">Tipo del Anuncio</span></div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Compra </label>
+
+        <section class="example-section" [formGroup]="toppings">
+          <p><mat-checkbox formControlName="pepperoni">Compra</mat-checkbox></p>
+           <p><mat-checkbox formControlName="extracheese">Renta</mat-checkbox></p>
+           <p><mat-checkbox formControlName="extracheese">Desarrollo</mat-checkbox></p>
+           <p><mat-checkbox formControlName="extracheese">Remate</mat-checkbox></p>
+         </section>
+
+        <!-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2"> Compra </label> -->
       </div>
-      <div class="form-check">
+      <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
         <label class="form-check-label" for="flexRadioDefault2"> Renta </label>
-      </div>
-      <div class="form-check">
+      </div> -->
+      <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
         <label class="form-check-label" for="flexRadioDefault2"> Desarrollo </label>
-      </div>
-      <div class="form-check">
+      </div> -->
+      <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
         <label class="form-check-label" for="flexRadioDefault2"> Remate </label>
-      </div>
+      </div> -->
       <div class="p-2"></div>
       <div class="h6"><span class="label label-default">Tipo de Propiedad</span></div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Casa </label>
+        <mat-form-field>
+          <mat-label>Tipo de Propiedad</mat-label>
+          <mat-select [(value)]="opcionSeleccionada">
+            <mat-option *ngFor="let opcion of opciones" [value]="opcion">{{ opcion }}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2"> Departamento </label>
-      </div>
+      
     </div>
     <div class="col-sm-9">
       <div class="card rounded-start rounded-end">
@@ -157,7 +166,7 @@
                   Me gusta</button>
 
                 <!-- <button type="button" class="btn btn-info">Info</button> -->
-                <button class="btn btn-primary" disabled type="button">Interesados</button>
+                <!-- <button class="btn btn-primary" disabled type="button">Interesados</button> -->
               </div>
               
             </div>

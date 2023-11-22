@@ -105,7 +105,9 @@ cerrarVentanaEmergente(): void {
 
 
 
-
+home(){
+  this.router.navigate(['/web']);
+ }
 
 
 

@@ -8,10 +8,6 @@ import {ThemePalette} from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-export interface ChipColor {
-  name: string;
-  color: ThemePalette;
-}
 
 @Component({
   selector: 'app-avisos',
@@ -22,9 +18,17 @@ export interface ChipColor {
   // imports: [MatButtonModule, MatDialogModule, MenuinmuebleComponent],
 })
 export class AvisosComponent  {
-  
+  opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
+  opcionSeleccionada: string = '';
+  isChecked: boolean = false;
+
+  toppings = this._formBuilder.group({
+    pepperoni: false,
+    extracheese: false,
+    mushroom: false,
+  });
  
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private _formBuilder: FormBuilder) {}
   openDialog() {
     const dialogRef = this.dialog.open(LikeComponent);
 
