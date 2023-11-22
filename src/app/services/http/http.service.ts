@@ -376,10 +376,18 @@ mostrarInmobiliarias(){
   return this.httpclient.post(this.url + 'obtenerInmobiliaras.php', params, { headers });
 }
 
+
 MostrarInmueblesSolicitud(Id_usuario: any ) {
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
   let params = 'p_Id_usuario=' + Id_usuario;
   return this.httpclient.post(this.url + 'consulta_inmueble_solicitud.php',params, { headers });
+}
+
+
+updateImagenes(p_id_usuario: any, p_imagen: any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_id_usuario=' + p_id_usuario + '&p_imagen='+p_imagen;
+  return this.httpclient.post(this.url + 'ActualizaImagen.php', params, { headers });
 }
 
 }

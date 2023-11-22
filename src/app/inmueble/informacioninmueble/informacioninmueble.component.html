@@ -1,103 +1,152 @@
+ <h1> Informacion general del Inmueble</h1>         
+ <div class="example-container">
+  <form [formGroup]="options">
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <mat-form-field style="margin-right: 15px;">
+        <mat-label>Nombre del Inmueble</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      
+      </mat-form-field>
+      <!-- ------------------------------------------------------------------- -->
+      <mat-form-field style="margin-right: 10px;">
+          <mat-label>Descrpcion</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+         
+        </mat-form-field>
+        
+      </div>
 
-<mat-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Infomacion General</ng-template>
       <div style="display: flex; justify-content: center; align-items: center;">
         <mat-form-field style="margin-right: 15px;">
-          <mat-label>Nombre del Inmueble</mat-label>
+          <mat-label>Calle</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <!-- --------------------------------------------- -->
+        <mat-form-field style="margin-right: 10px;">
+          <mat-label>No Interior</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          </mat-form-field>
+
+        <mat-form-field style="margin-right: 10px;">
+          <mat-label>No  Exterior</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>   
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-form-field style="margin-right: 15px;">
+        <mat-label>Terreno</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        
+      </mat-form-field>
+
+      <mat-form-field style="margin-right: 15px;">
+        <mat-label>Construccion</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        
+      </mat-form-field>
+
+
+</div> 
+
+    <h1> Caracteristicas del Inmueble</h1>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <mat-form-field style="margin-right: 15px;">
+          <mat-label>Recamaras</mat-label>
           <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
         
         </mat-form-field>
-        <!-- ------------------------------------------------------------------- -->
-        <mat-form-field style="margin-right: 10px;">
-            <mat-label>Descrpcion</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-           
-          </mat-form-field>
-          
-        </div>
-        <!-- ------------------------------------------------------------------------------------- -->
-        <br>
-           <div style="display: flex; justify-content: center; align-items: center;">
-              <mat-form-field style="margin-right: 15px;">
-                <mat-label>Calle</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-              </mat-form-field>
-              <!-- --------------------------------------------- -->
-              <mat-form-field style="margin-right: 10px;">
-                <mat-label>No Interior</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-                </mat-form-field>
 
-              <mat-form-field style="margin-right: 10px;">
-                <mat-label>No  Exterior</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-              </mat-form-field>   
-        </div>
-        <br>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <mat-form-field style="margin-right: 15px;">
-                <mat-label>Terreno</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-                
-              </mat-form-field>
-
-              <mat-form-field style="margin-right: 15px;">
-                <mat-label>Construccion</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-                
-              </mat-form-field>
-        
-        
-        </div>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Caracteristicas Del Inmueble">
-    <form [formGroup]="secondFormGroup">
-      <div style="display: flex; justify-content: center; align-items: center;">
         <mat-form-field style="margin-right: 15px;">
-            <mat-label>Recamaras</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
-
+          <mat-label>Baños</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+         
+        </mat-form-field>
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Cocina Integral</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+       
+        </mat-form-field>
+      </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Numero Pisos</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          
+        </mat-form-field>
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Antiguedad</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          
+        </mat-form-field>
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Acabados</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          
+        </mat-form-field>
+  </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-form-field style="margin-right: 15px;">
+                <mat-label>Alberca </mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+               
+              </mat-form-field> 
+    
           <mat-form-field style="margin-right: 15px;">
-            <mat-label>Baños</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-           
-          </mat-form-field>
-          <mat-form-field style="margin-right: 15px;">
-            <mat-label>Cocina Integral</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
+                <mat-label>Jardin </mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          
+              </mat-form-field>
+              <mat-form-field style="margin-right: 15px;">
+                <mat-label>GYM</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+               
+              </mat-form-field> 
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+                <mat-form-field style="margin-right: 15px;">
+                <mat-label>RoofGarden</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            
+              </mat-form-field> 
+      
+              <mat-form-field style="margin-right: 15px;">
+                <mat-label>Estacionamiento</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            
+              </mat-form-field>
+        
         </div>
-        <!-- <div style="display: flex; justify-content: center; align-items: center;">
+        <h1> Precio  </h1>
+        <div style="display: flex; justify-content: center; align-items: center;">
           <mat-form-field style="margin-right: 15px;">
-            <mat-label>Numero de Pisos</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
-          <mat-form-field style="margin-right: 15px;">
-            <mat-label>Antiguedad</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
-        </div> -->
+          <mat-label>Precio Maximo</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      
+        </mat-form-field> 
+
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Precio Minimo
+            
+          </mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      
+        </mat-form-field>
+  
+  </div>
+
+
+     
+  </form>
+</div>
+
+      
       
 
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-stepper>
+    
+        
+
+   
+  
+
+
