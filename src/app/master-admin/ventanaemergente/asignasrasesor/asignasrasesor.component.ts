@@ -50,7 +50,6 @@ export class AsignasrasesorComponent implements OnInit {
     console.log(this.asesores);
     });
 
-
     
     this.formGeneral = this.formBuilder.group({
       Nombres: ['', [Validators.required]],
