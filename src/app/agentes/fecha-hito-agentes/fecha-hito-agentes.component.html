@@ -6,7 +6,7 @@
       <h1>Calendario</h1>
       <button class="btnAdd" (click)="addEvent()"><mat-icon>add</mat-icon> Crear </button>
       <ul *ngIf="ShowAddEvent" class="ShowAddEvent">
-        <div class="barraAzul">Crear un nuevo evento <mat-icon (click)="closeEvent()">clear</mat-icon></div>
+        <div class="barraAzul">Crear un evento nuevo <mat-icon (click)="closeEvent()">clear</mat-icon></div>
         <ul class="content-addevent">    
             <div class="inputContainer">
               <input type="text" class="inputAsunto" placeholder="" [(ngModel)]="asunto">
