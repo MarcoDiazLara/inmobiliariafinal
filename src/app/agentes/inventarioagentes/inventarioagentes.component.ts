@@ -45,10 +45,6 @@ export class InventarioagentesComponent implements OnInit {
   
 
 
-
-
-
-
   // poner el nombre de una variable
   datosinventario: inventarioAsesores[]=[];
 
@@ -82,9 +78,7 @@ export class InventarioagentesComponent implements OnInit {
     // });
     // this.dataSource = new MatTableDataSource(this.datosinventario);
     
-    
-
-    
+      
   this.obtenerInventario();
 
   }

@@ -402,35 +402,39 @@ obtenerPublis(p_id_usuario: any){
   return this.httpclient.post(this.url + 'obtenerLikes.php', params, { headers });
  }
 
-  actualizarInmueble(p_Id_inmueble:any){
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_inmueble='+p_Id_inmueble;
-    return this.httpclient.post(this.url + 'Inmueble_Actualizar.php', params, { headers });
+//  actulizarInmueble(p_Id_inmueble:any, p_id_tipo_inmueble:number,p_nom_inmueble: string, p_calle: string, p_num_ext: string,p_num_int: string,
+//   p_terreno: string, p_construccion: string,p_recamara: string, p_bano: string,p_cocina: string,p_num_pisos: string,p_antiguedad: string,
+//   p_acabados: string, p_alberca:string, p_jardin: string, p_gym:string, p_roof:string,p_estacionamiento: string,
+//   p_pic_1: string, p_pic_2: string, p_pic_3:string,p_pic_4: string, p_pic_5: string, p_360:string, p_video: string, p_id_asentamiento: number,
+//  p_update: any,p_prec_min:any,p_prec_max: any,p_prec_final: any){
+
+//  }
+actualizarInmueble(p_Id_inmueble:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_Id_inmueble='+p_Id_inmueble;
+  return this.httpclient.post(this.url + 'Inmueble_Actualizar.php', params, { headers });
+}
+estatusPublicacionInmueble( ){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'xrsxryw1y21';
+  return this.httpclient.post(this.url + 'mostrarEstatusInmueble.php', params, { headers });
+}
+  
+ actualizarInformacionInmueble(p_Nombre_Inmu:any, p_Descrip:any,p_Calle:any,p_No_Interior:any,p_No_Exterior:any,
+  p_terreno:any,p_construccion:any,p_recamaras:any,p_Banos:any,p_cocina:any,p_pisos:any,p_antiguedad:any,p_acabados:any,
+  p_alberca:any,p_jardin:any,p_gym:any,p_garden:any,p_estacionamiento:any,p_id_usuario:any,p_id_inmueble:any,
+ p_prec_min:any,p_prec_max:any,p_prec_final:any,p_id_estatus:any){
+
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+
+    let params='p_Nombre_Inmu='+ p_Nombre_Inmu + '&p_Descrip='+p_Descrip+'&p_Calle='+p_Calle+
+    '&p_No_Interior='+p_No_Interior+'&p_No_Exterior='+p_No_Exterior+'&p_terreno='+p_terreno+'&p_construccion='+p_construccion+
+    '&p_recamaras='+p_recamaras+ '&p_Banos='+p_Banos+'&p_cocina='+p_cocina+'&p_pisos='+p_pisos+'&p_antiguedad='+p_antiguedad+
+    '&p_acabados='+p_acabados+'&p_alberca='+p_alberca+'&p_jardin='+p_jardin+'&p_gym='+p_gym+'&p_garden='+p_garden+
+    '&p_estacionamiento='+p_estacionamiento+'&p_id_usuario='+p_id_usuario+'&p_id_inmueble='+p_id_inmueble+
+    '&p_prec_min='+p_prec_min+'&p_prec_max='+p_prec_max+'&p_prec_final='+p_prec_final+'&p_id_estatus='+p_id_estatus;
+    return this.httpclient.post(this.url+'ActualizarPublis.php',params,{ headers });
+
  }
-  estatusPublicacionInmueble( ){
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'xrsxryw1y21';
-    return this.httpclient.post(this.url + 'mostrarEstatusInmueble.php', params, { headers });
-  }
-    
-   actualizarInformacionInmueble(p_Nombre_Inmu:any, p_Descrip:any,p_Calle:any,p_No_Interior:any,p_No_Exterior:any,
-    p_terreno:any,p_construccion:any,p_recamaras:any,p_Banos:any,p_cocina:any,p_pisos:any,p_antiguedad:any,p_acabados:any,
-    p_alberca:any,p_jardin:any,p_gym:any,p_garden:any,p_estacionamiento:any,p_id_usuario:any,p_id_inmueble:any,
-   p_prec_min:any,p_prec_max:any,p_prec_final:any,p_id_estatus:any){
-
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-
-      let params='p_Nombre_Inmu='+ p_Nombre_Inmu + '&p_Descrip='+p_Descrip+'&p_Calle='+p_Calle+
-      '&p_No_Interior='+p_No_Interior+'&p_No_Exterior='+p_No_Exterior+'&p_terreno='+p_terreno+'&p_construccion='+p_construccion+
-      '&p_recamaras='+p_recamaras+ '&p_Banos='+p_Banos+'&p_cocina='+p_cocina+'&p_pisos='+p_pisos+'&p_antiguedad='+p_antiguedad+
-      '&p_acabados='+p_acabados+'&p_alberca='+p_alberca+'&p_jardin='+p_jardin+'&p_gym='+p_gym+'&p_garden='+p_garden+
-      '&p_estacionamiento='+p_estacionamiento+'&p_id_usuario='+p_id_usuario+'&p_id_inmueble='+p_id_inmueble+
-      '&p_prec_min='+p_prec_min+'&p_prec_max='+p_prec_max+'&p_prec_final='+p_prec_final+'&p_id_estatus='+p_id_estatus;
-      return this.httpclient.post(this.url+'ActualizarPublis.php',params,{ headers });
-
-
-
-   }
-
 
 }

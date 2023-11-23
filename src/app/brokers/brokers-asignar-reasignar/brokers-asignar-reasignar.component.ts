@@ -45,6 +45,8 @@ export class BrokersAsignarReasignarComponent implements OnInit {
   datosinmuebles: reasignacionA[]=[];
 
   datosAsesores: AsigarReAsignar[]=[];
+
+  Id_Usuario: any;
  
   constructor(
     public dialog: MatDialog,
@@ -63,7 +65,8 @@ export class BrokersAsignarReasignarComponent implements OnInit {
       }
     });
 
-       
+   
+
     this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
       this.datosAsesores=data;
     
@@ -79,8 +82,10 @@ export class BrokersAsignarReasignarComponent implements OnInit {
     
 
     this.obtenerUsuarios();
+    let Id_usuario = localStorage.getItem("Id_Usuario");
+    console.log(Id_usuario)
 
-    this.http.mostrarReasignacion().subscribe((data:any)=>{
+    this.httpService.mostrarReasignacion(Id_usuario).subscribe((data:any)=>{
     this.datosinmuebles=data;
     //console.log(this.datosinmuebles);
     });
@@ -90,8 +95,10 @@ export class BrokersAsignarReasignarComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
   obtenerUsuarios(){
+    let Id_usuario = localStorage.getItem("Id_Usuario");
+    console.log(Id_usuario)
 
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+    this.httpService.mostrarReasignacion(Id_usuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
