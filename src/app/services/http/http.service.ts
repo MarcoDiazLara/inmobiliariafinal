@@ -201,9 +201,16 @@ export class HttpService {
 
    }
    
-  mostrarReasignacion() {
+  // mostrarReasignacion() {
+  //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  //   return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+  // }
+
+
+  mostrarReasignacion( Id_usuario: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
+    let params = 'p_Id_usuario=' + Id_usuario;
+    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php',params, { headers });
   }
 
   
@@ -216,6 +223,12 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php', { headers });
   }
+
+  // AsesoresAginados_NoAsigandos( Id_Usuario: any ) {
+  //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  //   let params = 'p_Id_Usuario=' + Id_Usuario;
+  //   return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php',params, { headers });
+  // }
 
 
   updateReasignaAsesor(p_Id_Publicacion: any, p_Id_Usuario: any){

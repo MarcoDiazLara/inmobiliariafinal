@@ -61,6 +61,7 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
         this.dataSource.data =usuarios;
@@ -101,7 +102,10 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   obtenerUsuarios(){
 
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+    let Id_usuario = localStorage.getItem("Id_Usuario");
+    console.log(Id_usuario)
+
+    this.httpService.mostrarReasignacion(Id_usuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {

@@ -72,6 +72,8 @@ export class CompanyAsignarReasignarComponent implements OnInit {
       }
     });
 
+   
+
        
     this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
       this.datosAsesores=data;
@@ -89,7 +91,12 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
     this.obtenerUsuarios();
 
-    this.http.mostrarReasignacion().subscribe((data:any)=>{
+    let Id_usuario = localStorage.getItem("Id_Usuario");
+    console.log(Id_usuario)
+
+    this.httpService.mostrarReasignacion(Id_usuario).subscribe((data:any)=>{
+
+    
     this.datosinmuebles=data;
     //console.log(this.datosinmuebles);
     });
@@ -105,8 +112,10 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   }
 
   obtenerUsuarios(){
+    let Id_usuario = localStorage.getItem("Id_Usuario");
+    console.log(Id_usuario)
 
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+    this.httpService.mostrarReasignacion(Id_usuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
