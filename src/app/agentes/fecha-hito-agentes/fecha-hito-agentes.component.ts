@@ -28,9 +28,9 @@ export class FechaHitoAgentesComponent implements OnInit {
   selectedStatus: any;
   
   status: estatus[] = [
-    {value: 'Ninguno-0', viewValue: 'ninguno'},
-    {value: 'Ocupado-1', viewValue: 'Ocupado'},
-    {value: 'Pendiente-2', viewValue: 'Pendiente'},
+    {value: 'Ninguno', viewValue: 'ninguno'},
+    {value: 'Ocupado', viewValue: 'Ocupado'},
+    {value: 'Pendiente', viewValue: 'Pendiente'},
   ];
 
   Delete(){
@@ -101,26 +101,28 @@ export class FechaHitoAgentesComponent implements OnInit {
     let mess= (this.fechaCierre.getMonth()+1).toString();
     let anios= this.fechaCierre.getFullYear().toString();
     let fecha2= anios+ "-" + mess +"-"+ dias;
-
-
-    const modal = document.querySelector('.ShowAddEvent');
-    if (modal) {
-      modal.classList.remove('mostrar');
-      setTimeout(() => {
-        this.ShowAddEvent = false;
-        this.showSuccessAlert();
-      }, 100);
+    let aux ="";
+    if (this.notificacionesActivadas == true ){
+      aux = "1";
+    }else {
+      aux = "0";
     }
-  }
-  
-  showSuccessAlert() {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Se ha añadido tu evento con éxito",
-      showConfirmButton: false,
-      timer: 1500
-    });
+
+    this.httpservice.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
+      if (data == 1){
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Evento añadido con exito.",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        
+      }
+    })
+
+
+   ;
   }
 
 
