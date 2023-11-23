@@ -10,6 +10,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
 import { Publicaciones } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles } from 'src/app/services/Interface/Interfaces';
+import { P } from '@fullcalendar/core/internal-common';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class AvisosComponent  {
   isChecked: boolean = false;
   inmuebles: Inmuebles[] =[];
   inmueble!: Inmuebles;
-
+  inmuebleSelecionado!:Publicaciones;
   inmuebles1: Publicaciones[] = [];
 
   toppings = this._formBuilder.group({
@@ -38,7 +39,8 @@ export class AvisosComponent  {
   });
  
   constructor(public dialog: MatDialog,private _formBuilder: FormBuilder, private httpService: HttpService ) {}
-  openDialog() {
+  openDialog( inmueble:Publicaciones){
+    localStorage.setItem("p_Id_inmueble",inmueble.Id_Inmueble);
     const dialogRef = this.dialog.open(LikeComponent);
 
     dialogRef.afterClosed().subscribe(result => {

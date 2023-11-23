@@ -238,7 +238,7 @@ export interface SolicitudCambio{
 
 
 export interface Publicaciones{
-    Id_Publicacion: "",
+    Id_Inmueble: "",
     Nombre_Publicacion: "",
     Descripcion_Publicacion: "",
     Id_Estatus_Publicacion: "",
@@ -247,4 +247,32 @@ export interface Publicaciones{
     Nombre_Usuario: "",
     Estatus_Publicacion: ""
 };
+
+export interface ActulizarInmueble{
+    Id_Inmueble: "",
+    Id_Tipo_Inmueb:"",
+    Nombre_Inmueble:"",
+    Descripcion_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Num_Int: "",
+    Terreno_M2: "",
+    Construccion_M2: "",
+    Recamara: "",
+    Bano: "",
+    Cocina_Integral: "",
+    Num_Pisos: "",
+    Antiguedad: "",
+    Acabados: "",
+    Alberca: "",
+    Jardin: "",
+    Gimnasio: "",
+    Roof_Garden: "",
+    Estacionamiento: "",
+    Id_Publicacion: "",
+    Precio_Min: "",
+    Precio_Max: "",
+    Precio_Final: "",
+    Id_Estatus_Publicacion: ""
+}
 
