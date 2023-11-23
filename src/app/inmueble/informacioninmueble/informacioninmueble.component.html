@@ -1,152 +1,246 @@
- <h1> Informacion general del Inmueble</h1>         
- <div class="example-container">
-  <form [formGroup]="options">
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <mat-form-field style="margin-right: 15px;">
-        <mat-label>Nombre del Inmueble</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      
-      </mat-form-field>
-      <!-- ------------------------------------------------------------------- -->
-      <mat-form-field style="margin-right: 10px;">
-          <mat-label>Descrpcion</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-         
-        </mat-form-field>
-        
-      </div>
 
+<mat-dialog-content >
+ 
+  <hr>
+  <h1>Informacion general del Inmueble <i class="bi bi-info">
+    <i class="bi bi-houses"></i>
+  </i></h1> 
+  <hr>  
+   <br>
+   <br>      
+   <div class="example-container">
+    <form [formGroup]="options">
       <div style="display: flex; justify-content: center; align-items: center;">
+
+            
         <mat-form-field style="margin-right: 15px;">
-          <mat-label>Calle</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          <mat-label>Tipo de inmueble</mat-label>
+          <mat-select [(value)]="opcionSeleccionada">
+            <mat-option *ngFor="let opcion of opciones" [value]="opcion">{{ opcion }}</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>
+          <img src="assets/img/edificios.png" alt="Icono" width="30" height="30">
+        </mat-icon>
         </mat-form-field>
-        <!-- --------------------------------------------- -->
-        <mat-form-field style="margin-right: 10px;">
-          <mat-label>No Interior</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
-
-        <mat-form-field style="margin-right: 10px;">
-          <mat-label>No  Exterior</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>   
-  </div>
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <mat-form-field style="margin-right: 15px;">
-        <mat-label>Terreno</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        
-      </mat-form-field>
-
-      <mat-form-field style="margin-right: 15px;">
-        <mat-label>Construccion</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        
-      </mat-form-field>
-
-
-</div> 
-
-    <h1> Caracteristicas del Inmueble</h1>
-
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <mat-form-field style="margin-right: 15px;">
-          <mat-label>Recamaras</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        
-        </mat-form-field>
-
-        <mat-form-field style="margin-right: 15px;">
-          <mat-label>Baños</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-         
-        </mat-form-field>
-        <mat-form-field style="margin-right: 15px;">
-          <mat-label>Cocina Integral</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-       
-        </mat-form-field>
-      </div>
-        <div style="display: flex; justify-content: center; align-items: center;">
-        <mat-form-field style="margin-right: 15px;">
-          <mat-label>Numero Pisos</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          
-        </mat-form-field>
-        <mat-form-field style="margin-right: 15px;">
-          <mat-label>Antiguedad</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          
-        </mat-form-field>
-        <mat-form-field style="margin-right: 15px;">
-          <mat-label>Acabados</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          
-        </mat-form-field>
-  </div>
-    <div style="display: flex; justify-content: center; align-items: center;">
-            <mat-form-field style="margin-right: 15px;">
-                <mat-label>Alberca </mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-               
-              </mat-form-field> 
     
-          <mat-form-field style="margin-right: 15px;">
-                <mat-label>Jardin </mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Nombre del Inmueble</mat-label>
+          <input matInput  formControlName="Nombre_de_Inmueble" required>
+          <mat-icon matSuffix>
+            <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
+        </mat-icon>
+        </mat-form-field>
+        <!-- ------------------------------------------------------------------- -->
+        <mat-form-field style="margin-right: 10px;">
+            <mat-label>Descripcion</mat-label>
+            <input matInput  formControlName="Descripcion" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+          </mat-form-field>
           
-              </mat-form-field>
-              <mat-form-field style="margin-right: 15px;">
-                <mat-label>GYM</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-               
-              </mat-form-field> 
+        </div>
+  
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Calle</mat-label>
+            <input matInput  formControlName="Calle" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/mapa-de-la-calle.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+          </mat-form-field>
+          <!-- --------------------------------------------- -->
+          <mat-form-field style="margin-right: 10px;">
+            <mat-label>No Interior</mat-label>
+            <input matInput  formControlName="No_Interior" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+            </mat-form-field>
+  
+          <mat-form-field style="margin-right: 10px;">
+            <mat-label>No  Exterior</mat-label>
+            <mat-icon matSuffix>
+              <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+            <input matInput  formControlName="No_Exterior" required>
+          </mat-form-field>   
     </div>
     <div style="display: flex; justify-content: center; align-items: center;">
-                <mat-form-field style="margin-right: 15px;">
-                <mat-label>RoofGarden</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            
-              </mat-form-field> 
-      
-              <mat-form-field style="margin-right: 15px;">
-                <mat-label>Estacionamiento</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            
-              </mat-form-field>
-        
-        </div>
-        <h1> Precio  </h1>
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <mat-form-field style="margin-right: 15px;">
-          <mat-label>Precio Maximo</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      
-        </mat-form-field> 
-
-        <mat-form-field style="margin-right: 15px;">
-          <mat-label>Precio Minimo
-            
-          </mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      
+      <mat-form-field style="margin-right: 15px;">
+          <mat-label>Terreno</mat-label>
+          <mat-icon matSuffix>
+            <img src="assets/img/terreno.png" alt="Icono" width="30" height="30">
+        </mat-icon>
+          <input matInput  formControlName="Terreno" required>
+          
         </mat-form-field>
   
-  </div>
+        <mat-form-field style="margin-right: 15px;">
+          <mat-label>Construccion</mat-label>
+          <mat-icon matSuffix>
+            <img src="assets/img/mtrs_construidos.png" alt="Icono" width="30" height="30">
+        </mat-icon>
+          <input matInput  formControlName="Construccion" required>
+          
+        </mat-form-field>
+  
+  
+  </div> 
+  <br>
+  <hr>
+      <h1> Caracteristicas del Inmueble <i class="bi bi-pencil">
+        <i class="bi bi-houses"></i>
+      </i>
 
+      </h1>
+      <hr>
+      <br>
+   <br>
+  
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <mat-form-field style="margin-right: 20px;">
+            <mat-label>Recamaras</mat-label>
+            <input matInput  formControlName="Recamaras" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/recamara.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+          </mat-form-field>
+  
+          <mat-form-field style="margin-right: 20px;">
+            <mat-label>Baños</mat-label>
+            <input matInput  formControlName="Banos" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/bano.png" alt="Icono" width="25" height="25">
+          </mat-icon>
+          </mat-form-field>
+          <mat-form-field style="margin-right: 20px;">
+            <mat-label>Cocina Integral</mat-label>
+            <input matInput  formControlName="Cocina_Integral" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
+          </mat-icon>
+         
+          </mat-form-field>
+        </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Numero Pisos</mat-label>
+            <input matInput  formControlName="Numero_Pisos" required>
+         
+            <mat-icon matSuffix>
+              <img src="assets/img/num_pisos.png" alt="Icono" width="25" height="25">
+          </mat-icon>
+          </mat-form-field>
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Antiguedad</mat-label>
+            <input matInput  formControlName="Antiguedad" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/antiguedad.png" alt="Icono" width="25" height="25">
+          </mat-icon>
+          </mat-form-field>
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Acabados</mat-label>
+            <input matInput  formControlName="Acabados" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/acabados.png" alt="Icono" width="25" height="25">
+          </mat-icon>
+          </mat-form-field>
+    </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+              <mat-form-field style="margin-right: 15px;">
+                  <mat-label>Alberca </mat-label>
+                  <input matInput  formControlName="Alberca" required>
+                  <mat-icon matSuffix>
+                    <img src="assets/img/nadando.png"  alt="Icono" width="30" height="30">
+                </mat-icon>
+                </mat-form-field> 
+      
+            <mat-form-field style="margin-right: 15px;">
+                  <mat-label>Jardin </mat-label>
+                  <input matInput  formControlName="Jardin" required>
+                  <mat-icon matSuffix>
+                    <img src="assets/img/terraza.png"  alt="Icono" width="28" height="28">
+                </mat-icon>
+                </mat-form-field>
+                <mat-form-field style="margin-right: 15px;">
+                  <mat-label>GYM</mat-label>
+                  <input matInput  formControlName="GYM" required>
+                  <mat-icon matSuffix>
+                    <img src="assets/img/gimna.png"  alt="Icono" width="30" height="30">
+                </mat-icon>
+                </mat-form-field> 
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+                  <mat-form-field style="margin-right: 15px;">
+                  <mat-label>RoofGarden</mat-label>
+                  <input matInput formControlName="RoofGarden" required>
+                  <mat-icon matSuffix>
+                    <img src="assets/img/techo.png"  alt="Icono" width="30" height="30">
+                </mat-icon>
+              
+                </mat-form-field> 
+        
+                <mat-form-field style="margin-right: 15px;">
+                  <mat-label>Estacionamiento</mat-label>
+                  <input matInput  formControlName="Estacionamiento" required>
+                  <mat-icon matSuffix>
+                    <img src="assets/img/coche.png"  alt="Icono" width="30" height="30">
+                </mat-icon>
+                </mat-form-field>
+          
+          </div>
+          <br>
+   <br>
+   <hr >
+          <h1> Precio  <i class="bi bi-currency-dollar">
+            <i class="bi bi-houses"></i>
+          </i>  </h1>
+          <hr>
+         <br>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-form-field style="margin-right: 15px;">
+            <mat-label>Precio Maximo</mat-label>
+            <input matInput formControlName="Precio_Maximo" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/valor-de-la-vivienda.png"  alt="Icono" width="30" height="30">
+          </mat-icon>
+        
+          </mat-form-field> 
+  
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Precio Minimo </mat-label>
+            <input matInput  formControlName="Precio_Minimo" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/valor-de-la-vivienda.png"  alt="Icono" width="30" height="30">
+          </mat-icon>
+        
+          </mat-form-field>
+    
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Precio Final </mat-label>
+            <input matInput  formControlName="Precio_Final" required>
+            <mat-icon matSuffix>
+              <img src="assets/img/precioF.png"  alt="Icono" width="30" height="30">
+          </mat-icon>
+          </mat-form-field>
+    </div>
+    </form>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button   type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" >
+        Aceptar
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 
      
-  </form>
-</div>
+      <button  style="margin-right: 15px;" type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="CerraDialogo()">
+        Cancelar
+      </button>
 
-      
-      
+    </div>
 
-    
-        
+  </div>
 
-   
-  
-
-
+</mat-dialog-content>

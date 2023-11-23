@@ -10,13 +10,22 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
   styleUrls: ['./like.component.scss']
 })
 export class LikeComponent  {
-  selected: Date | undefined;
+  selected: Date = new Date();
   constructor(public dialog: MatDialog) { }
   openDialog(): void {
+    let dia= this.selected.getDate().toString();
+    let mes= (this.selected.getMonth()+1).toString();
+    let anio= this.selected.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+    localStorage.setItem("p_fecha",fecha1);
+    console.log(fecha1);
+    // console.log(this.selected);
     const dialogRef = this.dialog.open(LikegraficaComponent, {
+
       width: '400px',
       height: '400px',
       data: { selectedDate: this.selected }
+      
 
     });
     dialogRef.afterClosed().subscribe(result => {

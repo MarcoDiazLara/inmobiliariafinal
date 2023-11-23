@@ -23,8 +23,9 @@ import {MatChipsModule} from '@angular/material/chips';
 import {ReactiveFormsModule} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {MatStepperModule} from '@angular/material/stepper';
-
-
+import { MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     MenuinmuebleComponent,
@@ -54,6 +55,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 
     ReactiveFormsModule,
     MatStepperModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatCheckboxModule
   
   
     

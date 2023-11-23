@@ -8,3 +8,62 @@
   max-width: 800px; /* ajusta el ancho máximo según tus necesidades */
   max-height: 80vh; /* ajusta la altura máxima según tus necesidades */
 }
+/* styles.scss o styles.css */
+
+// .example-section {
+//   h4 {
+//     color: red; // Cambia el color del título
+//   }
+
+//   mat-checkbox {
+//     border-color: blue; // Cambia el color del borde de la casilla de verificación
+//     color: green; // Cambia el color del texto de la casilla de verificación
+
+//     &.mat-checkbox-checked {
+//       background-color: yellow; // Cambia el color de fondo cuando la casilla está marcada
+//     }
+//   }
+// }
+/* styles.scss o styles.css */
+
+// .example-section {
+//   h4 {
+//     color: red; // Cambia el color del título
+//   }
+
+//   mat-checkbox {
+//     border-color: blue; // Cambia el color del borde de la casilla de verificación
+//     color: green; // Cambia el color del texto de la casilla de verificación
+
+//     &:not(.mat-checkbox-checked) {
+//       background-color: transparent; // Color de fondo cuando no está marcada
+//     }
+
+//     &.mat-checkbox-checked {
+//       background-color: yellow; // Cambia el color de fondo cuando la casilla está marcada
+//     }
+//   }
+// }
+/* styles.scss o styles.css */
+
+.example-section {
+  h4 {
+    color: red; // Cambia el color del título
+  }
+
+  mat-checkbox {
+   
+    color: #38B6E3; // Cambia el color del texto de la casilla de verificación
+    background-color: transparent; // Color de fondo predeterminado
+
+   
+
+    .mat-checkbox-background {
+      &.mat-checkbox-checked {
+        background-color: transparent; // Anula el color de fondo cuando la casilla está marcada
+      }
+    }
+  }
+}
+
+

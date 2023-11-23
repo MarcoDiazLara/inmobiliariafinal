@@ -52,5 +52,7 @@ export class RegistroComponent implements OnInit {
       }
     })
   }
-
+  home(){
+    this.router.navigate(['/web']);
+   }
 }
