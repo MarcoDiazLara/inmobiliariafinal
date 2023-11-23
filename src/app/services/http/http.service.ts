@@ -402,4 +402,16 @@ obtenerPublis(p_id_usuario: any){
   return this.httpclient.post(this.url + 'obtenerLikes.php', params, { headers });
  }
 
+ insertEvent(p_asunto:any, p_finicio:any, p_ffin:any, p_descrip:any, p_noti:any, p_status:any, p_iduser:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_asunto=' + p_asunto 
+  + '&p_finicio='+p_finicio 
+  + '&p_ffin='+p_ffin 
+  + '&p_descrip='+p_descrip 
+  + '&p_noti='+p_noti
+  + '&p_status='+p_status
+  + '&p_iduser='+p_iduser;
+  return this.httpclient.post(this.url + 'InsertFechasHito.php', params, { headers });
+ }
+
 }
