@@ -413,5 +413,12 @@ obtenerPublis(p_id_usuario: any){
   + '&p_iduser='+p_iduser;
   return this.httpclient.post(this.url + 'InsertFechasHito.php', params, { headers });
  }
+//  actulizarInmueble(p_Id_inmueble:any, p_id_tipo_inmueble:number,p_nom_inmueble: string, p_calle: string, p_num_ext: string,p_num_int: string,
+//   p_terreno: string, p_construccion: string,p_recamara: string, p_bano: string,p_cocina: string,p_num_pisos: string,p_antiguedad: string,
+//   p_acabados: string, p_alberca:string, p_jardin: string, p_gym:string, p_roof:string,p_estacionamiento: string,
+//   p_pic_1: string, p_pic_2: string, p_pic_3:string,p_pic_4: string, p_pic_5: string, p_360:string, p_video: string, p_id_asentamiento: number,
+//  p_update: any,p_prec_min:any,p_prec_max: any,p_prec_final: any){
+
+//  }
 
 }
