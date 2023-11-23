@@ -47,8 +47,8 @@ export class AvisosComponent  {
       console.log(`Dialog result: ${result}`);
     });
   }
-  InforInmu(){
-
+  InforInmu(inmueble:Publicaciones){
+    localStorage.setItem("p_Id_inmueble",inmueble.Id_Inmueble);
     const dialogRef = this.dialog.open(InformacioninmuebleComponent);
 
     dialogRef.afterClosed().subscribe(result => {

@@ -275,4 +275,12 @@ export interface ActulizarInmueble{
     Precio_Final: "",
     Id_Estatus_Publicacion: ""
 }
+export interface EstatusInmueble{
+    Id_Estatus_Publicacion:"",
+    Estatus_Publicacion:"",
+
+
+
+
+}
 
