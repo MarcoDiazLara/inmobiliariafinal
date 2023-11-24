@@ -304,7 +304,7 @@ obtenerLocalizacion(){
       p_prec_final1,p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) =>{
       if(data == 1){
         alert("Se subio el inmueble");
-        this.router.navigate(["/web"]);
+        this.router.navigate(["/inmueble/avisos"]);
         
       } else{
 

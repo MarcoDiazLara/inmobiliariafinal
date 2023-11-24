@@ -85,6 +85,7 @@ export class FechaHitoAgentesComponent implements OnInit {
 
 
   Addnew() {
+    const modal = document.querySelector('.ShowAddEvent');
     console.log('Asunto:', this.asunto);
     console.log('fechaInicio:', this.fechaInicio);
     console.log('fechaCierre:', this.fechaCierre);
@@ -119,10 +120,25 @@ export class FechaHitoAgentesComponent implements OnInit {
         });
         
       }
-    })
+    });
+    if (modal) {
+      modal.classList.remove('mostrar');
+      setTimeout(() => {
+        this.ShowAddEvent = false;
+        this.añadirevent();
+      }, 100);
+    }
+  }
 
 
-   ;
+  añadirevent() {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Cambios realizados con éxito",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
 
