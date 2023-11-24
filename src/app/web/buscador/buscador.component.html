@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             <div class="input-group group-btn content-center">
-                                <button (click)="PageMap()" class="btn btn-outline-inmo form-control" type="submit"><i
+                                <button (click)="PageMapV()" class="btn btn-outline-inmo form-control" type="submit"><i
                                         class="bi bi-geo-alt-fill"></i></button>
                             </div>
                         </form>
@@ -62,10 +62,10 @@
                 </div>
                 <div class="tab-pane fade m-3 p-3" id="renta" role="tabpanel" aria-labelledby="renta-tab">
                     <div class="content-center">
-                        <form  [formGroup]="firstFormGroup" class="form-control content-center" (ngSubmit)="onSubmit()">
+                        <form  [formGroup]="segundoFormGroup" class="form-control content-center" (ngSubmit)="onSubmit()">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="bi bi-building size-icon"></i></span>
-                                <select formControlName="pId_Tipo_Inmueble" formControlName="pId_Tipo_Inmueble"
+                                <select formControlName="pId_Tipo_Inmueble2" [(ngModel)]="tpropiedad" (ngModelChange)="cambioTpropiedad($event)"
                                     class="custom-select me-3 shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     >
                                     <option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
@@ -78,12 +78,12 @@
                                         class="input-group-text shadow bg-white rounded border border-info font-Roboto-Condensed"
                                         id="inputGroup">Ubicación</span>
                                 </div>
-                                <input type="text" formControlName="pUbicacion" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)"
+                                <input type="text" formControlName="pUbicacion2" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)"
                                     class="shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
                                     <span class="input-group-addon">
-                                        <button  class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaC()">Buscar</button>
+                                        <button  class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaR()">Buscar</button>
                                     </span>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                         <form  [formGroup]="firstFormGroup" class="form-control content-center" (ngSubmit)="onSubmit()">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="bi bi-building size-icon"></i></span>
-                                <select formControlName="pId_Tipo_Inmueble" formControlName="pId_Tipo_Inmueble"
+                                <select  formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" (ngModelChange)="cambioTpropiedad($event)"
                                     class="custom-select me-3 shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     >
                                     <option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
@@ -117,7 +117,7 @@
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
                                     <span class="input-group-addon">
-                                        <button  class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaC()">Buscar</button>
+                                        <button  class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaRema()">Buscar</button>
                                     </span>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                         <form  [formGroup]="firstFormGroup" class="form-control content-center" (ngSubmit)="onSubmit()">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="bi bi-building size-icon"></i></span>
-                                <select formControlName="pId_Tipo_Inmueble" formControlName="pId_Tipo_Inmueble"
+                                <select formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" (ngModelChange)="cambioTpropiedad($event)"
                                     class="custom-select me-3 shadow bg-white rounded border border-info font-Roboto-Condensed form-control"
                                     >
                                     <option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
@@ -151,7 +151,7 @@
                                     aria-label="Default" aria-describedby="inputGroup">
                                 <div class="input-group-prepend me-2">
                                     <span class="input-group-addon">
-                                        <button  class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaC()">Buscar</button>
+                                        <button  class="btn btn-outline-inmo" type="submit" (click)="ResultadoosBusquedaDesa()">Buscar</button>
                                     </span>
                                 </div>
                             </div>

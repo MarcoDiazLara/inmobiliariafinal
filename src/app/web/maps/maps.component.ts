@@ -17,6 +17,8 @@ export class MapsComponent  {
   action: String | undefined;
   tpropiedad!: Number;
   ubicacion!: String;
+  bandera!: number;
+  tipoP!: number;
 
   datosInmueble: inmueblesBuscados[] = [];
 
@@ -34,6 +36,8 @@ export class MapsComponent  {
       this.action = params['action'];
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
+      this.bandera = params['bandera'];
+      this.tipoP = params['tipoP'];
 
       console.log('Action: ', this.action);
       console.log('Propiedad: ', this.tpropiedad);
@@ -41,15 +45,21 @@ export class MapsComponent  {
 
     });
 
-    this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
+    // this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
       
-      this.datosInmueble = data;
-      console.log(this.datosInmueble);
+    //   this.datosInmueble = data;
+    //   console.log(this.datosInmueble);
+      
+    //   console.log(this.markers);
+
+    // });
+
+    this.http.MenuFiltros(this.ubicacion, this.tpropiedad,this.tipoP).subscribe((resp:any)=> {
+
+      this.datosInmueble = resp;
       this.createMarkers();
-      console.log(this.markers);
 
-    });
-
+    })
     
     if (!navigator.geolocation) {
       alert('Geolocalización No Compatible');

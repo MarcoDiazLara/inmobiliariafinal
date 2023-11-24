@@ -287,14 +287,13 @@ export class VistadeinmuebleComponent implements OnInit {
           this.datosInmueble = resp;
         })
     } else if (this.bandera == 13){
-
       this.http.MenuFiltros(this.ubicacion, this.tpropiedad,this.tipoP).subscribe((resp:any)=> {
 
         this.datosInmueble = resp;
         
 
       })
-    }else{ 
+    }else { 
       this.http.mostrarInmuebles(this.ubicacion, this.tpropiedad).subscribe((resp: any) => {
 
         this.datosInmueble = resp;
