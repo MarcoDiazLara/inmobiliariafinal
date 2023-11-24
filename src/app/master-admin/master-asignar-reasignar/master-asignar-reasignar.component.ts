@@ -62,16 +62,12 @@ export class MasterAsignarReasignarComponent implements OnInit {
  
 
   ngOnInit(): void {
-
-    // localStorage.setItem("Bandera");
-
    
-    
     let Bandera = localStorage.getItem("Bandera")
 
     if(Bandera =="1"){
      this.obtenerConteo();
-     
+
      this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
         this.dataSource.data =usuarios;
@@ -79,11 +75,6 @@ export class MasterAsignarReasignarComponent implements OnInit {
     });
 
     }
-
-
-
-       
-  
 
 
     // this.formGeneral = this.formBuilder.group({
