@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
         NuevaC: ['', [Validators.required]],
         correo: ['', [Validators.required]]
        })
+       localStorage.setItem("Bandera","1");
      }
 
      
@@ -54,9 +55,10 @@ login(){
         text: 'No se encuentra ninguna cuenta asociada a este nombre de usuario.',
        
       })
+      localStorage.setItem("Bandera","1");
     }else{
       if(data==2){
-
+        
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -64,12 +66,15 @@ login(){
          
         })
         // alert("contraseña incorrecta");
-
-      }else{
+        localStorage.setItem("Bandera","0");
+      }else
+      
+      {
        
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+        localStorage.setItem("Bandera","1");
         this.httpService.setGlobalVariable(true);
         this.router.navigate(["/index"]);
       }

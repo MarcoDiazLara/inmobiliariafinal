@@ -46,6 +46,8 @@ export class MasterAsignarReasignarComponent implements OnInit {
   datosinmuebles: reasignacionA[]=[];
 
   datosAsesores: AsigarReAsignar[]=[];
+
+
  
   constructor(
     public dialog: MatDialog,
@@ -61,18 +63,27 @@ export class MasterAsignarReasignarComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // localStorage.setItem("Bandera");
 
-    this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
+   
+    
+    let Bandera = localStorage.getItem("Bandera")
+
+    if(Bandera =="1"){
+     this.obtenerConteo();
+     
+     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
         this.dataSource.data =usuarios;
       }
     });
 
+    }
+
+
+
        
-    this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
-      this.datosAsesores=data;
-    
-    });
+  
 
 
     // this.formGeneral = this.formBuilder.group({
@@ -99,13 +110,18 @@ export class MasterAsignarReasignarComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+ 
+  obtenerConteo(){
+    this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
+      this.datosAsesores=data;
+    
+    });
+  }
 
   obtenerUsuarios(){
 
-    let Id_usuario = localStorage.getItem("Id_Usuario");
-    console.log(Id_usuario)
-
-    this.httpService.mostrarReasignacion(Id_usuario).subscribe((data:any)=>{
+     
+    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
