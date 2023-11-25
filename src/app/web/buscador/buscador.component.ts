@@ -16,7 +16,8 @@ export class BuscadorComponent implements OnInit {
   inmuebles: Inmuebles[] = [];
   inmueble!: Inmuebles;
   firstFormGroup!: FormGroup;
-  tpropiedad: String | undefined;
+  segundoFormGroup!: FormGroup;
+  tpropiedad: number | undefined;
   ubicacion: String | undefined;
 
   constructor(private router: Router,
@@ -31,7 +32,11 @@ export class BuscadorComponent implements OnInit {
       pId_Tipo_Inmueble: ['', [Validators.required]],
       pUbicacion: ['', [Validators.required]]
     })
-    this.tpropiedad = '0';
+    this.segundoFormGroup = this.formBuilder.group({
+      pId_Tipo_Inmueble2: ['', [Validators.required]],
+      pUbicacion2: ['', [Validators.required]]
+    })
+    this.tpropiedad = 1;
   }
 
   obtenerDatosInmuebles() {
@@ -47,14 +52,22 @@ export class BuscadorComponent implements OnInit {
 
 
   ResultadoosBusquedaC() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 1} });
   }
 
   ResultadoosBusquedaR() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 2} });
   }
 
-  cambioTpropiedad(tprop:string){
+  ResultadoosBusquedaRema() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 3} });
+  }
+
+  ResultadoosBusquedaDesa() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 4} });
+  }
+
+  cambioTpropiedad(tprop:number){
     console.log('Selecciona Propiedad: ',tprop);
     this.tpropiedad = tprop;
   }
@@ -65,11 +78,16 @@ export class BuscadorComponent implements OnInit {
   }
 
   onSubmit(){
+    console.warn(this.segundoFormGroup.value);
     console.warn(this.firstFormGroup.value);
+  }
+  
+  PageMapV() {
+    this.router.navigate(["/web/maps"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 1} });
   }
 
   PageMap() {
-    this.router.navigate(["/web/maps"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/web/maps"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 2} });
   }
 
 }
