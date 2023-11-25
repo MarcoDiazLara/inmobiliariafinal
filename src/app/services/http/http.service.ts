@@ -201,17 +201,17 @@ export class HttpService {
 
    }
    
-  mostrarReasignacion() {
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
-  }
-
-
-  // mostrarReasignacion( Id_usuario: any ) {
+  // mostrarReasignacion() {
   //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  //   let params = 'p_Id_usuario=' + Id_usuario;
-  //   return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php',params, { headers });
+  //   return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php', { headers });
   // }
+
+
+  mostrarReasignacion( Id_Usuario: any ) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Usuario=' + Id_Usuario;
+    return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php',params, { headers });
+  }
 
   
 

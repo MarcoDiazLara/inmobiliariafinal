@@ -48,6 +48,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   datosAsesores: AsigarReAsignar[]=[];
 
 
+
  
  
   
@@ -111,9 +112,9 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
 
   obtenerUsuarios(){
-
+    let Id_Usuario = localStorage.getItem("Id_Usuario");
      
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+    this.httpService.mostrarReasignacion(Id_Usuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {

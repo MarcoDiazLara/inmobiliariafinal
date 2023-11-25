@@ -46,7 +46,6 @@ export class BrokersAsignarReasignarComponent implements OnInit {
 
   datosAsesores: AsigarReAsignar[]=[];
 
-  
  
   constructor(
     public dialog: MatDialog,
@@ -103,8 +102,8 @@ export class BrokersAsignarReasignarComponent implements OnInit {
 
   obtenerUsuarios(){
 
-     
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+    let Id_Usuario = localStorage.getItem("Id_Usuario");
+    this.httpService.mostrarReasignacion(Id_Usuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
