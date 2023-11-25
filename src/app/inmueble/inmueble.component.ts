@@ -18,6 +18,8 @@ import { WebModule } from '../web/web.module';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { MetododepagoComponent } from 'src/app/metododepago/metododepago.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -63,7 +65,7 @@ foods: Food[] = [
 
 
 
-constructor(private formBuilder: FormBuilder
+constructor(private formBuilder: FormBuilder,private dialog: MatDialog
   , private httpService: HttpService,
   private httpClient: HttpClient,
   private router: Router) {}
@@ -378,32 +380,6 @@ obtenerLocalizacion(){
 
   @ViewChild('ventanaEmergente') ventanaEmergente: any;
 
-  
-  abrir(){
-    if(this.isLoggedIn){
-      
-    }
-    else{
-      this.abrirVentanaEmergente();
-    }
-  }
-
-  abrirVentanaEmergente(): void {
-    this.ventanaEmergente.nativeElement.style.display = 'block';
-  }
-
-  cerrarVentanaEmergente(): void {
-    this.ventanaEmergente.nativeElement.style.display = 'none';
-  }
-
-
-  mostrarAlerta() {
-    alert('¡Éxito tu pago fue realizado !');
-  }
-
-
-
-
    generateRandomCombination() {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let combination = '';
@@ -416,7 +392,13 @@ obtenerLocalizacion(){
     return combination;
     // console.log(combination);
   }
+    
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MetododepagoComponent, {
   
+    });
+
+}
   
 
 

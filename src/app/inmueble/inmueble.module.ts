@@ -26,6 +26,13 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import { PlanesComponent } from './planes/planes.component';
+
+
+registerLocaleData(localeEs);
 @NgModule({
   declarations: [
     MenuinmuebleComponent,
@@ -34,7 +41,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
  ContratosComponent,
  LikeComponent,
  LikegraficaComponent,
- InformacioninmuebleComponent
+ InformacioninmuebleComponent,
+ PlanesComponent
   ],
   imports: [
     
@@ -57,12 +65,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatStepperModule,
     MatDialogModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+
   
   
     
  
   
+  ],
+
+
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado
   ],
   exports: [
     WebModule

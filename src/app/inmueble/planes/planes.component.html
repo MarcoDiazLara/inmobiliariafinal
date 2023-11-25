@@ -1,0 +1,82 @@
+
+<h1>Planes</h1> <button color="primary" mat-button  (click)="CerraDialogo()">Cancelar</button>
+<div class="card-container">
+    
+    <div class="card">
+      <div class="content">
+     
+        <br>
+        <br>
+        <div class="title">Plan Básico</div>
+        <br>
+        <br>
+        <div class="price">$999/mes</div>
+        <br>
+        <div class="description">
+            <p>Características:</p>
+            <ul>
+                <li>5 Anuncios destacados</li>
+                <li>Plan con renovacion manual</li>
+                <li>Volumen de visitas: moderado</li>
+            </ul>
+        </div>
+      </div>
+      <button  class="but" (click)="openDialog()">
+        Comprar
+      </button>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 
+   
+    <!-- Repite dos veces más para un total de tres tarjetas -->
+    
+    <div class="card">
+      <div class="content">
+        <br>
+        <br>
+        <div class="title">Plan Intermedio</div>
+        <br>
+        <br>
+        <div class="price">$1499/mes</div>
+        <br>
+        <div class="description">
+            <p>Características:</p>
+    <ul>
+        <li>10 anuncios destacados</li>
+        <li>Plan de renovacion automatica</li>
+        <li>Volumen de visitas: Medio</li>
+    </ul>
+        </div>
+      </div>
+      <button class="but" (click)="openDialog()">
+        Comprar
+      </button>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+   
+    <div class="card">
+      <div class="content">
+        <br>
+        <br>
+        <div class="title">Plan Premiums</div>
+        <br>
+        <br>
+        <div class="price">$2999/mes</div>
+        <div class="description">
+            <br>
+           <p>Características:</p>
+          <ul>
+        <li>Anuncios destacados ilimitados</li>
+        <li>Plan de renovacion automatica</li>
+        <li>Volumen de visitas: Maximo</li>
+    </ul>
+         
+        </div>
+      </div>
+      <button  class="but"(click)="openDialog()">
+        Comprar
+      </button>
+    </div>
+  </div>
+
+  

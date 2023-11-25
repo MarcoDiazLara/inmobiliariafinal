@@ -48,6 +48,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmueble.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
+import { MetododepagoComponent } from './metododepago/metododepago.component';
 
 
 
@@ -60,6 +61,7 @@ import { UnityComponent } from './inmueble/unity/unity.component';
     VistadeinmuebleComponent,
     DetallesComponent,
     UnityComponent,
+    MetododepagoComponent,
   
     
 

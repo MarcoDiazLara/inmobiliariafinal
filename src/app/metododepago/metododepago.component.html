@@ -1,0 +1,163 @@
+<mat-stepper #stepper>
+    <mat-step>
+        <ng-template matStepLabel>Detalle de compra</ng-template>
+        <h1>Detalles del Plan</h1>
+        <div class="container">
+            <nav class="navbar navbar-light navbar-custom">
+                <div class="container-fluid">
+                    
+                </div>
+              </nav>
+              
+                <div class="row g-0">
+                  <div class="col-5 col-sm-4">
+                    <img src="assets/img/Payment Information.gif" class="img-fluid w-100" alt="card-horizontal-image">
+                  </div>
+                  <div class="col-7 col-sm-8">
+                    <div class="card-body">
+                        <p><i class="bi bi-check"></i>COMBO 5+5 Avisos Súper Destacado</p>
+                        <p><i class="bi bi-check"></i>Plan con renovación automática</p>
+                        <p><i class="bi bi-check"></i>5 anuncios con duración de 30 días en línea con destacada visibilidad en dos sitios web.</p>
+                        <p><i class="bi bi-check"></i>Experimentarás un alto tráfico de visitantes.</p>
+                        <p><i class="bi bi-check"></i>Tu propiedad se enviará a posibles compradores que buscan propiedades similares a la tuya</p>
+                        <p>Puede cancelar su Plan en cualquier momento. 
+                        Para obtener información sobre la duración restante de su Plan después de la cancelación, le recomendamos consultar los Términos y Condiciones.</p>
+               
+                      <br>
+                        <br>
+                        
+                       <p class="card-text"> "Anuncia sin costo en la plataforma líder del sector de bienes raíces".
+                      </p>
+                      <br>
+                      <br>
+                      <div class="text-center">
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+        
+         <button  color="primary" mat-button matStepperNext>Siguiente</button>
+          </div>
+      </mat-step>
+    
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Paga</ng-template>
+        <h1 >Información de Método de Pago</h1>
+        <br>
+        <br>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-form-field style="margin-right: 10px;"> 
+                <mat-label>Nombre  Completo </mat-label>
+                <input matInput placeholder="Nombre  Completo" >
+                <mat-icon matSuffix>
+                    <img src="assets/img/usuario1.png"  alt="Icono" width="30" height="30">
+                </mat-icon>
+            </mat-form-field>  
+           
+            <mat-form-field style="margin-right: 15px;"> 
+                <mat-label>Numero de tarjeta </mat-label>
+                <input matInput placeholder=" XXXXXXXXXXXX" >
+                <mat-icon matSuffix>
+                    <img src="assets/img/tarjeta-nfc.png"  alt="Icono" width="30" height="30">
+                </mat-icon>
+            </mat-form-field> 
+        </div>
+        <br>
+   
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-form-field style="margin-right: 10px;"> 
+              <mat-label>Fecha de Expiración: </mat-label>
+              <input matInput placeholder="MM/YY" >
+              <mat-icon matSuffix>
+                <img src="assets/img/calendario.png"  alt="Icono" width="30" height="30">
+            </mat-icon>
+          </mat-form-field>  
+
+          <mat-form-field style="margin-right: 10px;"> 
+            <mat-label>Código de Seguridad (CVV):</mat-label>
+            <input matInput placeholder="000" >
+            <mat-icon matSuffix>
+                <img src="assets/img/cerrar.png"  alt="Icono" width="30" height="30">
+            </mat-icon>
+        </mat-form-field> 
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <h4>Métodos de Pago Aceptados</h4>
+        <br>
+       
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="assets/img/paypal.png" alt="PayPal" class="img-fluid mr-2"> 
+    <img src="assets/img/visa.png" alt="Visa" class="img-fluid mr-2">
+    </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button color="primary" mat-button matStepperPrevious>Atras</button>
+          <button  color="primary" mat-button matStepperNext>Sigiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Listo</ng-template>
+        <h1>Ticket de Compra</h1>
+        <br>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                 
+                </div>
+           
+            <div class="row">
+                <div class="col">
+                    <p><strong>Fecha:</strong> 20 de octubre de 2023</p>
+                </div>
+                <div class="col">
+                    <p><strong>Número de Orden:</strong> 123456</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Plan contratado</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Plan Intermedio</td>
+                                <td>1</td>
+                                <td>$1499.00</td>
+                                <td>$40.00</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p><strong>Total de la Compra:</strong> $1539.00</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div style="display: flex; justify-content: center; align-items: center;">
+        
+          <button color="primary" mat-button  (click)="CerraDialogo()">Cancelar</button>
+          <button color="primary" mat-button matStepperNext  (click)="mostrarAlerta()">Aceptar</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>
+  

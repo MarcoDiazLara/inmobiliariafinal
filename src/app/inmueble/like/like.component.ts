@@ -11,7 +11,12 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class LikeComponent  {
   selected: Date = new Date();
+  saludo: string = ''; 
+  
   constructor(public dialog: MatDialog) { }
+  ngOnInit() {
+    this.actualizarSaludo();
+  }
   openDialog(): void {
     let dia= this.selected.getDate().toString();
     let mes= (this.selected.getMonth()+1).toString();
@@ -32,7 +37,24 @@ export class LikeComponent  {
       console.log('Ventana emergente cerrada');
     });
   }
-
+  CerraDialogo(){
+    this.dialog.closeAll();
+ 
+    }
+    actualizarSaludo() {
+      const horaActual = new Date().getHours();
+  
+      if (horaActual >= 0 && horaActual < 12) {
+        this.saludo = 'Buenos días';
+      } else if (horaActual >= 12 && horaActual < 18) {
+        this.saludo = 'Buenas tardes';
+      } else {
+        this.saludo = 'Buenas noches';
+      }
+    }
+    obtenerSaludo(): string {
+      return `${this.saludo}!`;
+    }
  
   }
 

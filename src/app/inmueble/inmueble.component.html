@@ -4,6 +4,9 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+
 
 
 <mat-stepper [linear]="isLinear" #stepper>
@@ -18,10 +21,10 @@
             <h3 class="text-center">Tipo de operación</h3>
             <div style="display: flex; justify-content: center; align-items: center;">
               <mat-radio-group aria-label="Select an option" formControlName="pId_Tipo_Publicacion">
-                <mat-radio-button style="margin-right: 10px;" value="1">Vender</mat-radio-button>
-                <mat-radio-button style="margin-right: 10px;" value="2">Rentar</mat-radio-button>
-                <mat-radio-button style="margin-right: 10px;" value="3">Remate</mat-radio-button>
-                <mat-radio-button style="margin-right: 10px;" value="4">Desarrollos</mat-radio-button>
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="1">Vender</mat-radio-button>
+                <mat-radio-button color="primary"  style="margin-right: 10px;" value="2">Rentar</mat-radio-button>
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="3">Remate</mat-radio-button>
+                <mat-radio-button  color="primary" style="margin-right: 10px;" value="4">Desarrollos</mat-radio-button>
               </mat-radio-group>
             </div>
             <br>
@@ -40,7 +43,7 @@
               <br>
             <br>
       <div class="center-content">
-        <button (click)="guardar()" mat-button matStepperNext>Continuar</button>
+        <button  color="primary" (click)="guardar()" mat-button matStepperNext>Continuar</button>
       </div>
     </form>
   </mat-step>
@@ -109,8 +112,8 @@
         
       <div class="d-flex justify-content-center align-items-center">
        
-        <button mat-button matStepperPrevious>Atras</button>
-        <button mat-button matStepperNext>Continuar</button>
+        <button  color="primary" mat-button matStepperPrevious>Atras</button>
+        <button color="primary"  mat-button matStepperNext>Continuar</button>
       </div>
     </form>
   </mat-step>
@@ -303,8 +306,8 @@
 <br>
 <br>
           <div class="d-flex justify-content-center align-items-center">
-              <button  mat-button matStepperPrevious>Atras</button>
-              <button (click)="xd()" mat-button matStepperNext>Continuar</button>
+              <button color="primary" mat-button matStepperPrevious>Atras</button>
+              <button  color="primary" (click)="xd()" mat-button matStepperNext>Continuar</button>
             </div>
       
       </form>
@@ -350,8 +353,8 @@
         <br>
         <br>
                    <div class="d-flex justify-content-center align-items-center">
-                       <button mat-button matStepperPrevious>Atras</button>
-                       <button mat-button matStepperNext>Continuar</button>
+                       <button color="primary" mat-button matStepperPrevious>Atras</button>
+                       <button color="primary" mat-button matStepperNext>Continuar</button>
                      </div>
       </form>
   </mat-step>
@@ -365,34 +368,20 @@
 
     <br>
     <div class="d-flex justify-content-center align-items-center">
+      <p>Solo se aceptan 5 imagenes por el inmueble</p>
+      <br>
+    </div>
+      <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center" >
     <form class="form-horizontal" [formGroup]="imageForm">
+      
+   
       <input  class="form-control" accept="image/*"  type="file" name="images" (change)="onFileChange($event)" multiple>
       
     </form>
     </div>
-  <br>
-  <br>
-  <hr>
-     <h2>  Plan disponible</h2>
-
-     <nav class="navbar">
-      <div class="container">
-        <div class="input-group">
-          <div class="input-group-text">
-              
-            <input class="form-check-input" type="radio" value="" aria-label="Radio for following text input">
-                &nbsp; &nbsp;  plan  gratuito   &nbsp; &nbsp;  &nbsp; &nbsp;  
-          </div>
-        
-          
-          
-        </div>
-      </div>
-    </nav>
- <br>
- <h1> Planes para ti </h1>
-    
-     <div class="card-container">
+    <br>
+    <br>
+    <div class="card-container">
       <div class="card">
         <div class="content">
        
@@ -412,175 +401,11 @@
               </ul>
           </div>
         </div>
-        <button class="but" type="button" (click)="abrir()">
+        <button  class="but"  (click)="openDialog()" >
           Comprar
-      </button>
-
-      <div class="modal" tabindex="-1" role="dialog" #ventanaEmergente style="margin-left: 250px; margin-top: 100px;"> 
-      <!-- <div class="modal" tabindex="-1" role="dialog" #ventanaEmergente> -->
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-      
-             
-              </div>
-               <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-          </button> -->
-
-          <mat-stepper [linear]="isLinear" #stepper>
-            <mat-step [stepControl]="firstFormGroup">
-              <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>Detalles de compra </ng-template>
-                <hr>
-                <h1>Detalles del Plan</h1>
-                <ul class="list-inline">
-                  <li class="list-inline-item">COMBO 5+5 Avisos Súper Destacado</li>
-                  <li class="list-inline-item">Plan con renovación automática</li>
-                
-                </ul>
-
-                <div class="benefits">5 anuncios con duración de 30 días en línea con destacada visibilidad en dos sitios web.</div>
-                 <br>
-                  <div class="benefits">Experimentarás un alto tráfico de visitantes.</div>
-                  <br>
-               <div class="benefits">Tu propiedad se enviará a posibles compradores que buscan propiedades similares a la tuya.</div>
-                <div>
-                  <br>
-                  <br>
-                  <br>
-                  <p>Puede cancelar su Plan en cualquier momento. 
-                    Para obtener información sobre la duración restante de su Plan después de la cancelación, le recomendamos consultar los Términos y Condiciones.</p>
-                   <br>
-                  
-                  <button mat-button matStepperNext>Siguiente</button>
-                </div>
-              </form>
-            </mat-step>
-
-            <!-- ---------------------------------------------------------- -->
-            <mat-step [stepControl]="secondFormGroup" label="Pagar">
-              <form [formGroup]="secondFormGroup">
-                <hr>
-                <h2 >Información de Método de Pago</h2>
-                <br>
-                <div style="display: flex; justify-content: center; align-items: center;">
-                  <mat-form-field style="margin-right: 10px;"> 
-                    <mat-label>Nombre  Completo </mat-label>
-                    <input matInput placeholder="Nombre  Completo" >
-                </mat-form-field>  
-
-                <mat-form-field style="margin-right: 10px;"> 
-                  <mat-label>Numero de tarjeta </mat-label>
-                  <input matInput placeholder=" XXXXXXXXXXXX" >
-              </mat-form-field>  
-                </div>
-
-                <br>
-                <br>
-              <div style="display: flex; justify-content: center; align-items: center;">
-              <mat-form-field style="margin-right: 10px;"> 
-                <mat-label>Fecha de Expiración: </mat-label>
-                <input matInput placeholder="MM/YY" >
-            </mat-form-field>  
-
-            <mat-form-field style="margin-right: 10px;"> 
-              <mat-label>Código de Seguridad (CVV):</mat-label>
-              <input matInput placeholder="000" >
-          </mat-form-field> 
-        </div>
-
-
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <h4>Métodos de Pago Aceptados</h4>
-          <br>
-         
+        </button>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center;">
-      <img src="assets/img/paypal.png" alt="PayPal" class="img-fluid mr-2"> 
-      <img src="assets/img/visa.png" alt="Visa" class="img-fluid mr-2">
-      </div>
-                <br>
-                <br>
-                <div class="d-flex justify-content-center align-items-center">
-                  <button mat-button matStepperPrevious>Atras</button>
-                  <button mat-button matStepperNext>Siguiente</button>
-                </div>
-              </form>
-            </mat-step>
-            <!-- ----------------------------------------------------------------------- -->
-
-
-            <mat-step>
-              <ng-template matStepLabel>Listo</ng-template>
-              <hr>
-              <h2>Ticket de Compra</h2>
-
-           
-                <div class="container">
-                  <div class="row">
-                      <div class="col">
-                       
-                      </div>
-                 
-                  <div class="row">
-                      <div class="col">
-                          <p><strong>Fecha:</strong> 20 de octubre de 2023</p>
-                      </div>
-                      <div class="col">
-                          <p><strong>Número de Orden:</strong> 123456</p>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col">
-                          <h4>Plan contratado</h4>
-                          <table class="table">
-                              <thead>
-                                  <tr>
-                                      <th>Producto</th>
-                                      <th>Cantidad</th>
-                                      <th>Precio Unitario</th>
-                                      <th>Total</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>Plan Intermedio</td>
-                                      <td>1</td>
-                                      <td>$1499.00</td>
-                                      <td>$40.00</td>
-                                  </tr>
-                                 
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col">
-                          <p><strong>Total de la Compra:</strong> $1539.00</p>
-                      </div>
-                  </div>
-              </div>
-              </div>
-             
-              <div class="d-flex justify-content-center align-items-center">
-                <button mat-button matStepperPrevious (click)="mostrarAlerta()">Aceptar</button>
-
-             
-              </div>
-            </mat-step>
-           </mat-stepper>
-           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cerrarVentanaEmergente()">Cerrar</button>
-          </div>
-              
-        </div>
-        
-        </div>
-      </div>
-
-      </div>
-   <div class="card">
+      <div class="card">
         <div class="content">
           <br>
           <br>
@@ -598,11 +423,10 @@
       </ul>
           </div>
         </div>
-        <button class="but" type="button" (click)="abrir()">
+        <button class="but"   (click)="openDialog()">
           Comprar
-      </button>
+        </button>
       </div>
-    
       <div class="card">
         <div class="content">
           <br>
@@ -622,19 +446,23 @@
            
           </div>
         </div>
-        <button class="but" type="button" (click)="abrir()">
+        <button  class="but"  (click)="openDialog()"  >
           Comprar
-      </button>
+        </button>
       </div>
+
     </div>
+    
+    
+  
     
     
   <br>
   <br>
 
     <div class="d-flex justify-content-center align-items-center">
-      <button mat-button matStepperPrevious>Atras</button>
-      <button mat-button (click)="subirInmueble()">Aceptar</button>
+      <button color="primary" mat-button matStepperPrevious>Atras</button>
+      <button color="primary"  mat-button (click)="subirInmueble()">Aceptar</button>
     </div>
   </mat-step>
 </mat-stepper>

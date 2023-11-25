@@ -44,8 +44,11 @@ const routes: Routes = [
   {
     path:'contratos', component:ContratosComponent
 
-  }
-   
+  },
+  // {
+  //   path:'inmobiliariacorredor',component:inmobiliariacorredor
+  // }
+    
 
 
 ];

@@ -38,6 +38,10 @@ import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
 
 import { TerminosComponent } from './terminos/terminos.component';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef,MatDialogTitle,MatDialogContent,MatDialogActions,MatDialogClose,} from '@angular/material/dialog';
+
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -85,7 +89,11 @@ import { TerminosComponent } from './terminos/terminos.component';
      ReactiveFormsModule,
      WebRoutingModule,
      GoogleMapsModule,
-     QuierescomprarComponent
+     QuierescomprarComponent,
+     MatFormFieldModule, 
+     MatInputModule, 
+     FormsModule, 
+     MatButtonModule
   ],
   exports:[
     WebComponent,

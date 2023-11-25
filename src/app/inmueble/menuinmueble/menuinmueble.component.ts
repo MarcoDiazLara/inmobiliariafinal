@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
+import { MatDialog,} from '@angular/material/dialog';
+import { PlanesComponent } from '../planes/planes.component';
 
 @Component({
   selector: 'app-menuinmueble',
@@ -11,7 +13,7 @@ export class MenuinmuebleComponent  {
    
   isLoggedIn: boolean = false;
 
-  constructor(private router: Router,private httpService: HttpService) { }
+  constructor(private router: Router,private httpService: HttpService,public dialog: MatDialog) { }
 
  
 
@@ -69,5 +71,12 @@ export class MenuinmuebleComponent  {
 home(){
   this.router.navigate(['/web']);
  }
+ planes(): void {
+  const dialogRef = this.dialog.open(PlanesComponent, {
 
+  });
+
+ }
 }
+
+
