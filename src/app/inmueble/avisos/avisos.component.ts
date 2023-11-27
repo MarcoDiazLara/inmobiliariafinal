@@ -37,6 +37,7 @@ export class AvisosComponent  {
     extracheese: false,
     mushroom: false,
   });
+  showToferta: boolean = false;
  
   constructor(public dialog: MatDialog,private _formBuilder: FormBuilder, private httpService: HttpService ) {}
   openDialog( inmueble:Publicaciones){
@@ -87,6 +88,12 @@ ngOnInit(){
      console.log(err);
     })
    }
+
+   toggleToferta(){
+    this.showToferta = !this.showToferta;
+     // Cierra los otros elementos
+ 
+  }
 
 
 }

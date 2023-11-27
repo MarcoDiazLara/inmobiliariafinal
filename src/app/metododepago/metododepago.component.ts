@@ -25,13 +25,33 @@ export class MetododepagoComponent implements OnInit {
 
 
   constructor(private _formBuilder: FormBuilder,private dialog: MatDialog) { }
+     
+     plan!:string|null;
+     nombreplan!:string;
+     precio!:string;
 
   ngOnInit(): void {
+    this.plan=localStorage.getItem("tipodeplan");
+    if(this.plan=="1"){
+      this.nombreplan="Plan Basico";
+      this.precio="$999.00"
+    }
+     if(this.plan=="2"){
+      this.nombreplan="Plan Intermedio";
+      this.precio="$1499.00"
+     }
+     else{
+      if(this.plan=="3"){
+        this.nombreplan="Plan premiums";
+        this.precio="$2999.00"
+
+      }
+     }
   }
   mostrarAlerta() {
     Swal.fire(
       'Exitosamente!',
-      'Se ha registrado una cita en el sistema',
+      'Se ha registrado tu compra en el sistema ',
       'success'
       
     )
@@ -41,5 +61,7 @@ export class MetododepagoComponent implements OnInit {
     this.dialog.closeAll();
  
     }
+
+
  
 }
