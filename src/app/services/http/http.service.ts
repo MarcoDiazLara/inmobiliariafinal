@@ -471,4 +471,12 @@ estatusPublicacionInmueble( ){
   return this.httpclient.post(this.url + 'InsertFechasHito.php', params, { headers });
  }
 
+
+
+mostrarfechasHito(p_iduser:any, p_finicio:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params ='p_iduser='+p_iduser + '&p_finicio='+p_finicio;
+  return this.httpclient.post(this.url + 'sp_web_mostrarFechasHito.php', params, { headers });
+}
+
 }
