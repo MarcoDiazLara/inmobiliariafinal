@@ -220,17 +220,17 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   }
 
-  AsesoresAginados_NoAsigandos() {
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php', { headers });
-  }
-
-
-  // AsesoresAginados_NoAsigandos( Id_usuario: any ) {
+  // AsesoresAginados_NoAsigandos() {
   //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  //   let params = 'p_Id_usuario=' + Id_usuario;
-  //   return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php',params, { headers });
+  //   return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php', { headers });
   // }
+
+
+  AsesoresAginados_NoAsigandos( IdUsuario: any ) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_IdUsuario=' + IdUsuario;
+    return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php',params, { headers });
+  }
 
 
 
