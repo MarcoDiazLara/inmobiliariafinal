@@ -215,9 +215,15 @@ export class HttpService {
 
   
 
-  mostrarAsesor() {
+  // mostrarAsesor() {
+  //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  //   return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
+  // }
+
+  mostrarAsesor( Id_Usuario: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
+    let params = 'p_Id_Usuario=' + Id_Usuario;
+    return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php',params, { headers });
   }
 
   // AsesoresAginados_NoAsigandos() {
