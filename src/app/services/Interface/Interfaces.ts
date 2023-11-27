@@ -64,6 +64,9 @@ export interface reasignacionA{
     Calle: "",
     Id_Estatus_Publicacion: "",
     Nombre_Inmueble: "",
+    Id_Tipo_Usuario:"",
+    Nombre_Razon_Social:"",
+    Id_Socio:""
 }
 export interface AsigarReAsignar{
     

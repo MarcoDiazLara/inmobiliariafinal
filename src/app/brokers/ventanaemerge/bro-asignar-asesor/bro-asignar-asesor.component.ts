@@ -38,7 +38,8 @@ export class BroAsignarAsesorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.http.mostrarAsesor().subscribe((data:any)=>{
+    let Id_Usuario = localStorage.getItem("Id_Usuario");
+    this.http.mostrarAsesor(Id_Usuario).subscribe((data:any)=>{
       this.asesores=data;
       console.log(this.asesores);
       });

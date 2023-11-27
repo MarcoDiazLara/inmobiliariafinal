@@ -48,6 +48,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   datosAsesores: AsigarReAsignar[]=[];
 
 
+
  
  
   
@@ -103,7 +104,8 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   }
  
   obtenerConteo(){
-    this.http.AsesoresAginados_NoAsigandos().subscribe((data:any)=>{
+    let IdUsuario = localStorage.getItem("Id_Usuario");
+    this.http.AsesoresAginados_NoAsigandos(IdUsuario).subscribe((data:any)=>{
       this.datosAsesores=data;
     
     });
@@ -111,9 +113,9 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
 
   obtenerUsuarios(){
-
+    let Id_Usuario = localStorage.getItem("Id_Usuario");
      
-    this.httpService.mostrarReasignacion().subscribe((data:any)=>{
+    this.httpService.mostrarReasignacion(Id_Usuario).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
