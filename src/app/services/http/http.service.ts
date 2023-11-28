@@ -485,5 +485,12 @@ compraPlanes(p_id_usuario:any, p_id_tipo_plan: any, p_estatus_pago: any, p_estat
   + '&Fecha_Inicio='+Fecha_Inicio;
   return this.httpclient.post(this.url + 'sp_web_RegistraComprasphp.php', params, { headers });
 }
+ 
+filtrosmiespacio(p_Id_Usuario:any,Id_tipo_publicacion:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params ='p_Id_Usuario='+ p_Id_Usuario+ '&Id_tipo_publicacion='+Id_tipo_publicacion;
+  return this.httpclient.post(this.url + 'Filtros_Espacio.php', params, { headers });
+
+}
 
 }
