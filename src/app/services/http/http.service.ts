@@ -207,12 +207,12 @@ export class HttpService {
   // }
 
 
-  mostrarReasignacion( Id_Usuario: any ) {
+  mostrarReasignacion( Id_Socio: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Usuario=' + Id_Usuario;
+    let params = "p_Id_Socio="+Id_Socio ;
     return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php',params, { headers });
   }
-
+ 
   
 
   // mostrarAsesor() {
@@ -220,9 +220,9 @@ export class HttpService {
   //   return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   // }
 
-  mostrarAsesor( Id_Usuario: any ) {
+  mostrarAsesor( Id_Socio: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Usuario=' + Id_Usuario;
+    let params = 'p_Id_Socio=' + Id_Socio;
     return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php',params, { headers });
   }
 
@@ -232,9 +232,9 @@ export class HttpService {
   // }
 
 
-  AsesoresAginados_NoAsigandos( IdUsuario: any ) {
+  AsesoresAginados_NoAsigandos( IdSocio: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_IdUsuario=' + IdUsuario;
+    let params = 'p_IdSocio=' + IdSocio;
     return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php',params, { headers });
   }
 

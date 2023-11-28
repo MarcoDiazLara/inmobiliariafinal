@@ -104,17 +104,16 @@ export class MasterAsignarReasignarComponent implements OnInit {
   }
  
   obtenerConteo(){
-    let IdUsuario = localStorage.getItem("Id_Usuario");
-    this.http.AsesoresAginados_NoAsigandos(IdUsuario).subscribe((data:any)=>{
+    let IdSocio = localStorage.getItem("Id_Socio");
+    this.http.AsesoresAginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
       this.datosAsesores=data;
     
     });
   }
 
   obtenerUsuarios(){
-    let Id_Usuario = localStorage.getItem("Id_Usuario");
-     
-    this.httpService.mostrarReasignacion(Id_Usuario).subscribe((data:any)=>{
+    let Id_Socio = localStorage.getItem("Id_Socio"); 
+    this.httpService.mostrarReasignacion(Id_Socio ).subscribe((data:any)=>{
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {

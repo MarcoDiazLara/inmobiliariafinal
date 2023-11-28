@@ -45,8 +45,8 @@ export class AsignasrasesorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let Id_Usuario = localStorage.getItem("Id_Usuario");
-    this.http.mostrarAsesor(Id_Usuario).subscribe((data:any)=>{
+    let Id_Socio = localStorage.getItem("Id_Socio");
+    this.http.mostrarAsesor(Id_Socio).subscribe((data:any)=>{
     this.asesores=data;
     console.log(this.asesores);
     });
