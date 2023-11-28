@@ -471,4 +471,19 @@ estatusPublicacionInmueble( ){
   return this.httpclient.post(this.url + 'InsertFechasHito.php', params, { headers });
  }
 
+
+
+mostrarfechasHito(p_iduser:any, p_finicio:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params ='p_iduser='+p_iduser + '&p_finicio='+p_finicio;
+  return this.httpclient.post(this.url + 'sp_web_mostrarFechasHito.php', params, { headers });
+}
+
+compraPlanes(p_id_usuario:any, p_id_tipo_plan: any, p_estatus_pago: any, p_estatus_Suscripcion: any, Fecha_Inicio: any ){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params ='p_id_usuario='+p_id_usuario + '&p_id_tipo_plan='+p_id_tipo_plan + '&p_estatus_pago='+p_estatus_pago + '&p_estatus_Suscripcion='+p_estatus_Suscripcion
+  + '&Fecha_Inicio='+Fecha_Inicio;
+  return this.httpclient.post(this.url + 'sp_web_RegistraComprasphp.php', params, { headers });
+}
+
 }
