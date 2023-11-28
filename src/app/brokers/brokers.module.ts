@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BrokersRoutingModule } from './brokers-routing.module';
 import { BrokersComponent } from './brokers.component';
 import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -26,22 +24,28 @@ import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
 import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
-import { CalendarioComponent } from './calendario/calendario.component';
+
 import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
 import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
 import { BroAsignarAsesorComponent } from './ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
-/end/
+import { CalendarioComponent } from './calendario/calendario.component';
+import { Citas1Component } from './citas1/citas1.component';
+
+
 
 @NgModule({
   declarations: [
     PerfilbrokersComponent,
     BrokersComponent,
     NotificacionbrokerComponent,
-    CalendarioComponent,
+
     BrokerpasswordComponent,
     AltaAsesorComponent,
     BrokersAsignarReasignarComponent,
     BroAsignarAsesorComponent,
+    CalendarioComponent,
+    Citas1Component,
+
     
   
   ],
@@ -66,6 +70,8 @@ import { BroAsignarAsesorComponent } from './ventanaemerge/bro-asignar-asesor/br
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,
+    
+    
 
 
   ]

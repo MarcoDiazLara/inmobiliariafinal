@@ -14,7 +14,9 @@ export class PlanesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog(): void {
+  openDialog(bandera:number): void {
+    let auxi=bandera.toString();
+    localStorage.setItem("tipodeplan",auxi);
     const dialogRef = this.dialog.open(MetododepagoComponent, {
   
     });

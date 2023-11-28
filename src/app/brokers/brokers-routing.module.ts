@@ -5,6 +5,8 @@ import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbr
 import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
 import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
 import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
+import { CalendarioComponent } from './calendario/calendario.component';
+
 
 const routes: Routes = [
 
@@ -32,6 +34,11 @@ const routes: Routes = [
         path: 'asignar-reasignar',
         component: BrokersAsignarReasignarComponent,
       },
+      {
+           path:'calendario',
+           component:CalendarioComponent,
+      },
+     
     ]
   },
 

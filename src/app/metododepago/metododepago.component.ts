@@ -16,6 +16,8 @@ import { MatDialog } from '@angular/material/dialog';
   ],
 })
 export class MetododepagoComponent implements OnInit {
+  fechaActual: Date;
+
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
@@ -24,13 +26,17 @@ export class MetododepagoComponent implements OnInit {
   });
 
 
-  constructor(private _formBuilder: FormBuilder,private dialog: MatDialog) { }
+  constructor(private _formBuilder: FormBuilder,private dialog: MatDialog) { 
+    this.fechaActual = new Date();
+  }
      
      plan!:string|null;
      nombreplan!:string;
      precio!:string;
 
   ngOnInit(): void {
+   
+    setInterval(() => this.actualizarFecha(), 60000);
     this.plan=localStorage.getItem("tipodeplan");
     if(this.plan=="1"){
       this.nombreplan="Plan Basico";
@@ -61,7 +67,9 @@ export class MetododepagoComponent implements OnInit {
     this.dialog.closeAll();
  
     }
-
+    actualizarFecha() {
+      this.fechaActual = new Date();
+    }
 
  
 }

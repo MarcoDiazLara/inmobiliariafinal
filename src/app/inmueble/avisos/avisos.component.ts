@@ -37,7 +37,10 @@ export class AvisosComponent  {
     extracheese: false,
     mushroom: false,
   });
-  showToferta: boolean = false;
+  showTipoAnuncio: boolean = false;
+  showEstadoAnuncio: boolean = false;
+  showPropiedad: boolean = false;
+
  
   constructor(public dialog: MatDialog,private _formBuilder: FormBuilder, private httpService: HttpService ) {}
   openDialog( inmueble:Publicaciones){
@@ -89,11 +92,24 @@ ngOnInit(){
     })
    }
 
-   toggleToferta(){
-    this.showToferta = !this.showToferta;
+   toggleTestadoAnuncio(){
+    this.showTipoAnuncio = !this.showTipoAnuncio;
      // Cierra los otros elementos
  
   }
+  toggleEstadoAnuncio(){
+    this.showEstadoAnuncio = !this.showEstadoAnuncio;
+    // Cierra los otros elementos
+ 
+ 
+  }
+  togglePropiedad(){
+    this.showPropiedad = !this.showPropiedad;
+    // Cierra los otros elementos
+  
+  }
+
+  }
 
 
-}
+

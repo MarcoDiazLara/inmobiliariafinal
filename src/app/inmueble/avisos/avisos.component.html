@@ -1,110 +1,73 @@
 <app-menuinmueble></app-menuinmueble>
+         <br>
+      <br>
+      <br>
+      <br>
+       <br>
+       <br>
+       <br>
+       <br> 
+   
+  
+  
 
-<br>
- <br>
- <br>
- <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <div class="Precio-container">
-    <button (click)="toggleToferta()" class="buttonnavbar" mat-stroked-button>Tipo de Oferta<img class="navarrow"></button>
-    <ul *ngIf="showToferta" class="dropdown-Precio">
+  
+   <div class="d-flex justify-content-center">
+  <div class="Precio-container"   >
+    <button (click)="toggleTestadoAnuncio()" class="buttonnavbar" mat-stroked-button>Estado del Anuncio<img class="navarrow"></button>
+    <ul *ngIf="showTipoAnuncio" class="dropdown-Precio">
       <ul class="content-Precio">
-        <section class="Toferta-section" style="margin-bottom: 20px;">
-          <mat-checkbox color="primary" class="opcfiltros3">Renta</mat-checkbox>
-          <mat-checkbox color="primary" class="opcfiltros3">Comprar</mat-checkbox>
-          <mat-checkbox color="primary" class="opcfiltros3">Remates</mat-checkbox>
-          <mat-checkbox color="primary" class="opcfiltros3">En Construcción</mat-checkbox>
-        </section>
-        <button class="buttonnavbar" mat-stroked-button>Buscar</button>
+        <section class="example-section" [formGroup]="toppings">
+          <p><mat-checkbox color="primary" formControlName="pepperoni">Publicado</mat-checkbox></p>
+           <p><mat-checkbox color="primary" formControlName="extracheese">Borrador</mat-checkbox></p>
+          </section>
       </ul>
     </ul>
   </div>
-<!-- 
-  <div class="d-flex justify-content-center"> -->
-    <!-- <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
-    <mat-menu #aboveMenu="matMenu" yPosition="above">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-  
-    <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
-    <mat-menu #belowMenu="matMenu" yPosition="below">
-      <section class="example-section" [formGroup]="toppings">
-        <p><mat-checkbox color="primary" formControlName="pepperoni">Publicado</mat-checkbox></p>
-         <p><mat-checkbox color="primary" formControlName="extracheese">Borrador</mat-checkbox></p>
-        </section>>
-    </mat-menu>
-  
-    <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
-    <mat-menu #beforeMenu="matMenu" xPosition="before">
+  <div class="Precio-container">
+    <button (click)="toggleEstadoAnuncio()" class="buttonnavbar" mat-stroked-button>Tipo del Anuncio<img class="navarrow"></button>
+      <ul *ngIf="showEstadoAnuncio" class="dropdown-Recamaras">
+        <ul class="content-Precio">
+          
+          <section class="example-section" [formGroup]="toppings">
+            <p><mat-checkbox   color="primary"  formControlName="pepperoni">Compra</mat-checkbox></p>
+             <p><mat-checkbox  color="primary" formControlName="extracheese">Renta</mat-checkbox></p>
+             <p><mat-checkbox  color="primary" formControlName="extracheese">Desarrollo</mat-checkbox></p>
+             <p><mat-checkbox color="primary" formControlName="extracheese">Remate</mat-checkbox></p>
+           </section>
+        </ul>
+      </ul>
+  </div>
 
-   <section class="example-section" [formGroup]="toppings">
-        <p><mat-checkbox   color="primary"  formControlName="pepperoni">Compra</mat-checkbox></p>
-         <p><mat-checkbox  color="primary" formControlName="extracheese">Renta</mat-checkbox></p>
-         <p><mat-checkbox  color="primary" formControlName="extracheese">Desarrollo</mat-checkbox></p>
-         <p><mat-checkbox color="primary" formControlName="extracheese">Remate</mat-checkbox></p>
-       </section>
-    </mat-menu>
-  
-    <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
-    <mat-menu #afterMenu="matMenu" xPosition="after">
-      <mat-form-field >
-        <mat-label>Tipo de inmueble</mat-label>
+  <div class="header-container">
+  <div class="Precio-container">
+    <button (click)="togglePropiedad()" class="buttonnavbar" mat-stroked-button>Tipo de Propiedad<img class="navarrow"></button>
+      <ul *ngIf="showPropiedad" class="dropdown-Recamaras">
+        <ul class="content-Precio">
+          <mat-form-field >
+            <mat-label>Tipo de inmueble</mat-label>
+      
+              <mat-select formControlName="pId_Tipo_Inmueble">
+                <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
+                }}
+              </mat-option>
+                 </mat-select>
+                   </mat-form-field>
+            
+      
+         
+        </ul>
+      </ul>
+  </div>
 
-          <mat-select formControlName="pId_Tipo_Inmueble">
-            <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
-            }}
-          </mat-option>
-             </mat-select>
-               </mat-form-field>
-    </mat-menu>
-  </div> -->
-  <!-- <div class="d-flex justify-content-center">
-  
-    
- 
-    <div  class="form-check">
-      <span class="label label-default">Estado del Anuncio</span>
-      <section class="example-section" [formGroup]="toppings">
-       <p><mat-checkbox color="primary" formControlName="pepperoni">Publicado</mat-checkbox></p>
-        <p><mat-checkbox color="primary" formControlName="extracheese">Borrador</mat-checkbox></p>
-       </section>
-    </div>
-    <div class="p-2"></div>
-    <div  class="h6">
-     
-    <div  class="form-check">
-      <span class="label label-default">Tipo del Anuncio</span></div>
 
-     <section class="example-section" [formGroup]="toppings">
-        <p><mat-checkbox   color="primary"  formControlName="pepperoni">Compra</mat-checkbox></p>
-         <p><mat-checkbox  color="primary" formControlName="extracheese">Renta</mat-checkbox></p>
-         <p><mat-checkbox  color="primary" formControlName="extracheese">Desarrollo</mat-checkbox></p>
-         <p><mat-checkbox color="primary" formControlName="extracheese">Remate</mat-checkbox></p>
-       </section>
-    </div>
-    <div class="p-2"></div>
-    
-    <div class="form-check">
-      <div class="h6"><span class="label label-default">Tipo de Propiedad</span></div>
-      <mat-form-field >
-        <mat-label>Tipo de inmueble</mat-label>
+  </div>
+  </div> 
 
-          <mat-select formControlName="pId_Tipo_Inmueble">
-            <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
-            }}
-          </mat-option>
-             </mat-select>
-               </mat-form-field>
-    </div>
+
+
   
 
- 
-  </div>  -->
 
   
   <br>
@@ -209,32 +172,32 @@
   <div   class="row justify-content-left align-items-center">
     <div    class="col-sm-3 align-items-center align-middle p-5 color-back"> 
 
-      <div   class="h6"><span class="label label-default">Estado del Anuncio</span></div>
+      <div   class="h6"><span class="label label-default"></span></div>
       <div  class="form-check">
-        <section class="example-section" [formGroup]="toppings">
+        <!-- <section class="example-section" [formGroup]="toppings">
          <p><mat-checkbox color="primary" formControlName="pepperoni">Publicado</mat-checkbox></p>
           <p><mat-checkbox color="primary" formControlName="extracheese">Borrador</mat-checkbox></p>
         
-        </section>
+        </section> -->
       </div>
      
       <div class="p-2"></div>
       <div  class="h6">
-        <span class="label label-default">Tipo del Anuncio</span></div>
+        <span class="label label-default"></span></div>
  
       <div  class="form-check">
-       <section class="example-section" [formGroup]="toppings">
+       <!-- <section class="example-section" [formGroup]="toppings">
           <p><mat-checkbox   color="primary"  formControlName="pepperoni">Compra</mat-checkbox></p>
            <p><mat-checkbox  color="primary" formControlName="extracheese">Renta</mat-checkbox></p>
            <p><mat-checkbox  color="primary" formControlName="extracheese">Desarrollo</mat-checkbox></p>
            <p><mat-checkbox color="primary" formControlName="extracheese">Remate</mat-checkbox></p>
-         </section>
+         </section> -->
       </div>
     
       <div class="p-2"></div>
-      <div class="h6"><span class="label label-default">Tipo de Propiedad</span></div>
+      <div class="h6"><span class="label label-default"></span></div>
       <div class="form-check">
-        <mat-form-field >
+        <!-- <mat-form-field >
           <mat-label>Tipo de inmueble</mat-label>
 
             <mat-select formControlName="pId_Tipo_Inmueble">
@@ -242,7 +205,7 @@
               }}
             </mat-option>
                </mat-select>
-                 </mat-form-field>
+                 </mat-form-field> -->
         <!-- <mat-form-field>
           <mat-label>Tipo de Propiedad</mat-label>
           <mat-select [(value)]="opcionSeleccionada">

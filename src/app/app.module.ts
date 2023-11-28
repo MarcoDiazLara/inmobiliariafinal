@@ -105,6 +105,7 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
      MatCardModule,
      MatChipsModule,
      WebModule,
+  
      
 
   ],
