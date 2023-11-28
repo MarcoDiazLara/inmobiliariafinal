@@ -74,6 +74,7 @@ login(){
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+        localStorage.setItem("Id_Socio", data.Id_Socio);
         localStorage.setItem("Bandera","1");
         this.httpService.setGlobalVariable(true);
         this.router.navigate(["/index"]);
