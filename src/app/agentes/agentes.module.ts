@@ -37,9 +37,9 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
 import { InventarioagentesComponent } from './inventarioagentes/inventarioagentes.component';
 import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/inmuebledetalles.component';
+import { Citas1Component } from './citas1/citas1.component';
 /end/
-
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -48,10 +48,11 @@ import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/i
     PerfilagentesComponent,
     AgentepasswordComponent,
     NotificacionesagentesComponent,
-    CalendarioComponent,
+  
     FechaHitoAgentesComponent,
     InventarioagentesComponent,
     InmuebledetallesComponent,
+    Citas1Component,
 
     
   ],
@@ -81,6 +82,8 @@ import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/i
     MatTableModule,
     MatMenuModule,
     MatCheckboxModule,
+    MatDialogModule,
+    
 
   ]
 })
