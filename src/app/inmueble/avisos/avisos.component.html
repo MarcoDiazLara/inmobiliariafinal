@@ -19,11 +19,11 @@
       <ul class="content-Precio">
         <section class="example-section" [formGroup]="toppings">
           <mat-radio-group>
-            <p>  <mat-radio-button color="primary" value="1">Borrador</mat-radio-button> </p>
-            <p>  <mat-radio-button color="primary" value="1">Publicación Pendiente</mat-radio-button> </p>
-            <p>  <mat-radio-button color="primary" value="1">Publicado</mat-radio-button> </p>
-            <p>  <mat-radio-button color="primary" value="1">No Publicado</mat-radio-button> </p>
-            <p>  <mat-radio-button color="primary" value="1">Publicación Pausada</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary"  (click)="estadoAnuncion(1)" value="1">Borrador</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary"  (click)="estadoAnuncion(2)"value="2">Publicación Pendiente</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary"  (click)="estadoAnuncion(3)"value="3">Publicado</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary"  (click)="estadoAnuncion(4)"value="4">No Publicado</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary"  (click)="estadoAnuncion(5)"value="5">Publicación Pausada</mat-radio-button> </p>
 
           </mat-radio-group>
           </section>

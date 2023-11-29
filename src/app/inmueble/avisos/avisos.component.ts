@@ -111,8 +111,20 @@ ngOnInit(){
     this.inmuebles1=data;
    })
   }
+estadoAnuncion(Anuncio:number){
+  this.httpService.filtrosmiespacio(localStorage.getItem("Id_Usuario"),Anuncio).subscribe((data:any)=>{
+    this.inmuebles1=data;
+  })
+}
+}
+    
+//   this.httpService.filtroEstadoAnuncio(localStorage.getItem("Id_Usuario"),Anuncio).subscribe((data:any)=>{
+// this.inmuebles1=data;
+//   })
 
-  }
+
+
+
 
 
 
