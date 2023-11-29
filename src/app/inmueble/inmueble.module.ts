@@ -30,6 +30,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { PlanesComponent } from './planes/planes.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 registerLocaleData(localeEs);
@@ -66,6 +67,7 @@ registerLocaleData(localeEs);
     MatDialogModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatRadioModule
 
   
   

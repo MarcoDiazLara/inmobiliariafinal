@@ -18,8 +18,14 @@
     <ul *ngIf="showTipoAnuncio" class="dropdown-Precio">
       <ul class="content-Precio">
         <section class="example-section" [formGroup]="toppings">
-          <p><mat-checkbox color="primary" formControlName="pepperoni">Publicado</mat-checkbox></p>
-           <p><mat-checkbox color="primary" formControlName="extracheese">Borrador</mat-checkbox></p>
+          <mat-radio-group>
+            <p>  <mat-radio-button color="primary" value="1">Borrador</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary" value="1">Publicación Pendiente</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary" value="1">Publicado</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary" value="1">No Publicado</mat-radio-button> </p>
+            <p>  <mat-radio-button color="primary" value="1">Publicación Pausada</mat-radio-button> </p>
+
+          </mat-radio-group>
           </section>
       </ul>
     </ul>
@@ -30,16 +36,21 @@
         <ul class="content-Precio">
           
           <section class="example-section" [formGroup]="toppings">
-            <p><mat-checkbox   color="primary"  formControlName="pepperoni">Compra</mat-checkbox></p>
-             <p><mat-checkbox  color="primary" formControlName="extracheese">Renta</mat-checkbox></p>
-             <p><mat-checkbox  color="primary" formControlName="extracheese">Desarrollo</mat-checkbox></p>
-             <p><mat-checkbox color="primary" formControlName="extracheese">Remate</mat-checkbox></p>
-           </section>
+
+            <mat-radio-group>
+             <p>  <mat-radio-button color="primary" (click)="tipoAnuncios(1)" value="1">Compra</mat-radio-button> </p>
+              <br>
+              <p> <mat-radio-button color="primary" (click)="tipoAnuncios(2)" value="2">Renta</mat-radio-button> </p>
+              <br>
+              <p> <mat-radio-button color="primary"  (click)="tipoAnuncios(3)"value="3">Desarrollo</mat-radio-button> </p>
+              <br>
+              <p>  <mat-radio-button color="primary" (click)="tipoAnuncios(4)" value="4">Remate</mat-radio-button> </p>
+            </mat-radio-group> 
+             </section>
         </ul>
       </ul>
   </div>
-
-  <div class="header-container">
+   <div class="header-container">
   <div class="Precio-container">
     <button (click)="togglePropiedad()" class="buttonnavbar" mat-stroked-button>Tipo de Propiedad<img class="navarrow"></button>
       <ul *ngIf="showPropiedad" class="dropdown-Recamaras">
