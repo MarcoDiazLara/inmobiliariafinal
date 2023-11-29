@@ -495,10 +495,18 @@ filtrosmiespacio(p_Id_Usuario:any,Id_tipo_publicacion:any){
 filtroEstadoAnuncio(p_Id_Usuario:any,p_Id_Estatus:any){
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
   let params ='p_Id_Usuario='+ p_Id_Usuario+ '&p_Id_Estatus='+p_Id_Estatus;
+  return this.httpclient.post(this.url + 'Filtros_Espacio_Tipo_Anuncio.php', params, { headers });
+
 
 
 }
+ FiltroTipodeInmueble(p_Id_Usuario:any,p_Id_Tipo_Inmueble:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params ='p_Id_Usuario='+ p_Id_Usuario+ '&p_Id_Tipo_Inmueble='+p_Id_Tipo_Inmueble;
+  return this.httpclient.post(this.url + 'Filtros_Espacio_Tipo_Inmueble.php', params, { headers });
 
+  
+ }
 
 
 }

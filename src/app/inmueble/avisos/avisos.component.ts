@@ -112,9 +112,20 @@ ngOnInit(){
    })
   }
 estadoAnuncion(Anuncio:number){
-  this.httpService.filtrosmiespacio(localStorage.getItem("Id_Usuario"),Anuncio).subscribe((data:any)=>{
+  this.httpService.filtroEstadoAnuncio(localStorage.getItem("Id_Usuario"),Anuncio).subscribe((data:any)=>{
     this.inmuebles1=data;
   })
+}
+
+TipoInmueble(tiposInmuebles:number){
+  this.httpService.FiltroTipodeInmueble(localStorage.getItem("Id_Usuario"),tiposInmuebles).subscribe((data:any)=>{
+    this.inmuebles1=data;
+    console.log("hola");
+  })
+
+
+  
+
 }
 }
     

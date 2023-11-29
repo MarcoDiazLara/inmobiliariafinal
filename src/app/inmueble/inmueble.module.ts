@@ -6,7 +6,7 @@ import { VentanacitaComponent } from './ventanacita/ventanacita.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
 import { AvisosComponent } from './avisos/avisos.component';
-import { InteresadosComponent } from './interesados/interesados.component';
+
 import { ContratosComponent } from './contratos/contratos.component';
 import { LikeComponent } from './like/like.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -38,7 +38,7 @@ registerLocaleData(localeEs);
   declarations: [
     MenuinmuebleComponent,
     AvisosComponent,
- InteresadosComponent,
+
  ContratosComponent,
  LikeComponent,
  LikegraficaComponent,

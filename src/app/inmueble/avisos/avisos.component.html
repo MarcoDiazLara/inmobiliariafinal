@@ -50,17 +50,45 @@
         </ul>
       </ul>
   </div>
-   <div class="header-container">
+  
+
+
+
   <div class="Precio-container">
+    <button (click)="togglePropiedad()" class="buttonnavbar" mat-stroked-button>Tipo de Inmueble<img class="navarrow"></button>
+      <ul *ngIf="showPropiedad" class="dropdown-Recamaras">
+        <ul class="content-Precio">
+          
+          <section class="example-section" [formGroup]="toppings">
+
+            <mat-radio-group>
+             <p>  <mat-radio-button color="primary" (click)="TipoInmueble(1)" value="1">Casa</mat-radio-button> </p>
+              <br>
+              <p> <mat-radio-button color="primary" (click)="TipoInmueble(2)" value="2">Departamento</mat-radio-button> </p>
+              <br>
+              <p> <mat-radio-button color="primary"  (click)="TipoInmueble(3)"value="3"> casa en condominio</mat-radio-button> </p>
+              <br>
+              <p>  <mat-radio-button color="primary" (click)="TipoInmueble(4)" value="4">Oficina</mat-radio-button> </p>
+              <p>  <mat-radio-button color="primary" (click)="TipoInmueble(5)" value="4">local comercial</mat-radio-button> </p>
+              <p>  <mat-radio-button color="primary" (click)="TipoInmueble(6)" value="4">bodega comercial</mat-radio-button> </p>
+              <p>  <mat-radio-button color="primary" (click)="TipoInmueble(7)" value="4">terreno / lote</mat-radio-button> </p>
+             <p>  <mat-radio-button color="primary" (click)="TipoInmueble(8)" value="4">nave industrial</mat-radio-button> </p>
+            
+            </mat-radio-group> 
+             </section>
+        </ul>
+      </ul>
+  </div>
+
+  <!-- <div class="Precio-container">
     <button (click)="togglePropiedad()" class="buttonnavbar" mat-stroked-button>Tipo de Propiedad<img class="navarrow"></button>
       <ul *ngIf="showPropiedad" class="dropdown-Recamaras">
         <ul class="content-Precio">
           <mat-form-field >
             <mat-label>Tipo de inmueble</mat-label>
       
-              <mat-select formControlName="pId_Tipo_Inmueble">
-                <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
-                }}
+              <mat-select formControlName="pId_Tipo_Inmueble" (ngModelChange)="TipoInmueble($event)">
+                <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble }}
               </mat-option>
                  </mat-select>
                    </mat-form-field>
@@ -69,11 +97,11 @@
          
         </ul>
       </ul>
-  </div>
+  </div> -->
 
 
   </div>
-  </div> 
+  
 
 
 
