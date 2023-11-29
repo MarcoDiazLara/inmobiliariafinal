@@ -11,7 +11,7 @@ import { Publicaciones } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { P } from '@fullcalendar/core/internal-common';
-
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-avisos',
@@ -99,14 +99,17 @@ ngOnInit(){
   }
   toggleEstadoAnuncio(){
     this.showEstadoAnuncio = !this.showEstadoAnuncio;
-    // Cierra los otros elementos
- 
- 
+
   }
   togglePropiedad(){
     this.showPropiedad = !this.showPropiedad;
     // Cierra los otros elementos
   
+  }
+  tipoAnuncios(tipoA:number){
+   this.httpService.filtrosmiespacio(localStorage.getItem("Id_Usuario"),tipoA).subscribe((data:any)=>{
+    this.inmuebles1=data;
+   })
   }
 
   }
