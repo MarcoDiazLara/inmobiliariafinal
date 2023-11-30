@@ -39,6 +39,7 @@ export class CambioasesorclienteComponent implements OnInit {
 
     this.formGeneral = this.formBuilder.group({
       Inmueble: ['', [Validators.required]],
+      Fecha: ['', [Validators.required]],
       motivosolicitud: ['', [Validators.required]]
   });
 }
@@ -49,10 +50,19 @@ Guardardatos() {
 
   if (this.formGeneral) {
     let Inmueble = this.formGeneral.value.Inmueble;
+    let Fecha = this.formGeneral.value.Fecha;
     let motivocliente = this.formGeneral.value.motivocliente;
-   
+    
 
-    alert( 'motivocliente'+'Inmueble'+ motivocliente + Inmueble);
+  
+    let mensaje = `${motivocliente} Inmueble: ${Inmueble}, Fecha: ${Fecha}`;
+    
+    
+    this.httpService.Notis(mensaje, localStorage.getItem("Publicador")).subscribe((resp: any) =>{
+          
+    })
+
+    alert( 'motivocliente'+'Inmueble'+'Fecha'+ motivocliente + Inmueble + Fecha);
 
   }
 }

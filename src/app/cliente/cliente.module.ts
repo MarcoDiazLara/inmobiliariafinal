@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 
 import {MatSelectModule} from '@angular/material/select';
+
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -54,6 +55,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     ClienteComponent,
@@ -86,7 +90,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     WebModule,
     ClienteRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
     
   ],
