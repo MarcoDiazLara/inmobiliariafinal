@@ -8,6 +8,7 @@ import {NgIf} from '@angular/common';
 import { HttpService } from 'src/app/services/http/http.service';
 import { ActulizarInmueble } from 'src/app/services/Interface/Interfaces';
 import { EstatusInmueble } from 'src/app/services/Interface/Interfaces';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -136,7 +137,13 @@ export class InformacioninmuebleComponent implements OnInit {
         Banos, cocina,pisos,antiguedad,acabados,alberca,jardin,gym,garden,estacionamiento,usuario,inmueble,prec_min,prec_max,prec_final,
         estatus).subscribe((data:any)=>{
           if(data==1){
-            alert("Se actualizo correctamente");
+            Swal.fire(
+              'Exitosamente!',
+              'Se ha actualizado la informacion',
+              'success'
+              
+            )
+            // alert("Se actualizo correctamente");
           } else{
             alert(":(");
           }

@@ -306,7 +306,14 @@ obtenerLocalizacion(){
       p_roof,p_estacionamiento,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
       p_prec_final1,p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) =>{
       if(data == 1){
-        alert("Se subio el inmueble");
+
+        Swal.fire(
+          'Exitosamente!',
+          'Se ha registrado tu inmueble exitosamente',
+          'success'
+          
+        )
+        // alert("Se subio el inmueble");
         this.router.navigate(["/inmueble/avisos"]);
         
       } else{
