@@ -66,7 +66,8 @@ export interface reasignacionA{
     Nombre_Inmueble: "",
     Id_Tipo_Usuario:"",
     Nombre_Razon_Social:"",
-    Id_Socio:""
+    Id_Socio:"",
+    IdUsu:""
 }
 export interface AsigarReAsignar{
     
@@ -80,6 +81,7 @@ export interface asignacionA{
     Nombres: "",
     Apellido_Paterno: "",
     Apellido_Materno: "",
+    
 }
 
 

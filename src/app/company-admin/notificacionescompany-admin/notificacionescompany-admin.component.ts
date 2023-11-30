@@ -14,7 +14,7 @@ export class NotificacionescompanyAdminComponent implements OnInit {
   constructor(private httpService : HttpService) { }
 
   ngOnInit(): void {
-    this.httpService.getNotis(localStorage.getItem("IdUsu")).subscribe((data:any)=>{
+    this.httpService.getNotis(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
       
       this.notifications = data;
       console.log(this.notifications);

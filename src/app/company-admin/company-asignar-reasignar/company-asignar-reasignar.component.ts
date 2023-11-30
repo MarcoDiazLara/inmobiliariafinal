@@ -66,8 +66,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let IdUsu = 'someValue';
-    localStorage.setItem("IdUsu", IdUsu);
+
 
     let Bandera = localStorage.getItem("Bandera")
 
@@ -119,6 +118,8 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
     
     this.httpService.mostrarReasignacion(Id_Socio ).subscribe((data:any)=>{
+      let IdUsu = data.IdUsu;
+      localStorage.setItem("IdUsu", IdUsu);
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
