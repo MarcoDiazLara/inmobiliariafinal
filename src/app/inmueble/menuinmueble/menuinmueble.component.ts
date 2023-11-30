@@ -57,9 +57,7 @@ export class MenuinmuebleComponent  {
     this.router.navigate(['inmueble/avisos']);
     
   }
-  Interesados(){
-    this.router.navigate(['inmueble/interesados']);
-  }
+
 
   Contratos()
 {
