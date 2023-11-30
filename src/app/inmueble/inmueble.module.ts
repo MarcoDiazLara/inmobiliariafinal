@@ -32,34 +32,16 @@ import localeEs from '@angular/common/locales/es';
 import { PlanesComponent } from './planes/planes.component';
 import {MatRadioModule} from '@angular/material/radio';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
 registerLocaleData(localeEs);
 @NgModule({
   declarations: [
     MenuinmuebleComponent,
     AvisosComponent,
-
- ContratosComponent,
- LikeComponent,
- LikegraficaComponent,
- InformacioninmuebleComponent,
- PlanesComponent
+    ContratosComponent,
+    LikeComponent,
+    LikegraficaComponent,
+    InformacioninmuebleComponent,
+    PlanesComponent
   ],
   imports: [
   
@@ -77,24 +59,14 @@ registerLocaleData(localeEs);
     MatFormFieldModule, 
     MatInputModule,
     MatChipsModule,
-
     ReactiveFormsModule,
     MatStepperModule,
     MatDialogModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
- 
-
-  
-  
-    
- 
-  
   ],
-
-
-  providers: [
+   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado
   ],
   exports: [
