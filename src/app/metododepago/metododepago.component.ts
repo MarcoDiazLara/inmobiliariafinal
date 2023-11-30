@@ -3,6 +3,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpService } from '../services/http/http.service';
 
 @Component({
   selector: 'app-metododepago',
@@ -26,7 +27,7 @@ export class MetododepagoComponent implements OnInit {
   });
 
 
-  constructor(private _formBuilder: FormBuilder,private dialog: MatDialog) { 
+  constructor(private _formBuilder: FormBuilder,private dialog: MatDialog,private httpService: HttpService) { 
     this.fechaActual = new Date();
   }
      
@@ -53,6 +54,28 @@ export class MetododepagoComponent implements OnInit {
 
       }
      }
+  }
+
+  Comprar(){
+    let date = new Date();
+    let dia = date.getDate();
+    let dia1 = date.getDate().toString();;
+    if(dia < 10 ){
+      dia1 = "0" + dia1;
+    }
+    let mes = (date.getMonth()+1);
+    let mes1 = (date.getMonth()+1).toString();
+    if(mes < 10){
+      mes1 = "0"+mes1;
+    }
+    let anio = date.getFullYear().toString();
+    let nom_aux =  anio + "-"+ mes1 +"-"+ dia1;
+    this.httpService.compraPlanes(localStorage.getItem("Id_Usuario"),localStorage.getItem("tipodeplan"),"Completado", "Activo", nom_aux).subscribe((data : any)=>{
+      if(data == 1){
+      this.mostrarAlerta();
+      }
+    })
+        
   }
   mostrarAlerta() {
     Swal.fire(
