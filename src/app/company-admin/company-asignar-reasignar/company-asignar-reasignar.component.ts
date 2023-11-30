@@ -66,6 +66,9 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   ngOnInit(): void {
 
+    let IdUsu = 'someValue';
+    localStorage.setItem("IdUsu", IdUsu);
+
     let Bandera = localStorage.getItem("Bandera")
 
     if(Bandera =="1"){

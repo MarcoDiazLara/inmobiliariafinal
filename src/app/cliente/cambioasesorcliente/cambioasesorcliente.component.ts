@@ -4,6 +4,10 @@ import {FormControl} from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
 import { SolicitudCambio } from 'src/app/services/Interface/Interfaces';
 
+// Alerta
+
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-cambioasesorcliente',
@@ -53,16 +57,22 @@ Guardardatos() {
     let Fecha = this.formGeneral.value.Fecha;
     let motivocliente = this.formGeneral.value.motivocliente;
     
-
+    let mensaje = motivocliente + "Inmueble: " + Inmueble + "Fecha: " + Fecha;
   
-    let mensaje = `${motivocliente} Inmueble: ${Inmueble}, Fecha: ${Fecha}`;
     
-    
-    this.httpService.Notis(mensaje, localStorage.getItem("Publicador")).subscribe((resp: any) =>{
+    this.httpService.Notis(mensaje, localStorage.getItem("IdUsu")).subscribe((resp: any) =>{
           
     })
 
-    alert( 'motivocliente'+'Inmueble'+'Fecha'+ motivocliente + Inmueble + Fecha);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Tu Solicitud ha sido enviada",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
+  
 
   }
 }
