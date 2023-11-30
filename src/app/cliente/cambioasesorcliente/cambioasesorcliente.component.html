@@ -1,43 +1,43 @@
-<div class="container-fluit">
+<div class="container-fluid">
     <form class="insertar-dialog-content" [formGroup]="formGeneral">
-        <div class=" row contenedorgeneral">
-            <div class="col-md-12">
-                <div class="contenedortext">
-                    <h1> SOLICITUD PARA CAMBIO DE ASESOR </h1>
-                </div>
-                <div class="contenedorimagen">
-                    <img src="assets/img/cambio_asesor.png">
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col-md-6 ">
-                    <form class="insertar-dialog-content" [formGroup]="formGeneral">
-                        <mat-form-field appearance="fill" style="width: 95%;">
-                            <mat-label ><b> Selecciona el Inmuble Publicado </b> </mat-label>
-                            <mat-select formControlName="Inmueble" required>
-                                    <mat-option *ngFor="let solict of solicitud" [value]="solict.Id_Usuario">{{solict.Nombre_Publicacion}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="fill" style="width: 95%;">
-                            <textarea matInput rows="4" type="text" placeholder=""
-                                formControlName="motivosolicitud"></textarea>
-                            <mat-label><b> Motivo </b></mat-label>
-                            <mat-error *ngIf="this.formGeneral.get('motivosolicitud')?.hasError('required')">
-                                <strong>Obligatorio</strong>
-                            </mat-error>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-6 alineabutton">
-                    <button mat-raised-button (click)="Guardardatos()">Enviar Solicitud</button>
-                </div>
-            </div>
+      <div class="row contenedorgeneral">
+        <div class="col-md-12">
+          <div class="contenedortext">
+            <h1>SOLICITUD PARA CAMBIO DE ASESOR</h1>
+          </div>
+          <div class="contenedorimagen">
+            <img src="assets/img/cambio_asesor.png">
+          </div>
         </div>
-
-        
+  
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>Selecciona el Inmueble Publicado</b></mat-label>
+            <mat-select formControlName="Inmueble" required>
+              <mat-option *ngFor="let solict of solicitud" [value]="solict.Id_Usuario">{{solict.Nombre_Publicacion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>Fecha de Envio de Solicitud </b></mat-label>
+            <input formControlName="Fecha" matInput [matDatepicker]="picker">
+            <mat-hint><b>MM/DD/YYYY</b></mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <textarea matInput rows="4" type="text" placeholder="" formControlName="motivosolicitud"></textarea>
+            <mat-label><b>Motivo</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('motivosolicitud')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="col-md-6" style="text-align: center; margin-top: 3%;">
+          <button mat-raised-button (click)="Guardardatos()">Enviar Solicitud</button>
+        </div>
+      </div>
     </form>
-</div>
+  </div>

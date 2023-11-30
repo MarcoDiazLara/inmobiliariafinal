@@ -104,12 +104,13 @@ numberFormControl = new FormControl('', [
   latitud: number = 0.0000;
   longitud: number = 0.0000;
   p_ubi_maps: string = "0.00000,0.00000";
+  plan !: any;
 
 
   ngOnInit(){
     
     this.obtenerDatosInmuebles();
-    
+    this.plan = localStorage.getItem("Id_Tipo_Plan");
     
 
 
