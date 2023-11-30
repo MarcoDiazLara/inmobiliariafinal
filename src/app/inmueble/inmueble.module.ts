@@ -33,6 +33,22 @@ import { PlanesComponent } from './planes/planes.component';
 import {MatRadioModule} from '@angular/material/radio';
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 registerLocaleData(localeEs);
 @NgModule({
   declarations: [
@@ -46,7 +62,7 @@ registerLocaleData(localeEs);
  PlanesComponent
   ],
   imports: [
-    
+  
     CommonModule,
     InmuebleRoutingModule,
     WebModule,
@@ -67,7 +83,8 @@ registerLocaleData(localeEs);
     MatDialogModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+ 
 
   
   

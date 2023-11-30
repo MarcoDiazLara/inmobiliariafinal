@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LikegraficaComponent } from '../likegrafica/likegrafica.component';
-
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
