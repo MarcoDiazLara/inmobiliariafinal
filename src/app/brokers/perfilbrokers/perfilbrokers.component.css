@@ -1,42 +1,57 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+  h1{
+    text-align: center;
   }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  td {
-    padding-right: 8px;
-  }
-
-
-
  
+ 
+ h2{
 
-  /* Cambia el color del encabezado */
-  h2 {
-    color: #333; /* Cambia el color a tu preferencia */
-    font-size: 40px; 
-  }
-
-  /* Cambia el color de fondo de los campos de entrada */
-
-
-  /* Cambia el color del texto de las etiquetas de los campos de entrada */
-  mat-label {
-    color: #264D5E; /* Cambia el color a tu preferencia */
-
-  }
+      text-align: center;
   
+   
+ }
+.typewriter {
+  overflow: hidden; 
 
-  /* Cambia el color del texto de los botones */
-  .btn {
-    background-color: #264D5E;
-    color: white;
-  }
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: 0.15em; 
+  animation: typing 9s steps(40, end), blink-caret 0.75s infinite;
+  /* animation: typing 2s steps(20, end), blink-caret 0.75s infinite; */
+}
 
+/* Animation for typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
-  
+/* Animation for blinking cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #38B6E3 }
+}
+
+.container {
+  text-align: center;
+}
+
+.content {
+  display: inline-block;
+  margin-top: 20px; /* Ajusta según sea necesario */
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px; /* Ajusta según sea necesario */
+}
+
+.imagen-contenedor {
+  text-align: center;
+}
+
+.imagen-contenedor img {
+  width: 500px;
+  height: 300px;
+  /* Agrega otros estilos según sea necesario */
+}

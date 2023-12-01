@@ -30,6 +30,7 @@ import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/br
 import { BroAsignarAsesorComponent } from './ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { Citas1Component } from './citas1/citas1.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 
 
@@ -45,6 +46,7 @@ import { Citas1Component } from './citas1/citas1.component';
     BroAsignarAsesorComponent,
     CalendarioComponent,
     Citas1Component,
+    BienvenidaComponent,
 
     
   

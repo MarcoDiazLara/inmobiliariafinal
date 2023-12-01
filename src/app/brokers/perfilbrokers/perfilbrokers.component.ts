@@ -17,6 +17,20 @@ import { HttpService } from 'src/app/services/http/http.service';
   styleUrls: ['./perfilbrokers.component.css']
 })
 export class PerfilbrokersComponent implements OnInit {
+  saludo: string = '';
+
+  ngOnInit() {
+    const fecha = new Date();
+    const hora = fecha.getHours();
+
+    if (hora >= 0 && hora < 12) {
+      this.saludo = '¡Buenos días!';
+    } else if (hora >= 12 && hora < 18) {
+      this.saludo = '¡Buenas tardes!';
+    } else {
+      this.saludo = '¡Buenas noches!';
+    }
+  }
   
   datos!: infoUsuario;
   imagen !: string;
@@ -39,21 +53,21 @@ export class PerfilbrokersComponent implements OnInit {
   }
  
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
 
-    this.obtenerInfo();
-    this.formPerfil = this.formBuilder.group({
-      nombre:['',[Validators.required]],
-      apellidopaterno:['',[Validators.required]],
-      apellidomaterno:['',[Validators.required]],
-      curp:['',[Validators.required]],
-      rfc:['',[Validators.required]],
-      contactoprincipal:['',[Validators.required]],
-      contactoemergencia:['',[Validators.required]],
-      email:['',[Validators.required]],
-      imageInput:['',[Validators.required]],
-    });
-  }
+  //   this.obtenerInfo();
+  //   this.formPerfil = this.formBuilder.group({
+  //     nombre:['',[Validators.required]],
+  //     apellidopaterno:['',[Validators.required]],
+  //     apellidomaterno:['',[Validators.required]],
+  //     curp:['',[Validators.required]],
+  //     rfc:['',[Validators.required]],
+  //     contactoprincipal:['',[Validators.required]],
+  //     contactoemergencia:['',[Validators.required]],
+  //     email:['',[Validators.required]],
+  //     imageInput:['',[Validators.required]],
+  //   });
+  // }
 
   obtenerInfo(){
     this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
