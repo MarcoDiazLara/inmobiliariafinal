@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http/http.service';
+import { compras } from 'src/app/services/Interface/Interfaces';
 
 @Component({
   selector: 'app-contratos',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContratosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+      this.httpService.obtenerCompras(localStorage.getItem("Id_Usuario")).subscribe((data:any) =>{
+        this.datosVentas = data;
+        console.log(data);
+      })
   }
-
+  datosVentas: compras[] = [];
   mostrarTabla = false;
 
   toggleTabla() {

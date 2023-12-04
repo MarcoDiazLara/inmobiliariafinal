@@ -65,6 +65,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
  
 
   ngOnInit(): void {
+    
 
 
 
@@ -118,7 +119,8 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
     
     this.httpService.mostrarReasignacion(Id_Socio ).subscribe((data:any)=>{
-      let IdUsu = data.IdUsu;
+      let IdUsu = data.Id_Usuario;
+      console.log(data);
       localStorage.setItem("IdUsu", IdUsu);
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
@@ -134,6 +136,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
 
   }
+  
 
   openModalActualizar(element:any){
     alert("open modal"+element)

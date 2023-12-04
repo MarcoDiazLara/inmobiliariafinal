@@ -33,9 +33,9 @@ export class CambioasesorclienteComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let Id_usuario = localStorage.getItem("Id_Usuario");
-    console.log(Id_usuario)
-    this.httpService.MostrarInmueblesSolicitud(Id_usuario).subscribe((data:any)=>{
+    let Id_Socio = localStorage.getItem("Id_Socio");
+    console.log(Id_Socio)
+    this.httpService.MostrarInmueblesSolicitud(Id_Socio).subscribe((data:any)=>{
       this.solicitud=data;
       console.log(this.solicitud);
       });
