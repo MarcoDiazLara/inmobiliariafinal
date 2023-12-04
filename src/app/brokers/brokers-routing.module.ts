@@ -6,6 +6,8 @@ import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component'
 import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
 import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { InventarioagentesComponent } from '../agentes/inventarioagentes/inventarioagentes.component';
+import { InvesntarioComponent } from './invesntario/invesntario.component';
 
 
 const routes: Routes = [
@@ -38,7 +40,12 @@ const routes: Routes = [
            path:'calendario',
            component:CalendarioComponent,
       },
-      
+    {
+
+           path:'invesntario',
+           component:InvesntarioComponent,
+
+    },
      
     ]
   },
