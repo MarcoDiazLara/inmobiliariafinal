@@ -400,9 +400,9 @@ mostrarInmobiliarias(){
 }
 
 
-MostrarInmueblesSolicitud(Id_usuario: any ) {
+MostrarInmueblesSolicitud(Id_Socio: any ) {
   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  let params = 'p_Id_usuario=' + Id_usuario;
+  let params = 'p_Id_Socio=' + Id_Socio;
   return this.httpclient.post(this.url + 'consulta_inmueble_solicitud.php',params, { headers });
 }
 
