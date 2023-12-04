@@ -295,3 +295,12 @@ export interface mostrarFechasHito{
     Estatus: ""
 }
 
+export interface compras{
+    Id_Compra: "",
+    Fecha_Inicio: "",
+    Estatus_Suscripcion: "",
+    Estatus_Pago: "",
+    Plan: "",
+    Precio_Plan: ""
+}
+

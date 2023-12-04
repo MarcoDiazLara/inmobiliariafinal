@@ -508,5 +508,10 @@ filtroEstadoAnuncio(p_Id_Usuario:any,p_Id_Estatus:any){
   
  }
 
+ obtenerCompras(p_Id_Usuario:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params ='p_id_usuario='+ p_Id_Usuario;
+  return this.httpclient.post(this.url + 'consultarCompras.php', params, { headers });
+ }
 
 }
