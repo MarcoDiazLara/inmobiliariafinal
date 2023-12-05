@@ -90,8 +90,7 @@
                                     <td><h3><img class="floor"> {{details.Num_Pisos}} Pisos</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h3><img class="warehouse">Bodega</h3></td>
-                                    <td><h3><img class="tank">Cisterna</h3></td>
+                                    
                                     <td><h3><img class="pool"> {{details.Alberca}} Piscina</h3></td>
                                 </tr>
                                             <!-- Puedes agregar más filas según sea necesario -->
@@ -150,7 +149,7 @@
                                 <label for="comentarios">*Comentarios:</label>
                                 <textarea id="comentarios" name="comentarios" [(ngModel)]="comentarios"> </textarea>
 
-                                <button mat-raised-button  (click)="enviarCorreo()">Enviar por Correo <img class="plane"></button>
+                                <button mat-raised-button class="buttonback"  (click)="enviarCorreo()">Enviar por Correo <img class="plane" ></button>
                             </div>
                             
                             
@@ -159,7 +158,7 @@
 
                             <br>
                             <br>
-                            <button mat-raised-button (click)="openDialog()" >Enviar Cita <img class="plane">
+                            <button mat-raised-button class="buttonback" (click)="openDialog()" >Enviar Cita <img class="plane">
                             </button>
                        
 
@@ -170,10 +169,10 @@
         </div>
     </div>
 
-    <h2 style="text-align: center;">Recorre este inmueble de manera virtual <img class="recorridovr"></h2>  
+    <h2 style="text-align: center; margin-top: 25px;">Recorre este inmueble de manera virtual <img class="recorridovr"></h2>  
 
 
-    <div class="codigo" style="padding: 25px; margin-top: 700px;">
+    <div class="codigo" style="padding: 25px; margin-top: 25px;">
 
         <mat-card >
             <mat-card-content><h3>{{"Amplia tu experiencia usando el siguiente código en nuestra App: " + vista_360}}</h3></mat-card-content>
