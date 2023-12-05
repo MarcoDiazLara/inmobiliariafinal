@@ -120,14 +120,13 @@ ArrayAsignacion:any[]=[];
 
   obtenerUsuarios(){
     let Id_Socio = localStorage.getItem("Id_Socio");
-    alert("Id_Socio"+ Id_Socio)
+  
 
     
     this.httpService.mostrarReasignacion(Id_Socio).subscribe((data:any)=>{
       this.ArrayAsignacion = data ;
       this.ArrayAsignacion.forEach(element => {
         let IdUsuSocio = element.Id_Usuario;
-        alert ("IdUsuSocio"+ IdUsuSocio )
        localStorage.setItem("IdUsuSocio", IdUsuSocio);
       } );
   
