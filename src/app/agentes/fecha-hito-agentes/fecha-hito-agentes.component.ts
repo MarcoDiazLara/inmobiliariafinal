@@ -34,6 +34,14 @@ export class FechaHitoAgentesComponent implements OnInit {
     {value: 'Pendiente', viewValue: 'Pendiente'},
   ];
 
+  ver(){
+    this.selected = new Date();
+
+
+  }
+
+
+
   Delete(){
     Swal.fire({
       title: "¿Estas seguro?",
@@ -169,9 +177,10 @@ export class FechaHitoAgentesComponent implements OnInit {
   constructor(private httpservice:HttpService) {
 
 
-
-
+   
   }
+
+
 
   ngOnInit(): void {}
 }
