@@ -238,8 +238,8 @@ export interface SolicitudCambio{
     Id_Publicacion:"",
     Nombre_Publicacion:"",
     Nombre_Usuario:"",
-    Id_Tipo_Usuario:""
-}
+    Id_Socio:""
+};
 
 
 export interface Publicaciones{

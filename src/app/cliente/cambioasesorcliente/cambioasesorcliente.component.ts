@@ -28,6 +28,7 @@ export class CambioasesorclienteComponent implements OnInit {
     private formBuilder: FormBuilder,
     // private dialog: MatDialog,
     private httpService: HttpService,
+
   ) { }
   
 
@@ -60,7 +61,7 @@ Guardardatos() {
     let mensaje = motivocliente + "Inmueble: " + Inmueble + "Fecha: " + Fecha;
   
     
-    this.httpService.Notis(mensaje, localStorage.getItem("IdUsu")).subscribe((resp: any) =>{
+    this.httpService.Notis(mensaje, localStorage.getItem("IdUsuSocio")).subscribe((resp: any) =>{
           
     })
 

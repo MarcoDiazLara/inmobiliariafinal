@@ -4,7 +4,6 @@ import { MasterAdminComponent } from './master-admin.component';
 import { EliminarasesoresComponent } from './eliminarasesores/eliminarasesores.component';
 import { AltausuarioComponent } from './altausuario/altausuario.component';
 import { AltasocioComponent } from './altasocio/altasocio.component';
-import { MasterAsignarReasignarComponent } from './master-asignar-reasignar/master-asignar-reasignar.component';
 import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-admin.component';
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 
@@ -30,10 +29,7 @@ children:[
   path: 'altasocio',
   component: AltasocioComponent,
 },
-{
-  path: 'Asignar-reasignar',
-  component: MasterAsignarReasignarComponent,
-},
+
 ]
 }
 ];

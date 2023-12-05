@@ -209,7 +209,7 @@ export class HttpService {
 
   mostrarReasignacion( Id_Socio: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_Id_Socio="+Id_Socio ;
+    let params = "p_Id_Socio="+Id_Socio ; 
     return this.httpclient.post(this.url + 'consultarReasignacionInmuebles.php',params, { headers });
   }
  
@@ -234,7 +234,7 @@ export class HttpService {
 
   AsesoresAginados_NoAsigandos( IdSocio: any ) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_IdSocio=' + IdSocio;
+    let params = 'p_IdSocio=' + IdSocio ;
     return this.httpclient.post(this.url + 'consultarAsesor_Asignado_NoAsignado.php',params, { headers });
   }
 
