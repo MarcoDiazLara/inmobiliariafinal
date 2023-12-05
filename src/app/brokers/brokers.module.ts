@@ -31,6 +31,8 @@ import { BroAsignarAsesorComponent } from './ventanaemerge/bro-asignar-asesor/br
 import { CalendarioComponent } from './calendario/calendario.component';
 import { Citas1Component } from './citas1/citas1.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { InvesntarioComponent } from './invesntario/invesntario.component';
+import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 
 
 
@@ -47,6 +49,8 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
     CalendarioComponent,
     Citas1Component,
     BienvenidaComponent,
+    InvesntarioComponent,
+    VentanadetallesInmuebleComponent,
 
     
   
@@ -72,6 +76,7 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,
+  
     
     
 
