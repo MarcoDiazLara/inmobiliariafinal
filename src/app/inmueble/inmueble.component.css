@@ -940,6 +940,11 @@ i{
 }
 
 
+.bordered-row {
+  border: 1px solid#38B6E3; /* Puedes personalizar el color del borde según tus preferencias */
+  padding: 10px; /* Añade un espacio interno para hacer el borde más visible */
+}
+
 
 
 
