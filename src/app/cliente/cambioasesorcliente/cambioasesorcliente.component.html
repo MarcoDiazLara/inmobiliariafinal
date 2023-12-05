@@ -14,8 +14,11 @@
           <mat-form-field appearance="fill" style="width: 95%;">
             <mat-label><b>Selecciona el Inmueble Publicado</b></mat-label>
             <mat-select formControlName="Inmueble" required>
-              <mat-option *ngFor="let solict of solicitud" [value]="solict.Id_Usuario">{{solict.Nombre_Publicacion}}</mat-option>
+              <mat-option *ngFor="let solict of solicitud" [value]="solict.Id_Socio">{{solict.Nombre_Publicacion}}</mat-option>
             </mat-select>
+            <mat-error *ngIf="this.formGeneral.get('Inmueble')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
           </mat-form-field>
   
           <mat-form-field appearance="fill" style="width: 95%;">
@@ -24,6 +27,9 @@
             <mat-hint><b>MM/DD/YYYY</b></mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="this.formGeneral.get('Fecha')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
           </mat-form-field>
   
           <mat-form-field appearance="fill" style="width: 95%;">

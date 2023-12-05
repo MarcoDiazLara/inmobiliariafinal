@@ -23,7 +23,10 @@ import { CompAsignarAsesorComponent } from '../ventanaemergente/comp-asignar-ase
 })
 export class CompanyAsignarReasignarComponent implements OnInit {
 
+ArrayAsignacion:any[]=[];
+
   usuarios$: any;
+   Id_Usu: any;
 
   formGeneral!:FormGroup; 
 
@@ -117,11 +120,30 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   obtenerUsuarios(){
     let Id_Socio = localStorage.getItem("Id_Socio");
+    alert("Id_Socio"+ Id_Socio)
+
     
-    this.httpService.mostrarReasignacion(Id_Socio ).subscribe((data:any)=>{
-      let IdUsu = data.Id_Usuario;
-      console.log(data);
-      localStorage.setItem("IdUsu", IdUsu);
+    this.httpService.mostrarReasignacion(Id_Socio).subscribe((data:any)=>{
+      this.ArrayAsignacion = data ;
+      this.ArrayAsignacion.forEach(element => {
+        let IdUsuSocio = element.Id_Usuario;
+        alert ("IdUsuSocio"+ IdUsuSocio )
+       localStorage.setItem("IdUsuSocio", IdUsuSocio);
+      } );
+  
+
+      // let Id_Usu = data.Id_Usuario;
+      // alert(data.Id_Usuario);
+      // localStorage.setItem("Id_Usuario", Id_Usu);
+      
+  
+      // let Id_UsuarioS = "2000";
+      // localStorage.setItem("Id_Usuario", Id_UsuarioS );
+
+      // let Id_Usu = "Id_Usuario";
+      // localStorage.setItem("Id_Usuario", Id_Usu );
+      // console.log(Id_Usu);
+
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
@@ -133,8 +155,6 @@ export class CompanyAsignarReasignarComponent implements OnInit {
       console.log('Error de conexión');
     }
     )
-
-
   }
   
 
