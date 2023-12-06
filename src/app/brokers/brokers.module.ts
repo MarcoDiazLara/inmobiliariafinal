@@ -15,6 +15,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 
+
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -41,7 +42,6 @@ import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ven
     PerfilbrokersComponent,
     BrokersComponent,
     NotificacionbrokerComponent,
-
     BrokerpasswordComponent,
     AltaAsesorComponent,
     BrokersAsignarReasignarComponent,
@@ -76,9 +76,6 @@ import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ven
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,
-  
-    
-    
 
 
   ]

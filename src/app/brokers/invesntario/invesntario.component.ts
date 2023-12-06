@@ -7,13 +7,15 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { VentanadetallesInmuebleComponent } from '../ventanadetalles-inmueble/ventanadetalles-inmueble.component';
+
 import { inventarioAsesores } from 'src/app/services/Interface/Interfaces';
+
 @Component({
   selector: 'app-invesntario',
   templateUrl: './invesntario.component.html',
   styleUrls: ['./invesntario.component.scss']
 })
+
 export class InvesntarioComponent implements OnInit {
   inventarioasesor$: any;
 
@@ -40,8 +42,7 @@ export class InvesntarioComponent implements OnInit {
 
 
   // poner el nombre de una variable
-   datosinventario: inventarioAsesores[]=[];
-
+  datosinventario: inventarioAsesores[]=[];
   
 
   constructor(
@@ -53,7 +54,6 @@ export class InvesntarioComponent implements OnInit {
     private router:Router
     // Http para jalar el servicio 
   ) { }
-
 
   
   ngOnInit(): void {
@@ -84,7 +84,7 @@ export class InvesntarioComponent implements OnInit {
 
   obtenerInventario(){
      let idUsuario = localStorage.getItem("Id_Usuario");
-//  let idUsuario = 19;
+
  
  this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
@@ -124,11 +124,11 @@ export class InvesntarioComponent implements OnInit {
     
 
 
-    const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
-      width: '80%',
-      height: 'auto',  
-      disableClose: true
-    });
+    // const dialogRef = this.dialog.open(InmuebledetallesComponent, {
+    //   width: '80%',
+    //   height: 'auto',  
+    //   disableClose: true
+    // });
   }
 
   openDialog(): void {
@@ -143,13 +143,5 @@ export class InvesntarioComponent implements OnInit {
     })
 
   }
- 
-    
 
-
- 
-
-  
-
-  
-}
+  }
