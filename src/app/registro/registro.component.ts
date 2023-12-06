@@ -126,4 +126,17 @@ export class RegistroComponent implements OnInit {
   isFieldFilled(control: AbstractControl): boolean {
     return control && control.touched && control.value !== '';
   }
+  validarNumeros(event: any) {
+    const input = event.target.value;
+    if (/[^0-9]/.test(input)) {
+      // Si hay algún carácter que no sea un número, limpiar el valor
+      this.formRegistro.get('p_cel')?.setValue(input.replace(/[^0-9]/g, ''));
+    }
+  }
+  validarNumeroTelefono(event:any){
+    const input = event.target.value;
+    if (/[^0-9]/.test(input)) {
+      this.formRegistro.get('p_tel_fijo')?.setValue(input.replace(/[^0-9]/g, ''));
+    }
+  }
 }

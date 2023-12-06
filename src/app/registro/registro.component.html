@@ -70,7 +70,7 @@
                             <input  matInput formControlName="p_tel_fijo"   type="tel" id="telefono_fijo" name="telefono_fijo" class="form-control" aria-describedby="telefonoHelp" placeholder="Telefono" required>
                          </div> -->
                          <div class="form-outline mb-4">
-                          <input matInput formControlName="p_tel_fijo" type="tel" id="telefono" class="form-control" placeholder="Número de teléfono" maxlength="10" required>
+                          <input matInput formControlName="p_tel_fijo" type="tel" id="telefono" class="form-control" placeholder="Número de teléfono" maxlength="10" required required (input)="validarNumeroTelefono($event)">
                           <div *ngIf="formRegistro.get('p_tel_fijo')?.hasError('required')" style="color: red; font-weight: bold;">
                             El número de teléfono es requerido.
                           </div>
@@ -86,7 +86,7 @@
                           </div> -->
 
                           <div class="form-outline mb-4">
-                            <input matInput formControlName="p_cel" type="tel" id="telefono" class="form-control" placeholder="Celular" maxlength="10" required>
+                            <input matInput formControlName="p_cel" type="tel" id="telefono" class="form-control" placeholder="Celular" maxlength="10" required (input)="validarNumeros($event)">
                             <div *ngIf="formRegistro.get('p_cel')?.hasError('required')" style="color: red; font-weight: bold;">
                               El número de teléfono es requerido.
                             </div>
