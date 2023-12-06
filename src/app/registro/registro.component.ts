@@ -5,6 +5,7 @@ import { HttpService } from '../services/http/http.service';
 import { AbstractControl } from '@angular/forms';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -18,10 +19,13 @@ export class RegistroComponent implements OnInit {
   constructor(private router: Router,
     
     private httpService: HttpService,
-    private formBuilder: FormBuilder){}
+    private formBuilder: FormBuilder){
+     
+    }
+
   ngOnInit(){
     this.formRegistro = this.formBuilder.group({
-      p_nombres: ['',[Validators.required]],
+      p_nombres: ['', Validators.required],
       p_a_paterno: ['',[Validators.required]],
       p_a_materno: ['',[Validators.required]],
       p_nom_usuario: ['',[Validators.required]],
@@ -116,5 +120,10 @@ export class RegistroComponent implements OnInit {
 
   get f() {
     return this.formRegistro.controls;
+  }
+
+
+  isFieldFilled(control: AbstractControl): boolean {
+    return control && control.touched && control.value !== '';
   }
 }

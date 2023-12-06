@@ -11,3 +11,23 @@
     height: 100%;
     }
     }
+
+    .with-icon {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      
+      .with-icon input {
+        flex: 1;
+      }
+      
+      .with-icon .icon {
+        margin-left: 10px; /* Ajusta el valor según sea necesario para establecer el espacio entre el input y el icono */
+        font-size: 18px;
+        color: #38B6E3; /* Cambia 'blue' al color que desees */
+      }
+      
+      
+
+      
