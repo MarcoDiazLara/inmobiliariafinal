@@ -9,9 +9,9 @@
   
   
       <!-- Name Column -->
-      <ng-container matColumnDef="Nombre_Publicacion">
+      <ng-container matColumnDef="Nombre_Inmueble">
         <th mat-header-cell *matHeaderCellDef> Nombre Inmueble </th>
-        <td mat-cell *matCellDef="let element"> {{element.Nombre_Publicacion}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.Nombre_Inmueble}} </td>
       </ng-container>
   
       <ng-container matColumnDef="Calle">
@@ -23,15 +23,20 @@
         <th mat-header-cell *matHeaderCellDef>Num_Ext</th>
         <td mat-cell *matCellDef="let element"> {{element.Num_Ext}} </td>
       </ng-container>
-  
+<!--   
       <ng-container matColumnDef="Num_Int">
         <th mat-header-cell *matHeaderCellDef>Num_Int</th>
         <td mat-cell *matCellDef="let element"> {{element.Num_Int}} </td>
-      </ng-container>
+      </ng-container> -->
   
       <ng-container matColumnDef="Municipio">
         <th mat-header-cell *matHeaderCellDef>Municipio</th>
         <td mat-cell *matCellDef="let element"> {{element.Municipio}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Estatus_Publicacion">
+        <th mat-header-cell *matHeaderCellDef>Estatus</th>
+        <td mat-cell *matCellDef="let element"> {{element.Estatus_Publicacion}} </td>
       </ng-container>
   
       <ng-container matColumnDef="botonOption">

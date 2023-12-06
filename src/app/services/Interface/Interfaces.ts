@@ -304,3 +304,14 @@ export interface compras{
     Precio_Plan: ""
 }
 
+
+export interface InventarioInmuebles{
+    Nombre_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Municipio: "",
+    Estatus_Publicacion: ""
+    
+}
+
+

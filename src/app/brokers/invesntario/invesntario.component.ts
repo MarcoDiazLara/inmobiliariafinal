@@ -8,7 +8,8 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { inventarioAsesores } from 'src/app/services/Interface/Interfaces';
+import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
+import { VentanadetallesInmuebleComponent } from '../ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 
 @Component({
   selector: 'app-invesntario',
@@ -25,11 +26,11 @@ export class InvesntarioComponent implements OnInit {
   paginator!: MatPaginator;
 
   displayedColumns = [
-    'Nombre_Publicacion',
+    'Nombre_Inmueble',
     'Calle',
     'Num_Ext',
-    'Num_Int',
     'Municipio',
+    'Estatus_Publicacion',
     'botonOption'
     
 
@@ -37,12 +38,12 @@ export class InvesntarioComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Publicacion','Calle','Num_Ext','Num_Int','Municipio','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble','Calle','Num_Ext','Municipio','Estatus_Publicacion','botonOption'];
   
 
 
   // poner el nombre de una variable
-  datosinventario: inventarioAsesores[]=[];
+  datosinventario: InventarioInmuebles[]=[];
   
 
   constructor(
@@ -83,14 +84,14 @@ export class InvesntarioComponent implements OnInit {
   }
 
   obtenerInventario(){
-     let idUsuario = localStorage.getItem("Id_Usuario");
+     let IdSocio = localStorage.getItem("Id_Socio");
 
  
- this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
+ this.httpService.InventarioInmuebles(IdSocio).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(idUsuario);
+        console.log(IdSocio);
         ;
       } else {
         data = [];
@@ -99,7 +100,7 @@ export class InvesntarioComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',idUsuario);
+      console.log('Error de conexión',IdSocio);
 
     }
     )
@@ -124,11 +125,11 @@ export class InvesntarioComponent implements OnInit {
     
 
 
-    // const dialogRef = this.dialog.open(InmuebledetallesComponent, {
-    //   width: '80%',
-    //   height: 'auto',  
-    //   disableClose: true
-    // });
+    const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
+      width: '80%',
+      height: 'auto',  
+      disableClose: true
+    });
   }
 
   openDialog(): void {

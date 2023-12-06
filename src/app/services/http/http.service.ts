@@ -515,4 +515,13 @@ filtroEstadoAnuncio(p_Id_Usuario:any,p_Id_Estatus:any){
   return this.httpclient.post(this.url + 'consultarCompras.php', params, { headers });
  }
 
+ InventarioInmuebles(IdSocio: any ) {
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_IdSocio=' + IdSocio;
+  return this.httpclient.post(this.url + 'sp_web_consulta_inventario_inmuebles.php',params, { headers });
+}
+
+
+
+
 }
