@@ -306,6 +306,7 @@ export interface compras{
 
 
 export interface InventarioInmuebles{
+    Id_Publicacion:"",
     Nombre_Inmueble: "",
     Calle: "",
     Num_Ext: "",

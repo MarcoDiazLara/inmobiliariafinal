@@ -68,7 +68,7 @@ export class VentanadetallesInmuebleComponent implements OnInit {
   }
        datos!:ActulizarInmueble;
     ObtenerinformacionInmueble(){
-      this.httpService.actualizarInmueble(localStorage.getItem("p_Id_inmueble")).subscribe((data:any)=>{
+      this.httpService.actualizarInmueble(localStorage.getItem("idpublicacion")).subscribe((data:any)=>{
         this.datos=data[0];
         console.log(this.datos);
       })
@@ -112,7 +112,7 @@ export class VentanadetallesInmuebleComponent implements OnInit {
       let garden=this.options.value.RoofGarden;
       let estacionamiento=this.options.value. Estacionamiento;
     let usuario=localStorage.getItem("Id_Usuario");
-      let  inmueble=localStorage.getItem("p_Id_inmueble")
+      let  inmueble=localStorage.getItem("idpublicacion")
       
      let prec_min=this.options.value.Precio_Minimo;
     let prec_max=this.options.value.Precio_Maximo;
@@ -144,6 +144,6 @@ export class VentanadetallesInmuebleComponent implements OnInit {
 
         })
 
-     }
+      }
 
 }
