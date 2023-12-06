@@ -34,7 +34,7 @@
 
 
 td{
-    padding-left: 50px;
+    padding: 15px;
     padding-right: 50px;
 }
 
@@ -80,13 +80,15 @@ td{
   background-color: #264D5E;
   color: #ffffff; 
 }
-.buttonback:hover .backarrow {
+.buttonback:hover .backarrow,
+.buttonback:hover .plane{
   filter: brightness(100);
 }
 
 .plane{
     background: url('https://api.iconify.design/fa/send.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/fa/send.svg?color=%23264d5e');
+    transition: color 0.3s ease;
 }
 
 .map{
