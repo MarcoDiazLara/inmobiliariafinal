@@ -315,4 +315,9 @@ export interface InventarioInmuebles{
     
 }
 
+export interface SolicitudCambioA{
+    Id_Usuario:"",
+    Id_Publicador: ""
+}
+
 
