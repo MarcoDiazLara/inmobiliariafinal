@@ -533,4 +533,11 @@ registroCompletodeAdmin(p_nombres: string,p_a_paterno: string,p_a_materno: strin
   return this.httpclient.post(this.url + 'insertarUsuAdmin.php', params, { headers });
 }
 
+
+seleccionD( p_id_socio:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params= 'p_id_socio='+p_id_socio;
+  return this.httpclient.post(this.url + 'Seleccion_D.php', params, { headers });
+}
+
 }
