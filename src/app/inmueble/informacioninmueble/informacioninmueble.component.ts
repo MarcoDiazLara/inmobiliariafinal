@@ -9,7 +9,8 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { ActulizarInmueble } from 'src/app/services/Interface/Interfaces';
 import { EstatusInmueble } from 'src/app/services/Interface/Interfaces';
 import Swal from 'sweetalert2';
-
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-informacioninmueble',
@@ -23,6 +24,7 @@ import Swal from 'sweetalert2';
   // ],
 })
 export class InformacioninmuebleComponent implements OnInit {
+  mostrarSpinner = false;
   opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
   opcionSeleccionada: string = '';
   EstatusInmuebles:EstatusInmueble[]=[];
@@ -154,5 +156,19 @@ export class InformacioninmuebleComponent implements OnInit {
      }
      
 
-
+     ActulizarSpinner() {
+      // Mostrar el spinner
+      this.mostrarSpinner = true;
+  
+      // Realizar operaciones asincrónicas (aquí se simula con un retardo)
+      this.simularOperacionesAsincronicas().subscribe(() => {
+        // Ocultar el spinner cuando haya terminado el procesamiento
+        this.mostrarSpinner = false;
+      });
+    }
+    private simularOperacionesAsincronicas(): Observable<void> {
+      // Simula operaciones asincrónicas con un retardo
+      return of(undefined).pipe(delay(2000));
+    }
+  
   }

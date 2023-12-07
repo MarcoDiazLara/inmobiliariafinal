@@ -1,0 +1,539 @@
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" >
+      <ng-template matStepLabel>General</ng-template>
+      <br>
+            <hr class="custom-hr">
+            <br> 
+            <h2 class="text-center">¿A quien le pertenece el inmueble?</h2> 
+            <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-form-field>
+              <mat-label> usuario</mat-label>
+              <mat-select >
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2" >Option 2 </mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            <h2 class="text-center">¿Qué vas a realizar?</h2>
+            <br>
+            <h3 class="text-center">Tipo de operación</h3>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <mat-radio-group aria-label="Select an option" formControlName="pId_Tipo_Publicacion">
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="1">Vender</mat-radio-button>
+                <mat-radio-button color="primary"  style="margin-right: 10px;" value="2">Rentar</mat-radio-button>
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="3">Remate</mat-radio-button>
+                <mat-radio-button  color="primary" style="margin-right: 10px;" value="4">Desarrollos</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <br>
+            <br>
+                      <div class="center-content" >
+              <mat-form-field >
+                <mat-label>Tipo de inmueble</mat-label>
+
+                  <mat-select formControlName="pId_Tipo_Inmueble">
+                    <mat-option *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble}}">{{ inmo.Tipo_Inmueble
+                    }}
+                  </mat-option>
+                     </mat-select>
+                       </mat-form-field>
+            </div>
+              <br>
+            <br>
+      <div class="center-content">
+        <button  color="primary" (click)="guardar()" mat-button matStepperNext>Continuar</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+  
+  <!-- --------------------------------------------------------------------------------------------- -->
+  <mat-step [stepControl]="secondFormGroup" label="Especificaciones">
+    <form [formGroup]="secondFormGroup" >
+      <br>
+      <hr class="custom-hr">
+      <br>
+
+  
+      <h2 class="text-center">Donde esta tu inmueble</h2>
+      <div style="display: flex; justify-content: center; align-items: center;">
+          
+
+ 
+     
+          <mat-form-field style="margin-right: 10px;">
+       <mat-label>Estado</mat-label>
+         <mat-select formControlName="pId_estado" >
+          <mat-option (click)="updateM()" *ngFor="let Est of estados" value="{{ Est.id_Estado}}">{{ Est.Estado
+          }}
+        </mat-option>
+            </mat-select>
+              </mat-form-field>
+             
+              <mat-form-field style="margin-right: 10px;"> 
+                  <mat-label>Municipio</mat-label>
+                    <mat-select formControlName="pId_municipio">
+                      <mat-option (click)="updateA()" *ngFor="let Mun of municipios" value="{{ Mun.id_Municipio}}">{{ Mun.Municipio
+                      }}
+                    </mat-option>
+                       </mat-select>
+                         </mat-form-field>
+        </div>
+
+        <!-- ------------------------------------------------------ -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <mat-form-field style="margin-right: 10px;"> 
+              <mat-label>Asentamiento</mat-label>
+                <mat-select formControlName="pId_asentamiento">
+                  <mat-option *ngFor="let Ase of asentamientos" value="{{ Ase.id_asentamiento}}">{{ Ase.Asentamiento
+                  }}
+                </mat-option>
+                   </mat-select>
+                     </mat-form-field>
+                     <mat-form-field class="example-full-width">
+                      <mat-label>Calle</mat-label>
+                      <input formControlName="p_calle" matInput placeholder="Calle" >
+                    </mat-form-field>             
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+        <mat-label>Es obligatorio localizar el inmueble en el mapa</mat-label> <br> <br>
+        <!-- <button (click)="obtenerLocalizacion()" mat-button>Localizar</button> -->
+      </div>
+      <google-map width="100%" height="400px" [options]="mapOptions" (mapClick)="onMapClick($event)">
+        <map-marker *ngIf="activeMarker" [position]="activeMarker.position" [label]="activeMarker.label">
+        </map-marker>
+      </google-map>
+     
+          
+        
+      <div class="d-flex justify-content-center align-items-center">
+       
+        <button  color="primary" mat-button matStepperPrevious>Atras</button>
+        <button color="primary"  mat-button matStepperNext>Continuar</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- ---------------------------------------------------------------- -->
+  <mat-step  [stepControl]="tercerFormGroup" label="Caracteristicas">
+    <br>
+    <hr class="custom-hr">
+    <br>
+    <h2 class="text-center">Datos Generales</h2>
+    <br>
+      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="tercerFormGroup">
+
+          <div style="display: flex; justify-content: center; align-items: center;" >
+              <mat-form-field style="margin-right: 10px;"> 
+                  <mat-label>Nombre del Inmueble</mat-label>
+                  <input formControlName="p_nom_inmu" matInput placeholder="Nombre de inmueble" >
+              </mat-form-field>   
+              
+              <mat-form-field style="margin-right: 10px;">
+                <mat-label> Numero Interior </mat-label>
+                <input formControlName="p_num_int" matInput placeholder="Numero  Interior " >
+                 </mat-form-field>
+
+                 <mat-form-field style="margin-right: 10px;">
+                  <mat-label>Numero Exterior </mat-label>
+                  <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
+                   </mat-form-field>
+
+          </div>
+          <br>
+          <!-- ----------------------------------------------------------------- -->
+          
+       
+        <br>
+        <!-- ------------------------------------------------------------------- -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <mat-form-field style="margin-right: 10px;">
+            <mat-label> Terreno metros  </mat-label>
+            <input formControlName="p_terreno" matInput placeholder="Terreno " >
+             </mat-form-field>
+             <mat-form-field style="margin-right: 10px;">
+              <mat-label> Construccion  </mat-label>
+              <input formControlName="p_constru" matInput placeholder=" Construccion " >
+               </mat-form-field>
+               <mat-form-field style="margin-right: 10px;">
+                <mat-label> Numero de Recamaras   </mat-label>
+                <input formControlName="p_num_recamaras" matInput placeholder=" Numero de Recamaras  " >
+                 </mat-form-field>
+        
+           
+            </div>
+            <br>
+         <!-- ---------------------------------------------------------- -->
+         <div style="display: flex; justify-content: center; align-items: center;">
+          <mat-form-field style="margin-right: 10px;">
+            <mat-label> Numero de baños  </mat-label>
+            <input formControlName="p_banos" matInput placeholder=" Numero de baños  " >
+             </mat-form-field>
+             <mat-form-field style="margin-right: 10px;">
+              <mat-label> Numero de Pisos  </mat-label>
+              <input formControlName="p_pisos" matInput placeholder=" Numero de Pisos  " >
+               </mat-form-field>
+
+               <mat-form-field style="margin-right: 15px;">
+                <input matInput formControlName="p_anti" placeholder="Años de Antiguedad">
+               
+              </mat-form-field>
+         
+  
+               
+      </div>
+
+  <!-- ------------------------------------------------------------------ -->
+ <br>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="example-container">
+     
+    </div>
+         <mat-form-field style="margin-right: 10px;">
+      <mat-label>Acabados   </mat-label>
+      <input formControlName="p_acabados" matInput placeholder=" Acabados  " >
+       </mat-form-field>
+       <!-- Textarea with class .w-25 -->
+        
+ </div>
+ <div class="d-flex justify-content-center">
+  <div class="form-outline w-25 mb-4 mx-auto">
+  <label  class="form-label" for="textAreaExample4">
+    <h4 class="text-center">Describe tu inmueble</h4>
+  </label>
+    <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3"></textarea>
+  
+  </div>
+</div>
+ <br>
+ <br>
+<hr>
+<br>
+<br>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <div class="text-center">
+  <span class="title">Datos Adicionales</span>
+ </div>
+ <br>
+  
+  <div style="display: flex; justify-content: center; align-items: center;">
+    
+
+    <mat-form-field style="margin-right: 10px;">
+      <mat-label>Gimnasio</mat-label>
+      <mat-select formControlName="p_gym">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+          </mat-option>
+      </mat-select>
+      <mat-icon matSuffix>
+          <img src="assets/img/gimna.png"  alt="Icono" width="30" height="30">
+      </mat-icon>
+  </mat-form-field>
+
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Estacionamiento</mat-label>
+    <mat-select formControlName="p_esta">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/coche.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+</mat-form-field>
+
+
+<mat-form-field style="margin-right: 10px;">
+  <mat-label>Jardin</mat-label>
+  <mat-select formControlName="p_jardin">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+      </mat-option>
+  </mat-select>
+  <mat-icon matSuffix>
+      <img src="assets/img/terraza.png"  alt="Icono" width="28" height="28">
+  </mat-icon>
+</mat-form-field>
+  
+
+</div>
+  
+<br>
+<br>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Cocina Integral</mat-label>
+    <mat-select formControlName="p_cocina">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+    </mat-form-field>
+
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Alberca</mat-label>
+    <mat-select  formControlName="p_alberca"    >
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/nadando.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+  </mat-form-field>
+  
+  <mat-form-field style="margin-right: 10px;">
+    <mat-label>Roof Garden</mat-label>
+    <mat-select    formControlName="p_roof"                >
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>
+        <img src="assets/img/techo.png"  alt="Icono" width="30" height="30">
+    </mat-icon>
+  </mat-form-field>
+</div> 
+<br>
+<br>
+<br>
+          <div class="d-flex justify-content-center align-items-center">
+              <button color="primary" mat-button matStepperPrevious>Atras</button>
+              <button  color="primary" (click)="xd()" mat-button matStepperNext>Continuar</button>
+            </div>
+      
+      </form>
+  </mat-step>
+   <!-- ------------------------------------------------------------------------------------- -->
+  <mat-step  [stepControl]="secondFormGroup" label="Costos">
+    <br>
+      <hr class="custom-hr">
+      <br>
+      <h2 class="text-center">Costos</h2>
+      <br>
+      <br>
+      <form  class="form-horizontal" style="margin:0 auto" [formGroup]="secondFormGroup">
+      
+        <div style="display: flex; justify-content: center; align-items: center;">
+
+        <div class="example-container">
+          <mat-form-field style="margin-right: 15px;">
+            <input formControlName="p_prec_min" matInput placeholder="Ingrese Precio minimo">
+            
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field style="margin-right: 15px;">
+            <input formControlName="p_prec_max" matInput placeholder="Ingrese Precio maximo">
+            
+          </mat-form-field>
+        </div>
+         </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div style="display: flex; justify-content: center; align-items: center;">
+          <div class="example-container">
+            <mat-form-field >
+              <input formControlName="p_prec_final" matInput  placeholder=" Precio Final">
+              
+            </mat-form-field>
+          </div>
+         </div> 
+        <br>
+        <br>
+        <br>
+                   <div class="d-flex justify-content-center align-items-center">
+                       <button color="primary" mat-button matStepperPrevious>Atras</button>
+                       <button color="primary" mat-button matStepperNext>Continuar</button>
+                     </div>
+      </form>
+  </mat-step>
+  <!-- ----------------------------------------------------------------- -->
+  <mat-step>
+    <ng-template matStepLabel>Publicar</ng-template>
+    <br>
+      <hr class="custom-hr">
+      <br>
+      <h1 class="text-center">Muestranos tu inmueble</h1>
+
+    <br>
+    <div class="d-flex justify-content-center align-items-center">
+      <p>Solo se aceptan 5 imagenes por el inmueble</p>
+      <br>
+    </div>
+      <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center" >
+    <form class="form-horizontal" [formGroup]="imageForm">
+      
+   
+      <input  class="form-control" accept="image/*"  type="file" name="images" (change)="onFileChange($event)" multiple>
+      
+    </form>
+    </div>
+  
+    
+      <!-- <div class="container-fluid d-flex justify-content-between align-items-center"> -->
+        <!-- <mat-radio-group>
+          <mat-radio-button color="primary" value="1">Gratuito</mat-radio-button>
+        </mat-radio-group>
+        <p class="m-0 text-center">Visibilidad baja</p> -->
+        <!-- <div class="row">
+          <div class="col-lg-3">col-lg-3</div>
+          <div class="col-lg-5">col-lg-5</div>
+        </div> -->
+
+ <br>
+ <br>
+ <hr class="custom-hr">
+ <br>
+ <br>
+
+        <div *ngIf="plan === '0'" class="card-container">
+         
+         
+ 
+    
+          
+
+      <!-- <div class="row ">
+        <div class="col-lg-3">
+          <mat-radio-group>
+            <mat-radio-button color="primary" value="1">Gratuito</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+    
+        <div class="col-lg-5">
+          <p class=" text-center">Visibilidad baja</p>
+        </div>
+
+      </div> -->
+     
+      <div class="card">
+       
+        <div class="content">
+      
+         <br>
+         <br>
+         <div class="title">Plan Gratuito</div>
+         <br>
+         <br>
+         <br>
+         <br>
+         
+         <div class="price">$0</div>
+         <br>
+         <div class="description">
+             <p>Características:</p>
+             <ul>
+                 <li>Visibilidad Baja</li>
+              
+             </ul>
+         </div>
+       </div>
+       <button  class="but"  >
+        Actual
+       </button>
+     </div>
+   
+   
+   
+
+
+   
+
+        <div class="card">
+       
+         <div class="content">
+       
+          <br>
+          <br>
+          <div class="title">Plan Básico</div>
+          <br>
+          <br>
+          <div class="price">$999/mes</div>
+          <br>
+          <div class="description">
+              <p>Características:</p>
+              <ul>
+                  <li>5 Anuncios destacados</li>
+                  <li>Plan con renovacion manual</li>
+                  <li>Volumen de visitas: moderado</li>
+              </ul>
+          </div>
+        </div>
+        <button  class="but"  (click)="openDialog(1)" >
+          Comprar
+        </button>
+      </div>
+      <div class="card">
+        <div class="content">
+          <br>
+          <br>
+          <div class="title">Plan Intermedio</div>
+          <br>
+          <br>
+          <div class="price">$1499/mes</div>
+          <br>
+          <div class="description">
+              <p>Características:</p>
+      <ul>
+          <li>10 anuncios destacados</li>
+          <li>Plan de renovacion automatica</li>
+          <li>Volumen de visitas: Medio</li>
+      </ul>
+          </div>
+        </div>
+        <button class="but"   (click)="openDialog(2)">
+          Comprar
+        </button>
+      </div>
+      <div class="card">
+        <div class="content">
+          <br>
+          <br>
+          <div class="title">Plan Premiums</div>
+          <br>
+          <br>
+          <div class="price">$2999/mes</div>
+          <div class="description">
+              <br>
+             <p>Características:</p>
+            <ul>
+          <li>Anuncios destacados ilimitados</li>
+          <li>Plan de renovacion automatica</li>
+          <li>Volumen de visitas: Maximo</li>
+      </ul>
+           
+          </div>
+        </div>
+        <button  class="but"  (click)="openDialog(3)"  >
+          Comprar
+        </button>
+      </div>
+
+    </div>
+    
+    
+  
+    
+    
+  <br>
+  <br>
+
+    <div class="d-flex justify-content-center align-items-center">
+      <button color="primary" mat-button matStepperPrevious>Atras</button>
+      <button color="primary"  mat-button (click)="subirInmueble()">Aceptar</button>
+    </div>
+  </mat-step>
+</mat-stepper>

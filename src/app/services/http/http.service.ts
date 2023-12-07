@@ -522,6 +522,22 @@ filtroEstadoAnuncio(p_Id_Usuario:any,p_Id_Estatus:any){
 }
 
 
+registroCompletodeAdmin(p_nombres: string,p_a_paterno: string,p_a_materno: string
+  ,p_nom_usuario: string,p_contrasena: string,p_correo:string,p_tel_fijo:string,p_cel: string,
+  p_tipo_usuario: any,p_estatus : any,p_id_admin: any, p_desc_usu: any,p_RFC: any,p_CURP: any,p_creado: any, p_id_socio:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params = 'p_nombres='+p_nombres+'&p_a_paterno='+p_a_paterno+
+  '&p_a_materno='+p_a_materno+'&p_nom_usuario='+p_nom_usuario+'&p_contrasena='+p_contrasena
+  +'&p_correo='+p_correo+'&p_tel_fijo='+p_tel_fijo+'&p_cel='+p_cel+'&p_tipo_usuario='+ p_tipo_usuario+'&p_estatus='+p_estatus+'&p_id_admin='+p_id_admin
+  +'&p_desc_usu='+p_desc_usu+'&p_RFC='+p_RFC+'&p_CURP='+p_CURP+'&p_creado='+p_creado +'&p_id_socio='+p_id_socio;
+  return this.httpclient.post(this.url + 'insertarUsuAdmin.php', params, { headers });
+}
 
+
+seleccionD( p_id_socio:any){
+  let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  let params= 'p_id_socio='+p_id_socio;
+  return this.httpclient.post(this.url + 'Seleccion_D.php', params, { headers });
+}
 
 }
