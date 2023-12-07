@@ -59,9 +59,8 @@ Guardardatos() {
     let motivocliente = this.formGeneral.value.motivocliente;
     
     let mensaje = motivocliente + "Inmueble: " + Inmueble + "Fecha: " + Fecha;
-  
     
-    this.httpService.Notis(mensaje, localStorage.getItem("IdUsuSocio")).subscribe((resp: any) =>{
+    this.httpService.Notis(mensaje, localStorage.getItem("IdUsj")).subscribe((resp: any) =>{
           
     })
 

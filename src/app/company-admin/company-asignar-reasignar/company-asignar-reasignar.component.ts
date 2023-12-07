@@ -26,7 +26,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 ArrayAsignacion:any[]=[];
 
   usuarios$: any;
-   Id_Usu: any;
+  //  Id_Usu: any;
 
   formGeneral!:FormGroup; 
 
@@ -127,7 +127,7 @@ ArrayAsignacion:any[]=[];
       this.ArrayAsignacion = data ;
       this.ArrayAsignacion.forEach(element => {
         let IdUsuSocio = element.Id_Usuario;
-       localStorage.setItem("IdUsuSocio", IdUsuSocio);
+       localStorage.setItem("IdUsj", IdUsuSocio);
       } );
   
 
