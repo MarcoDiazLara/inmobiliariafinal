@@ -6,6 +6,7 @@ import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany
 import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
 import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
 import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
+import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
       {
         path: 'Asignar-reasignar',
         component: CompanyAsignarReasignarComponent,
+      },
+      {
+        path:'catalogoinmueble',
+        component:CatalogoinmuebleComponent,
+
       },
     ]
   }

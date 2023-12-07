@@ -34,7 +34,8 @@ import { Citas1Component } from './citas1/citas1.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ventanadetalles-inmueble.component';
-
+import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ven
     BienvenidaComponent,
     InvesntarioComponent,
     VentanadetallesInmuebleComponent,
+    CatalogoinmuebleComponent,
 
     
   
@@ -76,6 +78,7 @@ import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ven
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,
+    GoogleMapsModule
 
 
   ]

@@ -8,6 +8,7 @@ import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/br
 import { CalendarioComponent } from './calendario/calendario.component';
 import { InventarioagentesComponent } from '../agentes/inventarioagentes/inventarioagentes.component';
 import { InvesntarioComponent } from './invesntario/invesntario.component';
+import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
            component:InvesntarioComponent,
 
     },
+     {
+      path:'catalogoinmueble',
+      component:CatalogoinmuebleComponent
+     }
      
     ]
   },
