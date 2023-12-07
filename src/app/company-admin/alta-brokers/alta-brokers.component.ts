@@ -33,6 +33,7 @@ export class AltaBrokersComponent implements OnInit {
   tipos: Tipo[] = [
     {value: '2', viewValue: 'Broker'},
     {value: '3', viewValue: 'Asesor'},
+    {value: '5', viewValue: 'Dueño'}
   ];
 
   toppings = new FormControl('');
@@ -89,12 +90,13 @@ export class AltaBrokersComponent implements OnInit {
       let contra = this.formGeneral.value.password;
       let id = localStorage.getItem("Id_Usuario");
       let typeuser = this.formGeneral.value.seleccionausuario;
+      let p_id_socio = localStorage.getItem("Id_Socio");
 
 
       //alert('nombre: '+ nombre + 'apellidopaterno: ' + apellidopaterno + 'apellidomaterno: '+ apellidomaterno + 'curp: ' + curp + 'rfc: '+ rfc + 'contactoprincipal: ' + contactoprincipal + 'contactoemergencia: '+ contactoemergencia + 'email: ' + email + 'nombreusuario' + nombreusuario + 'estatus' + estatus + 'descripcionusuario'+ descripcionusuario + 'imageInput' + imageInput); 
       
-      this.httpService.registroCompletoBroker(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra
-        ,email,contactoprincipal,contactoemergencia,typeuser ,estatus ,id ,descripcionusuario ,rfc, curp,id ).subscribe((data: any)=>{
+      this.httpService.registroCompletodeAdmin(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra
+        ,email,contactoprincipal,contactoemergencia,typeuser ,estatus ,id ,descripcionusuario ,rfc, curp,id, p_id_socio ).subscribe((data: any)=>{
         if(data == 0){
           alert("Error al insertar usuario");
         }else{
