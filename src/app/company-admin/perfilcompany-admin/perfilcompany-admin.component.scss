@@ -1,126 +1,57 @@
-.perfilcontenedor{
-  width: 30%;
-  height: auto;
-  float: left;
-  padding: 0px 0px 0px 0px;
+h1{
   text-align: center;
-
-  }
-
-  .contenidoperfil{
-    width: 70%;
-    height: auto;
-    float: left;
-    margin-top: 5%;
-}
-
-button{
-  background-color: #264D5E;
-  color: white;
-}
-
-.cssbutton button{
-  width: 60%;
-  color: #ffffff;
-  
-} 
-
-
-
-.example-section {
-  margin: 12px 0;
-}
-
-.example-margin {
-  margin: 0 12px;
-}
-
-ul {
-  list-style-type: none;
-  margin-top: 4px;
-}
-
-button{
-  background-color: #264D5E;
-  color: white;
 }
 
 
+h2{
 
+    text-align: center;
 
-.insertar-dialog h1 {
+ 
+}
+.typewriter {
+overflow: hidden; 
+
+white-space: nowrap; 
+margin: 0 auto; 
+letter-spacing: 0.15em; 
+animation: typing 9s steps(40, end), blink-caret 0.75s infinite;
+/* animation: typing 2s steps(20, end), blink-caret 0.75s infinite; */
+}
+
+/* Animation for typing effect */
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+
+/* Animation for blinking cursor */
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #38B6E3 }
+}
+
+.container {
 text-align: center;
-font-weight: 500;
 }
 
-.insertar-dialog-content mat-form-field {
-background-color: transparent !important;
-width: 100%;
-margin: 10px 0px;
-/* input {
-    color: black;
-} */
+.content {
+display: inline-block;
+margin-top: 20px; /* Ajusta según sea necesario */
 }
 
-.insertar-dialog-content input {
-color: black;
+img {
+width: 150px;
+height: 150px;
+margin-right: 20px; /* Ajusta según sea necesario */
 }
 
-
-
-
-// button {
-// display: block;
-// width: 100%;
-// margin: auto;
-// margin-bottom: 3% !important;
-// }
-
-// button:disabled {
-// span {
-// color: #9a8d8d;
-// }
-// }
-
-// ::ng-deep {
-// .mat-form-field.mat-focused .mat-form-field-label {
-// color: #0c6291f7 !important;
-// }
-// }
-
-// @keyframes spinner {
-// to {
-// transform: rotate(360deg);
-// }
-// }
-
-// .spinner:before {
-// content: '';
-// box-sizing: border-box;
-// position: absolute;
-// top: 50%;
-// left: 36%;
-// width: 20px;
-// height: 20px;
-// margin-top: -10px;
-// margin-left: -10px;
-// border-radius: 50%;
-// border: 2px solid #ffffff;
-// border-top-color: #0c6291f7;
-// animation: spinner 0.6s ease-out infinite;
-// }
-
-.alineaestatus{
-margin-top: 2%;
+.imagen-contenedor {
+text-align: center;
 }
 
-.alinea{
-margin-top: 1%;
+.imagen-contenedor img {
+width: 500px;
+height: 300px;
+/* Agrega otros estilos según sea necesario */
 }
-
-
-.cssbutton button{
-width: 60%;
-color: #ffffff;
-
-}    
