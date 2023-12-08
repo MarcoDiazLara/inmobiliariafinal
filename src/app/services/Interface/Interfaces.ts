@@ -316,7 +316,7 @@ export interface InventarioInmuebles{
 }
 
 export interface SolicitudCambioA{
-    Id_Usuario:"",
+    IdSocUsu:"",
     Id_Publicador: ""
 }
 

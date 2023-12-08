@@ -540,9 +540,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'Seleccion_D.php', params, { headers });
   }
 
-  SolicitudCambioA() {
+  SolicitudCambioA(IdSocio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.httpclient.post(this.url + 'sp_web_consulta_solicitud_asesor.php', { headers });
+    let params = 'p_IdSocio=' + IdSocio;
+    return this.httpclient.post(this.url + 'sp_web_consulta_inmueble_solicitud.php', params, { headers });
   }
 
 }

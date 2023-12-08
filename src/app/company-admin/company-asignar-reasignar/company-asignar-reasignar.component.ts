@@ -23,7 +23,7 @@ import { CompAsignarAsesorComponent } from '../ventanaemergente/comp-asignar-ase
 })
 export class CompanyAsignarReasignarComponent implements OnInit {
 
-ArrayAsignacion:any[]=[];
+// ArrayAsignacion:any[]=[];
 
   usuarios$: any;
   //  Id_Usu: any;
@@ -124,11 +124,11 @@ ArrayAsignacion:any[]=[];
 
     
     this.httpService.mostrarReasignacion(Id_Socio).subscribe((data:any)=>{
-      this.ArrayAsignacion = data ;
-      this.ArrayAsignacion.forEach(element => {
-        let IdUsuSocio = element.Id_Usuario;
-       localStorage.setItem("IdUsj", IdUsuSocio);
-      } );
+      // this.ArrayAsignacion = data ;
+      // this.ArrayAsignacion.forEach(element => {
+      //   let IdUsuSocio = element.Id_Usuario;
+      //  localStorage.setItem("IdUsj", IdUsuSocio);  
+      // } );
   
 
       // let Id_Usu = data.Id_Usuario;
@@ -136,8 +136,8 @@ ArrayAsignacion:any[]=[];
       // localStorage.setItem("Id_Usuario", Id_Usu);
       
   
-      // let Id_UsuarioS = "2000";
-      // localStorage.setItem("Id_Usuario", Id_UsuarioS );
+      let Id_UsuarioS = "2000";
+      localStorage.setItem("Id_Usuario", Id_UsuarioS );
 
       // let Id_Usu = "Id_Usuario";
       // localStorage.setItem("Id_Usuario", Id_Usu );
