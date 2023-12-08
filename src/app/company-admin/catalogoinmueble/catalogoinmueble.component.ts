@@ -21,6 +21,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MetododepagoComponent } from 'src/app/metododepago/metododepago.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { selecionD } from 'src/app/services/Interface/Interfaces';
 interface Food {
   value: string;
   viewValue: string;
@@ -78,6 +79,8 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
     firstFormGroup!: FormGroup;
     secondFormGroup!: FormGroup;
     tercerFormGroup!: FormGroup;
+    SeleccionDueno: selecionD[]=[];
+    SeleccionDue!: selecionD;
     bandera: number = 0;
     latitud: number = 0.0000;
     longitud: number = 0.0000;
@@ -386,6 +389,20 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
      });
      
   
+  }
+
+
+  selccionDueños(){
+    this.httpService.seleccionD(localStorage.getItem("Id_Socio")).subscribe((resp:any)=> {
+      if(resp !== 201){
+        this.SeleccionDueno= resp;
+        console.log(this.SeleccionDueno);
+        this.SeleccionDue= resp;
+      }
+     },(err)=>{
+      console.log(err);
+     })
+    
   }
 
  
