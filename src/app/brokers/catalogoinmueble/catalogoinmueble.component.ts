@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MetododepagoComponent } from 'src/app/metododepago/metododepago.component';
 import { MatDialog } from '@angular/material/dialog';
+import { selecionD } from 'src/app/services/Interface/Interfaces';
 
 interface Food {
   value: string;
@@ -71,6 +72,9 @@ export class CatalogoinmuebleComponent implements OnInit {
       firstFormGroup!: FormGroup;
       secondFormGroup!: FormGroup;
       tercerFormGroup!: FormGroup;
+      SeleccionDueno: selecionD[]=[];
+      SeleccionDue!: selecionD;
+
       bandera: number = 0;
       latitud: number = 0.0000;
       longitud: number = 0.0000;
@@ -79,7 +83,7 @@ export class CatalogoinmuebleComponent implements OnInit {
     
     
       ngOnInit(){
-        
+        this.selccionDueños();
         this.obtenerDatosInmuebles();
         this.plan = localStorage.getItem("Id_Tipo_Plan");
         
@@ -92,7 +96,8 @@ export class CatalogoinmuebleComponent implements OnInit {
       
         this.firstFormGroup = this.formBuilder.group({
          pId_Tipo_Inmueble: ['',[Validators.required]],
-         pId_Tipo_Publicacion: ['',[Validators.required]]
+         pId_Tipo_Publicacion: ['',[Validators.required]],
+         Id_Usuario:['',[Validators.required]]
         })
         this.secondFormGroup = this.formBuilder.group({
           pId_estado: ['',[Validators.required]],
@@ -262,7 +267,8 @@ export class CatalogoinmuebleComponent implements OnInit {
         let p_video = "video 1";
         let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
         let p_id_tipo_inmueble = this.firstFormGroup.value.pId_Tipo_Inmueble;
-        let p_update = localStorage.getItem("Id_Usuario");
+
+        let p_update = this.firstFormGroup.value.Id_Usuario;
         let p_prec_min1 = this.secondFormGroup.value.p_prec_min;
         let p_prec_max1 = this.secondFormGroup.value.p_prec_max;
         let p_prec_final1 = this.secondFormGroup.value.p_prec_final;
@@ -285,7 +291,7 @@ export class CatalogoinmuebleComponent implements OnInit {
               
             )
             // alert("Se subio el inmueble");
-            this.router.navigate(["/inmueble/avisos"]);
+            // this.router.navigate(["/inmueble/avisos"]);
             
           } else{
     
@@ -377,11 +383,21 @@ export class CatalogoinmuebleComponent implements OnInit {
         localStorage.setItem("tipodeplan",auxi);
         const dialogRef = this.dialog.open(MetododepagoComponent, {
        });
-       
     
     }
   
-   
+    selccionDueños(){
+      this.httpService.seleccionD(localStorage.getItem("Id_Socio")).subscribe((resp:any)=> {
+        if(resp !== 201){
+          this.SeleccionDueno= resp;
+          console.log(this.SeleccionDueno);
+          this.SeleccionDue= resp;
+        }
+       },(err)=>{
+        console.log(err);
+       })
+      
+    }
     
   
 

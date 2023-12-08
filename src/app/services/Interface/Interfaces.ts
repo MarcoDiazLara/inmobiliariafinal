@@ -314,6 +314,13 @@ export interface InventarioInmuebles{
     Estatus_Publicacion: ""
     
 }
+export interface selecionD{
+
+    Id_Usuario: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
+}
 
 export interface SolicitudCambioA{
     IdSocUsu:"",

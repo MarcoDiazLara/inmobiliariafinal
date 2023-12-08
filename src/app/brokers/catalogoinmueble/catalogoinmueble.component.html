@@ -7,12 +7,12 @@
             <br> 
             <h2 class="text-center">¿A quien le pertenece el inmueble?</h2> 
             <div style="display: flex; justify-content: center; align-items: center;">
-            <mat-form-field>
+            <mat-form-field >
               <mat-label> usuario</mat-label>
-              <mat-select >
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2" >Option 2 </mat-option>
-                <mat-option value="option3">Option 3</mat-option>
+              <mat-select formControlName ="Id_Usuario">
+                <mat-option *ngFor="let food of SeleccionDueno" [value]="food.Id_Usuario">
+                  {{food.Nombres + " " + food.Apellido_Paterno+" "+ food.Apellido_Materno}}
+              </mat-option>
               </mat-select>
             </mat-form-field>
             </div> 
