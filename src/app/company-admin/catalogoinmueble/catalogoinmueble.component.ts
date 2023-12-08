@@ -102,7 +102,8 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
     
       this.firstFormGroup = this.formBuilder.group({
        pId_Tipo_Inmueble: ['',[Validators.required]],
-       pId_Tipo_Publicacion: ['',[Validators.required]]
+       pId_Tipo_Publicacion: ['',[Validators.required]],
+       Id_Usuario:['',[Validators.required]]
       })
       this.secondFormGroup = this.formBuilder.group({
         pId_estado: ['',[Validators.required]],
@@ -272,7 +273,7 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
       let p_video = "video 1";
       let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
       let p_id_tipo_inmueble = this.firstFormGroup.value.pId_Tipo_Inmueble;
-      let p_update = localStorage.getItem("Id_Usuario");
+      let p_update = this.firstFormGroup.value.Id_Usuario;
       let p_prec_min1 = this.secondFormGroup.value.p_prec_min;
       let p_prec_max1 = this.secondFormGroup.value.p_prec_max;
       let p_prec_final1 = this.secondFormGroup.value.p_prec_final;
