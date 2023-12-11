@@ -8,6 +8,7 @@ import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-ases
 import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
+import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 
 const routes: Routes = [
@@ -42,10 +43,17 @@ const routes: Routes = [
 
       },
       {
+
+        path: 'PantallaUsuarios',
+        component:PantallaUsuariosComponent,
+
+      },
+      {
           path:'perfilempresa',
           component:PerfilempresaComponent,
 
       }
+
 
     ]
   }

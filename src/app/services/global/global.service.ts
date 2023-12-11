@@ -9,6 +9,7 @@ export class GlobalService {
   usuarios$ = new BehaviorSubject(null);
 
   inventarioasesor$ = new BehaviorSubject(null); 
+  pantallausuarios$ = new BehaviorSubject(null); 
 
   constructor() { }
 
@@ -22,5 +23,9 @@ export class GlobalService {
 
   getInventarioAsesorOb(): Observable<any> {
     return this.inventarioasesor$.asObservable();
+  }
+
+  getpantallausuariosOb(): Observable<any> {
+    return this.pantallausuarios$.asObservable();
   }
 }
