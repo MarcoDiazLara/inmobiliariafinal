@@ -129,19 +129,10 @@ export class CompanyAsignarReasignarComponent implements OnInit {
       //   let IdUsuSocio = element.Id_Usuario;
       //  localStorage.setItem("IdUsj", IdUsuSocio);  
       // } );
-  
-
-      // let Id_Usu = data.Id_Usuario;
-      // alert(data.Id_Usuario);
-      // localStorage.setItem("Id_Usuario", Id_Usu);
       
   
       let Id_UsuarioS = "2000";
       localStorage.setItem("Id_Usuario", Id_UsuarioS );
-
-      // let Id_Usu = "Id_Usuario";
-      // localStorage.setItem("Id_Usuario", Id_Usu );
-      // console.log(Id_Usu);
 
       if(data !== 201) {
         this.adminService.usuarios$.next(data);

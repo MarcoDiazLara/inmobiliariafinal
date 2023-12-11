@@ -6,7 +6,6 @@ import { CompanyAdminComponent } from './company-admin.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
-
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -28,6 +27,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
+
+
 import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminpassword/company-adminpassword.component';
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
@@ -36,6 +37,7 @@ import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-ases
 import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 
 /end/
 
@@ -46,9 +48,12 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PerfilcompanyAdminComponent,
     AltaBrokersComponent,
     NotificacionescompanyAdminComponent,
+    Inventarioadmin,
     CompAsignarAsesorComponent,
     CompanyAsignarReasignarComponent,
     CatalogoinmuebleComponent
+    
+  
   
   ],
   imports: [
@@ -76,7 +81,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NgIf,
     NgFor,
     MatMenuModule, 
-    GoogleMapsModule
+    GoogleMapsModule,
+
   
   ]
 })

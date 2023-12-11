@@ -16,10 +16,11 @@ export class CompanyAdminComponent implements OnDestroy {
 
      fillerNav = [
     { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
-    { name: "notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0'},
-    { name: "altabrokers", route: "altabrokers",icon: "group_add" , label: "Alta de Usuarios",number:'0'},
+    { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0'},
+    { name: "Alta Usuarios", route: "altabrokers",icon: "group_add" , label: "Alta de Usuarios",number:'0'},
+    { name: "Inventario", route: "Inventario",icon: "inventory" , label: "Inventario",number:'0' },
     { name: "Asignar-reasignar", route: "Asignar-reasignar",icon: "groups" , label: "Asignar-Reasignar",number:'0'},
-    { name: "catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
+    { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'},
   
     

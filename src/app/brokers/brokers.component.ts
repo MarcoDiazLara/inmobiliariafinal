@@ -16,11 +16,10 @@ export class BrokersComponent implements OnDestroy {
   fillerNav = [
     { name: "Perfil", route: "perfil", icon: "home", label: "Hola", number: '0' },
     { name: "Notificaciones", route: "notificacionbroker", icon: "notifications", label: "Notificaciones", number: '0' },
-      { name: "Alta", route: "Alta", icon: "group_add", label: "Alta Asesor", number: '0' },
-    { name: "asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
+    { name: "Asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
     { name: "Calendario", route: "calendario", icon: "date_range", label: " Agenda", number: '0' },
     { name: "Inventario", route: "invesntario",icon: "inventory" , label: "Inventario",number:'0' },
-    { name: "catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
+    { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
     { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
 
   ];
