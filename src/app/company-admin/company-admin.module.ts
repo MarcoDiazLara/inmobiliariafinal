@@ -40,6 +40,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 
+import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 
 /end/
 
@@ -56,6 +57,7 @@ import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component'
     CatalogoinmuebleComponent,
     PerfilempresaComponent,
  
+    InformacionInmuebleComponent
     
   
   
