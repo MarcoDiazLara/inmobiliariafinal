@@ -190,7 +190,7 @@ public Venta: Boolean = false;
   constructor( private router:Router, private httpService:HttpService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   openDialog(): void {
-     if(this.isLoggedIn){
+    
       localStorage.setItem("Publicacion",this.details.Id_Publicacion);
       localStorage.setItem("Publicador", this.details.Id_Usuario);
       const dialogRef = this.dialog.open(VentanacitaComponent, {
@@ -201,13 +201,7 @@ public Venta: Boolean = false;
       console.log('The dialog was closed');
     
     });
-    }else[Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Inicia sesión',
-  
-    })]
-   
+    
 
   }
   

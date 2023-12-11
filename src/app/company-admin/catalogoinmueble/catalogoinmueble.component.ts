@@ -89,7 +89,7 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
   
   
     ngOnInit(){
-      
+      this.selccionDueños();
       this.obtenerDatosInmuebles();
       this.plan = localStorage.getItem("Id_Tipo_Plan");
       
