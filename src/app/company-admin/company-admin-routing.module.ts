@@ -8,6 +8,7 @@ import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-ases
 import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
+import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,12 @@ const routes: Routes = [
         component:Inventarioadmin,
 
       },
+      {
+          path:'perfilempresa',
+          component:PerfilempresaComponent,
+
+      }
+
     ]
   }
   
