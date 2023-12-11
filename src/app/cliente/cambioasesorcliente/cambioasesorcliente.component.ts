@@ -21,8 +21,8 @@ export class CambioasesorclienteComponent implements OnInit {
   formGeneral!: FormGroup;
 
   solicitud: SolicitudCambio[] = [];
-  ArrayAsignacion:any[]=[];
- 
+  ArrayAsignacion: any[] = [];
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,20 +49,20 @@ export class CambioasesorclienteComponent implements OnInit {
     });
   }
 
-   obtener: any;
-   obtenerIdSocioUsuario(){
+  obtener: any;
+  obtenerIdSocioUsuario() {
     let IdSocio = localStorage.getItem("Id_Socio");
     this.httpService.SolicitudCambioA(17).subscribe((data: any) => {
-  
-    
-          this.obtener = data.IdSocUsu;
-          // alert(data.IdSocUsu);
-          console.log(data)
-          
-    
-          });
 
-   }
+
+      this.obtener = data[0].IdSocUsu;
+      // alert(data.IdSocUsu);
+      // console.log(data[0].IdSocUsu)
+
+
+    });
+
+  }
 
 
   Guardardatos() {
@@ -72,35 +72,27 @@ export class CambioasesorclienteComponent implements OnInit {
 
       let Inmueble = this.formGeneral.value.Inmueble;
       let Fecha = this.formGeneral.value.Fecha;
-      let motivocliente = this.formGeneral.value.motivocliente;
-      let mensaje = motivocliente + "Inmueble: " + Inmueble + "Fecha: " + Fecha;
+
+      let dia = Fecha.getDate();
+      let dia1 = Fecha.getDate().toString();
+      if (dia < 10) {
+        dia1 = "0" + dia1;
+      }
+
+      let mes = (Fecha.getMonth()+1);
+      let mes1 = (Fecha.getMonth()+1).toString();
+      if(mes < 10){
+        mes1 = "0"+mes1;
+      }
+      let anio = Fecha.getFullYear().toString();
+      let nom_aux =  anio +"/"+ mes1 +"/" + dia1
+      ;
+
+      let motivosolicitud = this.formGeneral.value.motivosolicitud;
+      let mensaje = motivosolicitud + "Inmueble: " + Inmueble + "Fecha: " + nom_aux;
 
 
-      
-
-      // this.httpService.SolicitudCambioA(IdSocio).subscribe((data: any) => {
-      
-  //  this.ArrayAsignacion = data ;
-  //     this.ArrayAsignacion.forEach(element => {
-  //       let IdUsuSocio = element.IdSocUsu;
-  //      localStorage.setItem("IdSocUsu", IdUsuSocio);
-  //     } );
-
-        // let Id_Usu = "IdSocUsu";
-        // localStorage.setItem("IdSocUsu", Id_Usu );
-        // console.log(Id_Usu);
-
-      // let Id_Usu = data.IdSocUsu;
-      // alert(data.IdSocUsu);
-      // localStorage.setItem("IdSocUsu", Id_Usu);
-
-
-        // let Id_Usua = "2000";
-        // localStorage.setItem("2000", Id_Usua );
-        // console.log('2000', Id_Usua);
-
-
-        this.httpService.Notis(mensaje, this.obtener).subscribe((resp: any) => {
+      this.httpService.Notis(mensaje, this.obtener).subscribe((resp: any) => {
 
         Swal.fire({
           position: "top-end",
@@ -108,11 +100,11 @@ export class CambioasesorclienteComponent implements OnInit {
           title: "Tu Solicitud ha sido enviada",
           showConfirmButton: false,
           timer: 1500
-        }); 
+        });
 
-        })
+      })
 
-     
+
 
 
 

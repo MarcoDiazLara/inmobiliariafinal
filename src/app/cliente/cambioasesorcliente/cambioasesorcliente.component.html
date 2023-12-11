@@ -14,7 +14,7 @@
           <mat-form-field appearance="fill" style="width: 95%;">
             <mat-label><b>Selecciona el Inmueble Publicado</b></mat-label>
             <mat-select formControlName="Inmueble" required>
-              <mat-option (click)="obtenerIdSocioUsuario()" *ngFor="let solict of solicitud" [value]="solict.Id_Socio">{{solict.Nombre_Publicacion}}</mat-option>
+              <mat-option (click)="obtenerIdSocioUsuario()" *ngFor="let solict of solicitud" [value]="solict.Nombre_Publicacion">{{solict.Nombre_Publicacion}}</mat-option>
             </mat-select>
             <mat-error *ngIf="this.formGeneral.get('Inmueble')?.hasError('required')">
               <strong>Obligatorio</strong>
