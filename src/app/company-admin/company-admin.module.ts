@@ -40,6 +40,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 import { InmuebledetallesadminComponent } from './ventanaemergente/inmuebledetallesadmin/inmuebledetallesadmin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
+import { InformacionusuariosadmComponent } from './ventanaemergente/informacionusuariosadm/informacionusuariosadm.component';
 
 /end/
 
@@ -55,7 +56,8 @@ import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios
     CompanyAsignarReasignarComponent,
     CatalogoinmuebleComponent,
     InmuebledetallesadminComponent,
-    PantallaUsuariosComponent
+    PantallaUsuariosComponent,
+    InformacionusuariosadmComponent
     
   
   
