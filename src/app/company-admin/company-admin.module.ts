@@ -38,9 +38,14 @@ import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/co
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
+
 import { InmuebledetallesadminComponent } from './ventanaemergente/inmuebledetallesadmin/inmuebledetallesadmin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { InformacionusuariosadmComponent } from './ventanaemergente/informacionusuariosadm/informacionusuariosadm.component';
+
+import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
+import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
+
 
 /end/
 
@@ -57,7 +62,10 @@ import { InformacionusuariosadmComponent } from './ventanaemergente/informacionu
     CatalogoinmuebleComponent,
     InmuebledetallesadminComponent,
     PantallaUsuariosComponent,
-    InformacionusuariosadmComponent
+    InformacionusuariosadmComponent,
+    PerfilempresaComponent,
+    InformacionInmuebleComponent
+
     
   
   

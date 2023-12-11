@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
+import { InformacionInmuebleComponent } from '../ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 
 
 @Component({
@@ -113,7 +114,11 @@ export class Inventarioadmin implements OnInit {
   openasesor(idPubli:any ) {
 
     localStorage.setItem ('idpublicacion',idPubli);
-    
+    const dialogRef = this.dialog.open(InformacionInmuebleComponent, {
+      width: '80%',
+      height: 'auto',  
+      disableClose: true
+    });
 
 
     // const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
