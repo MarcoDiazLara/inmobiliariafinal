@@ -327,4 +327,18 @@ export interface SolicitudCambioA{
     Id_Publicador: ""
 }
 
+export interface DatosEmpresa{
+    Nombre_Razon_Social:"" ,
+    Img_Logo:"" ,
+    RFC:"",
+    Email: "",
+    Tel_Empresa:"" ,
+    Calle:  "" ,
+    Num_Ext: "" ,
+    Num_Int: "",
+    Id_Asentamiento: "",
+    Id_Tipo_Socio: ""
+
+}
+
 

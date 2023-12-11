@@ -545,5 +545,18 @@ export class HttpService {
     let params = 'p_IdSocio=' + IdSocio;
     return this.httpclient.post(this.url + 'sp_web_consulta_solicitud_asesor.php', params, { headers });
   }
+    
+  MostrarDatosEmpresa(p_Socio:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Socio=' + p_Socio;
+    return this.httpclient.post(this.url + 'Empresa_Perfil.php', params, { headers });
+  }
 
+
+  ActulizarDatosEmpresa(p_Socio:any,p_Nombre_Razon_Social:any,p_Img_Logo:any,p_RFC:any,p_Email:any,p_Tel_Empresa:any,p_Calle:any,p_Num_Ext:any,p_Num_Int:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Socio=' + p_Socio + '&p_Nombre_Razon_Social='+ p_Nombre_Razon_Social+ '&p_Img_Logo='+ p_Img_Logo+ '&p_RFC='+ p_RFC +'&p_Email=' + p_Email
+    '&p_Tel_Empresa='+p_Tel_Empresa +'&p_Calle=' +p_Calle +'&p_Num_Ext='+p_Num_Ext +'&p_Num_Int='+ p_Num_Int;
+    return this.httpclient.post(this.url + 'ActulizarDatosEmpresas.php', params, { headers });
+  }
 }
