@@ -38,6 +38,7 @@ import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/co
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
+import { InmuebledetallesadminComponent } from './ventanaemergente/inmuebledetallesadmin/inmuebledetallesadmin.component';
 
 /end/
 
@@ -51,7 +52,8 @@ import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
     Inventarioadmin,
     CompAsignarAsesorComponent,
     CompanyAsignarReasignarComponent,
-    CatalogoinmuebleComponent
+    CatalogoinmuebleComponent,
+    InmuebledetallesadminComponent
     
   
   
