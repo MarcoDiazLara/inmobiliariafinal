@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 
 
 
+
 @Component({
   selector: 'app-ventanacita',
   templateUrl: './ventanacita.component.html',
@@ -48,7 +49,7 @@ export class VentanacitaComponent implements OnInit {
   firstFormGroup!:FormGroup;
   secondFormGroup!:FormGroup;
   terceroFormGroup!:FormGroup;
-
+  isLoggedIn: boolean = false;
 
 
   isLinear = false;
@@ -83,6 +84,7 @@ export class VentanacitaComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.isLoggedIn = this.httpService.getGlobalVariable();
     this.firstFormGroup=this.formBuilder.group({
       p_Nombre:['',[Validators.required]],
       p_Email:['',[Validators.required]],
@@ -107,6 +109,7 @@ export class VentanacitaComponent implements OnInit {
       this.medioC=data;
     })
   }
+  p_Id_Usuario!: string |null;
   open(){
     //let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
     let p_Nombre=this.firstFormGroup.value.p_Nombre;
@@ -130,8 +133,16 @@ export class VentanacitaComponent implements OnInit {
       mes1="0"+mes1;
     }
   let anio = p_Fecha.getFullYear().toString();
+  //et p_Id_Usuario = "12";
+  if(this.isLoggedIn){
+    this.p_Id_Usuario=localStorage.getItem("Id_Usuario");
+  }
+  else{
+    this.p_Id_Usuario = "0"
+  }
+ //p_Id_Usuario=localStorage.getItem("Id_Usuario");
 
-  let p_Id_Usuario=localStorage.getItem("Id_Usuario");
+
   let p_Id_Publicacion=localStorage.getItem("Publicacion");
   console.log(p_Id_Publicacion);
 
@@ -142,7 +153,7 @@ export class VentanacitaComponent implements OnInit {
   // console.log(nom_aux);
     //     console.log("Nombre: "+p_Nombre+"Email: "+p_Email+"Telefono: "+p_Telefono+"Contacto: "+p_Id_Medio_Contacto
     // +"Mensaje: "+p_Mensaje+"Fecha: "+nom_aux+"Hora: "+p_Hora+ "id_Uduario: "+ p_Id_Usuario + "id_Pub: "+p_Id_Publicacion);
-  this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,p_Id_Usuario).subscribe((resp:any)=>{
+  this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.p_Id_Usuario).subscribe((resp:any)=>{
     console.log("Respuesta del servicio:", resp);
     if (resp==1){
       let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
