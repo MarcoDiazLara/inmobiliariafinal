@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {  Inject } from '@angular/core';
 
 @Component({
   selector: 'app-informacionusuariosadm',
   templateUrl: './informacionusuariosadm.component.html',
   styleUrls: ['./informacionusuariosadm.component.scss']
 })
-export class InformacionusuariosadmComponent implements OnInit {
+export class InformacionusuariosadmComponent  {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<InformacionusuariosadmComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
-  ngOnInit(): void {
+  cerrarVentanaEmergente() {
+    this.dialogRef.close();
   }
 
 }
