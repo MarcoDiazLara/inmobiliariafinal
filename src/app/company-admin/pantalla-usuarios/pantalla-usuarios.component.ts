@@ -9,6 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
 import { tblUsers } from 'src/app/services/Interface/Interfaces';
+import { InformacionusuariosadmComponent } from '../ventanaemergente/informacionusuariosadm/informacionusuariosadm.component';
 
 @Component({
   selector: 'app-pantalla-usuarios',
@@ -115,11 +116,11 @@ export class PantallaUsuariosComponent implements OnInit {
     
 
 
-    // const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
-    //   width: '80%',
-    //   height: 'auto',  
-    //   disableClose: true
-    // });
+    const dialogRef = this.dialog.open(InformacionusuariosadmComponent, {
+      width: '80%',
+      height: 'auto',  
+      disableClose: true
+    });
   }
 
   openDialog(): void {
