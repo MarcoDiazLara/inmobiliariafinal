@@ -112,7 +112,7 @@ export class PantallaUsuariosComponent implements OnInit {
 
   openasesor(idPubli:any ) {
 
-    localStorage.setItem ('idpublicacion',idPubli);
+    localStorage.setItem ('Id_Usuxd',idPubli);
     
 
 
