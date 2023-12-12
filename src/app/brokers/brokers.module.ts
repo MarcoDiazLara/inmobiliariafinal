@@ -26,7 +26,8 @@ import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
 import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
 import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
 import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
@@ -38,6 +39,7 @@ import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
 
 
 @NgModule({
@@ -55,6 +57,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     InvesntarioComponent,
     VentanadetallesInmuebleComponent,
     CatalogoinmuebleComponent,
+    BrokerhitoComponent,
 
 
 
@@ -77,6 +80,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MatListModule,
     MatCardModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatCheckboxModule,    
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,

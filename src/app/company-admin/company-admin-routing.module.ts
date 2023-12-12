@@ -10,6 +10,7 @@ import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.c
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
+import { AdminhitoComponent } from './adminhito/adminhito.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
       {
         path: 'Inventario',
         component:Inventarioadmin,
+
+      },
+      {
+        path:'Hitoadmin',
+        component:AdminhitoComponent,
 
       },
       {

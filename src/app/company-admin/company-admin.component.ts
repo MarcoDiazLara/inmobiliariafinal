@@ -20,6 +20,7 @@ export class CompanyAdminComponent implements OnDestroy {
     { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0'},
     { name: "Alta Usuarios", route: "altabrokers",icon: "group_add" , label: "Alta de Usuarios",number:'0'},
     { name: "Inventario", route: "Inventario",icon: "inventory" , label: "Inventario",number:'0' },
+    { name: "Hito", route: "Hitoadmin",icon: "event" , label: "Fecha Hito",number:'0' },
     { name: "Asignar-reasignar", route: "Asignar-reasignar",icon: "groups" , label: "Asignar-Reasignar",number:'0'},
     { name: "PantallaUsuarios", route: "PantallaUsuarios",icon: "person_search" , label: "Pantalla Usuarios",number:'0'},
     { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
