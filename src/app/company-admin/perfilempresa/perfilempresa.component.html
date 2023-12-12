@@ -28,10 +28,10 @@
       <div class="row">
   
         <div class="col-md-3">
-          <mat-form-field appearance="fill">
+          <mat-form-field >
             <input matInput type="text" placeholder="" formControlName="Nombre_de_la_Empresa" [(ngModel)]="datos.Nombre_Razon_Social">
             <mat-label>
-              <b>Nombre de la Empresa </b></mat-label>
+              Nombre de la Empresa </mat-label>
             <mat-error *ngIf="this.formGeneral.get('Nombre de la Empresa')?.hasError('required')">
               El nombre es <strong>obligatorio</strong>
             </mat-error>
@@ -39,10 +39,10 @@
         </div>
   
         <div class="col-md-3">
-          <mat-form-field appearance="fill">
+          <mat-form-field >
             <input matInput type="text" placeholder="" formControlName="RFC"  [(ngModel)]="datos.RFC">
             <mat-label>
-              <b>RFC</b></mat-label>
+              RFC</mat-label>
             <mat-error *ngIf="this.formGeneral.get('RFC')?.hasError('required')">
                 RFC<strong>Obligatorio</strong>
             </mat-error>
@@ -50,8 +50,8 @@
         </div>
   
         <div class="col-md-3">
-            <mat-form-field appearance="legacy" style="width: 100%;">
-                <mat-label><b>Correo</b></mat-label>
+            <mat-form-field >
+                <mat-label>Correo</mat-label>
                 <input matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datos.Email">
                 <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
                   Correo es <strong>requerido</strong>
@@ -60,10 +60,10 @@
         </div>
   
         <div class="col-md-3 ">
-          <mat-form-field appearance="fill">
+          <mat-form-field >
             <input matInput type="text" placeholder="" formControlName="Telefono_Empresa" [(ngModel)]="datos.Tel_Empresa">
             <mat-label>
-              <b>Telefono Empresa</b></mat-label>
+              Telefono de la Empresa</mat-label>
             <mat-error *ngIf="this.formGeneral.get('Telefono_Empresa')?.hasError('required')">
                 Telefono Empresa <strong>Obligatorio</strong>
             </mat-error>
@@ -74,10 +74,9 @@
   
       <div class="row">
         <div class="col-md-3">
-          <mat-form-field appearance="fill">
+          <mat-form-field >
             <input matInput type="text" placeholder="" formControlName="Calle" [(ngModel)]="datos.Calle">
-            <mat-label>
-              <b>Calle</b></mat-label>
+            <mat-label> Calle</mat-label>
             <mat-error *ngIf="this.formGeneral.get('Calle')?.hasError('required')">
                 Calle <strong>Obligatorio</strong>
             </mat-error>
@@ -85,8 +84,8 @@
         </div>
   
         <div class="col-md-3">
-          <mat-form-field appearance="fill">
-            <mat-label><b>Num_Ext</b></mat-label>
+          <mat-form-field >
+            <mat-label>Numero Exterior</mat-label>
             <input matInput type="text" placeholder="Num_Ext" formControlName="Num_Ext" maxlength="10"
               style="margin-left:6%;" [(ngModel)]="datos.Num_Ext">
             <mat-error *ngIf="this.formGeneral.get('Num_Ext')?.hasError('required')">
@@ -97,8 +96,8 @@
         </div>
   
         <div class="col-md-3">
-          <mat-form-field appearance="fill">
-            <mat-label><b>Num_Int</b></mat-label>
+          <mat-form-field >
+            <mat-label>Numero_Interior</mat-label>
             <input matInput type="text" placeholder="Num_Int" formControlName="Num_Int" maxlength="10"
               style="margin-left:6%;"  [(ngModel)]="datos.Num_Int">
             <mat-error *ngIf="this.formGeneral.get('contactoemergencia')?.hasError('required')">
@@ -108,7 +107,7 @@
         </div>
   
         <!-- <div class="col-md-3 alinea">
-          <mat-form-field appearance="legacy" style="width: 100%;">
+          <mat-form-field ="legacy" style="width: 100%;">
             <mat-label><b></b></mat-label>
             <input matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datos.Email">
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">

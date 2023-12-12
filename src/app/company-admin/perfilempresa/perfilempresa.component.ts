@@ -107,7 +107,13 @@ export class PerfilempresaComponent implements OnInit {
   //id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario , imageInput
       this.httpService.ActulizarDatosEmpresa(id , Nombre_de_la_Empresa , imageInput,RFC , email , Telefono_Empresa, Calle,Num_Ext,Num_Int).subscribe((data : any)=>{
         if(data ==1){
-          alert("Se actualizo")
+          // alert("Se actualizo")
+          Swal.fire(
+            'Exitosamente!',
+            'Se ha actulizado exitosamente',
+            'success'
+            
+          )
           
         }else{
           Swal.fire({
