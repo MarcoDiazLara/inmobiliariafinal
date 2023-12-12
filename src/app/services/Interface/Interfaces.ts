@@ -342,3 +342,21 @@ export interface DatosEmpresa{
 }
 
 
+export interface tblUsers{
+    Id_Usuario: "",
+    Nombre_Usuario: "",
+    Tipo_Usuario: ""
+}
+
+
+export interface informaUsuario{
+    Apellido_Paterno: "",
+    Apellido_Materno: "",
+    Nombres: "",
+    Contacto_Principal: "",
+    Contacto_Emergencia: "",
+    Email: "",
+    Tipo_Usuario: ""
+}
+
+

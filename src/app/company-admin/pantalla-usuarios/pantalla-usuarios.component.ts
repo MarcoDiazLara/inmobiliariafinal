@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
+import { tblUsers } from 'src/app/services/Interface/Interfaces';
 
 @Component({
   selector: 'app-pantalla-usuarios',
@@ -42,7 +43,7 @@ export class PantallaUsuariosComponent implements OnInit {
 
 
   // poner el nombre de una variable
-  datosinventario: InventarioInmuebles[]=[];
+  datosinventario: tblUsers[]=[];
   
 
   constructor(
@@ -79,7 +80,7 @@ export class PantallaUsuariosComponent implements OnInit {
      let IdSocio = localStorage.getItem("Id_Socio");
 
 //  Llamas tu procedimiento 
- this.httpService.InventarioInmuebles(IdSocio).subscribe((data:any)=>{
+ this.httpService.obtenerUsuarios(IdSocio).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.pantallausuarios$.next(data);
