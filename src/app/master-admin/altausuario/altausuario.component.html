@@ -6,7 +6,7 @@
           <mat-form-field appearance="fill">
             <mat-label><b> Selecciona Usuario </b> </mat-label>
             <mat-select formControlName="seleccionausuario" required>
-              <mat-option *ngFor="let User of typeUsers" value="{{ User.Id_Tipo_Usuario}}">{{ User.Tipo_Usuario
+              <mat-option *ngFor="let User of typeUsers" value="{{ User.value}}">{{ User.viewValue
                 }}</mat-option>
             </mat-select>
             <mat-error>
