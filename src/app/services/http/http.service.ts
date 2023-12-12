@@ -559,4 +559,17 @@ export class HttpService {
     '&p_Tel_Empresa='+p_Tel_Empresa +'&p_Calle=' +p_Calle +'&p_Num_Ext='+p_Num_Ext +'&p_Num_Int='+ p_Num_Int;
     return this.httpclient.post(this.url + 'ActulizarDatosEmpresa.php', params, { headers });                                 
   }
+
+
+  obtenerUsuarios(p_Id_Socio: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + p_Id_Socio;
+    return this.httpclient.post(this.url + 'UsuariosEmpresa.php', params, { headers });
+  }
+
+  obtenerInformacionUsuario(p_id_usuario: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario;
+    return this.httpclient.post(this.url + 'sp_web_InfoUsuarioCompany.php', params, { headers });
+  }
 }

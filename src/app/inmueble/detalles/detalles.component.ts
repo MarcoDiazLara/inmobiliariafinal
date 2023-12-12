@@ -235,7 +235,26 @@ Favoritos(){
   back(){
     this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': this.bandera, 'tipoP': this.tipoP}});
   }
+ // URL y texto que se compartirá
+ compartirUrl = window.location.href;
+ compartirTexto = '¡Echa un vistazo a este increíble contenido!';
 
+ // Función para compartir en Twitter
+ compartirEnTwitter() {
+   const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(this.compartirUrl)}&text=${encodeURIComponent(this.compartirTexto)}`;
+   this.abrirVentanaEmergente(twitterUrl);
+ }
+
+ // Función para compartir en Facebook
+ compartirEnFacebook() {
+   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.compartirUrl)}`;
+   this.abrirVentanaEmergente(facebookUrl);
+ }
+
+ // Función para abrir una ventana emergente
+ abrirVentanaEmergente(url: string) {
+   window.open(url, '_blank', 'width=600,height=400');
+ }
    
   
 

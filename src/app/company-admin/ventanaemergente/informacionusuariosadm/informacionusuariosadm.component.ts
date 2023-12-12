@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {  Inject } from '@angular/core';
+import { informaUsuario } from 'src/app/services/Interface/Interfaces';
+import { HttpService } from 'src/app/services/http/http.service';
 
 @Component({
   selector: 'app-informacionusuariosadm',
   templateUrl: './informacionusuariosadm.component.html',
   styleUrls: ['./informacionusuariosadm.component.scss']
 })
-export class InformacionusuariosadmComponent implements OnInit {
+export class InformacionusuariosadmComponent  {
+  datos !: informaUsuario;
+  constructor(
+    public dialogRef: MatDialogRef<InformacionusuariosadmComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private httpService: HttpService
+  ) {}
 
-  constructor() { }
+  ngOnInit(){
+    this.httpService.obtenerInformacionUsuario(localStorage.getItem("Id_Usuxd")).subscribe((data: any)=>{
+      this.datos = data[0];
+      
+    })
+  }
 
-  ngOnInit(): void {
+  cerrarVentanaEmergente() {
+    this.dialogRef.close();
   }
 
 }

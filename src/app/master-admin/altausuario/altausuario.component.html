@@ -6,7 +6,7 @@
           <mat-form-field appearance="fill">
             <mat-label><b> Selecciona Usuario </b> </mat-label>
             <mat-select formControlName="seleccionausuario" required>
-              <mat-option *ngFor="let User of typeUsers" value="{{ User.Id_Tipo_Usuario}}">{{ User.Tipo_Usuario
+              <mat-option *ngFor="let User of typeUsers" value="{{ User.value}}">{{ User.viewValue
                 }}</mat-option>
             </mat-select>
             <mat-error>
@@ -152,7 +152,7 @@
 
 
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-6">
           <div style="margin-top: 3%;">
             <div style="padding: 20px 0 20px 0;text-align: center;">
@@ -167,7 +167,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </form>
 
     <br>
