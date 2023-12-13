@@ -28,4 +28,8 @@ export class BlogComponent implements OnInit {
   openRecorridoVirtual(){
     this.routing.navigate(['./web/recorrido'])
   }
+
+  noti3(){
+    this.routing.navigate(['./web/Rematehipotecario'])
+  }
 }

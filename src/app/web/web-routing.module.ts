@@ -135,8 +135,7 @@ const routes: Routes = [
       path:"terminos",
       component:TerminosComponent
 
-  }
-
+  },
 
 ];
 

@@ -1,17 +1,29 @@
 
-<h2 mat-dialog-title style="text-align: center;">Información Usuario</h2>
+
 
 <mat-dialog-content>
+  <h1 mat-dialog-title style="text-align: center;">Información del Usuario</h1>
   <div class="col-md">
     <hr>
     <h4 style="text-align: center;">
        Datos personales </h4>
     <hr>
-    <p>Nombre Completo: {{datos.Nombres +" "+  datos.Apellido_Paterno+ " " + datos.Apellido_Materno}}</p>
-      <p>Email: {{datos.Email}}</p> 
-    <p>Telefono: {{datos.Contacto_Principal}}</p>
-    <p>Telefono de emergencia: {{datos.Contacto_Emergencia}}</p>
-    <p>Rol: {{datos.Tipo_Usuario}}</p>
+    <div style="text-align: center;">
+      <p class="static-text">  <i class="bi bi-person icon-text"></i> Nombre Completo:</p> 
+      <p class="dynamic-text" >{{datos.Nombres +" "+  datos.Apellido_Paterno+ " " + datos.Apellido_Materno}}</p>
+       <!-- {{datos.Nombres +" "+  datos.Apellido_Paterno+ " " + datos.Apellido_Materno}}</p> -->
+     <p class="static-text">  <i class="bi bi-at  icon-text "></i>Email: </p>
+      <p class="dynamic-text">{{datos.Email}}</p> 
+      <p class="static-text"> <i class="bi bi-telephone  icon-text"></i>Telefono:</p>
+        <p class="dynamic-text"> {{datos.Contacto_Principal}}</p>
+      <p class="static-text"> <i class="bi bi-telephone  icon-text"></i> Telefono de emergencia:</p>
+        <p class="dynamic-text"> {{datos.Contacto_Emergencia}}</p>
+     <p class="static-text">  <i class="bi bi-person-badge  icon-text"></i> Rol: </p>
+      <p class="dynamic-text"> {{datos.Tipo_Usuario}}</p>
+    
+    
+    </div>
+   
 
     <!-- <hr>
     <h4 style="text-align: center;"> <i class="bi bi-pencil"></i>  Datos de Publicacion  </h4>
@@ -29,10 +41,13 @@
      <!-- <p> fecha: {{ data.fecha }}</p>
       <p>Hora {{ data.Hora }}</p>
       <p>Medio de contacto {{ data.Medio_Contacto }}</p> -->
+      
 </div>
 
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="cerrarVentanaEmergente()">Cerrar</button>
+<mat-dialog-actions >
+  <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"  (click)="cerrarVentanaEmergente()">Cerrar</button>
+  
+ 
 </mat-dialog-actions>
 
