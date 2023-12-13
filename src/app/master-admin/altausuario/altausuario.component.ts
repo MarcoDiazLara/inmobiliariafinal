@@ -11,7 +11,10 @@ interface Status {
   value: string;
   viewValue: string;
 }
-
+interface Tipo{
+  value: string;
+  viewValue: string;
+};
 
 @Component({
   selector: 'app-altausuario',
@@ -21,9 +24,12 @@ interface Status {
 
 
 export class AltausuarioComponent implements OnInit {
-  typeUsers : tipoUsuario [] = [];
-  typeUser !: tipoUsuario;
-
+  //  : tipoUsuario [] = [];
+   typeUser !: tipoUsuario;
+  typeUsers: Tipo[] = [
+    {value: '6', viewValue: 'Super Usuario'},
+    
+  ];
 
 
   estados: Status[] = [
@@ -45,7 +51,7 @@ export class AltausuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.obtenerTipoUsuario();
+   
       this.formGeneral = this.formBuilder.group({
         seleccionausuario: ['',[Validators.required]],
         nombre: ['', [Validators.required]],

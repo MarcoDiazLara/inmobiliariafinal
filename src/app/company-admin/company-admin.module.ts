@@ -45,6 +45,7 @@ import { InformacionusuariosadmComponent } from './ventanaemergente/informacionu
 
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
+import { AdminhitoComponent } from './adminhito/adminhito.component';
 
 
 /end/
@@ -64,7 +65,8 @@ import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inm
     PantallaUsuariosComponent,
     InformacionusuariosadmComponent,
     PerfilempresaComponent,
-    InformacionInmuebleComponent
+    InformacionInmuebleComponent,
+    AdminhitoComponent
 
     
   
