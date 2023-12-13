@@ -3,6 +3,7 @@ import { WebModule } from '../web.module';
 import { Route, Router, ActivatedRoute } from '@angular/router';
 import { inmueblesBuscados } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-maps',
@@ -62,7 +63,12 @@ export class MapsComponent  {
     })
     
     if (!navigator.geolocation) {
-      alert('Geolocalización No Compatible');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Geolocalizacion no disponible',
+       
+      })
     }
 
     navigator.geolocation.getCurrentPosition((position) => {

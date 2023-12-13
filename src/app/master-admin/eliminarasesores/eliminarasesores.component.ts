@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Asesores } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-eliminarasesores',
@@ -43,7 +44,13 @@ export class EliminarasesoresComponent implements OnInit {
   eliminarAsesor() {
   this.httpService.eliminarAsesores(this.id).subscribe((data : any)=>{
     if(data = 1){
-      alert("Se elimino el Asesor")
+      //alert("Se elimino el Asesor")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Se elimino el Asesor',
+       
+      })
     }
   })
   }

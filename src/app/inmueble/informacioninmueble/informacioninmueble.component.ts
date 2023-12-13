@@ -147,7 +147,13 @@ export class InformacioninmuebleComponent implements OnInit {
             )
             // alert("Se actualizo correctamente");
           } else{
-            alert(":(");
+            // alert(":(");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: ':(',
+             
+            })
           }
 
 

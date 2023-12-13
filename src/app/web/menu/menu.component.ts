@@ -125,7 +125,6 @@ export class MenuComponent implements OnInit {
     }else if ( entrada == "5" || entrada == "10"){
       this.router.navigate(["/Company/Perfil"]);
     }
-
   }
  // Inmueble 
   Espacio(){

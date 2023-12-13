@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-clientepassword',
@@ -42,12 +43,26 @@ export class ClientepasswordComponent implements OnInit {
   
     
     if(contrasena == contrasena2){
-      this.httpService.cambiarContra(Id_Usuario,contrasena).subscribe(()=>{ alert("Se ha cambiado la contraseña");});
+      this.httpService.cambiarContra(Id_Usuario,contrasena).subscribe(()=>{ 
+        //alert("Se ha cambiado la contraseña");
+        Swal.fire(
+          'Exitosamente!',
+          'Se ha cambiado la contraseña',
+          'success'
+          
+        )
+      });
       
       this.closeDialog();
     }
     else{
-      alert("Las contraseñas no son iguales")
+      //alert("Las contraseñas no son iguales")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las contraseñas no son iguales',
+       
+      })
     }
    }
   }

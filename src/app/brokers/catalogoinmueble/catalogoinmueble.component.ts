@@ -189,7 +189,13 @@ export class CatalogoinmuebleComponent implements OnInit {
     
     obtenerLocalizacion(){
       if (!navigator.geolocation) {
-        alert('Geolocalización No Compatible');
+        //alert('Geolocalización No Compatible');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Geolocalización No Compatible',
+         
+        })
       }
     
       navigator.geolocation.getCurrentPosition((position) => {
@@ -295,7 +301,13 @@ export class CatalogoinmuebleComponent implements OnInit {
             
           } else{
     
-            alert("Error al subir inmueble");
+           // alert("Error al subir inmueble");
+           Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al subir inmueble',
+           
+          })
           }
            })
       }

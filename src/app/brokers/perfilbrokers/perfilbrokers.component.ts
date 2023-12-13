@@ -8,6 +8,7 @@ import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog
 import { BrokerpasswordComponent } from '../brokerpassword/brokerpassword.component';
 import { infoUsuario } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -72,7 +73,13 @@ export class PerfilbrokersComponent implements OnInit {
   obtenerInfo(){
     this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
     {if(data ==201){
-      alert("Error al leer usuario");
+      // alert("Error al leer usuario");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al leer usuario',
+       
+      })
     }else{
       this.datos = data;
       
@@ -100,9 +107,21 @@ export class PerfilbrokersComponent implements OnInit {
   //id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario , imageInput
       this.httpService.updateInfoUsuario(id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario ).subscribe((data : any)=>{
         if(data ==1){
-          alert("Se actualizo usuario");
+          //alert("Se actualizo usuario");
+          Swal.fire(
+            'Exitosamente!',
+            'Se actualizo usuario',
+            'success'
+            
+          )
         }else{
-          alert("Error al actualizar");
+          //alert("Error al actualizar");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al actualizar',
+           
+          })
         }
       })
   }
