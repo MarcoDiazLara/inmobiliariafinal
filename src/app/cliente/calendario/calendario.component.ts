@@ -16,67 +16,62 @@ import esLocale from '@fullcalendar/core/locales/es';
 })
 export class CalendarioComponent implements AfterViewInit {
 
-  @ViewChild('calendar') calendar: any;
 
+  
   constructor(private httpService: HttpService, private dialog: MatDialog) {}
 
   Mcita: mostrarcita[] = [];
 
   ngAfterViewInit(): void {
-    this.initCalendar();
-    this.loadData();
-  }
-
-  initCalendar(): void {
-    const calendarEl = document.getElementById('calendar');
-    if (!calendarEl) {
-      console.error("Elemento '#calendar' no encontrado.");
-      return;
-    }
-
-    this.calendar = new Calendar(calendarEl, {
-      plugins: [dayGridPlugin],
-      validRange: {
-        start: '2023-01-01',
-        end: '2023-12-31',
-      },
-      initialView: 'dayGridMonth',
-      showNonCurrentDates: true,
-      locale: esLocale,
-      eventClick: this.mostrarVentanaEmergente.bind(this),
-    });
-
-    this.calendar.render();
-  }
-
-  loadData(): void {
-    this.httpService.mostrarCita(localStorage.getItem('Id_Usuario')).subscribe((data: any) => {
+    this.httpService.mostrarCita(localStorage.getItem("Id_Usuario")).subscribe((data: any) => {
       this.Mcita = data;
+      
 
-      const evento = this.Mcita.map((event) => {
+      const evento = this.Mcita.map(event => {
         return {
-          title: event.Nombre,
+          title: event.Nombre, 
+           
           start: event.Fecha,
           Hora: event.Hora,
-          Calle: event.Calle,
+          Calle:event.Calle,
           Num_Ext: event.Num_Ext,
           Num_Int: event.Num_Int,
           Email: event.Email,
-          Telefono: event.Telefono,
-          Mensaje: event.Mensaje,
-          Nombre_Publicacion: event.Nombre_Publicacion,
-          Id_Usuario: event.Id_Usuario,
-          Medio_Contacto: event.Medio_Contacto,
+         Telefono: event.Telefono,
+         Mensaje:  event.Mensaje,
+         Nombre_Publicacion: event.Nombre_Publicacion,
+         Id_Usuario: event.Id_Usuario,
+         Medio_Contacto:event.Medio_Contacto,
+          
+          
         };
       });
 
-      this.calendar.removeAllEvents();
-      this.calendar.addEventSource(evento);
+      const calendarEl = document.getElementById('calendar');
+      if (!calendarEl) {
+        console.error("Elemento '#calendar' no encontrado.");
+        return;
+      }
+
+      const calendar = new Calendar(calendarEl, {
+        plugins: [dayGridPlugin],
+        validRange: {
+          start: '2023-01-01',
+          end: '2023-12-31',
+         
+        },
+        initialView: 'dayGridMonth',
+        showNonCurrentDates: true,
+        events: evento,
+        locale: esLocale, // Establece el idioma en español
+        eventClick: this.mostrarVentanaEmergente.bind(this), // Manejador de clic en eventos
+      });
+
+      calendar.render();
     });
   }
 
   mostrarVentanaEmergente(info: any): void {
-    // ... (tu código existente para mostrar el modal)
     const fecha = info.event.start;
     let dia= fecha.getDate().toString();
     let mes= (fecha.getMonth()+1).toString();
@@ -111,106 +106,11 @@ export class CalendarioComponent implements AfterViewInit {
         Id_Usuario:Id_Usuario,
         Medio_Contacto:Medio_Contacto,
         Hora:Hora,
-
-    
-        
       },
     });
-
   }
-}
   
-  // constructor(private httpService: HttpService, private dialog: MatDialog) {}
-
-  // Mcita: mostrarcita[] = [];
-
-  // ngAfterViewInit(): void {
-  //   this.httpService.mostrarCita(localStorage.getItem("Id_Usuario")).subscribe((data: any) => {
-  //     this.Mcita = data;
-
-  //     const evento = this.Mcita.map(event => {
-  //       return {
-  //         title: event.Nombre, 
-           
-  //         start: event.Fecha,
-  //         Hora: event.Hora,
-  //         Calle:event.Calle,
-  //         Num_Ext: event.Num_Ext,
-  //         Num_Int: event.Num_Int,
-  //         Email: event.Email,
-  //        Telefono: event.Telefono,
-  //        Mensaje:  event.Mensaje,
-  //        Nombre_Publicacion: event.Nombre_Publicacion,
-  //        Id_Usuario: event.Id_Usuario,
-  //        Medio_Contacto:event.Medio_Contacto,
-          
-          
-  //       };
-  //     });
-
-  //     const calendarEl = document.getElementById('calendar');
-  //     if (!calendarEl) {
-  //       console.error("Elemento '#calendar' no encontrado.");
-  //       return;
-  //     }
-
-  //     const calendar = new Calendar(calendarEl, {
-  //       plugins: [dayGridPlugin],
-  //       validRange: {
-  //         start: '2023-01-01',
-  //         end: '2023-12-31',
-         
-  //       },
-  //       initialView: 'dayGridMonth',
-  //       showNonCurrentDates: true,
-  //       events: evento,
-  //       locale: esLocale, // Establece el idioma en español
-  //       eventClick: this.mostrarVentanaEmergente.bind(this), // Manejador de clic en eventos
-  //     });
-
-  //     calendar.render();
-  //   });
-  // }
-
-  // mostrarVentanaEmergente(info: any): void {
-  //   const fecha = info.event.start;
-  //   let dia= fecha.getDate().toString();
-  //   let mes= (fecha.getMonth()+1).toString();
-  //   let anio= fecha.getFullYear().toString();
-  //   let fecha1= dia+ "-" + mes +"-"+ anio;
-
-  //     const Nombre= info.event.title;
-  //     const Hora= info.event.extendedProps.Hora;
-  //     const Calle= info.event.extendedProps.Calle;
-  //     const Num_Ext= info.event.extendedProps.Num_Ext;
-  //     const Num_Int= info.event.extendedProps.Num_Int;
-  //     const Email= info.event.extendedProps.Email;
-  //     const Telefono= info.event.extendedProps.Telefono;
-  //     const Mensaje= info.event.extendedProps.Mensaje;
-  //     const Nombre_Publicacion= info.event.extendedProps.Nombre_Publicacion;
-  //     const Id_Usuario= info.event.extendedProps.Id_Usuario;
-  //     const Medio_Contacto= info.event.extendedProps.Medio_Contacto;
-  //     // console.log(Calle);
-  //   // Abre el modal y pasa la información de la cita
-  //   this.dialog.open(DialogComponent, {
-
-  //     data: {
-  //       fecha: fecha1,
-  //       Nombre: Nombre,
-  //       Calle:Calle,
-  //       Num_Ext:Num_Ext,
-  //       Num_Int:Num_Int,
-  //       Email:Email,
-  //       Telefono:Telefono,
-  //       Mensaje:Mensaje,
-  //       Nombre_Publicacion:Nombre_Publicacion,
-  //       Id_Usuario:Id_Usuario,
-  //       Medio_Contacto:Medio_Contacto,
-  //       Hora:Hora,
-
     
-        
-  //     },
-  //   });
-  // }
+  // 
+  }
 
