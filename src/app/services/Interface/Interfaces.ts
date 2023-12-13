@@ -357,6 +357,11 @@ export interface informaUsuario{
     Contacto_Emergencia: "",
     Email: "",
     Tipo_Usuario: ""
+};
+
+export interface asignacionBro{
+    Id_Usuario: "",
+    Nombres: "" 
 }
 
 

@@ -11,6 +11,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignarAsesorComponent } from '../ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
+import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 
 
 
@@ -36,13 +37,13 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     'Nombre_Inmueble',
     'Calle',
     'Nombre_Usuario',
-    'Asesor',
+    'Broker',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Asesor','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Broker','botonOption'];
   
 
   // poner el nombre de una variable
@@ -86,20 +87,11 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     }
 
 
-    // this.formGeneral = this.formBuilder.group({
-    //   prueba: ['', [Validators.required]]
-    // });
-    
-    //   let prueba = this.formGeneral.value.prueba;
      
     
 
     this.obtenerUsuarios();
 
-    // this.http.mostrarReasignacion().subscribe((data:any)=>{
-    // this.datosinmuebles=data;
-    // //console.log(this.datosinmuebles);
-    // });
     this.dataSource = new MatTableDataSource(this.datosinmuebles);
 
   }
@@ -184,7 +176,7 @@ localStorage.setItem("id_publicacion",id_inmo);
 
     
 
-    const dialogRef = this.dialog.open(CompAsignarAsesorComponent, {
+    const dialogRef = this.dialog.open(CompAsignaBrokerComponent, {
       width: '60vh',
       height: 'auto',
       disableClose: true

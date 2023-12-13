@@ -572,4 +572,10 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_InfoUsuarioCompany.php', params, { headers });
   }
+
+  mostrarBroker(Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_selecciona_broker.php', params, { headers });
+  }
 }

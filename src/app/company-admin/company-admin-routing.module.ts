@@ -4,13 +4,13 @@ import { CompanyAdminComponent } from './company-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
-import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
 import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/company-asignar-reasignar.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
+
 
 const routes: Routes = [
   {
@@ -59,8 +59,6 @@ const routes: Routes = [
           component:PerfilempresaComponent,
 
       }
-
-
     ]
   }
   

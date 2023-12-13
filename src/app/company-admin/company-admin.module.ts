@@ -46,6 +46,9 @@ import { InformacionusuariosadmComponent } from './ventanaemergente/informacionu
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
+import { CompAsignaBrokerComponent } from './ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
+import { ComAsignaGrupoComponent } from './com-asigna-grupo/com-asigna-grupo.component';
+
 
 
 /end/
@@ -66,7 +69,12 @@ import { AdminhitoComponent } from './adminhito/adminhito.component';
     InformacionusuariosadmComponent,
     PerfilempresaComponent,
     InformacionInmuebleComponent,
-    AdminhitoComponent
+    AdminhitoComponent,
+    CompAsignaBrokerComponent,
+    ComAsignaGrupoComponent
+    
+
+    
 
     
   
