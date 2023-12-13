@@ -16,25 +16,21 @@ import esLocale from '@fullcalendar/core/locales/es';
 })
 export class CalendarioComponent implements AfterViewInit {
 
-  @ViewChild('calendar') calendar: any;
 
+  
   constructor(private httpService: HttpService, private dialog: MatDialog) {}
 
   Mcita: mostrarcita[] = [];
 
   ngAfterViewInit(): void {
-    this.initCalendar();
-    this.loadData();
-  }
 
-  initCalendar(): void {
     const calendarEl = document.getElementById('calendar');
     if (!calendarEl) {
       console.error("Elemento '#calendar' no encontrado.");
       return;
     }
 
-    this.calendar = new Calendar(calendarEl, {
+    const calendar = new Calendar(calendarEl, {
       plugins: [dayGridPlugin],
       validRange: {
         start: '2023-01-01',
@@ -46,37 +42,40 @@ export class CalendarioComponent implements AfterViewInit {
       eventClick: this.mostrarVentanaEmergente.bind(this),
     });
 
-    this.calendar.render();
-  }
+    calendar.render(); // Renderiza el calendario antes de obtener las citas
 
-  loadData(): void {
-    this.httpService.mostrarCita(localStorage.getItem('Id_Usuario')).subscribe((data: any) => {
-      this.Mcita = data;
+    this.httpService.mostrarCita(localStorage.getItem('Id_Usuario')).subscribe(
+      (data: any) => {
+        this.Mcita = data;
 
-      const evento = this.Mcita.map((event) => {
-        return {
-          title: event.Nombre,
-          start: event.Fecha,
-          Hora: event.Hora,
-          Calle: event.Calle,
-          Num_Ext: event.Num_Ext,
-          Num_Int: event.Num_Int,
-          Email: event.Email,
-          Telefono: event.Telefono,
-          Mensaje: event.Mensaje,
-          Nombre_Publicacion: event.Nombre_Publicacion,
-          Id_Usuario: event.Id_Usuario,
-          Medio_Contacto: event.Medio_Contacto,
-        };
-      });
+        const evento = this.Mcita.map((event) => {
+          return {
+            title: event.Nombre,
+            start: event.Fecha,
+            Hora: event.Hora,
+            Calle: event.Calle,
+            Num_Ext: event.Num_Ext,
+            Num_Int: event.Num_Int,
+            Email: event.Email,
+            Telefono: event.Telefono,
+            Mensaje: event.Mensaje,
+            Nombre_Publicacion: event.Nombre_Publicacion,
+            Id_Usuario: event.Id_Usuario,
+            Medio_Contacto: event.Medio_Contacto,
+          };
+        });
 
-      this.calendar.removeAllEvents();
-      this.calendar.addEventSource(evento);
-    });
+        // Actualiza los eventos después de obtener las citas
+        calendar.removeAllEvents();
+        calendar.addEventSource(evento);
+      },
+      (error) => {
+        console.error('Error al obtener citas', error);
+      }
+    );
   }
 
   mostrarVentanaEmergente(info: any): void {
-    // ... (tu código existente para mostrar el modal)
     const fecha = info.event.start;
     let dia= fecha.getDate().toString();
     let mes= (fecha.getMonth()+1).toString();
@@ -111,22 +110,13 @@ export class CalendarioComponent implements AfterViewInit {
         Id_Usuario:Id_Usuario,
         Medio_Contacto:Medio_Contacto,
         Hora:Hora,
-
-    
-        
       },
     });
-
   }
-}
-  
-  // constructor(private httpService: HttpService, private dialog: MatDialog) {}
-
-  // Mcita: mostrarcita[] = [];
-
-  // ngAfterViewInit(): void {
+    
   //   this.httpService.mostrarCita(localStorage.getItem("Id_Usuario")).subscribe((data: any) => {
   //     this.Mcita = data;
+
 
   //     const evento = this.Mcita.map(event => {
   //       return {
@@ -212,5 +202,5 @@ export class CalendarioComponent implements AfterViewInit {
         
   //     },
   //   });
-  // }
+  }
 
