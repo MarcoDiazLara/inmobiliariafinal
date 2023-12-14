@@ -25,6 +25,13 @@ export class AdminhitoComponent implements OnInit {
 
   }
 
+  onDateSelected(event: any): void {
+    // Aquí obtienes la fecha seleccionada
+    console.log('Fecha seleccionada:', this.selected);
+    console.log("Puto dani")
+    // Puedes hacer lo que quieras con la fecha seleccionada
+  }
+
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
   selected: Date = new Date();
@@ -195,5 +202,8 @@ export class AdminhitoComponent implements OnInit {
     })
    }
  
+   clicfecha(){
+    console.log("Puto Dani");
+   }
 
 }
