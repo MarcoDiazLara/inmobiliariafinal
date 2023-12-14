@@ -30,6 +30,20 @@ export class BlogComponent implements OnInit {
   }
 
   noti3(){
-    this.routing.navigate(['./web/Rematehipotecario'])
+    this.routing.navigate(['./web/Remate'])
+  }
+  noti2(){
+
+    this.routing.navigate(['./web/Guiarentar'])
+  }
+  noti4(){
+
+    this.routing.navigate(['./web/QuieresComprar'])
+
+  }
+
+  noti1(){
+    this.routing.navigate(['./web/EvitaFraude'])
+
   }
 }

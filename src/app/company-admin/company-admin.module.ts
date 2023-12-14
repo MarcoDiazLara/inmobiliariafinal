@@ -46,10 +46,19 @@ import { InformacionusuariosadmComponent } from './ventanaemergente/informacionu
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
+//-------------------------------------------------------------
+//idioma del calendario
+import localeEs from '@angular/common/locales/es';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+//-------------------------------------------------------------
+
+import { registerLocaleData } from '@angular/common';
+
+
 
 
 /end/
-
+registerLocaleData(localeEs);
 @NgModule({
   declarations: [
     CompanyAdminComponent,
@@ -100,6 +109,9 @@ import { AdminhitoComponent } from './adminhito/adminhito.component';
     GoogleMapsModule,
 
   
-  ]
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado
+  ],
 })
 export class CompanyAdminModule { }
