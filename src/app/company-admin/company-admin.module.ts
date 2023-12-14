@@ -48,6 +48,7 @@ import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inm
 import { AdminhitoComponent } from './adminhito/adminhito.component';
 import { CompAsignaBrokerComponent } from './ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.component';
+import { UsuariosbrokerComponent } from './ventanaemergente/usuariosbroker/usuariosbroker.component';
 
 
 
@@ -71,7 +72,8 @@ import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.
     InformacionInmuebleComponent,
     AdminhitoComponent,
     CompAsignaBrokerComponent,
-    CompAsignaGrupoComponent
+    CompAsignaGrupoComponent,
+    UsuariosbrokerComponent
     
 
     

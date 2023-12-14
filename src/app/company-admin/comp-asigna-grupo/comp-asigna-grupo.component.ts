@@ -10,6 +10,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
+import { UsuariosbrokerComponent } from '../ventanaemergente/usuariosbroker/usuariosbroker.component';
 
 
 @Component({
@@ -34,12 +35,13 @@ export class CompAsignaGrupoComponent implements OnInit {
     'Nombre',
     'Apellido Paterno',
     'Apellido Materno',
+    'Supervisor',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre', 'Apellido Paterno','Apellido Materno','botonOption'];
+  columnas: string[] = ['Nombre', 'Apellido Paterno','Apellido Materno','Supervisor','botonOption'];
   
 
   // poner el nombre de una variable
@@ -111,14 +113,8 @@ export class CompAsignaGrupoComponent implements OnInit {
   
 
     
-    this.httpService.mostrarReasignacion(Id_Socio).subscribe((data:any)=>{
-      // this.ArrayAsignacion = data ;
-      // this.ArrayAsignacion.forEach(element => {
-      //   let IdUsuSocio = element.Id_Usuario;
-      //  localStorage.setItem("IdUsj", IdUsuSocio);  
-      // } );
-      
-
+    this.httpService.mostrarInformacionAsesor(Id_Socio).subscribe((data:any)=>{
+ 
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {

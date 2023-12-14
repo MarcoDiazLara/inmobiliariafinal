@@ -364,4 +364,10 @@ export interface asignacionBro{
     Nombres: "" 
 }
 
+export interface informacionA{
+    Nombres: "" 
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
+}
+
 
