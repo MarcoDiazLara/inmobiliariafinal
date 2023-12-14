@@ -27,8 +27,16 @@ export class AdminhitoComponent implements OnInit {
 
   onDateSelected(event: any): void {
     // Aquí obtienes la fecha seleccionada
-    console.log('Fecha seleccionada:', this.selected);
-    console.log("Puto dani")
+    // console.log('Fecha seleccionada:', this.selected);
+    // console.log("Puto dani")
+    let dia= this.selected.getDate().toString();
+    let mes= (this.selected.getMonth()+1).toString();
+    let anio= this.selected.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+    console.log(fecha1);
+    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+      console.log(data);
+    })
     // Puedes hacer lo que quieras con la fecha seleccionada
   }
 
