@@ -3,6 +3,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
+import { Broker } from 'src/app/services/Interface/Interfaces';
 interface estatus {
   value: string;
   viewValue: string;
@@ -15,6 +16,14 @@ interface estatus {
   styleUrls: ['./adminhito.component.scss']
 })
 export class AdminhitoComponent implements OnInit {
+  constructor(private httpService:HttpService) {}
+
+
+
+  ngOnInit(): void {
+    this.SeleccionBrokers();
+
+  }
 
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
@@ -117,7 +126,7 @@ export class AdminhitoComponent implements OnInit {
       aux = "0";
     }
 
-    this.httpservice.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
+    this.httpService.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
       if (data == 1){
         Swal.fire({
           position: "center",
@@ -170,16 +179,21 @@ export class AdminhitoComponent implements OnInit {
       timer: 1500
     });
   }
+  broker !: Broker;
+  brokers : Broker [] = [];
 
-
-  constructor(private httpservice:HttpService) {
-
-
-   
-  }
-
-
-
-  ngOnInit(): void {}
+  SeleccionBrokers(){
+    this.httpService.SeleccionarBrokers(localStorage.getItem("Id_Socio")).subscribe((resp:any)=>{
+     if(resp !== 201){
+      
+    
+       this.broker = resp[0].Id_Usuario;
+       this.brokers = resp;
+     }
+    },(err)=>{
+     console.log(err);
+    })
+   }
+ 
 
 }

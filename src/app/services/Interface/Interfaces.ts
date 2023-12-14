@@ -365,3 +365,5 @@ export interface informaUsuario{
    Nombres:""
  }
 
+ 
+

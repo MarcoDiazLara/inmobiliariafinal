@@ -54,12 +54,11 @@
               <mat-form-field>
                 <mat-label><h4>Asignacion de tarea</h4></mat-label>
                 <mat-select [(ngModel)]="selectedStatus">
-                  <mat-option *ngFor="let estatus of status" [value]="estatus.value">
-                    {{ estatus.viewValue }}
+                  <mat-option *ngFor="let bro of brokers" [value]="bro.Id_Usuario">
+                    {{ bro.Nombres + " " + bro.Apellido_Paterno + " " + bro.Apellido_Materno}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-              
 
               
               
