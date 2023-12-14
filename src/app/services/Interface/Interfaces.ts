@@ -291,8 +291,7 @@ export interface mostrarFechasHito{
     Fecha_Inicio: "",
     Fecha_Cierre: "",
     Descripcion: "",
-    Notificaciones: "",
-    Estatus: ""
+    
 }
 
 export interface compras{

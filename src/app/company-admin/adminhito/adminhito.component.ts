@@ -126,7 +126,7 @@ export class AdminhitoComponent implements OnInit {
       aux = "0";
     }
 
-    this.httpService.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
+    this.httpService.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, this.selectedStatus ).subscribe((data:any)=>{
       if (data == 1){
         Swal.fire({
           position: "center",
