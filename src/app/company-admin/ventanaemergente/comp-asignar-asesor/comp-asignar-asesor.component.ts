@@ -72,7 +72,13 @@ export class CompAsignarAsesorComponent implements OnInit {
           this.closeDialog();
         }
         else{
-          alert("Error al insertar");
+          //("Error al insertar");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al insertar',
+           
+          })
         }
       });
 
@@ -105,7 +111,13 @@ export class CompAsignarAsesorComponent implements OnInit {
           this.closeDialog();
     
         }else{
-          alert("Error al actualizar");
+          //alert("Error al actualizar");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al actualizar',
+           
+          })
         }
     });
       

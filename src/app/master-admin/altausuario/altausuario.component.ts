@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { tipoUsuario } from 'src/app/services/Interface/Interfaces';
 import { LocalizedString } from '@angular/compiler';
+import Swal from 'sweetalert2';
 
 
 
@@ -95,12 +96,30 @@ export class AltausuarioComponent implements OnInit {
       this.httpService.registroCompletoBroker(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra
         ,email,contactoprincipal,contactoemergencia,typeuser ,estatus ,id ,descripcionusuario ,rfc, curp,id ).subscribe((data: any)=>{
         if(data == 0){
-          alert("Error al insertar usuario");
+          //alert("Error al insertar usuario");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al insertar usuario',
+           
+          })
         }else{
           if(data == 2){
-            alert("Error al insertar informacion");
+            //alert("Error al insertar informacion");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al insertar informacion',
+             
+            })
           }else{
-            alert("Se ha insertado un nuevo usuario");
+            //alert("Se ha insertado un nuevo usuario");
+            Swal.fire(
+              'Exitosamente!',
+              'Se ha insertado un nuevo usuario',
+              'success'
+              
+            )
           }
         }
       })

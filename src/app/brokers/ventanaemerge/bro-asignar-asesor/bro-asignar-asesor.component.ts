@@ -74,7 +74,13 @@ export class BroAsignarAsesorComponent implements OnInit {
           this.closeDialog();
         }
         else{
-          alert("Error al insertar");
+         // alert("Error al insertar");
+         Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error al insertar',
+         
+        })
         }
       });
 
@@ -104,7 +110,13 @@ export class BroAsignarAsesorComponent implements OnInit {
           this.closeDialog();
     
         }else{
-          alert("Error al actualizar");
+         // alert("Error al actualizar");
+         Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error al actualizar',
+         
+        })
         }
     });
       

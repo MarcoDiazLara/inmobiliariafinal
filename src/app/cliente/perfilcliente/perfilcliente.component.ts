@@ -137,7 +137,13 @@ export class PerfilclienteComponent implements OnInit {
   obtenerInfo(){
     this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
     {if(data ==201){
-      alert("Error al leer usuario");
+      //alert("Error al leer usuario");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al leer usuario',
+       
+      })
     }else{
     
       this.datos = data;
@@ -147,7 +153,13 @@ export class PerfilclienteComponent implements OnInit {
   obtenerInfo2(){
     this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
     {if(data ==201){
-      alert("Error al leer usuario");
+      //alert("Error al leer usuario");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al leer usuario',
+       
+      })
     }else{
       this.datos.Nombre_Usuario = data.Nombre_Usuario;
       this.datos.Img_Profile = data.Img_Profile;

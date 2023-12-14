@@ -7,6 +7,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder } from '@angular/forms';
 import { infoUsuario } from 'src/app/services/Interface/Interfaces';
 import { MasterAdminpasswordComponent } from '../ventanaemergente/master-adminpassword/master-adminpassword.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfilmaster-admin',
@@ -84,9 +85,21 @@ export class PerfilmasterAdminComponent implements OnInit {
   //id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario , imageInput
       this.httpService.updateInfoUsuario(id , nombre , apellidopaterno , apellidomaterno , curp , rfc ,  contactoprincipal , contactoemergencia ,  email ,  nombreusuario ).subscribe((data : any)=>{
         if(data ==1){
-          alert("Se actualizo usuario");
+          //alert("Se actualizo usuario");
+          Swal.fire(
+            'Exitosamente!',
+            'Se actualizo usuario',
+            'success'
+            
+          )
         }else{
-          alert("Error al actualizar");
+          //alert("Error al actualizar");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al actualizar',
+           
+          })
         }
       })
 
@@ -95,7 +108,13 @@ export class PerfilmasterAdminComponent implements OnInit {
   obtenerInfo(){
     this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
     {if(data ==201){
-      alert("Error al leer usuario");
+      //alert("Error al leer usuario");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al leer usuario',
+       
+      })
     }else{
     
       this.datos = data;
@@ -105,7 +124,12 @@ export class PerfilmasterAdminComponent implements OnInit {
   obtenerInfo2(){
     this.httpService.obtenerInfoUsuario2(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>
     {if(data ==201){
-      alert("Error al leer usuario");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al leer usuario',
+       
+      })
     }else{
       
       this.datos.Nombre_Usuario = data.Nombre_Usuario;

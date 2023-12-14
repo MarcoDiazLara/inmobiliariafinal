@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 
@@ -98,12 +99,30 @@ export class AltaBrokersComponent implements OnInit {
       this.httpService.registroCompletodeAdmin(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra
         ,email,contactoprincipal,contactoemergencia,typeuser ,estatus ,id ,descripcionusuario ,rfc, curp,id, p_id_socio ).subscribe((data: any)=>{
         if(data == 0){
-          alert("Error al insertar usuario");
+          //("Error al insertar usuario");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al insertar usuario',
+           
+          })
         }else{
           if(data == 2){
-            alert("Error al insertar informacion");
+            //alert("Error al insertar informacion");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al insertar informacion',
+             
+            })
           }else{
-            alert("Se ha insertado un nuevo usuario");
+            //alert("Se ha insertado un nuevo usuario");
+            Swal.fire(
+              'Exitosamente!',
+              'Se ha insertado un nuevo usuario',
+              'success'
+              
+            )
           }
         }
       })

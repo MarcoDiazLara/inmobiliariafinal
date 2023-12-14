@@ -141,7 +141,13 @@ export class PerfilempresaComponent implements OnInit {
     this.httpService.MostrarDatosEmpresa(localStorage.getItem("Id_Socio")).subscribe((data : any) =>
   
     {if(data ==201){
-      alert("Error al leer usuario");
+      //alert("Error al leer usuario");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al leer usuario',
+       
+      })
     }else{
     
       this.datos = data[0];

@@ -138,7 +138,12 @@ export class VentanadetallesInmuebleComponent implements OnInit {
             )
             // alert("Se actualizo correctamente");
           } else{
-            alert(":(");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: ':(',
+             
+            })
           }
 
 

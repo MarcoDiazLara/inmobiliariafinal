@@ -195,7 +195,14 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
   
   obtenerLocalizacion(){
     if (!navigator.geolocation) {
-      alert('Geolocalización No Compatible');
+      //alert('Geolocalización No Compatible');
+      Swal.fire(
+        'Exitosamente!',
+        'Geolocalización No Compatible',
+        'success'
+        
+      )
+
     }
   
     navigator.geolocation.getCurrentPosition((position) => {
@@ -299,8 +306,13 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
           this.router.navigate(["/inmueble/avisos"]);
           
         } else{
-  
-          alert("Error al subir inmueble");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al subir inmueble',
+           
+          })
+          //alert("Error al subir inmueble");
         }
          })
     }

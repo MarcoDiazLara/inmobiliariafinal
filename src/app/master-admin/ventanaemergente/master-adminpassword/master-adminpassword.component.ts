@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-master-adminpassword',
@@ -40,7 +41,13 @@ export class MasterAdminpasswordComponent implements OnInit {
       this.closeDialog();
     }
     else{
-      alert("Las contraseñas no son iguales")
+      //alert("Las contraseñas no son iguales")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las contraseñas no son iguales',
+       
+      })
     }
    }
   } 
