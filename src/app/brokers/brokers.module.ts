@@ -44,6 +44,7 @@ import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
 import localeEs from '@angular/common/locales/es';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
+import { FechashitoComponent } from './fechashito/fechashito.component';
 
 registerLocaleData(localeEs);
 
@@ -63,6 +64,7 @@ registerLocaleData(localeEs);
     VentanadetallesInmuebleComponent,
     CatalogoinmuebleComponent,
     BrokerhitoComponent,
+    FechashitoComponent,
 
 
 

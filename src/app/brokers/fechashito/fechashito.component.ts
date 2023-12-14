@@ -2,26 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
-import { ThisReceiver } from '@angular/compiler';
-import { Broker } from 'src/app/services/Interface/Interfaces';
+
 interface estatus {
   value: string;
   viewValue: string;
 }
-
-
-
-
 @Component({
-  selector: 'app-brokerhito',
-  templateUrl: './brokerhito.component.html',
-  styleUrls: ['./brokerhito.component.scss']
+  selector: 'app-fechashito',
+  templateUrl: './fechashito.component.html',
+  styleUrls: ['./fechashito.component.scss']
 })
-
-
-
-export class BrokerhitoComponent implements OnInit {
-
+export class FechashitoComponent implements OnInit {
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
   selected: Date = new Date();
@@ -187,4 +178,6 @@ export class BrokerhitoComponent implements OnInit {
 
 
   ngOnInit(): void {}
+ 
+
 }
