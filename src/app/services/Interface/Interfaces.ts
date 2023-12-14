@@ -291,8 +291,7 @@ export interface mostrarFechasHito{
     Fecha_Inicio: "",
     Fecha_Cierre: "",
     Descripcion: "",
-    Notificaciones: "",
-    Estatus: ""
+    
 }
 
 export interface compras{
@@ -369,5 +368,12 @@ export interface informacionA{
     Apellido_Paterno: "",
     Apellido_Materno: ""
 }
+ export interface Broker{
+   Id_Usuario:"",
+   Apellido_Paterno:"",
+   Apellido_Materno:"",
+   Nombres:""
+ }
 
+ 
 

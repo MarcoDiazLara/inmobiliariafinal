@@ -46,14 +46,25 @@ import { InformacionusuariosadmComponent } from './ventanaemergente/informacionu
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
+
 import { CompAsignaBrokerComponent } from './ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.component';
 import { UsuariosbrokerComponent } from './ventanaemergente/usuariosbroker/usuariosbroker.component';
 
+//-------------------------------------------------------------
+//idioma del calendario
+import localeEs from '@angular/common/locales/es';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+//-------------------------------------------------------------
+
+import { registerLocaleData } from '@angular/common';
+
+
+
 
 
 /end/
-
+registerLocaleData(localeEs);
 @NgModule({
   declarations: [
     CompanyAdminComponent,
@@ -110,6 +121,9 @@ import { UsuariosbrokerComponent } from './ventanaemergente/usuariosbroker/usuar
     GoogleMapsModule,
 
   
-  ]
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado
+  ],
 })
 export class CompanyAdminModule { }

@@ -119,18 +119,18 @@ export class FechaHitoAgentesComponent implements OnInit {
       aux = "0";
     }
 
-    this.httpservice.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
-      if (data == 1){
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Evento añadido con exito.",
-          showConfirmButton: false,
-          timer: 1500
-        });
+    // this.httpservice.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
+    //   if (data == 1){
+    //     Swal.fire({
+    //       position: "center",
+    //       icon: "success",
+    //       title: "Evento añadido con exito.",
+    //       showConfirmButton: false,
+    //       timer: 1500
+    //     });
         
-      }
-    });
+    //   }
+    //});
     if (modal) {
       modal.classList.remove('mostrar');
       setTimeout(() => {
