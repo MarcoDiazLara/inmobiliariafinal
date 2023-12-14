@@ -171,7 +171,13 @@ export class VentanacitaComponent implements OnInit {
 
         
        } else{
-       alert("No se agendo")
+       //alert("No se agendo")
+       Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se agendo',
+       
+      })
        }
 
   }, (err) => {

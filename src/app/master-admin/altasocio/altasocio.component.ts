@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { tipoSocio, Inmuebles,Estados, Municipios, Asentamiento } from 'src/app/services/Interface/Interfaces';
+import Swal from 'sweetalert2';
 
 interface Status {
   value: string;
@@ -158,9 +159,21 @@ selectedImages!: FileList;
       this.httpService.altaSocioCompleto(nombre,apellidopaterno,apellidomaterno,nombreusuario,contra,correo,contactoempresa,contactoemergencia, "10",estatus, localStorage.getItem("Id_Usuario"),
       descripcionusuario,rfc,curp,localStorage.getItem("Id_Usuario"),nombrerazons,Logo,rfcempresa,email,contactoempresa,calle,numext,numint,asentamientos,tipo_socio,localStorage.getItem("Id_Usuario")).subscribe((data:any) =>{
         if(data == 1){
-          alert("se Ha insertado")
+          //alert("se Ha insertado")
+          Swal.fire(
+            'Exitosamente!',
+            'Se ha registrado un nuevo socio',
+            'success'
+            
+          )
         }else{
-          alert("No se pudo insertar")
+          //alert("No se pudo insertar")
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No se pudo insertar',
+           
+          })
         }
       })
 

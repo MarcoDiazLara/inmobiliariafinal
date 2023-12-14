@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -47,12 +48,26 @@ export class BrokerpasswordComponent implements OnInit {
    
      
      if(contrasena == contrasena2){
-       this.httpService.cambiarContra(Id_Usuario,contrasena).subscribe(()=>{ alert("Se ha cambiado la contraseña");});
+       this.httpService.cambiarContra(Id_Usuario,contrasena).subscribe(()=>{ 
+        //alert("Se ha cambiado la contraseña");
+        Swal.fire(
+          'Exitosamente!',
+          'Se ha cambiado la contraseña',
+          'success'
+          
+        )
+      });
        
        this.closeDialog();
      }
      else{
-       alert("Las contraseñas no son iguales")
+       //alert("Las contraseñas no son iguales")
+       Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las contraseñas no son iguales',
+       
+      })
      }
     }
    }
