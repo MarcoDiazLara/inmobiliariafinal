@@ -47,7 +47,7 @@ import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component'
 import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
 import { CompAsignaBrokerComponent } from './ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
-import { ComAsignaGrupoComponent } from './com-asigna-grupo/com-asigna-grupo.component';
+import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.component';
 
 
 
@@ -71,7 +71,7 @@ import { ComAsignaGrupoComponent } from './com-asigna-grupo/com-asigna-grupo.com
     InformacionInmuebleComponent,
     AdminhitoComponent,
     CompAsignaBrokerComponent,
-    ComAsignaGrupoComponent
+    CompAsignaGrupoComponent
     
 
     

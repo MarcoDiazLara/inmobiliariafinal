@@ -10,6 +10,7 @@ import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
+import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.component';
 
 
 const routes: Routes = [
@@ -58,7 +59,12 @@ const routes: Routes = [
           path:'perfilempresa',
           component:PerfilempresaComponent,
 
-      }
+      },
+      {
+        path:'EquipoTrabajo',
+        component:CompAsignaGrupoComponent
+
+    }
     ]
   }
   

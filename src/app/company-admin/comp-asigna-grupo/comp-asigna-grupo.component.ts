@@ -1,6 +1,5 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
 import { reasignacionA } from 'src/app/services/Interface/Interfaces';
@@ -13,15 +12,14 @@ import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 
 
-
-
-
 @Component({
-  selector: 'app-company-asignar-reasignar',
-  templateUrl: './company-asignar-reasignar.component.html',
-  styleUrls: ['./company-asignar-reasignar.component.scss']
+  selector: 'app-comp-asigna-grupo',
+  templateUrl: './comp-asigna-grupo.component.html',
+  styleUrls: ['./comp-asigna-grupo.component.scss']
 })
-export class CompanyAsignarReasignarComponent implements OnInit {
+
+
+export class CompAsignaGrupoComponent implements OnInit {
 
 // ArrayAsignacion:any[]=[];
 
@@ -33,16 +31,15 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   displayedColumns = [
-    'Nombre_Inmueble',
-    'Calle',
-    'Nombre_Usuario',
-    'Broker',
+    'Nombre',
+    'Apellido Paterno',
+    'Apellido Materno',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Broker','botonOption'];
+  columnas: string[] = ['Nombre', 'Apellido Paterno','Apellido Materno','botonOption'];
   
 
   // poner el nombre de una variable
@@ -241,5 +238,6 @@ localStorage.setItem("id_publicacion",id_inmo);
 
 
  
+
 
 
