@@ -25,6 +25,7 @@ export class BrokerhitoComponent implements OnInit {
   constructor(private httpService:HttpService) { }
 
   ngOnInit(): void {
+    this.SeleccionBrokers();
     
   }
 
