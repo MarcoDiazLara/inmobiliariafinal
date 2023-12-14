@@ -40,7 +40,12 @@ import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ven
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
+// lenguaje
+import localeEs from '@angular/common/locales/es';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -88,6 +93,9 @@ import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
     GoogleMapsModule
 
 
-  ]
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado
+  ],
 })
 export class BrokersModule { }
