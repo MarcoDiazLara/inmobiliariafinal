@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
-// import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
 interface estatus {
   value: string;

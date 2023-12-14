@@ -52,13 +52,14 @@
                 </h4>
               </div>
               <mat-form-field>
-                <mat-label><h4>Estatus</h4></mat-label>
+                <mat-label><h4>Asignacion de tarea</h4></mat-label>
                 <mat-select [(ngModel)]="selectedStatus">
                   <mat-option *ngFor="let estatus of status" [value]="estatus.value">
                     {{ estatus.viewValue }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
+              
 
               
               

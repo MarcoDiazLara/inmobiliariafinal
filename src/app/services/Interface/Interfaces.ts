@@ -358,5 +358,10 @@ export interface informaUsuario{
     Email: "",
     Tipo_Usuario: ""
 }
-
+ export interface Broker{
+   Id_Usuario:"",
+   Apellido_Paterno:"",
+   Apellido_Materno:"",
+   Nombres:""
+ }
 
