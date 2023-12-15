@@ -379,7 +379,9 @@ export interface informacionA{
     Nombre_Inmueble:"",
     Calle:"",
     Id_Inmueble:"",
-    Nombres:""
+    Nombres:"",
+    broker:""
+
 
  }
 

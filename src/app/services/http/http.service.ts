@@ -243,7 +243,7 @@ export class HttpService {
   updateUsuarioReasignacion(p_Id_Inmueble: any, p_Id_Usuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = "p_Id_Inmueble=" + p_Id_Inmueble + "&p_Id_Usuario=" + p_Id_Usuario;
-    return this.httpclient.post(this.url + 'sp_web_actualiza_asesor_asignado.php', params, { headers });
+    return this.httpclient.post(this.url + 'sp_web_actualiza_usuario_asignado.php', params, { headers });
   }
 
 

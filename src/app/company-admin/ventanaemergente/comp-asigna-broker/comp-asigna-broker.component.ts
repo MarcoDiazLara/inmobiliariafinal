@@ -53,7 +53,7 @@ export class CompAsignaBrokerComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
-      let Id_Inmueble = localStorage.getItem("id_publicacion");
+      let Id_Inmueble = localStorage.getItem("Id_Inmueble");
       console.log(Id_Inmueble);
 
      
@@ -84,7 +84,7 @@ export class CompAsignaBrokerComponent implements OnInit {
  
   
   prueba(){
-    let Id_Inmueble = localStorage.getItem("id_publicacion");
+    let Id_Inmueble = localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
    
