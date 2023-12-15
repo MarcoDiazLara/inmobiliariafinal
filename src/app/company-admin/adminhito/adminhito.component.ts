@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
 import { Broker } from 'src/app/services/Interface/Interfaces';
+import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
 interface estatus {
   value: string;
   viewValue: string;
@@ -16,12 +17,26 @@ interface estatus {
   styleUrls: ['./adminhito.component.scss']
 })
 export class AdminhitoComponent implements OnInit {
-  constructor(private httpService:HttpService) {}
 
+  constructor(private httpService:HttpService) {}
+  mostrarfechashito:mostrarFechasHito[]=[];
+  
+  saludo: string = '';
 
 
   ngOnInit(): void {
     this.SeleccionBrokers();
+    const fecha = new Date();
+    const hora = fecha.getHours();
+
+    if (hora >= 0 && hora < 12) {
+      this.saludo = '¡Buenos días!';
+    } else if (hora >= 12 && hora < 18) {
+      this.saludo = '¡Buenas tardes!';
+    } else {
+      this.saludo = '¡Buenas noches!';
+    }
+     
 
   }
 
@@ -35,6 +50,7 @@ export class AdminhitoComponent implements OnInit {
     let fecha1= anio+ "-" + mes +"-"+ dia;
     console.log(fecha1);
     this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+      this.mostrarfechashito=data;
       console.log(data);
     })
     // Puedes hacer lo que quieras con la fecha seleccionada
