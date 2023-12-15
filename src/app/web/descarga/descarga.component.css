@@ -4,7 +4,7 @@
     justify-content: center;
     border: 2px solid #000;
     border-radius: 9999px;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: #264D5E ;
     padding: 0.625rem 1.5rem;
     text-align: center;
     color: rgba(255, 255, 255, 1);
@@ -15,7 +15,7 @@
   
   .playstore-button:hover {
     background-color: transparent;
-    color: rgba(0, 0, 0, 1);
+    color:#959193;
   }
   
   .icon {

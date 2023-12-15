@@ -82,7 +82,35 @@
 
       </div>
    
-    <div class="detallesfecha">
+      <div class="detallesfecha">
+        <h2>Detalles de la Fecha</h2>
+        <ul class="content-detallesfecha">
+          <div *ngFor="let fecha of mostrarfechashito" class="detallestemplate">
+            <div class="barraAzul">
+              {{ saludo }}
+              <div>
+                <mat-icon (click)="EditEvent()">create</mat-icon>
+                <mat-icon (click)="Delete()" >delete</mat-icon>
+              </div>
+            </div>
+            <div style="padding: 15px;">
+              <h4> <i class="bi bi-calendar-check"></i> Fecha programada:</h4>
+              <p>  {{ fecha.Fecha_Inicio }}</p>
+              <h4> <i class="bi bi-pencil-square"></i> Asunto</h4>
+              <p>  {{ fecha.Asunto }} </p>
+              <h4> <i class="bi bi-file-earmark-text"></i> Descripcion</h4>
+              <p>{{ fecha.Descripcion }}</p>
+               <h4> <i class="bi bi-calendar-x"></i> Fecha de Cierre</h4>
+              <p>{{ fecha.Fecha_Cierre}}</p>
+             
+              
+         
+            </div>
+          </div>
+        </ul>
+      </div>
+      
+    <!-- <div class="detallesfecha">
       <h2>Detalles de la Fecha</h2>
       <ul class="content-detallesfecha">
         <div class="detallestemplate">
@@ -98,8 +126,8 @@
             <h3>Descripcion</h3>
             <h4>hola soy una descripcion.</h4>
           </div>
-        </div>
-      </ul>
+        </div> -->
+     
 
     <ul *ngIf="ShowEditEvent" class="ShowAddEvent">
       <div class="barraAzul">Editar este evento <mat-icon (click)="closeEvent()" >clear</mat-icon></div>
@@ -167,6 +195,7 @@
 
 
     </div>
-  </div>
+
+  
 
   

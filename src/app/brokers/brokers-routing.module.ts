@@ -10,6 +10,7 @@ import { InventarioagentesComponent } from '../agentes/inventarioagentes/inventa
 import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
+import { FechashitoComponent } from './fechashito/fechashito.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,12 @@ const routes: Routes = [
      {
       path:'catalogoinmueble',
       component:CatalogoinmuebleComponent
+     },
+     {
+      path:'fechashito',
+      component:FechashitoComponent
      }
+
      
     ]
   },

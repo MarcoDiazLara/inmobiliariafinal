@@ -22,11 +22,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
-import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
 import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
 import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
@@ -40,7 +41,13 @@ import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ven
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
+// lenguaje
+import localeEs from '@angular/common/locales/es';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { registerLocaleData } from '@angular/common';
+import { FechashitoComponent } from './fechashito/fechashito.component';
 
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -58,6 +65,7 @@ import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
     VentanadetallesInmuebleComponent,
     CatalogoinmuebleComponent,
     BrokerhitoComponent,
+    FechashitoComponent,
 
 
 
@@ -85,9 +93,13 @@ import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatNativeDateModule
 
 
-  ]
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado
+  ],
 })
 export class BrokersModule { }
