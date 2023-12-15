@@ -60,7 +60,7 @@ export class BroAsignarAsesorComponent implements OnInit {
 
      
       
-      this.http.insertarasesor( Id_Publicacion,this.Nombres).subscribe((data: any)=> {
+      this.http.insertarusuarioasignacion( Id_Publicacion,this.Nombres).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',
@@ -97,7 +97,7 @@ export class BroAsignarAsesorComponent implements OnInit {
   
     if (valor=="1"){
   
-      this.http.updateReasignaAsesor(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
+      this.http.updateUsuarioReasignacion(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
         if(resp == 1){
   
           Swal.fire({

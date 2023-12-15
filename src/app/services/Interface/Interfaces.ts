@@ -375,5 +375,13 @@ export interface informacionA{
    Nombres:""
  }
 
+ export interface AsignacionBroker{
+    Nombre_Inmueble:"",
+    Calle:"",
+    Id_Inmueble:"",
+    Nombres:""
+
+ }
+
  
 

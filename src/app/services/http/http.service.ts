@@ -240,9 +240,9 @@ export class HttpService {
 
 
 
-  updateReasignaAsesor(p_Id_Publicacion: any, p_Id_Usuario: any) {
+  updateUsuarioReasignacion(p_Id_Inmueble: any, p_Id_Usuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_Id_Publicacion=" + p_Id_Publicacion + "&p_Id_Usuario=" + p_Id_Usuario;
+    let params = "p_Id_Inmueble=" + p_Id_Inmueble + "&p_Id_Usuario=" + p_Id_Usuario;
     return this.httpclient.post(this.url + 'sp_web_actualiza_asesor_asignado.php', params, { headers });
   }
 
@@ -255,10 +255,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
 
-  insertarasesor(Id_Publicacion: any, Id_Usuarios: any,) {
+  insertarusuarioasignacion(Id_Usuarios: any,Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'Id_Publicacion=' + Id_Publicacion + "&Id_Usuarios=" + Id_Usuarios
-    return this.httpclient.post(this.url + 'sp_web_insertar_asesor_asignacion.php', params, { headers });
+    let params = 'p_Id_Inmueble=' + Id_Inmueble + "&Id_Usuarios=" + Id_Usuarios
+    return this.httpclient.post(this.url + 'sp_web_insertar_usuario_asignacion.php', params, { headers });
   }
 
 
@@ -590,4 +590,13 @@ export class HttpService {
     return this.httpclient.post(this.url + 'seleccionaBrokers.php', params, { headers });
 
   }
+
+  InmueblesBrokers(Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_Id_Socio=" + Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_asignacion_brokers.php', params, { headers });
+  }
+
+
+
 }

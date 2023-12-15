@@ -3,7 +3,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
-import { reasignacionA } from 'src/app/services/Interface/Interfaces';
+import { AsignacionBroker } from 'src/app/services/Interface/Interfaces';
 import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
@@ -46,9 +46,9 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   
 
   // poner el nombre de una variable
-  datosinmuebles: reasignacionA[]=[];
+  datosinmuebles: AsignacionBroker[]=[];
 
-  datosAsesores: AsigarReAsignar[]=[];
+ datosAsesores: AsigarReAsignar[]=[];
 
 
 
@@ -69,9 +69,6 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   ngOnInit(): void {
     
-
-
-
     let Bandera = localStorage.getItem("Bandera")
 
     if(Bandera =="1"){
@@ -107,21 +104,18 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     
     });
   }
-
-
-  obtenerUsuarios(){
-    let Id_Socio = localStorage.getItem("Id_Socio");
-  
-
-    
-    this.httpService.mostrarReasignacion(Id_Socio).subscribe((data:any)=>{
+      //Ejemplo de Array 
       // this.ArrayAsignacion = data ;
       // this.ArrayAsignacion.forEach(element => {
       //   let IdUsuSocio = element.Id_Usuario;
       //  localStorage.setItem("IdUsj", IdUsuSocio);  
       // } );
-      
 
+  obtenerUsuarios(){
+    let Id_Socio = localStorage.getItem("Id_Socio");
+
+    this.httpService.InmueblesBrokers(Id_Socio).subscribe((data:any)=>{
+    
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
@@ -133,6 +127,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
       console.log('Error de conexión');
     }
     )
+
   }
   
 
@@ -166,8 +161,9 @@ localStorage.setItem("mi_valor", "2");
 
 }
 
-localStorage.setItem("id_publicacion",id_inmo);
+localStorage.setItem("Id_Inmueble",id_inmo);
     localStorage.setItem("Asesor", asesor );
+    console.log(id_inmo);
 
 
     

@@ -53,17 +53,17 @@ export class CompAsignaBrokerComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
-      let Id_Publicacion = localStorage.getItem("id_publicacion");
-      console.log(Id_Publicacion);
+      let Id_Inmueble = localStorage.getItem("id_publicacion");
+      console.log(Id_Inmueble);
 
      
       
-      this.http.insertarasesor( Id_Publicacion,this.Nombres).subscribe((data: any)=> {
+      this.http.insertarusuarioasignacion( Id_Inmueble,this.Nombres).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'El asesor fue asignado',
+            title: 'El Broker fue asignado',
             showConfirmButton: false,
             timer: 1500
           })
@@ -84,14 +84,14 @@ export class CompAsignaBrokerComponent implements OnInit {
  
   
   prueba(){
-    let Id_Publicacion = localStorage.getItem("id_publicacion");
+    let Id_Inmueble = localStorage.getItem("id_publicacion");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
    
   
     if (valor=="1"){
   
-      this.http.updateReasignaAsesor(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
+      this.http.updateUsuarioReasignacion(Id_Inmueble,this.Nombres ).subscribe((resp:any)=> {
         if(resp == 1){
   
           Swal.fire({
