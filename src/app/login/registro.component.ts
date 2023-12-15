@@ -54,9 +54,9 @@ export class RegistroComponent implements OnInit {
       }else{
         if(data == 2){
           alert("Error al insertar informacion");
-        }else
+        }else{
 			if(data == 3){
-          alert("El nombre de usuario ya existe, por favor ingresa uno diferente.");
+          alert("El usuario ya existe, por favor ingresa uno diferente.");
         }else{
 			alert("Éxito!! Se creó nuevo usuario");
           this.httpService.EnviarCorreo(p_correo1,"Bienvenido a InmobeWise. \n Hola, "+ p_nombres1 + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data:any)=>{
