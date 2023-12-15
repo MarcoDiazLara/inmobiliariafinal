@@ -597,6 +597,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_asignacion_brokers.php', params, { headers });
   }
 
-
+     EliminarFechasHitos(p_id_hito:any){
+      let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+      let params= "p_Id_hito"+p_id_hito;
+      return this.httpclient.post(this.url + 'sp_web_eliminarFechas.php', params, { headers });
+     }
 
 }

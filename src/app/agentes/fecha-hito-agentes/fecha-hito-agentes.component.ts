@@ -3,6 +3,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
+import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
 
 interface estatus {
   value: string;
@@ -12,12 +13,35 @@ interface estatus {
 @Component({
   selector: 'app-fecha-hito-agentes',
   templateUrl: './fecha-hito-agentes.component.html',
-  styleUrls: ['./fecha-hito-agentes.component.scss'],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
-  ]
-})
+  styleUrls: ['./fecha-hito-agentes.component.scss']})
 export class FechaHitoAgentesComponent implements OnInit {
+
+    constructor(private httpService:HttpService) {
+
+  }
+  saludo: string = '';
+  mostrarfechashito:mostrarFechasHito[]=[];
+
+
+  ngOnInit(): void {
+    const fecha = new Date();
+    const hora = fecha.getHours();
+
+    if (hora >= 0 && hora < 12) {
+      this.saludo = '¡Buenos días!';
+    } else if (hora >= 12 && hora < 18) {
+      this.saludo = '¡Buenas tardes!';
+    } else {
+      this.saludo = '¡Buenas noches!';
+    }
+     
+
+
+
+
+
+  }
+  
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
   selected: Date = new Date();
@@ -172,15 +196,23 @@ export class FechaHitoAgentesComponent implements OnInit {
       timer: 1500
     });
   }
-
-
-  constructor(private httpservice:HttpService) {
-
-
    
+  onDateSelected(event: any): void {
+    // Aquí obtienes la fecha seleccionada
+    // console.log('Fecha seleccionada:', this.selected);
+    // console.log("Puto dani")
+    let dia= this.selected.getDate().toString();
+    let mes= (this.selected.getMonth()+1).toString();
+    let anio= this.selected.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+    console.log(fecha1);
+    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+      this.mostrarfechashito=data;
+      console.log(data);
+    })
+    // Puedes hacer lo que quieras con la fecha seleccionada
   }
 
 
-
-  ngOnInit(): void {}
+  
 }
