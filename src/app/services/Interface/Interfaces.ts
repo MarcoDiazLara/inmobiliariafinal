@@ -287,6 +287,7 @@ export interface EstatusInmueble{
 }
 
 export interface mostrarFechasHito{
+    Id_Fecha_Hito:"",
     Asunto: "",
     Fecha_Inicio: "",
     Fecha_Cierre: "",
