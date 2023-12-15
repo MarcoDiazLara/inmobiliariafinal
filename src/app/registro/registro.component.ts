@@ -50,23 +50,12 @@ export class RegistroComponent implements OnInit {
     this.httpService.registroCompleto(p_nombres1,p_a_paterno1,p_a_materno1,p_nom_usuario1,p_contrasena1
       ,p_correo1,p_tel_fijo1,p_cel1).subscribe((data: any)=>{
       if(data == 0){
-        //alert("Error al insertar usuario");
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Error al insertar usuario',
-         
-        })
+        alert("Error al insertar usuario");
       }else{
         if(data == 2){
-          //alert("Error al insertar informacion");
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Error al insertar informacion',
-           
-          })
+          alert("Error al insertar informacion");
         }else{
+			alert("Éxito!! Se creó nuevo usuario");
           this.httpService.EnviarCorreo(p_correo1,"Bienvenido a InmobeWise. \n Hola, "+ p_nombres1 + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data:any)=>{
             this.router.navigate(['/login']);
           })
