@@ -5,7 +5,14 @@ import { DuenoComponent } from './dueno.component';
 const routes: Routes = [
   {
     path:'',
-    component: DuenoComponent
+    component: DuenoComponent,
+    children: [
+      {
+        path:'Dueno',
+        component: DuenoComponent,
+      }
+   
+    ]
   }
 ];
 
