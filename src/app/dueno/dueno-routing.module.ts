@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DuenoComponent } from './dueno.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { NotificacionDuenoComponent } from './notificacion-dueno/notificacion-dueno.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path:'bienvenida',
         component: BienvenidaComponent,
+      },
+      { 
+        path:'notificacion-dueno',
+        component: NotificacionDuenoComponent,
       }
 
    

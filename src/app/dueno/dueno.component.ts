@@ -15,7 +15,7 @@ export class DuenoComponent implements OnDestroy {
 
   fillerNav = [
     { name: "bienvenida", route: "bienvenida", icon: "home", label: "Hola", number: '0' },
-    // { name: "Notificaciones", route: "notificacionbroker", icon: "notifications", label: "Notificaciones", number: '0' },
+     { name: "Notificaciones", route: "notificacion-dueno", icon: "notifications", label: "Notificaciones", number: '0' },
     // { name: "Asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
     // { name: "Calendario", route: "calendario", icon: "date_range", label: " Agenda", number: '0' },
     // { name: "Hitobroker", route: "Hitobroker",icon: "event" , label: "Fecha Hito",number:'0' },
