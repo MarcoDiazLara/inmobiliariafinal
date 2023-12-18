@@ -602,5 +602,11 @@ export class HttpService {
       let params= "p_id_hito=" + p_id_hito;
       return this.httpclient.post(this.url + 'sp_web_eliminarFechas.php', params, { headers });
      }
+     
 
+   ActualizacionFechasHito(p_Id_Fecha_Hito: any,p_Asunto: any,p_Fecha_Inicio: any,p_Fecha_Cierre: any,p_Descripcion: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params= "p_Id_Fecha_Hito=" + p_Id_Fecha_Hito + "&p_Asunto=" + p_Asunto + "&p_Fecha_Inicio="+p_Fecha_Inicio+
+    "&p_Fecha_Cierre=" + p_Fecha_Cierre + "&p_Descripcion=" + p_Descripcion;
+   }
 }
