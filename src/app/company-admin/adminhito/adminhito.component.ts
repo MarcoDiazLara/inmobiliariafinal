@@ -133,7 +133,13 @@ export class AdminhitoComponent implements OnInit {
   EditEvent(Edicthito:any) {
     this.ShowEditEvent = true;
     this.Aux=Edicthito;
-    console.log(this.Aux);
+    this.fechaInicio1 = this.Aux.Fecha_Inicio;
+    this.fechaCierre1 = this.Aux.Fecha_Cierre;
+    this.xd= new Date(this.fechaInicio1+"T00:00:00");
+     this.xd1= new Date(this.fechaCierre1+"T00:00:00");
+     this.xd.setMinutes(this.xd.getTimezoneOffset());
+     this.xd1.setMinutes(this.xd1.getTimezoneOffset());
+    
     setTimeout(() => {
       const modal = document.querySelector('.ShowAddEvent');
       if (modal) {
@@ -201,11 +207,28 @@ export class AdminhitoComponent implements OnInit {
       timer: 1500
     });
   }
-
+  xd!: Date;
+  xd1!: Date;
 
   Editnew() {
+    let dia= this.xd.getDate().toString();
+    let mes= (this.xd.getMonth()+1).toString();
+    let anio= this.xd.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+
+    let dias= this.xd1.getDate().toString();
+    let mess= (this.xd1.getMonth()+1).toString();
+    let anios= this.xd1.getFullYear().toString();
+    let fecha2= anios+ "-" + mess +"-"+ dias;
     const modal = document.querySelector('.ShowAddEvent');
-     this.httpService.ActualizacionFechasHito(this.Aux.Id_Fecha_Hito,this.Aux.Asunto,this.Aux.Fecha_Inicio,this.Aux.Fecha_Cierre,this.Aux.Descripcion)
+    //let xd = Date(this.fechaInicio1);
+    
+    // console.log(this.xd);
+    // console.log(this.xd1);
+    //  console.log(this.Aux.Id_Fecha_Hito+this.Aux.Asunto+this.Aux.Fecha_Inicio+this.Aux.Fecha_Cierre+this.Aux.Descripcion)
+     this.httpService.ActualizacionFechasHito(this.Aux.Id_Fecha_Hito,this.Aux.Asunto,fecha1,fecha2,this.Aux.Descripcion).subscribe((data:any)=>{
+      alert("Se actualizo fecha hito");
+     })
     if (modal) {
       modal.classList.remove('mostrar');
       setTimeout(() => {
