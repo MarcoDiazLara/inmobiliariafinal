@@ -8,10 +8,10 @@ const routes: Routes = [
     path:'',
     component: DuenoComponent,
     children: [
-      {
-        path:'Dueno',
-        component: DuenoComponent,
-      },
+      // {
+      //   path:'Dueno',
+      //   component: DuenoComponent,
+      // },
       {
         path:'bienvenida',
         component: BienvenidaComponent,
