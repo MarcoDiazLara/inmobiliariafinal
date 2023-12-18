@@ -14,8 +14,6 @@ import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broke
 
 
 
-
-
 @Component({
   selector: 'app-company-asignar-reasignar',
   templateUrl: './company-asignar-reasignar.component.html',
@@ -23,11 +21,10 @@ import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broke
 })
 export class CompanyAsignarReasignarComponent implements OnInit {
 
+
 // ArrayAsignacion:any[]=[];
 
   usuarios$: any;
-  //  Id_Usu: any;
-
   formGeneral!:FormGroup; 
 
   @ViewChild(MatPaginator)
@@ -44,16 +41,11 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Broker','botonOption'];
   
-
   // poner el nombre de una variable
   datosinmuebles: AsignacionBroker[]=[];
-
- datosAsesores: AsigarReAsignar[]=[];
-
+  datosAsesores: AsigarReAsignar[]=[];
 
 
- 
- 
   
   constructor(
     public dialog: MatDialog,
@@ -79,12 +71,8 @@ export class CompanyAsignarReasignarComponent implements OnInit {
         this.dataSource.data =usuarios;
       }
     });
-
     }
 
-
-     
-    
 
     this.obtenerUsuarios();
 
@@ -166,7 +154,6 @@ localStorage.setItem("Id_Inmueble",id_inmo);
     console.log(id_inmo);
 
 
-    
 
     const dialogRef = this.dialog.open(CompAsignaBrokerComponent, {
       width: '60vh',
