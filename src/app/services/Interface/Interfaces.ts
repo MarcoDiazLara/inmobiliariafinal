@@ -399,6 +399,7 @@ export interface HitoGeneral{
 }
 
 export interface InventarioBroker{
+    Id_Publicador: "",
     Nombre_Inmueble: "",
     Calle: "",
     Num_Ext: "",
