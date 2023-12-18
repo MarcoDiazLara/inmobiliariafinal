@@ -5,6 +5,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
 import { Broker } from 'src/app/services/Interface/Interfaces';
 import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
+import { HitoGeneral } from 'src/app/services/Interface/Interfaces';
 interface estatus {
   value: string;
   viewValue: string;
@@ -19,12 +20,13 @@ interface estatus {
 export class AdminhitoComponent implements OnInit {
 
   constructor(private httpService:HttpService) {}
-  mostrarfechashito:mostrarFechasHito[]=[];
+  mostrarfechashito:HitoGeneral[]=[];
   
   saludo: string = '';
 
 
   ngOnInit(): void {
+    this.onDateSelected(this.selected);
     this.SeleccionBrokers();
     const fecha = new Date();
     const hora = fecha.getHours();
@@ -48,8 +50,12 @@ export class AdminhitoComponent implements OnInit {
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
-    console.log(fecha1);
-    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+    //console.log(fecha1);
+    // this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+    //   this.mostrarfechashito=data;
+    //   console.log(data);
+    // })
+    this.httpService.mostrarHitoGeneral(localStorage.getItem("Id_Socio"), fecha1).subscribe((data:any)=>{
       this.mostrarfechashito=data;
       console.log(data);
     })
