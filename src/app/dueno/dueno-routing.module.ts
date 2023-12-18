@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DuenoComponent } from './dueno.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,12 @@ const routes: Routes = [
       {
         path:'Dueno',
         component: DuenoComponent,
+      },
+      {
+        path:'bienvenida',
+        component: BienvenidaComponent,
       }
+
    
     ]
   }
