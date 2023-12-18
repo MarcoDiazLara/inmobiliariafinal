@@ -613,7 +613,9 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params= "p_Id_Fecha_Hito=" + p_Id_Fecha_Hito + "&p_Asunto=" + p_Asunto + "&p_Fecha_Inicio="+p_Fecha_Inicio+
     "&p_Fecha_Cierre=" + p_Fecha_Cierre + "&p_Descripcion=" + p_Descripcion;
-   }
+    return this.httpclient.post(this.url + 'Actualizar_Fechas_Hito.php', params, { headers });
+  }
+   
 
    mostrarHitoGeneral(p_Id_Socio:any, p_finicio:any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });

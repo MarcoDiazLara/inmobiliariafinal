@@ -144,7 +144,7 @@
                 <mat-form-field class="date-field">
                   <mat-label disabled><h4>fecha de inicio</h4></mat-label>
                   <div class="date-label-container">
-                    <input matInput [matDatepicker]="inicio" [(ngModel)]="Aux.Fecha_Inicio">
+                    <input matInput [matDatepicker]="inicio" [(ngModel)]="xd">
                     <mat-datepicker-toggle matIconSuffix [for]="inicio"></mat-datepicker-toggle>
                   </div>
                   <mat-hint>MM/DD/YYYY</mat-hint>
@@ -155,7 +155,7 @@
                 <mat-form-field class="date-field">
                   <mat-label disabled><h4>fecha de cierre</h4></mat-label>
                   <div class="date-label-container">
-                    <input matInput [matDatepicker]="cierre"  [(ngModel)]="Aux.Fecha_Cierre">
+                    <input matInput [matDatepicker]="cierre"  [(ngModel)]="xd1">
                     <mat-datepicker-toggle matIconSuffix [for]="cierre"></mat-datepicker-toggle>
                   </div>
                   <mat-hint>MM/DD/YYYY</mat-hint>
