@@ -380,7 +380,7 @@ export interface informacionA{
     Nombre_Inmueble:"",
     Calle:"",
     Id_Inmueble:"",
-    Nombres:"",
+    Usuario:"",
     broker:""
 
 
