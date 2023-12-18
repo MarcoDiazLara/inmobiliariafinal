@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
+import { InventarioBroker } from 'src/app/services/Interface/Interfaces';
 import { VentanadetallesInmuebleComponent } from '../ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 
 @Component({
@@ -43,7 +43,7 @@ export class InvesntarioComponent implements OnInit {
 
 
   // poner el nombre de una variable
-  datosinventario: InventarioInmuebles[]=[];
+  datosinventario: InventarioBroker[]=[];
   
 
   constructor(
@@ -85,9 +85,11 @@ export class InvesntarioComponent implements OnInit {
 
   obtenerInventario(){
      let IdSocio = localStorage.getItem("Id_Socio");
+     let IdUsuario = localStorage.getItem("Id_Socio");
+
 
  
- this.httpService.InventarioInmuebles(IdSocio).subscribe((data:any)=>{
+ this.httpService.InventarioBroker(IdSocio,IdUsuario).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);

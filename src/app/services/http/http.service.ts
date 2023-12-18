@@ -606,10 +606,9 @@ export class HttpService {
   InventarioBroker(IdUsusario: any, IdSocio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Usuario=' + IdUsusario + '&p_Id_Socio=' + IdSocio;
-    return this.httpclient.post(this.url + 'Filtros_Espacio_Tipo_Anuncio.php', params, { headers });
+    return this.httpclient.post(this.url + 'sp_web_inventario_broker.php', params, { headers });
   }
 
-  
    ActualizacionFechasHito(p_Id_Fecha_Hito: any,p_Asunto: any,p_Fecha_Inicio: any,p_Fecha_Cierre: any,p_Descripcion: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params= "p_Id_Fecha_Hito=" + p_Id_Fecha_Hito + "&p_Asunto=" + p_Asunto + "&p_Fecha_Inicio="+p_Fecha_Inicio+

@@ -312,7 +312,7 @@ export interface InventarioInmuebles{
     Num_Ext: "",
     Municipio: "",
     Estatus_Publicacion: ""
-    
+  
 }
 export interface selecionD{
 
@@ -385,8 +385,6 @@ export interface informacionA{
     Id_Inmueble:"",
     Usuario:"",
     broker:""
-
-
  }
 
 export interface HitoGeneral{
@@ -398,5 +396,14 @@ export interface HitoGeneral{
         Apellido_Paterno: "",
         Apellido_Materno: "",
         Nombres: ""
+}
+
+export interface InventarioBroker{
+    Nombre_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Municipio: "",
+    Estatus_Publicacion: ""
+  
 }
 
