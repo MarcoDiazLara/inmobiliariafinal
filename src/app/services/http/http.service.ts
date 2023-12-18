@@ -255,7 +255,7 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
 
-  insertarusuarioasignacion(Id_Usuarios: any,Id_Inmueble: any) {
+  insertarusuarioasignacion(Id_Usuarios: any, Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Inmueble=' + Id_Inmueble + "&Id_Usuarios=" + Id_Usuarios
     return this.httpclient.post(this.url + 'sp_web_insertar_usuario_asignacion.php', params, { headers });
@@ -491,14 +491,13 @@ export class HttpService {
     return this.httpclient.post(this.url + 'Filtros_Espacio.php', params, { headers });
 
   }
+
   filtroEstadoAnuncio(p_Id_Usuario: any, p_Id_Estatus: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Usuario=' + p_Id_Usuario + '&p_Id_Estatus=' + p_Id_Estatus;
     return this.httpclient.post(this.url + 'Filtros_Espacio_Tipo_Anuncio.php', params, { headers });
-
-
-
   }
+
   FiltroTipodeInmueble(p_Id_Usuario: any, p_Id_Tipo_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Usuario=' + p_Id_Usuario + '&p_Id_Tipo_Inmueble=' + p_Id_Tipo_Inmueble;
@@ -543,29 +542,29 @@ export class HttpService {
     let params = 'p_IdSocio=' + IdSocio;
     return this.httpclient.post(this.url + 'sp_web_consulta_solicitud_asesor.php', params, { headers });
   }
-    
-  MostrarDatosEmpresa(p_Socio:any){
+
+  MostrarDatosEmpresa(p_Socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Socio=' + p_Socio;
     return this.httpclient.post(this.url + 'Empresa_Perfil.php', params, { headers });
   }
 
 
-  ActulizarDatosEmpresa(p_Socio:any,p_Nombre_Razon_Social:any,p_Img_Logo:any,p_RFC:any,p_Email:any,p_Tel_Empresa:any,p_Calle:any,p_Num_Ext:any,p_Num_Int:any){
+  ActulizarDatosEmpresa(p_Socio: any, p_Nombre_Razon_Social: any, p_Img_Logo: any, p_RFC: any, p_Email: any, p_Tel_Empresa: any, p_Calle: any, p_Num_Ext: any, p_Num_Int: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Socio=' + p_Socio + '&p_Nombre_Razon_Social='+ p_Nombre_Razon_Social+ '&p_Img_Logo='+ p_Img_Logo+ '&p_RFC='+ p_RFC +'&p_Email=' + p_Email+
-    '&p_Tel_Empresa='+p_Tel_Empresa +'&p_Calle=' +p_Calle +'&p_Num_Ext='+p_Num_Ext +'&p_Num_Int='+ p_Num_Int;
-    return this.httpclient.post(this.url + 'ActulizarDatosEmpresa.php', params, { headers });                                 
+    let params = 'p_Socio=' + p_Socio + '&p_Nombre_Razon_Social=' + p_Nombre_Razon_Social + '&p_Img_Logo=' + p_Img_Logo + '&p_RFC=' + p_RFC + '&p_Email=' + p_Email +
+      '&p_Tel_Empresa=' + p_Tel_Empresa + '&p_Calle=' + p_Calle + '&p_Num_Ext=' + p_Num_Ext + '&p_Num_Int=' + p_Num_Int;
+    return this.httpclient.post(this.url + 'ActulizarDatosEmpresa.php', params, { headers });
   }
 
 
-  obtenerUsuarios(p_Id_Socio: any){
+  obtenerUsuarios(p_Id_Socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Socio=' + p_Id_Socio;
     return this.httpclient.post(this.url + 'UsuariosEmpresa.php', params, { headers });
   }
 
-  obtenerInformacionUsuario(p_id_usuario: any){
+  obtenerInformacionUsuario(p_id_usuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_InfoUsuarioCompany.php', params, { headers });
@@ -584,7 +583,7 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_Informacion_asesor.php', params, { headers });
 
   }
-  SeleccionarBrokers(p_id_socio:any){
+  SeleccionarBrokers(p_id_socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_socio=' + p_id_socio;
     return this.httpclient.post(this.url + 'seleccionaBrokers.php', params, { headers });
@@ -597,10 +596,15 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_asignacion_brokers.php', params, { headers });
   }
 
-     EliminarFechasHitos(p_id_hito:any){
-      let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-      let params= "p_id_hito=" + p_id_hito;
-      return this.httpclient.post(this.url + 'sp_web_eliminarFechas.php', params, { headers });
-     }
-
+  EliminarFechasHitos(p_id_hito: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id_hito=" + p_id_hito;
+    return this.httpclient.post(this.url + 'sp_web_eliminarFechas.php', params, { headers });
+  }
+  
+  InventarioBroker(IdUsusario: any, IdSocio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Usuario=' + IdUsusario + '&p_Id_Socio=' + IdSocio;
+    return this.httpclient.post(this.url + 'Filtros_Espacio_Tipo_Anuncio.php', params, { headers });
+  }
 }

@@ -361,7 +361,10 @@ export interface informaUsuario{
 
 export interface asignacionBro{
     Id_Usuario: "",
-    Nombres: "" 
+    Nombres: "" ,
+    Apellido_Paterno:"",
+    Apellido_Materno:""
+   
 }
 
 export interface informacionA{
