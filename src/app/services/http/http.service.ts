@@ -603,9 +603,9 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_eliminarFechas.php', params, { headers });
   }
   
-  InventarioBroker(IdUsusario: any, IdSocio: any) {
+  InventarioBroker(IdSocio: any,IdUsuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Usuario=' + IdUsusario + '&p_Id_Socio=' + IdSocio;
+    let params = 'p_IdSocio=' + IdSocio + '&p_IdUsuario=' + IdUsuario;
     return this.httpclient.post(this.url + 'sp_web_inventario_broker.php', params, { headers });
   }
 

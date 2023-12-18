@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -7,7 +7,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { InventarioBroker } from 'src/app/services/Interface/Interfaces';
 import { VentanadetallesInmuebleComponent } from '../ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 
@@ -85,7 +84,7 @@ export class InvesntarioComponent implements OnInit {
 
   obtenerInventario(){
      let IdSocio = localStorage.getItem("Id_Socio");
-     let IdUsuario = localStorage.getItem("Id_Socio");
+     let IdUsuario = localStorage.getItem("Id_Usuario");
 
 
  
@@ -93,7 +92,7 @@ export class InvesntarioComponent implements OnInit {
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(IdSocio);
+        console.log(IdSocio,IdUsuario);
         ;
       } else {
         data = [];
@@ -102,7 +101,7 @@ export class InvesntarioComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio);
+      console.log('Error de conexión',IdSocio,IdUsuario);
 
     }
     )
