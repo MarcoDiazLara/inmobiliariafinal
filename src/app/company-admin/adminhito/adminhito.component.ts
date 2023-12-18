@@ -23,7 +23,7 @@ export class AdminhitoComponent implements OnInit {
   mostrarfechashito:HitoGeneral[]=[];
   
   saludo: string = '';
-
+   Aux!: HitoGeneral;
 
   ngOnInit(): void {
     this.onDateSelected(this.selected);
@@ -71,6 +71,11 @@ export class AdminhitoComponent implements OnInit {
   Descripcion: string = '';
   notificacionesActivadas: boolean = false;
   selectedStatus: any;
+  // ----------------------------------
+  asunto1: string = '';
+  fechaInicio1: any;
+  fechaCierre1: any;
+  Descripcion1: string = '';
   
   status: estatus[] = [
     {value: 'Ninguno', viewValue: 'ninguno'},
@@ -125,8 +130,10 @@ export class AdminhitoComponent implements OnInit {
    }  
   }
 
-  EditEvent() {
+  EditEvent(Edicthito:any) {
     this.ShowEditEvent = true;
+    this.Aux=Edicthito;
+    console.log(this.Aux);
     setTimeout(() => {
       const modal = document.querySelector('.ShowAddEvent');
       if (modal) {
@@ -198,6 +205,7 @@ export class AdminhitoComponent implements OnInit {
 
   Editnew() {
     const modal = document.querySelector('.ShowAddEvent');
+     this.httpService.ActualizacionFechasHito(this.Aux.Id_Fecha_Hito,this.Aux.Asunto,this.Aux.Fecha_Inicio,this.Aux.Fecha_Cierre,this.Aux.Descripcion)
     if (modal) {
       modal.classList.remove('mostrar');
       setTimeout(() => {
@@ -232,8 +240,9 @@ export class AdminhitoComponent implements OnInit {
     })
    }
  
-   clicfecha(){
-    console.log("Puto Dani");
-   }
+  
+   
+
+
 
 }
