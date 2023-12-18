@@ -386,5 +386,14 @@ export interface informacionA{
 
  }
 
- 
+export interface HitoGeneral{
+    Asunto: "",
+        Fecha_Inicio: "",
+        Fecha_Cierre: "",
+        Descripcion: "",
+        Id_Fecha_Hito: "",
+        Apellido_Paterno: "",
+        Apellido_Materno: "",
+        Nombres: ""
+}
 
