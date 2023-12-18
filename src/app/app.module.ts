@@ -53,6 +53,7 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
     DetallesComponent,
     UnityComponent,
     MetododepagoComponent,
+   
   
     
 

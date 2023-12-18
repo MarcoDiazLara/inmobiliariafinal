@@ -3,6 +3,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
+import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
+
 
 interface estatus {
   value: string;
@@ -12,12 +14,40 @@ interface estatus {
 @Component({
   selector: 'app-fecha-hito-agentes',
   templateUrl: './fecha-hito-agentes.component.html',
-  styleUrls: ['./fecha-hito-agentes.component.scss'],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
-  ]
-})
+  styleUrls: ['./fecha-hito-agentes.component.scss']})
 export class FechaHitoAgentesComponent implements OnInit {
+  mostrarIcono = true;
+  // idHito: any; // Puedes obtener este valor de alguna manera, por ejemplo, desde un modelo o un servicio
+
+    constructor(private httpService:HttpService) {
+
+  }
+  saludo: string = '';
+  mostrarfechashito:mostrarFechasHito[]=[];
+
+
+  ngOnInit(): void {
+    let dia= this.selected.getDate().toString();
+    let mes= (this.selected.getMonth()+1).toString();
+    let anio= this.selected.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+    console.log(fecha1);
+    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+      this.mostrarfechashito=data;
+      console.log(data);
+    })
+    const fecha = new Date();
+    const hora = fecha.getHours();
+
+    if (hora >= 0 && hora < 12) {
+      this.saludo = '¡Buenos días!';
+    } else if (hora >= 12 && hora < 18) {
+      this.saludo = '¡Buenas tardes!';
+    } else {
+      this.saludo = '¡Buenas noches!';
+    }
+  }
+  
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
   selected: Date = new Date();
@@ -40,27 +70,45 @@ export class FechaHitoAgentesComponent implements OnInit {
 
   }
 
+   Delete(idHito: any){
+    if (!idHito) {
+      console.error('Se requiere el valor de idHito para llamar a EliminarFechasHitos');
+      return;
+    }
+    alert(idHito)
+    this.httpService.EliminarFechasHitos(idHito).subscribe((data:any) => {
+      console.log('Respuesta del servicio:', data);
+      alert("Se eliminar Fecha");
+      // Después de realizar las acciones necesarias, puedes ocultar el icono
+      this.mostrarIcono = false;
 
+    },
+    (error) => {
+      // Manejar errores del servicio/API
+      console.error('Error al llamar al servicio:', error);
+    }
 
-  Delete(){
-    Swal.fire({
-      title: "¿Estas seguro?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Si, Descartar!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Descartado!",
-          text: "Este evento ha sido descartado.",
-          icon: "success"
-        });
-      }
-    });
+    );
+   
 
   }
+   // Swal.fire({
+    //   title: "¿Estas seguro?", 
+    //   icon: "warning",
+    //   showCancelButton: true,
+    //   confirmButtonColor: "#3085d6",
+    //   cancelButtonColor: "#d33",
+    //   confirmButtonText: "Si, Descartar!"
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+    //     Swal.fire({
+    //       title: "Descartado!",
+    //       text: "Este evento ha sido descartado.",
+    //       icon: "success"
+    //     });
+    //   }
+    // });
+
 
   addEvent() {
     this.ShowAddEvent = true;
@@ -172,15 +220,23 @@ export class FechaHitoAgentesComponent implements OnInit {
       timer: 1500
     });
   }
-
-
-  constructor(private httpservice:HttpService) {
-
-
    
+  onDateSelected(event: any): void {
+    // Aquí obtienes la fecha seleccionada
+    // console.log('Fecha seleccionada:', this.selected);
+    // console.log("Puto dani")
+    let dia= this.selected.getDate().toString();
+    let mes= (this.selected.getMonth()+1).toString();
+    let anio= this.selected.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+    console.log(fecha1);
+    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+      this.mostrarfechashito=data;
+      console.log(data);
+    })
+    // Puedes hacer lo que quieras con la fecha seleccionada
   }
 
 
-
-  ngOnInit(): void {}
+  
 }

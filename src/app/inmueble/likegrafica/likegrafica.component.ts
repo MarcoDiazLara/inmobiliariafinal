@@ -6,7 +6,6 @@ import {FormsModule} from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
 
 
-
 @Component({
   selector: 'app-likegrafica',
   templateUrl: './likegrafica.component.html',
@@ -25,10 +24,5 @@ export class LikegraficaComponent  {
     // console.log(this.NumLikes);
     // console.log(data.COUNT);
    })
-
-
   }
-
-
-
 }

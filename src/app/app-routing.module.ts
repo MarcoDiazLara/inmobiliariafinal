@@ -14,6 +14,7 @@ import { MasterAdminModule } from './master-admin/master-admin.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
 
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
+import { DuenoComponent } from './dueno/dueno.component';
 
 
 
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'web',
     loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
+  },
+  {
+    path: 'Dueno',
+    loadChildren: ()=> import('./dueno/dueno.module').then(m =>m.DuenoModule)
   },
 
   {
