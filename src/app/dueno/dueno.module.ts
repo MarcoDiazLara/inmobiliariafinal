@@ -49,6 +49,8 @@ import localeEs from '@angular/common/locales/es';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { NotificacionDuenoComponent } from './notificacion-dueno/notificacion-dueno.component';
+import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
+import { InteresadosComponent } from './interesados/interesados.component';
 //import { FechashitoComponent } from './fechashito/fechashito.component';
 
 registerLocaleData(localeEs);
@@ -66,6 +68,8 @@ registerLocaleData(localeEs);
     // Citas1Component,
     BienvenidaComponent,
     NotificacionDuenoComponent,
+    MiAsesorComponent,
+    InteresadosComponent,
     // InvesntarioComponent,
     // VentanadetallesInmuebleComponent,
     // CatalogoinmuebleComponent,
