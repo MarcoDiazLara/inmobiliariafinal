@@ -52,7 +52,7 @@ export class MenuinmuebleComponent {
     this.router.navigate(["/web"]);
   }
   Espacio() {
-    this.router.navigate(['inmueble/menuinmueble']);
+    this.router.navigate(['inmueble/avisos']);
   }
 
   Avisos() {
