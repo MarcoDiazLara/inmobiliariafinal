@@ -43,7 +43,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   
   // poner el nombre de una variable
   datosinmuebles: AsignacionBroker[]=[];
-  datosAsesores: AsigarReAsignar[]=[];
+  datos: AsigarReAsignar[]=[];
 
 
   
@@ -87,8 +87,8 @@ export class CompanyAsignarReasignarComponent implements OnInit {
  
   obtenerConteo(){
     let IdSocio = localStorage.getItem("Id_Socio");
-    this.http.AsesoresAginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
-      this.datosAsesores=data;
+    this.http.Aginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
+      this.datos=data;
     
     });
   }
