@@ -50,14 +50,17 @@
                             </div>
 
                     <mat-list>
-                        <ul *ngIf="Venta">
+                    <ul *ngIf="Venta" class="ulprecio" >
                         <h3 mat-subheader> <img class="money">Venta MXN</h3>
                         <mat-list-item ><h3 mat-line>{{"$ "+details.Precio_Final}}</h3></mat-list-item>
                     </ul>
-                    <ul *ngIf="!Venta">
+                    <ul *ngIf="!Venta" class="ulprecio">
                         <h3 mat-subheader> <img class="money">Renta MXN</h3>
                         <mat-list-item ><h3 mat-line>{{"$ "+details.Precio_Final}}</h3></mat-list-item>
                     </ul>
+
+                    
+
                         <h3 mat-subheader> <img class="map"> Lugar</h3>
                         <mat-list-item >
                            <h3 mat-line>{{details.Calle +" "+ details.Num_Ext}}</h3>
@@ -85,13 +88,14 @@
                                     <td><h3><img class="car"> {{details.Estacionamiento}} Cochera</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h3><img class="rule"> {{details.Construccion_M2}} m^2</h3></td>
+                                    <td><h3><img class="rule"> {{details.Construccion_M2}} Terreno en m^2</h3></td>
                                     <td><h3><img class="garden"> {{details.Jardin}} Jardin</h3></td>
                                     <td><h3><img class="floor"> {{details.Num_Pisos}} Pisos</h3></td>
                                 </tr>
                                 <tr>
-                                    
                                     <td><h3><img class="pool"> {{details.Alberca}} Piscina</h3></td>
+                                    <td><h3><img class="garden">Jardin</h3></td>
+                                    <td><h3><img class="floor"> Pisos</h3></td>
                                 </tr>
                                             <!-- Puedes agregar más filas según sea necesario -->
                             </table>  
