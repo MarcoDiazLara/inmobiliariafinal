@@ -89,7 +89,7 @@
             <div class="barraAzul">
               {{ saludo }}
               <div>
-                <mat-icon (click)="EditEvent()">create</mat-icon>
+                <mat-icon (click)="EditEvent(fecha)">create</mat-icon>
                 <mat-icon (click)="Delete()" >delete</mat-icon>
               </div>
             </div>
@@ -102,6 +102,8 @@
               <p>{{ fecha.Descripcion }}</p>
                <h4> <i class="bi bi-calendar-x"></i> Fecha de Cierre</h4>
               <p>{{ fecha.Fecha_Cierre}}</p>
+              <h4> <i class="bi bi-calendar-x"></i> Asignado a:</h4>
+              <p>{{ fecha.Nombres + " "+ fecha.Apellido_Paterno + " "+ fecha.Apellido_Materno}}</p>
              
               
          
@@ -133,7 +135,7 @@
       <div class="barraAzul">Editar este evento <mat-icon (click)="closeEvent()" >clear</mat-icon></div>
       <ul class="content-Editevent">    
           <div class="inputContainer">
-            <input type="text" class="inputAsunto" placeholder="">
+            <input type="text" class="inputAsunto" placeholder="" [(ngModel)]="Aux.Asunto">
             <label for="" class="label">Asunto</label>
 
           </div>
@@ -142,7 +144,7 @@
                 <mat-form-field class="date-field">
                   <mat-label disabled><h4>fecha de inicio</h4></mat-label>
                   <div class="date-label-container">
-                    <input matInput [matDatepicker]="inicio">
+                    <input matInput [matDatepicker]="inicio" [(ngModel)]="xd">
                     <mat-datepicker-toggle matIconSuffix [for]="inicio"></mat-datepicker-toggle>
                   </div>
                   <mat-hint>MM/DD/YYYY</mat-hint>
@@ -153,7 +155,7 @@
                 <mat-form-field class="date-field">
                   <mat-label disabled><h4>fecha de cierre</h4></mat-label>
                   <div class="date-label-container">
-                    <input matInput [matDatepicker]="cierre">
+                    <input matInput [matDatepicker]="cierre"  [(ngModel)]="xd1">
                     <mat-datepicker-toggle matIconSuffix [for]="cierre"></mat-datepicker-toggle>
                   </div>
                   <mat-hint>MM/DD/YYYY</mat-hint>
@@ -162,26 +164,26 @@
               </div>
             </div>
             <div class="inputContainer">
-              <input type="text" class="inputDescripcion" placeholder="">
+              <input type="text" class="inputDescripcion" placeholder=""  [(ngModel)]="Aux.Descripcion" >
               <label for="" class="label">Descripcion</label>
               
     
             </div>
             <div style="display: flex; align-items: center;">
               <h4>
-                <mat-icon style="vertical-align: -5px; margin-right: 5px;" >notifications_active</mat-icon>
+                <!-- <mat-icon style="vertical-align: -5px; margin-right: 5px;" >notifications_active</mat-icon>
                 Activar Notificaciones 
-                <mat-checkbox color="primary" style="margin-left: 5px;"></mat-checkbox>
+                <mat-checkbox color="primary" style="margin-left: 5px;"></mat-checkbox> -->
               </h4>
             </div>
-            <mat-form-field>
+            <!-- <mat-form-field>
               <mat-label><h4>Estatus</h4></mat-label>
               <mat-select>
                 <mat-option *ngFor="let estatus of status" [value]="estatus.value">
                   {{ estatus.viewValue }}
                 </mat-option>
               </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
 
             
             

@@ -312,7 +312,7 @@ export interface InventarioInmuebles{
     Num_Ext: "",
     Municipio: "",
     Estatus_Publicacion: ""
-    
+  
 }
 export interface selecionD{
 
@@ -361,7 +361,10 @@ export interface informaUsuario{
 
 export interface asignacionBro{
     Id_Usuario: "",
-    Nombres: "" 
+    Nombres: "" ,
+    Apellido_Paterno:"",
+    Apellido_Materno:""
+   
 }
 
 export interface informacionA{
@@ -380,11 +383,28 @@ export interface informacionA{
     Nombre_Inmueble:"",
     Calle:"",
     Id_Inmueble:"",
-    Nombres:"",
+    Usuario:"",
     broker:""
-
-
  }
 
- 
+export interface HitoGeneral{
+    Asunto: "",
+        Fecha_Inicio: "",
+        Fecha_Cierre: "",
+        Descripcion: "",
+        Id_Fecha_Hito: "",
+        Apellido_Paterno: "",
+        Apellido_Materno: "",
+        Nombres: ""
+}
+
+export interface InventarioBroker{
+    Id_Publicador: "",
+    Nombre_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Municipio: "",
+    Estatus_Publicacion: ""
+  
+}
 

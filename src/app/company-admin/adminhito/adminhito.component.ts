@@ -5,6 +5,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { ThisReceiver } from '@angular/compiler';
 import { Broker } from 'src/app/services/Interface/Interfaces';
 import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
+import { HitoGeneral } from 'src/app/services/Interface/Interfaces';
 interface estatus {
   value: string;
   viewValue: string;
@@ -19,12 +20,13 @@ interface estatus {
 export class AdminhitoComponent implements OnInit {
 
   constructor(private httpService:HttpService) {}
-  mostrarfechashito:mostrarFechasHito[]=[];
+  mostrarfechashito:HitoGeneral[]=[];
   
   saludo: string = '';
-
+   Aux!: HitoGeneral;
 
   ngOnInit(): void {
+    this.onDateSelected(this.selected);
     this.SeleccionBrokers();
     const fecha = new Date();
     const hora = fecha.getHours();
@@ -48,8 +50,12 @@ export class AdminhitoComponent implements OnInit {
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
-    console.log(fecha1);
-    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+    //console.log(fecha1);
+    // this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
+    //   this.mostrarfechashito=data;
+    //   console.log(data);
+    // })
+    this.httpService.mostrarHitoGeneral(localStorage.getItem("Id_Socio"), fecha1).subscribe((data:any)=>{
       this.mostrarfechashito=data;
       console.log(data);
     })
@@ -65,6 +71,11 @@ export class AdminhitoComponent implements OnInit {
   Descripcion: string = '';
   notificacionesActivadas: boolean = false;
   selectedStatus: any;
+  // ----------------------------------
+  asunto1: string = '';
+  fechaInicio1: any;
+  fechaCierre1: any;
+  Descripcion1: string = '';
   
   status: estatus[] = [
     {value: 'Ninguno', viewValue: 'ninguno'},
@@ -119,8 +130,16 @@ export class AdminhitoComponent implements OnInit {
    }  
   }
 
-  EditEvent() {
+  EditEvent(Edicthito:any) {
     this.ShowEditEvent = true;
+    this.Aux=Edicthito;
+    this.fechaInicio1 = this.Aux.Fecha_Inicio;
+    this.fechaCierre1 = this.Aux.Fecha_Cierre;
+    this.xd= new Date(this.fechaInicio1+"T00:00:00");
+     this.xd1= new Date(this.fechaCierre1+"T00:00:00");
+     this.xd.setMinutes(this.xd.getTimezoneOffset());
+     this.xd1.setMinutes(this.xd1.getTimezoneOffset());
+    
     setTimeout(() => {
       const modal = document.querySelector('.ShowAddEvent');
       if (modal) {
@@ -188,10 +207,28 @@ export class AdminhitoComponent implements OnInit {
       timer: 1500
     });
   }
-
+  xd!: Date;
+  xd1!: Date;
 
   Editnew() {
+    let dia= this.xd.getDate().toString();
+    let mes= (this.xd.getMonth()+1).toString();
+    let anio= this.xd.getFullYear().toString();
+    let fecha1= anio+ "-" + mes +"-"+ dia;
+
+    let dias= this.xd1.getDate().toString();
+    let mess= (this.xd1.getMonth()+1).toString();
+    let anios= this.xd1.getFullYear().toString();
+    let fecha2= anios+ "-" + mess +"-"+ dias;
     const modal = document.querySelector('.ShowAddEvent');
+    //let xd = Date(this.fechaInicio1);
+    
+    // console.log(this.xd);
+    // console.log(this.xd1);
+    //  console.log(this.Aux.Id_Fecha_Hito+this.Aux.Asunto+this.Aux.Fecha_Inicio+this.Aux.Fecha_Cierre+this.Aux.Descripcion)
+     this.httpService.ActualizacionFechasHito(this.Aux.Id_Fecha_Hito,this.Aux.Asunto,fecha1,fecha2,this.Aux.Descripcion).subscribe((data:any)=>{
+      alert("Se actualizo fecha hito");
+     })
     if (modal) {
       modal.classList.remove('mostrar');
       setTimeout(() => {
@@ -226,8 +263,9 @@ export class AdminhitoComponent implements OnInit {
     })
    }
  
-   clicfecha(){
-    console.log("Puto Dani");
-   }
+  
+   
+
+
 
 }
