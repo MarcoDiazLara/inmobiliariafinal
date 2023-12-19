@@ -25,6 +25,7 @@ export class CompanyAdminComponent implements OnDestroy {
     // { name: "EquipoTrabajo", route: "EquipoTrabajo",icon: "groups_3" , label: "Asignar-Grupo",number:'0'},
     { name: "PantallaUsuarios", route: "PantallaUsuarios",icon: "person_search" , label: "Pantalla Usuarios",number:'0'},
     { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
+    { name: "estatususuario",    route: "estatususuario",icon: "collections_bookmark" , label: "estatususuario",number:'0'},
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'},
   
     
