@@ -51,6 +51,7 @@ import { registerLocaleData } from '@angular/common';
 import { NotificacionDuenoComponent } from './notificacion-dueno/notificacion-dueno.component';
 import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
 import { InteresadosComponent } from './interesados/interesados.component';
+import { DatosInteresadosComponent } from './interesados/datos-interesados/datos-interesados.component';
 //import { FechashitoComponent } from './fechashito/fechashito.component';
 
 registerLocaleData(localeEs);
@@ -70,6 +71,7 @@ registerLocaleData(localeEs);
     NotificacionDuenoComponent,
     MiAsesorComponent,
     InteresadosComponent,
+    DatosInteresadosComponent,
     // InvesntarioComponent,
     // VentanadetallesInmuebleComponent,
     // CatalogoinmuebleComponent,
