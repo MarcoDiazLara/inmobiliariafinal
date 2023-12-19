@@ -146,7 +146,7 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['web/QuieresComprar'])
    }
    Quieresvender(){
-    this.router.navigate(['web/QuieresComprar'])
+    this.router.navigate(['web/QuieresVender'])
    }
    inmobiliarias(){
     this.router.navigate(['web/inmobiliarias'])

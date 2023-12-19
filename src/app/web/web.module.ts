@@ -36,7 +36,6 @@ import { PlanbbComponent } from './planbb/planbb.component';
 import { RecorvirtbComponent } from './recorvirtb/recorvirtb.component';
 import { DesarrollobComponent } from './desarrollob/desarrollob.component';
 import { PlubibComponent } from './plubib/plubib.component';
-
 import { TerminosComponent } from './terminos/terminos.component';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef,MatDialogTitle,MatDialogContent,MatDialogActions,MatDialogClose,} from '@angular/material/dialog';
 
@@ -75,6 +74,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     DesarrollobComponent,
     PlubibComponent,
     TerminosComponent,
+    QuierescomprarComponent,
     
 
        
@@ -89,7 +89,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
      ReactiveFormsModule,
      WebRoutingModule,
      GoogleMapsModule,
-     QuierescomprarComponent,
      MatFormFieldModule, 
      MatInputModule, 
      FormsModule, 
