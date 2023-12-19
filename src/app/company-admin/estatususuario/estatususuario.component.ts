@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -7,17 +7,18 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InventarioBroker } from 'src/app/services/Interface/Interfaces';
-import { VentanadetallesInmuebleComponent } from '../ventanadetalles-inmueble/ventanadetalles-inmueble.component';
+import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
+import { tblUsers } from 'src/app/services/Interface/Interfaces';
+import { InformacionusuariosadmComponent } from '../ventanaemergente/informacionusuariosadm/informacionusuariosadm.component';
+import { EstatusComponent } from '../ventanaemergente/estatus/estatus.component';
 
 @Component({
-  selector: 'app-invesntario',
-  templateUrl: './invesntario.component.html',
-  styleUrls: ['./invesntario.component.scss']
+  selector: 'app-estatususuario',
+  templateUrl: './estatususuario.component.html',
+  styleUrls: ['./estatususuario.component.scss']
 })
-
-export class InvesntarioComponent implements OnInit {
-  inventarioasesor$: any;
+export class EstatususuarioComponent implements OnInit {
+  pantallausuarios$: any;
 
   formGeneral!:FormGroup; 
 
@@ -25,24 +26,24 @@ export class InvesntarioComponent implements OnInit {
   paginator!: MatPaginator;
 
   displayedColumns = [
-    'Nombre_Inmueble',
-    'Calle',
-    'Num_Ext',
-    'Municipio',
-    'Estatus_Publicacion',
-    'botonOption'
+    'Nombre_Usuario',
+    'Tipo_Usuario',
+    // 'Num_Ext',
+    // 'Municipio',
+    // 'Estatus_Publicacion',
+    // 'botonOption'
     
 
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble','Calle','Num_Ext','Municipio','Estatus_Publicacion','botonOption'];
+  columnas: string[] = ['Nombre_Usuario','Tipo_Usuario','botonOption'];
   
 
 
   // poner el nombre de una variable
-  datosinventario: InventarioBroker[]=[];
+  datosinventario: tblUsers[]=[];
   
 
   constructor(
@@ -58,19 +59,12 @@ export class InvesntarioComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.inventarioasesor$ =this.adminService.getInventarioAsesorOb().subscribe((inventarioasesor)=>{
+    this.pantallausuarios$ =this.adminService.getpantallausuariosOb().subscribe((inventarioasesor)=>{
       if(inventarioasesor !== null){
         this.dataSource.data =inventarioasesor;
       }
     });
 
-    // let Id_Usuario = localStorage.getItem ('Id_Usuario');   
-    // this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
-    //   data=this.datosinventario;
-    //   console.log("datosinventario"+this.datosinventario);
-
-    // });
-    // this.dataSource = new MatTableDataSource(this.datosinventario);
     
       
   this.obtenerInventario();
@@ -84,31 +78,26 @@ export class InvesntarioComponent implements OnInit {
 
   obtenerInventario(){
      let IdSocio = localStorage.getItem("Id_Socio");
-     let IdUsuario = localStorage.getItem("Id_Usuario");
 
-
- 
- this.httpService.InventarioBroker(IdSocio,IdUsuario).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data.Id_Usuario);
+//  Llamas tu procedimiento 
+ this.httpService.obtenerUsuarios(IdSocio).subscribe((data:any)=>{
+  console.log("datosdeinventario"+data);
       if(data !== 201) {
-        this.adminService.inventarioasesor$.next(data);
-        console.log(IdSocio,IdUsuario);
+        this.adminService.pantallausuarios$.next(data);
+        console.log(IdSocio);
         ;
       } else {
         data = [];
-        this.adminService.inventarioasesor$.next(data);
+        this.adminService.pantallausuarios$.next(data);
         
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio,IdUsuario);
+      console.log('Error de conexión',IdSocio);
 
     }
     )
   }
-
-
-
 
   
   applyFilter(event: Event) {
@@ -122,13 +111,13 @@ export class InvesntarioComponent implements OnInit {
 
   openasesor(idPubli:any ) {
 
-    localStorage.setItem ('idpublicacion',idPubli);
+    localStorage.setItem ('Id_Usuxd',idPubli);
     
 
 
-    const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
-      width: '80%',
-      height: 'auto',  
+    const dialogRef = this.dialog.open(EstatusComponent, {
+       width: '40%',
+      // height: '80%',  
       disableClose: true
     });
   }
@@ -146,4 +135,17 @@ export class InvesntarioComponent implements OnInit {
 
   }
 
-  }
+  
+
+
+  
+  
+
+   
+
+    
+  
+  
+ 
+ 
+}

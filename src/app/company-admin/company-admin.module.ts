@@ -57,6 +57,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 //-------------------------------------------------------------
 
 import { registerLocaleData } from '@angular/common';
+import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
+import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 
 
 
@@ -83,7 +85,9 @@ registerLocaleData(localeEs);
     AdminhitoComponent,
     CompAsignaBrokerComponent,
     CompAsignaGrupoComponent,
-    UsuariosbrokerComponent
+    UsuariosbrokerComponent,
+    EstatususuarioComponent,
+    EstatusComponent
     
 
     

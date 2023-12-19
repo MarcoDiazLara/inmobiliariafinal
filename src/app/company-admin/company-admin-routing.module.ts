@@ -11,6 +11,8 @@ import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
 import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.component';
+import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
+import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 
 
 const routes: Routes = [
@@ -63,6 +65,11 @@ const routes: Routes = [
       {
         path:'EquipoTrabajo',
         component:CompAsignaGrupoComponent
+
+    },
+    {
+      path:'estatususuario',
+      component:EstatususuarioComponent
 
     }
     ]

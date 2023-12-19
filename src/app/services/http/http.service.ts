@@ -623,4 +623,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_mostrarHitoGeneral.php', params, { headers });
    }
 
+   EstatusUsuarioCompany(p_Id_Socio:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + p_Id_Socio ;
+    return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
+
+   }
 }
