@@ -44,6 +44,11 @@ td{
     padding: 15px;
     padding-right: 50px;
 }
+table h3 {
+  font-size: 15px; 
+}
+
+
 
 
 .detalles{
@@ -232,11 +237,14 @@ img{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 16px;
     width: 450px;
-    height: auto;
+    max-height: 1250px;
     text-align: center;
-    background-color: #ffffff;
- 
-      
+    background-color: #ffffff;     
+}
+textarea {
+  width: 100%;
+  resize: none;
+  overflow-y: hidden;
 }
 .form-group {
     margin-bottom: 20px;

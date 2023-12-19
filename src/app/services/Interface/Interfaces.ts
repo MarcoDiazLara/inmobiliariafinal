@@ -401,7 +401,7 @@ export interface HitoGeneral{
 }
 
 export interface InventarioBroker{
-    Id_Publicacion: "",
+    Id_Inmueble: "",
     Nombre_Inmueble: "",
     Calle: "",
     Num_Ext: "",
@@ -409,4 +409,12 @@ export interface InventarioBroker{
     Estatus_Publicacion: ""
   
 }
+  export interface Estatus{
+        Estatus: "",
+        Apellido_Paterno: "",
+        Apellido_Materno: "",
+        Nombres: "",
+        Tipo_Usuario: "",
+        Id_Usuario:""
+  }
 

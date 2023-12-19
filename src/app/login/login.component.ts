@@ -67,9 +67,16 @@ login(){
         })
         // alert("contraseña incorrecta");
         localStorage.setItem("Bandera","0");
-      }else
-      
-      {
+      }else{
+        console.log(data.Estatus);
+        if(data.Estatus == "Inactivo" || data.Estatus == "inactivo"){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Tu cuenta se encuentra desactivada, contactate con un administrador',
+           
+          })
+        }else{
        
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
@@ -79,6 +86,7 @@ login(){
         localStorage.setItem("Bandera","1");
         this.httpService.setGlobalVariable(true);
         this.router.navigate(["/index"]);
+        }
       }
     }
   });

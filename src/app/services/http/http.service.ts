@@ -623,4 +623,15 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_mostrarHitoGeneral.php', params, { headers });
    }
 
+   EstatusUsuarioCompany(p_Id_Socio:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + p_Id_Socio ;
+    return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
+
+   }
+   EstausCompany(p_id_usuario:any,p_estatus:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario +'&p_estatus=' +p_estatus;
+    return this.httpclient.post(this.url + 'sp_web_actualizaEstatuss.php', params, { headers });
+   }
 }
