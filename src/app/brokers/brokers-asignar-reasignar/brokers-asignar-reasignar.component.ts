@@ -95,7 +95,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
  
   obtenerConteo(){
     let IdSocio = localStorage.getItem("Id_Socio");
-    this.http.AsesoresAginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
+    this.http.Aginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
       this.datosAsesores=data;
     
     });
