@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .img-size-80x60 {
