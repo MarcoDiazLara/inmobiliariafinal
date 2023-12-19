@@ -384,7 +384,9 @@ export interface informacionA{
     Calle:"",
     Id_Inmueble:"",
     Usuario:"",
-    broker:""
+    broker:"",
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
  }
 
 export interface HitoGeneral{
