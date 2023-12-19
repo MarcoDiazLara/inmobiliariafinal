@@ -28,7 +28,7 @@ export class EstatususuarioComponent implements OnInit {
   displayedColumns = [
     'Nombre_Usuario',
     'Tipo_Usuario',
-    // 'Num_Ext',
+     'Estatus',
     // 'Municipio',
     // 'Estatus_Publicacion',
     // 'botonOption'
@@ -38,7 +38,7 @@ export class EstatususuarioComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Usuario','Tipo_Usuario','botonOption'];
+  columnas: string[] = ['Nombre_Usuario','Tipo_Usuario','Estatus','botonOption'];
   
 
 
@@ -80,7 +80,7 @@ export class EstatususuarioComponent implements OnInit {
      let IdSocio = localStorage.getItem("Id_Socio");
 
 //  Llamas tu procedimiento 
- this.httpService.obtenerUsuarios(IdSocio).subscribe((data:any)=>{
+ this.httpService.EstatusUsuarioCompany(IdSocio).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.pantallausuarios$.next(data);

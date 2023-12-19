@@ -412,6 +412,7 @@ export interface InventarioBroker{
         Apellido_Paterno: "",
         Apellido_Materno: "",
         Nombres: "",
-        Tipo_Usuario: ""
+        Tipo_Usuario: "",
+        Id_Usuario:""
   }
 
