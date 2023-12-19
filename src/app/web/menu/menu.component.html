@@ -1,64 +1,142 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary font-Roboto-Condensed">
   <div class="container">
-    <a class="navbar-brand" (click)="home()"><img class="me-4" src="assets/img/logo.png" width="70px" height="60px"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" (click)="home()"
+      ><img class="me-4" src="assets/img/logo.png" width="70px" height="60px"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-      <ul class="navbar-nav ">
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav">
         <!--Menu Inicio-->
         <li class="nav-item mx-1">
-          <a class="nav-link active" role="button" aria-expanded="false" (click)="home()">
+          <a
+            class="nav-link active"
+            role="button"
+            aria-expanded="false"
+            (click)="home()"
+          >
             Inicio
           </a>
         </li>
         <!--Menu Compra-->
         <ul class="nav__list">
           <li class="nav-item mx-1">
-            <a class="nav-link" href="#" role="button" aria-expanded="false"> Compra </a>
+            <a class="nav-link" href="#" role="button" aria-expanded="false">
+              Compra
+            </a>
 
             <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item"> Tipo de Inmueble &raquo;</a>
+                <ul class="submenu dropdown-menu">
+                  <li>
+                    <a (click)="inmueble(1, 1)" class="dropdown-item"> Casa </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(2, 1)" class="dropdown-item">
+                      Departamento
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(3, 1)" class="dropdown-item">
+                      Casa en Condominio
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(4, 1)" class="dropdown-item">
+                      Oficina
+                    </a>
+                  </li>
 
-              <li> <a class="dropdown-item"> Tipo de Inmueble &raquo;</a>
-                <ul class="submenu dropdown-menu ">
-                  <li><a (click)="inmueble(1,1)" class="dropdown-item"> Casa </a></li>
-                  <li><a (click)="inmueble(2,1)" class="dropdown-item"> Departamento </a></li>
-                  <li><a (click)="inmueble(3,1)" class="dropdown-item"> Casa en Condominio </a></li>
-                  <li><a (click)="inmueble(4,1)" class="dropdown-item"> Oficina </a></li>
-
-                  <li><a (click)="inmueble(5,1)" class="dropdown-item"> Local Comercial </a></li>
-                  <li><a (click)="inmueble(6,1)" class="dropdown-item"> Bodega Comercial </a></li>
-                  <li><a (click)="inmueble(7,1)" class="dropdown-item"> Terreno / Lote </a></li>
-                  <li><a (click)="inmueble(8,1)" class="dropdown-item"> Nave Industrial </a></li>
+                  <li>
+                    <a (click)="inmueble(5, 1)" class="dropdown-item">
+                      Local Comercial
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(6, 1)" class="dropdown-item">
+                      Bodega Comercial
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(7, 1)" class="dropdown-item">
+                      Terreno / Lote
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(8, 1)" class="dropdown-item">
+                      Nave Industrial
+                    </a>
+                  </li>
                 </ul>
               </li>
-
             </ul>
-
           </li>
         </ul>
 
         <!--Menu Renta-->
         <ul class="nav__list">
           <li class="nav-item mx-1">
-            <a class="nav-link" href="#" role="button" aria-expanded="false"> Renta </a>
+            <a class="nav-link" href="#" role="button" aria-expanded="false">
+              Renta
+            </a>
             <ul class="dropdown-menu">
-
-              <li> <a class="dropdown-item" href="#"> Tipo de Inmueble &raquo;</a>
+              <li>
+                <a class="dropdown-item" href="#"> Tipo de Inmueble &raquo;</a>
                 <ul class="submenu dropdown-menu">
-                  <li><a (click)="inmueble(1,2)" class="dropdown-item"> Casa </a></li>
-                  <li><a (click)="inmueble(2,2)" class="dropdown-item"> Departamento </a></li>
-                  <li><a (click)="inmueble(3,2)" class="dropdown-item"> Casa en Condominio </a></li>
-                  <li><a (click)="inmueble(4,2)" class="dropdown-item"> Oficina </a></li>
+                  <li>
+                    <a (click)="inmueble(1, 2)" class="dropdown-item"> Casa </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(2, 2)" class="dropdown-item">
+                      Departamento
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(3, 2)" class="dropdown-item">
+                      Casa en Condominio
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(4, 2)" class="dropdown-item">
+                      Oficina
+                    </a>
+                  </li>
 
-                  <li><a (click)="inmueble(5,2)" class="dropdown-item"> Local Comercial </a></li>
-                  <li><a (click)="inmueble(6,2)" class="dropdown-item"> Bodega Comercial </a></li>
-                  <li><a (click)="inmueble(7,2)" class="dropdown-item"> Terreno / Lote </a></li>
-                  <li><a (click)="inmueble(8,2)" class="dropdown-item"> Nave Industrial </a></li>
+                  <li>
+                    <a (click)="inmueble(5, 2)" class="dropdown-item">
+                      Local Comercial
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(6, 2)" class="dropdown-item">
+                      Bodega Comercial
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(7, 2)" class="dropdown-item">
+                      Terreno / Lote
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="inmueble(8, 2)" class="dropdown-item">
+                      Nave Industrial
+                    </a>
+                  </li>
                 </ul>
               </li>
-
             </ul>
           </li>
         </ul>
@@ -66,30 +144,56 @@
         <!--Menu Servicios-->
 
         <ul class="nav__list">
-
           <li class="nav-item mx-1">
-            <a class="nav-link" role="button" aria-expanded="false">Servicios</a>
+            <a class="nav-link" role="button" aria-expanded="false"
+              >Servicios</a
+            >
 
             <ul class="dropdown-menu">
-
-              <li> <a class="dropdown-item" href="#"> Arrendamiento seguro &raquo;</a>
-                <ul class="submenu dropdown-menu ">
-                  <li><a (click)="Guiarentar()" class="dropdown-item">¿Qué se requiere para alquilar?</a></li>
-                </ul>
-              </li>
-
-              <li> <a class="dropdown-item" href="#"> Te explica InmobeWise &raquo; </a>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Arrendamiento seguro &raquo;</a
+                >
                 <ul class="submenu dropdown-menu">
-                  <li><a (click)="Quierescomprar()" class="dropdown-item">¿Quieres comprar?</a></li>
-                  <li><a (click)="Quieresvender()" class="dropdown-item">¿Quieres vender?</a>
+                  <li>
+                    <a (click)="Guiarentar()" class="dropdown-item"
+                      >¿Qué se requiere para alquilar?</a
+                    >
                   </li>
                 </ul>
               </li>
 
-              <li> <a class="dropdown-item" href="#"> Toma en cuenta &raquo; </a>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Te explica InmobeWise &raquo;
+                </a>
                 <ul class="submenu dropdown-menu">
-                  <li><a (click)="RemateHipotecario()" class="dropdown-item">Remates Hipotecarios</a></li>
-                  <li><a (click)="EvitaFraude()" class="dropdown-item">Evita Fraude</a></li>
+                  <li>
+                    <a (click)="Quierescomprar()" class="dropdown-item"
+                      >¿Quieres comprar?</a
+                    >
+                  </li>
+                  <li>
+                    <a (click)="Quieresvender()" class="dropdown-item"
+                      >¿Quieres vender?</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#"> Toma en cuenta &raquo; </a>
+                <ul class="submenu dropdown-menu">
+                  <li>
+                    <a (click)="RemateHipotecario()" class="dropdown-item"
+                      >Remates Hipotecarios</a
+                    >
+                  </li>
+                  <li>
+                    <a (click)="EvitaFraude()" class="dropdown-item"
+                      >Evita Fraude</a
+                    >
+                  </li>
                 </ul>
               </li>
 
@@ -101,35 +205,52 @@
               </li> -->
             </ul>
           </li>
-
         </ul>
 
         <!-- End Servicios -->
         <!--Menu Inmobiliarias-->
         <li class="nav-item mx-1">
-          <a (click)="inmobiliarias()" class="nav-link" role="button" aria-expanded="false">
+          <a
+            (click)="inmobiliarias()"
+            class="nav-link"
+            role="button"
+            aria-expanded="false"
+          >
             Inmobiliarias
           </a>
         </li>
         <!--Menu Forma Parte de Nosotros-->
         <li class="nav-item mx-1">
-          <a (click)="blog()" class="nav-link" role="button" aria-expanded="false">
+          <a
+            (click)="blog()"
+            class="nav-link"
+            role="button"
+            aria-expanded="false"
+          >
             Blog
           </a>
         </li>
         <!--Menu Contactanos-->
         <li class="nav-item mx-1">
-          <a (click)="contactos()" class="nav-link" role="button" aria-expanded="false">
+          <a
+            (click)="contactos()"
+            class="nav-link"
+            role="button"
+            aria-expanded="false"
+          >
             Contactanos
           </a>
         </li>
       </ul>
-
     </div>
-    <div style="margin-top: 15px;" class="d-flex p-2 bd-highlight">
+    <div style="margin-top: 15px" class="d-flex p-2 bd-highlight">
       <form class="d-flex mx-2">
-        <button style="margin-top: 10px;" class="btn btn-outline-inmo ordenabutton font-Roboto-Condensed my-1 mx-1"
-          type="button" (click)="abrir()">
+        <button
+          style="margin-top: 10px"
+          class="btn btn-outline-inmo ordenabutton font-Roboto-Condensed my-1 mx-1"
+          type="button"
+          (click)="abrir()"
+        >
           <i class="bi bi-house-up-fill m-1 size-icon"></i> Sube tu Propiedad
         </button>
         <!-- tu-componente.component.html o en un archivo separado -->
@@ -137,72 +258,123 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title custom-text" id="myModalLabel">¿Qué tipo de perfil encaja contigo?</h4>
+                <h4 class="modal-title custom-text" id="myModalLabel">
+                  ¿Qué tipo de perfil encaja contigo?
+                </h4>
                 <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" (click)="cerrarVentanaEmergente()"> 
           <span aria-hidden="true">&times;</span>
         </button> -->
               </div>
               <div class="modal-body">
-
                 <div class="row">
-                  <li class="list-inline-item">Elige la opción que refleje tus preferencias.</li>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="col-md-4 text-center"> <!-- Centrar contenido horizontalmente -->
+                  <li class="list-inline-item">
+                    Elige la opción que refleje tus preferencias.
+                  </li>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <div class="col-md-4 text-center">
+                    <!-- Centrar contenido horizontalmente -->
                     <button (click)="directo()" class="btn btn-light mt-3 mx-2">
-                      <img src="assets/img/propietario.png" alt="Imagen 1" class="img-fluid" />
+                      <img
+                        src="assets/img/propietario.png"
+                        alt="Imagen 1"
+                        class="img-fluid"
+                      />
                       Dueño Directo
                     </button>
                   </div>
-                  <div class="col-md-4 text-center"> <!-- Centrar contenido horizontalmente -->
-                    <button (click)="corredor()" class="btn btn-light mt-3 mx-2">
-                      <img src="assets/img/agente.png" alt="Imagen 1" class="img-fluid" />
+                  <div class="col-md-4 text-center">
+                    <!-- Centrar contenido horizontalmente -->
+                    <button
+                      (click)="corredor()"
+                      class="btn btn-light mt-3 mx-2"
+                    >
+                      <img
+                        src="assets/img/agente.png"
+                        alt="Imagen 1"
+                        class="img-fluid"
+                      />
                       Inmobiliaria Corredor
                     </button>
                   </div>
-                  <div class="col-md-4 text-center"> <!-- Centrar contenido horizontalmente -->
-                    <button (click)="desarrolo()" class="btn btn-light mt-3 mx-2">
-                      <img src="assets/img/cons.png" alt="Imagen 1" class="img-fluid" />
+                  <div class="col-md-4 text-center">
+                    <!-- Centrar contenido horizontalmente -->
+                    <button
+                      (click)="desarrolo()"
+                      class="btn btn-light mt-3 mx-2"
+                    >
+                      <img
+                        src="assets/img/cons.png"
+                        alt="Imagen 1"
+                        class="img-fluid"
+                      />
                       Constructora Desarrolladora
                     </button>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                  (click)="cerrarVentanaEmergente()">Cerrar</button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                  (click)="cerrarVentanaEmergente()"
+                >
+                  Cerrar
+                </button>
               </div>
             </div>
           </div>
-
         </div>
         <!-- <button class="btn btn-outline-inmo font-Roboto-Condensed my-1 mx-1" type="submit">
             <i class="bi bi-house-up-fill m-1 size-icon"></i> Sube tu Propiedad
         </button>  -->
         <ul *ngIf="!isLoggedIn">
-          <button class="btn btn-outline-inmo ordenabutton1 font-Roboto-Condensed my-1 mx-1" (click)="Login()"
-            type="submit">
+          <button
+            class="btn btn-outline-inmo ordenabutton1 font-Roboto-Condensed my-1 mx-1"
+            (click)="Login()"
+            type="submit"
+          >
             <i class="bi bi-person-circle m-1 size-icon"></i> Acceder
           </button>
         </ul>
         <ul *ngIf="isLoggedIn">
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Perfil
               <i class="bi bi-person-circle m-1 size-icon"></i>
             </button>
-            <div class="dropdown-menu dropdown-menu2" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item dropdown-item2" (click)="Editar()">Editar Perfil</a>
-              <a class="dropdown-item dropdown-item2" (click)="Panel()">Panel de Control</a>
-              <a class="dropdown-item dropdown-item2" (click)="Espacio()"> Mi espacio</a>
-              <a class="dropdown-item dropdown-item2" href="#" (click)="cerrar()">Cerrar Sesion</a>
+            <div
+              class="dropdown-menu dropdown-menu2"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <a class="dropdown-item dropdown-item2" (click)="Editar()"
+                >Editar Perfil</a
+              >
+              <a class="dropdown-item dropdown-item2" (click)="Panel()"
+                >Panel de Control</a
+              >
+              <a class="dropdown-item dropdown-item2" (click)="Espacio()">
+                Mi espacio</a
+              >
+              <a
+                class="dropdown-item dropdown-item2"
+                href="#"
+                (click)="cerrar()"
+                >Cerrar Sesion</a
+              >
             </div>
           </div>
         </ul>
-
       </form>
     </div>
   </div>
