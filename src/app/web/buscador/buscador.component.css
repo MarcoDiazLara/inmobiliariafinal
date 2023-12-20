@@ -8,11 +8,17 @@
     font-size: 24px;
 }
 
+
+@media screen and (max-width: 800px) {
+    .content {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
 .content-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .img-size-80x60 {
