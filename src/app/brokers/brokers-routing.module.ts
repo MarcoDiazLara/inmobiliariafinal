@@ -9,7 +9,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { InventarioagentesComponent } from '../agentes/inventarioagentes/inventarioagentes.component';
 import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
-import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
+
 import { FechashitoComponent } from './fechashito/fechashito.component';
 
 
@@ -43,10 +43,7 @@ const routes: Routes = [
            path:'calendario',
            component:CalendarioComponent,
       },
-      {
-        path:'Hitobroker',
-        component:BrokerhitoComponent,
-      },
+     
       {
            path:'invesntario',
            component:InvesntarioComponent,
