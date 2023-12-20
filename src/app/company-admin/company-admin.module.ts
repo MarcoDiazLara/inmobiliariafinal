@@ -59,6 +59,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
+import { AsignarReasignarUserComponent } from './asignar-reasignar-user/asignar-reasignar-user.component';
 
 
 
@@ -87,7 +88,8 @@ registerLocaleData(localeEs);
     CompAsignaGrupoComponent,
     UsuariosbrokerComponent,
     EstatususuarioComponent,
-    EstatusComponent
+    EstatusComponent,
+    AsignarReasignarUserComponent
     
 
     
