@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-estatus',
@@ -9,7 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EstatusComponent implements OnInit {
   formulario!: FormGroup;
-  constructor( private formBuilder: FormBuilder,private httpService: HttpService) { 
+  constructor( private formBuilder: FormBuilder,private httpService: HttpService,private dialog:MatDialog,) { 
     this.formulario = this.formBuilder.group({
       estatus: [''] // Aquí se inicializa el control del mat-select
     });
@@ -19,10 +21,21 @@ export class EstatusComponent implements OnInit {
   }
   EstatusActualizar(){
     this.httpService.EstausCompany(localStorage.getItem("Id_Usuxd"),this.formulario.value.estatus).subscribe((data:any)=>{
-      alert("Se cambio de estatus");
+
+      Swal.fire({
+        title: "Fue un exito",
+        text: "You clicked the button!",
+        icon: "success"
+      });
+      // alert("Se cambio de estatus");
     })
 
     
   }
+
+  CerraDialogo(){
+    this.dialog.closeAll();
+ 
+    }
 
 }
