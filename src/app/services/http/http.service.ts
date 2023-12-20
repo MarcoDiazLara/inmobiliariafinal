@@ -257,7 +257,7 @@ export class HttpService {
 
   insertarusuarioasignacion(Id_Usuarios: any, Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Inmueble=' + Id_Inmueble + "&Id_Usuarios=" + Id_Usuarios
+    let params = 'p_Id_Inmueble=' + Id_Inmueble + "&p_Id_Usuario=" + Id_Usuarios
     return this.httpclient.post(this.url + 'sp_web_insertar_usuario_asignacion.php', params, { headers });
   }
 

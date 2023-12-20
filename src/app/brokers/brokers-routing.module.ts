@@ -9,8 +9,9 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { InventarioagentesComponent } from '../agentes/inventarioagentes/inventarioagentes.component';
 import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
-import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
+
 import { FechashitoComponent } from './fechashito/fechashito.component';
+import { AsignarReasignarUsersComponent } from './asignar-reasignar-users/asignar-reasignar-users.component';
 
 
 const routes: Routes = [
@@ -40,27 +41,28 @@ const routes: Routes = [
         component: BrokersAsignarReasignarComponent,
       },
       {
-           path:'calendario',
-           component:CalendarioComponent,
+        path: 'calendario',
+        component: CalendarioComponent,
       },
-      {
-        path:'Hitobroker',
-        component:BrokerhitoComponent,
-      },
-      {
-           path:'invesntario',
-           component:InvesntarioComponent,
-      },
-     {
-      path:'catalogoinmueble',
-      component:CatalogoinmuebleComponent
-     },
-     {
-      path:'fechashito',
-      component:FechashitoComponent
-     }
 
-     
+      {
+        path: 'invesntario',
+        component: InvesntarioComponent,
+      },
+      {
+        path: 'catalogoinmueble',
+        component: CatalogoinmuebleComponent
+      },
+      {
+        path: 'fechashito',
+        component: FechashitoComponent
+      },
+      {
+        path: 'asignarUsers',
+        component: AsignarReasignarUsersComponent
+      }
+
+
     ]
   },
 

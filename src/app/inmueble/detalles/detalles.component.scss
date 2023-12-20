@@ -66,16 +66,23 @@ mat-list table h3 {
 }
 
 .backarrow, .plane, .map, .money, .checklist, .favorite, .share,
-.other, .wc, .room, .car, .rule, .garden, .floor, .warehouse, .tank,
-.pool, .wapp, .house, .kitchen, .homeTime
+.other, .wapp{
+  width: 20px;
+  height: 20px;
+  padding-left: 20px;
+}
+ .wc, .room, .car, .rule, .garden, .floor, .warehouse, .tank,
+.pool, .house, .kitchen, .homeTime, .gym
 {
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
   width: 25px;
   height: 25px;
+  vertical-align: middle; /* Centra verticalmente la imagen con el texto */
+  padding-left: 10px; 
+  margin-right: 10px;
+  padding-bottom: 20px;
 
 }
+
 
 .backarrow{
     background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
@@ -186,6 +193,10 @@ mat-list table h3 {
 .homeTime{
   background: url('https://api.iconify.design/mdi/home-time-outline.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/mdi/home-time-outline.svg?color=%23264d5e');
+}
+.gym{
+  background: url('https://api.iconify.design/iconoir/gym.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/iconoir/gym.svg?color=%23264d5e');
 }
 
 .carrusel2 {
