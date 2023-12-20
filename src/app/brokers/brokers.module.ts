@@ -45,6 +45,7 @@ import localeEs from '@angular/common/locales/es';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { FechashitoComponent } from './fechashito/fechashito.component';
+import { AsignarReasignarUsersComponent } from './asignar-reasignar-users/asignar-reasignar-users.component';
 
 registerLocaleData(localeEs);
 
@@ -64,6 +65,7 @@ registerLocaleData(localeEs);
     CatalogoinmuebleComponent,
     
     FechashitoComponent,
+    AsignarReasignarUsersComponent,
 
 
 

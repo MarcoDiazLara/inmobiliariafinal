@@ -1,13 +1,20 @@
 <div class="notification-list-container">
-
-    <div *ngIf="showNotificationList" class="notification-list">
-        <h3>Lista de notificaciones</h3>
-        <ul>
-            <li *ngFor="let notification of notifications">
-                <h4>{{ notification.Mensaje }}</h4>
-                <!-- <p>{{ notification.summary }}</p> -->
-                <p class="timestamp">{{ notification.Fecha }}</p>
-            </li>
-        </ul>
-    </div>
+  <div class="head">
+    <h4>Propietario: Aldair Sanche Lopez</h4>
+    <h4>Mi Asesor: Anthony Islas Garcia</h4>
+    <br />
+    <h4>Inmueble: Casa Colonial</h4>
+    <h4>Precio: $2500000</h4>
+    <h4>Tipo de Inmbueble: Departamento</h4>
+  </div>
+  <div *ngIf="showNotificationList" class="notification-list">
+    <h3>Lista de notificaciones</h3>
+    <ul>
+      <li *ngFor="let notification of notifications">
+        <h4>{{ notification.Mensaje }}</h4>
+        <!-- <p>{{ notification.summary }}</p> -->
+        <p class="timestamp">{{ notification.Fecha }}</p>
+      </li>
+    </ul>
+  </div>
 </div>

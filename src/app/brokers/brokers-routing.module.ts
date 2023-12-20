@@ -11,6 +11,7 @@ import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 
 import { FechashitoComponent } from './fechashito/fechashito.component';
+import { AsignarReasignarUsersComponent } from './asignar-reasignar-users/asignar-reasignar-users.component';
 
 
 const routes: Routes = [
@@ -40,24 +41,35 @@ const routes: Routes = [
         component: BrokersAsignarReasignarComponent,
       },
       {
-           path:'calendario',
-           component:CalendarioComponent,
+        path: 'calendario',
+        component: CalendarioComponent,
       },
+<<<<<<< Updated upstream
      
+=======
       {
-           path:'invesntario',
-           component:InvesntarioComponent,
+        path: 'Hitobroker',
+        component: BrokerhitoComponent,
       },
-     {
-      path:'catalogoinmueble',
-      component:CatalogoinmuebleComponent
-     },
-     {
-      path:'fechashito',
-      component:FechashitoComponent
-     }
+>>>>>>> Stashed changes
+      {
+        path: 'invesntario',
+        component: InvesntarioComponent,
+      },
+      {
+        path: 'catalogoinmueble',
+        component: CatalogoinmuebleComponent
+      },
+      {
+        path: 'fechashito',
+        component: FechashitoComponent
+      },
+      {
+        path: 'asignarUsers',
+        component: AsignarReasignarUsersComponent
+      }
 
-     
+
     ]
   },
 

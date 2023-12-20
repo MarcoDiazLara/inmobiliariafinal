@@ -31,7 +31,7 @@ import { MatMenuModule } from '@angular/material/menu';
 // import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 // import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
 // import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
 // import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
@@ -100,7 +100,7 @@ registerLocaleData(localeEs);
     MatCardModule,
     MatTableModule,
     MatDatepickerModule,
-    MatCheckboxModule,    
+    MatCheckboxModule,
     MatPaginatorModule,
     MatDialogModule,
     MatMenuModule,
