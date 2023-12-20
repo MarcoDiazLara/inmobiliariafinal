@@ -4,7 +4,7 @@
      <mat-form-field>
            <mat-label><b>Selecciona Broker</b></mat-label>
            <mat-select formControlName="Nombres">
-             <mat-option *ngFor="let broker of brokers" [value]="broker.Id_Usuario">{{broker.Nombres+" "+broker.Apellido_Paterno+" "+broker.Apellido_Materno}}</mat-option>
+             <mat-option (click)="ggg()" *ngFor="let broker of brokers" [value]="broker.Id_Usuario">{{broker.Nombres+" "+broker.Apellido_Paterno+" "+broker.Apellido_Materno}}</mat-option>
            </mat-select>
            <mat-error>
              Broker
