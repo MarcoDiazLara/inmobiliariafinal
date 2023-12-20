@@ -1,113 +1,51 @@
-.container-fluit{
-    background-color: #e4e4e4;
-    height: 10%;
-    text-align: center;
-    margin: 0%;
-    padding: 0%;
-}
-.contenidouser{
+table {
     width: 100%;
-    height: 88%;
-    margin: 0%;
-    padding: 0%;
-}
-.contenedoruno{
-    width: 50%;
-    height: 100%;
-    background-color: #ffffff;
-    display: inline-block;
+  }
   
-}
-
-.contenedorunouno{
-width: 100%;
-height: 8%;
-background-color: #ffffff;
-margin: 0%;
-padding: 0%;
-text-align: center;
-}
-
-
-
-.contenedordos{
-    width: 50%;
-    height: 100%;
-    background-color: #ffffff;
-
-    display: inline-block;  
-    border-left: 3px solid #e4e4e4;
-}
-
-.contenedordosdos{
+  .mat-mdc-form-field {
+    font-size: 14px;
     width: 100%;
-    height: 8%;
-    background-color: #ffffff;
-    text-align: center;
-}
-.divuno{
- width:50%;
- height: 60%;
- background-color: #ffffff;
- display: inline-block;  
+  }
 
-
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
 }
-.divdos{
-width: 50%;
-height: 60%;
-background-color: #ffffff;
-display: inline-block;  
-}
-.unodiv{
-    width:50%;
-    height: 60%;
-    background-color: #ffffff;
-    display: inline-block;  
-   
-   
-   }
-   .dosdiv{
-   width: 50%;
-   height: 60%;
-   background-color: #ffffff;
-   display: inline-block;  
-   }
-   .titulo{
-    color: rgb(0, 0, 0);
-    margin-top: 15px;
-   }
-   .subtitulos{
-    text-align: center;
-   }
+  
+td, th {
+    width:10%;
+} 
 
-.opciones{
- margin-left: 10%;
- width: 60%;
- height: 12%;
- border-color: rgb(0, 0, 0);
- background-color: #e4e4e4;
- border-radius: 3%;
- color: #000000;
- 
-   }
-.labelss{
-
-margin-left: 15%;
-
+td.mat-column-star {
+  width: 15%;
+  padding-right: 8px;
 }
-.buttonss{
-width: 35%;
-height: 28px;
-border-color: #000000;
-color: #ffffff;
-background-color: #264D5E;
-border-radius: 50px;
-text-align: center;
-margin-top: 3%;
-margin-left: 40%;
-font-size: 18px;
+
+th.mat-column-position, td.mat-column-position {
+  padding-left: 8px;
 }
-.buttonss:hover{
-    background-color: rgb(54, 215, 215);
+
+.mat-table-sticky-border-elem-right {
+  border-left: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky-border-elem-left {
+  border-right: 1px solid #e0e0e0;
+}
+  
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.buttonasignar{
+  width: 100%;
+  height: auto;
+  background-color:  #264D5E;
+  color: #ffffff;
+  margin-top: 5%;
 }
