@@ -20,6 +20,8 @@ import { Router } from '@angular/router';
 
 
 export class PerfilclienteComponent implements OnInit {
+  saludo: string = '';
+  
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
@@ -45,19 +47,29 @@ export class PerfilclienteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.obtenerInfo();
-    this.formGeneral = this.formBuilder.group({
-      nombre:['',[Validators.required]],
-      apellidopaterno:['',[Validators.required]],
-      apellidomaterno:['',[Validators.required]],
-      curp:['',[Validators.required]],
-      rfc:['',[Validators.required]],
-      contactoprincipal:['',[Validators.required]],
-      contactoemergencia:['',[Validators.required]],
-      email:['',[Validators.required]],
-      nombreusuario:['',[Validators.required]],
-      imageInput:['',[Validators.required]],
-    });
+    const fecha = new Date();
+    const hora = fecha.getHours();
+
+    if (hora >= 0 && hora < 12) {
+      this.saludo = '¡Buenos días!';
+    } else if (hora >= 12 && hora < 18) {
+      this.saludo = '¡Buenas tardes!';
+    } else {
+      this.saludo = '¡Buenas noches!';
+    }
+    // this.obtenerInfo();
+    // this.formGeneral = this.formBuilder.group({
+    //   nombre:['',[Validators.required]],
+    //   apellidopaterno:['',[Validators.required]],
+    //   apellidomaterno:['',[Validators.required]],
+    //   curp:['',[Validators.required]],
+    //   rfc:['',[Validators.required]],
+    //   contactoprincipal:['',[Validators.required]],
+    //   contactoemergencia:['',[Validators.required]],
+    //   email:['',[Validators.required]],
+    //   nombreusuario:['',[Validators.required]],
+    //   imageInput:['',[Validators.required]],
+    // });
   }
 
   // Apartado Dialog Pantalla Emergente 
