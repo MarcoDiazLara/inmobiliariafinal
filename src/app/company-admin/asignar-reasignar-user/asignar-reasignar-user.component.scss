@@ -98,12 +98,16 @@ margin-left: 15%;
 }
 .buttonss{
 width: 35%;
-height: 5%;
+height: 28px;
 border-color: #000000;
 color: #ffffff;
 background-color: #264D5E;
-border-radius: 4%;
+border-radius: 50px;
 text-align: center;
 margin-top: 3%;
 margin-left: 40%;
+font-size: 18px;
+}
+.buttonss:hover{
+    background-color: rgb(54, 215, 215);
 }
