@@ -15,6 +15,7 @@ export class MasterAdminComponent  implements OnDestroy {
   nombre: any;
 
      fillerNav = [
+    { name: "Perfil", route: "perfil", icon: "home", label: "Hola", number: '0' },
     { name: "perfil", route: "perfil",icon: "person" , label: "Perfil",number:'0' },
     { name: "Notificaciones", route: "notificaciones",icon: "notifications" , label: "Notificaciones",number:'0' }, 
     { name: "altausuario", route: "altausuario",icon: "group_add" , label: "Alta usuario",number:'0' },

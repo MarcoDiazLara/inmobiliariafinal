@@ -41,11 +41,13 @@
  }
 
 td{
-    padding: 15px;
-    padding-right: 50px;
+    padding: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 30px;
 }
-table h3 {
-  font-size: 15px; 
+mat-list table h3 {
+  font-size: 20px; 
 }
 
 
@@ -65,7 +67,7 @@ table h3 {
 
 .backarrow, .plane, .map, .money, .checklist, .favorite, .share,
 .other, .wc, .room, .car, .rule, .garden, .floor, .warehouse, .tank,
-.pool, .wapp
+.pool, .wapp, .house, .kitchen, .homeTime
 {
   background-size: cover; 
   background-position: center; 
@@ -172,6 +174,18 @@ table h3 {
 .wapp{
     background: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e') no-repeat center center / contain;
     content: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e');
+}
+.house{
+  background: url('https://api.iconify.design/bi/house.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/bi/house.svg?color=%23264d5e');
+}
+.kitchen{
+  background: url('https://api.iconify.design/mdi/kitchen-counter.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/mdi/kitchen-counter.svg?color=%23264d5e');
+}
+.homeTime{
+  background: url('https://api.iconify.design/mdi/home-time-outline.svg?color=%23264d5e') no-repeat center center / contain;
+  content: url('https://api.iconify.design/mdi/home-time-outline.svg?color=%23264d5e');
 }
 
 .carrusel2 {
