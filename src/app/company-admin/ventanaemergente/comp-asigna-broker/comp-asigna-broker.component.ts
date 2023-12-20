@@ -50,9 +50,13 @@ export class CompAsignaBrokerComponent implements OnInit {
     });
 
   }
+  ggg(){
+    console.log(this.formGeneral.value.Nombres)
+  }
   guardarasesor() {
     if (this.formGeneral) {
       this.Nombres = this.formGeneral.value.Nombres;
+      
       let Id_Inmueble = localStorage.getItem("Id_Inmueble");
       console.log(Id_Inmueble);
 
