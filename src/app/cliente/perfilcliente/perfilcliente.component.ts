@@ -20,6 +20,7 @@ import { Router } from '@angular/router';
 
 
 export class PerfilclienteComponent implements OnInit {
+
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   toppings = new FormControl('');
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];

@@ -35,7 +35,6 @@ import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/br
 import { BroAsignarAsesorComponent } from './ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { Citas1Component } from './citas1/citas1.component';
-import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
@@ -60,7 +59,6 @@ registerLocaleData(localeEs);
     BroAsignarAsesorComponent,
     CalendarioComponent,
     Citas1Component,
-    BienvenidaComponent,
     InvesntarioComponent,
     VentanadetallesInmuebleComponent,
     CatalogoinmuebleComponent,

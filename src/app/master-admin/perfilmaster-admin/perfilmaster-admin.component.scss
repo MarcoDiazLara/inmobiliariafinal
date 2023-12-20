@@ -1,79 +1,138 @@
-.perfilcontenedor{
-  width: 30%;
-  height: auto;
-  float: left;
+// .perfilcontenedor{
+//   width: 30%;
+//   height: auto;
+//   float: left;
+//   text-align: center;
+
+//   }
+
+//   .contenidoperfil{
+//     width: 70%;
+//     height: auto;
+//     float: left;
+//     margin-top: 5%;
+// }
+
+// button{
+//   background-color: #264D5E;
+//   color: white;
+// }
+
+
+// .example-section {
+//   margin: 12px 0;
+// }
+
+// .example-margin {
+//   margin: 0 12px;
+// }
+
+// ul {
+//   list-style-type: none;
+//   margin-top: 4px;
+// }
+
+// button{
+//   background-color: #264D5E;
+//   color: white;
+// }
+
+
+
+
+// .insertar-dialog h1 {
+// text-align: center;
+// font-weight: 500;
+// }
+
+// .insertar-dialog-content mat-form-field {
+// background-color: transparent !important;
+// width: 100%;
+// margin: 10px 0px;
+// /* input {
+//     color: black;
+// } */
+// }
+
+// .insertar-dialog-content input {
+// color: black;
+// }
+
+// .alineaestatus{
+// margin-top: 2%;
+// }
+
+// .alinea{
+// margin-top: 1%;
+// }
+
+
+// .cssbutton button{
+// width: 50%;
+// color: #ffffff;
+
+// }  
+
+// .btn {
+//   background-color: #264D5E;
+//   color: white;
+// }
+
+
+h1{
   text-align: center;
-
-  }
-
-  .contenidoperfil{
-    width: 70%;
-    height: auto;
-    float: left;
-    margin-top: 5%;
-}
-
-button{
-  background-color: #264D5E;
-  color: white;
 }
 
 
-.example-section {
-  margin: 12px 0;
+h2{
+
+    text-align: center;
+
+ 
+}
+.typewriter {
+overflow: hidden; 
+
+white-space: nowrap; 
+margin: 0 auto; 
+letter-spacing: 0.15em; 
+animation: typing 9s steps(40, end), blink-caret 0.75s infinite;
+/* animation: typing 2s steps(20, end), blink-caret 0.75s infinite; */
 }
 
-.example-margin {
-  margin: 0 12px;
+/* Animation for typing effect */
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
 }
 
-ul {
-  list-style-type: none;
-  margin-top: 4px;
+/* Animation for blinking cursor */
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #38B6E3 }
 }
 
-button{
-  background-color: #264D5E;
-  color: white;
-}
-
-
-
-
-.insertar-dialog h1 {
+.container {
 text-align: center;
-font-weight: 500;
 }
 
-.insertar-dialog-content mat-form-field {
-background-color: transparent !important;
-width: 100%;
-margin: 10px 0px;
-/* input {
-    color: black;
-} */
+.content {
+display: inline-block;
+margin-top: 80px; /* Ajusta según sea necesario */
 }
 
-.insertar-dialog-content input {
-color: black;
+img {
+width: 150px;
+height: 150px;
+margin-right: 20px; /* Ajusta según sea necesario */
 }
 
-.alineaestatus{
-margin-top: 2%;
+.imagen-contenedor {
+text-align: center;
 }
 
-.alinea{
-margin-top: 1%;
-}
-
-
-.cssbutton button{
-width: 50%;
-color: #ffffff;
-
-}  
-
-.btn {
-  background-color: #264D5E;
-  color: white;
+.imagen-contenedor img {
+width: 500px;
+height: 300px;
+/* Agrega otros estilos según sea necesario */
 }
