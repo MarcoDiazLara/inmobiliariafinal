@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { asignacionBro } from 'src/app/services/Interface/Interfaces';
@@ -20,50 +20,50 @@ import Swal from 'sweetalert2';
 
 export class CompAsignaBrokerComponent implements OnInit {
 
-  brokers:asignacionBro[]=[];
+  brokers: asignacionBro[] = [];
   Nombres: any;
 
-  
 
-  formGeneral!:FormGroup;
+
+  formGeneral!: FormGroup;
   loading = false;
   hide2 = true;
 
   constructor(
     private dialog: MatDialog,
-    private http:HttpService,
+    private http: HttpService,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
     let Id_Socio = localStorage.getItem("Id_Socio");
-    this.http.mostrarBroker(Id_Socio).subscribe((data:any)=>{
-      this.brokers=data;
+    this.http.mostrarBroker(Id_Socio).subscribe((data: any) => {
+      this.brokers = data;
       console.log(this.brokers);
-      });
-  
-  
-      
-      this.formGeneral = this.formBuilder.group({
-        Nombres: ['', [Validators.required]],
-      });
-  
+    });
+
+
+
+    this.formGeneral = this.formBuilder.group({
+      Nombres: ['', [Validators.required]],
+    });
+
   }
   ggg(){
     console.log(this.formGeneral.value.Nombres)
   }
   guardarasesor() {
-    if (this.formGeneral){
+    if (this.formGeneral) {
       this.Nombres = this.formGeneral.value.Nombres;
       
       let Id_Inmueble = localStorage.getItem("Id_Inmueble");
       console.log(Id_Inmueble);
 
-     
-      
-      this.http.insertarusuarioasignacion( Id_Inmueble,this.Nombres).subscribe((data: any)=> {
-        if(data == 1){
+
+
+      this.http.insertarusuarioasignacion(Id_Inmueble, this.Nombres).subscribe((data: any) => {
+        if (data == 1) {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -71,33 +71,33 @@ export class CompAsignaBrokerComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
-    
-          
+
+
           this.closeDialog();
         }
-        else{
+        else {
           alert("Error al insertar");
         }
       });
 
 
 
-   }
+    }
   }
 
- 
-  
-  prueba(){
+
+
+  prueba() {
     let Id_Inmueble = localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
-   
-  
-    if (valor=="1"){
-  
-      this.http.updateUsuarioReasignacion(Id_Inmueble,this.Nombres ).subscribe((resp:any)=> {
-        if(resp == 1){
-  
+
+
+    if (valor == "1") {
+
+      this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
+        if (resp == 1) {
+
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -106,24 +106,24 @@ export class CompAsignaBrokerComponent implements OnInit {
             timer: 1500
           })
           this.closeDialog();
-    
-        }else{
+
+        } else {
           alert("Error al actualizar");
         }
-    });
-      
-   
-  }else if(valor=="2"){
-  
-    this.guardarasesor();
-    
-  }
-  }
-  
-  
-    closeDialog() {
-      this.dialog.closeAll();
+      });
+
+
+    } else if (valor == "2") {
+
+      this.guardarasesor();
+
     }
+  }
+
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
 
 }
 
