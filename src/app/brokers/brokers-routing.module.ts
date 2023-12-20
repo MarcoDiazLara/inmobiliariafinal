@@ -44,14 +44,7 @@ const routes: Routes = [
         path: 'calendario',
         component: CalendarioComponent,
       },
-<<<<<<< Updated upstream
-     
-=======
-      {
-        path: 'Hitobroker',
-        component: BrokerhitoComponent,
-      },
->>>>>>> Stashed changes
+
       {
         path: 'invesntario',
         component: InvesntarioComponent,
