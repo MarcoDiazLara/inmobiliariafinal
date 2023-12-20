@@ -13,6 +13,7 @@ import { AdminhitoComponent } from './adminhito/adminhito.component';
 import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.component';
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
+import { AsignarReasignarUserComponent } from './asignar-reasignar-user/asignar-reasignar-user.component';
 
 
 const routes: Routes = [
@@ -70,6 +71,12 @@ const routes: Routes = [
     {
       path:'estatususuario',
       component:EstatususuarioComponent
+
+    }
+    ,
+    {
+      path:'resignar-asignarUser',
+      component:AsignarReasignarUserComponent
 
     }
     ]

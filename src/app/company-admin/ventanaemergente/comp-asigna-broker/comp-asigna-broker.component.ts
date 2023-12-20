@@ -62,7 +62,7 @@ export class CompAsignaBrokerComponent implements OnInit {
 
 
 
-      this.http.insertarusuarioasignacion(Id_Inmueble, this.Nombres).subscribe((data: any) => {
+      this.http.insertarusuarioasignacion( this.Nombres,Id_Inmueble).subscribe((data: any) => {
         if (data == 1) {
           Swal.fire({
             position: 'top-end',
