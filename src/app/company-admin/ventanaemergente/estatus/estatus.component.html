@@ -1,9 +1,21 @@
  <H1> Cambiar de Estatus</H1>
-<mat-form-field>
+ <form  [formGroup]="formulario">
+  <mat-form-field>
     <mat-label>Estatus</mat-label>
-    <mat-select >
-      <mat-option value="option1"> Activo</mat-option>
-      <mat-option value="option2" >Inactivo</mat-option>
+    <mat-select  formControlName="estatus">
+      <mat-option value="Activo"> Activo</mat-option>
+      <mat-option value="Inactivo" >Inactivo</mat-option>
     </mat-select>
   </mat-form-field>
-  <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" > Aceptar</button>
+
+
+
+ </form>
+<!-- <mat-form-field>
+    <mat-label>Estatus</mat-label>
+    <mat-select >
+      <mat-option value="Activo"> Activo</mat-option>
+      <mat-option value="Inactivo" >Inactivo</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  <button   (click)="EstatusActualizar()"  type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" > Aceptar</button>

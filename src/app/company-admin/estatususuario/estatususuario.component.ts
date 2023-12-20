@@ -134,18 +134,4 @@ export class EstatususuarioComponent implements OnInit {
     })
 
   }
-
-  
-
-
-  
-  
-
-   
-
-    
-  
-  
- 
- 
 }
