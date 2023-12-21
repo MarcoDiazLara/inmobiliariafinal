@@ -15,6 +15,7 @@ import { DetallesComponent } from './inmueble/detalles/detalles.component';
 
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import { DuenoComponent } from './dueno/dueno.component';
+import { ArviceSpaceComponent } from './arvice-space/arvice-space.component';
 
 
 
@@ -22,65 +23,70 @@ import { DuenoComponent } from './dueno/dueno.component';
 const routes: Routes = [
   {
     path: 'superUsuario',
-    loadChildren: ()=> import('./master-admin/master-admin.module').then(m=>m.MasterAdminModule)
+    loadChildren: () => import('./master-admin/master-admin.module').then(m => m.MasterAdminModule)
   },
   {
     path: 'Company',
-    loadChildren: ()=> import('./company-admin/company-admin.module').then(m =>m.CompanyAdminModule)
+    loadChildren: () => import('./company-admin/company-admin.module').then(m => m.CompanyAdminModule)
   },
   {
     path: 'usuario',
-    loadChildren: ()=> import('./brokers/brokers.module').then(m =>m.BrokersModule)
+    loadChildren: () => import('./brokers/brokers.module').then(m => m.BrokersModule)
   },
   {
     path: 'asesor',
-    loadChildren: ()=> import('./agentes/agentes.module').then(m =>m.AgentesModule)
+    loadChildren: () => import('./agentes/agentes.module').then(m => m.AgentesModule)
   },
   {
     path: 'index',
-    loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
+    loadChildren: () => import('./web/web.module').then(m => m.WebModule)
   },
   {
     path: 'cliente',
-    loadChildren: ()=> import('./cliente/cliente.module').then(m =>m.ClienteModule)
+    loadChildren: () => import('./cliente/cliente.module').then(m => m.ClienteModule)
   },
   {
     path: 'web',
-    loadChildren: ()=> import('./web/web.module').then(m =>m.WebModule)
+    loadChildren: () => import('./web/web.module').then(m => m.WebModule)
   },
   {
     path: 'Dueno',
-    loadChildren: ()=> import('./dueno/dueno.module').then(m =>m.DuenoModule)
+    loadChildren: () => import('./dueno/dueno.module').then(m => m.DuenoModule)
   },
 
   {
-    path:'login',
+    path: 'login',
     component: LoginComponent
   },
   {
-    path:'registro',
+    path: 'registro',
     component: RegistroComponent
   },
   {
     path: 'inmueble',
-    loadChildren: ()=> import('./inmueble/inmueble.module').then(m =>m.InmuebleModule)
+    loadChildren: () => import('./inmueble/inmueble.module').then(m => m.InmuebleModule)
   },
-  
+
   {
-    path:'menu2', 
+    path: 'menu2',
     component: MenugloguedoComponent
-  }, 
-  { 
+  },
+  {
+    path: 'arvice',
+    loadChildren: () => import('./arvice-space/arvice-space.module').then(m => m.ArviceSpaceModule)
+  },
+  {
     path: '**',
     redirectTo: 'index',
     pathMatch: 'full'
   },
-  
+
+
 
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
