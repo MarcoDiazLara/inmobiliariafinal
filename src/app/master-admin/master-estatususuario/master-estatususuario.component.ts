@@ -77,14 +77,13 @@ export class MasterEstatususuarioComponent implements OnInit {
   }
 
   obtenerInventario(){
-     let IdSocio = localStorage.getItem("Id_Socio");
 
 //  Llamas tu procedimiento 
- this.httpService.EstatusUsuarioCompany(IdSocio).subscribe((data:any)=>{
+ this.httpService.estatusUsuario().subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.pantallausuarios$.next(data);
-        console.log(IdSocio);
+        
         ;
       } else {
         data = [];
@@ -93,7 +92,7 @@ export class MasterEstatususuarioComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio);
+      console.log('Error de conexión');
 
     }
     )
@@ -115,11 +114,11 @@ export class MasterEstatususuarioComponent implements OnInit {
     
 
 
-    // const dialogRef = this.dialog.open(EstatusComponent, {
-    //    width: '40%',
-    //   // height: '80%',  
-    //   disableClose: true
-    // });
+    const dialogRef = this.dialog.open(MasterEstatususuarioComponent, {
+       width: '40%',
+      // height: '80%',  
+      disableClose: true
+    });
   }
 
   openDialog(): void {

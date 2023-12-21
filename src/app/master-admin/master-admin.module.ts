@@ -49,7 +49,9 @@ import { MasterEstatususuarioComponent } from './master-estatususuario/master-es
   PerfilmasterAdminComponent,
   MasterAdminpasswordComponent,
   NotificacionesmasterAdminComponent,
-  MasterEstatususuarioComponent
+  MasterEstatususuarioComponent,
+
+ 
   
   
 ],
