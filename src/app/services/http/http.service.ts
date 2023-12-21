@@ -602,44 +602,48 @@ export class HttpService {
     let params = "p_id_hito=" + p_id_hito;
     return this.httpclient.post(this.url + 'sp_web_eliminarFechas.php', params, { headers });
   }
-  
-  InventarioBroker(IdSocio: any,IdUsuario: any) {
+
+  InventarioBroker(IdSocio: any, IdUsuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_IdSocio=' + IdSocio + '&p_IdUsuario=' + IdUsuario;
     return this.httpclient.post(this.url + 'sp_web_inventario_broker.php', params, { headers });
   }
 
-   ActualizacionFechasHito(p_Id_Fecha_Hito: any,p_Asunto: any,p_Fecha_Inicio: any,p_Fecha_Cierre: any,p_Descripcion: any){
+  ActualizacionFechasHito(p_Id_Fecha_Hito: any, p_Asunto: any, p_Fecha_Inicio: any, p_Fecha_Cierre: any, p_Descripcion: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params= "p_Id_Fecha_Hito=" + p_Id_Fecha_Hito + "&p_Asunto=" + p_Asunto + "&p_Fecha_Inicio="+p_Fecha_Inicio+
-    "&p_Fecha_Cierre=" + p_Fecha_Cierre + "&p_Descripcion=" + p_Descripcion;
+    let params = "p_Id_Fecha_Hito=" + p_Id_Fecha_Hito + "&p_Asunto=" + p_Asunto + "&p_Fecha_Inicio=" + p_Fecha_Inicio +
+      "&p_Fecha_Cierre=" + p_Fecha_Cierre + "&p_Descripcion=" + p_Descripcion;
     return this.httpclient.post(this.url + 'Actualizar_Fechas_Hito.php', params, { headers });
   }
-   
 
-   mostrarHitoGeneral(p_Id_Socio:any, p_finicio:any){
+
+  mostrarHitoGeneral(p_Id_Socio: any, p_finicio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Socio=' + p_Id_Socio + '&p_finicio=' + p_finicio;
     return this.httpclient.post(this.url + 'sp_web_mostrarHitoGeneral.php', params, { headers });
-   }
+  }
 
-   EstatusUsuarioCompany(p_Id_Socio:any){
+  EstatusUsuarioCompany(p_Id_Socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Socio=' + p_Id_Socio ;
+    let params = 'p_Id_Socio=' + p_Id_Socio;
     return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
 
-   }
-   EstausCompany(p_id_usuario:any,p_estatus:any){
+  }
+  EstausCompany(p_id_usuario: any, p_estatus: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_id_usuario=' + p_id_usuario +'&p_estatus=' +p_estatus;
+    let params = 'p_id_usuario=' + p_id_usuario + '&p_estatus=' + p_estatus;
     return this.httpclient.post(this.url + 'sp_web_actualizaEstatus.php', params, { headers });
-   }
-   estatusUsuario() {
+  }
+
+  mostrarInmueblesArviceSpace(p_Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + p_Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
+  }
+  estatusUsuario() {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'xrsxryw1y21';
     return this.httpclient.post(this.url + 'sp_web_estatus_usuario.php', params, { headers });
   }
-
-
 
 }
