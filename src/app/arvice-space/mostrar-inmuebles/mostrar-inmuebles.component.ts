@@ -11,14 +11,13 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from 'src/app/company-admin/ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
-@Component({
-  selector: 'app-asignar-reasignar-users',
-  templateUrl: './asignar-reasignar-users.component.html',
-  styleUrls: ['./asignar-reasignar-users.component.scss']
-})
-export class AsignarReasignarUsersComponent implements OnInit {
-  // ArrayAsignacion:any[]=[];
 
+@Component({
+  selector: 'app-mostrar-inmuebles',
+  templateUrl: './mostrar-inmuebles.component.html',
+  styleUrls: ['./mostrar-inmuebles.component.scss']
+})
+export class MostrarInmueblesComponent implements OnInit {
   usuarios$: any;
   formGeneral!: FormGroup;
 
@@ -167,6 +166,5 @@ export class AsignarReasignarUsersComponent implements OnInit {
     })
 
   }
-
 
 }
