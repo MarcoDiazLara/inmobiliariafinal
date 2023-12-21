@@ -38,7 +38,7 @@ export class ArviceSpaceComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+    //this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
   shouldRun = true;
