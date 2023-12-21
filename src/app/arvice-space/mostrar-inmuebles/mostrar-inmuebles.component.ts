@@ -11,14 +11,13 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from 'src/app/company-admin/ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
-@Component({
-  selector: 'app-asignar-reasignar-users',
-  templateUrl: './asignar-reasignar-users.component.html',
-  styleUrls: ['./asignar-reasignar-users.component.scss']
-})
-export class AsignarReasignarUsersComponent implements OnInit {
-  // ArrayAsignacion:any[]=[];
 
+@Component({
+  selector: 'app-mostrar-inmuebles',
+  templateUrl: './mostrar-inmuebles.component.html',
+  styleUrls: ['./mostrar-inmuebles.component.scss']
+})
+export class MostrarInmueblesComponent implements OnInit {
   usuarios$: any;
   formGeneral!: FormGroup;
 
@@ -55,7 +54,7 @@ export class AsignarReasignarUsersComponent implements OnInit {
     let Bandera = localStorage.getItem("Bandera")
 
     if (Bandera == "1") {
-      this.obtenerConteo();
+      // this.obtenerConteo();
 
       this.usuarios$ = this.adminService.getUsuariosOb().subscribe((usuarios) => {
         if (usuarios !== null) {
@@ -75,13 +74,13 @@ export class AsignarReasignarUsersComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  obtenerConteo() {
-    let IdSocio = localStorage.getItem("Id_Socio");
-    this.http.Aginados_NoAsigandos(IdSocio).subscribe((data: any) => {
-      this.datos = data;
+  // obtenerConteo() {
+  //   let IdSocio = localStorage.getItem("Id_Socio");
+  //   this.http.Aginados_NoAsigandos(IdSocio).subscribe((data: any) => {
+  //     this.datos = data;
 
-    });
-  }
+  //   });
+  // }
   //Ejemplo de Array 
   // this.ArrayAsignacion = data ;
   // this.ArrayAsignacion.forEach(element => {
@@ -167,6 +166,5 @@ export class AsignarReasignarUsersComponent implements OnInit {
     })
 
   }
-
 
 }
