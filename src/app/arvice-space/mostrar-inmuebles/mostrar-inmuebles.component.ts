@@ -54,7 +54,7 @@ export class MostrarInmueblesComponent implements OnInit {
     let Bandera = localStorage.getItem("Bandera")
 
     if (Bandera == "1") {
-      this.obtenerConteo();
+      // this.obtenerConteo();
 
       this.usuarios$ = this.adminService.getUsuariosOb().subscribe((usuarios) => {
         if (usuarios !== null) {
@@ -74,13 +74,13 @@ export class MostrarInmueblesComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  obtenerConteo() {
-    let IdSocio = localStorage.getItem("Id_Socio");
-    this.http.Aginados_NoAsigandos(IdSocio).subscribe((data: any) => {
-      this.datos = data;
+  // obtenerConteo() {
+  //   let IdSocio = localStorage.getItem("Id_Socio");
+  //   this.http.Aginados_NoAsigandos(IdSocio).subscribe((data: any) => {
+  //     this.datos = data;
 
-    });
-  }
+  //   });
+  // }
   //Ejemplo de Array 
   // this.ArrayAsignacion = data ;
   // this.ArrayAsignacion.forEach(element => {
