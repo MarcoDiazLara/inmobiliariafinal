@@ -634,4 +634,5 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario +'&p_estatus=' +p_estatus;
     return this.httpclient.post(this.url + 'sp_web_actualizaEstatus.php', params, { headers });
    }
+  
 }

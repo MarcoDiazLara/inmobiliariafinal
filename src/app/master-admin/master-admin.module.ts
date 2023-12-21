@@ -34,6 +34,7 @@ import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-ad
 import { MasterAdminpasswordComponent } from './ventanaemergente/master-adminpassword/master-adminpassword.component';
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { MasterEstatususuarioComponent } from './master-estatususuario/master-estatususuario.component';
 
 
 
@@ -47,7 +48,8 @@ import {MatMenuModule} from '@angular/material/menu';
   AltausuarioComponent,
   PerfilmasterAdminComponent,
   MasterAdminpasswordComponent,
-  NotificacionesmasterAdminComponent
+  NotificacionesmasterAdminComponent,
+  MasterEstatususuarioComponent
   
   
 ],
