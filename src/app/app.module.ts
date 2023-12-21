@@ -49,7 +49,6 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
 import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
 import { MetododepagoComponent } from './metododepago/metododepago.component';
-import { ArvisSpaceComponent } from './arvis-space/arvis-space.component';
 
 
 
@@ -64,7 +63,6 @@ import { ArvisSpaceComponent } from './arvis-space/arvis-space.component';
     DetallesComponent,
     UnityComponent,
     MetododepagoComponent,
-    ArvisSpaceComponent,
    
   
     
