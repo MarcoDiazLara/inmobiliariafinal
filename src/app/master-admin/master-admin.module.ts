@@ -33,6 +33,7 @@ import { MasterAdminpasswordComponent } from './ventanaemergente/master-adminpas
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { MasterEstatususuarioComponent } from './master-estatususuario/master-estatususuario.component';
+import { MasterestatusComponent } from './ventanaemergente/masterestatus/masterestatus.component';
 
 
 
@@ -48,6 +49,7 @@ import { MasterEstatususuarioComponent } from './master-estatususuario/master-es
   MasterAdminpasswordComponent,
   NotificacionesmasterAdminComponent,
   MasterEstatususuarioComponent,
+  MasterestatusComponent,
 
  
   
