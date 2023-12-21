@@ -1,4 +1,4 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -12,21 +12,16 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 
-
-
 @Component({
-  selector: 'app-company-asignar-reasignar',
-  templateUrl: './company-asignar-reasignar.component.html',
-  styleUrls: ['./company-asignar-reasignar.component.scss']
+  selector: 'app-asignar-reasignar-user',
+  templateUrl: './asignar-reasignar-user.component.html',
+  styleUrls: ['./asignar-reasignar-user.component.scss']
 })
-export class CompanyAsignarReasignarComponent implements OnInit {
-
-
-// ArrayAsignacion:any[]=[];
-
+export class AsignarReasignarUserComponent implements OnInit {
+  
   usuarios$: any;
   formGeneral!:FormGroup; 
-
+  
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   displayedColumns = [
@@ -36,7 +31,6 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     'Broker',
     'btOpciones'
   ];
-
   dataSource = new MatTableDataSource<any>([]);
 
   columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Broker','botonOption'];
@@ -46,7 +40,6 @@ export class CompanyAsignarReasignarComponent implements OnInit {
   datos: AsigarReAsignar[]=[];
 
 
-  
   constructor(
     public dialog: MatDialog,
     private http:HttpService,
@@ -56,9 +49,6 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     private router:Router
     // Http para jalar el servicio 
   ) { }
-
- 
-
   ngOnInit(): void {
     
     let Bandera = localStorage.getItem("Bandera")
@@ -188,42 +178,5 @@ localStorage.setItem("Id_Inmueble",id_inmo);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 

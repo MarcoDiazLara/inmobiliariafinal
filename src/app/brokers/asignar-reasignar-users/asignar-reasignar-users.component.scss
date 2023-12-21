@@ -1,0 +1,44 @@
+.container{
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;  
+}
+.head{
+    height: 15%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+.left{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 85%;
+    background-color: bisque;
+    display: inline-block;
+}
+.rigth{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 85%;
+    background-color: beige;
+    display: inline-block;
+}
+.asignar{
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 100%;
+    background-color: red;
+}
+.reasignar{
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 100%;
+    background-color: greenyellow;
+}

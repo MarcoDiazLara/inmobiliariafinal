@@ -39,12 +39,13 @@ import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ventanadetalles-inmueble.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
+
 // lenguaje
 import localeEs from '@angular/common/locales/es';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { FechashitoComponent } from './fechashito/fechashito.component';
+import { AsignarReasignarUsersComponent } from './asignar-reasignar-users/asignar-reasignar-users.component';
 
 registerLocaleData(localeEs);
 
@@ -62,8 +63,9 @@ registerLocaleData(localeEs);
     InvesntarioComponent,
     VentanadetallesInmuebleComponent,
     CatalogoinmuebleComponent,
-    BrokerhitoComponent,
+    
     FechashitoComponent,
+    AsignarReasignarUsersComponent,
 
 
 

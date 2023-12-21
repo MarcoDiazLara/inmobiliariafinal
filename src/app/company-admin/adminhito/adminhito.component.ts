@@ -18,7 +18,7 @@ interface estatus {
   styleUrls: ['./adminhito.component.scss']
 })
 export class AdminhitoComponent implements OnInit {
-
+  mostrarIcono = true;
   constructor(private httpService:HttpService) {}
   mostrarfechashito:HitoGeneral[]=[];
   
@@ -89,27 +89,48 @@ export class AdminhitoComponent implements OnInit {
 
   }
 
+  Delete(idHito: any){
+    if (!idHito) {
+      console.error('Se requiere el valor de idHito para llamar a EliminarFechasHitos');
+      return;
+    }
+    alert(idHito)
+    this.httpService.EliminarFechasHitos(idHito).subscribe((data:any) => {
+      console.log('Respuesta del servicio:', data);
+      alert("Se eliminar Fecha");
+      // Después de realizar las acciones necesarias, puedes ocultar el icono
+      this.mostrarIcono = false;
 
+    },
+    (error) => {
+      // Manejar errores del servicio/API
+      console.error('Error al llamar al servicio:', error);
+    }
 
-  Delete(){
-    Swal.fire({
-      title: "¿Estas seguro?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Si, Descartar!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Descartado!",
-          text: "Este evento ha sido descartado.",
-          icon: "success"
-        });
-      }
-    });
+    );
+   
 
   }
+
+  // Delete(){
+  //   Swal.fire({
+  //     title: "¿Estas seguro?",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Si, Descartar!"
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       Swal.fire({
+  //         title: "Descartado!",
+  //         text: "Este evento ha sido descartado.",
+  //         icon: "success"
+  //       });
+  //     }
+  //   });
+
+  // }
 
   addEvent() {
     this.ShowAddEvent = true;

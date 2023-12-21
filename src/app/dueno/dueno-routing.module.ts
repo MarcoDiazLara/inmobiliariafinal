@@ -5,6 +5,7 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { NotificacionDuenoComponent } from './notificacion-dueno/notificacion-dueno.component';
 import { InteresadosComponent } from './interesados/interesados.component';
 import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
+import { DatosInteresadosComponent } from './interesados/datos-interesados/datos-interesados.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: 'MiAsesor',
         component: MiAsesorComponent,
+      },
+      {
+        path: 'datos-interesados',
+        component: DatosInteresadosComponent
       }
 
 
