@@ -25,15 +25,17 @@ export class AsignarReasignarUserComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   displayedColumns = [
+    'Tipo_de_Usuario',
     'Nombre_Inmueble',
-    'Calle',
-    'Nombre_Usuario',
-    'Broker',
+    'Nombre_dueño',
+    'Apellido_paterno_Dueño',
+    'Apellido_Materno_Dueño',
+    'Nombre_Asesor_Asignado',
     'btOpciones'
   ];
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Broker','botonOption'];
+  columnas: string[] = ['Tipo_de_Usuario','Nombre_Inmueble', 'Nombre_dueño','Apellido_paterno_Dueño','Apellido_Materno_Dueño','Nombre_Asesor_Asignado','botonOption'];
   
   // poner el nombre de una variable
   datosinmuebles: AsignacionBroker[]=[];
