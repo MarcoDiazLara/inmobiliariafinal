@@ -21,7 +21,7 @@ export class ArviceSpaceComponent implements OnInit {
     //  { name: "Asignar Users", route: "asignarUsers", icon: "event", label: "Asginar Reasignar Usuarios", number: '0' },
     // { name: "fechashito", route: "fechashito", icon: "collections_bookmark", label: "fechashito ", number: '0' },
     //{ name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' },
-    //{ name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
+    { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
 
   ];
 
@@ -34,11 +34,11 @@ export class ArviceSpaceComponent implements OnInit {
     this.nombre = localStorage.getItem("Nombre_Usuario");
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+    //this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
   shouldRun = true;
