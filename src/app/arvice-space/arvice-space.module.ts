@@ -37,11 +37,13 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { ArviceSpaceComponent } from './arvice-space.component';
 import { RegistrarUserComponent } from './registrar-user/registrar-user.component';
+import { MostrarInmueblesComponent } from './mostrar-inmuebles/mostrar-inmuebles.component';
 
 @NgModule({
   declarations: [
     ArviceSpaceComponent,
-    RegistrarUserComponent
+    RegistrarUserComponent,
+    MostrarInmueblesComponent
   ],
   imports: [
     CommonModule,
