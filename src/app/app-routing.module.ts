@@ -12,11 +12,10 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
 import { ClienteModule } from './cliente/cliente.module';
 import { MasterAdminModule } from './master-admin/master-admin.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
-
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import { DuenoComponent } from './dueno/dueno.component';
 import { ArviceSpaceComponent } from './arvice-space/arvice-space.component';
-
+import { RematehipotecarioComponent } from './web/rematehipotecario/rematehipotecario.component';
 
 
 
@@ -76,6 +75,10 @@ const routes: Routes = [
     loadChildren: () => import('./arvice-space/arvice-space.module').then(m => m.ArviceSpaceModule)
   },
   {
+
+  },  
+  { 
+
     path: '**',
     redirectTo: 'index',
     pathMatch: 'full'

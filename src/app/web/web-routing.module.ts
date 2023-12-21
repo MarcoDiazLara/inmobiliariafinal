@@ -37,20 +37,16 @@ const routes: Routes = [
 
   {
     path:'login',
-    component:LoginComponent
-    
+    component:LoginComponent 
   },
 
   {
     path:'contacto',
-    component:ContactoComponent
-    
+    component:ContactoComponent 
   },
   {
-
     path:'Guiarentar',
     component:GuiarentarComponent
-
   },
   {
 
@@ -59,12 +55,10 @@ const routes: Routes = [
 
   },
   {
-
     path:'particula',
     component:ParticulaComponent
   },
   {
-
     path:'Inmobiliariacorredor',
     component:InmobiliariacorredorComponent
   },
@@ -93,6 +87,7 @@ const routes: Routes = [
     path: 'Remate',
     component: RematehipotecarioComponent
   },
+
   {
     path: 'EvitaFraude',
     component: EvitafraudeComponent
@@ -136,6 +131,7 @@ const routes: Routes = [
       component:TerminosComponent
 
   },
+
 
 ];
 

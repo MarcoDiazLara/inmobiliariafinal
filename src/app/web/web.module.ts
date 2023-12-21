@@ -75,7 +75,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     PlubibComponent,
     TerminosComponent,
     QuierescomprarComponent,
-    
+    RematehipotecarioComponent,
+  
+
 
        
   ],
@@ -92,7 +94,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
      MatFormFieldModule, 
      MatInputModule, 
      FormsModule, 
-     MatButtonModule
+     MatButtonModule,
+     MatTabsModule
+     
+
   ],
   exports:[
     WebComponent,
