@@ -36,10 +36,12 @@ import localeEs from '@angular/common/locales/es';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { ArviceSpaceComponent } from './arvice-space.component';
+import { RegistrarUserComponent } from './registrar-user/registrar-user.component';
 
 @NgModule({
   declarations: [
-    ArviceSpaceComponent
+    ArviceSpaceComponent,
+    RegistrarUserComponent
   ],
   imports: [
     CommonModule,

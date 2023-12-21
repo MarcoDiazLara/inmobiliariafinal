@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-arvice-space',
   templateUrl: './arvice-space.component.html',
@@ -11,8 +12,8 @@ export class ArviceSpaceComponent implements OnInit {
   mobileQuery: MediaQueryList;
   nombre: any;
   fillerNav = [
-    { name: "Home", route: "Arvice", icon: "home", label: "Home", number: '0' },
-    { name: "Register", route: "notificacionbroker", icon: "groups", label: "Registrar Usuario", number: '0' },
+    { name: "Home", route: "Agregar", icon: "home", label: "Home", number: '0' },
+    { name: "Register", route: "Agregar", icon: "groups", label: "Registrar Usuario", number: '0' },
     //{ name: "Asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
     //{ name: "Calendario", route: "calendario", icon: "date_range", label: " Agenda", number: '0' },
     // { name: "Hitobroker", route: "Hitobroker",icon: "event" , label: "Fecha Hito",number:'0' },

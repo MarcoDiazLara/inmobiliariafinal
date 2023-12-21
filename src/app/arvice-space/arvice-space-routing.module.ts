@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArviceSpaceComponent } from './arvice-space.component';
+import { RegistrarUserComponent } from './registrar-user/registrar-user.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'Arvice',
         component: ArviceSpaceComponent,
+      },
+      {
+        path: 'Agregar',
+        component: RegistrarUserComponent,
       }
     ]
   },
