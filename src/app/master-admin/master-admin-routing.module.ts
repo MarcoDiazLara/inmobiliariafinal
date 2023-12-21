@@ -6,6 +6,7 @@ import { AltausuarioComponent } from './altausuario/altausuario.component';
 import { AltasocioComponent } from './altasocio/altasocio.component';
 import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-admin.component';
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
+import { MasterEstatususuarioComponent } from './master-estatususuario/master-estatususuario.component';
 
 
 const routes: Routes = [ 
@@ -28,6 +29,10 @@ children:[
 {
   path: 'altasocio',
   component: AltasocioComponent,
+},
+{
+  path: 'estatusUsuario',
+  component: MasterEstatususuarioComponent,
 },
 
 ]
