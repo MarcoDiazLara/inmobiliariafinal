@@ -34,7 +34,7 @@ export class ArviceSpaceComponent implements OnInit {
     this.nombre = localStorage.getItem("Nombre_Usuario");
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   ngOnDestroy(): void {
