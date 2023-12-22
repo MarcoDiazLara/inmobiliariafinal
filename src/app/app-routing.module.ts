@@ -20,6 +20,23 @@ import { RematehipotecarioComponent } from './web/rematehipotecario/rematehipote
 
 
 const routes: Routes = [
+  { 
+    path: '**',
+    redirectTo: 'index',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },
+  {
+    path: 'menu2',
+    component: MenugloguedoComponent
+  },
   {
     path: 'superUsuario',
     loadChildren: () => import('./master-admin/master-admin.module').then(m => m.MasterAdminModule)
@@ -52,37 +69,15 @@ const routes: Routes = [
     path: 'Dueno',
     loadChildren: () => import('./dueno/dueno.module').then(m => m.DuenoModule)
   },
-
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'registro',
-    component: RegistroComponent
-  },
   {
     path: 'inmueble',
     loadChildren: () => import('./inmueble/inmueble.module').then(m => m.InmuebleModule)
-  },
-
-  {
-    path: 'menu2',
-    component: MenugloguedoComponent
   },
   {
     path: 'arvice',
     loadChildren: () => import('./arvice-space/arvice-space.module').then(m => m.ArviceSpaceModule)
   },
-  {
-
-  },  
-  { 
-
-    path: '**',
-    redirectTo: 'index',
-    pathMatch: 'full'
-  },
+ 
 
 
 
