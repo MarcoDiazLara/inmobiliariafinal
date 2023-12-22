@@ -12,6 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from 'src/app/company-admin/ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 import { inmueblesArviceSpace } from 'src/app/services/Interface/Interfaces';
+import { VentanasEmergentesComponent } from '../ventanas-emergentes/ventanas-emergentes.component';
 @Component({
   selector: 'app-mostrar-inmuebles',
   templateUrl: './mostrar-inmuebles.component.html',
@@ -88,32 +89,6 @@ export class MostrarInmueblesComponent implements OnInit {
 
   }
 
-  //obtener inmuebles 
-  // infoInmuebles() {
-
-  //   this.httpService.mostrarInmueblesArviceSpace().subscribe((data: any) => {
-  //     this.datosinmuebles = data;
-  //     console.log(this.datosinmuebles);
-
-  //   }
-  //   )
-  // }
-
-
-
-  // obtenerConteo() {
-  //   let IdSocio = localStorage.getItem("Id_Socio");
-  //   this.http.Aginados_NoAsigandos(IdSocio).subscribe((data: any) => {
-  //     this.datos = data;
-
-  //   });
-  // }
-  //Ejemplo de Array 
-  // this.ArrayAsignacion = data ;
-  // this.ArrayAsignacion.forEach(element => {
-  //   let IdUsuSocio = element.Id_Usuario;
-  //  localStorage.setItem("IdUsj", IdUsuSocio);  
-  // } );
 
   obtenerUsuarios() {
 
@@ -152,25 +127,17 @@ export class MostrarInmueblesComponent implements OnInit {
 
   // mandar a llamar ventana emergente
 
-  openasesor(id_inmo: any, asesor: any) {
+  openasesor() {
 
-    const valorCelda = asesor;
-    console.log(asesor);
+
     // Verifica si el valor de la celda está vacío o no
 
-    if (valorCelda == null) {
-      // Almacena el valor en el localStorage
-      localStorage.setItem("mi_valor", "2");
-
-    } else {
-      localStorage.setItem("mi_valor", "1");
-
-    }
 
 
-    const dialogRef = this.dialog.open(CompAsignaBrokerComponent, {
+
+    const dialogRef = this.dialog.open(VentanasEmergentesComponent, {
       width: '60vh',
-      height: 'auto',
+      height: '500px',
       disableClose: true
     });
   }

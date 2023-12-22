@@ -38,8 +38,8 @@
       (click)="clearForms()">Limpiar</button>
   </div>
   <!-- ----------------------- Cracteristicas------------------------------ -->
-  <div *ngFor="let formGroup of dynamicForms">
-    <form>
+  <div *ngFor="let form of dynamicForms" [formGroup]="form">
+    <!-- <form  > -->
       <div style="display: flex; justify-content: center; align-items: center;">
         <mat-form-field>
           <input matInput placeholder="Numero de piso" formControlName="name">
@@ -83,7 +83,7 @@
 
 
         <mat-form-field>
-          <input formControlName="Color" type="color" />
+          <input matInput formControlName="Color" type="color" />
         </mat-form-field>
         <div [style.background]="selectedColor" style="width: 50px; height: 50px;"></div>
 
@@ -124,7 +124,7 @@
 
 
 
-    </form>
+    <!-- </form> -->
 
     <br>
   </div>
