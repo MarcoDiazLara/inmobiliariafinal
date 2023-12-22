@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+            ],
             "outputPath": "dist/inmobewise",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,8 +36,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
-              
-              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

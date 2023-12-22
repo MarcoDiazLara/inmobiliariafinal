@@ -9,7 +9,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 
-@import '~@angular/material/theming';
+@import '@angular/material/theming';
 
 $custom-primary: (mat-palette($mat-blue)
 );
