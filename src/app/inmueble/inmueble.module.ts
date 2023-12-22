@@ -31,9 +31,12 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { PlanesComponent } from './planes/planes.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
 
 registerLocaleData(localeEs);
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     MenuinmuebleComponent,
     AvisosComponent,
@@ -41,7 +44,9 @@ registerLocaleData(localeEs);
     LikeComponent,
     LikegraficaComponent,
     InformacioninmuebleComponent,
-    PlanesComponent
+    PlanesComponent,
+    Requisitos3dComponent
+    
   ],
   imports: [
   
