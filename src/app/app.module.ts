@@ -38,6 +38,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Observable } from 'rxjs';
 
 
+
+
+
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WebComponent } from './web/web.component';
@@ -65,20 +68,12 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
     MetododepagoComponent,
    
   
-    
-
-
-
-
-
-
-
+  
   ],
   imports: [
     NgFor,
     AsyncPipe,
     BrowserModule,
-
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
