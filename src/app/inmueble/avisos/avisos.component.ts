@@ -130,7 +130,7 @@ TipoInmueble(tiposInmuebles:number){
 }
 openDialog2(): void {
   this.dialog.open(Requisitos3dComponent, {
-    width: '250px',
+  
   
   });
 }

@@ -22,7 +22,6 @@ import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broke
 export class CompanyAsignarReasignarComponent implements OnInit {
 
 
-// ArrayAsignacion:any[]=[];
 
   usuarios$: any;
   formGeneral!:FormGroup; 
@@ -60,10 +59,9 @@ export class CompanyAsignarReasignarComponent implements OnInit {
  
 
   ngOnInit(): void {
-    
-    let Bandera = localStorage.getItem("Bandera")
-
-    if(Bandera =="1"){
+    // let Bandera = localStorage.getItem("Bandera")
+    // if(Bandera =="1")
+    {
      this.obtenerConteo();
 
      this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
@@ -92,13 +90,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     
     });
   }
-      //Ejemplo de Array 
-      // this.ArrayAsignacion = data ;
-      // this.ArrayAsignacion.forEach(element => {
-      //   let IdUsuSocio = element.Id_Usuario;
-      //  localStorage.setItem("IdUsj", IdUsuSocio);  
-      // } );
-
+    
   obtenerUsuarios(){
     let Id_Socio = localStorage.getItem("Id_Socio");
 

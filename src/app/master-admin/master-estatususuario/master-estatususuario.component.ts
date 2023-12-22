@@ -60,11 +60,13 @@ export class MasterEstatususuarioComponent implements OnInit {
   
   ngOnInit(): void {
 
+
     this.pantallausuarios$ =this.adminService.getpantallausuariosOb().subscribe((inventarioasesor)=>{
       if(inventarioasesor !== null){
         this.dataSource.data =inventarioasesor;
       }
     });
+  
 
     
       
