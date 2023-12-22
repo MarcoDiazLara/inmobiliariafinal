@@ -40,7 +40,8 @@ export class PerfilbrokersComponent implements OnInit {
   constructor(public dialog: MatDialog,
     private httpService: HttpService,
     private formBuilder: FormBuilder) {}
-  openpassword (){
+ 
+    openpassword (){
     
     const dialogRef = this.dialog.open(BrokerpasswordComponent,{
       width: '60vh',
