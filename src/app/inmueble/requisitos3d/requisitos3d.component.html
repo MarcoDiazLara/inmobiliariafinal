@@ -1,114 +1,115 @@
-<mat-dialog-content  >
 <h1> Requisitos para modelado <i class="bi bi-badge-3d"></i></h1>
-<!-- -----------------Planos------------------------------------ -->
-<div class="d-flex justify-content-center align-items-center">
+  <!-- -----------------Planos------------------------------------ -->
+  <div class="d-flex justify-content-center align-items-center">
     <p>Sube tu Plano en formato PDF</p>
     <br>
   </div>
-    <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center" >
-  <form class="form-horizontal" >
-    <input  class="form-control" accept="image/*"  type="file" name="images"  multiple>
- </form>
-</div>
- <!-- -----------------------------Imagnes-------------------------------- -->
+  <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
+    <form class="form-horizontal">
+      <input class="form-control" accept="image/*" type="file" name="images" multiple>
+    </form>
+  </div>
+  <!-- -----------------------------Imagnes-------------------------------- -->
 
-    <br>
-    <p class="text-center">Sube tu imagnes necesarias </p>
-  
-    <div class="d-flex justify-content-center align-items-center">
-    <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center" >
-  <form class="form-horizontal" >
-    <input  class="form-control" accept="image/*"  type="file" name="images"  multiple>
- </form>
-</div>
+  <br>
+  <p class="text-center">Sube tu imagnes necesarias </p>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
+      <form class="form-horizontal">
+        <input class="form-control" accept="image/*" type="file" name="images" multiple>
+      </form>
     </div>
-    <!-- -----------------------Especificaciones del Inmueble--------------------------- -->
-    <br>
- <h2 class="text-center"> Especificaciones del Inmueble </h2>
-<div style="display: flex; justify-content: center; align-items: center;">
-  <mat-form-field>
-    <input matInput placeholder="Número de Cuartos" type="number" [(ngModel)]="numberOfForms">
-  </mat-form-field>
-</div>
+  </div>
+  <!-- -----------------------Especificaciones del Inmueble--------------------------- -->
+  <br>
+  <h2 class="text-center"> Especificaciones del Inmueble </h2>
   <div style="display: flex; justify-content: center; align-items: center;">
-  <button style="display: flex; justify-content: center; align-items: center;" mat-raised-button (click)="generateForms()">Generar Formularios</button>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
- 
-  <button  style="display: flex; justify-content: center; align-items: center;"mat-raised-button color="warn" (click)="clearForms()">Limpiar</button>
-</div>
-<!-- ----------------------- Cracteristicas------------------------------ -->
-  <div  *ngFor="let formGroup of dynamicForms">
+    <mat-form-field>
+      <input matInput placeholder="Número de Cuartos" type="number" [(ngModel)]="numberOfForms">
+    </mat-form-field>
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button style="display: flex; justify-content: center; align-items: center;" mat-raised-button
+      (click)="generateForms()">Generar Formularios</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button style="display: flex; justify-content: center; align-items: center;" mat-raised-button color="warn"
+      (click)="clearForms()">Limpiar</button>
+  </div>
+  <!-- ----------------------- Cracteristicas------------------------------ -->
+  <div *ngFor="let formGroup of dynamicForms">
     <form>
-      <div  style="display: flex; justify-content: center; align-items: center;">
-      <mat-form-field  >
-        <input matInput placeholder="Numero de piso" formControlName="name">
-      </mat-form-field>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <mat-form-field>
+          <input matInput placeholder="Numero de piso" formControlName="name">
+        </mat-form-field>
 
-      <mat-form-field >
-        <mat-label> Nombre de  habitacion </mat-label>
-        <mat-select formControlName="Nombre_de_habitacion" >
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </mat-form-field>
-     </div>
+        <mat-form-field>
+          <mat-label> Nombre de habitacion </mat-label>
+          <mat-select formControlName="Nombre_de_habitacion">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-     <div  style="display: flex; justify-content: center; align-items: center;">
-      <mat-form-field >
-        <mat-label>Elementos del Inmueble</mat-label>
-        <mat-select  formControlName="Elementos_del_Inmueble">
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <mat-form-field>
+          <mat-label>Elementos del Inmueble</mat-label>
+          <mat-select formControlName="Elementos_del_Inmueble">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <mat-form-field >
-        <mat-label> Acabados </mat-label>
-        <mat-select formControlName="Acabados">
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </mat-form-field>
-     </div>
-     <div  style="display: flex; justify-content: center; align-items: center;">
-      <!-- app.component.html -->
-
-
-
-  <!-- app.component.html -->
-
-
-  <mat-form-field  >
-    <input  formControlName="Color" type="color" />
-  </mat-form-field>
-  <div [style.background]="selectedColor" style="width: 50px; height: 50px;"></div>
+        <mat-form-field>
+          <mat-label> Acabados </mat-label>
+          <mat-select formControlName="Acabados">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <!-- app.component.html -->
 
 
 
-     
-
-      <mat-form-field >
-        <mat-label> tipo material </mat-label>
-        <mat-select formControlName="tipo_material" >
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+        <!-- app.component.html -->
 
 
-      <div  style="display: flex; justify-content: center; align-items: center;">
+        <mat-form-field>
+          <input formControlName="Color" type="color" />
+        </mat-form-field>
+        <div [style.background]="selectedColor" style="width: 50px; height: 50px;"></div>
 
 
-        <mat-form-field  >
+
+
+
+        <mat-form-field>
+          <mat-label> tipo material </mat-label>
+          <mat-select formControlName="tipo_material">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+
+
+        <mat-form-field>
           <input matInput placeholder="Largo" formControlName="Largo">
         </mat-form-field>
 
-        <mat-form-field  >
+        <mat-form-field>
           <input matInput placeholder="Ancho" formControlName="Ancho">
         </mat-form-field>
 
@@ -123,73 +124,14 @@
 
 
 
- </form>
+    </form>
 
     <br>
   </div>
   <br>
   <br>
   <div class="d-flex justify-content-center align-items-center">
-       
-    <button  color="primary"   (click)="CerraDialogo()"  mat-button >Cancelar</button>
-    <button color="primary"  mat-button >Aceptar</button>
-    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- <form (ngSubmit)="onSubmit()">
- <div style="display: flex; justify-content: center; align-items: center;" >
-  <div>
-  <label for="numberOfForms">Número de formularios:</label>
-  <input type="number" id="numberOfForms" [formControl]="numberOfFormsControl" />
-
-  <button type="button" class="btn" style="background-color: #38B6E3; color: #ffffff;" [disabled]="isButtonDisabled" (click)="createForms()">Crear formularios</button>
-</div>
- </div>
-</form>
-<form >
-  <div *ngFor="let form of dynamicForms; let i = index" class="form-container">
-    <h3>Formulario {{ i + 1 }}</h3>
-    <div [formGroup]="form">
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" formControlName="name" />
-
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" formControlName="email" />
-
-      <!-- Agrega otros campos según tu modelo -->
-
-    <!-- </div>
+    <button color="primary" (click)="CerraDialogo()" mat-button>Cancelar</button>
+    <button color="primary" mat-button>Aceptar</button>
   </div>
-  <button type="submit" >Enviar</button>
-</form> -->
-
- 
-
-
-
-</mat-dialog-content>
-
-
