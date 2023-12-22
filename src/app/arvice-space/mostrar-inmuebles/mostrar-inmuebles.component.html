@@ -28,23 +28,23 @@
   <table mat-table [dataSource]="dataSource">
     <!-- Name Column -->
     <ng-container matColumnDef="Nombre_Inmueble">
-      <th mat-header-cell *matHeaderCellDef>Inmueble</th>
+      <th mat-header-cell *matHeaderCellDef>Nombre Inmueble</th>
       <td mat-cell *matCellDef="let element">{{ element.Nombre_Inmueble }}</td>
     </ng-container>
 
     <!-- Prospecto_Interesado Column -->
-    <ng-container matColumnDef="Calle">
-      <th mat-header-cell *matHeaderCellDef>Calle</th>
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
       <td mat-cell *matCellDef="let element">{{ element.Calle }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="Nombre_Usuario">
-      <th mat-header-cell *matHeaderCellDef>Usuario</th>
+    <ng-container matColumnDef="apPaterno">
+      <th mat-header-cell *matHeaderCellDef>Apellido Paterno</th>
       <td mat-cell *matCellDef="let element">{{ element.Usuario }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="Broker">
-      <th mat-header-cell *matHeaderCellDef>Broker</th>
+    <ng-container matColumnDef="apMaterno">
+      <th mat-header-cell *matHeaderCellDef>Apellido Materno</th>
       <td mat-cell *matCellDef="let element">
         {{
           element.broker +
@@ -54,6 +54,10 @@
             element.Apellido_Materno
         }}
       </td>
+    </ng-container>
+    <ng-container matColumnDef="id_Inmueble">
+      <th mat-header-cell *matHeaderCellDef>Id Inmueble</th>
+      <td mat-cell *matCellDef="let element">{{ element.Usuario }}</td>
     </ng-container>
 
     <ng-container matColumnDef="botonOption">

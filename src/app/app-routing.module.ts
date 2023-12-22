@@ -20,6 +20,7 @@ import { RematehipotecarioComponent } from './web/rematehipotecario/rematehipote
 
 
 const routes: Routes = [
+
   {
     path: 'login',
     component: LoginComponent
@@ -78,7 +79,6 @@ const routes: Routes = [
     redirectTo: 'index',
     pathMatch: 'full'
   },
- 
 
 ]
 
