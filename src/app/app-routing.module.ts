@@ -73,7 +73,6 @@ const routes: Routes = [
     path: 'arvice',
     loadChildren: () => import('./arvice-space/arvice-space.module').then(m => m.ArviceSpaceModule)
   },
- 
   { 
     path: '**',
     redirectTo: 'index',
