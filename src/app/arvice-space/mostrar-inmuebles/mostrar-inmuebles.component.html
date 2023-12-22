@@ -33,31 +33,24 @@
     </ng-container>
 
     <!-- Prospecto_Interesado Column -->
-    <ng-container matColumnDef="nombre">
+    <ng-container matColumnDef="dueno">
       <th mat-header-cell *matHeaderCellDef>Nombre</th>
-      <td mat-cell *matCellDef="let element">{{ element.Calle }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.dueno }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="apPaterno">
+    <ng-container matColumnDef="dueno_P">
       <th mat-header-cell *matHeaderCellDef>Apellido Paterno</th>
-      <td mat-cell *matCellDef="let element">{{ element.Usuario }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.dueno_P }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="apMaterno">
-      <th mat-header-cell *matHeaderCellDef>Apellido Materno</th>
-      <td mat-cell *matCellDef="let element">
-        {{
-          element.broker +
-            " " +
-            element.Apellido_Paterno +
-            " " +
-            element.Apellido_Materno
-        }}
-      </td>
+    <ng-container matColumnDef="dueno_M">
+      <th mat-header-cell *matHeaderCellDef>Apellido Paterno</th>
+      <td mat-cell *matCellDef="let element">{{ element.dueno_M }}</td>
     </ng-container>
-    <ng-container matColumnDef="id_Inmueble">
+
+    <ng-container matColumnDef="Id_Inmueble">
       <th mat-header-cell *matHeaderCellDef>Id Inmueble</th>
-      <td mat-cell *matCellDef="let element">{{ element.Usuario }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.Id_Inmueble }}</td>
     </ng-container>
 
     <ng-container matColumnDef="botonOption">

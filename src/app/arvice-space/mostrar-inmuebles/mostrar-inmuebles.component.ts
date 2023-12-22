@@ -11,7 +11,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from 'src/app/company-admin/ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
-
+import { inmueblesArviceSpace } from 'src/app/services/Interface/Interfaces';
 @Component({
   selector: 'app-mostrar-inmuebles',
   templateUrl: './mostrar-inmuebles.component.html',
@@ -25,19 +25,19 @@ export class MostrarInmueblesComponent implements OnInit {
   paginator!: MatPaginator;
   displayedColumns = [
     'Nombre_Inmueble',
-    'nombre',
-    'apPaterno',
-    'apMaterno',
-    'id_Inmueble',
+    'dueno',
+    'dueno_P',
+    'dueno_M',
+    'Id_Inmueble',
     'btOpciones'
   ];
-
+  inmuebles: any[] = [];
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'nombre', 'apPaterno', 'apMaterno', 'id_Inmueble', 'botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'dueno', 'dueno_P', 'dueno_M', 'Id_Inmueble', 'botonOption'];
 
   // poner el nombre de una variable
-  datosinmuebles: AsignacionBroker[] = [];
+  datosinmuebles: inmueblesArviceSpace[] = [];
   datos: AsigarReAsignar[] = [];
 
   constructor(
@@ -50,19 +50,30 @@ export class MostrarInmueblesComponent implements OnInit {
     // Http para jalar el servicio 
   ) { }
 
+  //obtener inmuebles 
+  // infoInmuebles() {
+
+  //   this.httpService.mostrarInmueblesArviceSpace().subscribe((data: any) => {
+  //     this.datosinmuebles = data;
+  //     console.log(this.datosinmuebles);
+
+  //   }
+  //   )
+  // }
+
   ngOnInit(): void {
 
-    let Bandera = localStorage.getItem("Bandera")
 
-    if (Bandera == "1") {
-      // this.obtenerConteo();
 
-      this.usuarios$ = this.adminService.getUsuariosOb().subscribe((usuarios) => {
-        if (usuarios !== null) {
-          this.dataSource.data = usuarios;
-        }
-      });
-    }
+
+
+
+    this.usuarios$ = this.adminService.getUsuariosOb().subscribe((usuarios) => {
+      if (usuarios !== null) {
+        this.dataSource.data = usuarios;
+      }
+    });
+
 
 
     this.obtenerUsuarios();
@@ -73,7 +84,21 @@ export class MostrarInmueblesComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+
   }
+
+  //obtener inmuebles 
+  // infoInmuebles() {
+
+  //   this.httpService.mostrarInmueblesArviceSpace().subscribe((data: any) => {
+  //     this.datosinmuebles = data;
+  //     console.log(this.datosinmuebles);
+
+  //   }
+  //   )
+  // }
+
+
 
   // obtenerConteo() {
   //   let IdSocio = localStorage.getItem("Id_Socio");
@@ -90,9 +115,10 @@ export class MostrarInmueblesComponent implements OnInit {
   // } );
 
   obtenerUsuarios() {
-    let Id_Socio = localStorage.getItem("Id_Socio");
 
-    this.httpService.InmueblesBrokers(Id_Socio).subscribe((data: any) => {
+
+    this.httpService.mostrarInmueblesArviceSpace().subscribe((data: any) => {
+
 
       if (data !== 201) {
         this.adminService.usuarios$.next(data);
@@ -140,11 +166,6 @@ export class MostrarInmueblesComponent implements OnInit {
 
     }
 
-    localStorage.setItem("Id_Inmueble", id_inmo);
-    localStorage.setItem("Asesor", asesor);
-    console.log(id_inmo);
-
-
 
     const dialogRef = this.dialog.open(CompAsignaBrokerComponent, {
       width: '60vh',
@@ -157,14 +178,6 @@ export class MostrarInmueblesComponent implements OnInit {
   openDialog(): void {
     this.dialog.closeAll();
     //this.httpService.setGlobalVariable(false);
-    const itemsToRemove = [
-      "id_publicacion",
-      "mi_valor",
-      "Asesor",
-    ];
-    itemsToRemove.forEach(item => {
-      localStorage.removeItem(item);
-    })
 
   }
 

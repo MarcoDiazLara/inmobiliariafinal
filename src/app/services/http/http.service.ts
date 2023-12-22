@@ -635,10 +635,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_actualizaEstatus.php', params, { headers });
   }
 
-  mostrarInmueblesArviceSpace(p_Id_Socio: any) {
+  mostrarInmueblesArviceSpace() {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Socio=' + p_Id_Socio;
-    return this.httpclient.post(this.url + 'sp_web_inmuebles_arvicespace.php', params, { headers });
+    //  let params = 'p_Id_Socio=' + p_Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_inmuebles_arvicespace.php', { headers });
   }
   estatusUsuario() {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
