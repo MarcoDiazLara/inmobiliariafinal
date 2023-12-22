@@ -31,7 +31,6 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { PlanesComponent } from './planes/planes.component';
 import {MatRadioModule} from '@angular/material/radio';
-import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -42,8 +41,7 @@ registerLocaleData(localeEs);
     LikeComponent,
     LikegraficaComponent,
     InformacioninmuebleComponent,
-    PlanesComponent,
-    Requisitos3dComponent
+    PlanesComponent
   ],
   imports: [
   

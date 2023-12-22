@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Requisitos3dComponent } from './requisitos3d.component';
+import { MasterestatusComponent } from './masterestatus.component';
 
-describe('Requisitos3dComponent', () => {
-  let component: Requisitos3dComponent;
-  let fixture: ComponentFixture<Requisitos3dComponent>;
+describe('MasterestatusComponent', () => {
+  let component: MasterestatusComponent;
+  let fixture: ComponentFixture<MasterestatusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Requisitos3dComponent ]
+      declarations: [ MasterestatusComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Requisitos3dComponent);
+    fixture = TestBed.createComponent(MasterestatusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MasterAdminRoutingModule } from './master-admin-routing.module';
 import { MasterAdminComponent } from './master-admin.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
@@ -20,8 +20,6 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 
-
-
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -35,6 +33,7 @@ import { MasterAdminpasswordComponent } from './ventanaemergente/master-adminpas
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { MasterEstatususuarioComponent } from './master-estatususuario/master-estatususuario.component';
+import { MasterestatusComponent } from './ventanaemergente/masterestatus/masterestatus.component';
 
 
 
@@ -50,6 +49,7 @@ import { MasterEstatususuarioComponent } from './master-estatususuario/master-es
   MasterAdminpasswordComponent,
   NotificacionesmasterAdminComponent,
   MasterEstatususuarioComponent,
+  MasterestatusComponent,
 
  
   

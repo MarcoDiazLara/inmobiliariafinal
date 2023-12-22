@@ -12,15 +12,27 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
 import { ClienteModule } from './cliente/cliente.module';
 import { MasterAdminModule } from './master-admin/master-admin.module';
 import { DetallesComponent } from './inmueble/detalles/detalles.component';
-
 import { MenugloguedoComponent } from './menugloguedo/menugloguedo.component';
 import { DuenoComponent } from './dueno/dueno.component';
 import { ArviceSpaceComponent } from './arvice-space/arvice-space.component';
-
+import { RematehipotecarioComponent } from './web/rematehipotecario/rematehipotecario.component';
 
 
 
 const routes: Routes = [
+
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },
+  {
+    path: 'menu2',
+    component: MenugloguedoComponent
+  },
   {
     path: 'superUsuario',
     loadChildren: () => import('./master-admin/master-admin.module').then(m => m.MasterAdminModule)
@@ -53,35 +65,20 @@ const routes: Routes = [
     path: 'Dueno',
     loadChildren: () => import('./dueno/dueno.module').then(m => m.DuenoModule)
   },
-
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'registro',
-    component: RegistroComponent
-  },
   {
     path: 'inmueble',
     loadChildren: () => import('./inmueble/inmueble.module').then(m => m.InmuebleModule)
-  },
-
-  {
-    path: 'menu2',
-    component: MenugloguedoComponent
   },
   {
     path: 'arvice',
     loadChildren: () => import('./arvice-space/arvice-space.module').then(m => m.ArviceSpaceModule)
   },
-  {
+
+  { 
     path: '**',
     redirectTo: 'index',
     pathMatch: 'full'
   },
-
-
 
 ]
 

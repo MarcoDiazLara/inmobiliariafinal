@@ -20,7 +20,6 @@ import Swal from 'sweetalert2';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MetododepagoComponent } from 'src/app/metododepago/metododepago.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
 
 
 
@@ -419,12 +418,7 @@ obtenerLocalizacion(){
     localStorage.setItem("tipodeplan",auxi);
     const dialogRef = this.dialog.open(MetododepagoComponent, {
    });
+   
 
-}
-
-openDialog2(): void {
-  const dialogRef = this.dialog.open(Requisitos3dComponent, {
- 
-  });
 }
 }
