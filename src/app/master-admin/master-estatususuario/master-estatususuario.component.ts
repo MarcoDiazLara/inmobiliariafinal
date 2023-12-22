@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tblUsers } from 'src/app/services/Interface/Interfaces';
+import { MasterestatusComponent } from '../ventanaemergente/masterestatus/masterestatus.component';
 
 
 @Component({
@@ -114,7 +115,7 @@ export class MasterEstatususuarioComponent implements OnInit {
     
 
 
-    const dialogRef = this.dialog.open(MasterEstatususuarioComponent, {
+    const dialogRef = this.dialog.open(MasterestatusComponent, {
        width: '40%',
       // height: '80%',  
       disableClose: true

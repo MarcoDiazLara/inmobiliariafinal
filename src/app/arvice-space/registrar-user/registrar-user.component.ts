@@ -26,7 +26,7 @@ export class RegistrarUserComponent implements OnInit {
   //  : tipoUsuario [] = [];
   typeUser !: tipoUsuario;
   typeUsers: Tipo[] = [
-    { value: '11', viewValue: 'Arvice Space' },
+    { value: '6', viewValue: 'Super Usuario' },
 
   ];
 
