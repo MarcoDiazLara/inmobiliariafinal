@@ -116,8 +116,8 @@ export class MasterEstatususuarioComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(MasterestatusComponent, {
-       width: '40%',
-      // height: '80%',  
+       width: '30%',
+      height: '40%',  
       disableClose: true
     });
   }

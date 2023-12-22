@@ -20,7 +20,7 @@ import { RematehipotecarioComponent } from './web/rematehipotecario/rematehipote
 
 
 const routes: Routes = [
- 
+
   {
     path: 'login',
     component: LoginComponent
@@ -73,12 +73,12 @@ const routes: Routes = [
     path: 'arvice',
     loadChildren: () => import('./arvice-space/arvice-space.module').then(m => m.ArviceSpaceModule)
   },
+
   { 
     path: '**',
     redirectTo: 'index',
     pathMatch: 'full'
   },
-
 
 ]
 
