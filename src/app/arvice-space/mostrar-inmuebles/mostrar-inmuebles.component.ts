@@ -29,12 +29,13 @@ export class MostrarInmueblesComponent implements OnInit {
     'dueno_P',
     'dueno_M',
     'Id_Inmueble',
-    'btOpciones'
+    'btOpciones',
+    'bajar'
   ];
   inmuebles: any[] = [];
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'dueno', 'dueno_P', 'dueno_M', 'Id_Inmueble', 'botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'dueno', 'dueno_P', 'dueno_M', 'Id_Inmueble', 'btOpciones', 'bajar'];
 
   // poner el nombre de una variable
   datosinmuebles: inmueblesArviceSpace[] = [];

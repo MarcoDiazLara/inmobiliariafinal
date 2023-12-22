@@ -378,6 +378,12 @@ export interface Broker {
     Apellido_Materno: "",
     Nombres: ""
 }
+export interface Asesor {
+    Id_Usuario: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: "",
+    Nombres: ""
+}
 
 export interface AsignacionBroker {
     Nombre_Inmueble: "",
