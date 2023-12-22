@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {MatDialog } from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-estatus-usu',
-  templateUrl: './estatus-usu.component.html',
-  styleUrls: ['./estatus-usu.component.scss']
+  selector: 'app-masterestatus',
+  templateUrl: './masterestatus.component.html',
+  styleUrls: ['./masterestatus.component.scss']
 })
-
-export class EstatusUsuarioCompany implements OnInit {
+export class MasterestatusComponent implements OnInit {
   formulario!: FormGroup;
   constructor( private formBuilder: FormBuilder,private httpService: HttpService,private dialog:MatDialog,) { 
     this.formulario = this.formBuilder.group({
@@ -38,6 +37,4 @@ export class EstatusUsuarioCompany implements OnInit {
     this.dialog.closeAll();
  
     }
-
-}
-
+  }

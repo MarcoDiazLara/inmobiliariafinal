@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
 import { HttpService } from 'src/app/services/http/http.service';
+import { HitoGeneral } from 'src/app/services/Interface/Interfaces';
 
 interface estatus {
   value: string;
@@ -13,6 +14,10 @@ interface estatus {
   styleUrls: ['./fechashito.component.scss']
 })
 export class FechashitoComponent implements OnInit {
+
+  constructor(private httpservice:HttpService) { }
+  ngOnInit(): void {}
+
   ShowAddEvent: boolean = false;
   ShowEditEvent: boolean = false;
   selected: Date = new Date();
@@ -114,7 +119,7 @@ export class FechashitoComponent implements OnInit {
       aux = "0";
     }
 
-    // this.httpservice.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, aux, this.selectedStatus, localStorage.getItem("Id_Usuario") ).subscribe((data:any)=>{
+    // this.httpService.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, this.selectedStatus ).subscribe((data:any)=>{
     //   if (data == 1){
     //     Swal.fire({
     //       position: "center",
@@ -125,14 +130,14 @@ export class FechashitoComponent implements OnInit {
     //     });
         
     //   }
-    //});
-    if (modal) {
-      modal.classList.remove('mostrar');
-      setTimeout(() => {
-        this.ShowAddEvent = false;
-        this.añadirevent();
-      }, 100);
-    }
+    // });
+    // if (modal) {
+    //   modal.classList.remove('mostrar');
+    //   setTimeout(() => {
+    //     this.ShowAddEvent = false;
+    //     this.añadirevent();
+    //   }, 100);
+    // }
   }
 
 
@@ -169,15 +174,11 @@ export class FechashitoComponent implements OnInit {
   }
 
 
-  constructor(private httpservice:HttpService) {
-
-
-   
-  }
 
 
 
-  ngOnInit(): void {}
+
+
  
 
 }
