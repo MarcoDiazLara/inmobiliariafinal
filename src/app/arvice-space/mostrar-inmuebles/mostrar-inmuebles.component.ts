@@ -25,15 +25,16 @@ export class MostrarInmueblesComponent implements OnInit {
   paginator!: MatPaginator;
   displayedColumns = [
     'Nombre_Inmueble',
-    'Calle',
-    'Nombre_Usuario',
-    'Broker',
+    'nombre',
+    'apPaterno',
+    'apMaterno',
+    'id_Inmueble',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle', 'Nombre_Usuario', 'Broker', 'botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'nombre', 'apPaterno', 'apMaterno', 'id_Inmueble', 'botonOption'];
 
   // poner el nombre de una variable
   datosinmuebles: AsignacionBroker[] = [];
