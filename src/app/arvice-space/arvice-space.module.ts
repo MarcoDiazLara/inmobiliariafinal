@@ -38,12 +38,16 @@ import { registerLocaleData } from '@angular/common';
 import { ArviceSpaceComponent } from './arvice-space.component';
 import { RegistrarUserComponent } from './registrar-user/registrar-user.component';
 import { MostrarInmueblesComponent } from './mostrar-inmuebles/mostrar-inmuebles.component';
+import { VentanasEmergentesComponent } from './ventanas-emergentes/ventanas-emergentes.component';
+import { SubirArchivoComponent } from './ventanas-emergentes/subir-archivo/subir-archivo.component';
 
 @NgModule({
   declarations: [
     ArviceSpaceComponent,
     RegistrarUserComponent,
-    MostrarInmueblesComponent
+    MostrarInmueblesComponent,
+    VentanasEmergentesComponent,
+    SubirArchivoComponent
   ],
   imports: [
     CommonModule,
