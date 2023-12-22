@@ -9,31 +9,6 @@
   cursor: pointer;
 }
 
-.dropdown-menu li {
-  position: relative;
-  margin: 5px 0 5px 0;
-  cursor: pointer;
-}
-
-.dropdown-menu li a:active {
-  background-color: #fff;
-}
-
-.dropdown-menu li a:focus  {
-  background-color: #264D5E;
-}
-
-
-
-.dropdown-hover:hover>.dropdown-menu {
-  display: inline-block;
-}
-
-.dropdown-hover>.dropdown-toggle:active {
-  /*Without this, clicking will make it sticky*/
-  pointer-events: none;
-}
-
 .btn-outline-inmo {
   --bs-btn-color: #264D5E;
   --bs-btn-border-color: #264D5E;
@@ -58,6 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 li a {
@@ -66,4 +42,26 @@ li a {
 
 .separator {
   border: 5px solid #264D5E;
+}
+
+
+.dropdown-item:hover{
+  background-color: #264D5E;
+  color: #fff;
+}
+.dropdown .dropdown-menu{
+  display: none;
+}
+.dropdown:hover > .dropdown-menu, .dropend:hover > .dropdown-menu{
+  display: block;
+  margin-top: .125em;
+  margin-left: .125em;
+}
+
+@media screen and (min-width:769px) {
+  .dropend:hover > .dropdown-menu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
 }
