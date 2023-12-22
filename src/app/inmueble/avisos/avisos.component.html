@@ -234,11 +234,23 @@
             </div>
           </div>
           <div class="col-sm-4" style="display: flex; align-items: center; justify-content: center;">
+            <div class="d-grid gap-2">
+              <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"  (click)="openDialog(inmueble)">
+                <i class="bi bi-heart"></i>&nbsp;&nbsp;
+                Me gusta</button>
+              <!-- <button class="btn btn-primary" disabled type="button">Visualizaciones</button> -->
+              <!-- <button class="btn" style="background-color: #38B6E3 ; color: #ffffff;" disabled type="button">Modela tu Inmueble 3D</button> -->
+              <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="openDialog2()">
+                <i class="fas fa-cube"></i> &nbsp;&nbsp;
+                Modela tu inmueble 3D</button>
+            </div>
+          </div>
             <!-- Botones y acciones -->
-            <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"  (click)="openDialog(inmueble)">
+            <!-- <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"  (click)="openDialog(inmueble)">
               <i class="bi bi-heart"></i>&nbsp;&nbsp;
               Me gusta</button>
-          </div>
+              &nbsp;&nbsp;&nbsp;
+          </div> -->
         </div>
         <hr>
         <div class="row align-items-center">

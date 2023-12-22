@@ -1,0 +1,76 @@
+<mat-dialog-content  >
+<h1> Requisitos para modelado <i class="bi bi-badge-3d"></i></h1>
+<!-- -----------------Planos------------------------------------ -->
+<div class="d-flex justify-content-center align-items-center">
+    <p>Sube tu Plano en formato PDF</p>
+    <br>
+  </div>
+    <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center" >
+  <form class="form-horizontal" >
+    <input  class="form-control" accept="image/*"  type="file" name="images"  multiple>
+ </form>
+</div>
+ <!-- -----------------------------Imagnes-------------------------------- -->
+
+    <br>
+    <p class="text-center">Sube tu imagnes necesarias </p>
+  
+    <div class="d-flex justify-content-center align-items-center">
+    <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center" >
+  <form class="form-horizontal" >
+    <input  class="form-control" accept="image/*"  type="file" name="images"  multiple>
+ </form>
+</div>
+    </div>
+    <!-- -----------------------Especificaciones del Inmueble--------------------------- -->
+    <br>
+ <h2 class="text-center"> Especificaciones del Inmueble </h2>
+ <form>
+ <div style="display: flex; justify-content: center; align-items: center;" >
+    <mat-form-field style="margin-right: 10px;"> 
+        <mat-label>Numero de Cuartos</mat-label>
+        <input formControlName="Numero_de_Cuartos" matInput placeholder="Numero de Cuartos" >
+    </mat-form-field>
+    <button class="btn btn-light btn-grande" (click)="toggleTabla()">  Aceptar
+    </button></div>
+
+  
+</form>
+<form class="table mt-3" *ngIf="mostrarTabla">
+        
+        
+         
+</form>
+
+
+
+</mat-dialog-content>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form>
+ <div style="display: flex; justify-content: center; align-items: center;" >
+    <mat-form-field style="margin-right: 10px;"> 
+        <mat-label>Numero de Cuartos</mat-label>
+        <input formControlName="Numero_de_Cuartos" matInput placeholder="Numero de Cuartos" >
+    </mat-form-field> 
+</div>
+
+</form> -->

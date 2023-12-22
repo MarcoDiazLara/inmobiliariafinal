@@ -12,6 +12,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { P } from '@fullcalendar/core/internal-common';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Requisitos3dComponent } from '../requisitos3d/requisitos3d.component';
 
 @Component({
   selector: 'app-avisos',
@@ -127,6 +128,12 @@ TipoInmueble(tiposInmuebles:number){
   
 
 }
+
+
+openDialog2(): void {
+  const dialogRef = this.dialog.open(Requisitos3dComponent, {
+ 
+  });
 }
     
 //   this.httpService.filtroEstadoAnuncio(localStorage.getItem("Id_Usuario"),Anuncio).subscribe((data:any)=>{
@@ -136,6 +143,6 @@ TipoInmueble(tiposInmuebles:number){
 
 
 
-
+}
 
 
