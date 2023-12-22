@@ -638,7 +638,7 @@ export class HttpService {
   mostrarInmueblesArviceSpace(p_Id_Socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_Id_Socio=' + p_Id_Socio;
-    return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
+    return this.httpclient.post(this.url + 'sp_web_inmuebles_arvicespace.php', params, { headers });
   }
   estatusUsuario() {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
