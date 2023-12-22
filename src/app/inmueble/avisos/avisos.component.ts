@@ -12,6 +12,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { P } from '@fullcalendar/core/internal-common';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Requisitos3dComponent } from '../requisitos3d/requisitos3d.component';
 
 @Component({
   selector: 'app-avisos',
@@ -122,10 +123,16 @@ TipoInmueble(tiposInmuebles:number){
     this.inmuebles1=data;
     console.log("hola");
   })
-
+ 
 
   
 
+}
+openDialog2(): void {
+  this.dialog.open(Requisitos3dComponent, {
+    width: '250px',
+  
+  });
 }
 }
     
