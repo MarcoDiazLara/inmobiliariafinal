@@ -576,6 +576,11 @@ export class HttpService {
     let params = 'p_Id_Socio=' + Id_Socio;
     return this.httpclient.post(this.url + 'sp_web_selecciona_broker.php', params, { headers });
   }
+  mostrarAsesorhito(Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_selecciona_asesor.php', params, { headers });
+  }
 
   mostrarInformacionAsesor(Id_Socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
