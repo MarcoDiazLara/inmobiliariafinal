@@ -70,15 +70,6 @@ export class Requisitos3dComponent  implements OnInit {
   eliminarItem(index: number) {
     this.items.removeAt(index);
   }
-
-
-
-
-
-
-
-  
-
   ngOnInit() {
     this.miFormulario = this.fb.group({
       items: this.fb.array([]),
@@ -90,6 +81,9 @@ export class Requisitos3dComponent  implements OnInit {
       tipo_material:['', [Validators.required]],
       Largo:['', [Validators.required]],
       Ancho:['', [Validators.required]],
+      Altura:['', [Validators.required]],
+      img:['', [Validators.required]],
+      
     });
  
 //     this.formGeneral = this.fb.group({
