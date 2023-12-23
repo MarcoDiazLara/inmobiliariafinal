@@ -17,6 +17,7 @@ interface ColorOption {
 })
 export class Requisitos3dComponent  implements OnInit {
   formGeneral!:FormGroup;
+  
   numberOfForms: number = 1; // Valor inicial
   dynamicForms: FormGroup[] = [];
 

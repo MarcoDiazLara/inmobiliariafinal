@@ -1,3 +1,5 @@
+<mat-dialog-content>
+
 <h1> Requisitos para modelado <i class="bi bi-badge-3d"></i></h1>
   <!-- -----------------Planos------------------------------------ -->
   <div class="d-flex justify-content-center align-items-center">
@@ -38,8 +40,8 @@
       (click)="clearForms()">Limpiar</button>
   </div>
   <!-- ----------------------- Cracteristicas------------------------------ -->
-  <div *ngFor="let formGroup of dynamicForms">
-    <form>
+  <div *ngFor="let form of dynamicForms" [formGroup]="form">
+    <!-- <form  > -->
       <div style="display: flex; justify-content: center; align-items: center;">
         <mat-form-field>
           <input matInput placeholder="Numero de piso" formControlName="name">
@@ -83,7 +85,7 @@
 
 
         <mat-form-field>
-          <input formControlName="Color" type="color" />
+          <input matInput formControlName="Color" type="color" />
         </mat-form-field>
         <div [style.background]="selectedColor" style="width: 50px; height: 50px;"></div>
 
@@ -124,7 +126,7 @@
 
 
 
-    </form>
+    <!-- </form> -->
 
     <br>
   </div>
@@ -135,3 +137,4 @@
     <button color="primary" (click)="CerraDialogo()" mat-button>Cancelar</button>
     <button color="primary" mat-button>Aceptar</button>
   </div>
+</mat-dialog-content>
