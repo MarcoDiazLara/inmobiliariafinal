@@ -83,6 +83,8 @@ export class Requisitos3dComponent  implements OnInit {
       Ancho:['', [Validators.required]],
       Altura:['', [Validators.required]],
       img:['', [Validators.required]],
+
+      
       
     });
  
