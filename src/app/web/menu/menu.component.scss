@@ -41,7 +41,14 @@ li a {
 }
 
 .separator {
+  position: fixed;
   border: 5px solid #264D5E;
+  top: 1;
+  left: 50%;
+  transform: translateX(-50%); 
+  border: 5px solid #264D5E;
+  width: 100%; 
+  z-index: 1000;
 }
 
 
