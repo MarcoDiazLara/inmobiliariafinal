@@ -54,6 +54,16 @@ export class Requisitos3dComponent  implements OnInit {
   agregarItem() {
     this.items.push(this.fb.group({
       // Definir los campos del formulario aquí
+      items: this.fb.array([]),
+      name: ['', [Validators.required]],
+      Nombre_de_habitacion: ['', [Validators.required]],
+      Elementos_del_Inmueble:['',[Validators.required]],
+      Acabados: ['', [Validators.required]],
+      Color:['', [Validators.required]],
+      tipo_material:['', [Validators.required]],
+      Largo:['', [Validators.required]],
+      Ancho:['', [Validators.required]],
+      
     }));
   }
 
