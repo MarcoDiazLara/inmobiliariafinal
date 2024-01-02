@@ -19,13 +19,13 @@ export class CompanyAdminComponent implements OnDestroy {
     { name: "perfilempresa", route: "perfilempresa",icon: "apartment" , label: "Perfil Empresa",number:'0'},
     { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0'},
     { name: "Alta Usuarios", route: "altabrokers",icon: "group_add" , label: "Alta de Usuarios",number:'0'},
-    { name: "Inventario", route: "Inventario",icon: "inventory" , label: "Inventario",number:'0' },
     { name: "Hito", route: "Hitoadmin",icon: "event" , label: "Fecha Hito",number:'0' },
-    { name: "Asignar-reasignar", route: "Asignar-reasignar",icon: "house" , label: "Asignar-Reasignar",number:'0'},
-    { name: "PantallaUsuarios", route: "PantallaUsuarios",icon: "person_search" , label: "Pantalla Usuarios",number:'0'},
-    { name: "asignar-reasignar-user", route: "resignar-asignarUser",icon: "groups_3" , label: "Asignar Reasignar Usuarios",number:'0'},
+    { name: "Asignar-reasignar", route: "Asignar-reasignar",icon: "group" , label: "Asignar-Reasignar",number:'0'},
+    { name: "PantallaUsuarios", route: "PantallaUsuarios",icon: "person_search" , label: "Usuarios",number:'0'},
+    { name: "Inventario", route: "Inventario",icon: "inventory" , label: "Inventario",number:'0' },
+    // { name: "asignar-reasignar-user", route: "resignar-asignarUser",icon: "groups_3" , label: "Asignar Reasignar Usuarios",number:'0'},
     { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
-    { name: "estatususuario",    route: "estatususuario",icon: "person_remove" , label: "Cambiar Estatus Usuario",number:'0'},
+    { name: "estatususuario",    route: "estatususuario",icon: "person_remove" , label: "Deshabilitar Cuentas",number:'0'},
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'},
   
     

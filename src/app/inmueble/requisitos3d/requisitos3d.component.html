@@ -32,15 +32,15 @@
         <div style="display: flex; justify-content: center; align-items: center;">
 
           <mat-form-field style="margin-right: 15px;">
-            <input matInput placeholder="Numero de piso" formControlName="name">
+            <input matInput placeholder="Numero_de_piso" formControlName="name">
           </mat-form-field>
 
           <mat-form-field style="margin-right: 15px;">
             <mat-label> Nombre de habitacion </mat-label>
             <mat-select formControlName="Nombre_de_habitacion">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
+              <mat-option *ngFor="let Ase of habitaciones" value="{{ Ase.value}}"> {{ Ase.viewValue
+              }}</mat-option>
+             
             </mat-select>
           </mat-form-field>
         </div>
@@ -49,9 +49,12 @@
           <mat-form-field  style="margin-right: 15px;">
             <mat-label>Elementos del Inmueble</mat-label>
             <mat-select formControlName="Elementos_del_Inmueble">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
+              <mat-option *ngFor="let Ase of elementos" value="{{ Ase.value}}">
+                {{ Ase.viewValue
+                }}
+
+              </mat-option>
+       
             </mat-select>
           </mat-form-field>
 
@@ -59,9 +62,9 @@
           <mat-form-field style="margin-right: 15px;">
             <mat-label> tipo material </mat-label>
             <mat-select formControlName="tipo_material">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
+              <mat-option *ngFor="let Ase of material" value="{{ Ase.value}}">{{ Ase.viewValue
+              }}</mat-option>
+              
             </mat-select>
           </mat-form-field>
   
@@ -73,9 +76,9 @@
         <mat-form-field style="margin-right: 15px;">
           <mat-label> Acabados </mat-label>
           <mat-select formControlName="Acabados">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
+            <mat-option *ngFor="let Ase of acabados" value="{{ Ase.value}}" >{{ Ase.viewValue
+            }}</mat-option>
+        
           </mat-select>
         </mat-form-field>
 
@@ -125,24 +128,6 @@
   
   
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -353,6 +338,6 @@
   <div class="d-flex justify-content-center align-items-center">
 
     <button color="primary" (click)="CerraDialogo()" mat-button>Cancelar</button>
-    <button color="primary" mat-button>Aceptar</button>
+    <button color="primary"  mat-button    (click)="ObtnerInformacio()">Aceptar</button>
   </div>
 </mat-dialog-content>

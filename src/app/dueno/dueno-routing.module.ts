@@ -6,6 +6,7 @@ import { NotificacionDuenoComponent } from './notificacion-dueno/notificacion-du
 import { InteresadosComponent } from './interesados/interesados.component';
 import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
 import { DatosInteresadosComponent } from './interesados/datos-interesados/datos-interesados.component';
+import { CambioasesorComponent } from './cambioasesor/cambioasesor.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'datos-interesados',
         component: DatosInteresadosComponent
+      },
+      {
+        path: 'cambioasesor',
+        component: CambioasesorComponent
       }
 
 

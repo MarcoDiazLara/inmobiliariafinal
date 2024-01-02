@@ -20,7 +20,6 @@ import { MasterestatusComponent } from '../ventanaemergente/masterestatus/master
 
 export class MasterEstatususuarioComponent implements OnInit {
   pantallausuarios$: any;
-
   formGeneral!:FormGroup; 
 
   @ViewChild(MatPaginator)
@@ -60,20 +59,15 @@ export class MasterEstatususuarioComponent implements OnInit {
   
   ngOnInit(): void {
 
-
-    this.pantallausuarios$ =this.adminService.getpantallausuariosOb().subscribe((inventarioasesor)=>{
-      if(inventarioasesor !== null){
-        this.dataSource.data =inventarioasesor;
+    this.pantallausuarios$ =this.adminService.getpantallausuariosOb().subscribe((pantallausuarios)=>{
+      if(pantallausuarios !== null){
+        this.dataSource.data =pantallausuarios;
       }
     });
   
-
-    
-      
   this.obtenerInventario();
 
   }
-  
   
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -113,10 +107,7 @@ export class MasterEstatususuarioComponent implements OnInit {
 
   openasesor(idPubli:any ) {
 
-    localStorage.setItem ('Id_Usuxd',idPubli);
-    
-
-
+    localStorage.setItem ('Id_Usuxd',idPubli);    
     const dialogRef = this.dialog.open(MasterestatusComponent, {
        width: '30%',
       height: '40%',  
