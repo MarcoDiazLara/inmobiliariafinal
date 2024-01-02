@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpService } from '../services/http/http.service';
 
 @Component({
   selector: 'app-arvice-space',
@@ -21,17 +22,29 @@ export class ArviceSpaceComponent implements OnInit {
     //  { name: "Asignar Users", route: "asignarUsers", icon: "event", label: "Asginar Reasignar Usuarios", number: '0' },
     // { name: "fechashito", route: "fechashito", icon: "collections_bookmark", label: "fechashito ", number: '0' },
     //{ name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' },
-    { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
+    { name: "Salir", icon: "logout", label: "Salir", number: '1' , onClick: () => { 
+      const itemsToRemove = [
+        "Nombre_Usuario",
+        "Id_Usuario",
+        "Id_Tipo_Usuario"
+      ];
+      itemsToRemove.forEach(item => {
+        localStorage.removeItem(item);
+      })
+      this.httpService.setGlobalVariable(false);
+      this.router.navigate(["/web"]);
+    } }
 
   ];
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private httpService: HttpService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.nombre = localStorage.getItem("Nombre_Usuario");
+
   }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
