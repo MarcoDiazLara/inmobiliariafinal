@@ -21,7 +21,7 @@ export class MasterAdminComponent  implements OnDestroy {
     { name: "altausuario", route: "altausuario",icon: "group_add" , label: "Alta usuario",number:'0' },
     { name: "altasocio", route: "altasocio",icon: "domain_add" , label: "Alta socio",number:'0' },
     // { name: "asignar-re", route: "Asignar-reasignar",icon: "groups" , label: "Asignar-Reasignar",number:'0' },
-    { name: "asignar-re", route: "estatusUsuario",icon: "person_remove" , label: "Desabilitar Cuentas",number:'0' },
+    { name: "asignar-re", route: "estatusUsuario",icon: "person_remove" , label: "Deshabilitar Cuentas",number:'0' },
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'}
   ];
 
