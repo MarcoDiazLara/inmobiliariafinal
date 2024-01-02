@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './cliente.component';
 import { NotificacionesclienteComponent } from './notificacionescliente/notificacionescliente.component';
-import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 import { WebComponent } from '../web/web.component';
 import { QuierescomprarComponent } from '../web/quierescomprar/quierescomprar.component';
@@ -25,10 +24,6 @@ const routes: Routes = [
       {
         path:'notificacion',
         component: NotificacionesclienteComponent,
-      },
-      {
-        path:'reasignacion',
-        component: CambioasesorclienteComponent,
       },
       {
         path:'calendario',

@@ -16,12 +16,9 @@ export class DuenoComponent implements OnDestroy {
   fillerNav = [
     { name: "bienvenida", route: "bienvenida", icon: "home", label: "Hola", number: '0' },
     { name: "Notificaciones", route: "notificacion-dueno", icon: "notifications", label: "Notificaciones", number: '0' },
-    { name: "Asignar-reasignar", route: "Interesados", icon: "groups", label: "Interesados", number: '0' },
     { name: "Calendario", route: "MiAsesor", icon: "date_range", label: " Mi Asesor", number: '0' },
-    // { name: "Hitobroker", route: "Hitobroker",icon: "event" , label: "Fecha Hito",number:'0' },
-    // // { name: "Hito", route: "Hitobroker",icon: "event" , label: "Fecha Hito",number:'0' },
-    // { name: "fechashito", route: "fechashito",icon: "collections_bookmark" , label: "fechashito ",number:'0'},
-    // { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0'},
+    { name: "cambioasesor", route: "cambioasesor",icon: "3p" , label: "Cambio de Asesor",number:'0' },
+    { name: "Asignar-reasignar", route: "Interesados", icon: "groups", label: "Interesados", number: '0' },
     { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
 
   ];

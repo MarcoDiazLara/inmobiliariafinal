@@ -70,6 +70,7 @@ export class Requisitos3dComponent  implements OnInit {
       Altura:['', [Validators.required]],
       img:['', [Validators.required]],
       
+
     }));
   }
 
