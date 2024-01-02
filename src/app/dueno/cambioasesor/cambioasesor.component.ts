@@ -8,15 +8,14 @@ import { SolicitudCambio } from 'src/app/services/Interface/Interfaces';
 
 import Swal from 'sweetalert2';
 
-
 @Component({
-  selector: 'app-cambioasesorcliente',
-  templateUrl: './cambioasesorcliente.component.html',
-  styleUrls: ['./cambioasesorcliente.component.scss']
-
-
+  selector: 'app-cambioasesor',
+  templateUrl: './cambioasesor.component.html',
+  styleUrls: ['./cambioasesor.component.scss']
 })
-export class CambioasesorclienteComponent implements OnInit {
+
+
+export class CambioasesorComponent implements OnInit {
 
   formGeneral!: FormGroup;
 
@@ -112,3 +111,4 @@ export class CambioasesorclienteComponent implements OnInit {
 
   }
 }
+

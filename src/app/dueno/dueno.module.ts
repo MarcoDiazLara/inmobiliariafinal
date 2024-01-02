@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DuenoRoutingModule } from './dueno-routing.module';
 import { DuenoComponent } from './dueno.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
@@ -27,23 +26,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
-// import { NotificacionbrokerComponent } from './notificacionbroker/notificacionbroker.component';
-// import { BrokerpasswordComponent } from './brokerpassword/brokerpassword.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-// import { PerfilbrokersComponent } from './perfilbrokers/perfilbrokers.component';
-// import { AltaAsesorComponent } from './alta-asesor/alta-asesor.component';
-// import { BrokersAsignarReasignarComponent } from './brokers-asignar-reasignar/brokers-asignar-reasignar.component';
-// import { BroAsignarAsesorComponent } from './ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
-// import { CalendarioComponent } from './calendario/calendario.component';
-// import { Citas1Component } from './citas1/citas1.component';
-//import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-// import { InvesntarioComponent } from './invesntario/invesntario.component';
-// import { VentanadetallesInmuebleComponent } from './ventanadetalles-inmueble/ventanadetalles-inmueble.component';
-// import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
+
 import { GoogleMapsModule } from '@angular/google-maps';
-//import { BrokerhitoComponent } from './brokerhito/brokerhito.component';
 // lenguaje
 import localeEs from '@angular/common/locales/es';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
@@ -52,34 +39,20 @@ import { NotificacionDuenoComponent } from './notificacion-dueno/notificacion-du
 import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
 import { InteresadosComponent } from './interesados/interesados.component';
 import { DatosInteresadosComponent } from './interesados/datos-interesados/datos-interesados.component';
-//import { FechashitoComponent } from './fechashito/fechashito.component';
+import { CambioasesorComponent } from './cambioasesor/cambioasesor.component';
+
 
 registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
-    // PerfilbrokersComponent,
     DuenoComponent,
-    // NotificacionbrokerComponent,
-    // BrokerpasswordComponent,
-    // AltaAsesorComponent,
-    // BrokersAsignarReasignarComponent,
-    // BroAsignarAsesorComponent,
-    // CalendarioComponent,
-    // Citas1Component,
     BienvenidaComponent,
     NotificacionDuenoComponent,
     MiAsesorComponent,
     InteresadosComponent,
     DatosInteresadosComponent,
-    // InvesntarioComponent,
-    // VentanadetallesInmuebleComponent,
-    // CatalogoinmuebleComponent,
-    // BrokerhitoComponent,
-    // FechashitoComponent,
-
-
-
+    CambioasesorComponent,
   ],
   imports: [
     CommonModule,
@@ -114,14 +87,4 @@ registerLocaleData(localeEs);
   ],
 })
 
-// @NgModule({
-//   declarations: [
-//     DuenoComponent,
-//     BienvenidaComponent,
-//   ],
-//   imports: [
-//     CommonModule,
-//     DuenoRoutingModule
-//   ]
-// })
 export class DuenoModule { }

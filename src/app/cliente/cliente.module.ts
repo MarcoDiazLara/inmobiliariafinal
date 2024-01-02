@@ -25,7 +25,6 @@ import {MatInputModule} from '@angular/material/input';
 import { ErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
 import { ClientepasswordComponent } from './ventanaemergente/clientepassword/clientepassword.component';
 import { NotificacionesclienteComponent } from './notificacionescliente/notificacionescliente.component';
-import { CambioasesorclienteComponent } from './cambioasesorcliente/cambioasesorcliente.component';
 import { PerfilclienteComponent } from './perfilcliente/perfilcliente.component';
 
 
@@ -63,7 +62,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     ClienteComponent,
     ClientepasswordComponent,
     NotificacionesclienteComponent,
-    CambioasesorclienteComponent,
     CalendarioComponent,
     DialogComponent,
     PerfilclienteComponent,
