@@ -63,7 +63,6 @@ export class Requisitos3dComponent  implements OnInit {
       tipo_material:['', [Validators.required]],
       Largo:['', [Validators.required]],
       Ancho:['', [Validators.required]],
-      
     }));
   }
 
