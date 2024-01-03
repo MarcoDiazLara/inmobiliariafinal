@@ -238,12 +238,17 @@ export class Requisitos3dComponent  implements OnInit {
       const firstItemtipo_material = itemsArray.controls[i]?.get('tipo_material')?.value;
       const firstItemAcabados= itemsArray.controls[i]?.get('Acabados')?.value;
       const firstItemcolor = itemsArray.controls[i]?.get('color')?.value;
-      const firstItemLargo= itemsArray.controls[i]?.get('Largo')?.value;
-      const firstIteAncho =  itemsArray.controls[i]?.get('Ancho')?.value;
-      const firstItemAltura= itemsArray.controls[i]?.get('Altura')?.value;
+      // const firstItemLargo= itemsArray.controls[i]?.get('Largo')?.value;
+      // const firstIteAncho =  itemsArray.controls[i]?.get('Ancho')?.value;
+      // const firstItemAltura= itemsArray.controls[i]?.get('Altura')?.value;
+      const firstItemLargo: string = String(itemsArray.controls[i]?.get('Largo')?.value);
+      const firstIteAncho: string = String(itemsArray.controls[i]?.get('Ancho')?.value);
+      const firstItemAltura: string = String(itemsArray.controls[i]?.get('Altura')?.value);
+      
+      const concatenatedString: string = firstItemLargo + "X"+ firstIteAncho + "X" + firstItemAltura;
+      
 
-
-//console.log(firstItemName + firstItemElementos_del_Inmueble +firstItemtipo_material + firstItemAcabados + firstItemcolor + firstItemLargo + firstIteAncho + firstItemAltura  );
+      console.log(firstItemName + firstItemElementos_del_Inmueble + firstItemtipo_material + firstItemAcabados + firstItemcolor + concatenatedString  );
       }
 
      }
