@@ -4,6 +4,9 @@ import { FormControl } from '@angular/forms';
 import {  Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {  FormArray } from '@angular/forms';
+import { HttpService } from 'src/app/services/http/http.service';
+
+// import { HttpService} from '../services/http/http.service';
 
 
 interface selects{
@@ -39,7 +42,7 @@ export class Requisitos3dComponent  implements OnInit {
     // Puedes agregar más opciones según tus necesidades
   ];
   
-  constructor(private fb: FormBuilder , public dialog: MatDialog) {
+  constructor(private fb: FormBuilder , public dialog: MatDialog , private httpService: HttpService) {
     this.form = this.fb.group({
       usuarios: this.fb.array([])
     });
@@ -235,6 +238,7 @@ export class Requisitos3dComponent  implements OnInit {
       for(i;i<xd;i++){
       const firstItemName = itemsArray.controls[i]?.get('name')?.value;
       const firstItemElementos_del_Inmueble = itemsArray.controls[i]?.get('Elementos_del_Inmueble')?.value;
+      const firstItemNombre_de_habitacion = itemsArray.controls[i]?.get('Nombre_de_habitacion')?.value;
       const firstItemtipo_material = itemsArray.controls[i]?.get('tipo_material')?.value;
       const firstItemAcabados= itemsArray.controls[i]?.get('Acabados')?.value;
       const firstItemcolor = itemsArray.controls[i]?.get('color')?.value;
@@ -250,9 +254,15 @@ export class Requisitos3dComponent  implements OnInit {
     let colorRGB = "["+RGB?.r +","+ RGB?.g +","+ RGB?.b+"]";
       
       const concatenatedString: string = firstItemLargo + "X"+ firstIteAncho + "X" + firstItemAltura;
-      
+       
+      this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),firstItemName,firstItemNombre_de_habitacion,firstItemElementos_del_Inmueble,firstItemtipo_material, firstItemAcabados,colorRGB, concatenatedString, "xd", localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
 
-      console.log(firstItemName + firstItemElementos_del_Inmueble + firstItemtipo_material + firstItemAcabados + firstItemcolor + concatenatedString  );
+         alert("Se subio");
+
+
+        })
+
+      // console.log(firstItemName + firstItemElementos_del_Inmueble + firstItemtipo_material + firstItemAcabados + firstItemcolor + concatenatedString  );
       }
 
      }
@@ -273,7 +283,7 @@ export class Requisitos3dComponent  implements OnInit {
     
       return { r, g, b };
     }
-
+        
 
 
 
