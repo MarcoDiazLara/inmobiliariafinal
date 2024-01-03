@@ -241,7 +241,7 @@ export class Requisitos3dComponent  implements OnInit {
       const firstItemNombre_de_habitacion = itemsArray.controls[i]?.get('Nombre_de_habitacion')?.value;
       const firstItemtipo_material = itemsArray.controls[i]?.get('tipo_material')?.value;
       const firstItemAcabados= itemsArray.controls[i]?.get('Acabados')?.value;
-      const firstItemcolor = itemsArray.controls[i]?.get('color')?.value;
+      const firstItemcolor = itemsArray.controls[i]?.get('Color')?.value;
       // const firstItemLargo= itemsArray.controls[i]?.get('Largo')?.value;
       // const firstIteAncho =  itemsArray.controls[i]?.get('Ancho')?.value;
       // const firstItemAltura= itemsArray.controls[i]?.get('Altura')?.value;
@@ -251,11 +251,11 @@ export class Requisitos3dComponent  implements OnInit {
       const imagen: string = String(itemsArray.controls[i]?.get('img')?.value);
       console.log(imagen);
       const RGB = this.hexToRgb(firstItemcolor);
-    let colorRGB = "["+RGB?.r +","+ RGB?.g +","+ RGB?.b+"]";
+      const colorRGB = "["+RGB?.r +","+ RGB?.g +","+ RGB?.b+"]";
       
-      const concatenatedString: string = firstItemLargo + "X"+ firstIteAncho + "X" + firstItemAltura;
+      const concatenatedString: string = firstItemLargo+"cm " + " x "+ firstIteAncho +"cm "+ " x " + firstItemAltura + "cm";
        
-      this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),firstItemName,firstItemNombre_de_habitacion,firstItemElementos_del_Inmueble,firstItemtipo_material, firstItemAcabados,colorRGB, concatenatedString, "xd", localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
+      this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),firstItemName,firstItemNombre_de_habitacion,firstItemElementos_del_Inmueble, firstItemAcabados,colorRGB,firstItemtipo_material, concatenatedString, "xd", localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
 
          alert("Se subio");
 
