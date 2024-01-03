@@ -7,7 +7,30 @@
     text-align: center;
     position: relative;
 }
-#archivo{
+#head{
+    height: 15%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: antiquewhite;
+}
+#left{
+    margin: 0;
+    padding: 0;
+    background-color: #A2BF39;
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+#right{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+#archivo1, #archivo2{
     margin-top: 30px;
 }
 #subir{
@@ -41,4 +64,24 @@
 #subir:hover{
     background-color:rgb(207, 255, 135); 
     color: black;
+}
+h3{
+    color: white;
+    font-weight: bold;
+}
+#r{
+    margin: 0;
+    padding: 0;
+   
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+#l{
+    margin: 0;
+    padding: 0;
+   
+    height: 100%;
+    width: 50%;
+    display: inline-block;
 }
