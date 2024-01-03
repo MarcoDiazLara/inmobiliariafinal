@@ -1,6 +1,23 @@
 <div class="container">
-  <input id="archivo" type="file" /><br />
-  <button id="subir">Subir Archivo</button>
+  <div id="head">
+    <div id="left">
+      <h3>Android</h3>
+      <input type="file" id="archivo1" #archivoInput1 />
+    </div>
+    <div id="right">
+      <h3>IOS</h3>
+      <input type="file" id="archivo2" #archivoInput2 />
+      <br />
+    </div>
+  </div>
+  <div></div>
+
+  <button
+    id="subir"
+    (click)="verificarInputFilesVacios(archivoInput1, archivoInput2)"
+  >
+    Enviar Archivo(s)
+  </button>
   <div id="footer">
     <button id="cerrar" (click)="closeDialog()">Cerrar</button>
   </div>

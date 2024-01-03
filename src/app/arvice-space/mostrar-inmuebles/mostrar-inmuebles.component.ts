@@ -136,8 +136,8 @@ export class MostrarInmueblesComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(VentanasEmergentesComponent, {
-      width: '60vh',
-      height: '500px',
+      width: '130vh',
+      height: '370px',
       disableClose: true
     });
   }

@@ -40,6 +40,7 @@ import { RegistrarUserComponent } from './registrar-user/registrar-user.componen
 import { MostrarInmueblesComponent } from './mostrar-inmuebles/mostrar-inmuebles.component';
 import { VentanasEmergentesComponent } from './ventanas-emergentes/ventanas-emergentes.component';
 import { SubirArchivoComponent } from './ventanas-emergentes/subir-archivo/subir-archivo.component';
+import { CamposRequeridosComponent } from './ventanas-emergentes/campos-requeridos/campos-requeridos.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SubirArchivoComponent } from './ventanas-emergentes/subir-archivo/subir
     RegistrarUserComponent,
     MostrarInmueblesComponent,
     VentanasEmergentesComponent,
-    SubirArchivoComponent
+    SubirArchivoComponent,
+    CamposRequeridosComponent
   ],
   imports: [
     CommonModule,
