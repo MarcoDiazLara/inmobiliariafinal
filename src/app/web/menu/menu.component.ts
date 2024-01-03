@@ -78,7 +78,10 @@ export class MenuComponent implements OnInit {
     const itemsToRemove = [
       "Nombre_Usuario",
       "Id_Usuario",
-      "Id_Tipo_Usuario"
+      "Id_Tipo_Usuario",
+      "Id_Tipo_Plan",
+      "Bandera",
+      "Id_Socio"
     ];
     itemsToRemove.forEach(item => {
       localStorage.removeItem(item);
