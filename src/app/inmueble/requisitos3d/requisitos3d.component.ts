@@ -244,6 +244,10 @@ export class Requisitos3dComponent  implements OnInit {
       const firstItemLargo: string = String(itemsArray.controls[i]?.get('Largo')?.value);
       const firstIteAncho: string = String(itemsArray.controls[i]?.get('Ancho')?.value);
       const firstItemAltura: string = String(itemsArray.controls[i]?.get('Altura')?.value);
+      const imagen: string = String(itemsArray.controls[i]?.get('img')?.value);
+      console.log(imagen);
+      const RGB = this.hexToRgb(firstItemcolor);
+    let colorRGB = "["+RGB?.r +","+ RGB?.g +","+ RGB?.b+"]";
       
       const concatenatedString: string = firstItemLargo + "X"+ firstIteAncho + "X" + firstItemAltura;
       
@@ -253,7 +257,22 @@ export class Requisitos3dComponent  implements OnInit {
 
      }
 
-
+     hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+      // Verificar si la cadena es un valor hexadecimal válido
+      const hexRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+      const result = hexRegex.exec(hex);
+    
+      if (!result) {
+        return null; // Devolver null si la cadena no es válida
+      }
+    
+      // Convertir los componentes hexadecimales a valores decimales
+      const r = parseInt(result[1], 16);
+      const g = parseInt(result[2], 16);
+      const b = parseInt(result[3], 16);
+    
+      return { r, g, b };
+    }
 
 
 
