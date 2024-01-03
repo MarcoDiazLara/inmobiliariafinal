@@ -22,18 +22,7 @@ export class ArviceSpaceComponent implements OnInit {
     //  { name: "Asignar Users", route: "asignarUsers", icon: "event", label: "Asginar Reasignar Usuarios", number: '0' },
     // { name: "fechashito", route: "fechashito", icon: "collections_bookmark", label: "fechashito ", number: '0' },
     //{ name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' },
-    { name: "Salir", icon: "logout", label: "Salir", number: '1' , onClick: () => { 
-      const itemsToRemove = [
-        "Nombre_Usuario",
-        "Id_Usuario",
-        "Id_Tipo_Usuario"
-      ];
-      itemsToRemove.forEach(item => {
-        localStorage.removeItem(item);
-      })
-      this.httpService.setGlobalVariable(false);
-      this.router.navigate(["/web"]);
-    } }
+    { name: "Salir", icon: "logout", label: "Salir", number: '1' }
 
   ];
 
@@ -57,8 +46,19 @@ export class ArviceSpaceComponent implements OnInit {
   shouldRun = true;
 
   public salir() {
-    //this.router.navigate(["/web"]);
-    // alert("diste clic en salir"+op);
+    const itemsToRemove = [
+      "Nombre_Usuario",
+      "Id_Usuario",
+      "Id_Tipo_Usuario",
+      "Id_Tipo_Plan",
+      "Bandera",
+      "Id_Socio"
+    ];
+    itemsToRemove.forEach(item => {
+      localStorage.removeItem(item);
+    })
+    this.httpService.setGlobalVariable(false);
+    this.router.navigate(["/web"]);
   }
 
 }
