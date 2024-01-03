@@ -227,21 +227,24 @@ export class Requisitos3dComponent  implements OnInit {
 
      ObtnerInformacio(){
       let date = new Date();
+
       // this.subir_imagenes();
       const itemsArray = this.miFormulario.get('items') as FormArray;
-const firstItemName = itemsArray.controls[0]?.get('name')?.value;
-console.log(firstItemName);
-    // let Elementos_del_Inmueble = this.miFormulario.get('items').value.Elementos_del_Inmueble;
-    // let tipo_material  = this.miFormulario.value.tipo_material;
-    // let Acabados  = this.miFormulario.value.Acabados;
-    // let  color = this.miFormulario.value.color;    
-    // let Largo  = this.miFormulario.value.Largo;
-    // let Ancho  = this.miFormulario.value.Ancho;
-    // let Altura  = this.miFormulario.value.Altura;
-    //+ Elementos_del_Inmueble + tipo_material + Acabados + Largo + Ancho +  Altura
+      let xd = this.items.length;
+      let i =0;
+      for(i;i<xd;i++){
+      const firstItemName = itemsArray.controls[i]?.get('name')?.value;
+      const firstItemElementos_del_Inmueble = itemsArray.controls[i]?.get('Elementos_del_Inmueble')?.value;
+      const firstItemtipo_material = itemsArray.controls[i]?.get('tipo_material')?.value;
+      const firstItemAcabados= itemsArray.controls[i]?.get('Acabados')?.value;
+      const firstItemcolor = itemsArray.controls[i]?.get('color')?.value;
+      const firstItemLargo= itemsArray.controls[i]?.get('Largo')?.value;
+      const firstIteAncho =  itemsArray.controls[i]?.get('Ancho')?.value;
+      const firstItemAltura= itemsArray.controls[i]?.get('Altura')?.value;
 
-    
-         console.log("Puto dani" +name );
+
+//console.log(firstItemName + firstItemElementos_del_Inmueble +firstItemtipo_material + firstItemAcabados + firstItemcolor + firstItemLargo + firstIteAncho + firstItemAltura  );
+      }
 
      }
 
