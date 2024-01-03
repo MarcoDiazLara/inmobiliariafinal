@@ -651,19 +651,23 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_estatus_usuario.php', params, { headers });
   }
 
-  subirModelado(p_Id_Inmueble:any,p_Num_Piso: any,p_Nom_Cuarto: any,p_elemento:any,p_acabados:any,
-    p_color:any,p_tipo_material:any,p_medidas:any,p_imagen:any,p_id_usuario:any){
+  subirModelado(p_Id_Inmueble: any, p_Num_Piso: any, p_Nom_Cuarto: any, p_elemento: any, p_acabados: any,
+    p_color: any, p_tipo_material: any, p_medidas: any, p_imagen: any, p_id_usuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Inmueble=' + p_Id_Inmueble + '&p_Num_Piso=' + p_Num_Piso + '&p_Nom_Cuarto=' + p_Nom_Cuarto+ '&p_elemento=' + p_elemento
-    + '&p_acabados=' + p_acabados+ '&p_color=' + p_color+ '&p_tipo_material=' + p_tipo_material + '&p_medidas=' + p_medidas+ '&p_imagen=' + p_imagen
-    + '&p_id_usuario=' + p_id_usuario;
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble + '&p_Num_Piso=' + p_Num_Piso + '&p_Nom_Cuarto=' + p_Nom_Cuarto + '&p_elemento=' + p_elemento
+      + '&p_acabados=' + p_acabados + '&p_color=' + p_color + '&p_tipo_material=' + p_tipo_material + '&p_medidas=' + p_medidas + '&p_imagen=' + p_imagen
+      + '&p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_InsertModelados.php', params, { headers });
   }
 
-  consultardatosmodelado(p_id_inmueble: any){
+  consultardatosmodelado(p_id_inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params =  'p_id_inmueble=' + p_id_inmueble;
+    let params = 'p_id_inmueble=' + p_id_inmueble;
     return this.httpclient.post(this.url + 'sp_web_mostrarinfoModelados.php', params, { headers });
   }
-
+  insertarArchivoArvice(idInmueble: any, rutaUno: any, rutaDos: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_inmueble=' + idInmueble + '&p_ruta_uno=' + rutaUno + '&p_ruta_dos=' + rutaDos;
+    return this.httpclient.post(this.url + 'insertar_rutas_arvice.php', params, { headers });
+  }
 }

@@ -2,11 +2,21 @@
   <div id="head">
     <div id="left">
       <h3>Android</h3>
-      <input type="file" id="archivo1" #archivoInput1 />
+      <input
+        type="file"
+        id="archivo1"
+        (change)="onFileChange($event)"
+        #archivoInput1
+      />
     </div>
     <div id="right">
       <h3>IOS</h3>
-      <input type="file" id="archivo2" #archivoInput2 />
+      <input
+        type="file"
+        id="archivo2"
+        (change)="onFileChange($event)"
+        #archivoInput2
+      />
       <br />
     </div>
   </div>
