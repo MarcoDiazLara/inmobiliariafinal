@@ -9,6 +9,8 @@ import { HttpService } from 'src/app/services/http/http.service';
   styleUrls: ['./ventanas-emergentes.component.scss']
 })
 export class VentanasEmergentesComponent {
+  //ejemplo de loading
+  loading = false;
   //seleccionar imagen android
   selectedArchiveAndroid!: FileList;
   //seleccionar imagen iphone
@@ -73,6 +75,7 @@ export class VentanasEmergentesComponent {
   //----------------------------------------------------------------------------------------------
 
   subirArchivo() {
+    this.loading = true;
     let date = new Date();
     this.subir_imagenes();
 
@@ -91,26 +94,36 @@ export class VentanasEmergentesComponent {
     let rutaUno = "https://inmobiliaria.arvispace.com/resources/assetbundle/ios/" + nom_aux + this.selectedArchiveAndroid[0].name;
     let rutaDos = "https://inmobiliaria.arvispace.com/resources/assetbundle/android/" + nom_aux + this.selectedArchive2IOS[0].name;
     let idInmueble = localStorage.getItem("idInmuebleArviceSpace");
-    this.httpService.insertarArchivoArvice(idInmueble, rutaUno, rutaDos).subscribe((data: any) => {
-      let datos = this.datosData = data;
-
-      if (datos.length >= 1) {
-        Swal.fire({
-          title: "Exito",
-          text: "Archivo enviado correctamente!",
-          icon: "success"
-        });
-
-      } else {
+    this.httpService.insertarArchivoArvice(idInmueble, rutaUno, rutaDos).subscribe(
+      (data: any) => {
+        // Manejar la respuesta exitosa
+        let datos = this.datosData = data;
+        if (datos.length >= 1) {
+          Swal.fire({
+            title: "Exito",
+            text: "Archivo enviado correctamente!",
+            icon: "success"
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Ocurrió un problema al subir los archivos!",
+          });
+        }
+        this.loading = false;
+      },
+      (error) => {
+        // Manejar errores
+        console.error('Error en la solicitud HTTP:', error);
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Ocurrio un problema al subir los archivos!",
-
+          text: "Ocurrió un error al procesar la solicitud!",
         });
-
+        this.loading = false;
       }
-    })
+    );
   }
 
 }

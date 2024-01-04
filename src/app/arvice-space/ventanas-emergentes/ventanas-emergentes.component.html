@@ -1,4 +1,18 @@
 <div class="container">
+  <!-- ... Otros elementos en tu contenedor ... -->
+
+  <!-- Mostrar el spinner solo cuando loading es true -->
+  <mat-spinner *ngIf="loading" diameter="50" color="Primary"></mat-spinner>
+
+  <!-- Agregar un overlay oscuro durante la carga -->
+  <div class="overlay" *ngIf="loading"></div>
+
+  <!-- Agregar un label debajo del spinner -->
+
+  <label class="loading-label" *ngIf="loading" for="">Cargando...</label>
+
+  <!-- ... Otros elementos en tu contenedor ... -->
+
   <div id="head">
     <div id="left">
       <h3>Android</h3>
@@ -20,15 +34,16 @@
       <br />
     </div>
   </div>
-  <div></div>
 
   <button
     id="subir"
-    (click)="subirArchivo()"
-    (click)="verificarInputFilesVacios(archivoInput1, archivoInput2)"
+    (click)="
+      verificarInputFilesVacios(archivoInput1, archivoInput2); subirArchivo()
+    "
   >
     Enviar Archivo(s)
   </button>
+
   <div id="footer">
     <button id="cerrar" (click)="closeDialog()">Cerrar</button>
   </div>
