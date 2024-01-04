@@ -92,15 +92,24 @@ export class VentanasEmergentesComponent {
     let rutaDos = "https://inmobiliaria.arvispace.com/resources/assetbundle/android/" + nom_aux + this.selectedArchive2IOS[0].name;
     let idInmueble = localStorage.getItem("idInmuebleArviceSpace");
     this.httpService.insertarArchivoArvice(idInmueble, rutaUno, rutaDos).subscribe((data: any) => {
-      this.datosData = data;
-      alert(this.datosData.length);
-      // if (data == 1) {
+      let datos = this.datosData = data;
 
+      if (datos.length >= 1) {
+        Swal.fire({
+          title: "Exito",
+          text: "Archivo enviado correctamente!",
+          icon: "success"
+        });
 
-      // } else {
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un problema al subir los archivos!",
 
+        });
 
-      // }
+      }
     })
   }
 
