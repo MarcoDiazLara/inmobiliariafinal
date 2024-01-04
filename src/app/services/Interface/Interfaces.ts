@@ -366,7 +366,7 @@ export interface asignacionBro {
 }
 
 export interface informacionA {
-    Nombres: ""
+    Asesor: ""
     Apellido_Paterno: "",
     Apellido_Materno: "",
 }
