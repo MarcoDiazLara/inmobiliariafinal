@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ArviceSpaceRoutingModule } from './arvice-space-routing.module';
 
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -40,6 +40,7 @@ import { RegistrarUserComponent } from './registrar-user/registrar-user.componen
 import { MostrarInmueblesComponent } from './mostrar-inmuebles/mostrar-inmuebles.component';
 import { VentanasEmergentesComponent } from './ventanas-emergentes/ventanas-emergentes.component';
 import { SubirArchivoComponent } from './ventanas-emergentes/subir-archivo/subir-archivo.component';
+import { CamposRequeridosComponent } from './ventanas-emergentes/campos-requeridos/campos-requeridos.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +48,15 @@ import { SubirArchivoComponent } from './ventanas-emergentes/subir-archivo/subir
     RegistrarUserComponent,
     MostrarInmueblesComponent,
     VentanasEmergentesComponent,
-    SubirArchivoComponent
+    SubirArchivoComponent,
+    CamposRequeridosComponent
   ],
   imports: [
     CommonModule,
     ArviceSpaceRoutingModule,
     CommonModule,
     CommonModule,
+    MatProgressSpinnerModule,
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,

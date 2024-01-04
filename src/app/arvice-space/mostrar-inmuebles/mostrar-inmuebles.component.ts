@@ -21,7 +21,7 @@ import { VentanasEmergentesComponent } from '../ventanas-emergentes/ventanas-eme
 export class MostrarInmueblesComponent implements OnInit {
   usuarios$: any;
   formGeneral!: FormGroup;
-
+  idInmueble: any | undefined;
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   displayedColumns = [
@@ -33,6 +33,7 @@ export class MostrarInmueblesComponent implements OnInit {
     'btOpciones',
     'bajar'
   ];
+
   inmuebles: any[] = [];
   dataSource = new MatTableDataSource<any>([]);
 
@@ -136,8 +137,8 @@ export class MostrarInmueblesComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(VentanasEmergentesComponent, {
-      width: '60vh',
-      height: '500px',
+      width: '130vh',
+      height: '370px',
       disableClose: true
     });
   }
@@ -157,6 +158,12 @@ export class MostrarInmueblesComponent implements OnInit {
     enlace.click();
 
     document.body.removeChild(enlace);
+  }
+
+  recuperarIdInmueble(id: number) {
+    let idInmue = this.idInmueble = id;
+    let parceo: string = idInmue.toString();
+    localStorage.setItem("idInmuebleArviceSpace", parceo);
   }
 
 }

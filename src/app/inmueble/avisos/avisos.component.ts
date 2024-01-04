@@ -128,8 +128,10 @@ TipoInmueble(tiposInmuebles:number){
   
 
 }
-openDialog2(): void {
+openDialog2(inmueble:Publicaciones): void {
+  localStorage.setItem("p_Id_inmueble",inmueble.Id_Inmueble);
   this.dialog.open(Requisitos3dComponent, {
+
   
   
   });
