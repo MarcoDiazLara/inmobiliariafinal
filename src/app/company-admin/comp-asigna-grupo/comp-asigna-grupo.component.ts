@@ -10,6 +10,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component'; 
+import { CompBrokerComponent } from '../ventanaemergente/comp-broker/comp-broker.component';
 
 
 @Component({
@@ -143,13 +144,13 @@ localStorage.setItem("mi_valor", "2");
 
 }
 
-localStorage.setItem("id_publicacion",id_inmo);
-    localStorage.setItem("Asesor", asesor );
+localStorage.setItem("Nombres",id_inmo);
+localStorage.setItem("Asesor", asesor );
 
 
     // mandar a llamar ventana emergente
 
-    const dialogRef = this.dialog.open(CompAsignaBrokerComponent, {
+    const dialogRef = this.dialog.open(CompBrokerComponent, {
       width: '60vh',
       height: 'auto',
       disableClose: true
