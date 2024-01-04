@@ -14,7 +14,7 @@
       <input
         type="file"
         id="archivo2"
-        (change)="onFileChange($event)"
+        (change)="selectFile($event)"
         #archivoInput2
       />
       <br />
@@ -24,6 +24,7 @@
 
   <button
     id="subir"
+    (click)="subirArchivo()"
     (click)="verificarInputFilesVacios(archivoInput1, archivoInput2)"
   >
     Enviar Archivo(s)
