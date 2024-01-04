@@ -1,16 +1,15 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
-import { reasignacionA } from 'src/app/services/Interface/Interfaces';
-import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
+import { informacionA } from 'src/app/services/Interface/Interfaces';
+import { AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
-import { UsuariosbrokerComponent } from '../ventanaemergente/usuariosbroker/usuariosbroker.component';
+import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component'; 
 
 
 @Component({
@@ -45,7 +44,7 @@ export class CompAsignaGrupoComponent implements OnInit {
   
 
   // poner el nombre de una variable
-  datosinmuebles: reasignacionA[]=[];
+  informacion: informacionA[]=[];
 
   datosAsesores: AsigarReAsignar[]=[];
 
@@ -58,18 +57,13 @@ export class CompAsignaGrupoComponent implements OnInit {
     public dialog: MatDialog,
     private http:HttpService,
     private httpService: HttpService,
-    private adminService: GlobalService,
-    private formBuilder: FormBuilder,
-    private router:Router
-    // Http para jalar el servicio 
+    private adminService: GlobalService
   ) { }
 
  
 
   ngOnInit(): void {
     
-
-
 
     let Bandera = localStorage.getItem("Bandera")
 
@@ -84,13 +78,8 @@ export class CompAsignaGrupoComponent implements OnInit {
 
     }
 
-
-     
-    
-
     this.obtenerUsuarios();
-
-    this.dataSource = new MatTableDataSource(this.datosinmuebles);
+    this.dataSource = new MatTableDataSource(this.informacion);
 
   }
 
@@ -111,8 +100,6 @@ export class CompAsignaGrupoComponent implements OnInit {
   obtenerUsuarios(){
     let Id_Socio = localStorage.getItem("Id_Socio");
   
-
-    
     this.httpService.mostrarInformacionAsesor(Id_Socio).subscribe((data:any)=>{
  
       if(data !== 201) {
@@ -138,12 +125,9 @@ export class CompAsignaGrupoComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
-asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
-  alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
 
-}
 
-// mandar a llamar ventana emergente
+
 
 openasesor(id_inmo:any,asesor:any ) {
 
@@ -163,7 +147,7 @@ localStorage.setItem("id_publicacion",id_inmo);
     localStorage.setItem("Asesor", asesor );
 
 
-    
+    // mandar a llamar ventana emergente
 
     const dialogRef = this.dialog.open(CompAsignaBrokerComponent, {
       width: '60vh',

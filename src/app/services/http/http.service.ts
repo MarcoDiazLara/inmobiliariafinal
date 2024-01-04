@@ -666,4 +666,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_mostrarinfoModelados.php', params, { headers });
   }
 
+  // InmueblesBrokers(Id_Socio: any) {
+  //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  //   let params = "p_Id_Socio=" + Id_Socio;
+  //   return this.httpclient.post(this.url + 'sp_web_asignacion_brokers.php', params, { headers });
+  // }
+
 }

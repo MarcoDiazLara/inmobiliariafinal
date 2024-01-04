@@ -83,8 +83,6 @@ export interface asignacionA {
     Apellido_Materno: "",
 
 }
-
-
 export interface inmueblesBuscados {
     Asentamiento: "",
     Codigo_Postal: "",
@@ -370,7 +368,7 @@ export interface asignacionBro {
 export interface informacionA {
     Nombres: ""
     Apellido_Paterno: "",
-    Apellido_Materno: ""
+    Apellido_Materno: "",
 }
 export interface Broker {
     Id_Usuario: "",

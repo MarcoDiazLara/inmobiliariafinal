@@ -64,13 +64,19 @@ export class CompAsignaBrokerComponent implements OnInit {
 
       this.http.insertarusuarioasignacion( this.Nombres,Id_Inmueble).subscribe((data: any) => {
         if (data == 1) {
+          // Swal.fire({
+          //   position: 'top-end',
+          //   icon: 'success',
+          //   title: 'El Broker fue asignado',
+          //   showConfirmButton: false,
+          //   timer: 1500
+          //})
+
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El Broker fue asignado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+            title: "Good job!",
+            text: "El Broker fue asignado",
+            icon: "success"
+          });
 
 
           this.closeDialog();
