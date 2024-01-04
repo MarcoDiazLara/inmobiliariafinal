@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ArviceSpaceRoutingModule } from './arvice-space-routing.module';
 
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -56,6 +56,7 @@ import { CamposRequeridosComponent } from './ventanas-emergentes/campos-requerid
     ArviceSpaceRoutingModule,
     CommonModule,
     CommonModule,
+    MatProgressSpinnerModule,
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
