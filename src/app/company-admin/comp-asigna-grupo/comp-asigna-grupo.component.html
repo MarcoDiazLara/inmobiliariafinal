@@ -8,19 +8,19 @@
     <table mat-table [dataSource]="dataSource">
   
       <ng-container matColumnDef="Nombre">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.Nombres}} </td>
+        <th mat-header-cell *matHeaderCellDef> Asesor </th>
+        <td mat-cell *matCellDef="let element"> {{element.Asesor}} </td>
       </ng-container>
   
       <!-- Prospecto_Interesado Column -->
       <ng-container matColumnDef="Apellido Paterno">
         <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
-        <td mat-cell *matCellDef="let element"> {{element.Apellido_Paterno}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.App_Paterno}} </td>
       </ng-container>
   
       <ng-container matColumnDef="Apellido Materno">
         <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
-        <td mat-cell *matCellDef="let element"> {{element.Apellido_Materno}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.App_Materno}} </td>
       </ng-container>
   
       <ng-container matColumnDef="Supervisor">
@@ -36,7 +36,7 @@
           </button>
           <mat-menu #menu="matMenu">
             <button class="buttonasignar" mat-raised-button (click)="openasesor(element.Id_Publicacion, element.Asesor)">
-              Asignar Asesor 
+              Asignar
             </button>
           </mat-menu>
       </ng-container>

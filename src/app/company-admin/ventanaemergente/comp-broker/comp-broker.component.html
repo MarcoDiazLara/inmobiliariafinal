@@ -1,0 +1,28 @@
+<div class="contenedorselect">
+    <form class="insertar-dialog-content" [formGroup]="formGeneral"> 
+      <h1> Selecciona Broker </h1>
+     <mat-form-field>
+           <mat-label><b>Selecciona Broker</b></mat-label>
+           <mat-select formControlName="Nombres">
+             <mat-option (click)="ggg()" *ngFor="let broker of brokers" [value]="broker.Id_Usuario">{{broker.Nombres+" "+broker.Apellido_Paterno+" "+broker.Apellido_Materno}}</mat-option>
+           </mat-select>
+           <mat-error>
+             Broker
+           </mat-error>
+    </mat-form-field>
+
+        <br> 
+       <button mat-button type="button" [disabled]="loading" color="secondary" (click)="prueba()">
+         <span>Asignar</span>
+       </button>
+        <br>
+       <button mat-button type="button" [disabled]="loading" color="warn" (click)="closeDialog()">
+         <span>Cancelar</span>
+       </button>
+         <br>
+   
+    </form> 
+   </div>
+   
+
+
