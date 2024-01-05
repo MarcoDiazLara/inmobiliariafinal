@@ -29,7 +29,16 @@
           mat-list-item
           *ngFor="let nav of fillerNav"
         >
-          <a mat-list-item [routerLink]="nav.route" (click)="salir()">
+        <!-- <a mat-list-item [routerLink]="'/salir'" (click)="salir()"> -->
+        <!-- <a mat-list-item routerLink="/salir" (click)="salir()"> -->
+<!-- 
+          <a mat-list-item [routerLink]="nav.route" (click)="salir()"> -->
+            <!-- <a mat-list-item [routerLink]="nav.route"> -->
+              <a mat-list-item [routerLink]="nav.route" (click)="salir()">
+
+            
+
+
             <div>
               <mat-icon style="font-size: 30px">{{ nav.icon }}</mat-icon>
             </div>

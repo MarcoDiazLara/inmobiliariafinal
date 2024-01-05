@@ -21,7 +21,7 @@ export class BrokersComponent implements OnDestroy {
     { name: "Calendario", route: "calendario", icon: "date_range", label: " Agenda", number: '0' },
     { name: "Inventario", route: "invesntario", icon: "inventory", label: "Inventario", number: '0' },
     { name: "Asignar Users", route: "asignarUsers", icon: "group", label: "Asignar Reasignar Usuarios", number: '0' },
-    { name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' },
+    // { name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' },
     { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1' }
 
   ];

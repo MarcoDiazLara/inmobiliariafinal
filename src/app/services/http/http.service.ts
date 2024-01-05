@@ -671,7 +671,7 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertar_rutas_arvice.php', params, { headers });
   }
 
-  insertarPlanes(p_planos:any,p_Id_Inmueble:any){
+  insertarPlanos(p_planos:any,p_Id_Inmueble:any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_planos=' + p_planos  + '&p_Id_Inmueble=' + p_Id_Inmueble;
     return this.httpclient.post(this.url + 'sp_web_InserPlanos.php', params, { headers });
