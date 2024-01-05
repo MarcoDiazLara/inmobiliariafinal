@@ -9,11 +9,13 @@ import { HttpService } from 'src/app/services/http/http.service';
   styleUrls: ['./ventanas-emergentes.component.scss']
 })
 export class VentanasEmergentesComponent {
+  //ejemplo de loading
+  loading = false;
   //seleccionar imagen android
   selectedArchiveAndroid!: FileList;
   //seleccionar imagen iphone
   selectedArchive2IOS!: FileList;
-
+  datosData: [] = [];
   constructor(private httpService: HttpService, private dialog: MatDialog, private httpClient: HttpClient) { }
 
   closeDialog(): void {
@@ -23,6 +25,10 @@ export class VentanasEmergentesComponent {
   //-------------------Asignar archivos seleccionados a variables globales-----------------------------------------------------
   onFileChange(event: any): void {
     this.selectedArchiveAndroid = event.target.files;
+
+  }
+  selectFile(event: any): void {
+
     this.selectedArchive2IOS = event.target.files;
   }
   //------------------------------------------------------------------------------------
@@ -34,8 +40,8 @@ export class VentanasEmergentesComponent {
       formDataAndroid.append('images[]', this.selectedArchiveAndroid[i]);
     }
 
-    for (let i = 0; i < this.selectedArchive2IOS.length; i++) {
-      formDataIOS.append('images[]', this.selectedArchive2IOS[i]);
+    for (let j = 0; j < this.selectedArchive2IOS.length; j++) {
+      formDataIOS.append('images[]', this.selectedArchive2IOS[j]);
     }
 
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/ser_subirArchvosAndroid.php', formDataAndroid)
@@ -69,8 +75,9 @@ export class VentanasEmergentesComponent {
   //----------------------------------------------------------------------------------------------
 
   subirArchivo() {
+    this.loading = true;
     let date = new Date();
-    this.subirArchivo();
+    this.subir_imagenes();
 
     let dia = date.getDate();
     let dia1 = date.getDate().toString();;
@@ -84,19 +91,39 @@ export class VentanasEmergentesComponent {
     }
     let anio = date.getFullYear().toString();
     let nom_aux = anio + mes1 + dia1;
-    let rutaUno = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedArchiveAndroid[0].name;
-    let rutaDos = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedArchive2IOS[0].name;
+    let rutaUno = "https://inmobiliaria.arvispace.com/resources/assetbundle/ios/" + nom_aux + this.selectedArchiveAndroid[0].name;
+    let rutaDos = "https://inmobiliaria.arvispace.com/resources/assetbundle/android/" + nom_aux + this.selectedArchive2IOS[0].name;
     let idInmueble = localStorage.getItem("idInmuebleArviceSpace");
-    this.httpService.insertarArchivoArvice(idInmueble, rutaUno, rutaDos).subscribe((data: any) => {
-
-      if (data == 1) {
-
-
-      } else {
-
-
+    this.httpService.insertarArchivoArvice(idInmueble, rutaUno, rutaDos).subscribe(
+      (data: any) => {
+        // Manejar la respuesta exitosa
+        let datos = this.datosData = data;
+        if (datos.length >= 1) {
+          Swal.fire({
+            title: "Exito",
+            text: "Archivo enviado correctamente!",
+            icon: "success"
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Ocurrió un problema al subir los archivos!",
+          });
+        }
+        this.loading = false;
+      },
+      (error) => {
+        // Manejar errores
+        console.error('Error en la solicitud HTTP:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrió un error al procesar la solicitud!",
+        });
+        this.loading = false;
       }
-    })
+    );
   }
 
 }

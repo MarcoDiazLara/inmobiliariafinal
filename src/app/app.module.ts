@@ -12,9 +12,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import { VentanasEmergentesModuloModule } from './arvice-space/ventanas-emergentes/ventanas-emergentes.module';
 
-
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
 import { MatInputModule } from '@angular/material/input';
@@ -66,20 +66,22 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
     DetallesComponent,
     UnityComponent,
     MetododepagoComponent,
-   
-  
-  
+
+
+
   ],
   imports: [
     NgFor,
     AsyncPipe,
     BrowserModule,
+    VentanasEmergentesModuloModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
     MatSliderModule,
+    MatProgressSpinnerModule,
     // NgbModule,
     FormsModule,
     ReactiveFormsModule,
