@@ -60,14 +60,7 @@ export class CompBrokerComponent implements OnInit {
 
       this.http.insertarusuarioasignacion( this.Nombres,Asesor).subscribe((data: any) => {
         if (data == 1) {
-          // Swal.fire({
-          //   position: 'top-end',
-          //   icon: 'success',
-          //   title: 'El Broker fue asignado',
-          //   showConfirmButton: false,
-          //   timer: 1500
-          //})
-
+      
           Swal.fire({
             title: "Good job!",
             text: "El Broker fue asignado",
@@ -90,14 +83,14 @@ export class CompBrokerComponent implements OnInit {
 
 
   prueba() {
-    let Id_Inmueble = localStorage.getItem("Id_Inmueble");
+    let Asesor = localStorage.getItem("Asesor");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
 
 
     if (valor == "1") {
 
-      this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
+      this.http.updateUsuarioReasignacion(Asesor, this.Nombres).subscribe((resp: any) => {
         if (resp == 1) {
 
           Swal.fire({

@@ -9,7 +9,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompAsignaBrokerComponent } from '../ventanaemergente/comp-asigna-broker/comp-asigna-broker.component'; 
 import { CompBrokerComponent } from '../ventanaemergente/comp-broker/comp-broker.component';
 
 
@@ -41,7 +40,7 @@ export class CompAsignaGrupoComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre', 'Apellido Paterno','Apellido Materno','Supervisor','botonOption'];
+  columnas: string[] = ['Nombre','Apellido Paterno','Apellido Materno','Supervisor','botonOption'];
   
 
   // poner el nombre de una variable
@@ -130,9 +129,9 @@ export class CompAsignaGrupoComponent implements OnInit {
 
 
 
-openasesor(id_inmo:any,asesor:any ) {
+openasesor(id_nom:any,respo:any ) {
 
-const valorCelda = asesor;
+const valorCelda = respo;
 
 // Verifica si el valor de la celda está vacío o no
 if (valorCelda !== null) {
@@ -144,8 +143,8 @@ localStorage.setItem("mi_valor", "2");
 
 }
 
-localStorage.setItem("Nombres",id_inmo);
-localStorage.setItem("Asesor", asesor );
+localStorage.setItem("Asesor",id_nom);
+localStorage.setItem("Responsable", respo );
 
 
     // mandar a llamar ventana emergente

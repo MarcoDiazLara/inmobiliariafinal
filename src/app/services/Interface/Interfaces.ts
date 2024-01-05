@@ -368,8 +368,8 @@ export interface asignacionBro {
 export interface informacionA {
     Asesor: "",
     Nombres:"",
-    Apellido_Paterno: "",
-    Apellido_Materno: "",
+    App_Paterno: "",
+    App_Materno: "",
 }
 export interface Broker {
     Id_Usuario: "",
