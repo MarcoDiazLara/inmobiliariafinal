@@ -6,8 +6,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { FormArray } from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
 import { HttpClient } from '@angular/common/http';
+import { MetododepagoComponent } from 'src/app/metododepago/metododepago.component';
 
-// import { HttpService} from '../services/http/http.service';
+
 
 
 interface selects {
@@ -33,8 +34,9 @@ export class Requisitos3dComponent implements OnInit {
   numberOfForms: number = 1; // Valor inicial
   dynamicForms: FormGroup[] = [];
   miFormulario!: FormGroup;
+  pdf!: FormGroup;
 
-
+  llave: any;
   selectedColor: string = '';
   colorOptions: ColorOption[] = [
     { name: 'Rojo', value: 'red' },
@@ -83,6 +85,7 @@ export class Requisitos3dComponent implements OnInit {
     this.items.removeAt(index);
   }
   ngOnInit() {
+    this.llave = localStorage.getItem("Id_Tipo_Plan");
     this.miFormulario = this.fb.group({
       items: this.fb.array([]),
       name: ['', [Validators.required]],
@@ -95,18 +98,20 @@ export class Requisitos3dComponent implements OnInit {
       Ancho: ['', [Validators.required]],
       Altura: ['', [Validators.required]],
       img: ['', [Validators.required]],
-
-
-
     });
+
+    this.pdf = this.fb.group({
+      PDF:['',[Validators.required]]
+    })
   }
-  // generateForms() {
-  //   this.dynamicForms = [];
-  //   this.initializeForms(this.numberOfForms);
-  // }
 
 
 
+  openDialog2(bandera: number): void {
+    let auxi = bandera.toString();
+    localStorage.setItem("tipodeplan", auxi);
+    const dialogRef = this.dialog.open(MetododepagoComponent, {
+    });}
 
   get usuarios() {
     return this.form.get('usuarios') as FormArray;
@@ -124,29 +129,7 @@ export class Requisitos3dComponent implements OnInit {
 
 
 
-  // private initializeForms(numberOfForms: number) {
-  //   for (let i = 0; i < numberOfForms; i++) {
-  //     const form = this.fb.group({
-  //        Numero_de_Cuartos: ['', [Validators.required]],
-  //     Numero_de_Elementos: ['', [Validators.required]],
-  //     name: ['', [Validators.required]],
-  //     Nombre_de_habitacion: ['', [Validators.required]],
-  //     Elementos_del_Inmueble:['',[Validators.required]],
-  //     Acabados: ['', [Validators.required]],
-  //     Color:['', [Validators.required]],
-  //     tipo_material:['', [Validators.required]],
-  //     Largo:['', [Validators.required]],
-  //     Ancho:['', [Validators.required]],
-  //     });
 
-  //    this.dynamicForms.push(form);
-  //    }
-  // }
-
-  // clearForms() {
-  //   this.dynamicForms = [];
-  //   this.numberOfForms = 1; // Puedes ajustar esto según tus necesidades
-  // }
 
   CerraDialogo() {
     this.dialog.closeAll();
@@ -228,7 +211,16 @@ export class Requisitos3dComponent implements OnInit {
     { value: 'Revestimiento', viewValue: 'Revestimiento' },
     { value: 'Rustico', viewValue: 'Rustico' },
   ]
-
+  
+  subirPDF(){
+    const formData = new FormData();
+    const pdf = this.pdf.value;
+    formData.append('pdfs', pdf);
+    this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/sp_web_SubirPDF.php', formData)
+    .subscribe((response) => {
+      console.log(response);
+    });
+  }
 
   ObtnerInformacio() {
     let date = new Date();
@@ -236,10 +228,10 @@ export class Requisitos3dComponent implements OnInit {
     // this.subir_imagenes();
     const itemsArray = this.miFormulario.get('items') as FormArray;
 
-    const imagenNames: string[] = [];
+    const imagenNames: any[] = [];
 
     for (let a = 0; a < itemsArray.length; a++) {
-      const imagenName = itemsArray.controls[a]?.get('img')?.value;
+      const imagenName = itemsArray.controls[a]?.get('img')?.value.name;
       if (imagenName) {
         imagenNames.push(imagenName);
       }
@@ -275,24 +267,27 @@ export class Requisitos3dComponent implements OnInit {
       }
       let anio = date.getFullYear().toString();
       let nom_aux = anio + mes1 + dia1;
-      let aux = this.obtenerNombreArchivo(imagenNames[i]);
-      let img = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + aux;
+      //console.log();
+      //let aux = this.obtenerNombreArchivo(imagenNames[i]);
+       let img = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + imagenNames[i];
       
       const RGB = this.hexToRgb(firstItemcolor);
       const colorRGB = "[" + RGB?.r + "," + RGB?.g + "," + RGB?.b + "]";
 
       const concatenatedString: string = firstItemLargo + "cm " + " x " + firstIteAncho + "cm " + " x " + firstItemAltura + "cm";
 
-      // this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),firstItemName,firstItemNombre_de_habitacion,firstItemElementos_del_Inmueble, firstItemAcabados,colorRGB,firstItemtipo_material, concatenatedString, img, localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
+      this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),firstItemName,firstItemNombre_de_habitacion,firstItemElementos_del_Inmueble, firstItemAcabados,colorRGB,firstItemtipo_material, concatenatedString, img, localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
 
-      //    alert("Se subio");
+        
 
 
-      //   })
-
+        })
+        
       // console.log(firstItemName + firstItemElementos_del_Inmueble + firstItemtipo_material + firstItemAcabados + firstItemcolor + concatenatedString  );
     }
+    alert("Se subio");
     this.subir_imagenes();
+    this.CerraDialogo();
 
   }
 
@@ -314,38 +309,39 @@ export class Requisitos3dComponent implements OnInit {
   }
 
 
-  obtenerNombreArchivo(rutaCompleta: string): string {
-    // Utiliza la función split para dividir la ruta por las barras inclinadas (o barras invertidas) y toma el último elemento
-    const partesRuta = rutaCompleta.split(/\\|\//);
-    return partesRuta[partesRuta.length - 1];
-  }
 
   subir_imagenes(): void {
     const formData = new FormData();
     const itemsArray = this.miFormulario.get('items') as FormArray;
+  
     // Itera sobre los formularios dinámicos
     for (let i = 0; i < itemsArray.length; i++) {
       const formGroup = itemsArray.at(i) as FormGroup;
       const imageControl = formGroup.get('img') as FormControl;
-      //itemsArray.controls[a]?.get('img')?.value;
-      // Asegúrate de que se haya seleccionado una imagen
-    
-        // formData.append('images[]',imageControl.value, imageControl.value.name);
-       //const fileBlob = new Blob([imageControl.value], { type: imageControl.value.type });
-
-      
-        // Agregar el Blob a FormData con el nombre del archivo
-        formData.append('images[]', imageControl.value);
-      
+  
+      // Verifica que el control de imagen tenga un archivo
+      if (imageControl.value instanceof File) {
+        formData.append('images[]', imageControl.value, imageControl.value.name);
+      }
     }
-
+  
     // Realiza la solicitud HTTP
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
         console.log(response);
       });
   }
-
+  
+  onFileChange(event: any, index: number): void {
+    const itemsArray = this.miFormulario.get('items') as FormArray;
+    const formGroup = itemsArray.at(index) as FormGroup;
+    const imageControl = formGroup.get('img') as FormControl;
+  
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      imageControl.setValue(file);
+    }
+  }
 
 
 
