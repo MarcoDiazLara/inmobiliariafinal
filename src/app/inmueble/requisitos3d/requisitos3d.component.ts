@@ -34,7 +34,9 @@ export class Requisitos3dComponent implements OnInit {
   numberOfForms: number = 1; // Valor inicial
   dynamicForms: FormGroup[] = [];
   miFormulario!: FormGroup;
+  archivos!: FileList;
   pdf!: FormGroup;
+  pdfFile!:any;
 
   llave: any;
   selectedColor: string = '';
@@ -215,7 +217,7 @@ export class Requisitos3dComponent implements OnInit {
   subirPDF(){
     const formData = new FormData();
     const pdf = this.pdf.value;
-    formData.append('pdfs', pdf);
+    formData.append('pdfs[]', this.archivos[0]);
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/sp_web_SubirPDF.php', formData)
     .subscribe((response) => {
       console.log(response);
@@ -267,15 +269,17 @@ export class Requisitos3dComponent implements OnInit {
       }
       let anio = date.getFullYear().toString();
       let nom_aux = anio + mes1 + dia1;
+      const nombrePDF = this.archivos[0].name;
       //console.log();
       //let aux = this.obtenerNombreArchivo(imagenNames[i]);
        let img = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + imagenNames[i];
-      
+       this.pdfFile = "https://inmobiliaria.arvispace.com/pdfs/"+ nom_aux + nombrePDF;
       const RGB = this.hexToRgb(firstItemcolor);
       const colorRGB = "[" + RGB?.r + "," + RGB?.g + "," + RGB?.b + "]";
 
       const concatenatedString: string = firstItemLargo + "cm " + " x " + firstIteAncho + "cm " + " x " + firstItemAltura + "cm";
-
+      
+      
       this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),firstItemName,firstItemNombre_de_habitacion,firstItemElementos_del_Inmueble, firstItemAcabados,colorRGB,firstItemtipo_material, concatenatedString, img, localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
 
         
@@ -285,8 +289,13 @@ export class Requisitos3dComponent implements OnInit {
         
       // console.log(firstItemName + firstItemElementos_del_Inmueble + firstItemtipo_material + firstItemAcabados + firstItemcolor + concatenatedString  );
     }
-    alert("Se subio");
+    
+    this.httpService.insertarPlanos(this.pdfFile,localStorage.getItem("p_Id_inmueble")).subscribe((data:any)=>{
+
+    })
     this.subir_imagenes();
+    this.subirPDF();
+    
     this.CerraDialogo();
 
   }
@@ -343,6 +352,9 @@ export class Requisitos3dComponent implements OnInit {
     }
   }
 
+  onFileChange2(event: any): void {
+    this.archivos = event.target.files;
+  }
 
 
 

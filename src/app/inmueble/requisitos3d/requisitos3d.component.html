@@ -8,7 +8,7 @@
   </div>
   <div   class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
     <form [formGroup]="pdf" class="form-horizontal">
-      <input formControlName="PDF" class="form-control" accept=".pdf" type="file" name="pdfFile">
+      <input formControlName="PDF" class="form-control" accept=".pdf" type="file" name="pdfFile" (change)="onFileChange2($event)" >
     </form>
   </div>
   <!-- -----------------------Especificaciones del Inmueble--------------------------- -->
@@ -120,7 +120,7 @@
   <div class="d-flex justify-content-center align-items-center">
 
     <button color="primary" (click)="CerraDialogo()" mat-button>Cancelar</button>
-    <button color="primary"  mat-button    (click)="subirPDF()">Aceptar</button>
+    <button color="primary"  mat-button    (click)="ObtnerInformacio()">Aceptar</button>
   </div>
   </div>
   <div *ngIf="llave === '0'" class="card-container">
