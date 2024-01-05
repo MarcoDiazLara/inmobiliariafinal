@@ -24,7 +24,7 @@ export class ArviceSpaceComponent implements OnInit {
     //  { name: "Asignar Users", route: "asignarUsers", icon: "event", label: "Asginar Reasignar Usuarios", number: '0' },
     // { name: "fechashito", route: "fechashito", icon: "collections_bookmark", label: "fechashito ", number: '0' },
     //{ name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' },
-    { name: "Salir", icon: "logout", label: "Salir", number: '1' }
+    { name: "Salir", icon: "logout", label: "Salir", number: '1'}
 
   ];
 
@@ -91,7 +91,6 @@ export class ArviceSpaceComponent implements OnInit {
     }
   }
   
-
   // public salir() {
   //   const itemsToRemove = [
   //     "Nombre_Usuario",

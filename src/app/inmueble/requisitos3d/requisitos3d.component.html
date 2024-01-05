@@ -1,20 +1,20 @@
 <mat-dialog-content>
-
+  <div *ngIf="llave === '3'">
 <h1> Requisitos para modelado <i class="bi bi-badge-3d"></i></h1>
   <!-- -----------------Planos------------------------------------ -->
   <div class="d-flex justify-content-center align-items-center">
     <p>Sube tu Plano en formato PDF</p>
     <br>
   </div>
-  <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
-    <form class="form-horizontal">
-      <input class="form-control" accept="image/*" type="file" name="images" multiple>
+  <div   class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
+    <form [formGroup]="pdf" class="form-horizontal">
+      <input formControlName="PDF" class="form-control" accept=".pdf" type="file" name="pdfFile" (change)="onFileChange2($event)" >
     </form>
   </div>
   <!-- -----------------------Especificaciones del Inmueble--------------------------- -->
   <br>
   <h2 class="text-center"> Especificaciones del Inmueble </h2>
-  <form [formGroup]="miFormulario">
+  <form [formGroup]="miFormulario"  enctype="multipart/form-data">
     <div formArrayName="items">
       <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
         <div style="display: flex; justify-content: center; align-items: center;">
@@ -97,7 +97,7 @@
 
       <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
        
-        <input   formControlName="img" class="form-control" accept="image/*" type="file" name="images" multiple>
+        <input   formControlName="img" class="form-control" accept="image/*" type="file" name="images" (change)="onFileChange($event, i)">
      
     </div>
     <br>
@@ -122,4 +122,132 @@
     <button color="primary" (click)="CerraDialogo()" mat-button>Cancelar</button>
     <button color="primary"  mat-button    (click)="ObtnerInformacio()">Aceptar</button>
   </div>
+  </div>
+  <div *ngIf="llave === '0'" class="card-container">
+         
+         
+ 
+    
+          
+
+    <!-- <div class="row ">
+      <div class="col-lg-3">
+        <mat-radio-group>
+          <mat-radio-button color="primary" value="1">Gratuito</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  
+      <div class="col-lg-5">
+        <p class=" text-center">Visibilidad baja</p>
+      </div>
+
+    </div> -->
+   
+    <div class="card">
+     
+      <div class="content">
+    
+       <br>
+       <br>
+       <div class="title">Plan Gratuito</div>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+       <div class="price">$0</div>
+       <br>
+       <div class="description">
+           <p>Características:</p>
+           <ul>
+               <li>Visibilidad Baja</li>
+            
+           </ul>
+       </div>
+     </div>
+     <button  class="but"  >
+      Actual
+     </button>
+   </div>
+ 
+ 
+ 
+
+
+ 
+
+      <div class="card">
+     
+       <div class="content">
+     
+        <br>
+        <br>
+        <div class="title">Plan Básico</div>
+        <br>
+        <br>
+        <div class="price">$999/mes</div>
+        <br>
+        <div class="description">
+            <p>Características:</p>
+            <ul>
+                <li>5 Anuncios destacados</li>
+                <li>Plan con renovacion manual</li>
+                <li>Volumen de visitas: moderado</li>
+            </ul>
+        </div>
+      </div>
+      <button  class="but"  (click)="openDialog2(1)" >
+        Comprar
+      </button>
+    </div>
+    <div class="card">
+      <div class="content">
+        <br>
+        <br>
+        <div class="title">Plan Intermedio</div>
+        <br>
+        <br>
+        <div class="price">$1499/mes</div>
+        <br>
+        <div class="description">
+            <p>Características:</p>
+    <ul>
+        <li>10 anuncios destacados</li>
+        <li>Plan de renovacion automatica</li>
+        <li>Volumen de visitas: Medio</li>
+    </ul>
+        </div>
+      </div>
+      <button class="but"   (click)="openDialog2(2)">
+        Comprar
+      </button>
+    </div>
+    <div class="card">
+      <div class="content">
+        <br>
+        <br>
+        <div class="title">Plan Premiums</div>
+        <br>
+        <br>
+        <div class="price">$2999/mes</div>
+        <div class="description">
+            <br>
+           <p>Características:</p>
+          <ul>
+        <li>Anuncios destacados ilimitados</li>
+        <li>Plan de renovacion automatica</li>
+        <li>Volumen de visitas: Maximo</li>
+    </ul>
+         
+        </div>
+      </div>
+      <button  class="but"  (click)="openDialog2(3)"  >
+        Comprar
+      </button>
+    </div>
+
+  </div>
+  
 </mat-dialog-content>
