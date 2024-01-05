@@ -72,13 +72,12 @@ mat-list table h3 {
   padding-left: 20px;
 }
 .favorite, .share,
-.other, .Xtwiter, .facebook{
+.other, .Xtwiter, .facebook, .bookmark, .bookmarkfull{
   width: 30px;
   height: 30px;
   vertical-align: middle; 
   padding-left: 30px; 
   margin: 0%;
-  padding-bottom: 20px;
 }
  .wc, .room, .car, .rule, .garden, .floor, .warehouse, .tank,
 .pool, .house, .kitchen, .homeTime, .gym
@@ -140,6 +139,14 @@ mat-list table h3 {
 
 .Xtwiter{
   background: url('https://api.iconify.design/pajamas/x.svg?color=%23264d5e') no-repeat center center / contain;
+}
+.bookmark{
+  background: url('https://api.iconify.design/material-symbols-light/bookmark-outline.svg?color=white') no-repeat center center / contain;
+  transition: background 0.3s ease;
+}
+.bookmarkfull{
+  background: url('https://api.iconify.design/material-symbols-light/bookmark.svg?color=white') no-repeat center center / contain;
+  transition: background 0.3s ease;
 }
 
 .favorite{
@@ -319,6 +326,8 @@ textarea {
     border-radius: 50%;
     background: #eb81bd;
     padding: 1rem;
+    padding-top: 2%;
+    padding-left: 2%;
     overflow: hidden;
     outline: none;
     margin: 0.5rem;

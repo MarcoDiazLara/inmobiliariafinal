@@ -33,7 +33,9 @@
                         
 
                         <div class="content">
-                        <button  (click)="Favoritos()" class="favoriteButton main"><img class="favorite"></button>
+                            <button mat-fab color="accent" (click)="toggleFavorito()">
+                                <img [ngClass]="{'bookmark': !esFavorito, 'bookmarkfull': esFavorito}">
+                              </button>
                         <!-- <button class="otherButton main"><img class="other"></button>                   -->
                         <button  class="shareButton main"><img class="share">
                               <svg class="check" style="width:24px;height:24px" viewBox="0 0 24 24">    
