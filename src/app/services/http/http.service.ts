@@ -678,10 +678,10 @@ export class HttpService {
 
   }
 
-  // InmueblesBrokers(Id_Socio: any) {
-  //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  //   let params = "p_Id_Socio=" + Id_Socio;
-  //   return this.httpclient.post(this.url + 'sp_web_asignacion_brokers.php', params, { headers });
-  // }
+  insertaResponsable(Id_Asesor: any, Id_Responsable: any, Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Asesor=' + Id_Asesor + '&p_Id_Responsable=' + Id_Responsable + '&p_Id_Socio=' + Id_Socio + '&p_estatus_Suscripcion=';
+    return this.httpclient.post(this.url + 'sp_web_insertar_responsable.php', params, { headers });
+  }
 
 }
