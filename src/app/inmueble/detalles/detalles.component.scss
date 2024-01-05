@@ -65,19 +65,28 @@ mat-list table h3 {
 
 }
 
-.backarrow, .plane, .map, .money, .checklist, .favorite, .share,
+.backarrow, .plane, .map, .money, .checklist,
 .other, .wapp{
   width: 20px;
   height: 20px;
   padding-left: 20px;
+}
+.favorite, .share,
+.other, .Xtwiter, .facebook{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle; 
+  padding-left: 30px; 
+  margin: 0%;
+  padding-bottom: 20px;
 }
  .wc, .room, .car, .rule, .garden, .floor, .warehouse, .tank,
 .pool, .house, .kitchen, .homeTime, .gym
 {
   width: 25px;
   height: 25px;
-  vertical-align: middle; /* Centra verticalmente la imagen con el texto */
-  padding-left: 10px; 
+  vertical-align: middle; 
+  padding-left: 25px; 
   margin-right: 10px;
   padding-bottom: 20px;
 
@@ -86,7 +95,6 @@ mat-list table h3 {
 
 .backarrow{
     background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
     transition: color 0.3s ease;
 }
 .buttonback{
@@ -108,95 +116,86 @@ mat-list table h3 {
 
 .plane{
     background: url('https://api.iconify.design/fa/send.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/fa/send.svg?color=%23264d5e');
     transition: color 0.3s ease;
 }
 
 .map{
     background: url('https://api.iconify.design/carbon/map.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/carbon/map.svg?color=%23264d5e');
 }
 
 .money{
     background: url('https://api.iconify.design/solar/hand-money-outline.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/solar/hand-money-outline.svg?color=%23264d5e');
 }
 .checklist{
     background: url('https://api.iconify.design/material-symbols/checklist.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/material-symbols/checklist.svg?color=%23264d5e');
+}
+
+
+
+
+
+.facebook{
+  background: url('https://api.iconify.design/bxl/facebook.svg?color=%23264d5e') no-repeat center center / contain;
+}
+
+.Xtwiter{
+  background: url('https://api.iconify.design/pajamas/x.svg?color=%23264d5e') no-repeat center center / contain;
 }
 
 .favorite{
     background: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/carbon/favorite.svg?color=%23264d5e');    
 }
 .share{
     background: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/solar/share-bold-duotone.svg?color=%23264d5e');  
 }
 .other{
     background: url('https://api.iconify.design/icon-park-outline/other.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/icon-park-outline/other.svg?color=%23264d5e');
 }
 
 
 .wc{
     background: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/mdi/bathroom.svg?color=%23264d5e');
 }
 
 .room{
     background: url('https://api.iconify.design/fluent/bed-20-regular.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/fluent/bed-20-regular.svg?color=%23264d5e');
 }
 .car{
     background: url('https://api.iconify.design/ant-design/car-outlined.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/ant-design/car-outlined.svg?color=%23264d5e');
 }
 .rule{
     background: url('https://api.iconify.design/clarity/ruler-pencil-line.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/clarity/ruler-pencil-line.svg?color=%23264d5e');
 }
 .garden{
     background: url('https://api.iconify.design/guidance/garden.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/guidance/garden.svg?color=%23264d5e');
 }
 
 .floor{
     background: url('https://api.iconify.design/material-symbols/floor-rounded.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/material-symbols/floor-rounded.svg?color=%23264d5e');
 }
 .warehouse{
     background: url('https://api.iconify.design/ph/warehouse-light.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/ph/warehouse-light.svg?color=%23264d5e');
 }
 .tank{
     background: url('https://api.iconify.design/icon-park-outline/water.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/icon-park-outline/water.svg?color=%23264d5e');
 }
 .pool{
     background: url('https://api.iconify.design/ic/round-pool.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/ic/round-pool.svg?color=%23264d5e');
 }
 .wapp{
     background: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e') no-repeat center center / contain;
-    content: url('https://api.iconify.design/logos/whatsapp-icon.svg?color=%23264d5e');
 }
 .house{
   background: url('https://api.iconify.design/bi/house.svg?color=%23264d5e') no-repeat center center / contain;
-  content: url('https://api.iconify.design/bi/house.svg?color=%23264d5e');
 }
 .kitchen{
   background: url('https://api.iconify.design/mdi/kitchen-counter.svg?color=%23264d5e') no-repeat center center / contain;
-  content: url('https://api.iconify.design/mdi/kitchen-counter.svg?color=%23264d5e');
 }
 .homeTime{
   background: url('https://api.iconify.design/mdi/home-time-outline.svg?color=%23264d5e') no-repeat center center / contain;
-  content: url('https://api.iconify.design/mdi/home-time-outline.svg?color=%23264d5e');
 }
 .gym{
   background: url('https://api.iconify.design/iconoir/gym.svg?color=%23264d5e') no-repeat center center / contain;
-  content: url('https://api.iconify.design/iconoir/gym.svg?color=%23264d5e');
 }
 
 .carrusel2 {
