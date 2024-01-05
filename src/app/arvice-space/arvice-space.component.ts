@@ -91,7 +91,6 @@ export class ArviceSpaceComponent implements OnInit {
     }
   }
   
-
   // public salir() {
   //   const itemsToRemove = [
   //     "Nombre_Usuario",
