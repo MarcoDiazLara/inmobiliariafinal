@@ -143,8 +143,8 @@ localStorage.setItem("mi_valor", "2");
 
 }
 
-localStorage.setItem("Asesor",id_nom);
-localStorage.setItem("Responsable", respo );
+localStorage.setItem("Agente",id_nom);
+localStorage.setItem("Broker", respo );
 
 
     // mandar a llamar ventana emergente

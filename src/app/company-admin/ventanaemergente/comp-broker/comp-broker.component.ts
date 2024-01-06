@@ -52,17 +52,18 @@ export class CompBrokerComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral) {
       this.Nombres = this.formGeneral.value.Nombres;
-      
-      let Asesor = localStorage.getItem("Asesor");
+      let Asesor = localStorage.getItem("Agente");
+      let Responsable = localStorage.getItem("Broker")
+      let Socio = localStorage.getItem("Id_Socio")
       console.log(Asesor);
 
 
 
-      this.http.insertarusuarioasignacion( this.Nombres,Asesor).subscribe((data: any) => {
+      this.http.insertaResponsable(Asesor,this.Nombres,Socio).subscribe((data: any) => {
         if (data == 1) {
       
           Swal.fire({
-            title: "Good job!",
+            // title: "Good job!",
             text: "El Broker fue asignado",
             icon: "success"
           });
@@ -81,16 +82,15 @@ export class CompBrokerComponent implements OnInit {
   }
 
 
-
   prueba() {
-    let Asesor = localStorage.getItem("Asesor");
+    let Id_Inmueble = localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
 
 
     if (valor == "1") {
 
-      this.http.updateUsuarioReasignacion(Asesor, this.Nombres).subscribe((resp: any) => {
+      this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
         if (resp == 1) {
 
           Swal.fire({
@@ -115,10 +115,9 @@ export class CompBrokerComponent implements OnInit {
     }
   }
 
+
   closeDialog() {
     this.dialog.closeAll();
   }
 
 }
-
-
