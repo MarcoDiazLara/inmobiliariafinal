@@ -77,7 +77,7 @@ login(){
            
           })
         }else{
-       if(data.Id_Tipo_Usuario == 11){
+       if(data.Id_Tipo_Usuario == 11){ //arvispace
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -88,7 +88,7 @@ login(){
        
         this.router.navigate(["/arvice/mostrarInmuebles"]);
        }else{
-        if(data.Id_Tipo_Usuario == 10){
+        if(data.Id_Tipo_Usuario == 10){ //compania
          localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
          localStorage.setItem("Id_Usuario", data.Id_Usuario);
          localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -99,7 +99,7 @@ login(){
         
          this.router.navigate(["/Company/Perfil"]); // ruta 
            }else{
-          if(data.Id_Tipo_Usuario == 2){
+          if(data.Id_Tipo_Usuario == 2){  //broker
             localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
             localStorage.setItem("Id_Usuario", data.Id_Usuario);
             localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -111,7 +111,7 @@ login(){
             this.router.navigate(["/usuario/perfil"]); // ruta 
 
              } else{
-          if(data.Id_Tipo_Usuario == 5){
+          if(data.Id_Tipo_Usuario == 5){ //dueno
             localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
             localStorage.setItem("Id_Usuario", data.Id_Usuario);
             localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
