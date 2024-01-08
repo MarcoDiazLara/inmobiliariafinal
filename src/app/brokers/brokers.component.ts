@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
+
 
 @Component({
   selector: 'app-brokers',
@@ -15,8 +15,9 @@ export class BrokersComponent implements OnDestroy {
   nombre: any;
 
   fillerNav = [
-    { name: "Perfil", route: "perfil", icon: "home", label: "Hola", number: '0' },
     { name: "Editar Perfil", route: "bienvenida", icon: "notifications", label: "Editar de Perfil", number: '0' },
+    { name: "Perfil", route: "perfil", icon: "home", label: "Hola", number: '0' },
+    
     { name: "Notificaciones", route: "notificacionbroker", icon: "notifications", label: "Notificaciones", number: '0' },
     //{ name: "Asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
     { name: "fechashito", route: "fechashito", icon: "event", label: "Fechas Hito ", number: '0' },
