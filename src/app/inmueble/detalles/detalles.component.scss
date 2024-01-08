@@ -3,12 +3,14 @@
     color: #264D5E;
 
  }
- .codigo h3 {
+ .codigo button {
   text-align: left; 
   margin-left: 60px;
   margin-top: 25px;
   font-size: 20px;
   color: #264D5E;
+  background-color: transparent;
+  border: none;
  }
 
  .allpage{
@@ -530,3 +532,6 @@ textarea {
   width: 100%;
 }
 
+// .button{
+//   background-color: transparent;
+// };
