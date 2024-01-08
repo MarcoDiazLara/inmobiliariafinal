@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
-//Alert 
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-duenopassword',
@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 
 export class DuenopasswordComponent implements OnInit {
 
+  
   formGeneral!:FormGroup;
   loading = false;
   hide = true;
@@ -26,10 +27,12 @@ export class DuenopasswordComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.formGeneral = this.formBuilder.group({
       password: ['',  [Validators.required]],
       password2: ['', [Validators.required]]
     });
+
   }
 
   closeDialog() {
