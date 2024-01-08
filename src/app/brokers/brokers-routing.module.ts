@@ -12,6 +12,7 @@ import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.c
 
 import { FechashitoComponent } from './fechashito/fechashito.component';
 import { AsignarReasignarUsersComponent } from './asignar-reasignar-users/asignar-reasignar-users.component';
+import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,10 @@ const routes: Routes = [
       {
         path: 'asignarUsers',
         component: AsignarReasignarUsersComponent
+      },
+      {
+        path: 'bienvenida',
+        component: BienvenidaComponent
       }
 
 
