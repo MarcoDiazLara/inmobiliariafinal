@@ -44,7 +44,7 @@
     </ng-container>
 
     <ng-container matColumnDef="dueno_M">
-      <th mat-header-cell *matHeaderCellDef>Apellido Paterno</th>
+      <th mat-header-cell *matHeaderCellDef>Apellido Materno</th>
       <td mat-cell *matCellDef="let element">{{ element.dueno_M }}</td>
     </ng-container>
 
@@ -54,24 +54,32 @@
     </ng-container>
 
     <ng-container matColumnDef="btOpciones">
+      <th mat-header-cell *matHeaderCellDef>Bajar Archivo</th>
+      <td mat-cell *matCellDef="let element">
+          <button id="bajar" (click)="descargarArchivo(element.Id_Inmueble)">Bajar Archivo</button>
+        <!-- <button
+          id="subir"
+          (click)="openasesor()"
+          (click)="recuperarIdInmueble(element.Id_Inmueble)"
+        >
+          Subir archivo
+        </button> -->
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bajar">
       <th mat-header-cell *matHeaderCellDef>Subir Archivo</th>
       <td mat-cell *matCellDef="let element">
-        <button
+            <button
           id="subir"
           (click)="openasesor()"
           (click)="recuperarIdInmueble(element.Id_Inmueble)"
         >
           Subir archivo
         </button>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="bajar">
-      <th mat-header-cell *matHeaderCellDef>Bajar Archivo</th>
-      <td mat-cell *matCellDef="let element">
 
         <!-- <button (click)="generatePDF()">Generar PDF</button> -->
-        <button id="bajar" (click)="descargarArchivo()">Bajar Archivo</button>
+        <!-- <button id="bajar" (click)="descargarArchivo(element.Id_Inmueble)">Bajar Archivo</button> -->
       </td>
     </ng-container>
 
