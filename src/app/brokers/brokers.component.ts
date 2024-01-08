@@ -17,8 +17,8 @@ export class BrokersComponent implements OnDestroy {
   nombre: any;
 
   fillerNav = [
-    { name: "Perfil", route: "perfil", icon: "home", label: "Hola", number: '0', onClick:this.xd },
-    { name: "Editar Perfil", route: "bienvenida", icon: "notifications", label: "Editar de Perfil", number: '0', onClick:this.xd },
+    { name: "Home", route: "bienvenida", icon: "home", label: "Hola", number: '0', onClick:this.xd },
+    { name: "Perfil", route: "perfil", icon: "person", label: "Editar Perfil", number: '0', onClick:this.xd },
     { name: "Notificaciones", route: "notificacionbroker", icon: "notifications", label: "Notificaciones", number: '0', onClick:this.xd },
     //{ name: "Asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0' },
     { name: "fechashito", route: "fechashito", icon: "event", label: "Fechas Hito ", number: '0', onClick:this.xd },
@@ -53,7 +53,7 @@ export class BrokersComponent implements OnDestroy {
 
   
   xd(){
-
+//no borrar esta funcnion porfa
   }
 
   logout(){

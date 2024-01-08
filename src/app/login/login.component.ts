@@ -108,7 +108,7 @@ login(){
             localStorage.setItem("Bandera","1");
             this.httpService.setGlobalVariable(true);
            
-            this.router.navigate(["/usuario/perfil"]); // ruta 
+            this.router.navigate(["/usuario/bienvenida"]); // ruta 
 
              } else{
           if(data.Id_Tipo_Usuario == 5){ //dueno
