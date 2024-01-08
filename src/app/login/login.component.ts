@@ -97,7 +97,7 @@ login(){
          localStorage.setItem("Bandera","1");
          this.httpService.setGlobalVariable(true);
         
-         this.router.navigate(["/Company/Perfil"]); // ruta 
+         this.router.navigate(["/Company/bienvenida"]); // ruta 
            }else{
           if(data.Id_Tipo_Usuario == 2){  //broker
             localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir

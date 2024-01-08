@@ -83,7 +83,7 @@ const routes: Routes = [
       },
 
       {
-        path: 'bienvenido',
+        path: 'bienvenida',
         component: BienvenidaComponent
 
       }
