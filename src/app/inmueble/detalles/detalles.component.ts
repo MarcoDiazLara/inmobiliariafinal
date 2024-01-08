@@ -134,7 +134,7 @@ public Venta: Boolean = false;
         console.log(data);
         if(data == 1){
           this.esFavorito = !this.esFavorito;
-        }
+        }   
       })
     }
     
@@ -277,7 +277,8 @@ Favoritos(){
       icon: 'success',
       title: 'Se ha agregado a tus favoritos',
      
-    })}else{
+    })
+    this.esFavorito = !this.esFavorito;}else{
       this.httpService.borrarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data: any)=>{
         this.esFavorito = !this.esFavorito;
         Swal.fire('Este inmueble se quito de sus favoritos');
