@@ -9,17 +9,16 @@ import { infoUsuario } from 'src/app/services/Interface/Interfaces';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { CompanyAdminpasswordComponent } from '../ventanaemergente/company-adminpassword/company-adminpassword.component';
-
+import { DuenopasswordComponent } from '../ventanaemergente/duenopassword/duenopassword.component';
 
 @Component({
-  selector: 'app-perfilcompany-admin',
-  templateUrl: './perfilcompany-admin.component.html',
-  styleUrls: ['./perfilcompany-admin.component.scss']
+  selector: 'app-perfildueno',
+  templateUrl: './perfildueno.component.html',
+  styleUrls: ['./perfildueno.component.scss']
 })
 
 
-export class PerfilcompanyAdminComponent implements OnInit {
+export class PerfilduenoComponent implements OnInit {
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   toppings = new FormControl('');
@@ -65,7 +64,7 @@ export class PerfilcompanyAdminComponent implements OnInit {
 
   openpassword() {
 
-    const dialogRef = this.dialog.open(CompanyAdminpasswordComponent, {
+    const dialogRef = this.dialog.open(DuenopasswordComponent, {
       width: '60vh',
       height: 'auto',
       disableClose: true
@@ -190,5 +189,6 @@ export class PerfilcompanyAdminComponent implements OnInit {
 
 
  
+
 
 
