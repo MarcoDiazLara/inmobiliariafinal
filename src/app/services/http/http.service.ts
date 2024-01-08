@@ -692,4 +692,16 @@ export class HttpService {
 
   }
 
+  borrarlikes(idUser: any,idInm: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'idUser=' + idUser  + '&idInm=' + idInm;
+    return this.httpclient.post(this.url + 'sp_web_borrarlikes.php', params, { headers });
+  }
+
+  validarlikes(p_id_usuario: any, p_id_inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario  + '&p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_validalikes.php', params, { headers });
+  }
+
 }
