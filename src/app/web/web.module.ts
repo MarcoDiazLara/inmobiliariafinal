@@ -41,6 +41,7 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef,MatDialogTitle,MatDialogConten
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 
 
@@ -76,6 +77,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     TerminosComponent,
     QuierescomprarComponent,
     RematehipotecarioComponent,
+    BienvenidaComponent,
   
 
 
@@ -103,6 +105,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     WebComponent,
     FooterComponent,
     DescargaComponent,
+    BienvenidaComponent,
     MenuComponent
     
   ],

@@ -121,15 +121,18 @@ login(){
             this.httpService.setGlobalVariable(true);
            
             this.router.navigate(["/Dueno/bienvenida"]); // ruta 
-           }
-
-
-
-
-
-
-
-        else{
+           } else{
+            if(data.Id_Tipo_Usuario == 3){ //Aesor
+              localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
+              localStorage.setItem("Id_Usuario", data.Id_Usuario);
+              localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+              localStorage.setItem("Id_Socio", data.Id_Socio);
+              localStorage.setItem("Id_Tipo_Plan", data.Id_Tipo_Plan);
+              localStorage.setItem("Bandera","1");
+              this.httpService.setGlobalVariable(true);
+             
+              this.router.navigate(["/asesor/Perfil"]); // ruta 
+           }else{
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -145,7 +148,7 @@ login(){
     }
     }
   }
-
+    }
   });
 
 }
