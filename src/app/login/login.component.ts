@@ -122,7 +122,7 @@ login(){
            
             this.router.navigate(["/Dueno/bienvenida"]); // ruta 
            } else{
-            if(data.Id_Tipo_Usuario == 3){ //Aesor
+            if(data.Id_Tipo_Usuario == 3){ //Asesor
               localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
               localStorage.setItem("Id_Usuario", data.Id_Usuario);
               localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -131,7 +131,7 @@ login(){
               localStorage.setItem("Bandera","1");
               this.httpService.setGlobalVariable(true);
              
-              this.router.navigate(["/asesor/Perfil"]); // ruta 
+              this.router.navigate(["/asesor/Bienvenida"]); // ruta 
            }else{
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);

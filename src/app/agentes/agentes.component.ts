@@ -17,6 +17,7 @@ export class AgentesComponent implements OnDestroy {
   nombre: any;
 
   fillerNav = [
+    { name: "Home", route: "Bienvenida",icon: "home" , label: "Hola",number:'0',  onClick:this.xd },
     { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0',  onClick:this.xd },
     { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0',   onClick:this.xd },
     { name: "Hito", route: "Hitoagente",icon: "event" , label: "Fecha Hito",number:'0', onClick:this.xd},
