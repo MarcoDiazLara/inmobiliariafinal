@@ -7,6 +7,7 @@ import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
 import { DatosInteresadosComponent } from './interesados/datos-interesados/datos-interesados.component';
 import { CambioasesorComponent } from './cambioasesor/cambioasesor.component';
 import { PerfilduenoComponent } from './perfildueno/perfildueno.component';
+import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'perfil',
         component: PerfilduenoComponent
+      },
+      {
+        path: 'bienvenida',
+        component: BienvenidaComponent
       }
 
 
