@@ -16,7 +16,7 @@
   
                 <div id="sombras" style="text-align: center;width: -webkit-fill-available;" mat-list-item *ngFor="let nav of fillerNav">
         
-                    <a mat-list-item [routerLink]="nav.route" (click)="salir(nav.number)">
+                    <a mat-list-item [routerLink]="nav.route" (click)="nav.onClick()">
                       
                       <div>
                         <mat-icon style="font-size: 30px;">{{nav.icon}}</mat-icon>
