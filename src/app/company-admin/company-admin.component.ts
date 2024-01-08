@@ -16,7 +16,7 @@ export class CompanyAdminComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
      fillerNav = [
-    { name: "bienvenida", route: "bienvenido",icon: "home" , label: "Hola",number:'0', onClick:this.xd },
+    { name: "bienvenida", route: "bienvenida",icon: "home" , label: "Hola",number:'0', onClick:this.xd },
     { name: "perfilempresa", route: "Perfil",icon: "person" , label: "Perfil",number:'0', onClick:this.xd},
     { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0', onClick:this.xd},
     { name: "Alta Usuarios", route: "altabrokers",icon: "group_add" , label: "Alta de Usuarios",number:'0', onClick:this.xd},
