@@ -14,12 +14,13 @@ import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 import { AsignarReasignarUserComponent } from './asignar-reasignar-user/asignar-reasignar-user.component';
+import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
 
 
 const routes: Routes = [
   {
-    path:'',
-    component:CompanyAdminComponent,
+    path: '',
+    component: CompanyAdminComponent,
     children: [
       {
         path: 'altabrokers',
@@ -38,50 +39,57 @@ const routes: Routes = [
         component: CompanyAsignarReasignarComponent,
       },
       {
-        path:'catalogoinmueble',
-        component:CatalogoinmuebleComponent,
+        path: 'catalogoinmueble',
+        component: CatalogoinmuebleComponent,
 
       },
       {
         path: 'Inventario',
-        component:Inventarioadmin,
+        component: Inventarioadmin,
 
       },
       {
-        path:'Hitoadmin',
-        component:AdminhitoComponent,
+        path: 'Hitoadmin',
+        component: AdminhitoComponent,
 
       },
       {
 
         path: 'PantallaUsuarios',
-        component:PantallaUsuariosComponent,
+        component: PantallaUsuariosComponent,
 
       },
       {
-          path:'perfilempresa',
-          component:PerfilempresaComponent,
+        path: 'perfilempresa',
+        component: PerfilempresaComponent,
 
       },
       {
-        path:'EquipoTrabajo',
-        component:CompAsignaGrupoComponent
+        path: 'EquipoTrabajo',
+        component: CompAsignaGrupoComponent
 
-    },
-    {
-      path:'estatususuario',
-      component:EstatususuarioComponent
+      },
+  
+      {
+        path: 'estatususuario',
+        component: EstatususuarioComponent
 
-    }
-    ,
-    {
-      path:'resignar-asignarUser',
-      component:AsignarReasignarUserComponent
+      }
+      ,
+      {
+        path: 'resignar-asignarUser',
+        component: AsignarReasignarUserComponent
 
-    }
+      },
+
+      {
+        path: 'bienvenido',
+        component: BienvenidaComponent
+
+      }
     ]
   }
-  
+
 ];
 
 @NgModule({
