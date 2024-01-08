@@ -1,0 +1,95 @@
+<div class="container">
+    <br>
+    <br>
+    <h2 class="text-center">Editar Perfil</h2>
+    <br>
+    <br>
+    <main>
+      <div class="container">
+        <div class="left box-primary">
+          <img class="image" [src]=imagen alt="" />
+          <br>
+          <br>
+  
+          <a class="btn btn-primary btn-block"><b>Editar foto</b></a>
+        </div>
+        <br>
+        <br>
+  
+        <div class="row">
+  
+          <div class="col-md-4">
+            <form [formGroup]="formPerfil" class="form-horizontal" style="margin:0 auto">
+              <mat-form-field class="form-group">
+                <mat-label>Nombre:</mat-label>
+                <input matInput formControlName="nombre" [(ngModel)]="datos.Nombres" type="text" id="nombre" name="nombre"
+                  required>
+              </mat-form-field>
+  
+              <mat-form-field class="form-group">
+                <mat-label>Apellido Paterno:</mat-label>
+                <input matInput formControlName="apellidopaterno" [(ngModel)]="datos.Apellido_Paterno" type="text"
+                  id="apellidoPaterno" name="apellidoPaterno" required>
+              </mat-form-field>
+  
+              <mat-form-field class="form-group">
+                <mat-label>Apellido Materno:</mat-label>
+                <input matInput formControlName="apellidomaterno" [(ngModel)]="datos.Apellido_Materno" type="text"
+                  id="apellidoMaterno" name="apellidoMaterno" required>
+              </mat-form-field>
+            </form>
+          </div>
+  
+  
+          <div class="col-md-4">
+            <form [formGroup]="formPerfil">
+              <mat-form-field class="form-group">
+                <mat-label>CURP:</mat-label>
+                <input matInput formControlName="curp" [(ngModel)]="datos.CURP" type="text" id="curp" name="curp"
+                  required>
+              </mat-form-field>
+  
+              <mat-form-field class="form-group">
+                <mat-label>RFC:</mat-label>
+                <input matInput formControlName="rfc" [(ngModel)]="datos.RFC" type="text" id="rfc" name="rfc" required>
+              </mat-form-field>
+            </form>
+          </div>
+  
+  
+  
+  
+          <div class="col-md-4">
+            <form [formGroup]="formPerfil">
+              <mat-form-field class="form-group">
+                <mat-label>Contacto Principal:</mat-label>
+                <input matInput formControlName="contactoprincipal" [(ngModel)]="datos.Contacto_Principal" type="text"
+                  id="contactoPrincipal" name="contactoPrincipal" required>
+              </mat-form-field>
+  
+              <mat-form-field class="form-group">
+                <mat-label>Contacto de Emergencia:</mat-label>
+                <input matInput formControlName="contactoemergencia" [(ngModel)]="datos.Contacto_Emergencia" type="text"
+                  id="contactoEmergencia" name="contactoEmergencia" required>
+              </mat-form-field>
+  
+              <mat-form-field class="form-group">
+                <mat-label>Correo Electrónico:</mat-label>
+                <input matInput formControlName="email" [(ngModel)]="datos.Email" type="email" id="correo" name="correo"
+                  required>
+              </mat-form-field>
+  
+  
+            </form>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="col-md-12 text-center">
+          <!-- Agrega la clase mx-auto para centrar el botón horizontalmente  -->
+          <button (click)="actualizar()" type="submit" class="btn ">Actualizar</button>
+          &nbsp;&nbsp;&nbsp;
+          <button mat-raised-button class="btn " (click)="openpassword()">Cambio de Password</button>
+        </div>
+  
+      </div>

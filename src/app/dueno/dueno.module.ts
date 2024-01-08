@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DuenoRoutingModule } from './dueno-routing.module';
 import { DuenoComponent } from './dueno.component';
-import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -39,6 +36,8 @@ import { MiAsesorComponent } from './mi-asesor/mi-asesor.component';
 import { InteresadosComponent } from './interesados/interesados.component';
 import { DatosInteresadosComponent } from './interesados/datos-interesados/datos-interesados.component';
 import { CambioasesorComponent } from './cambioasesor/cambioasesor.component';
+import { PerfilduenoComponent } from './perfildueno/perfildueno.component';
+import { DuenopasswordComponent } from './ventanaemergente/duenopassword/duenopassword.component';
 
 
 registerLocaleData(localeEs);
@@ -46,12 +45,13 @@ registerLocaleData(localeEs);
 @NgModule({
   declarations: [
     DuenoComponent,
-    BienvenidaComponent,
     NotificacionDuenoComponent,
     MiAsesorComponent,
     InteresadosComponent,
     DatosInteresadosComponent,
     CambioasesorComponent,
+    PerfilduenoComponent,
+    DuenopasswordComponent,
   ],
   imports: [
     CommonModule,
