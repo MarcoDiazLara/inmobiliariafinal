@@ -63,7 +63,7 @@ export class CompBrokerComponent implements OnInit {
         if (data == 1) {
       
           Swal.fire({
-            // title: "Good job!",
+            title: "Exitosamente!",
             text: "El Broker fue asignado",
             icon: "success"
           });
