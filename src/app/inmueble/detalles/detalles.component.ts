@@ -128,7 +128,15 @@ public Venta: Boolean = false;
       });
     }
 
-
+    if(this.isLoggedIn){
+      
+      this.httpService.validarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data:any)=>{
+        console.log(data);
+        if(data == 1){
+          this.esFavorito = !this.esFavorito;
+        }
+      })
+    }
     
 
   }
@@ -167,9 +175,12 @@ public Venta: Boolean = false;
          this.abrirAplicacion();
         } else {
             Swal.fire(
-              'Exitosamente!',
-              'No estas usando un dispositivo movil',
-              'success'
+              
+              // 'Para usar esta funcion utiliza tu dispositivo movil',
+              // icon: 'info'
+               "Información",
+  "Para usar esta funcion utiliza tu dispositivo movil",
+  "info"
               
             )
         }
@@ -267,7 +278,11 @@ Favoritos(){
       title: 'Se ha agregado a tus favoritos',
      
     })}else{
-      Swal.fire('Este inmueble, ya se encuentra en tus favoritos');
+      this.httpService.borrarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data: any)=>{
+        this.esFavorito = !this.esFavorito;
+        Swal.fire('Este inmueble se quito de sus favoritos');
+      })
+      
     }
   })
   
