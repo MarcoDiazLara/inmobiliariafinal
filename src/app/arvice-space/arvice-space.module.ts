@@ -42,6 +42,7 @@ import { VentanasEmergentesComponent } from './ventanas-emergentes/ventanas-emer
 import { SubirArchivoComponent } from './ventanas-emergentes/subir-archivo/subir-archivo.component';
 import { CamposRequeridosComponent } from './ventanas-emergentes/campos-requeridos/campos-requeridos.component';
 
+
 @NgModule({
   declarations: [
     ArviceSpaceComponent,

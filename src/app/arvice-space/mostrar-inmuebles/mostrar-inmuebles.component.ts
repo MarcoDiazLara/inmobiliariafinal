@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from 'src/app/company-admin/ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 import { inmueblesArviceSpace } from 'src/app/services/Interface/Interfaces';
 import { VentanasEmergentesComponent } from '../ventanas-emergentes/ventanas-emergentes.component';
+// import * as jsPDF from 'jspdf';
+import { jsPDF } from 'jspdf';
 @Component({
   selector: 'app-mostrar-inmuebles',
   templateUrl: './mostrar-inmuebles.component.html',
@@ -150,14 +152,20 @@ export class MostrarInmueblesComponent implements OnInit {
 
   }
   descargarArchivo(): void {
-    const enlace = document.createElement('a') as HTMLAnchorElement;
-    enlace.href = 'https://inmobiliaria.arvispace.com/imagenes/1413';
-    enlace.download = 'pruebaDescarga';
+    const doc = new jsPDF();
+    doc.text('¡Hola, este es un PDF generado desde Angular!', 10, 10);
+    // Guardar el PDF en el disco o abrirlo en una nueva pestaña del navegador
+    doc.save('mi_pdf.pdf');
 
-    document.body.appendChild(enlace);
-    enlace.click();
 
-    document.body.removeChild(enlace);
+    // const enlace = document.createElement('a') as HTMLAnchorElement;
+    // enlace.href = 'https://inmobiliaria.arvispace.com/imagenes/1413';
+    // enlace.download = 'pruebaDescarga';
+
+    // document.body.appendChild(enlace);
+    // enlace.click();
+
+    // document.body.removeChild(enlace);
   }
 
   recuperarIdInmueble(id: number) {
