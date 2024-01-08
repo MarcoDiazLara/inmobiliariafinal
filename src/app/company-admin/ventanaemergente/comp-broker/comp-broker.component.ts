@@ -83,14 +83,16 @@ export class CompBrokerComponent implements OnInit {
 
 
   prueba() {
-    let Id_Inmueble = localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
+    let Asesor = localStorage.getItem("Agente");
+      let Responsable = localStorage.getItem("Broker")
+      let Socio = localStorage.getItem("Id_Socio")
 
 
     if (valor == "1") {
 
-      this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
+      this.http.actualizarResponsable(Asesor,this.Nombres,Socio).subscribe((resp: any) => {
         if (resp == 1) {
 
           Swal.fire({
