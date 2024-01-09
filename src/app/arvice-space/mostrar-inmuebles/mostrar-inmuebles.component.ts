@@ -16,8 +16,6 @@ import { VentanasEmergentesComponent } from '../ventanas-emergentes/ventanas-eme
 import html2canvas from 'html2canvas';
 import { forkJoin } from 'rxjs';
 import { Observable } from 'rxjs';
-
-
 // import * as jsPDF from 'jspdf';
 import { jsPDF } from 'jspdf';
 @Component({

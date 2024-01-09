@@ -710,4 +710,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_actualiza_responsable.php', params, { headers });
   }
 
+  Grupos_Asignados(IdSocio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_IdSocio=' + IdSocio;
+    return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
+
+  }
 }
