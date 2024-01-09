@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 import { CompAsignaBrokerComponent } from 'src/app/company-admin/ventanaemergente/comp-asigna-broker/comp-asigna-broker.component';
 import { inmueblesArviceSpace } from 'src/app/services/Interface/Interfaces';
 import { VentanasEmergentesComponent } from '../ventanas-emergentes/ventanas-emergentes.component';
-import 'jspdf-autotable';
 import html2canvas from 'html2canvas';
 import { forkJoin } from 'rxjs';
 import { Observable } from 'rxjs';
