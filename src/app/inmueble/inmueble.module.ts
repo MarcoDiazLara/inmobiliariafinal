@@ -33,6 +33,7 @@ import { PlanesComponent } from './planes/planes.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -45,7 +46,8 @@ registerLocaleData(localeEs);
     LikegraficaComponent,
     InformacioninmuebleComponent,
     PlanesComponent,
-    Requisitos3dComponent
+    Requisitos3dComponent,
+    FavoritosComponent
     
   ],
   imports: [

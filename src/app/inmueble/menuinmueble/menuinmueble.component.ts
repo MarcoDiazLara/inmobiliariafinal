@@ -66,6 +66,10 @@ export class MenuinmuebleComponent {
 
 
   }
+  favoritos(){
+    this.router.navigate(['inmueble/favoritos']);
+
+  }
 
   home() {
     this.router.navigate(['/web']);
