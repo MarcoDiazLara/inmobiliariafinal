@@ -19,7 +19,6 @@ import { Observable } from 'rxjs';
 
 
 // import * as jsPDF from 'jspdf';
-import { jsPDF } from 'jspdf';
 @Component({
   selector: 'app-mostrar-inmuebles',
   templateUrl: './mostrar-inmuebles.component.html',
@@ -193,59 +192,59 @@ export class MostrarInmueblesComponent implements OnInit {
       
       
       
-descargarArchivo(Id_Inmueble: any): void {
-  this.httpService.generarPDFmodelado3D(Id_Inmueble).subscribe((data: any) => {
-    console.log(data);
+// descargarArchivo(Id_Inmueble: any): void {
+//   this.httpService.generarPDFmodelado3D(Id_Inmueble).subscribe((data: any) => {
+//     console.log(data);
 
-    if (Array.isArray(data)) {
-      // Crear un objeto jsPDF
-      const doc = new jsPDF();
-      doc.setFont("helvetica");
-       doc.setFontSize(12);
-       doc.text("Requisitos del modelado 3D ", doc.internal.pageSize.getWidth() / 2, 15, { align: "center" });
+//     if (Array.isArray(data)) {
+//       // Crear un objeto jsPDF
+//       const doc = new jsPDF();
+//       doc.setFont("helvetica");
+//        doc.setFontSize(12);
+//        doc.text("Requisitos del modelado 3D ", doc.internal.pageSize.getWidth() / 2, 15, { align: "center" });
    
-       var yPosition = 10;
-       doc.setFontSize(10);
-       var lineSpacing = 3.4; // Puedes ajustar este valor según sea necesario
+//        var yPosition = 10;
+//        doc.setFontSize(10);
+//        var lineSpacing = 3.4; // Puedes ajustar este valor según sea necesario
       
-      // Agregar contenido al PDF usando datos
-        data.forEach((item, index) => {
-          const yPosition = index * 10 + 20;
-          doc.text(
-            "Número de piso: " + item.Numero_Piso + '\n' + 
-            "Nombre del Cuarto: " + item.Nombre_cuarto + '\n' +
-            "Nombre del Elemento: " + item.Elemento + '\n' + + '\n' +
-            "Nombre de los Acabados: " + item.Acabados + '\n' + 
-            "Color: " + item.Color + '\n' +
-            "Tipo de Material: " + item.Tipo_Material + '\n' +
-            "Medidas: " + item.Medidas + '\n' +
-            "Imagen: " + item.Imagen,
-            10,
-            yPosition * lineSpacing
-          );
-          var x = 10;
-          var y = 10;
-           var width = 100;
-          var height = 100;
-          // Agregar la imagen al PDF
-      let imageUrl = item.Imagen;
-           doc.addImage(imageUrl, 'JPEG', x, y, width, height);
+//       // Agregar contenido al PDF usando datos
+//         data.forEach((item, index) => {
+//           const yPosition = index * 10 + 20;
+//           doc.text(
+//             "Número de piso: " + item.Numero_Piso + '\n' + 
+//             "Nombre del Cuarto: " + item.Nombre_cuarto + '\n' +
+//             "Nombre del Elemento: " + item.Elemento + '\n' + + '\n' +
+//             "Nombre de los Acabados: " + item.Acabados + '\n' + 
+//             "Color: " + item.Color + '\n' +
+//             "Tipo de Material: " + item.Tipo_Material + '\n' +
+//             "Medidas: " + item.Medidas + '\n' +
+//             "Imagen: " + item.Imagen,
+//             10,
+//             yPosition * lineSpacing
+//           );
+//           var x = 10;
+//           var y = 10;
+//            var width = 100;
+//           var height = 100;
+//           // Agregar la imagen al PDF
+//       let imageUrl = item.Imagen;
+//            doc.addImage(imageUrl, 'JPEG', x, y, width, height);
       
-        //   doc.text("Numero de piso "+ item.Numero_Piso + ' - '+"Nombre del Cuarto" + item.Nombre_cuarto +' - ' +"Nombre del Elemento"+ item.Elemento + ' - '+ "Nombre de los Acabados "+ item.Acabados + ' - '+  
-        // "Color" + item.Color + ' - '+ "Tipo_Material"+ item.Tipo_Material + ' \n'+ "Medidas" +item.Medidas + ' - ' +"Imagen"+item.Imagen,  10, yPosition);
-        });
+//         //   doc.text("Numero de piso "+ item.Numero_Piso + ' - '+"Nombre del Cuarto" + item.Nombre_cuarto +' - ' +"Nombre del Elemento"+ item.Elemento + ' - '+ "Nombre de los Acabados "+ item.Acabados + ' - '+  
+//         // "Color" + item.Color + ' - '+ "Tipo_Material"+ item.Tipo_Material + ' \n'+ "Medidas" +item.Medidas + ' - ' +"Imagen"+item.Imagen,  10, yPosition);
+//         });
 
-      // Guardar el PDF en el disco
-      doc.save('archivo.pdf');
+//       // Guardar el PDF en el disco
+//       doc.save('archivo.pdf');
 
-      // Alternativamente, abrir el PDF en una nueva pestaña del navegador
-      // doc.output('dataurlnewwindow');
+//       // Alternativamente, abrir el PDF en una nueva pestaña del navegador
+//       // doc.output('dataurlnewwindow');
 
-    } else {
-      console.error('La respuesta del servidor no es un array.');
-    }
-  });
-}
+//     } else {
+//       console.error('La respuesta del servidor no es un array.');
+//     }
+//   });
+// }
   // descargarArchivo(Id_Inmueble: any): void {
   //   this.httpService.generarPDFmodelado3D(Id_Inmueble).subscribe((data: any) => {
   //     console.log(data);
