@@ -33,7 +33,7 @@
                         
 
                         <div class="content">
-                            <button mat-fab color="accent" (click)="toggleFavorito()">
+                            <button mat-fab color="accent" (click)="Favoritos()">
                                 <img [ngClass]="{'bookmark': !esFavorito, 'bookmarkfull': esFavorito}">
                               </button>
                         <!-- <button class="otherButton main"><img class="other"></button>                   -->
@@ -181,7 +181,7 @@
     <div class="codigo" style="padding: 25px; margin-top: 25px;">
 
         <mat-card >
-            <mat-card-content><h3 (click)="verificacion()">{{"Amplia tu experiencia usando el siguiente código en nuestra App: " + vista_360}}</h3></mat-card-content>
+            <mat-card-content><button (click)="verificacion()">{{"Amplia tu experiencia usando el siguiente código en nuestra App, da clic para continuar: " + vista_360}}</button></mat-card-content>
         </mat-card>
      
     </div>

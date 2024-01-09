@@ -686,7 +686,7 @@ export class HttpService {
 
   generarPDFmodelado3D(p_id_Inmueble:any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_id_Inmueble ='+p_id_Inmueble;
+    let params = 'p_id_Inmueble='+p_id_Inmueble;
     return this.httpclient.post(this.url + 'GenerarPDF.php', params, { headers });
 
 
