@@ -88,6 +88,7 @@ export class MenuComponent implements OnInit {
     })
     this.httpService.setGlobalVariable(false);
     this.router.navigate(["/web"]);
+    console.log("entro");
   }
 
 
