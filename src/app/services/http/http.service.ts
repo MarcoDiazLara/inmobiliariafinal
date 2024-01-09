@@ -576,7 +576,7 @@ export class HttpService {
     let params = 'p_Id_Socio=' + Id_Socio;
     return this.httpclient.post(this.url + 'sp_web_selecciona_broker.php', params, { headers });
   }
-  mostrarAsesorhito(p_id_socio: any) {
+  SeleccionaAsesorhito(p_id_socio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_socio=' + p_id_socio;
     return this.httpclient.post(this.url + 'sp_web_selecciona_asesor.php', params, { headers });
