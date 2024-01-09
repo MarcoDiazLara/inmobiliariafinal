@@ -713,7 +713,7 @@ export class HttpService {
   Grupos_Asignados(IdSocio: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_IdSocio=' + IdSocio;
-    return this.httpclient.post(this.url + 'sp_web_selecUsuarios.php', params, { headers });
+    return this.httpclient.post(this.url + 'sp_web_Grupos_Asignados.php', params, { headers });
 
   }
 }
