@@ -704,4 +704,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_validalikes.php', params, { headers });
   }
 
+  actualizarResponsable(Id_Asesor: any, Id_Responsable: any, Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Asesor=' + Id_Asesor + '&p_Id_Responsable=' + Id_Responsable + '&p_Id_Socio=' + Id_Socio + '&p_estatus_Suscripcion=';
+    return this.httpclient.post(this.url + 'sp_web_actualiza_responsable.php', params, { headers });
+  }
+
 }
