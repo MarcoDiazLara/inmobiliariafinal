@@ -64,18 +64,20 @@
         
       </div>
     </div>
-    <div class="col-sm-9">
-      <div class="card rounded-start rounded-end">
+    <div class="col-sm-9"  >
+      <div class="card rounded-start rounded-end" *ngFor="let res of infoFavoritos">
         <div class="row no-gutters">
-            <div class="col-sm-4">
-                <img class="card-img" src="../assets/img/casa.jpeg" width="100%" height="100%">
+            <div class="col-sm-4" >
+                <img class="card-img" src="{{res.Picture1}}" width="300px" height="200px"style=" margin:10px;">
             </div>
-            <div class="col-sm-4">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo Anuncio</h5>
-                    <p class="card-text gap-2">Descripción Básica</p>
+            <div class="col-sm-4" >
+                <div class="card-body" >
+                    <h5 class="card-title">{{res.Nombre_Publicacion}}</h5>
+                    <p class="card-text gap-2">{{res.Descripcion_Publicacion}}</p>
                     <p class="card-text">Estatus del Inmueble</p>
-                    
+                    <button mat-raised-button color="#264D5E"  class="contacto"><i class="material-icons">favorite</i></button>
+
+            
                 </div>
             </div>
             <div class="col-sm-4 " style="display: flex;
