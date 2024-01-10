@@ -2,10 +2,7 @@
 
 
   
-<div class="row justify-content-center align-items-center">
-    <div class="col-sm-3 align-items-center align-middle p-5">
-      
-    </div>
+    
     <div class="col-sm-9">
       <div class="cointainer p-4">
       <form>
@@ -37,50 +34,26 @@
       </form>
     </div>
   </div>
-  <div class="row justify-content-left align-items-center">
-    <div class="col-sm-3 align-items-center align-middle p-5 color-back">
-    
-      <div class="form-check">
-       
-      </div>
-      <div class="form-check">
-   
-   
-      </div>
-      <div class="p-2"></div>
-      <div class="h6"><span class="label label-default"></span></div>
-      <div class="form-check">
-       
-      </div>
-      <div class="form-check">
-       
-      </div>
-      <div class="p-2"></div>
-      <div class="h6"><span class="label label-default"></span></div>
-      <div class="form-check">
-      
-      </div>
-      <div class="form-check">
-        
-      </div>
-    </div>
-    <div class="col-sm-9"  >
-      <div class="card rounded-start rounded-end" *ngFor="let res of infoFavoritos">
+  
+    <div class="col-sm-9" style="border-color: black;" >
+      <div class="card rounded-start rounded-end" *ngFor="let res of infoFavoritos" 
+      style="border-color: #264D5E; margin-left:20%;margin-top:5px; width: 70%; " >
         <div class="row no-gutters">
             <div class="col-sm-4" >
-                <img class="card-img" src="{{res.Picture1}}" width="300px" height="200px"style=" margin:10px;">
+                <img class="card-img" src="{{res.Picture1}}" width="800px" height="auto"style=" margin:10px;">
             </div>
-            <div class="col-sm-4" >
+            <div class="col-sm-5" >
                 <div class="card-body" >
                     <h5 class="card-title">{{res.Nombre_Publicacion}}</h5>
                     <p class="card-text gap-2">{{res.Descripcion_Publicacion}}</p>
                     <p class="card-text">Estatus del Inmueble</p>
-                    <button mat-raised-button color="#264D5E"  class="contacto"><i class="material-icons">favorite</i></button>
+                    <button mat-raised-button (click)="Favoritos(res.Id_Inmueble)" color="#264D5E" class="contacto"><i class="material-icons">favorite</i> </button>
+
 
             
                 </div>
             </div>
-            <div class="col-sm-4 " style="display: flex;
+            <div class="col-sm-6 " style="display: flex;
             align-items: center;
             justify-content: center;">
               <div class="d-grid gap-2">
@@ -91,7 +64,6 @@
         </div>
     </div>
     </div>
-  </div>
   
 
 
