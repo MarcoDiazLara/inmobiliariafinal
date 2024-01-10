@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sepomex.component.scss']
 })
 export class SepomexComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
