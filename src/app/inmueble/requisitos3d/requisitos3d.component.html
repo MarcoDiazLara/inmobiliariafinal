@@ -2,7 +2,7 @@
   <div *ngIf="llave === '3'">
 <h1> Requisitos para modelado <i class="bi bi-badge-3d"></i></h1>
   <!-- -----------------Planos------------------------------------ -->
-  <div class="d-flex justify-content-center align-items-center">
+  <!-- <div class="d-flex justify-content-center align-items-center">
     <p>Sube tu Plano en formato PDF</p>
     <br>
   </div>
@@ -10,11 +10,33 @@
     <form [formGroup]="pdf" class="form-horizontal">
       <input formControlName="PDF" class="form-control" accept=".pdf" type="file" name="pdfFile" (change)="onFileChange2($event)" >
     </form>
-  </div>
+  </div> -->
   <!-- -----------------------Especificaciones del Inmueble--------------------------- -->
   <br>
   <h2 class="text-center"> Especificaciones del Inmueble </h2>
-  <form [formGroup]="miFormulario"  enctype="multipart/form-data">
+  <form [formGroup]="miFormulario" >
+    <h2>Tienes Planos </h2>
+    <mat-radio-group aria-label="Select an option" formControlName="planos">
+      <mat-radio-button value="si">Si</mat-radio-button>
+      <mat-radio-button value="no">No</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo</mat-label>
+      <input matInput formControlName="Correo">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Telefono</mat-label>
+      <input matInput formControlName="Telefono">
+    </mat-form-field>
+    
+    
+  </form>
+  <!-- <form [formGroup]="miFormulario"  enctype="multipart/form-data">
     <div formArrayName="items">
       <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
         <div style="display: flex; justify-content: center; align-items: center;">
@@ -57,9 +79,9 @@
           </mat-form-field>
   
         
-       </div>
+       </div> -->
       
-       <div style="display: flex; justify-content: center; align-items: center;">
+       <!-- <div style="display: flex; justify-content: center; align-items: center;">
      
         <mat-form-field style="margin-right: 15px;">
           <mat-label> Acabados </mat-label>
@@ -84,11 +106,11 @@
           <input matInput placeholder="Ancho" formControlName="Ancho">
         </mat-form-field>
       
-      </div>
+      </div> -->
 
 
 
-      <div style="display: flex; justify-content: center; align-items: center;">
+      <!-- <div style="display: flex; justify-content: center; align-items: center;">
         <mat-form-field style="margin-right: 15px;">
           <input matInput placeholder="Altura" formControlName="Altura">
         </mat-form-field>
@@ -100,9 +122,9 @@
         <input   formControlName="img" class="form-control" accept="image/*" type="file" name="images" (change)="onFileChange($event, i)">
      
     </div>
-    <br>
+    <br> -->
 <!-- -----------------Eliminar---------------------------- -->
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <button   type="button" class="btn" style="background-color: red ; color: #ffffff;" type="button" (click)="eliminarItem(i)">Eliminar</button>
 </div>
          
@@ -112,7 +134,7 @@
     <div style="display: flex; justify-content: center;">
        <button    type="button" class="btn" style="background-color:  #264D5E ; color: #ffffff;" (click)="agregarItem()">Añadir</button>
     </div>
-  </form>
+  </form> -->
 <br>
 
   <br>
@@ -120,12 +142,33 @@
   <div class="d-flex justify-content-center align-items-center">
 
     <button color="primary" (click)="CerraDialogo()" mat-button>Cancelar</button>
-    <button color="primary"  mat-button    (click)="ObtnerInformacio()">Aceptar</button>
+    <button color="primary"  mat-button    (click)="NuevosDatos()">Aceptar</button>
   </div>
   </div>
   <div *ngIf="llave === '0'" class="card-container">
      
+         
+ 
+    
+          
+
+    <!-- <div class="row ">
+      <div class="col-lg-3">
+        <mat-radio-group>
+          <mat-radio-button color="primary" value="1">Gratuito</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  
+      <div class="col-lg-5">
+        <p class=" text-center">Visibilidad baja</p>
+      </div>
+
+    </div> -->
+    
     <div class="card">
+     
       <div class="content">
     
        <br>
