@@ -21,10 +21,8 @@ import { CompBrokerComponent } from '../ventanaemergente/comp-broker/comp-broker
 
 export class CompAsignaGrupoComponent implements OnInit {
 
-// ArrayAsignacion:any[]=[];
-
   usuarios$: any;
-  //  Id_Usu: any;
+  
 
   formGeneral!:FormGroup; 
 
@@ -45,7 +43,6 @@ export class CompAsignaGrupoComponent implements OnInit {
 
   // poner el nombre de una variable
   informacion: informacionA[]=[];
-
   datosAsesores: AsigarReAsignar[]=[];
   
   
@@ -64,7 +61,7 @@ export class CompAsignaGrupoComponent implements OnInit {
     let Bandera = localStorage.getItem("Bandera")
 
     if(Bandera =="1"){
-     this.obtenerConteo();
+    //  this.obtenerConteo();
 
      this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
