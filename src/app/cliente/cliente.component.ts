@@ -19,7 +19,6 @@ export class ClienteComponent implements OnDestroy {
     { name: "Perfil", route: "Perfil",icon: "person" , label: "Perfil",number:'0' },
     { name: "Notificaciones", route: "notificacion",icon: "notifications" , label: "Notificaciones",number:'0' },
     { name: "calendario", route: "calendario",icon: "assignment" , label: "calendario",number:'0' },
-    { name: "cambioasesorcliente", route: "reasignac  ion",icon: "3p" , label: "Cambio de Asesor",number:'0' },
     { name: "Salir",route: "web",icon: "logout", label: "SALIR" ,number:'1'},
   ];
 

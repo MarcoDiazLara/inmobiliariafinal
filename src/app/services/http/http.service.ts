@@ -149,10 +149,15 @@ export class HttpService {
     let params = "p_id=" + p_id;
     return this.httpclient.post(this.url + 'obtenerInfoUsuario.php', params, { headers });
   }
+  obtenerInfoFavoritos(p_id: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id_usuario=" + p_id;
+    return this.httpclient.post(this.url + 'obtenerInfoFavoritos.php', params, { headers });
+  }
 
   obtenerInfoUsuario2(p_id: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_id=" + p_id;
+    let params = "p_id_usuario=" + p_id;
     return this.httpclient.post(this.url + 'obtenerInfoUsuario2.php', params, { headers });
   }
 
@@ -688,8 +693,6 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_Inmueble='+p_id_Inmueble;
     return this.httpclient.post(this.url + 'GenerarPDF.php', params, { headers });
-
-
   }
 
   borrarlikes(idUser: any,idInm: any){
@@ -710,4 +713,17 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_actualiza_responsable.php', params, { headers });
   }
 
+  Grupos_Asignados(IdSocio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_IdSocio=' + IdSocio;
+    return this.httpclient.post(this.url + 'sp_web_Grupos_Asignados.php', params, { headers });
+
+  }
+
+  verificaSub(p_id_usuario:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario;
+    return this.httpclient.post(this.url + 'sp_web_validaSuscripcion.php', params, { headers });
+  }
 }
+
