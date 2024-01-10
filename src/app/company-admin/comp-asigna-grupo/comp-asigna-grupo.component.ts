@@ -47,11 +47,7 @@ export class CompAsignaGrupoComponent implements OnInit {
   informacion: informacionA[]=[];
 
   datosAsesores: AsigarReAsignar[]=[];
-
-
-
- 
- 
+  
   
   constructor(
     public dialog: MatDialog,
@@ -90,9 +86,8 @@ export class CompAsignaGrupoComponent implements OnInit {
  
   obtenerConteo(){
     let IdSocio = localStorage.getItem("Id_Socio");
-    this.http.Aginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
+    this.http.Grupos_Asignados(IdSocio).subscribe((data:any)=>{
       this.datosAsesores=data;
-    
     });
   }
 

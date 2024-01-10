@@ -6,6 +6,10 @@ import { ThisReceiver } from '@angular/compiler';
 import { Broker } from 'src/app/services/Interface/Interfaces';
 import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
 import { HitoGeneral } from 'src/app/services/Interface/Interfaces';
+
+
+
+
 interface estatus {
   value: string;
   viewValue: string;
@@ -30,7 +34,7 @@ export class FechashitoComponent implements OnInit {
 
   ngOnInit(): void {
     this.onDateSelected(this.selected);
-    this.SeleccionBrokers();
+    this.SeleccionaAsesorhito();
     const fecha = new Date();
     const hora = fecha.getHours();
 
@@ -261,8 +265,8 @@ export class FechashitoComponent implements OnInit {
   broker !: Broker;
   brokers : Broker [] = [];
 
-  SeleccionBrokers(){
-    this.httpService.SeleccionarBrokers(localStorage.getItem("Id_Socio")).subscribe((resp:any)=>{
+  SeleccionaAsesorhito(){
+    this.httpService.SeleccionaAsesorhito(localStorage.getItem("Id_Usuario")).subscribe((resp:any)=>{
      if(resp !== 201){
       
     
