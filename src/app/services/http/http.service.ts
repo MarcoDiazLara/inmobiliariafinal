@@ -688,8 +688,6 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_Inmueble='+p_id_Inmueble;
     return this.httpclient.post(this.url + 'GenerarPDF.php', params, { headers });
-
-
   }
 
   borrarlikes(idUser: any,idInm: any){
