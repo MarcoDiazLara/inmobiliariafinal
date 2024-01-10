@@ -28,7 +28,7 @@ export class CalendarioComponent implements AfterViewInit {
       plugins: [dayGridPlugin],
       validRange: {
         start: '2023-01-01',
-        end: '2023-12-31',
+        end: '2040-12-31',
       },
       initialView: 'dayGridMonth',
       showNonCurrentDates: true,
@@ -108,4 +108,3 @@ export class CalendarioComponent implements AfterViewInit {
     });
   }
 }
-

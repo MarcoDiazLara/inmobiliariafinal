@@ -1,0 +1,26 @@
+
+/* Estilos personalizados para el calendario FullCalendar */
+
+#calendar {
+    /* Agrega estilos generales al contenedor del calendario */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Estilos para las celdas del día en el calendario */
+#calendar .fc-day {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Estilos para el encabezado del día de la semana */
+#calendar .fc-head {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Estilos para la celda del día cuando se pasa el ratón sobre ella */
+#calendar .fc-day:hover {
+    border: 1px solid #999;
+}

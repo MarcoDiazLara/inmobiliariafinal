@@ -91,6 +91,8 @@ public Venta: Boolean = false;
     this.imagen3 = this.details.Picture3;
     this.imagen4 = this.details.Picture4;
     this.imagen5 = this.details.Picture5;
+    this.precio  = this.details.Precio_Final;
+    
     this.tipo = this.details.Id_Tipo_Publicacion;
     this.vista_360 = this.details[360];
   
@@ -145,6 +147,7 @@ public Venta: Boolean = false;
   imagen3 !: string;
   imagen4 !: string;
   imagen5 !: string;
+  precio!:   string;
   
   details !: infoInmuebles;
   imagenesCarrusel: any[] = [

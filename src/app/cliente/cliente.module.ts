@@ -44,10 +44,11 @@ import { FormBuilder } from '@angular/forms';
 /end/
 import { WebModule } from '../web/web.module';
 import { MenuComponent } from '../web/menu/menu.component';
-import { CalendarioComponent } from './calendario/calendario.component';
+
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 
 
@@ -62,9 +63,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     ClienteComponent,
     ClientepasswordComponent,
     NotificacionesclienteComponent,
-    CalendarioComponent,
+  
     DialogComponent,
     PerfilclienteComponent,
+    CalendarioComponent,
     
 
   ],
