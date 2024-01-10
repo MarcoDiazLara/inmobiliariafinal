@@ -81,7 +81,8 @@ export class MenuComponent implements OnInit {
       "Id_Tipo_Usuario",
       "Id_Tipo_Plan",
       "Bandera",
-      "Id_Socio"
+      "Id_Socio",
+      "tipodeplan"
     ];
     itemsToRemove.forEach(item => {
       localStorage.removeItem(item);

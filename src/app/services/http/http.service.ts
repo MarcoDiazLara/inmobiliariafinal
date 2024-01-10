@@ -714,4 +714,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_Grupos_Asignados.php', params, { headers });
 
   }
+
+  verificaSub(p_id_usuario:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario;
+    return this.httpclient.post(this.url + 'sp_web_validaSuscripcion.php', params, { headers });
+  }
 }
