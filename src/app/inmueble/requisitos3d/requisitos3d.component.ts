@@ -11,6 +11,7 @@ import { MetododepagoComponent } from 'src/app/metododepago/metododepago.compone
 
 
 
+
 interface selects {
   value: string;
   viewValue: string;
@@ -27,6 +28,7 @@ interface ColorOption {
   styleUrls: ['./requisitos3d.component.scss']
 })
 export class Requisitos3dComponent implements OnInit {
+  value = 'Clear me';
   form: FormGroup;
   // usuarios: FormArray;
   forms: FormGroup[] = [];
@@ -78,6 +80,9 @@ export class Requisitos3dComponent implements OnInit {
       Ancho: ['', [Validators.required]],
       Altura: ['', [Validators.required]],
       img: ['', [Validators.required]],
+      Correo:['', [Validators.required]],
+      Telefono:['', [Validators.required]],
+      planos:['', [Validators.required]],
 
 
     }));
@@ -100,6 +105,9 @@ export class Requisitos3dComponent implements OnInit {
       Ancho: ['', [Validators.required]],
       Altura: ['', [Validators.required]],
       img: ['', [Validators.required]],
+      Correo:['', [Validators.required]],
+      Telefono:['', [Validators.required]],
+      planos:['', [Validators.required]],
     });
 
     this.pdf = this.fb.group({
@@ -355,6 +363,21 @@ export class Requisitos3dComponent implements OnInit {
   onFileChange2(event: any): void {
     this.archivos = event.target.files;
   }
+
+   NuevosDatos(){
+  this.httpService.subirModelado(localStorage.getItem("Id_Inmueble"),this.miFormulario.value.name,this.miFormulario.value.Correo,this.miFormulario.value.Telefono,this.miFormulario.value.planos,"","","","","").subscribe((data:any)=>{
+  let Correo="Hola me comunico para el modelado" + this.miFormulario.value.name + this.miFormulario.value.Telefono;
+  this.httpService.EnviarCorreo("marko_lar@hotmail.com",Correo).subscribe((data:any)=>{
+    alert("se mando tu correo");
+  })
+  })
+
+
+
+   }
+
+
+
 
 
 

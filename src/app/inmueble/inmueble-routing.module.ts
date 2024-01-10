@@ -10,6 +10,7 @@ import { MenuinmuebleComponent } from './menuinmueble/menuinmueble.component';
 import { AvisosComponent } from './avisos/avisos.component';
 
 import { ContratosComponent } from './contratos/contratos.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,9 @@ const routes: Routes = [
     path:'contratos', component:ContratosComponent
 
   },
+  {
+    path:'favoritos', component:FavoritosComponent
+  }
   // {
   //   path:'inmobiliariacorredor',component:inmobiliariacorredor
   // }
