@@ -61,7 +61,7 @@ export class CompAsignaGrupoComponent implements OnInit {
     let Bandera = localStorage.getItem("Bandera")
 
     if(Bandera =="1"){
-    //  this.obtenerConteo();
+      this.obtenerConteo();
 
      this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
