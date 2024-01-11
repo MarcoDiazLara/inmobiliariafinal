@@ -5,6 +5,9 @@
 <div class="container-fluit">
     <div class="encabezado">
       <h1>Calendario</h1>
+      
+             
+         
       <button class="btnAdd" (click)="addEvent()"><mat-icon>add</mat-icon> Crear </button>
       <ul *ngIf="ShowAddEvent" class="ShowAddEvent">
         <div class="barraAzul">Crear un evento nuevo <mat-icon (click)="closeEvent()">clear</mat-icon></div>
@@ -42,16 +45,11 @@
                 <input type="text" class="inputDescripcion" placeholder="" [(ngModel)]="Descripcion" >
                 <label for="" class="label">Descripcion</label>
                 
-      
+                
               </div>
-              <!-- <div style="display: flex; align-items: center;">
-                <h4>
-                  <mat-icon style="vertical-align: -5px; margin-right: 5px;" >notifications_active</mat-icon>
-                  Activar Notificaciones 
-                  <mat-checkbox color="primary" style="margin-left: 5px;" [(ngModel)]="notificacionesActivadas" ></mat-checkbox>
-                </h4>
-              </div> -->
-              <mat-form-field>
+              <button mat-button  (click)="Ocultar()">Presionar si quieres asignar una tarea</button>
+             
+              <mat-form-field [hidden]="!mostrarbroker">
                 <mat-label><h4>Asignacion de tarea</h4></mat-label>
                 <mat-select [(ngModel)]="selectedStatus">
                   <mat-option *ngFor="let bro of brokers" [value]="bro.Id_Usuario">
@@ -184,6 +182,16 @@
                 </mat-option>
               </mat-select>
             </mat-form-field> -->
+            <button mat-button  (click)="Ocultar()" [(ngModel)]="mostrarbroker">Presionar si quieres asignar una tarea</button>
+             
+            <mat-form-field [hidden]="!mostrarbroker">
+              <mat-label><h4>Asignacion de tarea</h4></mat-label>
+              <mat-select [(ngModel)]="selectedStatus">
+                <mat-option *ngFor="let bro of brokers" [value]="bro.Id_Usuario">
+                  {{ bro.Nombres + " " + bro.Apellido_Paterno + " " + bro.Apellido_Materno}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
             
             
