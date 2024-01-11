@@ -15,25 +15,27 @@
   <br>
   <h2 class="text-center"> Especificaciones del Inmueble </h2>
   <form [formGroup]="miFormulario" >
-    <h2>Tienes Planos </h2>
-    <mat-radio-group aria-label="Select an option" formControlName="planos">
-      <mat-radio-button value="si">Si</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
+    <h2  class="text-center">Tienes Planos </h2>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-radio-group  aria-label="Select an option" formControlName="planos" >
+      <mat-radio-button style="margin-right: 15px;" color="primary"  value="si" >Si</mat-radio-button>
+      <mat-radio-button  style="margin-right: 15px;"  color="primary" value="no">No</mat-radio-button>
     </mat-radio-group>
-
-    <mat-form-field class="example-full-width">
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-form-field class="example-full-width"  style="margin-right: 15px;">
       <mat-label>Nombre</mat-label>
       <input matInput formControlName="name">
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" style="margin-right: 15px;">
       <mat-label>Correo</mat-label>
       <input matInput formControlName="Correo">
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" style="margin-right: 15px;">
       <mat-label>Telefono</mat-label>
       <input matInput formControlName="Telefono">
     </mat-form-field>
-    
+    </div>
     
   </form>
   <!-- <form [formGroup]="miFormulario"  enctype="multipart/form-data">
@@ -166,83 +168,6 @@
       </div>
 
     </div> -->
-    
-    <div class="card">
-     
-      <div class="content">
-    
-       <br>
-       <br>
-       <div class="title">Plan Gratuito</div>
-       <br>
-       <br>
-       <br>
-       <br>
-       
-       <div class="price">$0</div>
-       <br>
-       <div class="description">
-           <p>Características:</p>
-           <ul>
-               <li>Visibilidad Baja</li>
-            
-           </ul>
-       </div>
-     </div>
-     <button  class="but"  >
-      Actual
-     </button>
-   </div>
-   &nbsp; &nbsp; &nbsp; 
-   
-      <div class="card">
-     
-       <div class="content">
-     
-        <br>
-        <br>
-        <div class="title">Plan Básico</div>
-        <br>
-        <br>
-        <div class="price">$999/mes</div>
-        <br>
-        <div class="description">
-            <p>Características:</p>
-            <ul>
-                <li>5 Anuncios destacados</li>
-                <li>Plan con renovacion manual</li>
-                <li>Volumen de visitas: moderado</li>
-            </ul>
-        </div>
-      </div>
-      <button  class="but"  (click)="openDialog2(1)" >
-        Comprar
-      </button>
-    </div>
-    &nbsp; &nbsp; &nbsp;
-    <div class="card">
-      <div class="content">
-        <br>
-        <br>
-        <div class="title">Plan Intermedio</div>
-        <br>
-        <br>
-        <div class="price">$1499/mes</div>
-        <br>
-        <div class="description">
-            <p>Características:</p>
-    <ul>
-        <li>10 anuncios destacados</li>
-        <li>Plan de renovacion automatica</li>
-        <li>Volumen de visitas: Medio</li>
-    </ul>
-        </div>
-      </div>
-      <button class="but"   (click)="openDialog2(2)">
-        Comprar
-      </button>
-    </div>
-    &nbsp; &nbsp; &nbsp;
     <div class="card">
       <div class="content">
         <br>

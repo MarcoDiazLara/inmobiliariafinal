@@ -117,6 +117,9 @@ export class AltaBrokersComponent implements OnInit {
             })
           }else{
             //alert("Se ha insertado un nuevo usuario");
+            this.httpService.EnviarCorreo(email,"Bienvenido a InmobeWise. \n Hola, "+ nombre + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data)=>{
+              
+            })
             Swal.fire(
               'Exitosamente!',
               'Se ha insertado un nuevo usuario',

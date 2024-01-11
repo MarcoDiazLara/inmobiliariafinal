@@ -91,6 +91,8 @@ public Venta: Boolean = false;
     this.imagen3 = this.details.Picture3;
     this.imagen4 = this.details.Picture4;
     this.imagen5 = this.details.Picture5;
+    this.precio  = this.details.Precio_Final;
+    
     this.tipo = this.details.Id_Tipo_Publicacion;
     this.vista_360 = this.details[360];
   
@@ -145,6 +147,7 @@ public Venta: Boolean = false;
   imagen3 !: string;
   imagen4 !: string;
   imagen5 !: string;
+  precio!:   string;
   
   details !: infoInmuebles;
   imagenesCarrusel: any[] = [
@@ -159,25 +162,34 @@ public Venta: Boolean = false;
   
    abrirAplicacion() {
     // Intenta abrir la aplicación
-    window.location.href = "pouapp://";
+    //let id = this.id_inmueble;
+    let id = "16";
+    window.location.href = "inmobewise-app://id_inmueble="+ id;
 
     // Si no se puede abrir, redirige a la tienda de aplicaciones
-    setTimeout(function() {
-        window.location.href = "https://play.google.com/store/apps/details?id=me.pou.app";
-    }, 500);
+    let temporizador = setTimeout(function() {
+      // Redirige a la tienda de aplicaciones si no se abrió la aplicación
+      window.location.href = "https://play.google.com/store/apps/details?id=me.pou.app";
+  }, 500);
+
+  // Agrega un evento de manejo para el caso de éxito (la aplicación se abrió)
+  window.addEventListener("visibilitychange", function() {
+      // Limpia el temporizador para evitar la redirección a la tienda de aplicaciones
+      clearTimeout(temporizador);
+  });
+    // setTimeout(function() {
+    //     //window.location.href = "https://play.google.com/store/apps/details?id=me.pou.app";
+    // }, 500);
 }
   
   verificacion(){
     let navegador = navigator.userAgent;
         if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-         // window.location.href = this.route2.data['https://play.google.com/store/apps/details?id=me.pou.app'];
-         //window.open("https://play.google.com/store/apps/details?id=me.pou.app")
+         
          this.abrirAplicacion();
         } else {
             Swal.fire(
-              
-              // 'Para usar esta funcion utiliza tu dispositivo movil',
-              // icon: 'info'
+           
                "Información",
   "Para usar esta funcion utiliza tu dispositivo movil",
   "info"

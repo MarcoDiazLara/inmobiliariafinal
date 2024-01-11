@@ -168,7 +168,7 @@ export class VentanacitaComponent implements OnInit {
           'success'
           
         )
-
+        this.CerraDialogo();
         
        } else{
        //alert("No se agendo")
