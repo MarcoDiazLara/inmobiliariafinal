@@ -83,6 +83,9 @@ id_usuario!: String;
 
           this.esFavorito = !this.esFavorito;
           Swal.fire('Este inmueble se quito de sus favoritos');
+          this.httpService.obtenerInfoFavoritos(localStorage.getItem("Id_Usuario")).subscribe((data : any)=>{
+            this.infoFavoritos=data;
+          })
           
         })
         this.obtenerInfo();
