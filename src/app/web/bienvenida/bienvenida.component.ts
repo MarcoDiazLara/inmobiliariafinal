@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class BienvenidaComponent implements OnInit {
 
   saludo: string = '';
-
   constructor() { }
 
   ngOnInit(): void {

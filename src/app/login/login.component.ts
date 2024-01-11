@@ -77,7 +77,18 @@ login(){
            
           })
         }else{
-       if(data.Id_Tipo_Usuario == 11){
+          this.httpService.verificaSub(data.Id_Usuario).subscribe((data1: any) =>{
+              if(data1 == "1"){
+            Swal.fire(
+              'Aviso!',
+              'Su plan ha caducado, le recomendamos renovarlo, para no perder sus beneficios',
+              'info'
+              
+            )
+              }
+          })
+        
+       if(data.Id_Tipo_Usuario == 11){ //arvispace
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -88,6 +99,51 @@ login(){
        
         this.router.navigate(["/arvice/mostrarInmuebles"]);
        }else{
+        if(data.Id_Tipo_Usuario == 10){ //compania
+         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
+         localStorage.setItem("Id_Usuario", data.Id_Usuario);
+         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+         localStorage.setItem("Id_Socio", data.Id_Socio);
+         localStorage.setItem("Id_Tipo_Plan", data.Id_Tipo_Plan);
+         localStorage.setItem("Bandera","1");
+         this.httpService.setGlobalVariable(true);
+        
+         this.router.navigate(["/Company/bienvenida"]); // ruta 
+           }else{
+          if(data.Id_Tipo_Usuario == 2){  //broker
+            localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
+            localStorage.setItem("Id_Usuario", data.Id_Usuario);
+            localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+            localStorage.setItem("Id_Socio", data.Id_Socio);
+            localStorage.setItem("Id_Tipo_Plan", data.Id_Tipo_Plan);
+            localStorage.setItem("Bandera","1");
+            this.httpService.setGlobalVariable(true);
+           
+            this.router.navigate(["/usuario/bienvenida"]); // ruta 
+
+             } else{
+          if(data.Id_Tipo_Usuario == 5){ //dueno
+            localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
+            localStorage.setItem("Id_Usuario", data.Id_Usuario);
+            localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+            localStorage.setItem("Id_Socio", data.Id_Socio);
+            localStorage.setItem("Id_Tipo_Plan", data.Id_Tipo_Plan);
+            localStorage.setItem("Bandera","1");
+            this.httpService.setGlobalVariable(true);
+           
+            this.router.navigate(["/Dueno/bienvenida"]); // ruta 
+           } else{
+            if(data.Id_Tipo_Usuario == 3){ //Asesor
+              localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario); //id_redirijir
+              localStorage.setItem("Id_Usuario", data.Id_Usuario);
+              localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
+              localStorage.setItem("Id_Socio", data.Id_Socio);
+              localStorage.setItem("Id_Tipo_Plan", data.Id_Tipo_Plan);
+              localStorage.setItem("Bandera","1");
+              this.httpService.setGlobalVariable(true);
+             
+              this.router.navigate(["/asesor/Bienvenida"]); // ruta 
+           }else{
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);
         localStorage.setItem("Id_Tipo_Usuario", data.Id_Tipo_Usuario);
@@ -98,10 +154,14 @@ login(){
         this.router.navigate(["/index"]);
        }
         
-        }
+      }}
       }
     }
+    }
+  }
+    }
   });
+
 }
 
 registro(){

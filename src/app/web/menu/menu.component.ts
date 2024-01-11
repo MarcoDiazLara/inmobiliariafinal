@@ -81,13 +81,15 @@ export class MenuComponent implements OnInit {
       "Id_Tipo_Usuario",
       "Id_Tipo_Plan",
       "Bandera",
-      "Id_Socio"
+      "Id_Socio",
+      "tipodeplan"
     ];
     itemsToRemove.forEach(item => {
       localStorage.removeItem(item);
     })
     this.httpService.setGlobalVariable(false);
     this.router.navigate(["/web"]);
+    console.log("entro");
   }
 
 
@@ -126,7 +128,7 @@ export class MenuComponent implements OnInit {
     } else if (entrada == "4") {
       this.router.navigate(["cliente/cliente/Perfil"]);
     } else if (entrada == "10") {
-      this.router.navigate(["/Company/Perfil"]);
+      this.router.navigate(["/Company/bienvenida"]);
     }
     else if (entrada == "5") {
       this.router.navigate(["/Dueno/bienvenida"]);

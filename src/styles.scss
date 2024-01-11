@@ -14,9 +14,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 $custom-primary: (mat-palette($mat-blue)
 );
 
-$custom-accent: mat-palette($mat-orange);
+$custom-accent: mat-palette($mat-pink, 500, 100, 200);
 $custom-warn: mat-palette($mat-red);
 
 $custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
 
 @include angular-material-theme($custom-theme);
+
+

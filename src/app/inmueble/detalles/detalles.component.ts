@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
 import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
@@ -24,6 +24,29 @@ export interface DialogData {
   
 })
 export class DetallesComponent implements OnInit {
+  esFavorito: boolean = false;
+
+  toggleFavorito() {
+    
+    if(this.isLoggedIn){
+      console.log("Id _ usuario"+ localStorage.getItem("Id_Usuario")+ "Id_Inmueble" + this.id_inmueble);
+      this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.id_inmueble,"1").subscribe((data : any) =>{
+        if(data == 1){
+          this.esFavorito = !this.esFavorito;
+        Swal.fire({
+      
+          icon: 'success',
+          title: 'Se ha agregado a tus favoritos',
+         
+        })}else{
+          Swal.fire('Este inmueble, ya se encuentra en tus favoritos');
+        }
+      })
+      
+      } else{
+        Swal.fire('Inicia sesion para poder guardar favoritos');
+      } 
+  }
 
   isLoggedIn: boolean= false;
 
@@ -68,6 +91,8 @@ public Venta: Boolean = false;
     this.imagen3 = this.details.Picture3;
     this.imagen4 = this.details.Picture4;
     this.imagen5 = this.details.Picture5;
+    this.precio  = this.details.Precio_Final;
+    
     this.tipo = this.details.Id_Tipo_Publicacion;
     this.vista_360 = this.details[360];
   
@@ -105,7 +130,15 @@ public Venta: Boolean = false;
       });
     }
 
-
+    if(this.isLoggedIn){
+      
+      this.httpService.validarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data:any)=>{
+        console.log(data);
+        if(data == 1){
+          this.esFavorito = !this.esFavorito;
+        }   
+      })
+    }
     
 
   }
@@ -114,6 +147,7 @@ public Venta: Boolean = false;
   imagen3 !: string;
   imagen4 !: string;
   imagen5 !: string;
+  precio!:   string;
   
   details !: infoInmuebles;
   imagenesCarrusel: any[] = [
@@ -125,7 +159,35 @@ public Venta: Boolean = false;
   cambiarImagen(imagenUrl: string) {
     this.imagenPrincipalUrl = imagenUrl;
   }
+  
+   abrirAplicacion() {
+    // Intenta abrir la aplicación
+    window.location.href = "pouapp://";
 
+    // Si no se puede abrir, redirige a la tienda de aplicaciones
+    setTimeout(function() {
+        window.location.href = "https://play.google.com/store/apps/details?id=me.pou.app";
+    }, 500);
+}
+  
+  verificacion(){
+    let navegador = navigator.userAgent;
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+         // window.location.href = this.route2.data['https://play.google.com/store/apps/details?id=me.pou.app'];
+         //window.open("https://play.google.com/store/apps/details?id=me.pou.app")
+         this.abrirAplicacion();
+        } else {
+            Swal.fire(
+              
+              // 'Para usar esta funcion utiliza tu dispositivo movil',
+              // icon: 'info'
+               "Información",
+  "Para usar esta funcion utiliza tu dispositivo movil",
+  "info"
+              
+            )
+        }
+  }
 
   nombre: string = '';
   telefono: string = '';
@@ -218,8 +280,13 @@ Favoritos(){
       icon: 'success',
       title: 'Se ha agregado a tus favoritos',
      
-    })}else{
-      Swal.fire('Este inmueble, ya se encuentra en tus favoritos');
+    })
+    this.esFavorito = !this.esFavorito;}else{
+      this.httpService.borrarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data: any)=>{
+        this.esFavorito = !this.esFavorito;
+        Swal.fire('Este inmueble se quito de sus favoritos');
+      })
+      
     }
   })
   

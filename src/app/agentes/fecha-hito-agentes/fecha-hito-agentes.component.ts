@@ -1,7 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import Swal from 'sweetalert2';
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import esLocale from '@fullcalendar/core/locales/es';
 import { HttpService } from 'src/app/services/http/http.service';
+import { mostrarcita } from 'src/app/services/Interface/Interfaces';
 import { ThisReceiver } from '@angular/compiler';
 import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
 
@@ -22,11 +26,31 @@ export class FechaHitoAgentesComponent implements OnInit {
     constructor(private httpService:HttpService) {
 
   }
+
+  Mcita: mostrarcita[] = [];
+
+
+  hola(){
+
+    this.httpService.mostrarCita(localStorage.getItem('Id_Usuario')).subscribe(
+      (data: any) => {
+        this.Mcita = data;
+        console.log(this.Mcita);
+      },
+      (error) => {
+        console.error('Error al obtener citas', error);
+      }
+    );
+  
+    }
+  
+  
   saludo: string = '';
   mostrarfechashito:mostrarFechasHito[]=[];
 
 
   ngOnInit(): void {
+    this.hola();
     let dia= this.selected.getDate().toString();
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();

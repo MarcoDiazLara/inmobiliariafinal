@@ -64,13 +64,19 @@ export class CompAsignaBrokerComponent implements OnInit {
 
       this.http.insertarusuarioasignacion( this.Nombres,Id_Inmueble).subscribe((data: any) => {
         if (data == 1) {
+          // Swal.fire({
+          //   position: 'top-end',
+          //   icon: 'success',
+          //   title: 'El Broker fue asignado',
+          //   showConfirmButton: false,
+          //   timer: 1500
+          //})
+
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El Broker fue asignado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+            title: "Exito!",
+            text: "El Broker fue asignado",
+            icon: "success"
+          });
 
 
           this.closeDialog();
@@ -99,12 +105,11 @@ export class CompAsignaBrokerComponent implements OnInit {
         if (resp == 1) {
 
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El broker fue reasignado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+            title: "Exito!",
+            text: "El Broker fue actualizado",
+            icon: "success"
+          });
+
           this.closeDialog();
 
         } else {

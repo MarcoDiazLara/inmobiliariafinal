@@ -7,15 +7,35 @@
             <br> 
             <h2 class="text-center">¿A quien le pertenece el inmueble?</h2> 
             <div style="display: flex; justify-content: center; align-items: center;">
-              <mat-form-field >
+              <!-- <mat-form-field >
                 <mat-label> usuario</mat-label>
                 <mat-select formControlName ="Id_Usuario">
                   <mat-option *ngFor="let food of SeleccionDueno" [value]="food.Id_Usuario">
                     {{food.Nombres + " " + food.Apellido_Paterno+" "+ food.Apellido_Materno}}
                 </mat-option>
                 </mat-select>
-              </mat-form-field>
+              </mat-form-field> -->
+              <div class="center-content">
+              <button color="primary" mat-button (click)="Ocultar()" [(ngModel)]="mostrarSeccionCodigo">Presionar si el inmueble pertenece a un cliente</button>
             </div>
+            <br>
+            <br>
+            <br>
+            
+
+              
+            </div>
+            <div class="center-content">
+            <mat-form-field [hidden]="!mostrarSeccionCodigo">
+            
+              <mat-label>Usuario</mat-label>
+              <mat-select formControlName="Id_Usuario">
+                <mat-option *ngFor="let food of SeleccionDueno" [value]="food.Id_Usuario">
+                  {{food.Nombres + " " + food.Apellido_Paterno + " " + food.Apellido_Materno}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
             <h2 class="text-center">¿Qué vas a realizar?</h2>
             <br>
             <h3 class="text-center">Tipo de operación</h3>

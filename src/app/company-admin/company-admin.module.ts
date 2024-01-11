@@ -30,7 +30,6 @@ import {MatMenuModule} from '@angular/material/menu';
 
 
 import { CompanyAdminpasswordComponent } from './ventanaemergente/company-adminpassword/company-adminpassword.component';
-import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { AltaBrokersComponent } from './alta-brokers/alta-brokers.component';
 import { NotificacionescompanyAdminComponent } from './notificacionescompany-admin/notificacionescompany-admin.component';
 import { CompAsignarAsesorComponent } from './ventanaemergente/comp-asignar-asesor/comp-asignar-asesor.component';
@@ -41,7 +40,7 @@ import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
 import { InmuebledetallesadminComponent } from './ventanaemergente/inmuebledetallesadmin/inmuebledetallesadmin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { InformacionusuariosadmComponent } from './ventanaemergente/informacionusuariosadm/informacionusuariosadm.component';
-
+import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { InformacionInmuebleComponent } from './ventanaemergente/informacion-inmueble/informacion-inmueble.component';
 import { AdminhitoComponent } from './adminhito/adminhito.component';
@@ -60,6 +59,7 @@ import { registerLocaleData } from '@angular/common';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { AsignarReasignarUserComponent } from './asignar-reasignar-user/asignar-reasignar-user.component';
+import { CompBrokerComponent } from './ventanaemergente/comp-broker/comp-broker.component';
 
 
 
@@ -71,8 +71,8 @@ registerLocaleData(localeEs);
   declarations: [
     CompanyAdminComponent,
     CompanyAdminpasswordComponent,
-    PerfilcompanyAdminComponent,
     AltaBrokersComponent,
+    PerfilcompanyAdminComponent,
     NotificacionescompanyAdminComponent,
     Inventarioadmin,
     CompAsignarAsesorComponent,
@@ -89,7 +89,8 @@ registerLocaleData(localeEs);
     UsuariosbrokerComponent,
     EstatususuarioComponent,
     EstatusComponent,
-    AsignarReasignarUserComponent
+    AsignarReasignarUserComponent,
+    CompBrokerComponent
     
 
     

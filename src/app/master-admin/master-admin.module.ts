@@ -34,6 +34,7 @@ import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin
 import {MatMenuModule} from '@angular/material/menu';
 import { MasterEstatususuarioComponent } from './master-estatususuario/master-estatususuario.component';
 import { MasterestatusComponent } from './ventanaemergente/masterestatus/masterestatus.component';
+import { SepomexComponent } from './sepomex/sepomex.component';
 
 
 
@@ -50,6 +51,7 @@ import { MasterestatusComponent } from './ventanaemergente/masterestatus/mastere
   NotificacionesmasterAdminComponent,
   MasterEstatususuarioComponent,
   MasterestatusComponent,
+  SepomexComponent,
 
  
   

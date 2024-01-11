@@ -8,6 +8,7 @@ import { QuierescomprarComponent } from '../web/quierescomprar/quierescomprar.co
 import { CalendarioComponent } from './calendario/calendario.component';
 
 
+
 const routes: Routes = [
 
   { path: '', redirectTo: 'cliente', pathMatch: 'full' },
@@ -27,8 +28,10 @@ const routes: Routes = [
       },
       {
         path:'calendario',
-        component:CalendarioComponent,
+        component: CalendarioComponent,
       },
+      
+     
 
     ],
   },

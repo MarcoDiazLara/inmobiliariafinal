@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { VentanasEmergentesModuloModule } from './arvice-space/ventanas-emergentes/ventanas-emergentes.module';
-
+import {MatBadgeModule} from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroComponent } from './registro/registro.component';
@@ -107,6 +107,7 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
     MatExpansionModule,
     MatCardModule,
     MatChipsModule,
+    MatBadgeModule,
     WebModule,
 
 

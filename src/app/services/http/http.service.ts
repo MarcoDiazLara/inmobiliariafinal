@@ -149,10 +149,15 @@ export class HttpService {
     let params = "p_id=" + p_id;
     return this.httpclient.post(this.url + 'obtenerInfoUsuario.php', params, { headers });
   }
+  obtenerInfoFavoritos(p_id: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_id_usuario=" + p_id;
+    return this.httpclient.post(this.url + 'obtenerInfoFavoritos.php', params, { headers });
+  }
 
   obtenerInfoUsuario2(p_id: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_id=" + p_id;
+    let params = "p_id_usuario=" + p_id;
     return this.httpclient.post(this.url + 'obtenerInfoUsuario2.php', params, { headers });
   }
 
@@ -576,9 +581,9 @@ export class HttpService {
     let params = 'p_Id_Socio=' + Id_Socio;
     return this.httpclient.post(this.url + 'sp_web_selecciona_broker.php', params, { headers });
   }
-  mostrarAsesorhito(Id_Socio: any) {
+  SeleccionaAsesorhito(p_id_user: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Socio=' + Id_Socio;
+    let params = 'p_id_user=' + p_id_user;
     return this.httpclient.post(this.url + 'sp_web_selecciona_asesor.php', params, { headers });
   }
 
@@ -671,11 +676,54 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertar_rutas_arvice.php', params, { headers });
   }
 
-  insertarPlanes(p_planos:any,p_Id_Inmueble:any){
+  insertarPlanos(p_planos:any,p_Id_Inmueble:any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_planos=' + p_planos  + '&p_Id_Inmueble=' + p_Id_Inmueble;
     return this.httpclient.post(this.url + 'sp_web_InserPlanos.php', params, { headers });
 
   }
 
+  insertaResponsable(Id_Asesor: any, Id_Responsable: any, Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Asesor=' + Id_Asesor + '&p_Id_Responsable=' + Id_Responsable + '&p_Id_Socio=' + Id_Socio + '&p_estatus_Suscripcion=';
+    return this.httpclient.post(this.url + 'sp_web_insertar_responsable.php', params, { headers });
+  }
+
+  generarPDFmodelado3D(p_id_Inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_Inmueble='+p_id_Inmueble;
+    return this.httpclient.post(this.url + 'GenerarPDF.php', params, { headers });
+  }
+
+  borrarlikes(idUser: any,idInm: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'idUser=' + idUser  + '&idInm=' + idInm;
+    return this.httpclient.post(this.url + 'sp_web_borrarlikes.php', params, { headers });
+  }
+
+  validarlikes(p_id_usuario: any, p_id_inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario  + '&p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_validalikes.php', params, { headers });
+  }
+
+  actualizarResponsable(Id_Asesor: any, Id_Responsable: any, Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Asesor=' + Id_Asesor + '&p_Id_Responsable=' + Id_Responsable + '&p_Id_Socio=' + Id_Socio + '&p_estatus_Suscripcion=';
+    return this.httpclient.post(this.url + 'sp_web_actualiza_responsable.php', params, { headers });
+  }
+
+  Grupos_Asignados(IdSocio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_IdSocio=' + IdSocio;
+    return this.httpclient.post(this.url + 'sp_web_Grupos_Asignados.php', params, { headers });
+
+  }
+
+  verificaSub(p_id_usuario:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario;
+    return this.httpclient.post(this.url + 'sp_web_validaSuscripcion.php', params, { headers });
+  }
 }
+

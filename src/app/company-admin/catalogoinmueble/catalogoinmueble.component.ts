@@ -22,6 +22,8 @@ import { MetododepagoComponent } from 'src/app/metododepago/metododepago.compone
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { selecionD } from 'src/app/services/Interface/Interfaces';
+
+
 interface Food {
   value: string;
   viewValue: string;
@@ -86,8 +88,11 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
     longitud: number = 0.0000;
     p_ubi_maps: string = "0.00000,0.00000";
     plan !: any;
+    mostrarSeccionCodigo: boolean = false;
   
-  
+    Ocultar(){
+      this.mostrarSeccionCodigo = !this.mostrarSeccionCodigo;
+    }
     ngOnInit(){
       this.selccionDueños();
       this.obtenerDatosInmuebles();
@@ -224,6 +229,7 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
     
   
     subirInmueble(){
+      let idaux;
       let date = new Date();
       
       this.subir_imagenes();
@@ -280,11 +286,17 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
       let p_video = "video 1";
       let p_id_asentamiento = this.secondFormGroup.value.pId_asentamiento;
       let p_id_tipo_inmueble = this.firstFormGroup.value.pId_Tipo_Inmueble;
-      let p_update = this.firstFormGroup.value.Id_Usuario;
+      //let p_update = this.firstFormGroup.value.Id_Usuario;
       let p_prec_min1 = this.secondFormGroup.value.p_prec_min;
       let p_prec_max1 = this.secondFormGroup.value.p_prec_max;
       let p_prec_final1 = this.secondFormGroup.value.p_prec_final;
       let p_Id_Tipo = this.firstFormGroup.value.pId_Tipo_Publicacion;
+
+      if(this.mostrarSeccionCodigo){
+        idaux = this.firstFormGroup.value.Id_Usuario;
+      }else{
+        idaux = localStorage.getItem("Id_Usuario")
+      }
       
    
       
@@ -292,7 +304,7 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
   
       this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
         p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados1,p_alberca1, p_jardin1,p_gym1,
-        p_roof,p_estacionamiento,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,p_update, p_prec_min1,p_prec_max1,
+        p_roof,p_estacionamiento,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,idaux, p_prec_min1,p_prec_max1,
         p_prec_final1,p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) =>{
         if(data == 1){
   
@@ -302,8 +314,15 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
             'success'
             
           )
-          // alert("Se subio el inmueble");
-          this.router.navigate(["/inmueble/avisos"]);
+          this.firstFormGroup.reset();
+          this.imageForm.reset();
+          this.secondFormGroup.reset();
+          this.tercerFormGroup.reset();
+    
+    
+          
+    
+            this.router.navigate(["/Company/Inventario"]);
           
         } else{
           Swal.fire({
@@ -315,6 +334,9 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
           //alert("Error al subir inmueble");
         }
          })
+      
+      
+    
     }
   
          
