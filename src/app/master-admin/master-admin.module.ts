@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MasterAdminRoutingModule } from './master-admin-routing.module';
 import { MasterAdminComponent } from './master-admin.component';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
@@ -25,6 +25,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
 import {EliminarasesoresComponent} from './eliminarasesores/eliminarasesores.component';
 import { AltausuarioComponent } from './altausuario/altausuario.component';
 import { AltasocioComponent } from './altasocio/altasocio.component';
@@ -78,9 +79,11 @@ import { SepomexComponent } from './sepomex/sepomex.component';
     MatDialogModule,
     MatCheckboxModule,
     MatNativeDateModule, 
+    MatExpansionModule,
     NgFor,
     NgIf,
     MatDatepickerModule,
+    MatChipsModule,
     MatMenuModule,
   ]
 })

@@ -1,10 +1,17 @@
- h1{
-    margin-left: 20px;
 
- }
+h1 {
+    font-family: 'Secular One', sans-serif;
+    margin-left: 20px;
+    color: #264D5E;
+    font-size: 45px;
+  }
  h3{
     margin-left: 20px;
+    color: #264D5E;
+ }
 
+ .warning{
+    color:#ff4949
  }
 
 
@@ -22,6 +29,16 @@
     height: 50px;
     margin-right: 40px;
     margin-left: 30px;
+}
+
+.acordeon{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+}
+
+.description{
+    float: right;
 }
 
 .file-input-container {

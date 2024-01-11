@@ -80,3 +80,50 @@
 .space-panel {
     height: 30vh;
 }
+
+
+
+
+.icon-size {
+    font-size:16px;
+}
+
+.borders {
+    border-radius: 20px;
+}
+
+.nav-pills {
+    --bs-nav-pills-border-radius: var(--bs-border-radius);
+    --bs-nav-pills-link-active-color: #fff;
+    --bs-nav-pills-link-active-bg: #264D5E;
+}
+
+.nav-pills .nav-link {
+    border-radius: var(--bs-nav-pills-border-radius);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: var(--bs-nav-pills-link-active-bg);
+    border: 1px solid #264D5E;
+}
+
+.container-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    width: 100%;
+}
+
+.header-card {
+    background-color: #264D5E;
+}
+
+.background-find {
+    background-color: #95919338;
+}

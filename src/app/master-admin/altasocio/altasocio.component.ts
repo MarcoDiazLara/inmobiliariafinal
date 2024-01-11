@@ -160,6 +160,9 @@ selectedImages!: FileList;
       descripcionusuario,rfc,curp,localStorage.getItem("Id_Usuario"),nombrerazons,Logo,rfcempresa,email,contactoempresa,calle,numext,numint,asentamientos,tipo_socio,localStorage.getItem("Id_Usuario")).subscribe((data:any) =>{
         if(data == 1){
           //alert("se Ha insertado")
+          this.httpService.EnviarCorreo(correo,"Bienvenido a InmobeWise. \n Hola, "+ nombre + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data)=>{
+              
+          })
           Swal.fire(
             'Exitosamente!',
             'Se ha registrado un nuevo socio',
