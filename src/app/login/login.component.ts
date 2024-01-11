@@ -77,6 +77,17 @@ login(){
            
           })
         }else{
+          this.httpService.verificaSub(data.Id_Usuario).subscribe((data1: any) =>{
+              if(data1 == "1"){
+            Swal.fire(
+              'Aviso!',
+              'Su plan ha caducado, le recomendamos renovarlo, para no perder sus beneficios',
+              'info'
+              
+            )
+              }
+          })
+        
        if(data.Id_Tipo_Usuario == 11){ //arvispace
         localStorage.setItem("Nombre_Usuario",data.Nombre_Usuario);
         localStorage.setItem("Id_Usuario", data.Id_Usuario);

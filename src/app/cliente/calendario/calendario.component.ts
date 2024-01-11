@@ -15,6 +15,8 @@ import esLocale from '@fullcalendar/core/locales/es';
 export class CalendarioComponent implements AfterViewInit {
   constructor(private httpService: HttpService, private dialog: MatDialog) {}
 
+  
+
   Mcita: mostrarcita[] = [];
 
   ngAfterViewInit(): void {
@@ -107,4 +109,11 @@ export class CalendarioComponent implements AfterViewInit {
       },
     });
   }
+
+     
+
+
+
+ 
+
 }

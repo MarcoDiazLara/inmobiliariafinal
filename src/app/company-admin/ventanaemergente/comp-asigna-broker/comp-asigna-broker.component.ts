@@ -73,7 +73,7 @@ export class CompAsignaBrokerComponent implements OnInit {
           //})
 
           Swal.fire({
-            title: "Good job!",
+            title: "Exito!",
             text: "El Broker fue asignado",
             icon: "success"
           });
@@ -105,12 +105,11 @@ export class CompAsignaBrokerComponent implements OnInit {
         if (resp == 1) {
 
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El broker fue reasignado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+            title: "Exito!",
+            text: "El Broker fue actualizado",
+            icon: "success"
+          });
+
           this.closeDialog();
 
         } else {
