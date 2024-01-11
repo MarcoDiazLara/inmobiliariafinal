@@ -6,6 +6,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Broker } from 'src/app/services/Interface/Interfaces';
 import { mostrarFechasHito } from 'src/app/services/Interface/Interfaces';
 import { HitoGeneral } from 'src/app/services/Interface/Interfaces';
+
 interface estatus {
   value: string;
   viewValue: string;
@@ -24,6 +25,10 @@ export class AdminhitoComponent implements OnInit {
   
   saludo: string = '';
    Aux!: HitoGeneral;
+   mostrarbroker: boolean = false;
+   Ocultar(){
+    this.mostrarbroker = !this.mostrarbroker;
+  }
 
   ngOnInit(): void {
     this.onDateSelected(this.selected);
@@ -50,6 +55,7 @@ export class AdminhitoComponent implements OnInit {
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
+    
     //console.log(fecha1);
     // this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
     //   this.mostrarfechashito=data;
@@ -77,11 +83,7 @@ export class AdminhitoComponent implements OnInit {
   fechaCierre1: any;
   Descripcion1: string = '';
   
-  status: estatus[] = [
-    {value: 'Ninguno', viewValue: 'ninguno'},
-    {value: 'Ocupado', viewValue: 'Ocupado'},
-    {value: 'Pendiente', viewValue: 'Pendiente'},
-  ];
+
 
   ver(){
     this.selected = new Date();
@@ -191,13 +193,25 @@ export class AdminhitoComponent implements OnInit {
     let anios= this.fechaCierre.getFullYear().toString();
     let fecha2= anios+ "-" + mess +"-"+ dias;
     let aux ="";
+ 
+    
     if (this.notificacionesActivadas == true ){
       aux = "1";
     }else {
       aux = "0";
     }
 
-    this.httpService.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion, this.selectedStatus ).subscribe((data:any)=>{
+     //  ----------- Mostrar el select---------------
+     let idaux;
+     if(this.mostrarbroker){
+       idaux = this.selectedStatus;
+     }else{
+       idaux = localStorage.getItem("Id_Usuario")
+     }
+     // -----------------------------------
+    
+
+    this.httpService.insertEvent(this.asunto, fecha1, fecha2, this.Descripcion,idaux ).subscribe((data:any)=>{
       if (data == 1){
         Swal.fire({
           position: "center",
