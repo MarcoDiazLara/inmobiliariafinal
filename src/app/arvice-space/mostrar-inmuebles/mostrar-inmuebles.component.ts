@@ -149,16 +149,16 @@ export class MostrarInmueblesComponent implements OnInit {
     //this.httpService.setGlobalVariable(false);
 
   }
-  descargarArchivo(): void {
-    const enlace = document.createElement('a') as HTMLAnchorElement;
-    enlace.href = 'https://inmobiliaria.arvispace.com/imagenes/1413';
-    enlace.download = 'pruebaDescarga';
+  // descargarArchivo(): void {
+  //   const enlace = document.createElement('a') as HTMLAnchorElement;
+  //   enlace.href = 'https://inmobiliaria.arvispace.com/imagenes/1413';
+  //   enlace.download = 'pruebaDescarga';
 
-    document.body.appendChild(enlace);
-    enlace.click();
+  //   document.body.appendChild(enlace);
+  //   enlace.click();
 
-    document.body.removeChild(enlace);
-  }
+  //   document.body.removeChild(enlace);
+  // }
 
   recuperarIdInmueble(id: number) {
     let idInmue = this.idInmueble = id;

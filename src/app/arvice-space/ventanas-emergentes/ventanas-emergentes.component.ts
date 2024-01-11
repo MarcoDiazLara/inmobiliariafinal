@@ -64,12 +64,9 @@ export class VentanasEmergentesComponent {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Campos requeridos, favor de seleccionar ambos archivos!",
-
+        text: "Campos requeridos, favor de seleccionar ambos archivos!"
       });
-    } else {
-      //logica para insertar al sevidor y rutas a la base de datos 
-
+      this.loading = false;
     }
   }
   //----------------------------------------------------------------------------------------------
