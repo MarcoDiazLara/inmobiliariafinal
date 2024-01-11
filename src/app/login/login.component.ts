@@ -81,9 +81,8 @@ login(){
               if(data1 == "1"){
             Swal.fire(
               'Aviso!',
-              'Su plan ha caducado, le recomendamos renovarlo, para no perder sus beneficios',
+              'Tu plan caduca el dia de hoy, le recomendamos renovarlo, para no perder sus beneficios',
               'info'
-              
             )
               }
           })

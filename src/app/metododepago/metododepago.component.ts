@@ -70,11 +70,14 @@ export class MetododepagoComponent implements OnInit {
     }
     let anio = date.getFullYear().toString();
     let nom_aux =  anio + "-"+ mes1 +"-"+ dia1;
+    let plan = localStorage.getItem("tipodeplan");
     this.httpService.compraPlanes(localStorage.getItem("Id_Usuario"),localStorage.getItem("tipodeplan"),"Completado", "Activo", nom_aux).subscribe((data : any)=>{
       if(data == 1){
         this.httpService.obtenerInfoUsuario(localStorage.getItem("Id_Usuario")).subscribe((data1:any)=>{
           this.httpService.EnviarCorreo(data1.Email, "Gracias por contratar un plan con nosotros, disfruta de tus nuevos beneficios, con amor InmobeWise").subscribe((data)=>{
-
+            if(plan != null){
+          localStorage.setItem("Id_Tipo_Plan", plan);
+            }
           })
         })
       this.mostrarAlerta();
