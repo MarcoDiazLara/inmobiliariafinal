@@ -65,8 +65,6 @@ export class CambioasesorComponent implements OnInit {
 
 
   Guardardatos() {
-
-
     if (this.formGeneral) {
 
       let Inmueble = this.formGeneral.value.Inmueble;
