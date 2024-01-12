@@ -3,7 +3,6 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
-import { AsignacionBroker } from 'src/app/services/Interface/Interfaces';
 import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
 import { Asig_Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -32,14 +31,15 @@ export class BrokersAsignarReasignarComponent implements OnInit {
   displayedColumns = [
     'Nombre_Inmueble',
     'Calle',
-    'Nombre_Usuario',
-    'Broker',
+    'Num_Ext',
+    'Municipio',
+    'Nombres',
     'btOpciones'
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Nombre_Usuario','Broker','botonOption'];
+  columnas: string[] = ['Nombre_Inmueble', 'Calle','Num_Ext','Municipio','Nombres','botonOption'];
   
   // poner el nombre de una variable
   datosinfo: Asig_Inmuebles[]=[];
@@ -63,7 +63,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
     // let Bandera = localStorage.getItem("Bandera")
     // if(Bandera =="1")
     {
-     this.obtenerConteo();
+    //  this.obtenerConteo();
 
      this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
       if(usuarios !== null){
@@ -84,19 +84,19 @@ export class BrokersAsignarReasignarComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
  
-  obtenerConteo(){
-    let IdSocio = localStorage.getItem("Id_Socio");
-    this.http.Aginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
-      this.datos=data;
+  // obtenerConteo(){
+  //   let IdSocio = localStorage.getItem("Id_Socio");
+  //   this.http.Aginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
+  //     this.datos=data;
     
-    });
-  }
+  //   });
+  // }
     
   obtenerUsuarios(){
     let Id_Socio = localStorage.getItem("Id_Socio");
     let Id_Usuario = localStorage.getItem("Id_Usuario");
 
-    this.httpService.Asignaciones_asesor(Id_Socio,Id_Usuario).subscribe((data:any)=>{
+    this.httpService.Asignaciones_asesor(Id_Socio, Id_Usuario).subscribe((data:any)=>{
     
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
