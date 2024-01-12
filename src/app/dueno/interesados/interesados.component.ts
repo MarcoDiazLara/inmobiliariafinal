@@ -20,7 +20,7 @@ export class InteresadosComponent implements OnInit {
 
   constructor(private router: Router,private http:HttpService,private formBuilder: FormBuilder,private adminService: GlobalService) { }
 
-  
+  usuarios$: any;
   inventarioasesor$: any;
 
   formGeneral!:FormGroup; 
@@ -54,7 +54,7 @@ export class InteresadosComponent implements OnInit {
   
   ngOnInit(): void {
     
-
+    
     this.inventarioasesor$ =this.adminService.getInventarioAsesorOb().subscribe((inventarioasesor)=>{
       if(inventarioasesor !== null){
         this.dataSource.data =inventarioasesor;
@@ -62,11 +62,13 @@ export class InteresadosComponent implements OnInit {
     });
 
     let Id_Usuario = localStorage.getItem ('Id_Usuario');   
-    this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
-      data=this.datosinventario;
-      console.log("datosinventario"+this.datosinventario);
+    // this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
+    //   data=this.datosinventario;
+    //   console.log("datosinventario"+this.datosinventario);
 
-    });
+    // });
+    this.MostrarIntersados();
+    console.log("DAtosInventario: " + this.datosinventario)
      this.dataSource = new MatTableDataSource(this.datosinventario);
     
       
@@ -76,19 +78,33 @@ export class InteresadosComponent implements OnInit {
   
   
   ngAfterViewInit() {
+   
     this.dataSource.paginator = this.paginator;
-    this.MostrarIntersados();
+    
   }
 
  MostrarIntersados(){
  this.http.interesados(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
    console.log(data);
-
    
+    this.adminService.inventarioasesor$.next(data);
+  
  })
  }
   
+ obtenerUsuarios() {
+  let Id_Socio = localStorage.getItem("Id_Socio");
 
+  this.http.InmueblesBrokers(Id_Socio).subscribe((data: any) => {
+
+    
+  },
+    (err) => {
+      console.log('Error de conexión');
+    }
+  )
+
+}
   
   // obtenerInventario(){
   //    let IdSocio = localStorage.getItem("Id_Socio");

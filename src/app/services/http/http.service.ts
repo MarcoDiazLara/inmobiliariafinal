@@ -745,5 +745,11 @@ export class HttpService {
   
 
    }
+
+   infoAsesordueno(Id_Socio : any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_socio=' + Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_infoDuenoAsesor.php', params, { headers });
+   }
 }
 

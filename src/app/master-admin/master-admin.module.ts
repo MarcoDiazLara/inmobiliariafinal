@@ -19,6 +19,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 /*tablas */
 import {MatTableModule} from '@angular/material/table';
@@ -68,6 +69,7 @@ import { SepomexComponent } from './sepomex/sepomex.component';
     MatRadioModule,
     MatStepperModule,
     MatFormFieldModule,
+    MatProgressBarModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
