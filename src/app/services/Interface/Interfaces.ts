@@ -167,8 +167,8 @@ export interface mostrarcita {
 };
 
 export interface inventarioAsesores {
-    Id_Publicacion: "",
-    Nombre_Publicacion: "",
+    Id_Inmueble: "",
+    Nombre_Inmueble: "",
     Calle: "",
     Municipio: "",
     Nombre: "",

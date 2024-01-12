@@ -33,15 +33,12 @@ export class InventarioagentesComponent implements OnInit {
     'Calle',
     'Num_Ext',
     'Num_Int',
-    'Municipio',
     'botonOption'
-    
-
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Publicacion','Calle','Num_Ext','Num_Int','Municipio','botonOption'];
+  columnas: string[] = ['Nombre_Publicacion','Calle','Num_Ext','Num_Int','botonOption'];
   
 
 
@@ -92,7 +89,7 @@ export class InventarioagentesComponent implements OnInit {
      let idUsuario = localStorage.getItem("Id_Usuario");
 //  let idUsuario = 19;
  
- this.httpService.InventarioAsesor(idUsuario).subscribe((data:any)=>{
+ this.httpService.inventarioAsesor(idUsuario).subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
