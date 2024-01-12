@@ -449,4 +449,6 @@ export interface Intersasados{
     Contacto_Principal: "",
     Contacto_Emergencia: "",
     Email: ""
-}
+};
+
+
