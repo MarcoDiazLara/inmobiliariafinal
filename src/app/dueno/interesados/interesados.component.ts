@@ -7,8 +7,9 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Interesados } from 'src/app/services/Interface/Interfaces';
 
-import { InventarioBroker } from 'src/app/services/Interface/Interfaces';
+
 
 @Component({
   selector: 'app-interesados',
@@ -17,7 +18,7 @@ import { InventarioBroker } from 'src/app/services/Interface/Interfaces';
 })
 export class InteresadosComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private http:HttpService,private formBuilder: FormBuilder,private adminService: GlobalService) { }
 
   
   inventarioasesor$: any;
@@ -28,11 +29,11 @@ export class InteresadosComponent implements OnInit {
   paginator!: MatPaginator;
 
   displayedColumns = [
+    'Nombre',
     'Nombre_Inmueble',
-    'Calle',
-    // 'Num_Ext',
-    // 'Municipio',
-    // 'Estatus_Publicacion',
+      'Contacto_Principal',
+      'Contacto_Emergencia',
+      'Email',
     'botonOption'
     
 
@@ -40,40 +41,33 @@ export class InteresadosComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble','Calle','botonOption'];
+  columnas: string[] = [  'Nombre', 'Nombre_Inmueble','Contacto_Principal','Contacto_Emergencia','Email'];
   
 
 
   // poner el nombre de una variable
-  datosinventario: InventarioBroker[]=[];
+  datosinventario: Interesados[]=[];
   
 
-  // constructor(
-  //   public dialog: MatDialog,
-  //   private http:HttpService,
-  //   private httpService: HttpService,
-  //   private adminService: GlobalService,
-  //   private formBuilder: FormBuilder,
-  //   private router:Router
-  //   // Http para jalar el servicio 
-  // ) { }
+  
 
   
   ngOnInit(): void {
+    
 
-  //   this.inventarioasesor$ =this.adminService.getInventarioAsesorOb().subscribe((inventarioasesor)=>{
-  //     if(inventarioasesor !== null){
-  //       this.dataSource.data =inventarioasesor;
-  //     }
-  //   });
+    this.inventarioasesor$ =this.adminService.getInventarioAsesorOb().subscribe((inventarioasesor)=>{
+      if(inventarioasesor !== null){
+        this.dataSource.data =inventarioasesor;
+      }
+    });
 
-    // let Id_Usuario = localStorage.getItem ('Id_Usuario');   
-    // this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
-    //   data=this.datosinventario;
-    //   console.log("datosinventario"+this.datosinventario);
+    let Id_Usuario = localStorage.getItem ('Id_Usuario');   
+    this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
+      data=this.datosinventario;
+      console.log("datosinventario"+this.datosinventario);
 
-    // });
-    // this.dataSource = new MatTableDataSource(this.datosinventario);
+    });
+     this.dataSource = new MatTableDataSource(this.datosinventario);
     
       
   // this.obtenerInventario();
@@ -83,8 +77,19 @@ export class InteresadosComponent implements OnInit {
   
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.MostrarIntersados();
   }
 
+ MostrarIntersados(){
+ this.http.interesados(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
+   console.log(data);
+
+   
+ })
+ }
+  
+
+  
   // obtenerInventario(){
   //    let IdSocio = localStorage.getItem("Id_Socio");
   //    let IdUsuario = localStorage.getItem("Id_Usuario");
@@ -111,7 +116,9 @@ export class InteresadosComponent implements OnInit {
 //   }
 
 
-
+openModalActualizar(element:any){
+  alert("open modal"+element)
+}
 
   
   applyFilter(event: Event) {
