@@ -9,12 +9,19 @@
     </div>
 
     <div class="acordeon">
-        <h3>Selecciona el tipo de informacion y despues inicia el proceso de carga de informacion que vas a subir</h3>
+        <h3>Sube el archivo sin modificaciones desde la pagina oficial de Servico Postal Mexicano.</h3>
+        <h3>Puedes consultarlo en la siguiente liga: <a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" target="_blank">https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx</a></h3>
+
         <h3 class="warning">solo se admiten archivos con extencion .txt*</h3>
-        <label for="images" class="drop-container" id="dropcontainer">
-            <span class="drop-title">Arrastra el archivo aqui</span>
+
+          <label for="images" class="drop-container" id="dropcontainer" (drop)="handleDrop($event)">
+            <span class="drop-title">Arrastra el archivo aquí</span>
             o
-            <input type="file" id="images" accept=".txt" required>
+            <div class="file-container">
+                <input type="file" id="images" accept=".txt" required (change)="processFile($event)">
+                <div class="error-message" *ngIf="fileError">Por favor, selecciona un archivo con extensión .txt</div>
+                <mat-progress-bar class="progressbar" mode="determinate" [value]="progressValue" *ngIf="showProgressBar"></mat-progress-bar>
+            </div>
           </label>
           <button class="custom-file-input" id="start">Iniciar proceso</button>
 
