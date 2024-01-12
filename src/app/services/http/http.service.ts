@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { an } from '@fullcalendar/core/internal-common';
+import { ModalComponent } from 'src/app/inmueble/modal/modal.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+
 
 
 @Injectable({
@@ -14,7 +17,7 @@ export class HttpService {
   public variableGlobal: boolean = false;
 
   constructor(
-    private httpclient: HttpClient
+    private httpclient: HttpClient, private dialog:MatDialog
   ) { }
 
   // mostrarDatos() {
@@ -757,5 +760,17 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_inventarioAsesor.php', params, { headers });
    }
+   
+   openasesor( ) {
+const dialogRef = this.dialog.open(ModalComponent, {
+      width: '80%',
+      height: 'auto',  
+      disableClose: true
+    });
+  }  
+  
+  closeDialog() {
+    this.dialog.closeAll();
+  }
 }
 
