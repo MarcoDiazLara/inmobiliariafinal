@@ -441,7 +441,7 @@ export interface infoAsesor{
     Nombre_Razon_Social: ""
 };
 
-export interface Intersasados{
+export interface Interesados{
     Nombres: "",
     Apellido_Paterno: "",
     Apellido_Materno: "",
