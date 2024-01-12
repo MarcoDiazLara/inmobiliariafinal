@@ -107,25 +107,16 @@ export class InvesntarioComponent implements OnInit {
     )
   }
 
-
-
-
-  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
-  
-
-
-  // mandar a llamar ventana emergente
+   // mandar a llamar ventana emergente
 
   openasesor(idPubli:any ) {
 
     localStorage.setItem ('idpublicacion',idPubli);
     
-
-
     const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
       width: '80%',
       height: 'auto',  
