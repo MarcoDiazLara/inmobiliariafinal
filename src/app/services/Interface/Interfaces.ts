@@ -439,4 +439,14 @@ export interface infoAsesor{
     Contacto_Principal: "",
     Email: "",
     Nombre_Razon_Social: ""
+};
+
+export interface Intersasados{
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: "",
+    Nombre_Inmueble: "",
+    Contacto_Principal: "",
+    Contacto_Emergencia: "",
+    Email: ""
 }
