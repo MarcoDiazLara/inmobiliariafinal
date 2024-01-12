@@ -97,10 +97,13 @@ export class InformacioninmuebleComponent implements OnInit {
 
   CerraDialogo(){
     this.dialog.closeAll();
+
  
     }
+
      
      Actulizar(){
+      this.httpService.openasesor();
       let nombre=this.options.value.Nombre_de_Inmueble;
        let Descripcion=this.options.value.Descripcion;
      let Calle=this.options.value.Calle;
@@ -139,12 +142,15 @@ export class InformacioninmuebleComponent implements OnInit {
         Banos, cocina,pisos,antiguedad,acabados,alberca,jardin,gym,garden,estacionamiento,usuario,inmueble,prec_min,prec_max,prec_final,
         estatus).subscribe((data:any)=>{
           if(data==1){
+            this.httpService.closeDialog();
             Swal.fire(
               'Exitosamente!',
               'Se ha actualizado la informacion',
               'success'
               
             )
+
+            this.CerraDialogo();
             // alert("Se actualizo correctamente");
           } else{
             // alert(":(");

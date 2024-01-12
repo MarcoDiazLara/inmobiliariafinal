@@ -34,6 +34,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { ModalComponent } from './modal/modal.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -47,7 +48,8 @@ registerLocaleData(localeEs);
     InformacioninmuebleComponent,
     PlanesComponent,
     Requisitos3dComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    ModalComponent
     
   ],
   imports: [
