@@ -14,7 +14,7 @@
 
         <h3 class="warning">solo se admiten archivos con extencion .txt*</h3>
 
-          <label for="images" class="drop-container" id="dropcontainer" (drop)="handleDrop($event)">
+          <label for="images" class="drop-container" id="dropcontainer" (dragover)="handleDragOver($event)" (drop)="handleDrop($event)">
             <span class="drop-title">Arrastra el archivo aquí</span>
             o
             <div class="file-container">

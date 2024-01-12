@@ -57,6 +57,11 @@ export class SepomexComponent implements OnInit {
     this.progressValue = value;
   }
 
+  handleDragOver(event: DragEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   
   handleDrop(event: DragEvent): void {
     event.preventDefault();
