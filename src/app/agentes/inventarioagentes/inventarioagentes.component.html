@@ -11,7 +11,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="Nombre_Publicacion">
       <th mat-header-cell *matHeaderCellDef> Nombre Inmueble </th>
-      <td mat-cell *matCellDef="let element"> {{element.Nombre_Publicacion}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.Nombre_Inmueble}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Calle">
@@ -42,7 +42,7 @@
         </button>
         <mat-menu #menu="matMenu">
           <button class="buttonasignar" mat-raised-button
-            (click)="openasesor (element.Id_Publicacion )">Detalles del Inmueble</button>
+            (click)="openasesor (element.Id_Inmueble)">Detalles del Inmueble</button>
         </mat-menu>
       </td>
     </ng-container>
