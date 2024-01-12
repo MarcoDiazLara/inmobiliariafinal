@@ -431,3 +431,12 @@ export interface inmueblesArviceSpace {
     Id_Inmueble: ""
 
 };
+
+export interface infoAsesor{
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: "",
+    Contacto_Principal: "",
+    Email: "",
+    Nombre_Razon_Social: ""
+}
