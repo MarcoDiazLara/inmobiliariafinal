@@ -725,5 +725,11 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_validaSuscripcion.php', params, { headers });
   }
+
+  obtenerinfoAsesor(p_Id_Inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_obtenerInfoAsesor.php', params, { headers });
+  }
 }
 
