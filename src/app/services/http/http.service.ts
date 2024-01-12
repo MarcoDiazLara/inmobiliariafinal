@@ -731,5 +731,11 @@ export class HttpService {
     let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
     return this.httpclient.post(this.url + 'sp_web_obtenerInfoAsesor.php', params, { headers });
   }
+
+  Asignaciones_asesor(Id_Socio: any, Id_Usuario: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + Id_Socio  + '&p_Id_Usuario=' + Id_Usuario;
+    return this.httpclient.post(this.url + 'sp_web_inmueble_asignacion_asesor.php', params, { headers });
+  }
 }
 
