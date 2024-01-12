@@ -11,7 +11,6 @@ import { InvesntarioComponent } from './invesntario/invesntario.component';
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 
 import { FechashitoComponent } from './fechashito/fechashito.component';
-import { AsignarReasignarUsersComponent } from './asignar-reasignar-users/asignar-reasignar-users.component';
 import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
 
 
@@ -58,10 +57,7 @@ const routes: Routes = [
         path: 'fechashito',
         component: FechashitoComponent
       },
-      {
-        path: 'asignarUsers',
-        component: AsignarReasignarUsersComponent
-      },
+  
       {
         path: 'bienvenida',
         component: BienvenidaComponent

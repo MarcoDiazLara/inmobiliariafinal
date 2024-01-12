@@ -451,4 +451,17 @@ export interface Interesados{
     Email: ""
 };
 
+export interface Asig_Inmuebles{
+    Nombre_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Municipio: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
+};
+
+
+
+
 
