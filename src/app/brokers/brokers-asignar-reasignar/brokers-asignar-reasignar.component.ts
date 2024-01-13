@@ -1,14 +1,13 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {MatTableDataSource} from '@angular/material/table';
+import { MatDialog} from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
 import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
 import { Asig_Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormGroup } from '@angular/forms';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BroAsignarAsesorComponent } from '../ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
 
@@ -20,8 +19,6 @@ import { BroAsignarAsesorComponent } from '../ventanaemerge/bro-asignar-asesor/b
 })
 
 export class BrokersAsignarReasignarComponent implements OnInit {
-
-
 
   usuarios$: any;
   formGeneral!:FormGroup; 
@@ -60,9 +57,12 @@ export class BrokersAsignarReasignarComponent implements OnInit {
  
 
   ngOnInit(): void {
+
+
+    
     // let Bandera = localStorage.getItem("Bandera")
     // if(Bandera =="1")
-    {
+  
     //  this.obtenerConteo();
 
      this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
@@ -70,12 +70,12 @@ export class BrokersAsignarReasignarComponent implements OnInit {
         this.dataSource.data =usuarios;
       }
     });
-    }
+    
 
 
     this.obtenerUsuarios();
 
-    this.dataSource = new MatTableDataSource(this.datosinfo);
+    //this.dataSource = new MatTableDataSource(this.datosinfo);
 
   }
 
@@ -97,18 +97,20 @@ export class BrokersAsignarReasignarComponent implements OnInit {
     let Id_Usuario = localStorage.getItem("Id_Usuario");
 
     this.httpService.Asignaciones_asesor(Id_Socio, Id_Usuario).subscribe((data:any)=>{
-    
-      if(data !== 201) {
-        this.adminService.usuarios$.next(data);
-      } else {
-        data = [];
-        this.adminService.usuarios$.next(data);
-      }      
+      this.adminService.usuarios$.next(data);
+      console.log(data)
+      // if(data !== 201) {
+      //   this.adminService.usuarios$.next(data);
+      // } else {
+      //   data = [];
+      //   this.adminService.usuarios$.next(data);
+      // }      
     },
     (err) => {
       console.log('Error de conexión');
     }
     )
+
 
   }
   
@@ -122,10 +124,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
-asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
-  alert("Id_InmuebleId_Inmueble: "+Id_InmuebleId_Inmueble+"Id_Usuario: "+Id_Usuario)
 
-}
 
 // mandar a llamar ventana emergente
 
@@ -144,86 +143,31 @@ localStorage.setItem("mi_valor", "1");
 
 }
 
-localStorage.setItem("Id_Inmueble",id_inmo);
-    localStorage.setItem("Asesor", asesor );
-    console.log(id_inmo);
 
 
 
-    const dialogRef = this.dialog.open(BroAsignarAsesorComponent, {
-      width: '60vh',
-      height: 'auto',
-      disableClose: true
-    });
-  }
+  //   const dialogRef = this.dialog.open(BroAsignarAsesorComponent, {
+  //     width: '60vh',
+  //     height: 'auto',
+  //     disableClose: true
+  //   });
+  // }
 
 
-  openDialog(): void {
-    this.dialog.closeAll();
-    //this.httpService.setGlobalVariable(false);
-    const itemsToRemove =[
-      "id_publicacion",
-      "mi_valor",
-      "Asesor",
-    ];
-    itemsToRemove.forEach( item => {
-      localStorage.removeItem(item);
-    })
+  // openDialog(): void {
+  //   this.dialog.closeAll();
+  //   //this.httpService.setGlobalVariable(false);
+  //   const itemsToRemove =[
+  //     "id_publicacion",
+  //     "mi_valor",
+  //     "Asesor",
+  //   ];
+  //   itemsToRemove.forEach( item => {
+  //     localStorage.removeItem(item);
+  //   })
 
-  }
+  // }
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-   
-  
-  
+}
