@@ -1,83 +1,190 @@
-<nav class= "navbar navbar-expand-lg bg-body-tertiary font-Roboto-Condensed">
-    <div class="container">
-        <a class="navbar-brand"   (click)="home()"><img class="me-4" 
-                src="assets/img/logo.png" width="70px" height="60px"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent"> -->
-            <!-- <ul class="navbar-nav "> -->
-                <ul class="navbar-nav mx-5 mb-2 mb-lg-0">
-                <!--Menu Avisos-->
-                <li class="nav-item mx-1">
-                    <a    (click)="Avisos()"  class="nav-link" role="button" aria-expanded="false">
-                      Avisos
-                    </a>
-                </li>
-                </ul>
-                <ul class="navbar-nav mx-5 mb-2 mb-lg-0">
-                  <li  class="nav-item mx-1">
-                    <a   (click)="favoritos()"  class="nav-link" role="button" aria-expanded="false" >
-                      Favoritos
-                  </a>
-                  </li>
-                
-                </ul>
-                <ul class="navbar-nav mx-5 mb-2 mb-lg-0">
-                <!--Menu Contrataciones-->
-                <li  class="nav-item mx-1">
-                    <a   (click)="Contratos()"  class="nav-link" role="button" aria-expanded="false" >
-                        Contrataciones
-                    </a>
-                </li>
-            </ul>
-            
-        </div>
-        <div style="margin-top: 15px;" class="d-flex p-2 bd-highlight">
-            <form class="d-flex mx-2" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top font-Roboto-Condensed">
+  <div class="container">
+    <a class="navbar-brand" >
+      <img class="brand-logo" src="assets/img/logo.png" alt="InmobeWise Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" role="button" aria-expanded="false" >Inicio</a>
+        </li>
+        <!--Menu Compra-->
 
-                <!-- <button  style="margin-top: 10px;" class="btn btn-secondary ml-auto mr-3" type="button">Nuevo Botón</button> -->
-              <button style="margin-top: 10px;" class="btn btn-outline-inmo ordenabutton font-Roboto-Condensed my-1 mx-1" type="button"   (click)="planes()">
-                <i class="bi bi-cart  m-1 size-icon"></i>     Comprar
-              </button>
-    
-                <ul >
-                <!-- <button class="btn btn-outline-inmo ordenabutton1 font-Roboto-Condensed my-1 mx-1" type="submit">
-                    <i class="bi bi-person-circle m-1 size-icon" ></i> Acceder
-                </button> -->
-
-
-
-                <div class="dropdown">
-               
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Perfil
-                      <i class="bi bi-person-circle m-1 size-icon"></i>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" (click)="Editar()">Editar Perfil</a>
-                      <a class="dropdown-item" (click)="Panel()">Panel de Control</a>
-                      <a class="dropdown-item" (click)="Espacio()" >Mi espacio</a>
-                      <a class="dropdown-item" href="#" (click)="cerrar()" >Cerrar Sesion</a>
-                    </div>
-                  </div>
-               
-                  
-                  
-                
-                
-                
-                  
-                  
-
-           
-           
+        <li class="nav-item dropdown">
+          <a class="nav-link "  data-bs-auto-close="outside">Avisos</a>
+          <!-- <ul class="dropdown-menu shadow">
+            <li class="dropend">
+              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Tipo de
+                Inmueble</a>
+              <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" >Casa</a></li>
+                <li><a class="dropdown-item" >Departamento</a></li>
+                <li><a class="dropdown-item" >Casa en Condominio</a></li>
+                <li><a class="dropdown-item" >Oficina</a></li>
+                <li><a class="dropdown-item">Local Comercial</a></li>
+                <li><a class="dropdown-item" >Bodega Comercial</a></li>
+                <li><a class="dropdown-item">Terreno / Lote</a></li>
+                <li><a class="dropdown-item" >Nave Industrial</a></li>
               </ul>
-             
-            </form>
+            </li>
+          </ul> -->
+        </li>
+        <!--End Menu Compra-->
+        <!-- Menu Renta -->
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Renta</a>
+          <ul class="dropdown-menu shadow">
+            <li class="dropend">
+              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Tipo de
+                Inmueble</a>
+              <ul class="dropdown-menu shadow">
+                <li><a  class="dropdown-item">Casa</a></li>
+                <li><a  class="dropdown-item">Departamento</a></li>
+                <li><a  class="dropdown-item">Casa en Condominio</a></li>
+                <li><a class="dropdown-item">Oficina</a></li>
+                <li><a class="dropdown-item">Local Comercial</a></li>
+                <li><a  class="dropdown-item">Bodega Comercial</a></li>
+                <li><a  class="dropdown-item">Terreno / Lote</a></li>
+                <li><a  class="dropdown-item">Nave Industrial</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <!-- End Menu Renta -->
+
+        <!-- Menu Servicios -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Servicios</a>
+          <ul class="dropdown-menu shadow">
+            <li class="dropend">
+              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside">Arrendamiento seguro</a>
+              <ul class="dropdown-menu shadow">
+                <li><a  class="dropdown-item">¿Qué se requiere para alquilar?</a></li>
+              </ul>
+            </li>
+            <li class="dropend">
+              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Te explica
+                InmobeWise</a>
+              <ul class="dropdown-menu shadow">
+                <li><a  class="dropdown-item">¿Quieres comprar?</a></li>
+                <li><a class="dropdown-item">¿Quieres vender?</a></li>
+              </ul>
+            </li>
+            <li class="dropend">
+              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Toma en
+                cuenta</a>
+              <ul class="dropdown-menu shadow">
+                <li><a  class="dropdown-item">Remates Hipotecarios</a></li>
+                <li><a  class="dropdown-item">Evita Fraude</a></li>
+              </ul>
+            </li>
+            <!-- <li> <a class="dropdown-item" > Novedades  </a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li><a ="novedadesactulidad" class="dropdown-item"> Actualida</a></li>
+                </ul>
+              </li> -->
+          </ul>
+        </li>
+        <!-- End Servicios -->
+        <!--Menu Inmobiliarias-->
+        <li class="nav-item">
+          <a  class="nav-link" role="button" aria-expanded="false">Inmobiliarias</a>
+        </li>
+        <!--End Menu Inmobiliarias-->
+        <!--Menu Forma Parte de Nosotros-->
+        <li class="nav-item">
+          <a  class="nav-link" role="button" aria-expanded="false">Blog</a>
+        </li>
+        <!-- End Menu Forma Parte de Nosotros-->
+        <!--Menu Contactanos-->
+        <li class="nav-item">
+          <a  class="nav-link" role="button" aria-expanded="false">Contáctanos</a>
+        </li>
+        <!-- End Menu Contactanos-->
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-inmo me-2" type="button" >
+          <i class="bi bi-house-up-fill m-1 size-icon"></i> Sube tu Propiedad
+        </button>
+
+        <button *ngIf="!isLoggedIn" class="btn btn-outline-inmo"  type="submit">
+          <i class="bi bi-person-circle m-1 size-icon"></i> Acceder
+        </button>
+
+        <div *ngIf="isLoggedIn" class="dropdown">
+          <button class="btn btn-secondary btn-block h-100 dropdown-toggle" data-bs-toggle="dropdown" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bi bi-person-circle m-1 size-icon"></i> Perfil
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" >Editar Perfil</a></li>
+            <li><a class="dropdown-item" >Panel de Control</a></li>
+            <li><a class="dropdown-item" >Mi espacio</a></li>
+            <li><a class="dropdown-item" >Cerrar Sesion</a></li>
+          </ul>
         </div>
+
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" #ventanaEmergente>
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title custom-text" id="myModalLabel">¿Qué tipo de perfil encaja contigo?</h4>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" ()="cerrarVentanaEmergente()">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <li class="list-inline-item">Elige la opción que refleje tus preferencias.</li>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <div class="col-md-4 text-center">
+                    <!-- Centrar contenido horizontalmente -->
+                    <button  class="btn btn-light mt-3 mx-2">
+                      <img src="assets/img/propietario.png" alt="Imagen 1" class="img-fluid" />
+                      Dueño Directo
+                    </button>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <!-- Centrar contenido horizontalmente -->
+                    <button class="btn btn-light mt-3 mx-2">
+                      <img src="assets/img/agente.png" alt="Imagen 1" class="img-fluid" />
+                      Inmobiliaria Corredor
+                    </button>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <!-- Centrar contenido horizontalmente -->
+                    <button  class="btn btn-light mt-3 mx-2">
+                      <img src="assets/img/cons.png" alt="Imagen 1" class="img-fluid" />
+                      Constructora Desarrolladora
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Modal -->
+
+      </form>
+      
     </div>
-  </nav>
-  <div class="separator"></div>
+  </div>
+  <!-- <div class="separator"></div> -->
+</nav>
+
+

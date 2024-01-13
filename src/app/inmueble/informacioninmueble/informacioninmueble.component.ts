@@ -136,7 +136,7 @@ export class InformacioninmuebleComponent implements OnInit {
     // "cocina: "+ cocina+"pisos: "+pisos+"antiguedad: "+antiguedad+ "acabados: "+ acabados+"alberca: "+ alberca+
     // "jardin: "+jardin+"gym: " + gym +"garden: "+ garden+"estacionamiento: "+ estacionamiento+ "usuario: "+ usuario+
     // "inmueble"+ inmueble+ "prec_min: " +prec_min+  "prec_max: "+ prec_max+  "prec_final: " + prec_final+
-    // "estatus: " + estatus)  
+    // "estatus: " + estatus)   
 
       this.httpService.actualizarInformacionInmueble(nombre,Descripcion,Calle,No_Interior,No_Exterior,terreno,construccion,recamaras,
         Banos, cocina,pisos,antiguedad,acabados,alberca,jardin,gym,garden,estacionamiento,usuario,inmueble,prec_min,prec_max,prec_final,
