@@ -49,16 +49,6 @@ export class SepomexComponent implements OnInit {
         //console.log(modifiedContent);
         //-----------------------------------------------
 
-        //console.log(modifiedContent.length);
-        // for(let i =0; i<modifiedContent.length;i++){
-          
-        //   if(modifiedContent[i] == "|"){
-        //       console.log("\n")
-        //   }else{
-        //   console.log(modifiedContent[i]);
-        //   }
-        // }
-        //let palabras1: string[] = modifiedContent.split("\n");
 
         let aux = this.reemplazarCaracteresEspeciales(modifiedContent);
         console.log(aux);
@@ -115,20 +105,11 @@ export class SepomexComponent implements OnInit {
         return false;
     });
 
-    // conjuntoEstados.forEach(xd =>{
-    //   let aux : estados = {
-    //       estado: xd,
-    //       codigoestado: xd
-    //   }
-    //   console.log(aux);
-    // })
+
     
     
     console.log(estadosSinDuplicados);
-        // console.log(this.Archivo.length);
-        // console.log(this.estados)
-        //console.log(this.Archivo);
-        //console.log(modifiedContent[0]);
+       
 
 
         //-----------------------------------------------
