@@ -38,8 +38,8 @@ export class BroAsignarAsesorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let Id_Socio= localStorage.getItem("Id_Socio");
-    this.http.mostrarAsesor(Id_Socio).subscribe((data:any)=>{
+    let Id_Responsable= localStorage.getItem("Id_Usuario");
+    this.http.mostrarAsesor(Id_Responsable).subscribe((data:any)=>{
       this.asesores=data;
       console.log(this.asesores);
       });
@@ -55,12 +55,12 @@ export class BroAsignarAsesorComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
-      let Id_Publicacion = localStorage.getItem("id_publicacion");
-      console.log(Id_Publicacion);
+      let Id_Inmueble = localStorage.getItem("Id_Inmuble");
+      console.log(Id_Inmueble);
 
      
       
-      this.http.insertarusuarioasignacion( Id_Publicacion,this.Nombres).subscribe((data: any)=> {
+      this.http.insertarusuarioasignacion( Id_Inmueble,this.Nombres).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',

@@ -228,9 +228,9 @@ export class HttpService {
   //   return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   // }
 
-  mostrarAsesor(Id_Socio: any) {
+  mostrarAsesor(Id_Responsable: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Socio=' + Id_Socio;
+    let params = 'p_Id_Responsable=' + Id_Responsable;
     return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', params, { headers });
   }
 

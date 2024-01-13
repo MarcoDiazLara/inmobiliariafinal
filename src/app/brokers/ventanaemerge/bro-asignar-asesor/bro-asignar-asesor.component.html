@@ -5,10 +5,10 @@
      
            <mat-label><b>Selecciona Asesor</b></mat-label>
            <mat-select formControlName="Nombres" >
-             <mat-option *ngFor="let Asesor of asesores" [value]="Asesor.Id_Usuario">{{Asesor.Nombres}}</mat-option>
+             <mat-option *ngFor="let Asesor of asesores" [value]="Asesor.Id_Usuario">{{Asesor.Nombres+" "+Asesor.Apellido_Paterno+" "+Asesor.Apellido_Materno}} </mat-option>
            </mat-select>
            <mat-error>
-             Tipo Asesor
+             Asesor
            </mat-error>
        </mat-form-field>
    

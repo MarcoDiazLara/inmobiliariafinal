@@ -143,31 +143,32 @@ localStorage.setItem("mi_valor", "1");
 
 }
 
+localStorage.setItem("Id_Inmueble",id_inmo);
+    // localStorage.setItem("Nombres", asesor );
+    console.log(id_inmo);
 
 
+    const dialogRef = this.dialog.open(BroAsignarAsesorComponent, {
+      width: '60vh',
+      height: 'auto',
+      disableClose: true
+    });
+  }
 
-  //   const dialogRef = this.dialog.open(BroAsignarAsesorComponent, {
-  //     width: '60vh',
-  //     height: 'auto',
-  //     disableClose: true
-  //   });
-  // }
 
+  openDialog(): void {
+    this.dialog.closeAll();
+    //this.httpService.setGlobalVariable(false);
+    const itemsToRemove =[
+      "id_publicacion",
+      "mi_valor",
+      "Asesor",
+    ];
+    itemsToRemove.forEach( item => {
+      localStorage.removeItem(item);
+    })
 
-  // openDialog(): void {
-  //   this.dialog.closeAll();
-  //   //this.httpService.setGlobalVariable(false);
-  //   const itemsToRemove =[
-  //     "id_publicacion",
-  //     "mi_valor",
-  //     "Asesor",
-  //   ];
-  //   itemsToRemove.forEach( item => {
-  //     localStorage.removeItem(item);
-  //   })
-
-  // }
+  }
 
 }
 
-}
