@@ -763,8 +763,8 @@ export class HttpService {
    
    openasesor( ) {
     const dialogRef = this.dialog.open(ModalComponent, {
-      width: '80%',
-      height: 'auto',  
+      width: '30%',
+      height: '',  
       disableClose: true
     });
   }  
