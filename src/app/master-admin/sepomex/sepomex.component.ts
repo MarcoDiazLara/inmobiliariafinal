@@ -14,30 +14,33 @@ export class SepomexComponent implements OnInit {
 
   
   processFile(event: any): void {
-
     const fileInput = event.target;
     const file = fileInput.files[0];
-
+  
     if (file && file.name.endsWith('.txt')) {
       this.fileError = false;
       this.showProgressBar = true;
-
+  
       const reader = new FileReader();
-
+  
       reader.onload = (e: any) => {
-        const fileContent = e.target.result;
+        let fileContent = e.target.result;
+        
+        // Reemplazar caracteres especiales
+        fileContent = this.reemplazarCaracteresEspeciales(fileContent);
+  
+        // Continuar con el procesamiento del archivo
         const modifiedContent = this.eliminarrenglones(fileContent);
-
+  
         console.log(modifiedContent);
-
-
+  
         this.updateProgressBar(100);
         setTimeout(() => {
           this.showProgressBar = false;
           this.progressValue = 0;
         }, 1000);
       };
-
+  
       reader.readAsText(file);
     } else {
       this.fileError = true;
@@ -75,6 +78,21 @@ export class SepomexComponent implements OnInit {
     } else {
       console.log("Algo salió mal");
     }
+  }
+  
+
+  reemplazarCaracteresEspeciales(fileContent: string): string {
+    const caracteresEspeciales = {
+      'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+      'ü': 'u', 'ñ': 'n', 'Á': 'A', 'É': 'E', 'Í': 'I',
+      'Ó': 'O', 'Ú': 'U', 'Ü': 'U', 'Ñ': 'N'
+    };
+    Object.entries(caracteresEspeciales).forEach(([original, sustituto]) => {
+      const regex = new RegExp(original, 'g');
+      fileContent = fileContent.replace(regex, sustituto);
+    });
+  
+    return fileContent;
   }
   
 
