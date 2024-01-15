@@ -32,10 +32,10 @@ h3{
   text-align: center;
 
 }
-.car-container {
+/* .car-container {
   display: flex;
-  justify-content: center; /* Centra horizontalmente las tarjetas */
-}
+  justify-content: center;
+} */
 
 .car {
   width: 30%; /* Ajusta el ancho de las tarjetas según tus necesidades */
@@ -108,8 +108,45 @@ h3{
  
 
 
+/* ------------------------------------ */
 
+.car-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+.car {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.car-details {
+  margin-bottom: 10px;
+}
+
+.car-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.car-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .car {
+      width: 100%;
+  }
+}
 
 
 

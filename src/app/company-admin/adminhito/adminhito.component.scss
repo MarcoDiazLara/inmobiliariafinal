@@ -6,13 +6,13 @@ h1, h2, h3, h4, h5{
 }
 
 
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  font-family: "lato", sans-serif;
-}
+// body {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+//   background-color: white;
+//   font-family: "lato", sans-serif;
+// }
 
 
 .container-fluit {
@@ -284,8 +284,100 @@ body {
 }
 
 
-.logoxd {
-  width: 250px;
-  height: auto;
-  opacity: 1; /* ajusta la opacidad, donde 1 es completamente opaco y 0 es completamente transparente */
+/* Estilos base para el botón */
+.btnAdd {
+  font-size: 16px;
+  padding: 10px 20px;
+  /* Otros estilos según sea necesario */
 }
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .btnAdd {
+     font-size: 14px; /* Reducir el tamaño del texto */
+     padding: 8px 16px; /* Ajustar el relleno */
+  }
+}
+.ShowAddEvent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-field {
+  width: 100%;
+}
+
+.content-addevent {
+  max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .date-field {
+     width: 100%; /* Otra forma de abordar el ancho en pantallas pequeñas */
+  }
+  
+  .content-addevent {
+     padding: 10px; /* Ajusta el relleno para pantallas más pequeñas */
+  }
+}
+
+.inputContainer {
+  width: 100%;
+}
+
+.date-field {
+  width: 100%;
+}
+
+.BtnEvento {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.detallesfecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detallestemplate {
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+  margin-bottom: 20px;
+  border: 1px solid #ddd; /* Añade un borde para mayor claridad visual */
+  border-radius: 8px;
+  overflow: hidden; /* Evita que el borde se desborde con sombras u otros efectos */
+}
+
+.barraAzul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+}
+
+.barraAzul mat-icon {
+  cursor: pointer;
+}
+
+.content-detallesfecha {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .detallestemplate {
+     max-width: 100%; /* Hacer que el ancho sea del 100% en pantallas pequeñas */
+  }
+
+  .barraAzul {
+     flex-direction: column;
+     align-items: flex-start;
+  }
+}
+
+
+

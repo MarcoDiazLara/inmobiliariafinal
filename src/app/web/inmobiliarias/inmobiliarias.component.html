@@ -66,16 +66,26 @@
           
       </div>
 
-         <div *ngFor="let inmobiliaria of inmobiliarias" class="col">
+      <div *ngFor="let inmobiliaria of inmobiliarias" class="col-md-4 col-sm-6 col-xs-12">
+        <div class="card mb-4">
+            <img class="card-img-top" [src]="inmobiliaria.Img_Logo" alt="Card image cap">
+            <div class="card-body d-flex flex-column align-items-center">
+                <a class="mb-2">{{ inmobiliaria.Nombre_Razon_Social }}</a>
+                <button type="button" class="btn btn-outline-secondary" (click)="abrir(inmobiliaria)">Contacto</button>
+            </div>
+        </div>
+    </div>
+    
+         <!-- <div *ngFor="let inmobiliaria of inmobiliarias" class="col">
              <div class="card">
                  <img class="card-img-top" [src]="inmobiliaria.Img_Logo" alt="Card image cap">
                  <div class="card-body">
                      <a>{{ inmobiliaria.Nombre_Razon_Social }}</a> &nbsp; &nbsp; &nbsp;
                      <button type="button" class="btn btn-outline-secondary" (click)="abrir(inmobiliaria)">Contacto</button>
-                     <!-- Resto del contenido del card... -->
+                  
                  </div>
              </div>
-         </div>
+         </div> -->
      </div>
  </div>
 

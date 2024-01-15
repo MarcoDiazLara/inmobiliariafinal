@@ -109,3 +109,8 @@ h1{
     border: none; /* Elimina el borde del botón */
     padding: 10px 20px; /* Ajusta el relleno del botón */
 }
+@media (max-width: 576px) {
+  .card {
+      width: 100%;
+  }
+}

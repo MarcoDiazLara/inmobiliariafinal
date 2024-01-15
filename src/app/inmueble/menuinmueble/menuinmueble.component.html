@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top font-Roboto-Condensed">
   <div class="container">
-    <a class="navbar-brand" >
+    <a class="navbar-brand"  (click)="home()">
       <img class="brand-logo" src="assets/img/logo.png" alt="InmobeWise Logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -9,34 +9,18 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" role="button" aria-expanded="false" >Inicio</a>
-        </li>
+        </li> -->
         <!--Menu Compra-->
 
         <li class="nav-item dropdown">
-          <a class="nav-link "  data-bs-auto-close="outside">Avisos</a>
-          <!-- <ul class="dropdown-menu shadow">
-            <li class="dropend">
-              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Tipo de
-                Inmueble</a>
-              <ul class="dropdown-menu shadow">
-                <li><a class="dropdown-item" >Casa</a></li>
-                <li><a class="dropdown-item" >Departamento</a></li>
-                <li><a class="dropdown-item" >Casa en Condominio</a></li>
-                <li><a class="dropdown-item" >Oficina</a></li>
-                <li><a class="dropdown-item">Local Comercial</a></li>
-                <li><a class="dropdown-item" >Bodega Comercial</a></li>
-                <li><a class="dropdown-item">Terreno / Lote</a></li>
-                <li><a class="dropdown-item" >Nave Industrial</a></li>
-              </ul>
-            </li>
-          </ul> -->
+          <a class="nav-link "   (click)="Avisos()"  data-bs-auto-close="outside">Avisos</a>
         </li>
         <!--End Menu Compra-->
         <!-- Menu Renta -->
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Renta</a>
           <ul class="dropdown-menu shadow">
             <li class="dropend">
@@ -54,11 +38,11 @@
               </ul>
             </li>
           </ul>
-        </li>
+        </li> -->
         <!-- End Menu Renta -->
 
         <!-- Menu Servicios -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Servicios</a>
           <ul class="dropdown-menu shadow">
             <li class="dropend">
@@ -83,34 +67,34 @@
                 <li><a  class="dropdown-item">Remates Hipotecarios</a></li>
                 <li><a  class="dropdown-item">Evita Fraude</a></li>
               </ul>
-            </li>
+            </li> -->
             <!-- <li> <a class="dropdown-item" > Novedades  </a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li><a ="novedadesactulidad" class="dropdown-item"> Actualida</a></li>
                 </ul>
               </li> -->
-          </ul>
-        </li>
+          <!-- </ul>
+        </li> -->
         <!-- End Servicios -->
         <!--Menu Inmobiliarias-->
         <li class="nav-item">
-          <a  class="nav-link" role="button" aria-expanded="false">Inmobiliarias</a>
+          <a   (click)="favoritos()"class="nav-link"  role="button" aria-expanded="false">Favoritos</a>
         </li>
         <!--End Menu Inmobiliarias-->
         <!--Menu Forma Parte de Nosotros-->
         <li class="nav-item">
-          <a  class="nav-link" role="button" aria-expanded="false">Blog</a>
+          <a  (click)="Contratos()" class="nav-link" role="button" aria-expanded="false">Contraciones</a>
         </li>
         <!-- End Menu Forma Parte de Nosotros-->
         <!--Menu Contactanos-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a  class="nav-link" role="button" aria-expanded="false">Contáctanos</a>
-        </li>
+        </li> -->
         <!-- End Menu Contactanos-->
       </ul>
       <form class="d-flex">
-        <button class="btn btn-outline-inmo me-2" type="button" >
-          <i class="bi bi-house-up-fill m-1 size-icon"></i> Sube tu Propiedad
+        <button (click)="planes()" class="btn btn-outline-inmo me-2" type="button" >
+          <i class="bi bi-cart  m-1 size-icon"></i>  Comprar
         </button>
 
         <button *ngIf="!isLoggedIn" class="btn btn-outline-inmo"  type="submit">
@@ -123,10 +107,10 @@
             <i class="bi bi-person-circle m-1 size-icon"></i> Perfil
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" >Editar Perfil</a></li>
-            <li><a class="dropdown-item" >Panel de Control</a></li>
-            <li><a class="dropdown-item" >Mi espacio</a></li>
-            <li><a class="dropdown-item" >Cerrar Sesion</a></li>
+            <li><a class="dropdown-item" (click)="Editar()">Editar Perfil</a></li>
+            <li><a class="dropdown-item" (click)="Panel()">Panel de Control</a></li>
+            <!-- <li><a class="dropdown-item" (click)="Espacio()">Mi espacio</a></li> -->
+            <li><a class="dropdown-item" (click)="cerrar()">Cerrar Sesion</a></li>
           </ul>
         </div>
 
