@@ -58,7 +58,22 @@
    }
  
   
-  
+  @media screen and (max-width: 500px){
+    .card {
+     
+      width: 100%;
+    }
+    /* .card-content{
+      flex: 1;
+      width:100%;
+    } */
+    .card-container{
+      
+      /* display: flex; */
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
  
 
   
