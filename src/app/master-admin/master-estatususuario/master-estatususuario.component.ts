@@ -109,9 +109,10 @@ export class MasterEstatususuarioComponent implements OnInit {
 
     localStorage.setItem ('Id_Usuxd',idPubli);    
     const dialogRef = this.dialog.open(MasterestatusComponent, {
-       width: '30%',
-      height: '40%',  
+       width: '300px',
+      height: '200px',  
       disableClose: true
+
     });
   }
 
