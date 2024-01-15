@@ -228,9 +228,9 @@ export class HttpService {
   //   return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', { headers });
   // }
 
-  mostrarAsesor(Id_Socio: any) {
+  mostrarAsesor(Id_Responsable: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Socio=' + Id_Socio;
+    let params = 'p_Id_Responsable=' + Id_Responsable;
     return this.httpclient.post(this.url + 'sp_web_consulta_asesores.php', params, { headers });
   }
 
@@ -263,9 +263,9 @@ export class HttpService {
     return this.httpclient.post(this.url + 'insertarSocio.php', params, { headers });
   }
 
-  insertarusuarioasignacion(Id_Usuarios: any, Id_Inmueble: any) {
+  insertarusuarioasignacion(Id_Usuario: any, Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_Id_Inmueble=' + Id_Inmueble + "&p_Id_Usuario=" + Id_Usuarios
+    let params = 'p_Id_Usuario=' + Id_Usuario + "&p_Id_Inmueble=" + Id_Inmueble
     return this.httpclient.post(this.url + 'sp_web_insertar_usuario_asignacion.php', params, { headers });
   }
 
@@ -760,6 +760,18 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_inventarioAsesor.php', params, { headers });
    }
+
+   insertaAsesores(Id_Usuario: any, Id_Inmueble: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Usuario=' + Id_Usuario + '&p_Id_Inmueble=' + Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_insertar_asesor_asignacion.php', params, { headers });
+  }  
+  
+  actualiza_asig_asesor(Id_Usuario: any, Id_Inmueble: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_Id_Usuario=" + Id_Usuario + "&p_Id_Inmueble=" + Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_actualiza_usuario_asesor.php', params, { headers });
+  }
    
    openasesor( ) {
     const dialogRef = this.dialog.open(ModalComponent, {

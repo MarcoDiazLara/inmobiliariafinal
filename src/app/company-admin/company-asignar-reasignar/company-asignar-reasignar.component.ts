@@ -95,7 +95,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
 
     this.httpService.InmueblesBrokers(Id_Socio).subscribe((data:any)=>{
-    
+     console.log("datosinmueble",data)
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {

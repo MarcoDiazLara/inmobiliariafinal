@@ -452,6 +452,7 @@ export interface Interesados{
 };
 
 export interface Asig_Inmuebles{
+    Id_Inmueble: "",
     Nombre_Inmueble: "",
     Calle: "",
     Num_Ext: "",
@@ -478,6 +479,13 @@ export interface Sepomex{
     d_zona:string,
     c_cve_ciudad:string,
     c_CP:string
+};
+
+export interface Asig_Inmu_Asesor{
+    Id_Asesor: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
 };
 
 
