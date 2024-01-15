@@ -70,7 +70,6 @@ export interface reasignacionA {
     IdUsu: ""
 }
 export interface AsigarReAsignar {
-
     Nombre_Publicacion: "",
     No_asignados: "",
     Asignados: "",
