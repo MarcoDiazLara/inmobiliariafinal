@@ -145,7 +145,7 @@ localStorage.setItem("mi_valor", "1");
 }
 
 localStorage.setItem("Id_Inmueble",id_inmo);
-    // localStorage.setItem("Nombres", asesor );
+    localStorage.setItem("Nombres", asesor );
     console.log(id_inmo);
 
 

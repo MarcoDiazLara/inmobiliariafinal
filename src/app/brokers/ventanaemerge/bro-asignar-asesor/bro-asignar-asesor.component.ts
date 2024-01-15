@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { asignacionA } from 'src/app/services/Interface/Interfaces';
+import { Asig_Inmu_Asesor } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { __param } from 'tslib';
@@ -20,7 +20,7 @@ import Swal from 'sweetalert2';
 })
 export class BroAsignarAsesorComponent implements OnInit {
 
-  asesores:asignacionA[]=[];
+  asesores:Asig_Inmu_Asesor[]=[];
   Nombres: any;
 
   toppings = new FormControl('');
@@ -55,13 +55,13 @@ export class BroAsignarAsesorComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
-      let Id_Usuario = this.formGeneral.value.Id_Usuario
-      let Id_Inmueble = localStorage.getItem("Id_Inmuble");
+      let Id_Usuario = this.formGeneral.value.Id_Asesor
+      let Id_Inmueble = localStorage.getItem("Id_Inmueble");
       console.log(Id_Inmueble);
 
      
       
-      this.http.insertaAsesores( Id_Usuario, Id_Inmueble ,this.Nombres).subscribe((data: any)=> {
+      this.http.insertaAsesores( this.Nombres,Id_Inmueble).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',
@@ -90,14 +90,14 @@ export class BroAsignarAsesorComponent implements OnInit {
    }
   }
   prueba(){
-    let Id_Inmuble= localStorage.getItem("Id_Inmueble");
+    let Id_Inmueble= localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
    
   
     if (valor=="1"){
   
-      this.http.updateUsuarioReasignacion(Id_Inmuble,this.Nombres ).subscribe((resp:any)=> {
+      this.http.actualiza_asig_asesor(this.Nombres,Id_Inmueble).subscribe((resp:any)=> {
         if(resp == 1){
   
           Swal.fire({
