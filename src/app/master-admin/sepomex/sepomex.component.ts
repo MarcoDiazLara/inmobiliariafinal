@@ -6,10 +6,11 @@ interface estados{
   estado: string,
   codigoestado: string
 };
-
-interface Municipios{
+//codigo estado 
+interface municipios{
   municipio: string;
   codigomunicipio:string,
+  estado: string;
 
 }
 
@@ -29,6 +30,7 @@ export class SepomexComponent implements OnInit {
   progressValue = 0;
   Archivo: Sepomex[]=[];
   estados: estados[] = [];
+  municipios: municipios[] = [];
 
   
   processFile(event: any): void {
@@ -55,7 +57,7 @@ export class SepomexComponent implements OnInit {
 
 
         let aux = this.reemplazarCaracteresEspeciales(modifiedContent);
-        console.log(aux);
+        // console.log(aux);
         let contenidoSinSaltos: string = modifiedContent.replace(/[\r]/g,'');
         let palabras: string[] = contenidoSinSaltos.split("\n");
         let palabrasFiltradas: string[] = palabras.filter(palabra => palabra.trim() !== '');
@@ -82,7 +84,7 @@ export class SepomexComponent implements OnInit {
         };
         this.Archivo.push(sepomex);    
         })
-
+//Estados
         this.Archivo.forEach(sepomex => {
           let estado: estados = {
             estado: sepomex.d_estado,
@@ -109,10 +111,20 @@ export class SepomexComponent implements OnInit {
         return false;
     });
 
+//Municipios
 
-    
+
+
+
+
+
+    console.log(this.Archivo)
     
     console.log(estadosSinDuplicados);
+
+    console.log();
+
+    console.log();
        
 
 
