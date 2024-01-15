@@ -55,12 +55,13 @@ export class BroAsignarAsesorComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
+      let Id_Usuario = this.formGeneral.value.Id_Usuario
       let Id_Inmueble = localStorage.getItem("Id_Inmuble");
       console.log(Id_Inmueble);
 
      
       
-      this.http.insertarusuarioasignacion( Id_Inmueble,this.Nombres).subscribe((data: any)=> {
+      this.http.insertaAsesores( Id_Usuario, Id_Inmueble ,this.Nombres).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',
@@ -89,15 +90,14 @@ export class BroAsignarAsesorComponent implements OnInit {
    }
   }
   prueba(){
-    let Id_Publicacion = localStorage.getItem("id_publicacion");
-    //let asesor = localStorage.getItem("Asesor");
+    let Id_Inmuble= localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
    
   
     if (valor=="1"){
   
-      this.http.updateUsuarioReasignacion(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
+      this.http.updateUsuarioReasignacion(Id_Inmuble,this.Nombres ).subscribe((resp:any)=> {
         if(resp == 1){
   
           Swal.fire({

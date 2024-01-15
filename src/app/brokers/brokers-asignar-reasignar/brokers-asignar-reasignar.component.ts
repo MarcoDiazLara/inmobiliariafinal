@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 import { BroAsignarAsesorComponent } from '../ventanaemerge/bro-asignar-asesor/bro-asignar-asesor.component';
 
 
+
 @Component({
   selector: 'app-brokers-asignar-reasignar',
   templateUrl: './brokers-asignar-reasignar.component.html',

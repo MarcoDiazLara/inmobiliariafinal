@@ -760,6 +760,12 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_inventarioAsesor.php', params, { headers });
    }
+
+   insertaAsesores(Id_Usuario: any, Id_Inmueble: any, Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Usuario=' + Id_Usuario + '&p_Id_Inmueble=' + Id_Inmueble + '&p_Id_Socio=' + Id_Socio + '&p_estatus_Suscripcion=';
+    return this.httpclient.post(this.url + 'sp_web_insertar_asesor_asignacion.php', params, { headers });
+  }   
    
    openasesor( ) {
     const dialogRef = this.dialog.open(ModalComponent, {
