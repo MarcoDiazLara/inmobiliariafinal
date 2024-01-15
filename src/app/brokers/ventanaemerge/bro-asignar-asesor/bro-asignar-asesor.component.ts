@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { asignacionA } from 'src/app/services/Interface/Interfaces';
+import { Asig_Inmu_Asesor } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { __param } from 'tslib';
@@ -20,7 +20,7 @@ import Swal from 'sweetalert2';
 })
 export class BroAsignarAsesorComponent implements OnInit {
 
-  asesores:asignacionA[]=[];
+  asesores:Asig_Inmu_Asesor[]=[];
   Nombres: any;
 
   toppings = new FormControl('');
@@ -38,8 +38,8 @@ export class BroAsignarAsesorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let Id_Socio= localStorage.getItem("Id_Socio");
-    this.http.mostrarAsesor(Id_Socio).subscribe((data:any)=>{
+    let Id_Responsable= localStorage.getItem("Id_Usuario");
+    this.http.mostrarAsesor(Id_Responsable).subscribe((data:any)=>{
       this.asesores=data;
       console.log(this.asesores);
       });
@@ -55,12 +55,13 @@ export class BroAsignarAsesorComponent implements OnInit {
   guardarasesor() {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
-      let Id_Publicacion = localStorage.getItem("id_publicacion");
-      console.log(Id_Publicacion);
+      let Id_Usuario = this.formGeneral.value.Id_Asesor
+      let Id_Inmueble = localStorage.getItem("Id_Inmueble");
+      console.log(Id_Inmueble);
 
      
       
-      this.http.insertarusuarioasignacion( Id_Publicacion,this.Nombres).subscribe((data: any)=> {
+      this.http.insertaAsesores( this.Nombres,Id_Inmueble).subscribe((data: any)=> {
         if(data == 1){
           Swal.fire({
             position: 'top-end',
@@ -89,24 +90,21 @@ export class BroAsignarAsesorComponent implements OnInit {
    }
   }
   prueba(){
-    let Id_Publicacion = localStorage.getItem("id_publicacion");
-    //let asesor = localStorage.getItem("Asesor");
+    let Id_Inmueble= localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
    
   
     if (valor=="1"){
   
-      this.http.updateUsuarioReasignacion(Id_Publicacion,this.Nombres ).subscribe((resp:any)=> {
+      this.http.actualiza_asig_asesor(this.Nombres,Id_Inmueble).subscribe((resp:any)=> {
         if(resp == 1){
   
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El asesor fue reasignado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+            title: "Exito!",
+            text: "El Asesor fue asignado",
+            icon: "success"
+          });
           this.closeDialog();
     
         }else{

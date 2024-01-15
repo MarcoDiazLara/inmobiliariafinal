@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { asignacionBro } from 'src/app/services/Interface/Interfaces';
 import { HttpService } from 'src/app/services/http/http.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { ActivatedRoute } from '@angular/router';
 
 // Alerta
@@ -34,6 +35,7 @@ export class CompAsignaBrokerComponent implements OnInit {
     private http: HttpService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private globalservice: GlobalService
   ) { }
 
   ngOnInit(): void {
@@ -103,7 +105,14 @@ export class CompAsignaBrokerComponent implements OnInit {
 
       this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
         if (resp == 1) {
-
+        let tem_Usuarios: any=this.globalservice.usuarios$.value || []; 
+        let index = tem_Usuarios.findIndex((usu:any)=>usu.Id_Inmueble == resp.Id_Inmueble);
+        if (index != -1)
+        {
+        //  tem_Usuarios[index].Id_Inmueble =
+        this.globalservice.usuarios$.next(tem_Usuarios);
+        }
+      
           Swal.fire({
             title: "Exito!",
             text: "El Broker fue actualizado",
@@ -111,6 +120,7 @@ export class CompAsignaBrokerComponent implements OnInit {
           });
 
           this.closeDialog();
+          // window.location.reload();
 
         } else {
           alert("Error al actualizar");

@@ -1,8 +1,3 @@
-export interface Inmuebles {
-    Id_Tipo_Inmueble: string
-    Tipo_Inmueble: string
-};
-
 export interface Estados {
     id_Estado: string
     Estado: string
@@ -70,7 +65,6 @@ export interface reasignacionA {
     IdUsu: ""
 }
 export interface AsigarReAsignar {
-
     Nombre_Publicacion: "",
     No_asignados: "",
     Asignados: "",
@@ -452,6 +446,7 @@ export interface Interesados{
 };
 
 export interface Asig_Inmuebles{
+    Id_Inmueble: "",
     Nombre_Inmueble: "",
     Calle: "",
     Num_Ext: "",
@@ -480,4 +475,19 @@ export interface Sepomex{
     c_CP:string
 };
 
+export interface Asig_Inmu_Asesor{
+    Id_Asesor: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
+};
 
+export interface Inmuebles {
+    Id_Tipo_Inmueble: string,
+    Tipo_Inmueble: string
+};
+
+export interface TipoOperacion {
+    Id_Tipo_Publicacion: string,
+    Tipo_Publicacion: string
+}

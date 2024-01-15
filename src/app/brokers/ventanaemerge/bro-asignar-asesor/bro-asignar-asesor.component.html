@@ -2,13 +2,12 @@
     <form class="insertar-dialog-content" [formGroup]="formGeneral"> 
       <h1> Selecciona Asesor</h1>
      <mat-form-field>
-     
            <mat-label><b>Selecciona Asesor</b></mat-label>
-           <mat-select formControlName="Nombres" >
-             <mat-option *ngFor="let Asesor of asesores" [value]="Asesor.Id_Usuario">{{Asesor.Nombres}}</mat-option>
+           <mat-select formControlName="Nombres">
+             <mat-option *ngFor="let Asesor of asesores" [value]="Asesor.Id_Asesor">{{Asesor.Nombres+" "+Asesor.Apellido_Paterno+" "+Asesor.Apellido_Materno}} </mat-option>
            </mat-select>
            <mat-error>
-             Tipo Asesor
+             Asesor
            </mat-error>
        </mat-form-field>
    
@@ -24,5 +23,9 @@
    
     </form> 
    </div>
+
+
+
+   
    
 
