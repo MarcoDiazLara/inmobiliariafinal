@@ -64,3 +64,9 @@ button:disabled {
   text-align      : center;
 
 }
+
+@media screen and (max-width: 500px){
+  .cssbutton button{
+    width: 100%;
+  }
+}

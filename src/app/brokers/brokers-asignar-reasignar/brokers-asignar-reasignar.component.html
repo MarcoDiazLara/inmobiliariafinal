@@ -47,9 +47,9 @@
       </ng-container>
   
   
-      <ng-container matColumnDef="Asesor">
+      <ng-container matColumnDef="Nombres">
         <th mat-header-cell *matHeaderCellDef>Asesor</th>
-        <td mat-cell *matCellDef="let element" id="asesor"> {{element.Nombres+" "+element.Apellido_Paterno+" "+element.Apellido_Materno}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.Nombres+" "+element.Apellido_Paterno+" "+element.Apellido_Materno}} </td>
       </ng-container>
   
   
@@ -61,8 +61,8 @@
             <mat-icon>more_horiz</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-         <button class="buttonasignar" mat-raised-button (click)="openasesor(element.Id_Publicacion, element.Asesor)">
-              Asignar Asesor 
+         <button class="buttonasignar" mat-raised-button (click)="openasesor(element.Id_Inmueble, element.Nombres)">
+              Asesor 
             </button>
           </mat-menu>
       </ng-container>

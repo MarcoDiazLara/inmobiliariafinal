@@ -63,7 +63,7 @@ registerLocaleData(localeEs);
     InvesntarioComponent,
     VentanadetallesInmuebleComponent,
     CatalogoinmuebleComponent,
-    FechashitoComponent,
+    FechashitoComponent
 
 
 
