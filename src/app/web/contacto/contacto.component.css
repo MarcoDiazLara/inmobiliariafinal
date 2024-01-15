@@ -37,3 +37,16 @@
 .contact-form button:focus{
     box-shadow:none;
 }
+@media (max-width: 767px) {
+    /* Agrega estilos para pantallas más pequeñas */
+    .col-md-3,
+    .col-md-9 {
+        width: 100%; /* Ajusta el ancho al 100% en pantallas más pequeñas */
+        border-radius: 0; /* Elimina la redondez de los bordes */
+        padding: 4%; /* Puedes ajustar esto según sea necesario */
+    }
+
+    .contact-form button {
+        width: 100%; /* Ajusta el ancho del botón al 100% en pantallas más pequeñas */
+    }
+ }
