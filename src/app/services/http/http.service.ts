@@ -769,7 +769,7 @@ export class HttpService {
   
   actualiza_asig_asesor(Id_Usuario: any, Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = "p_Id_Inmueble=" + Id_Usuario + "&p_Id_Inmueble=" + Id_Inmueble;
+    let params = "p_Id_Usuario=" + Id_Usuario + "&p_Id_Inmueble=" + Id_Inmueble;
     return this.httpclient.post(this.url + 'sp_web_actualiza_usuario_asesor.php', params, { headers });
   }
    
