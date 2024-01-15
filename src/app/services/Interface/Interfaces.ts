@@ -1,8 +1,3 @@
-export interface Inmuebles {
-    Id_Tipo_Inmueble: string
-    Tipo_Inmueble: string
-};
-
 export interface Estados {
     id_Estado: string
     Estado: string
@@ -487,4 +482,12 @@ export interface Asig_Inmu_Asesor{
     Apellido_Materno: ""
 };
 
+export interface Inmuebles {
+    Id_Tipo_Inmueble: string,
+    Tipo_Inmueble: string
+};
 
+export interface TipoOperacion {
+    Id_Tipo_Publicacion: string,
+    Tipo_Publicacion: string
+}
