@@ -162,8 +162,8 @@ public Venta: Boolean = false;
   
    abrirAplicacion() {
     // Intenta abrir la aplicación
-    //let id = this.id_inmueble;
-    let id = "16";
+    let id = this.id_inmueble;
+    //let id = "16";
     window.location.href = "inmobewise-app://id_inmueble="+ id;
 
     // Si no se puede abrir, redirige a la tienda de aplicaciones
