@@ -4,11 +4,10 @@
 <mat-dialog-content >
  
     <hr>
-    <h1>Informacion general del Inmueble <i class="bi bi-info">
+    <h1 class="text-center">Informacion general del Inmueble <i class="bi bi-info">
       <i class="bi bi-houses"></i>
     </i></h1> 
     <hr>  
-     <br>
      <br>      
      <div class="example-container">
       <form [formGroup]="options">
@@ -33,6 +32,8 @@
               <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
           </mat-icon>
           </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
           <!-- ------------------------------------------------------------------- -->
           <mat-form-field style="margin-right: 10px;">
               <mat-label>Descripcion</mat-label>
@@ -41,10 +42,6 @@
                 <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
             </mat-icon>
             </mat-form-field>
-            
-          </div>
-    
-          <div style="display: flex; justify-content: center; align-items: center;">
             <mat-form-field style="margin-right: 15px;">
               <mat-label>Calle</mat-label>
               <input matInput  formControlName="Calle" required  [(ngModel)]="datos.Calle" >
@@ -52,6 +49,11 @@
                 <img src="assets/img/mapa-de-la-calle.png" alt="Icono" width="30" height="30">
             </mat-icon>
             </mat-form-field>
+            
+          </div>
+    
+          <div style="display: flex; justify-content: center; align-items: center;">
+          
             <!-- --------------------------------------------- -->
             <mat-form-field style="margin-right: 10px;">
               <mat-label>No Interior</mat-label>
@@ -92,7 +94,7 @@
     </div> 
     <br>
     <hr>
-        <h1> Caracteristicas del Inmueble <i class="bi bi-pencil">
+        <h1 class="text-center"> Caracteristicas del Inmueble <i class="bi bi-pencil">
           <i class="bi bi-houses"></i>
         </i>
   
@@ -117,24 +119,28 @@
                 <img src="assets/img/bano.png" alt="Icono" width="25" height="25">
             </mat-icon>
             </mat-form-field>
-            <mat-form-field style="margin-right: 20px;">
-              <mat-label>Cocina Integral</mat-label>
-              <input matInput  formControlName="Cocina_Integral" required [(ngModel)]="datos.Cocina_Integral">
-              <mat-icon matSuffix>
-                <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
-            </mat-icon>
-           
-            </mat-form-field>
+            
           </div>
             <div style="display: flex; justify-content: center; align-items: center;">
+              <mat-form-field style="margin-right: 20px;">
+                <mat-label>Cocina Integral</mat-label>
+                <input matInput  formControlName="Cocina_Integral" required [(ngModel)]="datos.Cocina_Integral">
+                <mat-icon matSuffix>
+                  <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
+              </mat-icon>
+             
+              </mat-form-field>
             <mat-form-field style="margin-right: 15px;">
               <mat-label>Numero Pisos</mat-label>
               <input matInput  formControlName="Numero_Pisos" required [(ngModel)]="datos.Num_Pisos">
-           
+            
               <mat-icon matSuffix>
                 <img src="assets/img/num_pisos.png" alt="Icono" width="25" height="25">
             </mat-icon>
             </mat-form-field>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+
             <mat-form-field style="margin-right: 15px;">
               <mat-label>Antiguedad</mat-label>
               <input matInput  formControlName="Antiguedad" required [(ngModel)]="datos.Antiguedad">
@@ -166,6 +172,8 @@
                       <img src="assets/img/terraza.png"  alt="Icono" width="28" height="28">
                   </mat-icon>
                   </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
                   <mat-form-field style="margin-right: 15px;">
                     <mat-label>GYM</mat-label>
                     <input matInput  formControlName="GYM" required [(ngModel)]="datos.Gimnasio">
@@ -173,9 +181,7 @@
                       <img src="assets/img/gimna.png"  alt="Icono" width="30" height="30">
                   </mat-icon>
                   </mat-form-field> 
-        </div>
-        <div style="display: flex; justify-content: center; align-items: center;">
-                    <mat-form-field style="margin-right: 15px;">
+                  <mat-form-field style="margin-right: 15px;">
                     <mat-label>RoofGarden</mat-label>
                     <input matInput formControlName="RoofGarden" required [(ngModel)]="datos.Roof_Garden">
                     <mat-icon matSuffix>
@@ -183,6 +189,9 @@
                   </mat-icon>
                 
                   </mat-form-field> 
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+                    
           
                   <mat-form-field style="margin-right: 15px;">
                     <mat-label>Estacionamiento</mat-label>
@@ -194,9 +203,9 @@
             
             </div>
             <br>
-     <br>
+     
      <hr >
-            <h1> Precio  <i class="bi bi-currency-dollar">
+            <h1 class="text-center"> Precio  <i class="bi bi-currency-dollar">
               <i class="bi bi-houses"></i>
             </i>  </h1>
             <hr>
@@ -219,7 +228,8 @@
             </mat-icon>
           
             </mat-form-field>
-      
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;">
             <mat-form-field style="margin-right: 15px;">
               <mat-label>Precio Final </mat-label>
               <input matInput  formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">

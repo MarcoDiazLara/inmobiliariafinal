@@ -54,7 +54,7 @@ h1{
   .content .price {
     color: white;
     font-weight: 800;
-    font-size: 50px;
+    font-size:25px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
   }
   
@@ -90,4 +90,20 @@ h1{
     text-shadow: 0px 4px 18px #2c3442;
   }
 
-
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    width: 300px; /* Ancho inicial de la tarjeta */
+    margin: 10px; /* Margen entre las tarjetas */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%; /* Tarjeta ocupa todo el ancho en pantallas más pequeñas */
+    }
+  }
+  

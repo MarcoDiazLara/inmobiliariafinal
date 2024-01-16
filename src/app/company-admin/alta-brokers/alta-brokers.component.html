@@ -171,11 +171,13 @@
       </div>
     </div> 
   </div> -->
+  
   </form>
   <br>
-  <div class="col-md-6 cssbutton">
-  <button mat-button type="submit" (click)="Guardardatos()" [class.spinner]="loading" [disabled]="loading" color="secondary">
+  <div class="cssbutton">
+  <button mat-button type="submit" (click)="Guardardatos()" [class.spinner]="loading" [disabled]="loading" color="secondary" >
       <span>{{ loading ? 'Cargando...' : 'Registrar' }}</span>
+
   </button>
   </div>
   </div>

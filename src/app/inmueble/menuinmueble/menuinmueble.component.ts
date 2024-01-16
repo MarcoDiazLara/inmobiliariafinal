@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { MatDialog, } from '@angular/material/dialog';
 import { PlanesComponent } from '../planes/planes.component';
 
+
 @Component({
   selector: 'app-menuinmueble',
   templateUrl: './menuinmueble.component.html',
@@ -15,6 +16,9 @@ export class MenuinmuebleComponent {
 
   constructor(private router: Router, private httpService: HttpService, public dialog: MatDialog) { }
 
+  ngOnInit() {
+    this.isLoggedIn = this.httpService.getGlobalVariable();
+  }
 
 
 
