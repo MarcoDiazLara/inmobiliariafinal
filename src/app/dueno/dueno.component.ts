@@ -19,8 +19,8 @@ export class DuenoComponent implements OnDestroy {
     { name: "bienvenida", route: "bienvenida", icon: "home", label: "Hola", number: '0' , onClick:this.xd},
     { name: "perfil", route: "perfil", icon: "person", label: "Perfil", number: '0' , onClick:this.xd},
     { name: "Notificaciones", route: "notificacion-dueno", icon: "notifications", label: "Notificaciones", number: '0' , onClick:this.xd},
-    { name: "Calendario", route: "MiAsesor", icon: "date_range", label: " Mi Asesor", number: '0' , onClick:this.xd},
-    { name: "cambioasesor", route: "cambioasesor",icon: "3p" , label: "Cambio de Asesor",number:'0', onClick:this.xd },
+    { name: "Calendario", route: "MiAsesor", icon: "supervisor_account", label: " Mi Asesor", number: '0' , onClick:this.xd},
+    { name: "cambioasesor", route: "cambioasesor",icon: "photo_auto_merge" , label: "Cambio de Asesor",number:'0', onClick:this.xd },
     { name: "Asignar-reasignar", route: "Interesados", icon: "groups", label: "Interesados", number: '0' , onClick:this.xd},
     { name: "Salir", route: "web", icon: "logout", label: "Salir", number: '1', onClick: () =>  this.logout() }
 

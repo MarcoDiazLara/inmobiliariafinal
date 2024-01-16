@@ -1,3 +1,4 @@
+<mat-dialog-content  >
 <mat-stepper #stepper>
     <mat-step>
         <ng-template matStepLabel>Detalle de compra</ng-template>
@@ -49,7 +50,7 @@
         <h1 >Información de Método de Pago</h1>
         <br>
         <br>
-        <div style="display: flex; justify-content: center; align-items: center;">
+        <!-- <div style="display: flex; justify-content: center; align-items: center;">
             <mat-form-field style="margin-right: 10px;"> 
                 <mat-label>Nombre  Completo </mat-label>
                 <input matInput placeholder="Nombre  Completo" >
@@ -93,6 +94,59 @@
     <div style="display: flex; justify-content: center; align-items: center;">
     <img src="assets/img/paypal.png" alt="PayPal" class="img-fluid mr-2"> 
     <img src="assets/img/visa.png" alt="Visa" class="img-fluid mr-2">
+    </div> -->
+
+    <div class="form-container">
+      <div class="form-field">
+        <mat-form-field> 
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput placeholder="Nombre Completo">
+          <mat-icon matSuffix>
+            <img src="assets/img/usuario1.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-field">
+        <mat-form-field> 
+          <mat-label>Numero de tarjeta</mat-label>
+          <input matInput placeholder="XXXXXXXXXXXX">
+          <mat-icon matSuffix>
+            <img src="assets/img/tarjeta-nfc.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <div class="form-container">
+      <div class="form-field">
+        <mat-form-field> 
+          <mat-label>Fecha de Expiración:</mat-label>
+          <input matInput placeholder="MM/YY">
+          <mat-icon matSuffix>
+            <img src="assets/img/calendario.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-field">
+        <mat-form-field> 
+          <mat-label>Código de Seguridad (CVV):</mat-label>
+          <input matInput placeholder="000">
+          <mat-icon matSuffix>
+            <img src="assets/img/cerrar.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <div class="form-container">
+      <h4>Métodos de Pago Aceptados</h4>
+    </div>
+    
+    <div class="form-container">
+      <img src="assets/img/paypal.png" alt="PayPal" class="img-fluid mr-2"> 
+      <img src="assets/img/visa.png" alt="Visa" class="img-fluid mr-2">
     </div>
         <div style="display: flex; justify-content: center; align-items: center;">
             <button color="primary" mat-button matStepperPrevious>Atras</button>
@@ -159,4 +213,4 @@
       </form>
     </mat-step>
   </mat-stepper>
-  
+</mat-dialog-content>

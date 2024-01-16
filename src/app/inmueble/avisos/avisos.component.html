@@ -11,7 +11,7 @@
   
   
 
-  
+<!--   
    <div class="d-flex justify-content-center">
   <div class="Precio-container"   >
     <button (click)="toggleTestadoAnuncio()" class="buttonnavbar" mat-stroked-button>Estado del Anuncio<img class="navarrow"></button>
@@ -75,12 +75,69 @@
              </section>
         </ul>
       </ul>
-  </div>
+  </div> -->
 
  
 
 
+  <!-- </div> -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="Precio-container">
+          <button (click)="toggleTestadoAnuncio()" class="buttonnavbar btn btn-outline-primary btn-block">Estado del Anuncio<img class="navarrow"></button>
+          <ul *ngIf="showTipoAnuncio" class="dropdown-Precio">
+            <section class="example-section" [formGroup]="toppings">
+              <mat-radio-group>
+                <p><mat-radio-button color="primary" (click)="estadoAnuncion(1)" value="1">Borrador</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="estadoAnuncion(2)" value="2">Publicación Pendiente</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="estadoAnuncion(3)" value="3">Publicado</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="estadoAnuncion(4)" value="4">No Publicado</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="estadoAnuncion(5)" value="5">Publicación Pausada</mat-radio-button></p>
+              </mat-radio-group>
+            </section>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="Precio-container">
+          <button (click)="toggleEstadoAnuncio()" class="buttonnavbar btn btn-outline-primary btn-block">Tipo del Anuncio<img class="navarrow"></button>
+          <ul *ngIf="showEstadoAnuncio" class="dropdown-Recamaras">
+            <section class="example-section" [formGroup]="toppings">
+              <mat-radio-group>
+                <p><mat-radio-button color="primary" (click)="tipoAnuncios(1)" value="1">Compra</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="tipoAnuncios(2)" value="2">Renta</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="tipoAnuncios(3)" value="3">Desarrollo</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="tipoAnuncios(4)" value="4">Remate</mat-radio-button></p>
+              </mat-radio-group>
+            </section>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="Precio-container">
+          <button (click)="togglePropiedad()" class="buttonnavbar btn btn-outline-primary btn-block">Tipo de Inmueble<img class="navarrow"></button>
+          <ul *ngIf="showPropiedad" class="dropdown-Recamaras">
+            <section class="example-section" [formGroup]="toppings">
+              <mat-radio-group>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(1)" value="1">Casa</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(2)" value="2">Departamento</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(3)" value="3">Casa en condominio</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(4)" value="4">Oficina</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(5)" value="5">Local comercial</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(6)" value="6">Bodega comercial</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(7)" value="7">Terreno / lote</mat-radio-button></p>
+                <p><mat-radio-button color="primary" (click)="TipoInmueble(8)" value="8">Nave industrial</mat-radio-button></p>
+              </mat-radio-group>
+            </section>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+  
   
 
 
@@ -127,9 +184,9 @@
             <br>
             <br>
         
-            
+<!--             
             <button class="btn btn-light btn-grande" (click)="toggleTabla()">    <i class="bi bi-basket3"></i> &nbsp;&nbsp;&nbsp; Mis compras disponibles
-            </button>
+            </button> -->
   <table class="table mt-3" *ngIf="mostrarTabla">
    <thead>
      <tr>
