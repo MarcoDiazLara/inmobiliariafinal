@@ -1,8 +1,8 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import { MatDialog} from '@angular/material/dialog';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
-import {AsigarReAsignar} from 'src/app/services/Interface/Interfaces';
+import { AsigarReAsignar } from 'src/app/services/Interface/Interfaces';
 import { Asig_Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MatPaginator } from '@angular/material/paginator';
@@ -22,7 +22,7 @@ import { BroAsignarAsesorComponent } from '../ventanaemerge/bro-asignar-asesor/b
 export class BrokersAsignarReasignarComponent implements OnInit {
 
   usuarios$: any;
-  formGeneral!:FormGroup; 
+  formGeneral!: FormGroup;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -37,41 +37,41 @@ export class BrokersAsignarReasignarComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Inmueble', 'Calle','Num_Ext','Municipio','Nombres','botonOption'];
-  
+  columnas: string[] = ['Nombre_Inmueble', 'Calle', 'Num_Ext', 'Municipio', 'Nombres', 'botonOption'];
+
   // poner el nombre de una variable
-  datosinfo: Asig_Inmuebles[]=[];
-  datos: AsigarReAsignar[]=[];
+  datosinfo: Asig_Inmuebles[] = [];
+  datos: AsigarReAsignar[] = [];
 
 
-  
+
   constructor(
     public dialog: MatDialog,
-    private http:HttpService,
+    private http: HttpService,
     private httpService: HttpService,
     private adminService: GlobalService,
     private formBuilder: FormBuilder,
-    private router:Router
+    private router: Router
     // Http para jalar el servicio 
   ) { }
 
- 
+
 
   ngOnInit(): void {
 
 
-    
+
     // let Bandera = localStorage.getItem("Bandera")
     // if(Bandera =="1")
-  
-    //  this.obtenerConteo();
 
-     this.usuarios$ =this.adminService.getUsuariosOb().subscribe((usuarios)=>{
-      if(usuarios !== null){
-        this.dataSource.data =usuarios;
+    this.obtenerConteo();
+
+    this.usuarios$ = this.adminService.getUsuariosOb().subscribe((usuarios) => {
+      if (usuarios !== null) {
+        this.dataSource.data = usuarios;
       }
     });
-    
+
 
 
     this.obtenerUsuarios();
@@ -80,72 +80,72 @@ export class BrokersAsignarReasignarComponent implements OnInit {
 
   }
 
-  
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
- 
-  // obtenerConteo(){
-  //   let IdSocio = localStorage.getItem("Id_Socio");
-  //   this.http.Aginados_NoAsigandos(IdSocio).subscribe((data:any)=>{
-  //     this.datos=data;
-    
-  //   });
-  // }
-    
-  obtenerUsuarios(){
+
+  obtenerConteo() {
+    let IdSocio = localStorage.getItem("Id_Socio");
+    this.http.sp_web_ase_asig_noasig(IdSocio).subscribe((data: any) => {
+      this.datos = data;
+
+    });
+  }
+
+  obtenerUsuarios() {
     let Id_Socio = localStorage.getItem("Id_Socio");
     let Id_Usuario = localStorage.getItem("Id_Usuario");
 
-    this.httpService.Asignaciones_asesor(Id_Socio, Id_Usuario).subscribe((data:any)=>{
+    this.httpService.Asignaciones_asesor(Id_Socio, Id_Usuario).subscribe((data: any) => {
       this.adminService.usuarios$.next(data);
       console.log(data)
-      // if(data !== 201) {
-      //   this.adminService.usuarios$.next(data);
-      // } else {
-      //   data = [];
-      //   this.adminService.usuarios$.next(data);
-      // }      
+      if (data !== 201) {
+        this.adminService.usuarios$.next(data);
+      } else {
+        data = [];
+        this.adminService.usuarios$.next(data);
+      }
     },
-    (err) => {
-      console.log('Error de conexión');
-    }
+      (err) => {
+        console.log('Error de conexión');
+      }
     )
 
 
   }
-  
 
-  openModalActualizar(element:any){
-    alert("open modal"+element)
+
+  openModalActualizar(element: any) {
+    alert("open modal" + element)
   }
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-}
+  }
 
 
 
-// mandar a llamar ventana emergente
+  // mandar a llamar ventana emergente
 
-openasesor(id_inmo:any,asesor:any ) {
+  openasesor(id_inmo: any, asesor: any) {
 
-const valorCelda = asesor;
-console.log(asesor);
-// Verifica si el valor de la celda está vacío o no
+    const valorCelda = asesor;
+    console.log(asesor);
+    // Verifica si el valor de la celda está vacío o no
 
-if (valorCelda == null) {
-// Almacena el valor en el localStorage
-localStorage.setItem("mi_valor", "2");
+    if (valorCelda == null) {
+      // Almacena el valor en el localStorage
+      localStorage.setItem("mi_valor", "2");
 
-} else {
-localStorage.setItem("mi_valor", "1");
+    } else {
+      localStorage.setItem("mi_valor", "1");
 
-}
+    }
 
-localStorage.setItem("Id_Inmueble",id_inmo);
-    localStorage.setItem("Nombres", asesor );
+    localStorage.setItem("Id_Inmueble", id_inmo);
+    localStorage.setItem("Nombres", asesor);
     console.log(id_inmo);
 
 
@@ -160,12 +160,12 @@ localStorage.setItem("Id_Inmueble",id_inmo);
   openDialog(): void {
     this.dialog.closeAll();
     //this.httpService.setGlobalVariable(false);
-    const itemsToRemove =[
+    const itemsToRemove = [
       "id_publicacion",
       "mi_valor",
       "Asesor",
     ];
-    itemsToRemove.forEach( item => {
+    itemsToRemove.forEach(item => {
       localStorage.removeItem(item);
     })
 
