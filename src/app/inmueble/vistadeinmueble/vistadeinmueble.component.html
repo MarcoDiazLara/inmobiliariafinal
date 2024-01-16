@@ -1,5 +1,4 @@
-<app-menu></app-menu>
-
+<!--
 <br>
 <br>
 
@@ -295,24 +294,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container1">
 <div class="content-right pr-4"> 
   
@@ -363,6 +344,443 @@
   <span>{{paginaActual}} / {{totalPaginas()}}</span>
   <button class="paginador" (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas()">Siguiente</button>
 </div>
+-->
 
 
+
+<app-menu></app-menu>
+<div class="p-5"></div>
+<div class="p-2"></div>
+<form [formGroup]="FilterFormGroup">
+  <div class="container-fluid m-auto">
+    <div class="row gy-2 gx-3 align-items-center vstack">
+      <div class="form-inline form-control">
+        <div class="row">
+          <div class="col-3">
+            <div class="input-group my-1 align-items-center">
+              <span class="input-group-text" id="basic-addon-1"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control" placeholder="Ingrese Municipio o Colonia"
+                aria-describedby="basic-addon-1">
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="btn-group my-1 dropdown-center">
+              <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false">
+                <i class="bi bi-newspaper icon-size me-1"></i>Tipo Operación
+              </button>
+              <ul class="dropdown-menu m-1">
+                <li class="dropdown-item" *ngFor="let inmo of TOperacion">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexRadioDefault{{ inmo.Id_Tipo_Publicacion }}"
+                      value="{{ inmo.Id_Tipo_Publicacion }}">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      {{ inmo.Tipo_Publicacion }}
+                    </label>
+
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="btn-group my-1 dropdown-center">
+              <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false">
+                <i class="bi bi-house-door-fill icon-size me-1"></i>Tipo Inmueble
+              </button>
+              <ul class="dropdown-menu m-1">
+                <li class="dropdown-item" *ngFor="let inmo of TInmuebles">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexRadioDefault{{ inmo.Id_Tipo_Inmueble }}"
+                      value="{{ inmo.Id_Tipo_Inmueble }}" >
+                    <label class="form-check-label" for="flexRadioDefault1"><span> {{ inmo.Tipo_Inmueble }}
+                      </span></label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="btn-group my-1">
+              <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false">
+                <i class="bi bi-bookmark-fill icon-size me-1"></i>Tipo Anunciante
+              </button>
+              <ul class="dropdown-menu m-1">
+                <li><a class="dropdown-item" href="#">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="TD">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Trato Directo
+                      </label>
+                    </div>
+                  </a></li>
+                <li><a class="dropdown-item" href="#">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="IM">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Inmobiliaria
+                      </label>
+                    </div>
+                  </a></li>
+                <li><a class="dropdown-item" href="#">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="DS">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Desarrolladora
+                      </label>
+                    </div>
+                  </a></li>
+                <li><a class="dropdown-item" href="#">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="CT">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Constructora
+                      </label>
+                    </div>
+                  </a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="btn-group my-1 dropdown-center">
+              <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false">
+                <i class="bi bi-tag-fill icon-size me-1"></i>Precio Inmueble
+              </button>
+              <form class="dropdown-menu p-4" style="width: 490px;">
+                <div class="row align-items-center g-3">
+                  <div class="col-auto">
+                    <label for="preciodesde">Desde</label>
+                    <input type="number" class="form-control" id="preciodesde" placeholder="Desde">
+                  </div>
+                  <div class="col-auto">
+                    <label for="preciohasta">Hasta</label>
+                    <input type="number" class="form-control" id="preciohasta" placeholder="Hasta">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="btn-group my-1 dropdown-center">
+              <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false">
+                <i class="bi bi-funnel-fill icon-size me-1"></i>Filtros Avanzados
+              </button>
+              <form class="dropdown-menu p-4" style="width: 450px;">
+                <div class="mb-3">
+                  <label for="keywords" class="form-label"><strong>Palabras Clave</strong></label>
+                  <input type="email" class="form-control" id="keywords" placeholder="Ej. Cochera, Jardin, Desarrollo">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"><strong>Interacción</strong></label>
+                  <p class="m-2 text-center">
+                    <button type="button" class="btn btn-secondary me-2" value="RVR"><i
+                        class="bi bi-globe2 me-1"></i>Recorrido
+                      VR</button>
+                    <button type="button" class="btn btn-secondary me-2" value="V"><i
+                        class="bi bi-camera-video me-1"></i>Videos</button>
+                    <button type="button" class="btn btn-secondary me-2" value="P"><i
+                        class="bi bi-pen me-1"></i>Planos</button>
+                  </p>
+                </div>
+                <div class="mb-3">
+                  <p>
+                    <label class="form-label"><strong>Baños</strong></label>
+                  </p>
+                  <div class="m-2 text-center">
+
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="1">
+                      <label class="btn btn-outline-primary" for="btncheck1">1</label>
+
+                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" value="2">
+                      <label class="btn btn-outline-primary" for="btncheck2">2</label>
+
+                      <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" value="3">
+                      <label class="btn btn-outline-primary" for="btncheck3">3</label>
+
+                      <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" value="4">
+                      <label class="btn btn-outline-primary" for="btncheck4">4</label>
+
+                      <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" value="5">
+                      <label class="btn btn-outline-primary" for="btncheck5">+5</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <p>
+                    <label class="form-label"><strong>Amenidades</strong></label>
+                  </p>
+                  <div class="m-2 text-center">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label me-2">Cocina Integral</label>
+                      </div>
+                      <div class="col">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                          <input type="checkbox" class="btn-check" id="btncheck-1CI" autocomplete="off" value="1">
+                          <label class="btn btn-outline-primary" for="btncheck-1CI">1</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-2CI" autocomplete="off" value="2">
+                          <label class="btn btn-outline-primary" for="btncheck-2CI">2</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-3CI" autocomplete="off" value="3">
+                          <label class="btn btn-outline-primary" for="btncheck-3CI">3</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-4CI" autocomplete="off" value="4">
+                          <label class="btn btn-outline-primary" for="btncheck-4CI">4</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-5CI" autocomplete="off" value="5">
+                          <label class="btn btn-outline-primary" for="btncheck-5CI">+5</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-2 text-center">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label me-2">Alberca</label>
+                      </div>
+                      <div class="col">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                          <input type="checkbox" class="btn-check" id="btncheck-1A" autocomplete="off" value="1">
+                          <label class="btn btn-outline-primary" for="btncheck-1A">1</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-2A" autocomplete="off" value="2">
+                          <label class="btn btn-outline-primary" for="btncheck-2A">2</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-3A" autocomplete="off" value="3">
+                          <label class="btn btn-outline-primary" for="btncheck-3A">3</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-4A" autocomplete="off" value="4">
+                          <label class="btn btn-outline-primary" for="btncheck-4A">4</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-5A" autocomplete="off" value="5">
+                          <label class="btn btn-outline-primary" for="btncheck-5A">+5</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-2 text-center">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label me-2">Gimnasio</label>
+                      </div>
+                      <div class="col">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                          <input type="checkbox" class="btn-check" id="btncheck-1G" autocomplete="off" value="1">
+                          <label class="btn btn-outline-primary" for="btncheck-1G">1</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-2G" autocomplete="off" value="2">
+                          <label class="btn btn-outline-primary" for="btncheck-2G">2</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-3G" autocomplete="off" value="3">
+                          <label class="btn btn-outline-primary" for="btncheck-3G">3</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-4G" autocomplete="off" value="4">
+                          <label class="btn btn-outline-primary" for="btncheck-4G">4</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-5G" autocomplete="off" value="5">
+                          <label class="btn btn-outline-primary" for="btncheck-5G">+5</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-2 text-center">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label me-2">Estacionamiento</label>
+                      </div>
+                      <div class="col">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                          <input type="checkbox" class="btn-check" id="btncheck-1E" autocomplete="off" value="1">
+                          <label class="btn btn-outline-primary" for="btncheck-1E">1</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-2E" autocomplete="off" value="2">
+                          <label class="btn btn-outline-primary" for="btncheck-2E">2</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-3E" autocomplete="off" value="3">
+                          <label class="btn btn-outline-primary" for="btncheck-3E">3</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-4E" autocomplete="off" value="4">
+                          <label class="btn btn-outline-primary" for="btncheck-4E">4</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck-5E" autocomplete="off" value="5">
+                          <label class="btn btn-outline-primary" for="btncheck-5E">+5</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label me-2"><strong>Fecha de Publicación</strong></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-1FP" value="Today"
+                      checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      Hoy
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-2FP" value="3d">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Hace 3 Días
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-3FP" value="1w">
+                    <label class="form-check-label" for="exampleRadios3">
+                      Hace 1 Semana
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-4FP" value="1m">
+                    <label class="form-check-label" for="exampleRadios4">
+                      Hace 1 Mes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-5FP" value="1m+">
+                    <label class="form-check-label" for="exampleRadios5">
+                      Más de 1 Mes
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label me-2"><strong>Antigüedad</strong></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-1FP" value="N" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      Nuevo
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-2FP" value="EC">
+                    <label class="form-check-label" for="exampleRadios2">
+                      En Construcción
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-3FP" value="1">
+                    <label class="form-check-label" for="exampleRadios3">
+                      1 Año
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-4FP" value="3">
+                    <label class="form-check-label" for="exampleRadios4">
+                      3 Años
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-5FP" value="3+">
+                    <label class="form-check-label" for="exampleRadios5">
+                      Más de 3 Años
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="btn-group my-1 dropdown-center">
+              <button type="button" class="btn btn-danger btn-sm" (click)="backPage()"><i
+                  class="bi bi-arrow-return-left icon-size me-2"></i>Atrás</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-2"></div>
+  <div class="container-fluid container-card">
+    <div class="card mb-3 cards">
+      <div class="card-header header-card">
+        <p class="text-white text-center fs-5 fw-bold"><strong>Destacado</strong></p>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <img src="../assets/img/img-house.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h4 class="card-title">Titulo de la Publicación</h4>
+            <p class="card-text"><strong class="text-body-secondary">Domicilio</strong></p>
+            <div class="row">
+              <div class="col">
+                <p class="card-text"><small class="text-secondary-emphasis">Desde</small></p>
+                <p class="card-text"><strong class="text-body-emphasis">Precio</strong></p>
+              </div>
+              <div class="col">
+                <p class="card-text"><small class="text-secondary-emphasis">Hasta</small></p>
+                <p class="card-text"><strong class="text-body-emphasis">Precio</strong></p>
+              </div>
+            </div>
+          </div>
+          <p class="card-text"><small class="text-body-secondary">This is a wider card with supporting text below as a
+              natural lead-in to additional
+              content. This content is a little bit longer.</small></p>
+          <p class="m-2 text-center">
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Gimnasio</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Alberca</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Parque</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Jardin</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Estacionamiento</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Roof Garden</button>
+          </p>
+          <p>
+            <button type="button" class="btn btn-secondary form-control"><i class="bi bi-info-circle icon-size"></i> Mas
+              información</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid container-card">
+    <div class="card mb-3 cards">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <img src="../assets/img/img-house.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body m-2">
+            <h4 class="card-title">Titulo de la Publicación</h4>
+            <p class="card-text"><strong class="text-body-secondary">Domicilio</strong></p>
+            <div class="row">
+              <div class="col">
+                <p class="card-text"><small class="text-secondary-emphasis">Desde</small></p>
+                <p class="card-text"><strong class="text-body-emphasis">Precio</strong></p>
+              </div>
+              <div class="col">
+                <p class="card-text"><small class="text-secondary-emphasis">Hasta</small></p>
+                <p class="card-text"><strong class="text-body-emphasis">Precio</strong></p>
+              </div>
+            </div>
+          </div>
+          <p class="card-text"><small class="text-body-secondary">This is a wider card with supporting text below as a
+              natural lead-in to additional
+              content. This content is a little bit longer.</small></p>
+          <p class="m-2 text-center">
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Gimnasio</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Alberca</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Parque</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Jardin</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Estacionamiento</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Roof Garden</button>
+          </p>
+          <p>
+            <button type="button" class="btn btn-secondary form-control"><i class="bi bi-info-circle icon-size"></i> Mas
+              información</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
 <app-footer></app-footer>

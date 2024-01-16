@@ -15,6 +15,7 @@ export class BuscadorComponent implements OnInit {
 
   inmuebles: Inmuebles[] = [];
   inmueble!: Inmuebles;
+  TInmuebles!: Inmuebles[];
   firstFormGroup!: FormGroup;
   segundoFormGroup!: FormGroup;
   tpropiedad: number | undefined;
@@ -37,34 +38,35 @@ export class BuscadorComponent implements OnInit {
       pUbicacion2: ['', [Validators.required]]
     })
     this.tpropiedad = 1;
+   
   }
 
   obtenerDatosInmuebles() {
-    this.httpService.tipoInmueble().subscribe((resp: any) => {
-      if (resp !== 201) {
-        this.inmueble = resp[0].id_Tipo_Inmueble;
-        this.inmuebles = resp;
-      }
-    }, (err) => {
-      console.log(err);
+    this.httpService.tipoInmueble().subscribe({
+      next: (data) => {
+        console.info(data)
+        this.TInmuebles = data;
+      },
+      error: (e) => console.log(e),
+      complete: () => console.log("Complete")
     })
   }
 
 
-  ResultadoosBusquedaC() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 1} });
+  ResultsBusqCompra() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
   }
 
-  ResultadoosBusquedaR() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 2} });
+  ResultsBusqRenta() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
   }
 
-  ResultadoosBusquedaRema() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 3} });
+  ResultsBusqRemate() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
   }
 
-  ResultadoosBusquedaDesa() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': 4} });
+  ResultsBusqDesarrollo() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
   }
 
   cambioTpropiedad(tprop:number){
