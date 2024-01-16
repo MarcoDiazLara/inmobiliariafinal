@@ -106,16 +106,6 @@
 .buttonnavbar:hover .lupa {
   filter: brightness(100);
 }
-
-
-
-
-
-
-
-
-
-
 .producto h1 {
   color: #162f39;
   font-size: 30px;
@@ -311,6 +301,36 @@ ul.in {
   padding: 10px;           /* Puedes ajustar el relleno según tus preferencias */
 }
 
+/* Estilos base para pantallas grandes */
+.Precio-container {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.buttonnavbar {
+  width: 100%;
+}
+
+.content-Precio {
+  display: none;
+}
+
+.content-Precio p {
+  margin: 0;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .Precio-container {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .content-Precio {
+    position: relative;
+    width: 100%;
+  }
+}
 
 
 

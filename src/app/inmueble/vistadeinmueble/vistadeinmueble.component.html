@@ -697,6 +697,7 @@
     </div>
   </div>
   <div class="p-2"></div>
+  <!--
   <div class="container-fluid container-card">
     <div class="card mb-3 cards">
       <div class="card-header header-card">
@@ -740,39 +741,35 @@
       </div>
     </div>
   </div>
-
+-->
 
   <div class="container-fluid container-card">
-    <div class="card mb-3 cards">
+    <div class="card mb-3 cards" *ngFor="let busq of TCardInmuebles">
       <div class="row g-3">
         <div class="col-md-4">
-          <img src="../assets/img/img-house.jpg" class="img-fluid rounded-start" alt="...">
+          <img src="{{ busq.Picture }}" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body m-2">
-            <h4 class="card-title">Titulo de la Publicación</h4>
-            <p class="card-text"><strong class="text-body-secondary">Domicilio</strong></p>
+            <h4 class="card-title fs-5"> {{ busq.Nombre_Publicacion }}</h4>
+            <p class="card-text"><strong class="text-body-secondary">{{ busq.Domicilio }}</strong></p>
             <div class="row">
               <div class="col">
                 <p class="card-text"><small class="text-secondary-emphasis">Desde</small></p>
-                <p class="card-text"><strong class="text-body-emphasis">Precio</strong></p>
+                <p class="card-text"><strong class="text-body-emphasis">{{ busq.Precio_Min }}</strong></p>
               </div>
               <div class="col">
                 <p class="card-text"><small class="text-secondary-emphasis">Hasta</small></p>
-                <p class="card-text"><strong class="text-body-emphasis">Precio</strong></p>
+                <p class="card-text"><strong class="text-body-emphasis">{{ busq.Precio_Max }}</strong></p>
               </div>
             </div>
           </div>
-          <p class="card-text"><small class="text-body-secondary">This is a wider card with supporting text below as a
-              natural lead-in to additional
-              content. This content is a little bit longer.</small></p>
-          <p class="m-2 text-center">
-            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Gimnasio</button>
-            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Alberca</button>
-            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Parque</button>
-            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Jardin</button>
-            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Estacionamiento</button>
-            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled>Roof Garden</button>
+          <p class="card-text"><small class="text-body-secondary">{{ busq.Descripcion_Publicacion }}</small></p>
+          <p class="m-2 text-center" id="space-amenidades">
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled *ngIf="busq.Gimnasio == 'Y'">Gimnasio</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled *ngIf="busq.Alberca == 'Y'">Alberca</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled *ngIf="busq.Estacionamiento == 'Y'">Estacionamiento</button>
+            <button type="button" class="btn btn-secondary btn-sm me-1 my-1" disabled *ngIf="busq.Roof_Garden == 'Y'">Roof Garden</button>
           </p>
           <p>
             <button type="button" class="btn btn-secondary form-control"><i class="bi bi-info-circle icon-size"></i> Mas

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { an } from '@fullcalendar/core/internal-common';
 import { ModalComponent } from 'src/app/inmueble/modal/modal.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
-import { Inmuebles, TipoOperacion } from '../Interface/Interfaces';
+import { CardInmuebles, Inmuebles, TipoOperacion } from '../Interface/Interfaces';
 
 
 
@@ -795,5 +795,12 @@ export class HttpService {
     let params = 'xrsxryw1y21';
     return this.httpclient.post<TipoOperacion[]>(this.url + 'mostrarTipoOperaciones.php', params, { headers });
   }
+
+  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion;
+    return this.httpclient.post<CardInmuebles[]>(this.url + 'getInmueblesBusqueda.php', params, { headers });
+  }
+
 }
 

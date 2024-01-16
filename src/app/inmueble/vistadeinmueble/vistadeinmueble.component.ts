@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { TipoOperacion } from 'src/app/services/Interface/Interfaces';
+import { CardInmuebles } from 'src/app/services/Interface/Interfaces';
 
 @Component({
   selector: 'app-vistadeinmueble',
@@ -16,6 +17,14 @@ export class VistadeinmuebleComponent implements OnInit {
   FilterFormGroup!: FormGroup;
   TInmuebles!: Inmuebles[];
   TOperacion!: TipoOperacion[];
+  TCardInmuebles!: CardInmuebles[];
+  Gimnasio!: any;
+  RoofGarden!: any;
+  Estacionamiento!: any;
+  Jardin!: any;
+  Alberca!: any; 
+  Conteo!: number;
+
 
   PAction!: any;
   PPropiedad!: any;
@@ -54,17 +63,17 @@ export class VistadeinmuebleComponent implements OnInit {
       this.PAction = params['action'];
       this.PPropiedad = params['tpropiedad'];
       this.PUbicacion = "All";
-      if(params['ubicacion'] !== undefined){
+      if (params['ubicacion'] !== undefined) {
         this.PUbicacion = params['ubicacion'];
-      } 
-    
+      }
+
       console.log('Action', this.PAction);
       console.log('Propiedad', this.PPropiedad);
       console.log('Ubicacion', this.PUbicacion);
 
       this.getInmueblesBuscador();
     });
-    
+
   }
 
   getTipoInmueble() {
@@ -90,7 +99,15 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   getInmueblesBuscador() {
-
+    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.TCardInmuebles = data;
+      },
+      error: (e) => console.log(e),
+      complete: () => console.log("Complete")
+    })
+    
   }
 
   backPage() {
