@@ -30,6 +30,7 @@ export class EstatusComponent implements OnInit {
       // alert("Se cambio de estatus");
     })
 
+this.CerraDialogo();
     
   }
 

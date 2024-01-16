@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -20,7 +20,7 @@ import { MasterestatusComponent } from '../ventanaemergente/masterestatus/master
 
 export class MasterEstatususuarioComponent implements OnInit {
   pantallausuarios$: any;
-  formGeneral!:FormGroup; 
+  formGeneral!: FormGroup;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -28,89 +28,85 @@ export class MasterEstatususuarioComponent implements OnInit {
   displayedColumns = [
     'Nombre_Usuario',
     'Tipo_Usuario',
-     'Estatus',
-    // 'Municipio',
-    // 'Estatus_Publicacion',
-    // 'botonOption'
-    
-
+    'Estatus',
+  
   ];
 
   dataSource = new MatTableDataSource<any>([]);
 
-  columnas: string[] = ['Nombre_Usuario','Tipo_Usuario','Estatus','botonOption'];
-  
+  columnas: string[] = ['Nombre_Usuario', 'Tipo_Usuario', 'Estatus', 'botonOption'];
+
 
 
   // poner el nombre de una variable
-  datosinventario: tblUsers[]=[];
-  
+  datosinventario: tblUsers[] = [];
+
 
   constructor(
     public dialog: MatDialog,
-    private http:HttpService,
+    private http: HttpService,
     private httpService: HttpService,
     private adminService: GlobalService,
     private formBuilder: FormBuilder,
-    private router:Router
+    private router: Router
     // Http para jalar el servicio 
   ) { }
 
-  
+
   ngOnInit(): void {
 
-    this.pantallausuarios$ =this.adminService.getpantallausuariosOb().subscribe((pantallausuarios)=>{
-      if(pantallausuarios !== null){
-        this.dataSource.data =pantallausuarios;
+    this.pantallausuarios$ = this.adminService.getpantallausuariosOb().subscribe((pantallausuarios) => {
+      if (pantallausuarios !== null) {
+        this.dataSource.data = pantallausuarios;
       }
     });
-  
-  this.obtenerInventario();
+
+    this.obtenerInventario();
 
   }
-  
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  obtenerInventario(){
+  obtenerInventario() {
 
-//  Llamas tu procedimiento 
- this.httpService.estatusUsuario().subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
-      if(data !== 201) {
+    //  Llamas tu procedimiento 
+    this.httpService.estatusUsuario().subscribe((data: any) => {
+      console.log("datosdeinventario" + data);
+      if (data !== 201) {
         this.adminService.pantallausuarios$.next(data);
-        
+
         ;
       } else {
         data = [];
         this.adminService.pantallausuarios$.next(data);
-        
-      }      
-    },
-    (err) => {
-      console.log('Error de conexión');
 
-    }
+      }
+    },
+      (err) => {
+        console.log('Error de conexión');
+
+      }
     )
   }
 
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-}
-  
+  }
+
 
 
   // mandar a llamar ventana emergente
 
-  openasesor(idPubli:any ) {
+  openasesor(idPubli: any) {
 
-    localStorage.setItem ('Id_Usuxd',idPubli);    
+    localStorage.setItem('Id_Usuxd', idPubli);
     const dialogRef = this.dialog.open(MasterestatusComponent, {
-       width: '300px',
-      height: '200px',  
+      width: '300px',
+      height: '200px',
       disableClose: true
 
     });
@@ -118,12 +114,12 @@ export class MasterEstatususuarioComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.closeAll();
-    const itemsToRemove =[
+    const itemsToRemove = [
       "id_publicacion",
       "mi_valor",
       "Asesor",
     ];
-    itemsToRemove.forEach( item => {
+    itemsToRemove.forEach(item => {
       localStorage.removeItem(item);
     })
 

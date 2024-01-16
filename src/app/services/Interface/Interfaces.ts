@@ -505,5 +505,9 @@ export interface CardInmuebles {
     Estacionamiento: any,
     Jardin: any,
     Alberca: any,
-    Picture: string
+    Picture: string,
+    Terreno_M2: string,
+    Construccion_M2: string,
+    Recamara: string,
+    Bano: string
 };

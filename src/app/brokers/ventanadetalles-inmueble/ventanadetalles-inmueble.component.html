@@ -1,243 +1,287 @@
-<mat-dialog-content >
-    <hr>
-    <h1>Informacion general del Inmueble <i class="bi bi-info">
+<mat-dialog-content>
+  <hr>
+  <h1>Informacion general del Inmueble <i class="bi bi-info">
       <i class="bi bi-houses"></i>
-    </i></h1> 
-    <hr>  
-     <br>
-     <br>      
-     <div class="example-container">
-      <form [formGroup]="options">
-        <div style="display: flex; justify-content: center; align-items: center;">
-  
-              
-          <mat-form-field style="margin-right: 15px;">
-            <mat-label> Estatus de Publicacion</mat-label>
-            <mat-select [(value)]="opcionSeleccionada" formControlName="pId_Estatus_Inmueble">
-              <mat-option *ngFor="let opcion of  EstatusInmuebles" [value]="opcion.Id_Estatus_Publicacion">{{ opcion.Estatus_Publicacion }}</mat-option>
-            </mat-select>
-            <mat-icon matSuffix>
-            <img src="assets/img/edificios.png" alt="Icono" width="30" height="30">
-          </mat-icon>
-          </mat-form-field>
-      
-  
-          <mat-form-field style="margin-right: 15px;">
-            <mat-label>Nombre del Inmueble</mat-label>
-            <input matInput  formControlName="Nombre_de_Inmueble" required  [(ngModel)]="datos.Nombre_Inmueble">
-            <mat-icon matSuffix>
-              <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
-          </mat-icon>
-          </mat-form-field>
-          <!-- ------------------------------------------------------------------- -->
-          <mat-form-field style="margin-right: 10px;">
-              <mat-label>Descripcion</mat-label>
-              <input matInput  formControlName="Descripcion" required [(ngModel)]="datos.Descripcion_Inmueble">
-              <mat-icon matSuffix>
-                <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
-            </mat-icon>
-            </mat-form-field>
-            
-          </div>
-    
-          <div style="display: flex; justify-content: center; align-items: center;">
-            <mat-form-field style="margin-right: 15px;">
-              <mat-label>Calle</mat-label>
-              <input matInput  formControlName="Calle" required  [(ngModel)]="datos.Calle" >
-              <mat-icon matSuffix>
-                <img src="assets/img/mapa-de-la-calle.png" alt="Icono" width="30" height="30">
-            </mat-icon>
-            </mat-form-field>
-            <!-- --------------------------------------------- -->
-            <mat-form-field style="margin-right: 10px;">
-              <mat-label>No Interior</mat-label>
-              <input matInput  formControlName="No_Interior" required  [(ngModel)]="datos.Num_Int">
-              <mat-icon matSuffix>
-                <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
-            </mat-icon>
-              </mat-form-field>
-    
-            <mat-form-field style="margin-right: 10px;">
-              <mat-label>No  Exterior</mat-label>
-              <mat-icon matSuffix>
-                <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30"  >
-            </mat-icon>
-              <input matInput  formControlName="No_Exterior" required [(ngModel)]="datos.Num_Ext">
-            </mat-form-field>   
-      </div>
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <mat-form-field style="margin-right: 15px;">
-            <mat-label>Terreno</mat-label>
-            <mat-icon matSuffix>
-              <img src="assets/img/terreno.png" alt="Icono" width="30" height="30">
-          </mat-icon>
-            <input matInput  formControlName="Terreno" required [(ngModel)]="datos.Terreno_M2">
-            
-          </mat-form-field>
-    
-          <mat-form-field style="margin-right: 15px;">
-            <mat-label>Construccion</mat-label>
-            <mat-icon matSuffix>
-              <img src="assets/img/mtrs_construidos.png" alt="Icono" width="30" height="30">
-          </mat-icon>
-            <input matInput  formControlName="Construccion" required [(ngModel)]="datos.Construccion_M2">
-            
-          </mat-form-field>
-    
-    
-    </div> 
-    <br>
-    <hr>
-        <h1> Caracteristicas del Inmueble <i class="bi bi-pencil">
-          <i class="bi bi-houses"></i>
-        </i>
-  
-        </h1>
-        <hr>
-        <br>
-     <br>
-    
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <mat-form-field style="margin-right: 20px;">
-              <mat-label>Recamaras</mat-label>
-              <input matInput  formControlName="Recamaras" required [(ngModel)]="datos.Recamara">
-              <mat-icon matSuffix>
-                <img src="assets/img/recamara.png" alt="Icono" width="30" height="30">
-            </mat-icon>
-            </mat-form-field>
-    
-            <mat-form-field style="margin-right: 20px;">
-              <mat-label>Baños</mat-label>
-              <input matInput  formControlName="Banos" required [(ngModel)]="datos.Bano">
-              <mat-icon matSuffix>
-                <img src="assets/img/bano.png" alt="Icono" width="25" height="25">
-            </mat-icon>
-            </mat-form-field>
-            <mat-form-field style="margin-right: 20px;">
-              <mat-label>Cocina Integral</mat-label>
-              <input matInput  formControlName="Cocina_Integral" required [(ngModel)]="datos.Cocina_Integral">
-              <mat-icon matSuffix>
-                <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
-            </mat-icon>
-           
-            </mat-form-field>
-          </div>
-            <div style="display: flex; justify-content: center; align-items: center;">
-            <mat-form-field style="margin-right: 15px;">
-              <mat-label>Numero Pisos</mat-label>
-              <input matInput  formControlName="Numero_Pisos" required [(ngModel)]="datos.Num_Pisos">
-           
-              <mat-icon matSuffix>
-                <img src="assets/img/num_pisos.png" alt="Icono" width="25" height="25">
-            </mat-icon>
-            </mat-form-field>
-            <mat-form-field style="margin-right: 15px;">
-              <mat-label>Antiguedad</mat-label>
-              <input matInput  formControlName="Antiguedad" required [(ngModel)]="datos.Antiguedad">
-              <mat-icon matSuffix>
-                <img src="assets/img/antiguedad.png" alt="Icono" width="25" height="25">
-            </mat-icon>
-            </mat-form-field>
-            <mat-form-field style="margin-right: 15px;">
-              <mat-label>Acabados</mat-label>
-              <input matInput  formControlName="Acabados" required [(ngModel)]="datos.Acabados">
-              <mat-icon matSuffix>
-                <img src="assets/img/acabados.png" alt="Icono" width="25" height="25">
-            </mat-icon>
-            </mat-form-field>
-      </div>
-        <div style="display: flex; justify-content: center; align-items: center;">
-                <mat-form-field style="margin-right: 15px;">
-                    <mat-label>Alberca </mat-label>
-                    <input matInput  formControlName="Alberca" required [(ngModel)]="datos.Alberca">
-                    <mat-icon matSuffix>
-                      <img src="assets/img/nadando.png"  alt="Icono" width="30" height="30">
-                  </mat-icon>
-                  </mat-form-field> 
-        
-              <mat-form-field style="margin-right: 15px;">
-                    <mat-label>Jardin </mat-label>
-                    <input matInput  formControlName="Jardin" required [(ngModel)]="datos.Jardin">
-                    <mat-icon matSuffix>
-                      <img src="assets/img/terraza.png"  alt="Icono" width="28" height="28">
-                  </mat-icon>
-                  </mat-form-field>
-                  <mat-form-field style="margin-right: 15px;">
-                    <mat-label>GYM</mat-label>
-                    <input matInput  formControlName="GYM" required [(ngModel)]="datos.Gimnasio">
-                    <mat-icon matSuffix>
-                      <img src="assets/img/gimna.png"  alt="Icono" width="30" height="30">
-                  </mat-icon>
-                  </mat-form-field> 
-        </div>
-        <div style="display: flex; justify-content: center; align-items: center;">
-                    <mat-form-field style="margin-right: 15px;">
-                    <mat-label>RoofGarden</mat-label>
-                    <input matInput formControlName="RoofGarden" required [(ngModel)]="datos.Roof_Garden">
-                    <mat-icon matSuffix>
-                      <img src="assets/img/techo.png"  alt="Icono" width="30" height="30">
-                  </mat-icon>
-                
-                  </mat-form-field> 
-          
-                  <mat-form-field style="margin-right: 15px;">
-                    <mat-label>Estacionamiento</mat-label>
-                    <input matInput  formControlName="Estacionamiento" required [(ngModel)]="datos.Estacionamiento">
-                    <mat-icon matSuffix>
-                      <img src="assets/img/coche.png"  alt="Icono" width="30" height="30">
-                  </mat-icon>
-                  </mat-form-field>
-            
-            </div>
-            <br>
-     <br>
-     <hr >
-            <h1> Precio  <i class="bi bi-currency-dollar">
-              <i class="bi bi-houses"></i>
-            </i>  </h1>
-            <hr>
-           <br>
-            <div style="display: flex; justify-content: center; align-items: center;">
-              <mat-form-field style="margin-right: 15px;">
-              <mat-label>Precio Minimo</mat-label>
-              <input matInput formControlName="Precio_Maximo" required [(ngModel)]="datos.Precio_Min">
-              <mat-icon matSuffix>
-                <img src="assets/img/valor-de-la-vivienda.png"  alt="Icono" width="30" height="30">
-            </mat-icon>
-          
-            </mat-form-field> 
-    
-            <mat-form-field style="margin-right: 15px;">
-              <mat-label>Precio Maximo </mat-label>
-              <input matInput  formControlName="Precio_Minimo" required  [(ngModel)]="datos.Precio_Max">
-              <mat-icon matSuffix>
-                <img src="assets/img/valor-de-la-vivienda.png"  alt="Icono" width="30" height="30">
-            </mat-icon>
-          
-            </mat-form-field>
-      
-            <mat-form-field style="margin-right: 15px;">
-              <mat-label>Precio Final </mat-label>
-              <input matInput  formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">
-              <mat-icon matSuffix>
-                <img src="assets/img/precioF.png"  alt="Icono" width="30" height="30">
-            </mat-icon>
-            </mat-form-field>
-      </div>
-      </form>
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <button   type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="Actulizar()" >
-          Aceptar
-        </button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   
+    </i></h1>
+  <hr>
+  <br>
+  <br>
+  <div class="example-container">
 
-        <button  style="margin-right: 15px;" type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="CerraDialogo()">
-          Cancelar
-        </button>
-  
+    <form [formGroup]="options">
+
+      <div class="container-fluid">
+        <div class="contenedorgeneral">
+          <div class="row">
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label> Estatus de Publicacion</mat-label>
+                <mat-select [(value)]="opcionSeleccionada" formControlName="pId_Estatus_Inmueble">
+                  <mat-option *ngFor="let opcion of  EstatusInmuebles" [value]="opcion.Id_Estatus_Publicacion">{{
+                    opcion.Estatus_Publicacion }}</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>
+                  <img src="assets/img/edificios.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Nombre del Inmueble</mat-label>
+                <input matInput formControlName="Nombre_de_Inmueble" required [(ngModel)]="datos.Nombre_Inmueble">
+                <mat-icon matSuffix>
+                  <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Descripcion</mat-label>
+                <input matInput formControlName="Descripcion" required [(ngModel)]="datos.Descripcion_Inmueble">
+                <mat-icon matSuffix>
+                  <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <!---------------------------------------------------------------------->
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Calle</mat-label>
+                <input matInput formControlName="Calle" required [(ngModel)]="datos.Calle">
+                <mat-icon matSuffix>
+                  <img src="assets/img/mapa-de-la-calle.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field style="margin-right: 10px;">
+                <mat-label>No Interior</mat-label>
+                <input matInput formControlName="No_Interior" required [(ngModel)]="datos.Num_Int">
+                <mat-icon matSuffix>
+                  <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field style="margin-right: 10px;">
+                <mat-label>No Exterior</mat-label>
+                <mat-icon matSuffix>
+                  <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+                <input matInput formControlName="No_Exterior" required [(ngModel)]="datos.Num_Ext">
+              </mat-form-field>
+            </div>
+            <!----------------------------------------------------------------------->
+
+            <div class="col-md-6 orderinput">
+              <mat-form-field style="margin-right: 15px;">
+                <mat-label>Terreno</mat-label>
+                <mat-icon matSuffix>
+                  <img src="assets/img/terreno.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+                <input matInput formControlName="Terreno" required [(ngModel)]="datos.Terreno_M2">
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6 orderinput">
+              <mat-form-field style="margin-right: 15px;">
+                <mat-label>Construccion</mat-label>
+                <mat-icon matSuffix>
+                  <img src="assets/img/mtrs_construidos.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+                <input matInput formControlName="Construccion" required [(ngModel)]="datos.Construccion_M2">
+              </mat-form-field>
+            </div>
+            <!----------------------------------------------------------------------->
+            <br>
+            <hr>
+            <h1> Caracteristicas del Inmueble <i class="bi bi-pencil">
+                <i class="bi bi-houses"></i>
+              </i>
+            </h1>
+            <hr>
+            <br>
+            <br>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Recamaras</mat-label>
+                <input matInput formControlName="Recamaras" required [(ngModel)]="datos.Recamara">
+                <mat-icon matSuffix>
+                  <img src="assets/img/recamara.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Baños</mat-label>
+                <input matInput formControlName="Banos" required [(ngModel)]="datos.Bano">
+                <mat-icon matSuffix>
+                  <img src="assets/img/bano.png" alt="Icono" width="25" height="25">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Cocina Integral</mat-label>
+                <input matInput formControlName="Cocina_Integral" required [(ngModel)]="datos.Cocina_Integral">
+                <mat-icon matSuffix>
+                  <img src="assets/img/cocina.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+            <!----------------------------------------------------------------------->
+            <div class="col-md-4 orderinput">
+              <mat-form-field style="margin-right: 15px;">
+                <mat-label>Numero Pisos</mat-label>
+                <input matInput formControlName="Numero_Pisos" required [(ngModel)]="datos.Num_Pisos">
+                <mat-icon matSuffix>
+                  <img src="assets/img/num_pisos.png" alt="Icono" width="25" height="25">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Antiguedad</mat-label>
+                <input matInput formControlName="Antiguedad" required [(ngModel)]="datos.Antiguedad">
+                <mat-icon matSuffix>
+                  <img src="assets/img/antiguedad.png" alt="Icono" width="25" height="25">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Acabados</mat-label>
+                <input matInput formControlName="Acabados" required [(ngModel)]="datos.Acabados">
+                <mat-icon matSuffix>
+                  <img src="assets/img/acabados.png" alt="Icono" width="25" height="25">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <!----------------------------------------------------------------------->
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Alberca </mat-label>
+                <input matInput formControlName="Alberca" required [(ngModel)]="datos.Alberca">
+                <mat-icon matSuffix>
+                  <img src="assets/img/nadando.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Jardin </mat-label>
+                <input matInput formControlName="Jardin" required [(ngModel)]="datos.Jardin">
+                <mat-icon matSuffix>
+                  <img src="assets/img/terraza.png" alt="Icono" width="28" height="28">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>GYM</mat-label>
+                <input matInput formControlName="GYM" required [(ngModel)]="datos.Gimnasio">
+                <mat-icon matSuffix>
+                  <img src="assets/img/gimna.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <!----------------------------------------------------------------------->
+            <div class="col-md-6 orderinput">
+              <mat-form-field>
+                <mat-label>RoofGarden</mat-label>
+                <input matInput formControlName="RoofGarden" required [(ngModel)]="datos.Roof_Garden">
+                <mat-icon matSuffix>
+                  <img src="assets/img/techo.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 orderinput">
+              <mat-form-field>
+                <mat-label>Estacionamiento</mat-label>
+                <input matInput formControlName="Estacionamiento" required [(ngModel)]="datos.Estacionamiento">
+                <mat-icon matSuffix>
+                  <img src="assets/img/coche.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+            <!----------------------------------------------------------------------->
+            <br>
+            <br>
+            <hr>
+            <h1> Precio <i class="bi bi-currency-dollar">
+                <i class="bi bi-houses"></i>
+              </i> </h1>
+            <hr>
+            <br>
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Precio Minimo</mat-label>
+                <input matInput formControlName="Precio_Maximo" required [(ngModel)]="datos.Precio_Min">
+                <mat-icon matSuffix>
+                  <img src="assets/img/valor-de-la-vivienda.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Precio Maximo </mat-label>
+                <input matInput formControlName="Precio_Minimo" required [(ngModel)]="datos.Precio_Max">
+                <mat-icon matSuffix>
+                  <img src="assets/img/valor-de-la-vivienda.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 orderinput">
+              <mat-form-field>
+                <mat-label>Precio Final </mat-label>
+                <input matInput formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">
+                <mat-icon matSuffix>
+                  <img src="assets/img/precioF.png" alt="Icono" width="30" height="30">
+                </mat-icon>
+              </mat-form-field>
+            </div>
+            <!----------------------------------------------------------------------->
+
+          </div>
+        </div>
       </div>
-  
+    </form>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="Actulizar()">
+        Aceptar
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+      <button style="margin-right: 15px;" type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"
+        (click)="CerraDialogo()">
+        Cancelar
+      </button>
+
     </div>
-  
-  </mat-dialog-content>
+
+  </div>
+
+</mat-dialog-content>
