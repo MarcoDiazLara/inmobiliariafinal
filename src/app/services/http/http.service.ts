@@ -795,5 +795,12 @@ export class HttpService {
     let params = 'xrsxryw1y21';
     return this.httpclient.post<TipoOperacion[]>(this.url + 'mostrarTipoOperaciones.php', params, { headers });
   }
+
+  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion;
+    return this.httpclient.post(this.url + 'getInmueblesBusqueda.php', params, { headers });
+  }
+
 }
 
