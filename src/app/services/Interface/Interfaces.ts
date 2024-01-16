@@ -490,4 +490,20 @@ export interface Inmuebles {
 export interface TipoOperacion {
     Id_Tipo_Publicacion: string,
     Tipo_Publicacion: string
-}
+};
+
+
+export interface CardInmuebles {
+    Id_Publicacion: any,
+    Nombre_Publicacion: any,
+    Descripcion_Publicacion: any,
+    Precio_Min: any,
+    Precio_Max: any,
+    Domicilio: any,
+    Gimnasio: any,
+    Roof_Garden: any,
+    Estacionamiento: any,
+    Jardin: any,
+    Alberca: any,
+    Picture: string
+};

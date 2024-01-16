@@ -171,7 +171,6 @@
 -->
 <div class="m-5 background-find">
   <div class="container mt-5">
-    
     <ul class="nav nav-pills nav-justified">
       <li class="nav-item">
         <a class="nav-link active" data-bs-toggle="pill" href="#compra"><i class="bi bi-newspaper icon-size"></i>
@@ -191,119 +190,144 @@
     <div class="tab-content">
       <div class="tab-pane container active" id="compra">
         <div class="container text-center">
-          <div class="row p-5 justify-content-md-center">
-            <div class="col-md-auto">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-1"><i class="bi bi-building icon-size"></i></span>
-                <select class="form-select form-control" aria-label=".form-select-lg" formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
-                  <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
-                  <option class="dropdown-item" *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble }}"> {{ inmo.Tipo_Inmueble }} </option>
-                </select>
+          <div [formGroup]="firstFormGroup">
+            <div class="row p-5 justify-content-md-center">
+              <div class="col-md-auto">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-1"><i class="bi bi-building icon-size"></i></span>
+                  <select class="form-select form-control" aria-label=".form-select-lg"
+                    formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
+                    <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
+                    <option class="dropdown-item" *ngFor="let inmo of TInmuebles" value="{{ inmo.Id_Tipo_Inmueble }}">
+                      {{ inmo.Tipo_Inmueble }} </option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="col-md-5">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-2">Ubicación</span>
-                <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
-                  aria-describedby="basic-addon-2">
+              <div class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-2">Ubicación</span>
+                  <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
+                    aria-describedby="basic-addon-2" formControlName="pUbicacion" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)">
+                </div>
               </div>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3">Buscar <i class="bi bi-search icon-size"></i></button>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3"><i class="bi bi-geo-alt icon-size"></i>
-                Mapa</button>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3" (click)="ResultsBusqCompra()">Buscar
+                  <i class="bi bi-search icon-size"></i></button>
+              </div>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3"><i
+                    class="bi bi-geo-alt icon-size"></i>
+                  Mapa</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="tab-pane container fade" id="renta">
         <div class="container text-center">
-          <div class="row p-5 justify-content-md-center">
-            <div class="col-md-auto">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-3"><i class="bi bi-building icon-size"></i></span>
-                <select class="form-select form-control" aria-label=".form-select-lg" formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
-                  <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
-                  <option class="dropdown-item" *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble }}"> {{ inmo.Tipo_Inmueble }} </option>
-                </select>
+          <div [formGroup]="firstFormGroup">
+            <div class="row p-5 justify-content-md-center">
+              <div class="col-md-auto">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-3"><i class="bi bi-building icon-size"></i></span>
+                  <select class="form-select form-control" aria-label=".form-select-lg"
+                    formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
+                    <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
+                    <option class="dropdown-item" *ngFor="let inmo of TInmuebles" value="{{ inmo.Id_Tipo_Inmueble }}">
+                      {{
+                      inmo.Tipo_Inmueble }} </option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="col-md-5">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-4">Ubicación</span>
-                <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
-                  aria-describedby="basic-addon-2">
+              <div class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-4">Ubicación</span>
+                  <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
+                    aria-describedby="basic-addon-2" formControlName="pUbicacion" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)">
+                </div>
               </div>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3">Buscar <i
-                  class="bi bi-search icon-size"></i></button>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3"><i class="bi bi-geo-alt icon-size"></i>
-                Mapa</button>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3" (click)="ResultsBusqRenta()">Buscar <i
+                    class="bi bi-search icon-size"></i></button>
+              </div>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3"><i
+                    class="bi bi-geo-alt icon-size"></i>
+                  Mapa</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="tab-pane container fade" id="remate">
         <div class="container text-center">
-          <div class="row p-5 justify-content-md-center">
-            <div class="col-md-auto">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-5"><i class="bi bi-building icon-size"></i></span>
-                <select class="form-select form-control" aria-label=".form-select-lg" formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
-                  <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
-                  <option class="dropdown-item" *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble }}"> {{ inmo.Tipo_Inmueble }} </option>
-                </select>
+          <div [formGroup]="firstFormGroup">
+            <div class="row p-5 justify-content-md-center">
+              <div class="col-md-auto">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-5"><i class="bi bi-building icon-size"></i></span>
+                  <select class="form-select form-control" aria-label=".form-select-lg"
+                    formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
+                    <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
+                    <option class="dropdown-item" *ngFor="let inmo of TInmuebles" value="{{ inmo.Id_Tipo_Inmueble }}">
+                      {{
+                      inmo.Tipo_Inmueble }} </option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="col-md-5">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-6">Ubicación</span>
-                <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
-                  aria-describedby="basic-addon-2">
+              <div class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-6">Ubicación</span>
+                  <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
+                    aria-describedby="basic-addon-2" formControlName="pUbicacion" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)">
+                </div>
               </div>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3">Buscar <i
-                  class="bi bi-search icon-size"></i></button>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3"><i class="bi bi-geo-alt icon-size"></i>
-                Mapa</button>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3" (click)="ResultsBusqRemate()">Buscar
+                  <i class="bi bi-search icon-size"></i></button>
+              </div>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3"><i
+                    class="bi bi-geo-alt icon-size"></i>
+                  Mapa</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="tab-pane container fade" id="desarrollo">
         <div class="container text-center">
-          <div class="row p-5 justify-content-md-center">
-            <div class="col-md-auto">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-7"><i class="bi bi-building icon-size"></i></span>
-                <select class="form-select form-control" aria-label=".form-select-lg" formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
-                  <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
-                  <option class="dropdown-item" *ngFor="let inmo of inmuebles" value="{{ inmo.Id_Tipo_Inmueble }}"> {{ inmo.Tipo_Inmueble }} </option>
-                </select>
+          <div [formGroup]="firstFormGroup">
+            <div class="row p-5 justify-content-md-center">
+              <div class="col-md-auto">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-7"><i class="bi bi-building icon-size"></i></span>
+                  <select class="form-select form-control" aria-label=".form-select-lg"
+                    formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
+                    <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
+                    <option class="dropdown-item" *ngFor="let inmo of TInmuebles" value="{{ inmo.Id_Tipo_Inmueble }}">
+                      {{
+                      inmo.Tipo_Inmueble }} </option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="col-md-5">
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon-8">Ubicación</span>
-                <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
-                  aria-describedby="basic-addon-2">
+              <div class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon-8">Ubicación</span>
+                  <input type="text" class="form-control" placeholder="Ingrese Estado, Municipio o Colonia"
+                    aria-describedby="basic-addon-2" formControlName="pUbicacion" [(ngModel)]="ubicacion" (ngModelChange)="cambioUbicacion($event)">
+                </div>
               </div>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3">Buscar <i
-                  class="bi bi-search icon-size"></i></button>
-            </div>
-            <div class="col-md-auto">
-              <button type="button" class="btn btn-secondary form-control mb-3"><i class="bi bi-geo-alt icon-size"></i>
-                Mapa</button>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3"
+                  (click)="ResultsBusqDesarrollo()">Buscar
+                  <i class="bi bi-search icon-size"></i></button>
+              </div>
+              <div class="col-md-auto">
+                <button type="button" class="btn btn-secondary form-control mb-3"><i
+                    class="bi bi-geo-alt icon-size"></i>
+                  Mapa</button>
+              </div>
             </div>
           </div>
         </div>

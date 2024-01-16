@@ -10,8 +10,7 @@ interface estados{
 interface municipios{
   municipio: string;
   codigomunicipio:string,
-  estado: string;
-
+  nestado: string;
 }
 
 @Component({
@@ -114,17 +113,42 @@ export class SepomexComponent implements OnInit {
 //Municipios
 
 
+this.Archivo.forEach(sepomex => {
+  let municipio: municipios = {
+    municipio: sepomex.D_mnpio,
+      codigomunicipio: sepomex.c_mnpio,
+      nestado: sepomex.c_estado
+  };
+
+  // Agregar el objeto Estado al array estados
+  this.municipios.push(municipio);
+});
+//console.log(this.municipios);
+let conjuntoMunicipios: Set<string> = new Set();
+let municipiosSinDuplicados: municipios[] = this.municipios.filter(municipios => {
+  // Convertir cada objeto Estado a una cadena única
+  //let cadenaUnica = `${municipios.municipio}-${municipios.codigomunicipio}-${municipios.nestado}`;
+  let cadenaUnica = `${municipios.municipio}-${municipios.nestado}`;
+  // Verificar si la cadena ya está en el conjunto
+  if (!conjuntoMunicipios.has(cadenaUnica)) {
+      // Si no está en el conjunto, agregarlo y retornar true para incluirlo en el array resultado
+      conjuntoMunicipios.add(cadenaUnica);
+      return true;
+  }
+
+  // Si ya está en el conjunto, retornar false para excluirlo del array resultado
+  return false;
+});
 
 
 
+    // console.log(this.Archivo)
+    // console.log(this.municipios);
+    // console.log(estadosSinDuplicados);
 
-    console.log(this.Archivo)
+    console.log(municipiosSinDuplicados);
+
     
-    console.log(estadosSinDuplicados);
-
-    console.log();
-
-    console.log();
        
 
 
