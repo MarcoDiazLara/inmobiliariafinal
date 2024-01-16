@@ -29,12 +29,14 @@ export class MasterestatusComponent implements OnInit {
       });
       // alert("Se cambio de estatus");
     })
-
-    
+  
+    this.CerraDialogo();
   }
 
   CerraDialogo(){
     this.dialog.closeAll();
  
     }
+
+    
   }
