@@ -1,16 +1,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-<div class="container-fluit">
-   
-      <div class="calendario">
-        <mat-card class="demo-inline-calendar-card">
-          <mat-calendar [(selected)]="selected" (selectedChange)="onDateSelected($event)"></mat-calendar>
-          <!-- <mat-calendar [(selected)]="selected"></mat-calendar> -->
-        </mat-card>
- 
-   </div>
-  </div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+
+
+
+
+<div class="content">
+      
+        <div class="calendario">
+          <h2>Calendario</h2>
+          <mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selected" (selectedChange)="onDateSelected($event)"></mat-calendar>
+            <!-- <mat-calendar [(selected)]="selected"></mat-calendar> -->
+          </mat-card>
+        </div>
+      
 
       <div class="detallesfecha">
         <h2>Detalles de la Fecha</h2>
@@ -36,7 +40,7 @@
           </div>
         </ul>
       </div>
-      
+</div>   
 
 
     
