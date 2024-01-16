@@ -1,14 +1,23 @@
-<p>{{ obtenerSaludo() }}</p>
+<mat-dialog-content  >
+    <!-- <p>{{ obtenerSaludo() }}</p> -->
+    <p>{{ obtenerSaludo() }}</p>
 
-<mat-card class="demo-inline-calendar-card"style="width: 400px; height: 400px;" >
- <mat-calendar [(selected)]="selected" (selectedChange)="openDialog()" ></mat-calendar>
-     <!-- <mat-calendar [(selected)]="selected"></mat-calendar>  -->
-    </mat-card>
-    <br>
-    <div style="display: flex; justify-content: center; align-items: center;">
-      
-        <button type="button" class="btn" style="background-color: #264D5E ; color: #ffffff;"  (click)="CerraDialogo()"> Cancelar </button>
-    </div>
-   
+
+       
+    <mat-card class="demo-inline-calendar-card">
+     <mat-calendar [(selected)]="selected" (selectedChange)="openDialog()" ></mat-calendar>
+         <!-- <mat-calendar [(selected)]="selected"></mat-calendar>  -->
+        </mat-card>
+        <br>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          
+            <button type="button" class="btn" style="background-color: #264D5E ; color: #ffffff;"  (click)="CerraDialogo()"> Cancelar </button>
+        </div>
+       
+
+
+
+</mat-dialog-content>
+
 
  
