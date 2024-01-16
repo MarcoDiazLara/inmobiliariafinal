@@ -76,7 +76,12 @@ export class RegistroComponent implements OnInit {
         })
           //alert("El nombre de usuario ya existe, por favor ingresa uno diferente.");
         }else{
-			alert("Éxito!! Se creó nuevo usuario");
+          Swal.fire({
+            title: "Éxito!!",
+            text: "Se creó nuevo usuario!",
+            icon: "success"
+          });
+			// alert("Éxito!! Se creó nuevo usuario");
           this.httpService.EnviarCorreo(p_correo1,"Bienvenido a InmobeWise. \n Hola, "+ p_nombres1 + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data:any)=>{
             this.router.navigate(['/login']);
           })
