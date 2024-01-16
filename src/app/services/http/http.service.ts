@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { an } from '@fullcalendar/core/internal-common';
 import { ModalComponent } from 'src/app/inmueble/modal/modal.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import { Inmuebles, TipoOperacion } from '../Interface/Interfaces';
 
 
 
@@ -66,12 +67,6 @@ export class HttpService {
       '&p_pic_1=' + p_pic_1 + '&p_pic_2=' + p_pic_2 + '&p_pic_3=' + p_pic_3 + '&p_pic_4=' + p_pic_4 + '&p_pic_5=' + p_pic_5 + '&p_360=' + p_360 + '&p_video=' + p_video + '&p_id_asentamiento=' + p_id_asentamiento + '&p_id_tipo_inmueble=' + p_id_tipo_inmueble
       + '&p_update=' + p_update + '&p_prec_min=' + p_prec_min + '&p_prec_max=' + p_prec_max + '&p_prec_final=' + p_prec_final + '&p_id_Tipo=' + p_id_Tipo + '&p_latitud=' + p_latitud + '&p_longitud=' + p_longitud;
     return this.httpclient.post(this.url + 'insertarInmueble.php', params, { headers });
-  }
-
-  tipoInmueble() {
-    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'xrsxryw1y21';
-    return this.httpclient.post(this.url + 'mostrarTipoInmuebles.php', params, { headers });
   }
 
   obtenerEstado() {
@@ -783,6 +778,18 @@ export class HttpService {
   
   closeDialog() {
     this.dialog.closeAll();
+  }
+
+  tipoInmueble() {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post<Inmuebles[]>(this.url + 'mostrarTipoInmuebles.php', params, { headers });
+  }
+
+  tipoOperacion(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'xrsxryw1y21';
+    return this.httpclient.post<TipoOperacion[]>(this.url + 'mostrarTipoOperaciones.php', params, { headers });
   }
 }
 

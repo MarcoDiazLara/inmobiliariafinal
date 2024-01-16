@@ -101,12 +101,10 @@ export class BroAsignarAsesorComponent implements OnInit {
         if(resp == 1){
   
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El asesor fue reasignado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+            title: "Exito!",
+            text: "El Asesor fue asignado",
+            icon: "success"
+          });
           this.closeDialog();
     
         }else{
