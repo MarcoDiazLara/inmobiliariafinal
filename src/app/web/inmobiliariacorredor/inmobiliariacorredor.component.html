@@ -18,7 +18,71 @@
     <br>
  <br>
  <br>
-    <div class="card-container">
+
+ <div class="card-container">
+  <div class="card">
+    <div class="content">
+      <div class="title">Plan Básico</div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+      <div class="price">$999/mes</div>
+      <div class="description">
+        <p>Características:</p>
+        <ul>
+          <li>5 Anuncios destacados</li>
+          <li>Plan con renovación manual</li>
+          <li>Volumen de visitas: moderado</li>
+        </ul>
+      </div>
+    </div>
+    <button class="but" (click)="openDialog(1)">
+      Comprar
+    </button>
+  </div>
+
+  <!-- Repite dos veces más para un total de tres tarjetas -->
+
+  <div class="card">
+    <div class="content">
+      <div class="title">Plan</div>
+      <div class="title">INTERMEDIO</div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+      <div class="price">$1499/mes</div>
+      <div class="description">
+        <p>Características:</p>
+        <ul>
+          <li>10 anuncios destacados</li>
+          <li>Plan de renovación automática</li>
+          <li>Volumen de visitas: Medio</li>
+        </ul>
+      </div>
+    </div>
+    <button class="but" (click)="openDialog(2)">
+      Comprar
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="content">
+      <div class="title">Plan </div>
+      <div class="title">   Premium</div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+      <div class="price">$2999/mes</div>
+      <div class="description">
+        <p>Características:</p>
+        <ul>
+          <li>Anuncios destacados ilimitados</li>
+          <li>Plan de renovación automática</li>
+          <li>Volumen de visitas: Máximo</li>
+        </ul>
+      </div>
+    </div>
+    <button class="but" (click)="openDialog(3)">
+      Comprar
+    </button>
+  </div>
+</div>
+
+    <!-- <div class="card-container">
         <div class="card">
           <div class="content">
          
@@ -42,8 +106,7 @@
             Comprar
           </button>
         </div>
-      
-        <!-- Repite dos veces más para un total de tres tarjetas -->
+
         
         <div class="card">
           <div class="content">
@@ -90,8 +153,8 @@
           <button (click)="openDialog(3)">
             Comprar
           </button>
-        </div>
-      </div>
+        </div> -->
+      <!-- </div> -->
       <br>
       <br>
       <br>

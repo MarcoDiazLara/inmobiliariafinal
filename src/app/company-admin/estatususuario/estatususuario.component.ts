@@ -116,8 +116,8 @@ export class EstatususuarioComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(EstatusComponent, {
-       width: '40%',
-      // height: '80%',  
+      height: '200px',
+      width: '300px',
       disableClose: true
     });
   }

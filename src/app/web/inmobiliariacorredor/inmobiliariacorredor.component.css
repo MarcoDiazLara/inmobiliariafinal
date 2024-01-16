@@ -1,12 +1,29 @@
 
-h1{
 
-    font-size: 40px; /* Tamaño de fuente */
-    color: black; /* Color de texto */
-    font-weight: bold; /* Peso de la fuente (negrita) */
-    text-align: center; /* Alineación del texto (centrado) */
-    margin-bottom: 10px; /* Margen inferior */
-   }
+h1 {
+  font-size: 2em; /* Tamaño base del título */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5em; /* Tamaño del título para pantallas más pequeñas */
+  }
+}
+
+
+/* h1{
+
+    font-size: 40px;
+    color: black; 
+    font-weight: bold; 
+    text-align: center;
+    margin-bottom: 10px; 
+   } */
 
    h4{
     font-size: 18px; /* Tamaño de fuente */
@@ -53,7 +70,7 @@ h1{
   .content .price {
     color: white;
     font-weight: 800;
-    font-size: 50px;
+    font-size: 25px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
   }
   
@@ -68,7 +85,7 @@ h1{
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.64);
     margin-top: 10px;
-    font-size: 26px;
+    font-size: 30px;
     letter-spacing: 1px;
   }
   
@@ -88,3 +105,20 @@ h1{
     width: 90%;
     text-shadow: 0px 4px 18px #2c3442;
   }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    width: 300px; /* Ancho inicial de la tarjeta */
+    margin: 10px; /* Margen entre las tarjetas */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%; /* Tarjeta ocupa todo el ancho en pantallas más pequeñas */
+    }
+  }
+  

@@ -117,8 +117,8 @@ export class PantallaUsuariosComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(InformacionusuariosadmComponent, {
-       width: '40%',
-      // height: '80%',  
+       width: '400px',
+       height: '400px',  
       disableClose: true
     });
   }

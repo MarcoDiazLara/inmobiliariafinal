@@ -155,12 +155,7 @@
               <mat-form-field style="margin-right: 10px;">
                 <mat-label> Numero Interior </mat-label>
                 <input formControlName="p_num_int" matInput placeholder="Numero  Interior " >
-                 </mat-form-field>
-
-                 <mat-form-field style="margin-right: 10px;">
-                  <mat-label>Numero Exterior </mat-label>
-                  <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
-                   </mat-form-field>
+              </mat-form-field>
 
           </div>
           <br>
@@ -171,9 +166,15 @@
         <!-- ------------------------------------------------------------------- -->
         <div style="display: flex; justify-content: center; align-items: center;">
           <mat-form-field style="margin-right: 10px;">
+            <mat-label>Numero Exterior </mat-label>
+            <input formControlName="p_num_ext" matInput placeholder=" Numeross Exterior  " >
+             </mat-form-field>
+          <mat-form-field style="margin-right: 10px;">
             <mat-label> Terreno metros  </mat-label>
             <input formControlName="p_terreno" matInput placeholder="Terreno " >
              </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
              <mat-form-field style="margin-right: 10px;">
               <mat-label> Construccion  </mat-label>
               <input formControlName="p_constru" matInput placeholder=" Construccion " >
@@ -197,10 +198,16 @@
               <input formControlName="p_pisos" matInput placeholder=" Numero de Pisos  " >
                </mat-form-field>
 
+         </div>
+               <div style="display: flex; justify-content: center; align-items: center;">
                <mat-form-field style="margin-right: 15px;">
                 <input matInput formControlName="p_anti" placeholder="Años de Antiguedad">
                
               </mat-form-field>
+              <mat-form-field style="margin-right: 10px;">
+                <mat-label>Acabados   </mat-label>
+                <input formControlName="p_acabados" matInput placeholder=" Acabados  " >
+                 </mat-form-field>
          
   
                
@@ -212,10 +219,7 @@
     <div class="example-container">
      
     </div>
-         <mat-form-field style="margin-right: 10px;">
-      <mat-label>Acabados   </mat-label>
-      <input formControlName="p_acabados" matInput placeholder=" Acabados  " >
-       </mat-form-field>
+    
        <!-- Textarea with class .w-25 -->
         
  </div>
@@ -267,6 +271,8 @@
     </mat-icon>
 </mat-form-field>
 
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
 
 <mat-form-field style="margin-right: 10px;">
   <mat-label>Jardin</mat-label>
@@ -279,6 +285,17 @@
       <img src="assets/img/terraza.png"  alt="Icono" width="28" height="28">
   </mat-icon>
 </mat-form-field>
+<mat-form-field style="margin-right: 10px;">
+  <mat-label>Cocina Integral</mat-label>
+  <mat-select formControlName="p_cocina">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+      </mat-option>
+  </mat-select>
+  <mat-icon matSuffix>
+      <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
+  </mat-icon>
+  </mat-form-field>
   
 
 </div>
@@ -286,17 +303,7 @@
 <br>
 <br>
 <div style="display: flex; justify-content: center; align-items: center;">
-  <mat-form-field style="margin-right: 10px;">
-    <mat-label>Cocina Integral</mat-label>
-    <mat-select formControlName="p_cocina">
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-        </mat-option>
-    </mat-select>
-    <mat-icon matSuffix>
-        <img src="assets/img/cocina.png"  alt="Icono" width="30" height="30">
-    </mat-icon>
-    </mat-form-field>
+ 
 
   <mat-form-field style="margin-right: 10px;">
     <mat-label>Alberca</mat-label>
