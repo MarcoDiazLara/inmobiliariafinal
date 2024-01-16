@@ -11,3 +11,25 @@ h1{
 
 
 }
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .form-field {
+    margin-bottom: 15px;
+  }
+
+  /* Estilos para pantallas grandes (mayores a 600px) */
+  @media (min-width: 600px) {
+    .form-container {
+      flex-direction: row;
+      justify-content: space-around; /* Puedes ajustar el valor según prefieras */
+    }
+
+    .form-field {
+      margin-bottom: 0;
+    }
+  }
