@@ -54,7 +54,7 @@ export class BuscadorComponent implements OnInit {
 
 
   ResultsBusqCompra() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
   }
 
   ResultsBusqRenta() {
