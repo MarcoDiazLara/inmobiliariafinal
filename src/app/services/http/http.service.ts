@@ -765,6 +765,12 @@ export class HttpService {
     let params = "p_Id_Usuario=" + Id_Usuario + "&p_Id_Inmueble=" + Id_Inmueble;
     return this.httpclient.post(this.url + 'sp_web_actualiza_usuario_asesor.php', params, { headers });
   }
+
+  sp_web_ase_asig_noasig(IdSocio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_IdSocio=' + IdSocio;
+    return this.httpclient.post(this.url + 'sp_web_ase_asig_noasig.php', params, { headers });
+  }
    
    openasesor( ) {
     const dialogRef = this.dialog.open(ModalComponent, {
