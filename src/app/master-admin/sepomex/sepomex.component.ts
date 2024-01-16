@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Sepomex } from 'src/app/services/Interface/Interfaces';
+import { Asentamiento, Sepomex } from 'src/app/services/Interface/Interfaces';
 
 
 interface estados{
@@ -11,6 +11,25 @@ interface municipios{
   municipio: string;
   codigomunicipio:string,
   nestado: string;
+}
+
+interface tipoasentamiento{
+  tipoasentamiento: string,
+  codigoasentamiento: string
+}
+
+
+interface asentamiento{
+  asentamiento: string,
+  zona: string,
+  tipoasentamiento:string,
+  CP: string
+}
+
+interface codigosPostales{
+  CP: string,
+  codigoestado: string,
+  codigomunicipio: string
 }
 
 @Component({
@@ -30,6 +49,9 @@ export class SepomexComponent implements OnInit {
   Archivo: Sepomex[]=[];
   estados: estados[] = [];
   municipios: municipios[] = [];
+  tipoasentamientos: tipoasentamiento[] = [];
+  asentamientos: asentamiento[] = [];
+  codigos: codigosPostales[]=[];
 
   
   processFile(event: any): void {
@@ -73,13 +95,13 @@ export class SepomexComponent implements OnInit {
             d_ciudad: datos[5],
             d_CP: datos[6],
             c_estado: datos[7],
-            c_oficina: datos[8],
-            c_tipo_asenta: datos[9],
-            c_mnpio: datos[10],
-            id_asenta_cpcons: datos[11],
-            d_zona: datos[12],
-            c_cve_ciudad: datos[13],
-            c_CP: datos[14]
+            c_oficina: datos[9],
+            c_tipo_asenta: datos[10],
+            c_mnpio: datos[11],
+            id_asenta_cpcons: datos[12],
+            d_zona: datos[13],
+            c_cve_ciudad: datos[14],
+            c_CP: datos[8]
         };
         this.Archivo.push(sepomex);    
         })
@@ -139,17 +161,102 @@ let municipiosSinDuplicados: municipios[] = this.municipios.filter(municipios =>
   // Si ya está en el conjunto, retornar false para excluirlo del array resultado
   return false;
 });
+///-----------------------Asentamientos
+
+this.Archivo.forEach(sepomex => {
+  let tipoasentamiento: tipoasentamiento = {
+    tipoasentamiento: sepomex.d_tipo_asenta,
+      codigoasentamiento: sepomex.c_tipo_asenta
+  };
+
+  // Agregar el objeto Estado al array estados
+  this.tipoasentamientos.push(tipoasentamiento);
+});
 
 
 
-    // console.log(this.Archivo)
-    // console.log(this.municipios);
-    // console.log(estadosSinDuplicados);
+let conjuntotipoAsentamiento: Set<string> = new Set();
 
-    console.log(municipiosSinDuplicados);
+let tipoAsentamientoSinDuplicados: tipoasentamiento[] = this.tipoasentamientos.filter(tipoa => {
+  // Verificar si ambas propiedades tienen valores y si tipoa.codigoasentamiento no está vacío
 
+    // Convertir cada objeto Estado a una cadena única
+    let cadenaUnica = `${tipoa.tipoasentamiento}-${tipoa.codigoasentamiento}`;
     
-       
+    // Verificar si la cadena ya está en el conjunto
+    if (!conjuntotipoAsentamiento.has(cadenaUnica)) {
+      // Si no está en el conjunto, agregarlo y retornar true para incluirlo en el array resultado
+      conjuntotipoAsentamiento.add(cadenaUnica);
+      return true;
+    
+  }
+
+  // Si alguna propiedad está vacía, retornar false para excluirlo del array resultado
+  return false;
+});
+
+
+//-----------------------Asentamientos
+
+this.Archivo.forEach(sepomex => {
+  let asentamiento: asentamiento = {
+    asentamiento: sepomex.d_asenta,
+    tipoasentamiento: sepomex.c_tipo_asenta,
+    zona: sepomex.d_zona,
+    CP: sepomex.d_CP
+  };
+
+  // Agregar el objeto Estado al array estados
+  this.asentamientos.push(asentamiento);
+});
+
+
+//------------------codigosPostales
+this.Archivo.forEach(sepomex => {
+  let codigo: codigosPostales = {
+    CP: sepomex.d_codigo,
+    codigoestado: sepomex.c_estado,
+    codigomunicipio: sepomex.c_mnpio
+  };
+
+  // Agregar el objeto Estado al array estados
+  this.codigos.push(codigo);
+});
+
+
+let conjuntoCP: Set<string> = new Set();
+
+let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
+  // Verificar si ambas propiedades tienen valores y si tipoa.codigoasentamiento no está vacío
+
+    // Convertir cada objeto Estado a una cadena única
+    let cadenaUnica = `${codigo.CP}-${codigo.codigoestado}-${codigo.codigomunicipio}`;
+    
+    // Verificar si la cadena ya está en el conjunto
+    if (!conjuntotipoAsentamiento.has(cadenaUnica)) {
+      // Si no está en el conjunto, agregarlo y retornar true para incluirlo en el array resultado
+      conjuntotipoAsentamiento.add(cadenaUnica);
+      return true;
+    
+  }
+
+  // Si alguna propiedad está vacía, retornar false para excluirlo del array resultado
+  return false;
+});
+
+
+    console.log("estados: ");
+    console.log(estadosSinDuplicados);
+    console.log("municipios: ");
+    console.log(municipiosSinDuplicados);
+    console.log("Tipo de Asentamientos: ")
+    console.log(tipoAsentamientoSinDuplicados);
+    console.log("Asentamientos: ");
+    console.log(this.asentamientos);
+    console.log("Codigos Postales: ");
+    console.log(CPSinDuplicados);
+    
+
 
 
         //-----------------------------------------------
