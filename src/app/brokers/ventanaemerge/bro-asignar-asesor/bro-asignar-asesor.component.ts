@@ -102,7 +102,7 @@ export class BroAsignarAsesorComponent implements OnInit {
   
           Swal.fire({
             title: "Exito!",
-            text: "El Asesor fue reasignado",
+            text: "El Asesor fue asignado",
             icon: "success"
           });
           this.closeDialog();
