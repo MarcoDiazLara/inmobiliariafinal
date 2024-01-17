@@ -24,6 +24,11 @@
   color: #ffffff; 
 }
 
+custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
+
+
 .buttonnavbar:hover .navarrow,
 .buttonnavbar:hover .filter,
 .buttonnavbar:hover .backarrow,
@@ -307,17 +312,9 @@ ul.in {
   display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.icon-size {
+  font-size:16px;
+}
 
 
 .ListResult {
@@ -392,3 +389,7 @@ ul.in {
 }
 
 
+.imagen-ajust {
+  background-size: cover;
+  width: 100%;
+}
