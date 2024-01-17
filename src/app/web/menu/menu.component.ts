@@ -162,11 +162,20 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['web/novedadesactulidad'])
   }
 
-  ubicacion: String | undefined;
-  tpropiedad: String | undefined;
-  inmueble(entrada: number, tipo: number) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'compra', 'tpropiedad': entrada, 'ubicacion': this.ubicacion, 'bandera': 13, 'tipoP': tipo } });
+  BusqCompra(propiedad: string) {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
   }
 
+  BusqRenta(propiedad: string) {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+  }
+
+  BusqRemate(propiedad: string) {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+  }
+
+  BusqDesarrollo(propiedad: string) {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+  }
 
 }

@@ -74,7 +74,7 @@ public Venta: Boolean = false;
      this.isLoggedIn=this.httpService.getGlobalVariable();
 
     this.route.queryParams.subscribe(params => {
-      this.id_inmueble = params['id_inmueble'];
+      this.id_inmueble = params['id_publicacion'];
       this.id_usuario = params['id_usuario'];
       this.tpropiedad = params['tpropiedad'];
       this.ubicacion = params['ubicacion'];
