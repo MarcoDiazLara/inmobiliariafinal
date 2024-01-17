@@ -777,7 +777,7 @@
             <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Jardin == 'Y'" data-bs-toggle="tooltip" data-bs-placement="top" title="Jardin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 15 15"><path fill="#264d5e" d="M13 8c0 3.31-2.19 6-5.5 6S2 11.31 2 8a5.33 5.33 0 0 1 5 3.61V7H4.5A1.5 1.5 0 0 1 3 5.5v-3a.5.5 0 0 1 .9-.3l1.53 2l1.65-3a.5.5 0 0 1 .84 0l1.65 3l1.53-2a.5.5 0 0 1 .9.3v3A1.5 1.5 0 0 1 10.5 7H8v4.61A5.33 5.33 0 0 1 13 8"/></svg></button>
           </p>
           <p>
-            <button type="button" class="btn btn-secondary form-control"><i class="bi bi-info-circle icon-size"></i> Mas
+            <button type="button" class="btn btn-secondary form-control" (click)="detallesInmueble( busq.Id_Publicador, busq.Id_Publicacion )" ><i class="bi bi-info-circle icon-size"></i> Mas
               información</button>
           </p>
         </div>

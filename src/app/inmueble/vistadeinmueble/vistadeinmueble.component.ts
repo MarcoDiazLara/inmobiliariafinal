@@ -24,13 +24,15 @@ export class VistadeinmuebleComponent implements OnInit {
   RoofGarden!: any;
   Estacionamiento!: any;
   Jardin!: any;
-  Alberca!: any; 
+  Alberca!: any;
   Conteo!: number;
 
 
   PAction!: any;
   PPropiedad!: any;
   PUbicacion!: any;
+
+  TOper!: any;
 
 
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute) {
@@ -76,11 +78,7 @@ export class VistadeinmuebleComponent implements OnInit {
       this.getInmueblesBuscador();
     });
 
-    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    });       
-
+    
   }
 
   getTipoInmueble() {
@@ -114,7 +112,11 @@ export class VistadeinmuebleComponent implements OnInit {
       error: (e) => console.log(e),
       complete: () => console.log("Complete")
     })
-    
+
+  }
+
+  detallesInmueble(id_usu : any, id_inmu: any) {
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
   }
 
   backPage() {

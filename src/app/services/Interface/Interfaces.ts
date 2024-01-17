@@ -509,5 +509,6 @@ export interface CardInmuebles {
     Terreno_M2: string,
     Construccion_M2: string,
     Recamara: string,
-    Bano: string
+    Bano: string,
+    Id_Publicador: string
 };

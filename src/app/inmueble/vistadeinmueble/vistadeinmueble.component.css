@@ -24,10 +24,6 @@
   color: #ffffff; 
 }
 
-custom-tooltip {
-  --bs-tooltip-bg: var(--bs-primary);
-}
-
 
 .buttonnavbar:hover .navarrow,
 .buttonnavbar:hover .filter,
