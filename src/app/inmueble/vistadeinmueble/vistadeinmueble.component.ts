@@ -5,6 +5,8 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { TipoOperacion } from 'src/app/services/Interface/Interfaces';
 import { CardInmuebles } from 'src/app/services/Interface/Interfaces';
+import * as bootstrap from 'bootstrap';
+
 
 @Component({
   selector: 'app-vistadeinmueble',
@@ -73,6 +75,11 @@ export class VistadeinmuebleComponent implements OnInit {
 
       this.getInmueblesBuscador();
     });
+
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });       
 
   }
 

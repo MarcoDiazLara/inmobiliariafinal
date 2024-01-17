@@ -28,6 +28,12 @@ interface Food {
   viewValue: string;
 }
 
+interface coordenadas{
+  estado: string;
+  latitud: string;
+  longitud: string;
+}
+
 @Component({
   selector: 'app-inmueble',
   templateUrl: './inmueble.component.html',
@@ -62,7 +68,40 @@ export class InmuebleComponent implements OnInit {
     { value: '5', viewValue: '5' },
   ];
 
-
+  coordenadas: coordenadas[] = [
+    {estado:"1", latitud: "21.88804073871199",longitud:"-102.30993101620344"},
+    {estado:"2", latitud: "30.71212132055079",longitud:"-115.48332409858078"},
+    {estado:"3", latitud: "25.145419833079753",longitud:"-111.61833362855981"},
+    {estado:"4", latitud: "19.163182204037433",longitud:"-90.19291419689353"},
+    {estado:"5", latitud: "27.41198025211732",longitud:"-101.57552686274903"},
+    {estado:"6", latitud: "27.41198025211732",longitud:"-101.57552686274903"},
+    {estado:"7", latitud: "16.842767216498036",longitud:"-92.98906236379204"},
+    {estado:"8", latitud: "28.969293722730836",longitud:"-106.08799791066491"},
+    {estado:"9", latitud: "19.406162088343624",longitud:"-99.154363031929071"},
+    {estado:"10", latitud: "24.506405793837946",longitud:"-104.72296157289905"},
+    {estado:"11", latitud: "20.82618210504494",longitud:"-100.98154438412429"},
+    {estado:"12", latitud: "17.56633536168782",longitud:"-99.68090820312501"},
+    {estado:"13", latitud: "20.530244843859304",longitud:"-99.12622709663654"},
+    {estado:"14", latitud: "19.9812989330851",longitud:"-104.01743249488544"},
+    {estado:"15", latitud: "19.540187868190788",longitud:"-99.86360758219998"},
+    {estado:"16", latitud: "19.154515489688436",longitud:"-101.31355428847229"},
+    {estado:"17", latitud: "18.750810846967987",longitud:"-99.10611263969679"},
+    {estado:"18", latitud: "22.0607583176246",longitud:"-105.1835626031284"},
+    {estado:"19", latitud: "26.195481652248198",longitud:"-99.8697957176187"},
+    {estado:"20", latitud: "16.989382",longitud:"-97.051033"},
+    {estado:"21", latitud: "18.973767",longitud:"-98.030326"},
+    {estado:"22", latitud: "20.634213",longitud:"-100.347803"},
+    {estado:"23", latitud:"20.043071",longitud:"-87.781958"},
+    {estado:"24", latitud: "21.995158",longitud:"-100.216968"},
+    {estado:"25", latitud: "24.847133",longitud:"-107.547147"},
+    {estado:"26", latitud: "29.464274",longitud:"-109.570278"},
+    {estado:"27", latitud: "18.193643",longitud:"-92.471219"},
+    {estado:"28", latitud: "24.605024",longitud:"-98.328898"},
+    {estado:"29", latitud: "19.512960",longitud:"-98.215865"},
+    {estado:"30", latitud: "18.660055",longitud:"-96.091116"},
+    {estado:"31", latitud: "20.657859",longitud:"-89.129107"},
+    {estado:"32", latitud: "23.446671",longitud:"-102.807200"}
+  ];
 
 
   constructor(private formBuilder: FormBuilder, private dialog: MatDialog
@@ -80,7 +119,7 @@ export class InmuebleComponent implements OnInit {
   selectedImages!: FileList;
 
 
-  public center = { lat: 24, lng: 12 };
+  public center = { lat: 20, lng: -98 };
 
 
   fileName: string = "";
@@ -105,7 +144,8 @@ export class InmuebleComponent implements OnInit {
   longitud: number = 0.0000;
   p_ubi_maps: string = "0.00000,0.00000";
   plan !: any;
-
+  zoom: any;
+  
 
   ngOnInit() {
 
@@ -179,6 +219,34 @@ export class InmuebleComponent implements OnInit {
 
 
 
+  }
+
+  ubicarEstado(){
+    let xd: any;
+  
+    this.coordenadas.forEach(i =>{
+        if(i.estado == this.secondFormGroup.value.pId_estado){
+          xd = i;
+        }
+    })
+    console.log(xd);
+    
+    let lat = Number (xd.latitud);
+    let lng = Number (xd.longitud);
+    
+      const newMarker = {
+        position: { lat, lng },
+        label: 'Inmueble',
+      };
+
+      // Borra el marcador activo anterior, si existe
+      if (this.activeMarker) {
+        this.activeMarker = null;
+      }
+
+      this.zoom = 7;  // Puedes ajustar este valor según tus necesidades.
+    this.center = newMarker.position;
+      
   }
 
   updateM() {
