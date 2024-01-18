@@ -376,6 +376,7 @@ export class Requisitos3dComponent implements OnInit {
       text: "Se mando tu correo",
       icon: "success"
     });
+    this.CerraDialogo();
   })
   })
 
