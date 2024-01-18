@@ -34,6 +34,8 @@ export class VistadeinmuebleComponent implements OnInit {
 
   PPrecioDesde!: any | '1';
   PPrecioHasta!: any | '5000000000';
+  PIdOperacion!: any | '';
+  PIdInmueble!: any;
 
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute) {
   }
@@ -67,7 +69,7 @@ export class VistadeinmuebleComponent implements OnInit {
       this.PPropiedad = params['tpropiedad'];
       if (params['ubicacion'] !== undefined) {
         this.PUbicacion = params['ubicacion'];
-      }else{
+      } else {
         this.PUbicacion = '';
       }
       this.PPrecioDesde = params['PrecioDesde'];
@@ -108,7 +110,7 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   getInmueblesBuscador() {
-    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta ).subscribe({
+    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta).subscribe({
       next: (data) => {
         console.log(data);
         this.TCardInmuebles = data;
@@ -132,7 +134,22 @@ export class VistadeinmuebleComponent implements OnInit {
     console.log('Ubicacion Filtro', this.PPrecioHasta);
   }
 
-   applySearch() {
+  clickOperacion(Id: string) {
+    if (this.PIdOperacion == undefined) {
+      this.PIdOperacion = '';
+    }
+    this.PIdOperacion = this.PIdOperacion + Id;
+    console.log('Click Operacion', this.PIdOperacion);
+    this.PAction = Id;
+  }
+
+  clickInmueble(Id: string) {
+    console.log('Click Tipo Inmueble', Id);
+    this.PIdInmueble = Id;
+    this.PPropiedad = Id;
+  }
+
+  applySearch() {
     this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': this.PAction, 'tpropiedad': this.PPropiedad, 'ubicacion': this.PUbicacion, 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta } });
   }
 
