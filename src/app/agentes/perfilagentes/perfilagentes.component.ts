@@ -161,7 +161,7 @@ export class PerfilagentesComponent {
       })
     }else{
       this.datos.Nombre_Usuario = data.Nombre_Usuario;
-      this.datos.Img_Profile = data.Img_Profile;
+      this.datos.Img_Profile = data[0].Img_Profile;
     }})
   }
    
