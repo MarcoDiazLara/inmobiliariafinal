@@ -50,7 +50,7 @@ export class AdminhitoComponent implements OnInit {
   onDateSelected(event: any): void {
     // Aquí obtienes la fecha seleccionada
     // console.log('Fecha seleccionada:', this.selected);
-    // console.log("Puto dani")
+ 
     let dia= this.selected.getDate().toString();
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
@@ -92,14 +92,19 @@ export class AdminhitoComponent implements OnInit {
   }
 
   Delete(idHito: any){
+    this.httpService.openasesor(); 
     if (!idHito) {
       console.error('Se requiere el valor de idHito para llamar a EliminarFechasHitos');
       return;
     }
-    alert(idHito)
+    // alert(idHito)
     this.httpService.EliminarFechasHitos(idHito).subscribe((data:any) => {
       console.log('Respuesta del servicio:', data);
-      alert("Se eliminar Fecha");
+      Swal.fire({
+        title: "Éxito!!",
+        text: "Se elimino fecha hito!",
+        icon: "success"
+      });
       // Después de realizar las acciones necesarias, puedes ocultar el icono
       this.mostrarIcono = false;
 
@@ -110,7 +115,7 @@ export class AdminhitoComponent implements OnInit {
     }
 
     );
-   
+    this.httpService.closeDialog();
 
   }
 
@@ -135,6 +140,7 @@ export class AdminhitoComponent implements OnInit {
   // }
 
   addEvent() {
+
     this.ShowAddEvent = true;
     setTimeout(() => {
       const modal = document.querySelector('.ShowAddEvent');
@@ -142,7 +148,9 @@ export class AdminhitoComponent implements OnInit {
         modal.classList.add('mostrar');
       }
     }, 50);
+ 
   }
+  
   closeEvent(){
     const modal = document.querySelector('.ShowAddEvent');
   if (modal) {
@@ -150,7 +158,8 @@ export class AdminhitoComponent implements OnInit {
     setTimeout(() => {
       this.ShowAddEvent = false;
     }, 100);
-   }  
+   } 
+ 
   }
 
   EditEvent(Edicthito:any) {

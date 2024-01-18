@@ -24,7 +24,7 @@ export class EstatusComponent implements OnInit {
 
       Swal.fire({
         title: "Fue un exito",
-        text: "You clicked the button!",
+        // text: "You clicked the button!",
         icon: "success"
       });
       // alert("Se cambio de estatus");
