@@ -357,10 +357,10 @@
       <div class="form-inline form-control">
         <div class="row">
           <div class="col-3">
-            <div class="input-group my-1 align-items-center">
-              <span class="input-group-text" id="basic-addon-1"><i class="bi bi-search"></i></span>
+            <div class="input-group my-1 align-items-center" n>
+              <button class="btn btn-outline-primary" id="basic-addon-1" (click)="applySearch()"><i class="bi bi-search"></i></button>
               <input type="text" class="form-control" placeholder="Ingrese Municipio o Colonia"
-                aria-describedby="basic-addon-1">
+                aria-describedby="basic-addon-1" formControlName="p_Ubicacion" [(ngModel)]="PUbicacion" (ngModelChange)="changeUbicacion()" >
             </div>
           </div>
           <div class="col-auto">
@@ -450,15 +450,15 @@
                 data-bs-auto-close="outside" aria-expanded="false">
                 <i class="bi bi-tag-fill icon-size me-1"></i>Precio Inmueble
               </button>
-              <form class="dropdown-menu p-4" style="width: 490px;">
+              <form [formGroup]="FilterFormGroup" class="dropdown-menu p-4" style="width: 490px;">
                 <div class="row align-items-center g-3">
                   <div class="col-auto">
                     <label for="preciodesde">Desde</label>
-                    <input type="number" class="form-control" id="preciodesde" placeholder="Desde">
+                    <input type="number" class="form-control" id="preciodesde" placeholder="Desde" formControlName="p_Precio_Desde" min="1" [(ngModel)]="PPrecioDesde" (ngModelChange)="changePrices()">
                   </div>
                   <div class="col-auto">
                     <label for="preciohasta">Hasta</label>
-                    <input type="number" class="form-control" id="preciohasta" placeholder="Hasta">
+                    <input type="number" class="form-control" id="preciohasta" placeholder="Hasta" formControlName="p_Precio_Hasta" min="1" [(ngModel)]="PPrecioHasta" (ngModelChange)="changePrices()">
                   </div>
                 </div>
               </form>
