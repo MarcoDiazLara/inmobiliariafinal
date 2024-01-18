@@ -34,7 +34,7 @@ export class CompanyAdminpasswordComponent implements OnInit {
     this.dialog.closeAll();
   }
   actualizarpassword(){
-    this.httpService.openasesor(); 
+
    if (this.formGeneral){
     let contrasena = this.formGeneral.value.password;
     let contrasena2 = this.formGeneral.value.password2;
@@ -51,7 +51,7 @@ export class CompanyAdminpasswordComponent implements OnInit {
           
         )
       });
-      
+      this.closeDialog();
     }
 
     else{
