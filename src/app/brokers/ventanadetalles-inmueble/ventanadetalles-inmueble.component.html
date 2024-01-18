@@ -1,4 +1,3 @@
-<mat-dialog-content>
   <hr>
   <h1>Informacion general del Inmueble <i class="bi bi-info">
       <i class="bi bi-houses"></i>
@@ -11,10 +10,9 @@
     <form [formGroup]="options">
 
       <div class="container-fluid">
-        <div class="contenedorgeneral">
           <div class="row">
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label> Estatus de Publicacion</mat-label>
                 <mat-select [(value)]="opcionSeleccionada" formControlName="pId_Estatus_Inmueble">
                   <mat-option *ngFor="let opcion of  EstatusInmuebles" [value]="opcion.Id_Estatus_Publicacion">{{
@@ -28,7 +26,7 @@
 
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Nombre del Inmueble</mat-label>
                 <input matInput formControlName="Nombre_de_Inmueble" required [(ngModel)]="datos.Nombre_Inmueble">
                 <mat-icon matSuffix>
@@ -39,7 +37,7 @@
 
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Descripcion</mat-label>
                 <input matInput formControlName="Descripcion" required [(ngModel)]="datos.Descripcion_Inmueble">
                 <mat-icon matSuffix>
@@ -51,7 +49,7 @@
             <!---------------------------------------------------------------------->
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Calle</mat-label>
                 <input matInput formControlName="Calle" required [(ngModel)]="datos.Calle">
                 <mat-icon matSuffix>
@@ -61,7 +59,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field style="margin-right: 10px;">
+              <mat-form-field appearance="fill">
                 <mat-label>No Interior</mat-label>
                 <input matInput formControlName="No_Interior" required [(ngModel)]="datos.Num_Int">
                 <mat-icon matSuffix>
@@ -71,7 +69,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field style="margin-right: 10px;">
+              <mat-form-field appearance="fill">
                 <mat-label>No Exterior</mat-label>
                 <mat-icon matSuffix>
                   <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
@@ -82,7 +80,7 @@
             <!----------------------------------------------------------------------->
 
             <div class="col-md-6 orderinput">
-              <mat-form-field style="margin-right: 15px;">
+              <mat-form-field appearance="fill">
                 <mat-label>Terreno</mat-label>
                 <mat-icon matSuffix>
                   <img src="assets/img/terreno.png" alt="Icono" width="30" height="30">
@@ -92,7 +90,7 @@
             </div>
 
             <div class="col-md-6 orderinput">
-              <mat-form-field style="margin-right: 15px;">
+              <mat-form-field appearance="fill">
                 <mat-label>Construccion</mat-label>
                 <mat-icon matSuffix>
                   <img src="assets/img/mtrs_construidos.png" alt="Icono" width="30" height="30">
@@ -112,7 +110,7 @@
             <br>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Recamaras</mat-label>
                 <input matInput formControlName="Recamaras" required [(ngModel)]="datos.Recamara">
                 <mat-icon matSuffix>
@@ -122,7 +120,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Baños</mat-label>
                 <input matInput formControlName="Banos" required [(ngModel)]="datos.Bano">
                 <mat-icon matSuffix>
@@ -132,7 +130,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Cocina Integral</mat-label>
                 <input matInput formControlName="Cocina_Integral" required [(ngModel)]="datos.Cocina_Integral">
                 <mat-icon matSuffix>
@@ -142,7 +140,7 @@
             </div>
             <!----------------------------------------------------------------------->
             <div class="col-md-4 orderinput">
-              <mat-form-field style="margin-right: 15px;">
+              <mat-form-field appearance="fill">
                 <mat-label>Numero Pisos</mat-label>
                 <input matInput formControlName="Numero_Pisos" required [(ngModel)]="datos.Num_Pisos">
                 <mat-icon matSuffix>
@@ -152,7 +150,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Antiguedad</mat-label>
                 <input matInput formControlName="Antiguedad" required [(ngModel)]="datos.Antiguedad">
                 <mat-icon matSuffix>
@@ -162,7 +160,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Acabados</mat-label>
                 <input matInput formControlName="Acabados" required [(ngModel)]="datos.Acabados">
                 <mat-icon matSuffix>
@@ -174,7 +172,7 @@
             <!----------------------------------------------------------------------->
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Alberca </mat-label>
                 <input matInput formControlName="Alberca" required [(ngModel)]="datos.Alberca">
                 <mat-icon matSuffix>
@@ -184,7 +182,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Jardin </mat-label>
                 <input matInput formControlName="Jardin" required [(ngModel)]="datos.Jardin">
                 <mat-icon matSuffix>
@@ -194,7 +192,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>GYM</mat-label>
                 <input matInput formControlName="GYM" required [(ngModel)]="datos.Gimnasio">
                 <mat-icon matSuffix>
@@ -205,7 +203,7 @@
 
             <!----------------------------------------------------------------------->
             <div class="col-md-6 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>RoofGarden</mat-label>
                 <input matInput formControlName="RoofGarden" required [(ngModel)]="datos.Roof_Garden">
                 <mat-icon matSuffix>
@@ -214,7 +212,7 @@
               </mat-form-field>
             </div>
             <div class="col-md-6 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Estacionamiento</mat-label>
                 <input matInput formControlName="Estacionamiento" required [(ngModel)]="datos.Estacionamiento">
                 <mat-icon matSuffix>
@@ -232,7 +230,7 @@
             <hr>
             <br>
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Precio Minimo</mat-label>
                 <input matInput formControlName="Precio_Maximo" required [(ngModel)]="datos.Precio_Min">
                 <mat-icon matSuffix>
@@ -242,7 +240,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Precio Maximo </mat-label>
                 <input matInput formControlName="Precio_Minimo" required [(ngModel)]="datos.Precio_Max">
                 <mat-icon matSuffix>
@@ -252,7 +250,7 @@
             </div>
 
             <div class="col-md-4 orderinput">
-              <mat-form-field>
+              <mat-form-field appearance="fill">
                 <mat-label>Precio Final </mat-label>
                 <input matInput formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">
                 <mat-icon matSuffix>
@@ -263,25 +261,35 @@
             <!----------------------------------------------------------------------->
 
           </div>
-        </div>
+        <!-- </div> -->
       </div>
-    </form>
+    <div class="container-fluid">
+      <div class="row">
+      <div class="cssbutton col-md-6 ">
+        <button mat-raised-button color="#38B6E3" (click)="Actulizar()"> Actualizar </button>
+      </div>
 
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="Actulizar()">
-        Aceptar
-      </button>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-      <button style="margin-right: 15px;" type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"
-        (click)="CerraDialogo()">
-        Cancelar
-      </button>
-
+      <div class="cssbutton col-md-6 ">
+        <button mat-raised-button color="#38B6E3" (click)="CerraDialogo()"> Cancelar </button>
+      </div>
+    </div>
     </div>
 
-  </div>
+    <!-- <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="Actulizar()">
+        Aceptar
+      </button> -->
+      <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-</mat-dialog-content>
+
+      <!-- <button style="margin-right: 15px;" type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;"
+        (click)="CerraDialogo()">
+        Cancelar
+      </button> -->
+
+ 
+
+    <!-- </div> -->
+  </form>
+  </div>
