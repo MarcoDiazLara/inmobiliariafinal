@@ -357,7 +357,7 @@
       <div class="form-inline form-control">
         <div class="row">
           <div class="col-auto">
-            <div class="input-group my-1 align-items-center" n>
+            <div class="input-group my-1 align-items-center">
               <button class="btn btn-outline-primary" id="basic-addon-1" (click)="applySearch()"><i class="bi bi-search"></i></button>
               <input type="text" class="form-control" placeholder="Ingrese Municipio o Colonia"
                 aria-describedby="basic-addon-1" formControlName="p_Ubicacion" [(ngModel)]="PUbicacion" (ngModelChange)="changeUbicacion()" >
@@ -373,7 +373,7 @@
                 <li class="dropdown-item" *ngFor="let inmo of TOperacion">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="flexRadioDefault{{ inmo.Id_Tipo_Publicacion }}"
-                      value="{{ inmo.Id_Tipo_Publicacion }}">
+                      value="{{ inmo.Id_Tipo_Publicacion }}" (click)="clickOperacion(inmo.Tipo_Publicacion)">
                     <label class="form-check-label" for="flexRadioDefault1">
                       {{ inmo.Tipo_Publicacion }}
                     </label>
@@ -393,7 +393,7 @@
                 <li class="dropdown-item" *ngFor="let inmo of TInmuebles">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="flexRadioDefault{{ inmo.Id_Tipo_Inmueble }}"
-                      value="{{ inmo.Id_Tipo_Inmueble }}" >
+                      value="{{ inmo.Id_Tipo_Inmueble }}" (click)="clickOperacion(inmo.Id_Tipo_Inmueble)">
                     <label class="form-check-label" for="flexRadioDefault1"><span> {{ inmo.Tipo_Inmueble }}
                       </span></label>
                   </div>

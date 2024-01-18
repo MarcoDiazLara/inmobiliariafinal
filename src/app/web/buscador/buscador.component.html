@@ -267,7 +267,7 @@
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon-5"><i class="bi bi-building icon-size"></i></span>
                   <select class="form-select form-control" aria-label=".form-select-lg"
-                    formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad" required>
+                    formControlName="pId_Tipo_Inmueble" [(ngModel)]="tpropiedad">
                     <option class="dropdown-item" disabled selected value="undefined">Selecciona...</option>
                     <option class="dropdown-item" *ngFor="let inmo of TInmuebles" value="{{ inmo.Id_Tipo_Inmueble }}">
                       {{
