@@ -80,4 +80,27 @@ margin-top: 1%;
 width: 60%;
 color: #ffffff;
 
-}    
+}  
+
+@media (max-width: 500px){
+ 
+
+  .contenidoperfil{
+      
+      width: 100%;
+      z-index: 5;
+    }
+  
+  
+  .perfilcontenedor{
+    width: 100%;
+  }
+  
+  .cssbutton button{
+    width: 100%;
+    color: #ffffff;
+    margin-bottom: 10px;
+    
+    } 
+  
+  }
