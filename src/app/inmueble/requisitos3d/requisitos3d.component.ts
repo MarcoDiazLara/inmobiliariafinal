@@ -365,26 +365,60 @@ export class Requisitos3dComponent implements OnInit {
     this.archivos = event.target.files;
   }
 
-   NuevosDatos(){
-  this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),this.miFormulario.value.name,this.miFormulario.value.Correo,this.miFormulario.value.Telefono,this.miFormulario.value.planos,"","","","","").subscribe((data:any)=>{
-  let Correo="Hola me comunico para el modelado 3D" + '\n'+ "Mi nombre es:"+ this.miFormulario.value.name +'\n'+"Correo: "+ this.miFormulario.value.Correo+ '\n'+"Telefono:" + this.miFormulario.value.Telefono + '\n'+"Cuento con planos:"+ this.miFormulario.value.planos;
-  this.httpService.EnviarCorreo("20181950@uatx.mx",Correo, ).subscribe((data:any)=>{
-    // alert("se mando tu correo");
+  //  NuevosDatos(){
+  // this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),this.miFormulario.value.name,this.miFormulario.value.Correo,this.miFormulario.value.Telefono,this.miFormulario.value.planos,"","","","","").subscribe((data:any)=>{
+  // let Correo="Hola me comunico para el modelado 3D" + '\n'+ "Mi nombre es:"+ this.miFormulario.value.name +'\n'+"Correo: "+ this.miFormulario.value.Correo+ '\n'+"Telefono:" + this.miFormulario.value.Telefono + '\n'+"Cuento con planos:"+ this.miFormulario.value.planos;
+  // this.httpService.EnviarCorreo("20181950@uatx.mx",Correo, ).subscribe((data:any)=>{
+  //   // alert("se mando tu correo");
 
-    Swal.fire({
-      title: "Exito",
-      text: "Se mando tu correo",
-      icon: "success"
-    });
-    this.CerraDialogo();
-  })
-  })
-
-
-
-   }
+  //   Swal.fire({
+  //     title: "Exito",
+  //     text: "Se mando tu correo",
+  //     icon: "success"
+  //   });
+  //   this.CerraDialogo();
+  // })
+  // })
 
 
+
+  //  }
+
+  NuevosDatos() {
+    if (this.miFormulario.valid) {
+      const idInmueble = localStorage.getItem("p_Id_inmueble");
+      const { name, Correo, Telefono, planos } = this.miFormulario.value;
+  
+      this.httpService.subirModelado(idInmueble, name, Correo, Telefono, planos, "", "", "", "", "").subscribe((data: any) => {
+        const correoBody = `Hola me comunico para el modelado 3D\nMi nombre es: ${name}\nCorreo: ${Correo}\nTelefono: ${Telefono}\nCuento con planos: ${planos}`;
+  
+        this.httpService.EnviarCorreo("20181950@uatx.mx", correoBody).subscribe((correoData: any) => {
+          Swal.fire({
+            title: "Éxito",
+            text: "Se mandó tu correo",
+            icon: "success"
+          });
+          this.CerraDialogo();
+        }, (error) => {
+          console.error("Error al enviar el correo:", error);
+          // Manejar el error al enviar el correo
+        });
+      }, (error) => {
+        console.error("Error al subir modelado:", error);
+        // Manejar el error al subir el modelado
+      });
+    } else {
+      // Muestra una alerta si el formulario no es válido
+      // alert('Por favor, completa todos los campos obligatorios correctamente.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Rellena todos los campos',
+       
+      })
+    }
+  }
+  
 
 
 
