@@ -57,19 +57,44 @@ export class InmobiliariasComponent implements OnInit {
       this.inmobiliarias = data;
     })
   }
-  
-  Enviar(){
-    // console.log("Email: "+ this.formGeneral.value.Email + "Nombre: "+ this.formGeneral.value.Nombre+ "Mensaje: " + this.formGeneral.value.Mensaje+ "Telefono: "+ this.formGeneral.value.Telefono);
-    let message = "Nombre: " + this.formGeneral.value.Nombre + "\nEmail: "+ this.formGeneral.value.Email + "\nTelefono: "+ this.formGeneral.value.Telefono + "\n Mensaje: " + this.formGeneral.value.Mensaje;
-    this.httpService.EnviarCorreo(this.inmobiliariaSeleccionada.Email, message).subscribe((data: any)=>{
-      Swal.fire(
-        'Exitosamente!',
-        'Se ha enviado el correo',
-        'success'
-        
-      )
-    })
+  Enviar() {
+    if (this.formGeneral.valid) {
+      let message = "Nombre: " + this.formGeneral.value.Nombre + "\nEmail: " + this.formGeneral.value.Email + "\nTelefono: " + this.formGeneral.value.Telefono + "\nMensaje: " + this.formGeneral.value.Mensaje;
+      
+      this.httpService.EnviarCorreo(this.inmobiliariaSeleccionada.Email, message).subscribe((data: any) => {
+        Swal.fire(
+          'Exitosamente!',
+          'Se ha enviado el correo',
+          'success'
+        );
+      });
+    } else {
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Rellena todos los campos',
+       
+      })
+    }
+      // Angular ya maneja la validación, por lo que este bloque raramente se ejecutará si el formulario está configurado correctamente.
+      // alert('Por favor, completa todos los campos obligatorios correctamente.');
+    }
   }
+  
+  
+  // Enviar(){
+  //   // console.log("Email: "+ this.formGeneral.value.Email + "Nombre: "+ this.formGeneral.value.Nombre+ "Mensaje: " + this.formGeneral.value.Mensaje+ "Telefono: "+ this.formGeneral.value.Telefono);
+  //   let message = "Nombre: " + this.formGeneral.value.Nombre + "\nEmail: "+ this.formGeneral.value.Email + "\nTelefono: "+ this.formGeneral.value.Telefono + "\n Mensaje: " + this.formGeneral.value.Mensaje;
+  //   this.httpService.EnviarCorreo(this.inmobiliariaSeleccionada.Email, message).subscribe((data: any)=>{
+  //     Swal.fire(
+  //       'Exitosamente!',
+  //       'Se ha enviado el correo',
+  //       'success'
+        
+  //     )
+  //   })
+  // }
 
 
-}
+
