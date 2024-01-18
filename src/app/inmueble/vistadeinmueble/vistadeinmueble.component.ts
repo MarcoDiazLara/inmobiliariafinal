@@ -24,17 +24,18 @@ export class VistadeinmuebleComponent implements OnInit {
   RoofGarden!: any;
   Estacionamiento!: any;
   Jardin!: any;
-  Alberca!: any; 
+  Alberca!: any;
   Conteo!: number;
 
 
   PAction!: any;
   PPropiedad!: any;
-  PUbicacion!: any;
+  PUbicacion!: any | '';
 
+  PPrecioDesde!: any | '1';
+  PPrecioHasta!: any | '5000000000';
 
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute) {
-
   }
 
   ngOnInit() {
@@ -64,22 +65,23 @@ export class VistadeinmuebleComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.PAction = params['action'];
       this.PPropiedad = params['tpropiedad'];
-      this.PUbicacion = "All";
       if (params['ubicacion'] !== undefined) {
         this.PUbicacion = params['ubicacion'];
+      }else{
+        this.PUbicacion = '';
       }
+      this.PPrecioDesde = params['PrecioDesde'];
+      this.PPrecioHasta = params['PrecioHasta'];
 
       console.log('Action', this.PAction);
       console.log('Propiedad', this.PPropiedad);
       console.log('Ubicacion', this.PUbicacion);
+      console.log('PrecioDesde', this.PPrecioDesde);
+      console.log('PrecioHasta', this.PPrecioHasta);
 
       this.getInmueblesBuscador();
     });
 
-    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    });       
 
   }
 
@@ -106,7 +108,7 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   getInmueblesBuscador() {
-    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction).subscribe({
+    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta ).subscribe({
       next: (data) => {
         console.log(data);
         this.TCardInmuebles = data;
@@ -114,7 +116,24 @@ export class VistadeinmuebleComponent implements OnInit {
       error: (e) => console.log(e),
       complete: () => console.log("Complete")
     })
-    
+
+  }
+
+  detallesInmueble(id_usu: any, id_inmu: any) {
+    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
+  }
+
+  changeUbicacion() {
+    console.log('Ubicacion Filtro', this.PUbicacion);
+  }
+
+  changePrices() {
+    console.log('Ubicacion Filtro', this.PPrecioDesde);
+    console.log('Ubicacion Filtro', this.PPrecioHasta);
+  }
+
+   applySearch() {
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': this.PAction, 'tpropiedad': this.PPropiedad, 'ubicacion': this.PUbicacion, 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta } });
   }
 
   backPage() {

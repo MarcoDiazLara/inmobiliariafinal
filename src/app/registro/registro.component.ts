@@ -37,6 +37,7 @@ export class RegistroComponent implements OnInit {
   }
 
   Registro(){
+    this.httpService.openasesor(); 
     if (this.formRegistro.valid) {
     let p_nombres1 = this.formRegistro.value.p_nombres;
     let p_a_paterno1 =  this.formRegistro.value.p_a_paterno;
@@ -56,6 +57,7 @@ export class RegistroComponent implements OnInit {
           text: 'Error al insertar usuario',
          
         })
+    
         //alert("Error al insertar usuario");
       }else{
         if(data == 2){
@@ -65,6 +67,7 @@ export class RegistroComponent implements OnInit {
             text: 'Error al insertar informacion',
            
           })
+          this.httpService.closeDialog(); 
           //alert("Error al insertar informacion");
         }else
 			if(data == 3){
@@ -74,6 +77,7 @@ export class RegistroComponent implements OnInit {
           text: 'El nombre de usuario ya existe, por favor ingresa uno diferente.',
          
         })
+        this.httpService.closeDialog(); 
           //alert("El nombre de usuario ya existe, por favor ingresa uno diferente.");
         }else{
           Swal.fire({
@@ -81,6 +85,8 @@ export class RegistroComponent implements OnInit {
             text: "Se creó nuevo usuario!",
             icon: "success"
           });
+          
+          this.httpService.closeDialog(); 
 			// alert("Éxito!! Se creó nuevo usuario");
           this.httpService.EnviarCorreo(p_correo1,"Bienvenido a InmobeWise. \n Hola, "+ p_nombres1 + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data:any)=>{
             this.router.navigate(['/login']);
@@ -98,7 +104,9 @@ export class RegistroComponent implements OnInit {
      
     })
   }
+ 
   }
+
   home(){
     this.router.navigate(['/web']);
    }

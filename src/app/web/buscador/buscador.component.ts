@@ -19,7 +19,10 @@ export class BuscadorComponent implements OnInit {
   firstFormGroup!: FormGroup;
   segundoFormGroup!: FormGroup;
   tpropiedad: number | undefined;
-  ubicacion: String | undefined;
+  ubicacion: any | '';
+
+  PPrecioDesde!: any | '1';
+  PPrecioHasta!: any | '5000000000';
 
   constructor(private router: Router,
     private httpService: HttpService,
@@ -54,19 +57,19 @@ export class BuscadorComponent implements OnInit {
 
 
   ResultsBusqCompra() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
   }
 
   ResultsBusqRenta() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
   }
 
   ResultsBusqRemate() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
   }
 
   ResultsBusqDesarrollo() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
   }
 
   cambioTpropiedad(tprop:number){
@@ -78,6 +81,8 @@ export class BuscadorComponent implements OnInit {
     console.log('Selecciona Ubicacion: ',ubi);
     this.ubicacion = ubi;
   }
+
+
 
   onSubmit(){
     console.warn(this.segundoFormGroup.value);

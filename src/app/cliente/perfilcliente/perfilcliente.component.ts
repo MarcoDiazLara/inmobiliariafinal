@@ -47,6 +47,7 @@ export class PerfilclienteComponent implements OnInit {
   ngOnInit(): void {
 
     this.obtenerInfo();
+    this.obtenerInfo2();
     this.formGeneral = this.formBuilder.group({
       nombre:['',[Validators.required]],
       apellidopaterno:['',[Validators.required]],
@@ -148,7 +149,7 @@ export class PerfilclienteComponent implements OnInit {
     }else{
     
       this.datos = data;
-      this.obtenerInfo2();
+      
     }})
   }
   obtenerInfo2(){
@@ -162,8 +163,9 @@ export class PerfilclienteComponent implements OnInit {
        
       })
     }else{
+      console.log(data);
       this.datos.Nombre_Usuario = data.Nombre_Usuario;
-      this.datos.Img_Profile = data.Img_Profile;
+      this.datos.Img_Profile = data[0].Img_Profile;
     }})
   }
    
