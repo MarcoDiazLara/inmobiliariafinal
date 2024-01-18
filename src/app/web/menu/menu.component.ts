@@ -14,6 +14,8 @@ export class MenuComponent implements OnInit {
 
 
   isLoggedIn: boolean = false;
+  PPrecioDesde!: any | '1';
+  PPrecioHasta!: any | '5000000000';
 
 
 
@@ -163,19 +165,19 @@ export class MenuComponent implements OnInit {
   }
 
   BusqCompra(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000'} });
   }
 
   BusqRenta(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta} });
   }
 
   BusqRemate(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta} });
   }
 
   BusqDesarrollo(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': propiedad, 'ubicacion': 'All'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta} });
   }
 
 }
