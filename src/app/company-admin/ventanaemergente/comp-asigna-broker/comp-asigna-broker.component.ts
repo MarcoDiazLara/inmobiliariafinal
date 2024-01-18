@@ -35,7 +35,9 @@ export class CompAsignaBrokerComponent implements OnInit {
     private http: HttpService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private globalservice: GlobalService
+    private globalservice: GlobalService,
+    
+
   ) { }
 
   ngOnInit(): void {
@@ -56,6 +58,7 @@ export class CompAsignaBrokerComponent implements OnInit {
     console.log(this.formGeneral.value.Nombres)
   }
   guardarasesor() {
+    this.http.openasesor(); 
     if (this.formGeneral) {
       this.Nombres = this.formGeneral.value.Nombres;
       
@@ -87,7 +90,8 @@ export class CompAsignaBrokerComponent implements OnInit {
           alert("Error al insertar");
         }
       });
-
+    
+      this.http.closeDialog(); 
 
 
     }
@@ -96,17 +100,20 @@ export class CompAsignaBrokerComponent implements OnInit {
 
 
   prueba() {
+    this.http.openasesor(); 
     let Id_Inmueble = localStorage.getItem("Id_Inmueble");
     let valor = localStorage.getItem("mi_valor");
     this.Nombres = this.formGeneral.value.Nombres;
 
 
     if (valor == "1") {
-
+        
       this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
+        
         if (resp == 1) {
         let tem_Usuarios: any=this.globalservice.usuarios$.value || []; 
         let index = tem_Usuarios.findIndex((usu:any)=>usu.Id_Inmueble == resp.Id_Inmueble);
+      
         if (index != -1)
         {
         //  tem_Usuarios[index].Id_Inmueble =
@@ -121,7 +128,7 @@ export class CompAsignaBrokerComponent implements OnInit {
 
           this.closeDialog();
           // window.location.reload();
-
+          this.http.closeDialog(); 
         } else {
           alert("Error al actualizar");
         }

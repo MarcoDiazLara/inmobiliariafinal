@@ -73,7 +73,7 @@ export class AltaBrokersComponent implements OnInit {
   }
 
   Guardardatos(){
-      
+    this.httpService.openasesor();
 
     if (this.formGeneral){
       let nombre = this.formGeneral.value.nombre;
@@ -115,6 +115,7 @@ export class AltaBrokersComponent implements OnInit {
               text: 'Error al insertar informacion',
              
             })
+       
           }else{
             //alert("Se ha insertado un nuevo usuario");
             this.httpService.EnviarCorreo(email,"Bienvenido a InmobeWise. \n Hola, "+ nombre + " ya puedes usar nuestros servicios. \n Saludos del equipo de InmobeWise.").subscribe((data)=>{
@@ -129,6 +130,7 @@ export class AltaBrokersComponent implements OnInit {
           }
         }
       })
+      this.httpService.closeDialog(); 
 
      }
 }
