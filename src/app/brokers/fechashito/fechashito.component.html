@@ -1,7 +1,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-<div class="container-fluit">
+<div class="content">
   <div class="encabezado">
     <h1>Calendario</h1>
     <button class="btnAdd" (click)="addEvent()"><mat-icon>add</mat-icon> Crear </button>
@@ -191,6 +191,16 @@
                 <mat-checkbox color="primary" style="margin-left: 5px;"></mat-checkbox> -->
         </h4>
       </div>
+      <mat-form-field>
+        <mat-label>
+          <h4>Asignacion de tarea</h4>
+        </mat-label>
+        <mat-select [(ngModel)]="selectedStatus">
+          <mat-option *ngFor="let bro of brokers" [value]="bro.Id_Usuario">
+            {{ bro.Nombres + " " + bro.Apellido_Paterno + " " + bro.Apellido_Materno}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
       <!-- <mat-form-field>
               <mat-label><h4>Estatus</h4></mat-label>
               <mat-select>

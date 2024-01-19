@@ -24,7 +24,7 @@ export class MasterestatusComponent implements OnInit {
 
       Swal.fire({
         title: "Fue un exito",
-        text: "You clicked the button!",
+        text: "Cambiaste el estatus del usuario!",
         icon: "success"
       });
       // alert("Se cambio de estatus");

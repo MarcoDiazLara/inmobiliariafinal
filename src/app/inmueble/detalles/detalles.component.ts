@@ -55,8 +55,7 @@ export class DetallesComponent implements OnInit {
 
 public Venta: Boolean = false;
 
-
-
+Id_real!: string;
 
 
   vista_360 !: string;
@@ -84,7 +83,9 @@ public Venta: Boolean = false;
     });
 
     this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
+     
     this.details = resp[0];
+    console.log(this.details);
     this.imagenPrincipalUrl = this.details.Picture1;
     this.imagen1 = this.details.Picture1;
     this.imagen2 = this.details.Picture2;
@@ -92,9 +93,20 @@ public Venta: Boolean = false;
     this.imagen4 = this.details.Picture4;
     this.imagen5 = this.details.Picture5;
     this.precio  = this.details.Precio_Final;
+    this.Id_real = this.details.Id_Inmueble;
     
     this.tipo = this.details.Id_Tipo_Publicacion;
     this.vista_360 = this.details[360];
+
+    if(this.isLoggedIn){
+      
+      this.httpService.validarlikes(localStorage.getItem("Id_Usuario"),this.Id_real).subscribe((data:any)=>{
+        console.log(data);
+        if(data == 1){
+          this.esFavorito = !this.esFavorito;
+        }   
+      })
+    }
   
    
 
@@ -130,15 +142,7 @@ public Venta: Boolean = false;
       });
     }
 
-    if(this.isLoggedIn){
-      
-      this.httpService.validarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data:any)=>{
-        console.log(data);
-        if(data == 1){
-          this.esFavorito = !this.esFavorito;
-        }   
-      })
-    }
+    
     
 
   }
@@ -279,9 +283,10 @@ public Venta: Boolean = false;
 
 
 Favoritos(){
+  console.log(this.Id_real);
   if(this.isLoggedIn){
   console.log("Id _ usuario"+ localStorage.getItem("Id_Usuario")+ "Id_Inmueble" + this.id_inmueble);
-  this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.id_inmueble,"1").subscribe((data : any) =>{
+  this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.Id_real,"1").subscribe((data : any) =>{
     if(data == 1){
     
     Swal.fire({
@@ -291,7 +296,7 @@ Favoritos(){
      
     })
     this.esFavorito = !this.esFavorito;}else{
-      this.httpService.borrarlikes(localStorage.getItem("Id_Usuario"),this.id_inmueble).subscribe((data: any)=>{
+      this.httpService.borrarlikes(localStorage.getItem("Id_Usuario"),this.Id_real).subscribe((data: any)=>{
         this.esFavorito = !this.esFavorito;
         Swal.fire('Este inmueble se quito de sus favoritos');
       })

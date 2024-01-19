@@ -60,7 +60,7 @@ export class FechashitoComponent implements OnInit {
     //   this.mostrarfechashito=data;
     //   console.log(data);
     // })
-    this.httpService.mostrarHitoGeneral(localStorage.getItem("Id_Socio"), fecha1).subscribe((data:any)=>{
+    this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
       this.mostrarfechashito=data;
       console.log(data);
     })

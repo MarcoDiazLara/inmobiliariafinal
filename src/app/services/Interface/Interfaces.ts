@@ -140,6 +140,7 @@ export interface infoInmuebles {
     Id_Tipo_Publicacion: String,
     Precio_Final: "",
     Id_Publicacion: "",
+    Id_Inmueble:""
 };
 
 export interface mostrarcita {
