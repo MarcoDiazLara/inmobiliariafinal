@@ -37,7 +37,6 @@ import { CompanyAsignarReasignarComponent } from './company-asignar-reasignar/co
 import { CatalogoinmuebleComponent } from './catalogoinmueble/catalogoinmueble.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { Inventarioadmin } from './inventario-admin/inventario-admin.component';
-import { InmuebledetallesadminComponent } from './ventanaemergente/inmuebledetallesadmin/inmuebledetallesadmin.component';
 import { PantallaUsuariosComponent } from './pantalla-usuarios/pantalla-usuarios.component';
 import { InformacionusuariosadmComponent } from './ventanaemergente/informacionusuariosadm/informacionusuariosadm.component';
 import { PerfilcompanyAdminComponent } from './perfilcompany-admin/perfilcompany-admin.component';
@@ -77,7 +76,6 @@ registerLocaleData(localeEs);
     CompAsignarAsesorComponent,
     CompanyAsignarReasignarComponent,
     CatalogoinmuebleComponent,
-    InmuebledetallesadminComponent,
     PantallaUsuariosComponent,
     InformacionusuariosadmComponent,
     PerfilempresaComponent,

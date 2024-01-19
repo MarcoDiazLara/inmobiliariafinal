@@ -13,7 +13,11 @@ export class InmuebledetallesComponent implements OnInit {
   formGeneral!:FormGroup;
 
   detalles!: detallesdelInmueble ;
-  Nombre_Publicacion !: string;
+  Nombre_Inmueble !:string;
+  Descripcion_Inmueble!:string;
+  Calle !:string; 
+  Num_Int !:string;
+  Num_Ext !:string;
   Terrenometros!: string;
   construccion!: string ;
   recamaras!: string;
@@ -27,6 +31,9 @@ export class InmuebledetallesComponent implements OnInit {
   alberca!:string;
   cocina!:string;
   roof!:string;
+  Precio_Min!:string;
+  Precio_Max!:string;
+  Precio_Final!:string;
  
   
   id_publicacion: any;
@@ -39,12 +46,16 @@ export class InmuebledetallesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let id_publicacion = localStorage.getItem('idpublicacion');
+    let Id_Inmueble = localStorage.getItem('Id_Inmueble');
     
-    this.http.mostrarDetallesInmueble(id_publicacion).subscribe((data:any)=>{
+    this.http.mostrarDetallesInmueble(Id_Inmueble).subscribe((data:any)=>{
     
       this.detalles = data[0];
-      this.Nombre_Publicacion = this.detalles.Nombre_Publicacion;
+      this.Nombre_Inmueble = this.detalles.Nombre_Inmueble;
+      this.Descripcion_Inmueble = this.detalles.Descripcion_Inmueble;
+      this.Calle = this.detalles.Calle;
+      this.Num_Int = this.detalles.Num_Int;
+      this.Num_Ext = this.detalles.Num_Ext;
       this.Terrenometros= this.detalles.Terreno_M2;
       this.construccion= this.detalles.Construccion_M2;
       this.recamaras= this.detalles.Recamara;
@@ -57,12 +68,21 @@ export class InmuebledetallesComponent implements OnInit {
       this.jardin=this.detalles.Jardin;
       this.alberca=this.detalles.Alberca;
       this.cocina=this.detalles.Cocina_Integral;
-      this.roof=this.detalles.Roof_Garden
+      this.roof=this.detalles.Roof_Garden;
+      this.Precio_Min=this.detalles.Precio_Min;
+      this.Precio_Max =this.detalles.Precio_Max;
+      this.Precio_Final =this.detalles.Precio_Final;
       
       });
 
 
     this.formGeneral = this.formBuilder.group({
+      
+      Nombre_Inmueble: ['',[Validators.required]],
+      Descripcion_Inmueble: ['',[Validators.required]],
+      Calle: ['',[Validators.required]],
+      Num_Int: ['',[Validators.required]],
+      Num_Ext: ['',[Validators.required]],
       Terrenometros: ['',[Validators.required]],
       Construccion: ['',[Validators.required]],
       Numero_de_recamaras: ['',[Validators.required]],
@@ -76,6 +96,9 @@ export class InmuebledetallesComponent implements OnInit {
       Cocina_Integral: ['',[Validators.required]],
       Alberca: ['',[Validators.required]],
       Roof_Garden: ['',[Validators.required]],
+      Precio_Min: ['',[Validators.required]],
+      Precio_Max: ['',[Validators.required]],
+      Precio_Final: ['',[Validators.required]],
   })
 
 

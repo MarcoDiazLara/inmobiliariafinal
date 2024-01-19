@@ -118,8 +118,8 @@ export class InvesntarioComponent implements OnInit {
     localStorage.setItem ('idpublicacion',idPubli);
     
     const dialogRef = this.dialog.open(VentanadetallesInmuebleComponent, {
-      width: '80%',
-      height: 'auto',  
+      width: '70%',
+      height: '70%',    
       disableClose: true
     });
   }

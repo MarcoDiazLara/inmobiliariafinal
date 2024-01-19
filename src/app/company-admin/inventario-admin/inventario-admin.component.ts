@@ -115,8 +115,8 @@ export class Inventarioadmin implements OnInit {
 
     localStorage.setItem ('idpublicacion',idPubli);
     const dialogRef = this.dialog.open(InformacionInmuebleComponent, {
-      width: '800px',
-      height: '400px',  
+      width: '70%',
+      height: '70%',  
       disableClose: true
     });
 

@@ -139,6 +139,7 @@ export class VentanadetallesInmuebleComponent implements OnInit {
               'success'
               
             )
+           
             // alert("Se actualizo correctamente");
           } else{
             //alert(":(");
@@ -148,12 +149,14 @@ export class VentanadetallesInmuebleComponent implements OnInit {
               text: ':(',
              
             })
-          }
-
+          }  
+          this.CerraDialogo();
 
         })
 
       }
+      
+
   // opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
   // opcionSeleccionada: string = '';
   // EstatusInmuebles:EstatusInmueble[]=[];

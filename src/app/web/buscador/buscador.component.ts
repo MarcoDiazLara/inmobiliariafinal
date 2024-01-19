@@ -41,7 +41,7 @@ export class BuscadorComponent implements OnInit {
       pUbicacion2: ['', [Validators.required]]
     })
     this.tpropiedad = 1;
-   
+    
   }
 
   obtenerDatosInmuebles() {
@@ -57,19 +57,19 @@ export class BuscadorComponent implements OnInit {
 
 
   ResultsBusqCompra() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': ''} });
   }
 
   ResultsBusqRenta() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': ''} });
   }
 
   ResultsBusqRemate() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': ''} });
   }
 
   ResultsBusqDesarrollo() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '', 'RVR': '' , 'Video': '' , 'Plano': ''} });
   }
 
   cambioTpropiedad(tprop:number){
