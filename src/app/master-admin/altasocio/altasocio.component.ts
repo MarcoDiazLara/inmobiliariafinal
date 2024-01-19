@@ -92,7 +92,7 @@ selectedImages!: FileList;
   Guardardatos(){
       
 
-    if (this.formGeneral){
+    if (this.formGeneral.valid){
       let date = new Date();
     
       this.subir_imagenes();
@@ -184,6 +184,8 @@ selectedImages!: FileList;
     //   " NUM_INT: "+ numint+ " TipoSocio: "+ tipo_socio + " Asentamiento: "+ asentamientos +" Logo: "+ Logo + " Nombre: "+ nombre+ " Ap_Paterno: "+ apellidopaterno + "Ap_Materno: "+ apellidomaterno+
     //    " CURP: "+ curp + " RFC: "+ rfc + " Contacto_Emergencia: "+ contactoemergencia + " Correo: "+ correo + " Nombre_Usuario: "+ nombreusuario + " contra: "+ contra+ "Estatus: "+ estatus + " Descripcion: "+ descripcionusuario );
 
+     }else{
+      alert("XDXDXD");
      }
 }
 
