@@ -128,8 +128,8 @@ export class InventarioagentesComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(InmuebledetallesComponent, {
-      width: '80%',
-      height: 'auto',  
+      width: '70%',
+      height: '70%',  
       disableClose: true
     });
   }

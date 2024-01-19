@@ -13,6 +13,10 @@ export class InmuebledetallesComponent implements OnInit {
   formGeneral!:FormGroup;
 
   detalles!: detallesdelInmueble ;
+  Nombre_Inmueble !:string;
+  Descripcion_Inmueble!:string;
+  Calle !:string; 
+  Num_Int !:string;
   Nombre_Publicacion !: string;
   Terrenometros!: string;
   construccion!: string ;
@@ -27,6 +31,9 @@ export class InmuebledetallesComponent implements OnInit {
   alberca!:string;
   cocina!:string;
   roof!:string;
+  Precio_Min!:string;
+  Precio_Minimo!:string;
+  Precio_Final!:string;
  
   
   id_publicacion: any;
