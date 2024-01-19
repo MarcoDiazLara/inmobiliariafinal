@@ -796,9 +796,9 @@ export class HttpService {
     return this.httpclient.post<TipoOperacion[]>(this.url + 'mostrarTipoOperaciones.php', params, { headers });
   }
 
-  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any, PrecioDesde: any, PrecioHasta: any) {
+  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any, PrecioDesde: any, PrecioHasta: any, Keywords: any, RVR: any, Video: any, Plano: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta ;
+    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta + '&p_Keywords=' + Keywords + '&p_RVR=' + RVR + '&p_Video=' + Video + '&p_Plano=' + Plano  ;
     return this.httpclient.post<CardInmuebles[]>(this.url + 'getInmueblesBusqueda.php', params, { headers });
   }
 
