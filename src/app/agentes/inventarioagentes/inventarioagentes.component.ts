@@ -123,7 +123,7 @@ export class InventarioagentesComponent implements OnInit {
 
   openasesor(idPubli:any ) {
 
-    localStorage.setItem ('idpublicacion',idPubli);
+    localStorage.setItem ('Id_Inmueble',idPubli);
     
 
 

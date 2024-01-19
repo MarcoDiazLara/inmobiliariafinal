@@ -355,9 +355,9 @@ export class HttpService {
     return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php', params, { headers });
   }
 
-  mostrarDetallesInmueble(id_publicacion: any) {
+  mostrarDetallesInmueble(Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_id_Publicacion=' + id_publicacion;
+    let params = 'p_Id_Inmueble=' + Id_Inmueble;
     return this.httpclient.post(this.url + 'consultar_detalle_inmuebles_asesores.php', params, { headers });
   }
 

@@ -173,22 +173,28 @@ export interface inventarioAsesores {
 }
 
 export interface detallesdelInmueble {
-    Id_Publicacion: "",
-    Nombre_Publicacion: "",
+    Id_Inmueble: "",
+    Nombre_Inmueble:"",
     Descripcion_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Num_Int:"",
     Terreno_M2: "",
     Construccion_M2: "",
     Recamara: "",
     Bano: "",
-    Cocina_Integral: "",
     Num_Pisos: "",
     Antiguedad: "",
     Acabados: "",
-    Alberca: "",
-    Jardin: "",
     Gimnasio: "",
+    Estacionamiento: "",
+    Jardin: "",
+    Cocina_Integral: "",
+    Alberca: "",
     Roof_Garden: "",
-    Estacionamiento: ""
+    Precio_Min:"",
+    Precio_Max:"",
+    Precio_Final:""
 }
 
 

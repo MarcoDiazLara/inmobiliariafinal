@@ -11,20 +11,19 @@
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill">
                         <input matInput type="text" placeholder="" formControlName="Nombre_Inmueble"
-                            [ngModel]="Terrenometros">
-                        <mat-label>Nombre del Inmueble</mat-label>
+                            [ngModel]="Nombre_Inmueble">
+                        <mat-label> Nombre del Inmueble </mat-label>
                         <mat-icon matSuffix>
                             <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
                         </mat-icon>
                     </mat-form-field>
                 </div>
 
-
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill">
                         <input matInput type="text" placeholder="" formControlName="Descripcion_Inmueble"
-                            [ngModel]="Terrenometros">
-                        <mat-label>Descripcion</mat-label>
+                            [ngModel]="Descripcion_Inmueble">
+                        <mat-label> Descripcion </mat-label>
                         <mat-icon matSuffix>
                             <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
                         </mat-icon>
@@ -33,7 +32,7 @@
 
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill">
-                        <input matInput type="text" placeholder="" formControlName="Calle" [ngModel]="Terrenometros">
+                        <input matInput type="text" placeholder="" formControlName="Calle" [ngModel]="Calle">
                         <mat-label>Calle</mat-label>
                         <mat-icon matSuffix>
                             <img src="assets/img/mapa-de-la-calle.png" alt="Icono" width="30" height="30">
@@ -44,7 +43,7 @@
 
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill">
-                        <input matInput type="text" placeholder="" formControlName="Num_Ext" [ngModel]="Terrenometros">
+                        <input matInput type="text" placeholder="" formControlName="Num_Ext" [ngModel]="Num_Ext">
                         <mat-label>No Exterior</mat-label>
                         <mat-icon matSuffix>
                             <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
@@ -54,7 +53,7 @@
 
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill">
-                        <input matInput type="text" placeholder="" formControlName="Num_Int" [ngModel]="Terrenometros">
+                        <input matInput type="text" placeholder="" formControlName="Num_Int" [ngModel]="Num_Int">
                         <mat-label>No Interior</mat-label>
                         <mat-icon matSuffix>
                             <img src="assets/img/entrega-a-domicilio.png" alt="Icono" width="30" height="30">
@@ -270,7 +269,7 @@
                 <br>
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Precio_Min" [ngModel]="roof">
+                        <input matInput type="text" placeholder="" formControlName="Precio_Min" [ngModel]="Precio_Min">
                         <mat-label>Precio Minimo</mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Roof_Garden')?.hasError('required')">
                             El nombre es <strong>obligatorio</strong>
@@ -283,7 +282,7 @@
 
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Precio_Minimo" [ngModel]="roof">
+                        <input matInput type="text" placeholder="" formControlName="Precio_Max" [ngModel]="Precio_Max">
                         <mat-label>Precio Maximo</mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Roof_Garden')?.hasError('required')">
                             El nombre es <strong>obligatorio</strong>
@@ -296,7 +295,7 @@
 
                 <div class="col-md-4 ordenainput">
                     <mat-form-field appearance="fill" class="textinput">
-                        <input matInput type="text" placeholder="" formControlName="Precio_Final" [ngModel]="roof">
+                        <input matInput type="text" placeholder="" formControlName="Precio_Final" [ngModel]="Precio_Final">
                         <mat-label>Precio Final</mat-label>
                         <mat-error *ngIf="this.formGeneral.get('Roof_Garden')?.hasError('required')">
                             El nombre es <strong>obligatorio</strong>
