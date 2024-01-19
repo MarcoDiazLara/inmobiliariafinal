@@ -34,8 +34,6 @@ export class InmuebledetallesComponent implements OnInit {
   Precio_Min!:string;
   Precio_Max!:string;
   Precio_Final!:string;
- 
-  
   id_publicacion: any;
 
   constructor(
