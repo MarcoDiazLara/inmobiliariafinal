@@ -74,7 +74,7 @@ export class AltausuarioComponent implements OnInit {
   Guardardatos(){
       
 
-    if (this.formGeneral){
+    if (this.formGeneral && this.formGeneral.valid){
       let nombre = this.formGeneral.value.nombre;
       let apellidopaterno = this.formGeneral.value.apellidopaterno;
       let apellidomaterno = this.formGeneral.value.apellidomaterno;
@@ -126,9 +126,18 @@ export class AltausuarioComponent implements OnInit {
           }
         }
       })
-      
-      
-     }
+
+      }
+      else{
+        // alert("No");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Rellena todos los campos',
+         
+        })
+      }
+
 }
 
 obtenerTipoUsuario(){

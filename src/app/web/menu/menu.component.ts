@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpService } from 'src/app/services/http/http.service';
+import { HttpService } from 'src/app/services/http/http.service'; // 1
 
 
 
@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
 
 
 
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = false; //2
   PPrecioDesde!: any | '1';
   PPrecioHasta!: any | '5000000000';
 
@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router, private httpService: HttpService) {
 
   }
-
+ //3
   ngOnInit() {
     this.isLoggedIn = this.httpService.getGlobalVariable();
   }

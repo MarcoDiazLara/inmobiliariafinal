@@ -355,12 +355,11 @@ export class HttpService {
     return this.httpclient.post(this.url + 'consultar_inmuebles_de_asesores.php', params, { headers });
   }
 
-  mostrarDetallesInmueble(id_publicacion: any) {
+  mostrarDetallesInmueble(Id_Inmueble: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_id_Publicacion=' + id_publicacion;
+    let params = 'p_Id_Inmueble=' + Id_Inmueble;
     return this.httpclient.post(this.url + 'consultar_detalle_inmuebles_asesores.php', params, { headers });
   }
-
 
   // mostrarDetallesInmueble(p_id_publicacion:any){
   //   let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -379,7 +378,6 @@ export class HttpService {
     return this.httpclient.post(this.url + 'obtenerNotis.php', params, { headers });
 
   }
-
 
   altaSocioCompleto(p_nombres: any, p_a_paterno: any, p_a_materno: any, p_nom_usuario: any, p_contrasena: any,
     p_correo: any, p_tel_fijo: any, p_cel: any, p_tipo_usuario: any, p_estatus: any, p_id_admin: any, p_desc_usu: any, p_RFC: any,
