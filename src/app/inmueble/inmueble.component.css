@@ -945,6 +945,17 @@ i{
   padding: 10px; /* Añade un espacio interno para hacer el borde más visible */
 }
 
+.ordenainput{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  }
+  
+  .contenedorgeneral{
+      width: 50%;
+      height: auto;
+      margin-left: 25%;
+  }
 
 
 
