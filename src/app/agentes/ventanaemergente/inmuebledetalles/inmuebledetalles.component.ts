@@ -18,7 +18,6 @@ export class InmuebledetallesComponent implements OnInit {
   Calle !:string; 
   Num_Int !:string;
   Num_Ext !:string;
-  Nombre_Publicacion !: string;
   Terrenometros!: string;
   construccion!: string ;
   recamaras!: string;
@@ -53,9 +52,10 @@ export class InmuebledetallesComponent implements OnInit {
     
       this.detalles = data[0];
       this.Nombre_Inmueble = this.detalles.Nombre_Inmueble;
-      this.Descripcion_Inmueble = this.Descripcion_Inmueble;
-      this.Num_Ext = this.detalles.Num_Ext;
+      this.Descripcion_Inmueble = this.detalles.Descripcion_Inmueble;
+      this.Calle = this.detalles.Calle;
       this.Num_Int = this.detalles.Num_Int;
+      this.Num_Ext = this.detalles.Num_Ext;
       this.Terrenometros= this.detalles.Terreno_M2;
       this.construccion= this.detalles.Construccion_M2;
       this.recamaras= this.detalles.Recamara;
@@ -66,18 +66,23 @@ export class InmuebledetallesComponent implements OnInit {
       this.gimnasio=this.detalles.Gimnasio;
       this.estacionamiento=this.detalles.Estacionamiento;
       this.jardin=this.detalles.Jardin;
-      this.cocina=this.detalles.Cocina_Integral;
       this.alberca=this.detalles.Alberca;
+      this.cocina=this.detalles.Cocina_Integral;
       this.roof=this.detalles.Roof_Garden;
-
       this.Precio_Min=this.detalles.Precio_Min;
       this.Precio_Max =this.detalles.Precio_Max;
-      this.roof=this.detalles.Roof_Garden;
+      this.Precio_Final =this.detalles.Precio_Final;
       
       });
 
 
     this.formGeneral = this.formBuilder.group({
+      
+      Nombre_Inmueble: ['',[Validators.required]],
+      Descripcion_Inmueble: ['',[Validators.required]],
+      Calle: ['',[Validators.required]],
+      Num_Int: ['',[Validators.required]],
+      Num_Ext: ['',[Validators.required]],
       Terrenometros: ['',[Validators.required]],
       Construccion: ['',[Validators.required]],
       Numero_de_recamaras: ['',[Validators.required]],
@@ -91,6 +96,9 @@ export class InmuebledetallesComponent implements OnInit {
       Cocina_Integral: ['',[Validators.required]],
       Alberca: ['',[Validators.required]],
       Roof_Garden: ['',[Validators.required]],
+      Precio_Min: ['',[Validators.required]],
+      Precio_Max: ['',[Validators.required]],
+      Precio_Final: ['',[Validators.required]],
   })
 
 
