@@ -358,9 +358,11 @@
         <div class="row">
           <div class="col-auto">
             <div class="input-group my-1 align-items-center">
-              <button class="btn btn-outline-primary" id="basic-addon-1" (click)="applySearch()"><i class="bi bi-search"></i></button>
+              <button class="btn btn-outline-primary" id="basic-addon-1" (click)="applySearch()"><i
+                  class="bi bi-search"></i></button>
               <input type="text" class="form-control" placeholder="Ingrese Municipio o Colonia"
-                aria-describedby="basic-addon-1" formControlName="p_Ubicacion" [(ngModel)]="PUbicacion" (ngModelChange)="changeUbicacion()" >
+                aria-describedby="basic-addon-1" formControlName="p_Ubicacion" [(ngModel)]="PUbicacion"
+                (ngModelChange)="changeUbicacion()">
             </div>
           </div>
           <div class="col-auto">
@@ -410,7 +412,8 @@
               <ul class="dropdown-menu m-1">
                 <li><a class="dropdown-item" href="#">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="TD">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        value="TD">
                       <label class="form-check-label" for="flexRadioDefault1">
                         Trato Directo
                       </label>
@@ -418,7 +421,8 @@
                   </a></li>
                 <li><a class="dropdown-item" href="#">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="IM">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        value="IM">
                       <label class="form-check-label" for="flexRadioDefault1">
                         Inmobiliaria
                       </label>
@@ -426,7 +430,8 @@
                   </a></li>
                 <li><a class="dropdown-item" href="#">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="DS">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        value="DS">
                       <label class="form-check-label" for="flexRadioDefault1">
                         Desarrolladora
                       </label>
@@ -434,7 +439,8 @@
                   </a></li>
                 <li><a class="dropdown-item" href="#">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="CT">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        value="CT">
                       <label class="form-check-label" for="flexRadioDefault1">
                         Constructora
                       </label>
@@ -454,11 +460,15 @@
                 <div class="row align-items-center g-3">
                   <div class="col-auto">
                     <label for="preciodesde">Desde</label>
-                    <input type="number" class="form-control" id="preciodesde" placeholder="Desde" formControlName="p_Precio_Desde" min="1" [(ngModel)]="PPrecioDesde" (ngModelChange)="changePrices()">
+                    <input type="number" class="form-control" id="preciodesde" placeholder="Desde"
+                      formControlName="p_Precio_Desde" min="1" [(ngModel)]="PPrecioDesde"
+                      (ngModelChange)="changePrices()">
                   </div>
                   <div class="col-auto">
                     <label for="preciohasta">Hasta</label>
-                    <input type="number" class="form-control" id="preciohasta" placeholder="Hasta" formControlName="p_Precio_Hasta" min="1" [(ngModel)]="PPrecioHasta" (ngModelChange)="changePrices()">
+                    <input type="number" class="form-control" id="preciohasta" placeholder="Hasta"
+                      formControlName="p_Precio_Hasta" min="1" [(ngModel)]="PPrecioHasta"
+                      (ngModelChange)="changePrices()">
                   </div>
                 </div>
               </form>
@@ -470,21 +480,30 @@
                 data-bs-auto-close="outside" aria-expanded="false">
                 <i class="bi bi-funnel-fill icon-size me-1"></i>Filtros Avanzados
               </button>
-              <form class="dropdown-menu p-4" style="width: 450px;">
+              <form [formGroup]="FilterFormGroup" class="dropdown-menu p-4" style="width: 450px;">
                 <div class="mb-3">
                   <label for="keywords" class="form-label"><strong>Palabras Clave</strong></label>
-                  <input type="email" class="form-control" id="keywords" placeholder="Ej. Cochera, Jardin, Desarrollo">
+                  <input type="text" class="form-control" id="keywords" formControlName="p_Keywords"
+                    [(ngModel)]="PKeywords" (ngModelChange)="changeKeywords()"
+                    placeholder="Ej. Cochera, Jardin, Desarrollo">
                 </div>
                 <div class="mb-3">
                   <label class="form-label"><strong>Interacción</strong></label>
                   <p class="m-2 text-center">
-                    <button type="button" class="btn btn-secondary me-2" value="RVR"><i
-                        class="bi bi-globe2 me-1"></i>Recorrido
-                      VR</button>
-                    <button type="button" class="btn btn-secondary me-2" value="V"><i
-                        class="bi bi-camera-video me-1"></i>Videos</button>
-                    <button type="button" class="btn btn-secondary me-2" value="P"><i
-                        class="bi bi-pen me-1"></i>Planos</button>
+                    <input type="checkbox" class="btn-check me-2" id="btn-check-1RVR"  autocomplete="off"
+                      (click)="clickPRVR('RVR')">
+                    <label class="btn btn-primary me-2" for="btn-check-1RVR"><i class="bi bi-globe2 me-1"></i>Recorrido
+                      VR</label>
+
+                    <input type="checkbox" class="btn-check me-2" id="btn-check-2V"  autocomplete="off"
+                      (click)="clickVideo('V')">
+                    <label class="btn btn-primary me-2" for="btn-check-2V"><i
+                        class="bi bi-camera-video me-1"></i>Videos</label>
+
+                    <input type="checkbox" class="btn-check me-2" id="btn-check-3P"  autocomplete="off"
+                      (click)="clickPlano('P')">
+                    <label class="btn btn-primary me-2" for="btn-check-3P"><i class="bi bi-pen me-1"></i>Planos</label>
+
                   </p>
                 </div>
                 <div class="mb-3">
@@ -766,18 +785,91 @@
           </div>
           <p class="card-text p-1"><small class="text-body-secondary">{{ busq.Descripcion_Publicacion }}</small></p>
           <p class="m-2 text-center">
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Terreno M2"><div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32"><path fill="#264d5e" d="M28 14h-1V7c0-1.1-.9-2-2-2h-6v2h6v7h-1c-1.1 0-2 .9-2 2v9H9.9c-.4-1.4-1.5-2.5-2.9-2.9V7h6.2l-2.6 2.6L12 11l5-5l-5-5l-1.4 1.4L13.2 5H7c-1.1 0-2 .9-2 2v15.1c-1.7.4-3 2-3 3.9c0 2.2 1.8 4 4 4c1.9 0 3.4-1.3 3.9-3H22v1c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2V16c0-1.1-.9-2-2-2M6 28c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m18 0V16h4v12z"/></svg>{{ busq.Construccion_M2 }}</div></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Construcción M2"><div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 2048 2048"><path fill="#264d5e" d="m1905 1418l143 157v217h-128v-167l-101-112q-36 20-77 22l-78 89v168h-128v-216l72-82q-5-3-8-6t-8-8l-248-249l-192 193v496h128v128H640v-128h128v-576q0-38 14-73t42-63l384-384q27-27 62-41t74-15q38 0 73 14t63 42l384 384q27 27 41 62t15 74q0 40-15 74m-862-247q61 29 90 90l256-256q19-19 19-45t-19-45t-45-19q-26 0-45 19zm-147 749h128v-576q0-26-19-45t-45-19q-26 0-45 19t-19 45zm832-512q26 0 45-19t19-45q0-26-19-45l-256-256q-14 31-36 52t-47 46l249 248q19 19 45 19m-1088 0v128H128V128h1152v512h-128V256H256v1152zm128-896v384H640V512zm-128 640v-128h128v128z"/></svg>{{ busq.Construccion_M2 }}</div></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Recamara"><div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#264d5e" d="M20 4v16H4V4zm0-2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-3.5 8.67V9c0-1.1-.9-2-2-2h-5c-1.1 0-2 .9-2 2v1.67c-.88.35-1.5 1.2-1.5 2.2V17h1.5v-1.5h9V17H18v-4.13c0-1-.62-1.85-1.5-2.2M15 8.5v2H9v-2zm-7.5 4.37c0-.48.39-.87.87-.87h7.27c.48 0 .87.39.87.87V14h-9v-1.13z"/></svg>{{ busq.Recamara }}</div></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Baños"><div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="#264d5e" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path fill="#264d5e" d="M21 13v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-2.4a.6.6 0 0 1 .6-.6z"/><path d="m16 20l1 2m-9-2l-1 2m14-9V7a4 4 0 0 0-4-4h-5"/><path fill="currentColor" d="M15.4 8H8.6c-.331 0-.596-.268-.56-.598C8.186 6.075 8.863 3 12 3s3.814 3.075 3.96 4.402c.036.33-.229.598-.56.598"/></g></svg>{{ busq.Bano }}</div></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Gimnasio == 'Y'" data-bs-toggle="tooltip" data-bs-placement="top" title="Gimnasio"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="translate(0 24) scale(1 -1)"><g fill="#264d5e" stroke="#264d5e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M7.4 7H4.6a.6.6 0 0 0-.6.6v8.8a.6.6 0 0 0 .6.6h2.8a.6.6 0 0 0 .6-.6V7.6a.6.6 0 0 0-.6-.6m12 0h-2.8a.6.6 0 0 0-.6.6v8.8a.6.6 0 0 0 .6.6h2.8a.6.6 0 0 0 .6-.6V7.6a.6.6 0 0 0-.6-.6"/><path d="M1 14.4V9.6a.6.6 0 0 1 .6-.6h1.8a.6.6 0 0 1 .6.6v4.8a.6.6 0 0 1-.6.6H1.6a.6.6 0 0 1-.6-.6m22 0V9.6a.6.6 0 0 0-.6-.6h-1.8a.6.6 0 0 0-.6.6v4.8a.6.6 0 0 0 .6.6h1.8a.6.6 0 0 0 .6-.6M8 12h8"/></g></g></svg></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Alberca == 'Y'" data-bs-toggle="tooltip" data-bs-placement="top" title="Alberca"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="translate(0 24) scale(1 -1)"><path fill="#264d5e" d="M22 21c-1.11 0-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.46.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.46.27-1.08.64-2.19.64s-1.73-.37-2.18-.64c-.37-.23-.6-.36-1.15-.36s-.78.13-1.15.36c-.46.27-1.08.64-2.19.64v-2c.56 0 .78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.23.59.36 1.15.36c.56 0 .78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.23.59.36 1.15.36zm0-4.5c-1.11 0-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.45.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.45.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36s-.78.13-1.15.36c-.47.27-1.09.64-2.2.64v-2c.56 0 .78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36c.56 0 .78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36v2zM8.67 12c.56 0 .78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.12-.07.26-.15.41-.23L10.48 5C8.93 3.45 7.5 2.99 5 3v2.5c1.82-.01 2.89.39 4 1.5l1 1l-3.25 3.25c.31.12.56.27.77.39c.37.23.59.36 1.15.36" opacity=".3"/><circle cx="16.5" cy="5.5" r="2.5" fill="#264d5e" opacity=".3"/><path fill="#264d5e" d="M22 16.5h-.02zM10 8l-3.25 3.25c.31.12.56.27.77.39c.37.23.59.36 1.15.36s.78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36c.55 0 .78-.13 1.15-.36c.12-.07.26-.15.41-.23L10.48 5C8.93 3.45 7.5 2.99 5 3v2.5c1.82-.01 2.89.39 4 1.5zm-4.65 7.5c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64s1.73-.37 2.18-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64s1.73-.37 2.18-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.06.63 2.16.64v-2c-.55 0-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.18.64c-.37.23-.6.36-1.15.36s-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.18.64c-.37.23-.59.36-1.15.36c-.55 0-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.18.64c-.37.23-.59.36-1.15.36v2c1.11 0 1.73-.37 2.2-.64c.37-.23.6-.36 1.15-.36M18.67 18c-1.11 0-1.73.37-2.18.64c-.37.23-.6.36-1.15.36c-.55 0-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.19.64c-.37.23-.59.36-1.15.36s-.78-.13-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.19.64c-.37.23-.59.36-1.15.36v2c1.11 0 1.73-.37 2.19-.64c.37-.23.6-.36 1.15-.36c.55 0 .78.13 1.15.36c.45.27 1.07.64 2.18.64s1.73-.37 2.19-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64s1.72-.37 2.18-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64v-2c-.56 0-.78-.13-1.15-.36c-.45-.27-1.07-.64-2.18-.64"/><circle cx="16.5" cy="5.5" r="2.5" fill="#264d5e"/></g></svg></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Estacionamiento == 'Y'" data-bs-toggle="tooltip" data-bs-placement="top" title="Estacionamiento"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14 14"><path fill="#264d5e" fill-rule="evenodd" d="M0 3.5A3.5 3.5 0 0 1 3.5 0h7A3.5 3.5 0 0 1 14 3.5v7a3.5 3.5 0 0 1-3.5 3.5h-7A3.5 3.5 0 0 1 0 10.5zm5.21-.383a.625.625 0 0 0-.626.625v7.028a.625.625 0 0 0 1.25 0V8.466h2.56a2.125 2.125 0 0 0 2.125-2.125V5.242a2.125 2.125 0 0 0-2.125-2.125H5.209Zm3.184 4.1h-2.56v-2.85h2.56c.483 0 .875.392.875.875v1.1a.875.875 0 0 1-.875.874Z" clip-rule="evenodd"/></svg></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Roof_Garden == 'Y'" data-bs-toggle="tooltip" data-bs-placement="top" title="Roof Garden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#264d5e" d="M2 21h6V6L5 3L2 6zm7 0h6V6l-3-3l-3 3zm7 0h6V6l-3-3l-3 3z"/></svg></button>
-            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Jardin == 'Y'" data-bs-toggle="tooltip" data-bs-placement="top" title="Jardin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 15 15"><path fill="#264d5e" d="M13 8c0 3.31-2.19 6-5.5 6S2 11.31 2 8a5.33 5.33 0 0 1 5 3.61V7H4.5A1.5 1.5 0 0 1 3 5.5v-3a.5.5 0 0 1 .9-.3l1.53 2l1.65-3a.5.5 0 0 1 .84 0l1.65 3l1.53-2a.5.5 0 0 1 .9.3v3A1.5 1.5 0 0 1 10.5 7H8v4.61A5.33 5.33 0 0 1 13 8"/></svg></button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip"
+              data-bs-placement="top" title="Terreno M2">
+              <div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 32 32">
+                  <path fill="#264d5e"
+                    d="M28 14h-1V7c0-1.1-.9-2-2-2h-6v2h6v7h-1c-1.1 0-2 .9-2 2v9H9.9c-.4-1.4-1.5-2.5-2.9-2.9V7h6.2l-2.6 2.6L12 11l5-5l-5-5l-1.4 1.4L13.2 5H7c-1.1 0-2 .9-2 2v15.1c-1.7.4-3 2-3 3.9c0 2.2 1.8 4 4 4c1.9 0 3.4-1.3 3.9-3H22v1c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2V16c0-1.1-.9-2-2-2M6 28c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m18 0V16h4v12z" />
+                </svg>{{ busq.Construccion_M2 }}</div>
+            </button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip"
+              data-bs-placement="top" title="Construcción M2">
+              <div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 2048 2048">
+                  <path fill="#264d5e"
+                    d="m1905 1418l143 157v217h-128v-167l-101-112q-36 20-77 22l-78 89v168h-128v-216l72-82q-5-3-8-6t-8-8l-248-249l-192 193v496h128v128H640v-128h128v-576q0-38 14-73t42-63l384-384q27-27 62-41t74-15q38 0 73 14t63 42l384 384q27 27 41 62t15 74q0 40-15 74m-862-247q61 29 90 90l256-256q19-19 19-45t-19-45t-45-19q-26 0-45 19zm-147 749h128v-576q0-26-19-45t-45-19q-26 0-45 19t-19 45zm832-512q26 0 45-19t19-45q0-26-19-45l-256-256q-14 31-36 52t-47 46l249 248q19 19 45 19m-1088 0v128H128V128h1152v512h-128V256H256v1152zm128-896v384H640V512zm-128 640v-128h128v128z" />
+                </svg>{{ busq.Construccion_M2 }}</div>
+            </button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip"
+              data-bs-placement="top" title="Recamara">
+              <div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path fill="#264d5e"
+                    d="M20 4v16H4V4zm0-2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-3.5 8.67V9c0-1.1-.9-2-2-2h-5c-1.1 0-2 .9-2 2v1.67c-.88.35-1.5 1.2-1.5 2.2V17h1.5v-1.5h9V17H18v-4.13c0-1-.62-1.85-1.5-2.2M15 8.5v2H9v-2zm-7.5 4.37c0-.48.39-.87.87-.87h7.27c.48 0 .87.39.87.87V14h-9v-1.13z" />
+                </svg>{{ busq.Recamara }}</div>
+            </button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" data-bs-toggle="tooltip"
+              data-bs-placement="top" title="Baños">
+              <div class="icon-size me-1"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <g fill="#264d5e" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5">
+                    <path fill="#264d5e" d="M21 13v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-2.4a.6.6 0 0 1 .6-.6z" />
+                    <path d="m16 20l1 2m-9-2l-1 2m14-9V7a4 4 0 0 0-4-4h-5" />
+                    <path fill="currentColor"
+                      d="M15.4 8H8.6c-.331 0-.596-.268-.56-.598C8.186 6.075 8.863 3 12 3s3.814 3.075 3.96 4.402c.036.33-.229.598-.56.598" />
+                  </g>
+                </svg>{{ busq.Bano }}</div>
+            </button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Gimnasio == 'Y'"
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Gimnasio"><svg xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <g transform="translate(0 24) scale(1 -1)">
+                  <g fill="#264d5e" stroke="#264d5e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <path
+                      d="M7.4 7H4.6a.6.6 0 0 0-.6.6v8.8a.6.6 0 0 0 .6.6h2.8a.6.6 0 0 0 .6-.6V7.6a.6.6 0 0 0-.6-.6m12 0h-2.8a.6.6 0 0 0-.6.6v8.8a.6.6 0 0 0 .6.6h2.8a.6.6 0 0 0 .6-.6V7.6a.6.6 0 0 0-.6-.6" />
+                    <path
+                      d="M1 14.4V9.6a.6.6 0 0 1 .6-.6h1.8a.6.6 0 0 1 .6.6v4.8a.6.6 0 0 1-.6.6H1.6a.6.6 0 0 1-.6-.6m22 0V9.6a.6.6 0 0 0-.6-.6h-1.8a.6.6 0 0 0-.6.6v4.8a.6.6 0 0 0 .6.6h1.8a.6.6 0 0 0 .6-.6M8 12h8" />
+                  </g>
+                </g>
+              </svg></button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Alberca == 'Y'"
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Alberca"><svg xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <g transform="translate(0 24) scale(1 -1)">
+                  <path fill="#264d5e"
+                    d="M22 21c-1.11 0-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.46.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.46.27-1.08.64-2.19.64s-1.73-.37-2.18-.64c-.37-.23-.6-.36-1.15-.36s-.78.13-1.15.36c-.46.27-1.08.64-2.19.64v-2c.56 0 .78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.23.59.36 1.15.36c.56 0 .78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.23.59.36 1.15.36zm0-4.5c-1.11 0-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.45.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36c-.56 0-.78.13-1.15.36c-.45.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36s-.78.13-1.15.36c-.47.27-1.09.64-2.2.64v-2c.56 0 .78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36c.56 0 .78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36v2zM8.67 12c.56 0 .78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.12-.07.26-.15.41-.23L10.48 5C8.93 3.45 7.5 2.99 5 3v2.5c1.82-.01 2.89.39 4 1.5l1 1l-3.25 3.25c.31.12.56.27.77.39c.37.23.59.36 1.15.36"
+                    opacity=".3" />
+                  <circle cx="16.5" cy="5.5" r="2.5" fill="#264d5e" opacity=".3" />
+                  <path fill="#264d5e"
+                    d="M22 16.5h-.02zM10 8l-3.25 3.25c.31.12.56.27.77.39c.37.23.59.36 1.15.36s.78-.13 1.15-.36c.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36c.55 0 .78-.13 1.15-.36c.12-.07.26-.15.41-.23L10.48 5C8.93 3.45 7.5 2.99 5 3v2.5c1.82-.01 2.89.39 4 1.5zm-4.65 7.5c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64s1.73-.37 2.18-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64s1.73-.37 2.18-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.06.63 2.16.64v-2c-.55 0-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.18.64c-.37.23-.6.36-1.15.36s-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.18.64c-.37.23-.59.36-1.15.36c-.55 0-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.18.64c-.37.23-.59.36-1.15.36v2c1.11 0 1.73-.37 2.2-.64c.37-.23.6-.36 1.15-.36M18.67 18c-1.11 0-1.73.37-2.18.64c-.37.23-.6.36-1.15.36c-.55 0-.78-.14-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.19.64c-.37.23-.59.36-1.15.36s-.78-.13-1.15-.36c-.45-.27-1.07-.64-2.18-.64s-1.73.37-2.19.64c-.37.23-.59.36-1.15.36v2c1.11 0 1.73-.37 2.19-.64c.37-.23.6-.36 1.15-.36c.55 0 .78.13 1.15.36c.45.27 1.07.64 2.18.64s1.73-.37 2.19-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64s1.72-.37 2.18-.64c.37-.23.59-.36 1.15-.36c.55 0 .78.14 1.15.36c.45.27 1.07.64 2.18.64v-2c-.56 0-.78-.13-1.15-.36c-.45-.27-1.07-.64-2.18-.64" />
+                  <circle cx="16.5" cy="5.5" r="2.5" fill="#264d5e" />
+                </g>
+              </svg></button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Estacionamiento == 'Y'"
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Estacionamiento"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14 14">
+                <path fill="#264d5e" fill-rule="evenodd"
+                  d="M0 3.5A3.5 3.5 0 0 1 3.5 0h7A3.5 3.5 0 0 1 14 3.5v7a3.5 3.5 0 0 1-3.5 3.5h-7A3.5 3.5 0 0 1 0 10.5zm5.21-.383a.625.625 0 0 0-.626.625v7.028a.625.625 0 0 0 1.25 0V8.466h2.56a2.125 2.125 0 0 0 2.125-2.125V5.242a2.125 2.125 0 0 0-2.125-2.125H5.209Zm3.184 4.1h-2.56v-2.85h2.56c.483 0 .875.392.875.875v1.1a.875.875 0 0 1-.875.874Z"
+                  clip-rule="evenodd" />
+              </svg></button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Roof_Garden == 'Y'"
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Roof Garden"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#264d5e" d="M2 21h6V6L5 3L2 6zm7 0h6V6l-3-3l-3 3zm7 0h6V6l-3-3l-3 3z" />
+              </svg></button>
+            <button type="button" class="btn btn-outlined-primary me-1 my-1" *ngIf="busq.Jardin == 'Y'"
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Jardin"><svg xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 15 15">
+                <path fill="#264d5e"
+                  d="M13 8c0 3.31-2.19 6-5.5 6S2 11.31 2 8a5.33 5.33 0 0 1 5 3.61V7H4.5A1.5 1.5 0 0 1 3 5.5v-3a.5.5 0 0 1 .9-.3l1.53 2l1.65-3a.5.5 0 0 1 .84 0l1.65 3l1.53-2a.5.5 0 0 1 .9.3v3A1.5 1.5 0 0 1 10.5 7H8v4.61A5.33 5.33 0 0 1 13 8" />
+              </svg></button>
           </p>
           <p>
-            <button type="button" class="btn btn-secondary form-control" (click)="detallesInmueble( busq.Id_Publicador, busq.Id_Publicacion )" ><i class="bi bi-info-circle icon-size"></i> Mas
+            <button type="button" class="btn btn-secondary form-control"
+              (click)="detallesInmueble( busq.Id_Publicador, busq.Id_Publicacion )"><i
+                class="bi bi-info-circle icon-size"></i> Mas
               información</button>
           </p>
         </div>

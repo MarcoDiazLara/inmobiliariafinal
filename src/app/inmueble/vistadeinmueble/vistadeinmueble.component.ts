@@ -35,7 +35,11 @@ export class VistadeinmuebleComponent implements OnInit {
   PPrecioDesde!: any | '1';
   PPrecioHasta!: any | '5000000000';
   PIdOperacion!: any | '';
-  PIdInmueble!: any;
+  PIdInmueble!: any | '';
+  PKeywords!: any | '';
+  PRVR!: any | '';
+  PVideo!: any | '';
+  PPlano!: any | '';
 
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute) {
   }
@@ -74,7 +78,10 @@ export class VistadeinmuebleComponent implements OnInit {
       }
       this.PPrecioDesde = params['PrecioDesde'];
       this.PPrecioHasta = params['PrecioHasta'];
-
+      this.PKeywords = params['Keywords'];
+      this.PRVR = params['RVR']
+      this.PVideo = params['Video']
+      this.PPlano = params['Plano']
       console.log('Action', this.PAction);
       console.log('Propiedad', this.PPropiedad);
       console.log('Ubicacion', this.PUbicacion);
@@ -110,7 +117,7 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   getInmueblesBuscador() {
-    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta).subscribe({
+    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano).subscribe({
       next: (data) => {
         console.log(data);
         this.TCardInmuebles = data;
@@ -134,6 +141,10 @@ export class VistadeinmuebleComponent implements OnInit {
     console.log('Ubicacion Filtro', this.PPrecioHasta);
   }
 
+  changeKeywords() {
+    console.log('Keywords: ', this.PKeywords);
+  }
+
   clickOperacion(Id: string) {
     if (this.PIdOperacion == undefined) {
       this.PIdOperacion = '';
@@ -149,8 +160,46 @@ export class VistadeinmuebleComponent implements OnInit {
     this.PPropiedad = Id;
   }
 
+  clickPRVR(code: any) {
+    if (this.PRVR == 'RVR') {
+      this.PRVR = '';
+      console.log('RecorridoV: ', this.PRVR);
+    } else {
+      this.PRVR = code;
+      console.log('RecorridoV: ', this.PRVR);
+    }
+    if (this.PRVR == undefined) {
+      this.PRVR = '';
+    }
+    
+  }
+
+  clickVideo(code: any) {
+    if (this.PVideo == 'V') {
+      this.PVideo = '';
+    } else {
+      this.PVideo = code;
+    }
+    if (this.PVideo == undefined) {
+      this.PVideo = '';
+    }
+    console.log('Video: ', this.PVideo);
+  }
+
+  clickPlano(code: any) {
+    if (this.PPlano == 'P') {
+      this.PPlano = '';
+    } else {
+      this.PPlano = code;
+    }
+    if (this.PPlano == undefined) {
+      this.PPlano = '';
+    }
+    console.log('Plano: ', this.PPlano);
+  }
+
   applySearch() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': this.PAction, 'tpropiedad': this.PPropiedad, 'ubicacion': this.PUbicacion, 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta } });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': this.PAction, 'tpropiedad': this.PPropiedad, 'ubicacion': this.PUbicacion, 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta, 'Keywords': this.PKeywords, 'RVR': this.PRVR, 'Video': this.PVideo, 'Plano': this.PPlano } });
   }
 
   backPage() {
