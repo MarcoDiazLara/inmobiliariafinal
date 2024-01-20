@@ -57,19 +57,19 @@ export class BuscadorComponent implements OnInit {
 
 
   ResultsBusqCompra() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': ''} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': ''} });
   }
 
   ResultsBusqRenta() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': ''} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': ''} });
   }
 
   ResultsBusqRemate() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': ''} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': ''} });
   }
 
   ResultsBusqDesarrollo() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '', 'RVR': '' , 'Video': '' , 'Plano': ''} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': this.tpropiedad, 'ubicacion': this.ubicacion, 'PrecioDesde': '1', 'PrecioHasta': '5000000000', 'Keywords': '', 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': ''} });
   }
 
   cambioTpropiedad(tprop:number){

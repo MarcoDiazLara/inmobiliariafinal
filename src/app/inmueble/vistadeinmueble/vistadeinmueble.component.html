@@ -490,43 +490,47 @@
                 <div class="mb-3">
                   <label class="form-label"><strong>Interacción</strong></label>
                   <p class="m-2 text-center">
-                    <input type="checkbox" class="btn-check me-2" id="btn-check-1RVR"  autocomplete="off"
+                    <input type="checkbox" class="btn-check me-2" id="btn-check-1RVR" autocomplete="off"
                       (click)="clickPRVR('RVR')">
                     <label class="btn btn-primary me-2" for="btn-check-1RVR"><i class="bi bi-globe2 me-1"></i>Recorrido
                       VR</label>
 
-                    <input type="checkbox" class="btn-check me-2" id="btn-check-2V"  autocomplete="off"
+                    <!--<input type="checkbox" class="btn-check me-2" id="btn-check-2V"  autocomplete="off"
                       (click)="clickVideo('V')">
                     <label class="btn btn-primary me-2" for="btn-check-2V"><i
-                        class="bi bi-camera-video me-1"></i>Videos</label>
+                        class="bi bi-camera-video me-1"></i>Videos</label> -->
 
-                    <input type="checkbox" class="btn-check me-2" id="btn-check-3P"  autocomplete="off"
+                    <input type="checkbox" class="btn-check me-2" id="btn-check-3P" autocomplete="off"
                       (click)="clickPlano('P')">
                     <label class="btn btn-primary me-2" for="btn-check-3P"><i class="bi bi-pen me-1"></i>Planos</label>
 
                   </p>
                 </div>
                 <div class="mb-3">
-                  <p>
-                    <label class="form-label"><strong>Baños</strong></label>
-                  </p>
-                  <div class="m-2 text-center">
-
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="1">
-                      <label class="btn btn-outline-primary" for="btncheck1">1</label>
-
-                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" value="2">
-                      <label class="btn btn-outline-primary" for="btncheck2">2</label>
-
-                      <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" value="3">
-                      <label class="btn btn-outline-primary" for="btncheck3">3</label>
-
-                      <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" value="4">
-                      <label class="btn btn-outline-primary" for="btncheck4">4</label>
-
-                      <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" value="5">
-                      <label class="btn btn-outline-primary" for="btncheck5">+5</label>
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        <label class="form-label"><strong>Baños</strong></label>
+                      </p>
+                      <div class="m-2 text-center">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                          <input type="radio" class="btn-check" name="optionsB" id="btncheck-1B" autocomplete="off"
+                            (click)="clickBanos(1)">
+                          <label class="btn btn-outline-primary" for="btncheck-1B">1</label>
+                          <input type="radio" class="btn-check" name="optionsB" id="btncheck-1B" autocomplete="off"
+                            (click)="clickBanos(2)">
+                          <label class="btn btn-outline-primary" for="btncheck-2B">2</label>
+                          <input type="radio" class="btn-check" name="optionsB" id="btncheck-3B" autocomplete="off"
+                            (click)="clickBanos(3)">
+                          <label class="btn btn-outline-primary" for="btncheck-3B">3</label>
+                          <input type="radio" class="btn-check" name="optionsB" id="btncheck-4B" autocomplete="off"
+                            (click)="clickBanos(4)">
+                          <label class="btn btn-outline-primary" for="btncheck-4B">4</label>
+                          <input type="radio" class="btn-check" name="optionsB" id="btncheck-5B" autocomplete="off"
+                            (click)="clickBanos(5)">
+                          <label class="btn btn-outline-primary " for="btncheck-5B">+5</label>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -541,19 +545,24 @@
                       </div>
                       <div class="col">
                         <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                          <input type="checkbox" class="btn-check" id="btncheck-1CI" autocomplete="off" value="1">
+                          <input type="radio" class="btn-check" name="optionsCI" id="btncheck-1CI" autocomplete="off"
+                            (click)="clickCI(1)">
                           <label class="btn btn-outline-primary" for="btncheck-1CI">1</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-2CI" autocomplete="off" value="2">
+                          <input type="radio" class="btn-check" name="optionsCI" id="btncheck-2CI" autocomplete="off"
+                            (click)="clickCI(2)">
                           <label class="btn btn-outline-primary" for="btncheck-2CI">2</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-3CI" autocomplete="off" value="3">
+                          <input type="radio" class="btn-check" name="optionsCI" id="btncheck-3CI" autocomplete="off"
+                            (click)="clickCI(3)">
                           <label class="btn btn-outline-primary" for="btncheck-3CI">3</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-4CI" autocomplete="off" value="4">
+                          <input type="radio" class="btn-check" name="optionsCI" id="btncheck-4CI" autocomplete="off"
+                            (click)="clickCI(4)">
                           <label class="btn btn-outline-primary" for="btncheck-4CI">4</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-5CI" autocomplete="off" value="5">
+                          <input type="radio" class="btn-check" name="optionsCI" id="btncheck-5CI" autocomplete="off"
+                            (click)="clickCI(5)">
                           <label class="btn btn-outline-primary" for="btncheck-5CI">+5</label>
                         </div>
                       </div>
@@ -565,20 +574,25 @@
                         <label class="form-label me-2">Alberca</label>
                       </div>
                       <div class="col">
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                          <input type="checkbox" class="btn-check" id="btncheck-1A" autocomplete="off" value="1">
+                        <div class="form btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                          <input type="radio" class="btn-check" name="optionsA" id="btncheck-1A" autocomplete="off"
+                            (click)="clickAL(1)">
                           <label class="btn btn-outline-primary" for="btncheck-1A">1</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-2A" autocomplete="off" value="2">
+                          <input type="radio" class="btn-check" name="optionsA" id="btncheck-2A" autocomplete="off"
+                            (click)="clickAL(2)">
                           <label class="btn btn-outline-primary" for="btncheck-2A">2</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-3A" autocomplete="off" value="3">
+                          <input type="radio" class="btn-check" name="optionsA" id="btncheck-3A" autocomplete="off"
+                            (click)="clickAL(3)">
                           <label class="btn btn-outline-primary" for="btncheck-3A">3</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-4A" autocomplete="off" value="4">
+                          <input type="radio" class="btn-check" name="optionsA" id="btncheck-4A" autocomplete="off"
+                            (click)="clickAL(4)">
                           <label class="btn btn-outline-primary" for="btncheck-4A">4</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-5A" autocomplete="off" value="5">
+                          <input type="radio" class="btn-check" name="optionsA" id="btncheck-5A" autocomplete="off"
+                            (click)="clickAL(5)">
                           <label class="btn btn-outline-primary" for="btncheck-5A">+5</label>
                         </div>
                       </div>
@@ -591,21 +605,26 @@
                       </div>
                       <div class="col">
                         <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                          <input type="checkbox" class="btn-check" id="btncheck-1G" autocomplete="off" value="1">
+                          <input type="radio" class="btn-check" name="optionsG" id="btncheck-1G" autocomplete="on"
+                            (click)="clickGym(1)">
                           <label class="btn btn-outline-primary" for="btncheck-1G">1</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-2G" autocomplete="off" value="2">
+                          <input type="radio" class="btn-check" name="optionsG" id="btncheck-2G" autocomplete="off"
+                            (click)="clickGym(2)">
                           <label class="btn btn-outline-primary" for="btncheck-2G">2</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-3G" autocomplete="off" value="3">
+                          <input type="radio" class="btn-check" name="optionsG" id="btncheck-3G" autocomplete="off"
+                            (click)="clickGym(3)">
                           <label class="btn btn-outline-primary" for="btncheck-3G">3</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-4G" autocomplete="off" value="4">
+                          <input type="radio" class="btn-check" name="optionsG" id="btncheck-4G" autocomplete="off"
+                            value="4" (click)="clickGym(4)">
                           <label class="btn btn-outline-primary" for="btncheck-4G">4</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-5G" autocomplete="off" value="5">
+                          <input type="radio" class="btn-check" name="optionsG" id="btncheck-5G" autocomplete="off"
+                            value="5" (click)="clickGym(5)">
                           <label class="btn btn-outline-primary" for="btncheck-5G">+5</label>
-                        </div>
+                        </div> 
                       </div>
                     </div>
                   </div>
@@ -616,19 +635,24 @@
                       </div>
                       <div class="col">
                         <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                          <input type="checkbox" class="btn-check" id="btncheck-1E" autocomplete="off" value="1">
+                          <input type="radio" class="btn-check" name="optionsE" id="btncheck-1E" autocomplete="off"
+                            value="1" (click)="clickEst(1)">
                           <label class="btn btn-outline-primary" for="btncheck-1E">1</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-2E" autocomplete="off" value="2">
+                          <input type="radio" class="btn-check" name="optionsE" id="btncheck-2E" autocomplete="off"
+                            value="2" (click)="clickEst(2)">
                           <label class="btn btn-outline-primary" for="btncheck-2E">2</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-3E" autocomplete="off" value="3">
+                          <input type="radio" class="btn-check" name="optionsE" id="btncheck-3E" autocomplete="off"
+                            value="3" (click)="clickEst(3)">
                           <label class="btn btn-outline-primary" for="btncheck-3E">3</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-4E" autocomplete="off" value="4">
+                          <input type="radio" class="btn-check" name="optionsE" id="btncheck-4E" autocomplete="off"
+                            value="4" (click)="clickEst(4)">
                           <label class="btn btn-outline-primary" for="btncheck-4E">4</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck-5E" autocomplete="off" value="5">
+                          <input type="radio" class="btn-check" name="optionsE" id="btncheck-5E" autocomplete="off"
+                            value="5" (click)="clickEst(5)">
                           <label class="btn btn-outline-primary" for="btncheck-5E">+5</label>
                         </div>
                       </div>
