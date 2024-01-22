@@ -58,6 +58,7 @@ import { registerLocaleData } from '@angular/common';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { CompBrokerComponent } from './ventanaemergente/comp-broker/comp-broker.component';
+import { IdusuarioComponent } from './ventanaemergente/idusuario/idusuario.component';
 
 
 
@@ -86,7 +87,8 @@ registerLocaleData(localeEs);
     UsuariosbrokerComponent,
     EstatususuarioComponent,
     EstatusComponent,
-    CompBrokerComponent
+    CompBrokerComponent,
+    IdusuarioComponent
     
 
     

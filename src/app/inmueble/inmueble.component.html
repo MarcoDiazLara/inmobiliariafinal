@@ -209,13 +209,46 @@
 
       
          
-        <h4 class="text-center">Describe tu inmueble</h4>
+         <!-- <h4 class="text-center">Describe tu inmueble</h4>
         <div class="ordenainput col-md-4">
         </div>
         <div class="ordenainput col-md-4">
           <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3"></textarea>
+        </div> -->
+        <h4 class="text-center">Describe tu inmueble</h4>
+        <p class="text-center">Maximo 300 caracteres</p>
+        <div class="ordenainput col-md-4">
         </div>
-       
+        <div class="ordenainput col-md-4">
+          <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3" maxlength="300"></textarea>
+          <div *ngIf="tercerFormGroup.get('p_desc')">
+          
+          </div>
+        </div>
+        
+        <!-- <div class="ordenainput col-md-4">
+          <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="3" maxLength="300"></textarea>
+          <div *ngIf="tercerFormGroup.get('p_desc').hasError('maxlength')">
+            Se ha excedido el límite de 300 caracteres.
+          </div>
+        </div> -->
+        
+        <!-- <div class="ordenainput col-md-4">
+        </div>
+        <div class="ordenainput col-md-4">
+          <textarea formControlName="p_desc" class="form-control" id="textAreaExample4"></textarea>
+          <div *ngIf="p_desc.invalid && (p_desc.dirty || p_desc.touched)">
+            <div *ngIf="p_desc.errors?.maxlength">Te has pasado de caracteres.</div>
+          </div>
+        </div> -->
+        
+        
+        
+
+    
+        
+    
+        
       <br>
       <br>
       <hr>

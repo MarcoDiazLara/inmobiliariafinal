@@ -163,7 +163,8 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
        })
       this.tercerFormGroup = this.formBuilder.group({
         p_nom_inmu:  ['',[Validators.required]],
-        p_desc:  ['',[Validators.required]],
+        p_desc: ['', [Validators.maxLength(300)]],
+        // p_desc:  ['',[Validators.required]],
         p_num_int:  ['',[Validators.required]],
         p_num_ext:  ['',[Validators.required]],
         p_terreno:  ['',[Validators.required]],
