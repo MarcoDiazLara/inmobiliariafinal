@@ -3,6 +3,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog} from '@angular/material/dialog';
 import Swal from 'sweetalert2';
+import { IdusuarioComponent } from '../ventanaemergente/idusuario/idusuario.component';
 
 @Component({
   selector: 'app-cargausuarios',
@@ -71,10 +72,10 @@ export class CargausuariosComponent implements OnInit {
 
   openid() {
 
-    // const dialogRef = this.dialog.open(CompanyAdminpasswordComponent, {
-    //   width: '60vh',
-    //   height: 'auto',
-    //   disableClose: true
-    // });
+    const dialogRef = this.dialog.open(IdusuarioComponent, {
+      width: '60vh',
+      height: 'auto',
+      disableClose: true
+    });
   }
 }
