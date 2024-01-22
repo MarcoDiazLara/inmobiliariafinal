@@ -833,7 +833,12 @@ export class HttpService {
     + "&p_id_estado=" + p_id_estado;
     return this.httpclient.post(this.url + 'sp_web_insertar_codigopostal.php', params, { headers });
   }
-
+    
+  verificamodelado(p_id_inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_verificaModelado.php', params, { headers });
+  }
 
 }
 

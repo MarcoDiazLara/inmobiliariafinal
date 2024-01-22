@@ -51,7 +51,7 @@ export class CambioasesorComponent implements OnInit {
   obtener: any;
   obtenerIdSocioUsuario() {
     let IdSocio = localStorage.getItem("Id_Socio");
-    this.httpService.SolicitudCambioA(17).subscribe((data: any) => {
+    this.httpService.SolicitudCambioA(IdSocio).subscribe((data: any) => {
 
 
       this.obtener = data[0].IdSocUsu;
