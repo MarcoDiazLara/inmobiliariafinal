@@ -66,6 +66,8 @@ export class CambioasesorComponent implements OnInit {
 
 
   Guardardatos() {
+    this.httpService.openasesor(); 
+
     if (this.formGeneral) {
 
       let Inmueble = this.formGeneral.value.Inmueble;
@@ -93,20 +95,14 @@ export class CambioasesorComponent implements OnInit {
       this.httpService.Notis(mensaje, this.obtener).subscribe((resp: any) => {
 
         Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Tu Solicitud ha sido enviada",
-          showConfirmButton: false,
-          timer: 1500
+          title: "Exito!",
+          text: "Tu Solicitud ha sido enviada",
+          icon: "success"
         });
 
       })
 
-
-
-
-
-    }
+    }this.httpService.closeDialog(); 
 
   }
 }
