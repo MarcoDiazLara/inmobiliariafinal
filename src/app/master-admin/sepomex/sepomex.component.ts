@@ -365,144 +365,144 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
 
 
   proceso(){
-//     this.procesoEnCurso = true;
+    this.procesoEnCurso = true;
   
-// //Estados
+//Estados
 
-//     const totalEstados = this.estadosUnicos.length;
-//     let estadosProcesados = 0;
-
-
-
-//    this.estadosUnicos.forEach((estado) => {
-
-//     const p_idEstado = estado.codigoestado;
-//     const p_estado = estado.estado;
-
-//     // Realiza la solicitud al servicio en el servidor
-//     this.httpService.updateEstado(p_idEstado, p_estado).subscribe(
-//       (response: any) => {
-//         estadosProcesados++;
-//         if (response === '1') {
-//           console.log('Inserción exitosa:', response.message);
-//         } else {
-//           console.error('Error en la inserción de Estados', response.message);
-//         }
-//         this.progreso = (estadosProcesados / totalEstados) * 100;
-
-//           // Verificar si se completó el proceso
-//           if (estadosProcesados === totalEstados) {
-//             this.procesoEnCurso = false;
-//           }
-//       },
-//       (error: any) => {
-//         estadosProcesados++;
-//         console.error('Error de comunicación con el servidor:', error);
-//         this.progreso = (estadosProcesados / totalEstados) * 100;
-//         if (estadosProcesados === totalEstados) {
-//           this.procesoEnCurso = false;
-//         }
-//       }
-//     );
-//   });
-
-// //Municipios
+    const totalEstados = this.estadosUnicos.length;
+    let estadosProcesados = 0;
 
 
-//   this.municipiosUnicos.forEach((municipio) => {
+
+   this.estadosUnicos.forEach((estado) => {
+
+    const p_idEstado = estado.codigoestado;
+    const p_estado = estado.estado;
+
+    // Realiza la solicitud al servicio en el servidor
+    this.httpService.updateEstado(p_idEstado, p_estado).subscribe(
+      (response: any) => {
+        estadosProcesados++;
+        if (response === '1') {
+          console.log('Inserción exitosa:', response.message);
+        } else {
+          console.error('Error en la inserción de Estados', response.message);
+        }
+        this.progreso = (estadosProcesados / totalEstados) * 100;
+
+          // Verificar si se completó el proceso
+          if (estadosProcesados === totalEstados) {
+            this.procesoEnCurso = false;
+          }
+      },
+      (error: any) => {
+        estadosProcesados++;
+        console.error('Error de comunicación con el servidor:', error);
+        this.progreso = (estadosProcesados / totalEstados) * 100;
+        if (estadosProcesados === totalEstados) {
+          this.procesoEnCurso = false;
+        }
+      }
+    );
+  });
+
+//Municipios
+
+
+  this.municipiosUnicos.forEach((municipio) => {
  
-//    const p_idMunicipio = municipio.municipio;
-//    const p_municipio = municipio.codigomunicipio;
-//    const p_idEstado = municipio.nestado;
+   const p_idMunicipio = municipio.municipio;
+   const p_municipio = municipio.codigomunicipio;
+   const p_idEstado = municipio.nestado;
 
-//    // Realiza la solicitud al servicio en el servidor
-//    this.httpService.updateMunicipio(p_idMunicipio, p_municipio, p_idEstado).subscribe(
-//      (response: any) => {
-//        if (response === '1') {
-//          console.log('Inserción exitosa:', response.message);
-//        } else {
-//          console.error('Error en la inserción de municipios', response.message);
-//        }
-//      },
-//      (error: any) => {
-//        console.error('Error de comunicación con el servidor:', error);
-//      }
-//    );
-//  });
+   // Realiza la solicitud al servicio en el servidor
+   this.httpService.updateMunicipio(p_idMunicipio, p_municipio, p_idEstado).subscribe(
+     (response: any) => {
+       if (response === '1') {
+         console.log('Inserción exitosa:', response.message);
+       } else {
+         console.error('Error en la inserción de municipios', response.message);
+       }
+     },
+     (error: any) => {
+       console.error('Error de comunicación con el servidor:', error);
+     }
+   );
+ });
 
-// //Tipo de Asentamiento
-//   this.tipoasentamientosUnicos.forEach((tAsentameinto) => {
+//Tipo de Asentamiento
+  this.tipoasentamientosUnicos.forEach((tAsentameinto) => {
  
-//    const p_idTasentamiento = tAsentameinto.tipoasentamiento;
-//    const  p_Tasentamiento = tAsentameinto.codigoasentamiento;
+   const p_idTasentamiento = tAsentameinto.tipoasentamiento;
+   const  p_Tasentamiento = tAsentameinto.codigoasentamiento;
 
-//    // Realiza la solicitud al servicio en el servidor
-//    this.httpService.updateTasentamiento(p_idTasentamiento,  p_Tasentamiento).subscribe(
-//      (response: any) => {
-//        if (response === '1') {
-//          console.log('Inserción exitosa:', response.message);
-//        } else {
-//          console.error('Error en la inserción de tipos de asentamiento', response.message);
-//        }
-//      },
-//      (error: any) => {
-//        console.error('Error de comunicación con el servidor:', error);
-//      }
-//    );
-//  });
+   // Realiza la solicitud al servicio en el servidor
+   this.httpService.updateTasentamiento(p_idTasentamiento,  p_Tasentamiento).subscribe(
+     (response: any) => {
+       if (response === '1') {
+         console.log('Inserción exitosa:', response.message);
+       } else {
+         console.error('Error en la inserción de tipos de asentamiento', response.message);
+       }
+     },
+     (error: any) => {
+       console.error('Error de comunicación con el servidor:', error);
+     }
+   );
+ });
 
-//Asentamientos
-// console.log("incercion de Asentamientos");
-//   console.log(this.asentamientosUnicos);
-//   this.asentamientosUnicos.forEach((Asentamiento) => {
+// Asentamientos
+console.log("incercion de Asentamientos");
+  console.log(this.asentamientosUnicos);
+  this.asentamientosUnicos.forEach((Asentamiento) => {
 
-//    const  p_asentamiento = Asentamiento.asentamiento;
-//    const p_tipo_zona = Asentamiento.zona;
-//    const  p_idtipoasentamiento = Asentamiento.tipoasentamiento;
-//    const p_idcp = Asentamiento.CP;
+   const  p_asentamiento = Asentamiento.asentamiento;
+   const p_tipo_zona = Asentamiento.zona;
+   const  p_idtipoasentamiento = Asentamiento.tipoasentamiento;
+   const p_idcp = Asentamiento.CP;
 
-//    // Realiza la solicitud al servicio en el servidor
-//    this.httpService.updateAsentamiento(p_asentamiento, p_tipo_zona, p_idtipoasentamiento, p_idcp).subscribe(
-//      (response: any) => {
-//        if (response === '1') {
-//          console.log('Inserción exitosa:', response.message);
-//        } else {
-//          console.error('Error en la inserción de Asentamientos', response.message);
-//        }
-//      },
-//      (error: any) => {
-//        console.error('Error de comunicación con el servidor:', error);
-//      }
-//    );
-//  });
+   // Realiza la solicitud al servicio en el servidor
+   this.httpService.updateAsentamiento(p_asentamiento, p_tipo_zona, p_idtipoasentamiento, p_idcp).subscribe(
+     (response: any) => {
+       if (response === '1') {
+         console.log('Inserción exitosa:', response.message);
+       } else {
+         console.error('Error en la inserción de Asentamientos', response.message);
+       }
+     },
+     (error: any) => {
+       console.error('Error de comunicación con el servidor:', error);
+     }
+   );
+ });
 
 
-//Codigos postales
+// Codigos postales
 
-// console.log("incercion de codigos postales");
-//   console.log(this.codigosUnicos);
-//   this.codigosUnicos.forEach((codigos) => {
+console.log("incercion de codigos postales");
+  console.log(this.codigosUnicos);
+  this.codigosUnicos.forEach((codigos) => {
  
 
-//    const p_id_cp = codigos.CP;
-//    const  p_cp = codigos.CP;
-//    const p_id_municipio = codigos.codigomunicipio;
-//    const  p_id_estado = codigos.codigoestado;
+   const p_id_cp = codigos.CP;
+   const  p_cp = codigos.CP;
+   const p_id_municipio = codigos.codigomunicipio;
+   const  p_id_estado = codigos.codigoestado;
 
-//    // Realiza la solicitud al servicio en el servidor
-//    this.httpService.updateCodigopostal(p_id_cp, p_cp, p_id_municipio, p_id_estado ).subscribe(
-//      (response: any) => {
-//        if (response === '1') {
-//          console.log('Inserción exitosa:', response.message);
-//        } else {
-//          console.error('Error en la inserción de codigospostales', response.message);
-//        }
-//      },
-//      (error: any) => {
-//        console.error('Error de comunicación con el servidor:', error);
-//      }
-//    );
-//  });
+   // Realiza la solicitud al servicio en el servidor
+   this.httpService.updateCodigopostal(p_id_cp, p_cp, p_id_municipio, p_id_estado ).subscribe(
+     (response: any) => {
+       if (response === '1') {
+         console.log('Inserción exitosa:', response.message);
+       } else {
+         console.error('Error en la inserción de codigospostales', response.message);
+       }
+     },
+     (error: any) => {
+       console.error('Error de comunicación con el servidor:', error);
+     }
+   );
+ });
 
 
   }
