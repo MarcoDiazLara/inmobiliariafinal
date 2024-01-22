@@ -799,6 +799,41 @@ export class HttpService {
     let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta + '&p_Keywords=' + Keywords + '&p_RVR=' + RVR + '&p_Video=' + Video + '&p_Plano=' + Plano + '&p_Bano=' + Bano + '&p_Cocina=' + Cocina + '&p_Alberca=' + Alberca + '&p_Gym=' + Gym + '&p_Estacionamiento=' + Esta ;
     return this.httpclient.post<CardInmuebles[]>(this.url + 'getInmueblesBusqueda.php', params, { headers });
   }
+  updateEstado(p_idestado: any, p_estado: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_idestado=" + p_idestado + "&p_estado=" + p_estado;
+    return this.httpclient.post(this.url + 'sp_web_insertar_estados.php', params, { headers });
+  }
+  updateMunicipio(p_idmunicipio: any, p_municipio: any, p_idestado: any ){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_idmunicipio=" + p_idmunicipio + "&p_municipio=" + p_municipio + "&p_idestado=" + p_idestado;
+    return this.httpclient.post(this.url + 'sp_web_insertar_municipios.php', params, { headers });
+  }
+  updateTasentamiento(p_idTasentamiento: any, p_Tasentamiento: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_idTasentamiento=" + p_idTasentamiento + "&p_Tasentamiento=" + p_Tasentamiento;
+    return this.httpclient.post(this.url + 'sp_web_insertar_TipoAsentamiento.php', params, { headers });
+  }
+  updateAsentamiento(p_asentamiento: any, p_tipo_zona: any, p_idtipoasentamiento: any, p_idcp: any ){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 
+     "&p_asentamiento=" + p_asentamiento 
+    + "&p_tipo_zona=" + p_tipo_zona 
+    + "&p_idtipoasentamiento=" + p_idtipoasentamiento 
+    + "&p_idcp=" + p_idcp;
+    return this.httpclient.post(this.url + 'sp_web_insertar_Asentamiento.php', params, { headers });
+  }
+
+  updateCodigopostal(p_id_cp: any, p_cp: any, p_id_municipio: any, p_id_estado: any ){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 
+     "&p_id_cp=" + p_id_cp
+    + "&p_cp=" + p_cp 
+    + "&p_id_municipio=" + p_id_municipio
+    + "&p_id_estado=" + p_id_estado;
+    return this.httpclient.post(this.url + 'sp_web_insertar_codigopostal.php', params, { headers });
+  }
+
 
 }
 
