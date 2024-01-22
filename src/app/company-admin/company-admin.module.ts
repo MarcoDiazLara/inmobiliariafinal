@@ -59,6 +59,8 @@ import { EstatususuarioComponent } from './estatususuario/estatususuario.compone
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { CompBrokerComponent } from './ventanaemergente/comp-broker/comp-broker.component';
 import { CargausuariosComponent } from './cargausuarios/cargausuarios.component';
+import { IdusuarioComponent } from './ventanaemergente/idusuario/idusuario.component';
+
 
 
 
@@ -88,7 +90,9 @@ registerLocaleData(localeEs);
     EstatususuarioComponent,
     EstatusComponent,
     CompBrokerComponent,
-    CargausuariosComponent
+    CargausuariosComponent,
+    IdusuarioComponent
+
     
 
     

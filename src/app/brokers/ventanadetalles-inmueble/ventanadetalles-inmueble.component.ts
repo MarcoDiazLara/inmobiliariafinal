@@ -46,7 +46,8 @@ export class VentanadetallesInmuebleComponent implements OnInit {
      
     this.options = this._formBuilder.group({
       Nombre_de_Inmueble: ['', [Validators.required]],
-      Descripcion:['', [Validators.required]],
+      Descripcion: ['', [Validators.maxLength(300)]],
+      // Descripcion:['', [Validators.required]],
       Calle:['', [Validators.required]],
       No_Interior:['', [Validators.required]],
       No_Exterior:['', [Validators.required]],
@@ -56,6 +57,8 @@ export class VentanadetallesInmuebleComponent implements OnInit {
       Banos:['', [Validators.required]],
       Cocina_Integral:['', [Validators.required]],
       Numero_Pisos:['', [Validators.required]],
+
+      
       Antiguedad:['', [Validators.required]],
       Acabados:['', [Validators.required]],
       Alberca:['', [Validators.required]],
