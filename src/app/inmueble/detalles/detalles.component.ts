@@ -166,7 +166,8 @@ Id_real!: string;
   
    abrirAplicacion() {
     // Intenta abrir la aplicación
-    let id = this.id_inmueble;
+    let id = this.Id_real;
+    console.log(this.Id_real);
     //let id = "16";
     window.location.href = "inmobewise-app://id_inmueble="+ id;
 

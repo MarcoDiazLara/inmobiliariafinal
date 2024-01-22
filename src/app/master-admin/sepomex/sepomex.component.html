@@ -23,9 +23,10 @@
                 <mat-progress-bar class="progressbar" mode="determinate" [value]="progressValue" *ngIf="showProgressBar"></mat-progress-bar>
             </div>
           </label>
-          <button class="custom-file-input" id="start">Iniciar proceso</button>
-
-
+          <div class="progressbar2">
+            <mat-progress-bar *ngIf="procesoEnCurso" [value]="progreso"></mat-progress-bar>
+            <button class="custom-file-input" id="start" (click)="proceso()">Iniciar proceso</button>
+          </div>
 
         <!-- <h2>hola</h2>
        
