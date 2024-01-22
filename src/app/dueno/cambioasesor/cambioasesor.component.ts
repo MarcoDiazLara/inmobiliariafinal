@@ -55,6 +55,7 @@ export class CambioasesorComponent implements OnInit {
 
 
       this.obtener = data[0].IdSocUsu;
+      
       // alert(data.IdSocUsu);
       // console.log(data[0].IdSocUsu)
 
