@@ -273,20 +273,20 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
 });
 
 
-    // console.log("estados: ");
-    //console.log(estadosSinDuplicados);
+    console.log("estados: ");
+    console.log(estadosSinDuplicados);
     this.estadosUnicos = estadosSinDuplicados;
-    // console.log("municipios: ");
-    // console.log(municipiosSinDuplicados);
+    console.log("municipios: ");
+    console.log(municipiosSinDuplicados);
     this.municipiosUnicos = municipiosSinDuplicados;
-    // console.log("Tipo de Asentamientos: ")
-    // console.log(tipoAsentamientoSinDuplicados);
+    console.log("Tipo de Asentamientos: ")
+    console.log(tipoAsentamientoSinDuplicados);
     this.tipoasentamientosUnicos = tipoAsentamientoSinDuplicados;
-    // console.log("Asentamientos: ");
-    // console.log(this.asentamientos);
+    console.log("Asentamientos: ");
+    console.log(this.asentamientos);
     this.asentamientosUnicos = this.asentamientos;
-    // console.log("Codigos Postales: ");
-    // console.log(CPSinDuplicados);
+    console.log("Codigos Postales: ");
+    console.log(CPSinDuplicados);
     this.codigosUnicos = CPSinDuplicados;
     
 
