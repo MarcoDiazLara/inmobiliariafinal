@@ -30,3 +30,39 @@
     background-color: #264D5E;
     
     } 
+
+
+
+
+
+    // 
+    .archivo-container {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin: 20px;
+    }
+    
+    .titulo {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    
+    .archivo-label {
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    .archivo-input {
+      display: none; /* Oculta el campo de entrada de archivos por defecto */
+    }
+    
+    .icono {
+      margin-right: 8px;
+    }

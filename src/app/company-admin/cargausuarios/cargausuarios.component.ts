@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog} from '@angular/material/dialog';
-import Swal from 'sweetalert2';
 import { IdusuarioComponent } from '../ventanaemergente/idusuario/idusuario.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cargausuarios',
