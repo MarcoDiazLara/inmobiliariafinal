@@ -4,12 +4,13 @@
   display: block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  padding:25px;
+  padding: 25px;
   padding-top: 20px;
   margin-top: 60px;
 
 }
-.buttonnavbar{
+
+.buttonnavbar {
   width: auto;
   height: 40px;
   margin-right: 20px;
@@ -19,9 +20,10 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 5px;
 }
-.buttonnavbar:hover{
+
+.buttonnavbar:hover {
   background-color: #264D5E;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 
@@ -32,19 +34,20 @@
   filter: brightness(100);
 }
 
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 10px; /* Altura de la sombra en la parte superior */
+  height: 10px;
+  /* Altura de la sombra en la parte superior */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
-  padding:30px;
+  padding: 30px;
   margin-top: 80px;
 }
 
-.paginador{
+.paginador {
   margin: 20px;
   width: auto;
   height: 40px;
@@ -53,9 +56,10 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 5px;
 }
-.paginador:hover{
+
+.paginador:hover {
   background-color: #264D5E;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 
@@ -96,7 +100,7 @@
   text-align: left;
 }
 
-.h4filtros {  
+.h4filtros {
   margin-top: 25px;
   font-weight: 450;
 
@@ -110,19 +114,26 @@
   margin-bottom: 10px;
 
 }
+
 .opcfiltros3 {
   margin-bottom: 5px;
 }
 
 
 /* Estilo de los iconos de los botones */
-.lupa, .filter, .VR, .navarrow,  
-.multi, .planos, .backarrow{
+.lupa,
+.filter,
+.VR,
+.navarrow,
+.multi,
+.planos,
+.backarrow {
   background-size: cover;
   width: 27px;
   height: 27px;
 }
-.navarrow{
+
+.navarrow {
   background: url('https://api.iconify.design/ic/baseline-keyboard-arrow-down.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/ic/baseline-keyboard-arrow-down.svg?color=%23264d5e');
   transition: color 0.3s;
@@ -156,11 +167,13 @@
   background: url('https://api.iconify.design/ic/outline-design-services.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/ic/outline-design-services.svg?color=%23264d5e');
 }
+
 .backarrow {
   background: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e') no-repeat center center / contain;
   content: url('https://api.iconify.design/ion/arrow-undo.svg?color=%23264d5e');
   transition: color 0.3s;
 }
+
 .content-right {
   display: flex;
   justify-content: right;
@@ -178,47 +191,48 @@
 }
 
 
-.dropdown-Buscar  {
+.dropdown-Buscar {
   height: auto;
   width: 300px;
   border-radius: 5px;
-  background-color: #fff; 
-  border: 1px solid #ccc; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  position: absolute; 
-  top: 105%; 
+  position: absolute;
+  top: 105%;
   left: 0%;
   padding: 0%;
 }
 
 
-.dropdown-Precio  {
+.dropdown-Precio {
   height: auto;
   width: auto;
   border-radius: 5px;
-  background-color: #fff; 
-  border: 1px solid #ccc; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  position: absolute; 
-  top: 105%; 
+  position: absolute;
+  top: 105%;
   left: 0%;
   padding: 0%;
 }
 
 
 .MMPrecio td {
-  border: none; 
-  text-align: center; 
+  border: none;
+  text-align: center;
 }
 
 
 .MMPrecio tr:first-child {
   color: #264D5E;
-  font-weight: bold; 
+  font-weight: bold;
 }
-ul.content-Precio{
+
+ul.content-Precio {
   padding: 15px;
 }
 
@@ -226,7 +240,8 @@ ul.content-Precio{
 .Toferta-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  align-items: flex-start;
+  /* Alinea los elementos a la izquierda */
 }
 
 
@@ -234,31 +249,33 @@ ul.content-Precio{
 
 
 
-.dropdown-Recamaras  {
+.dropdown-Recamaras {
   height: auto;
   width: auto;
   border-radius: 5px;
-  background-color: #fff; 
-  border: 1px solid #ccc; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  position: absolute; 
+  position: absolute;
   padding-left: 2px;
-  top: 105%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  top: 105%;
+  /* Alinear el borde superior de la lista con el borde inferior del botón */
   left: 0%;
 }
 
-.dropdown-Filtros  {
+.dropdown-Filtros {
   max-height: 550px;
   width: 550px;
   border-radius: 5px;
-  background-color: #fff; 
-  border: 1px solid #ccc; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  position: absolute; 
+  position: absolute;
   padding-left: 2px;
-  top: 105%; /* Alinear el borde superior de la lista con el borde inferior del botón */
+  top: 105%;
+  /* Alinear el borde superior de la lista con el borde inferior del botón */
   right: 15%;
 }
 
@@ -266,33 +283,37 @@ ul.content-Precio{
   position: relative;
   display: inline-block;
 }
+
 .Precio-container {
   position: relative;
   display: inline-block;
 }
+
 ul.in {
-  display: block; 
+  display: block;
 }
-.content-advancedfilters{
+
+.content-advancedfilters {
   max-height: 450px;
-  overflow-y: auto; 
+  overflow-y: auto;
   list-style: none;
   padding-right: 25px;
   padding-left: 25px;
 }
-.content-Precio{
-  overflow-y: auto; 
+
+.content-Precio {
+  overflow-y: auto;
   list-style: none;
 
 }
 
-.limpiarFiltros{
+.limpiarFiltros {
   padding: 8px;
   background-color: none;
   border-radius: 5px;
- }
+}
 
- .content-Inmueble {
+.content-Inmueble {
   padding: 8px 12px;
   text-decoration: none;
   color: #333;
@@ -309,21 +330,21 @@ ul.in {
 }
 
 .icon-size {
-  font-size:16px;
+  font-size: 16px;
 }
 
 
 .ListResult {
-  margin-top: 250px; 
+  margin-top: 250px;
 }
 
 
 
-.container1{
+.container1 {
   padding-top: 230px;
   padding-left: 25px;
   padding-right: 25px;
- }
+}
 
 .producto {
   border: 1px solid #575a5c;
@@ -386,6 +407,6 @@ ul.in {
 
 
 .imagen-ajust {
-  background-size: cover;
-  width: 100%;
+  width: 100% !important;
+  height: 325px !important;
 }

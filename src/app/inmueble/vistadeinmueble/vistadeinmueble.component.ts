@@ -97,7 +97,7 @@ export class VistadeinmuebleComponent implements OnInit {
       console.log('Ubicacion', this.PUbicacion);
       console.log('PrecioDesde', this.PPrecioDesde);
       console.log('PrecioHasta', this.PPrecioHasta);
-
+document.getElementById('Cards')?.onreset;
       this.getInmueblesBuscador();
     });
 
@@ -241,4 +241,4 @@ export class VistadeinmuebleComponent implements OnInit {
     this.router.navigate(['/web']);
   }
 
-} 
+}
