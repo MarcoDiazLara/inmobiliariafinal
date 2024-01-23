@@ -1,40 +1,39 @@
 <div class="cargadatos">
     <div class="container-fluit">
-        <div class="row">  
-            <h1> Sube tu archivo</h1>
+        <div class="row">
+            <!-- <h1> Sube tu archivo</h1> -->
 
             <div class="col-md-4">
-            <img src="../../../assets/img/descargad.png"> 
-          
+                <h4>Descarga Archivo</h4>
+                <img src="../../../assets/img/descargad.png">
             </div>
             <div class="col-md-4">
-            <img src="../../../assets/img/identificador.png">
+                <h4> Identificador </h4>
+                <img src="../../../assets/img/identificador.png">
             </div>
             <div class="col-md-4">
+                <h4> Subir Archivo </h4>
                 <img src="../../../assets/img/cargadoc.png">
             </div>
-            <div class="col-md-4 ">
-                <label for="archivoInput" class="archivo-label">
-                    <input id="archivoInput" (change)="handleFileInput($event)" type="file" accept=".csv" />
-                </label>
-            </div>
+
             <div class="col-md-4 cssbutton">
-               
+                <form #fileForm="ngForm" [formGroup]="formGeneral">
+                    <!-- <mat-form-field>
+                        <mat-icon matPrefix>cloud_download</mat-icon>
+                        <!-- <input formControlName="descarga" type="file" (change)="onFileSelected($event)" #fileInput />
+                    </mat-form-field> -->
+                    <button mat-raised-button color="primary" (click)="downloadFile()">Descargar Archivo</button>
+                </form>
             </div>
 
             <div class="col-md-4 cssbutton">
                 <button mat-raised-button color="#264D5E" (click)="openid()">Identificador</button>
             </div>
+
+            <div class="col-md-4 ">
+                <label for="archivoInput" class="archivo-label">
+                    <input id="archivoInput" (change)="handleFileInput($event)" type="file" accept=".csv" />
+                </label>
+            </div>
         </div>
     </div>
-</div>
-
-
-
-<!-- <div class="col-md-6 archivo-container">
-    <h1 class="titulo">Sube tu archivo</h1>
-    <label for="archivoInput" class="archivo-label">
-      <span class="icono">&#x1F4C1;</span> Selecciona un archivo
-    </label>
-    <input id="archivoInput" (change)="handleFileInput($event)" type="file" accept=".csv" class="archivo-input" />
-</div> -->
