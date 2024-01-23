@@ -624,7 +624,7 @@
                           <input type="radio" class="btn-check" name="optionsG" id="btncheck-5G" autocomplete="off"
                             value="5" (click)="clickGym(5)">
                           <label class="btn btn-outline-primary" for="btncheck-5G">+5</label>
-                        </div> 
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -741,7 +741,7 @@
   </div>
   <div class="p-2"></div>
 </form>
-  <!--
+<!--
   <div class="container-fluid container-card">
     <div class="card mb-3 cards">
       <div class="card-header header-card">
@@ -786,9 +786,16 @@
     </div>
   </div>
 -->
-  <div class="container-fluid container-card">
-    <div id="Cards" class="card mb-3 cards" *ngFor="let busq of TCardInmuebles" >
-   
+<div class="container-fluid container-card">
+  <div id="Cards" *ngIf="!TCardInmuebles.length">
+    <div class="container-fluid" style="display: flex; justify-content: center;">
+      <img src="../../../assets/img/Not-Results.png" width="350" height="350" class="img-fluid text-center" alt="...">
+      
+    </div>
+    <p class="text-center h2">Busqueda Sin Resultados!!</p>
+  </div>
+  <div id="Cards" *ngIf="TCardInmuebles.length">
+    <div id="Cards" class="card mb-3 cards" *ngFor="let busq of TCardInmuebles">
       <div class="row g-3">
         <div class="col-md-4">
           <img src="{{ busq.Picture }}" class="img-thumbnail img-fluid rounded-start imagen-ajust">
@@ -901,4 +908,5 @@
       </div>
     </div>
   </div>
+</div>
 <app-footer></app-footer>
