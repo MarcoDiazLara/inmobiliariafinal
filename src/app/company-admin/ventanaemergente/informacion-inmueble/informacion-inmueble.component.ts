@@ -44,7 +44,8 @@ export class InformacionInmuebleComponent implements OnInit {
 
     this.options = this._formBuilder.group({
       Nombre_de_Inmueble: ['', [Validators.required]],
-      Descripcion: ['', [Validators.required]],
+      Descripcion: ['', [Validators.maxLength(300)]],
+      // Descripcion: ['', [Validators.required]],
       Calle: ['', [Validators.required]],
       No_Interior: ['', [Validators.required]],
       No_Exterior: ['', [Validators.required]],

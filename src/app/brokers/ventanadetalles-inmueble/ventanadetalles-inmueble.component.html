@@ -39,7 +39,7 @@
             <div class="col-md-4 orderinput">
               <mat-form-field appearance="fill">
                 <mat-label>Descripcion</mat-label>
-                <input matInput formControlName="Descripcion" required [(ngModel)]="datos.Descripcion_Inmueble">
+                <input matInput formControlName="Descripcion" required [(ngModel)]="datos.Descripcion_Inmueble"  rows="3" maxlength="300">
                 <mat-icon matSuffix>
                   <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
                 </mat-icon>

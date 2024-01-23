@@ -14,6 +14,7 @@ import { CompAsignaGrupoComponent } from './comp-asigna-grupo/comp-asigna-grupo.
 import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
+import { CargausuariosComponent } from './cargausuarios/cargausuarios.component';
 
 
 const routes: Routes = [
@@ -68,7 +69,6 @@ const routes: Routes = [
         component: CompAsignaGrupoComponent
 
       },
-  
       {
         path: 'estatususuario',
         component: EstatususuarioComponent
@@ -78,7 +78,12 @@ const routes: Routes = [
         path: 'bienvenida',
         component: BienvenidaComponent
 
-      }
+      },
+      {
+        path: 'cargausuario',
+        component: CargausuariosComponent
+
+      },
     ]
   }
 

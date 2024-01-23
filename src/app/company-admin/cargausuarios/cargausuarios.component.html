@@ -1,0 +1,21 @@
+<div class="cargadatos">
+    <div class="container-fluit">
+        <div class="row">          
+            <div class="col-md-6">
+                <h1> Sube tu archivo</h1>
+                <input id="archivoInput" (change)="handleFileInput($event)" type="file" accept=".csv" />
+            </div>
+
+            <div class="col-md-6 cssbutton">
+                <button mat-raised-button color="#264D5E" (click)="openid()">Identificador</button>
+              </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-md-6 archivo-container">
+    <h1 class="titulo">Sube tu archivo</h1>
+    <label for="archivoInput" class="archivo-label">
+      <span class="icono">&#x1F4C1;</span> Selecciona un archivo
+    </label>
+    <input id="archivoInput" (change)="handleFileInput($event)" type="file" accept=".csv" class="archivo-input" />
+</div> -->
