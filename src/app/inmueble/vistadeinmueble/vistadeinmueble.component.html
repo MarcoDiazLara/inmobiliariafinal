@@ -403,7 +403,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-auto">
+          <!--<div class="col-auto">
             <div class="btn-group my-1">
               <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
                 data-bs-auto-close="outside" aria-expanded="false">
@@ -449,7 +449,7 @@
 
               </ul>
             </div>
-          </div>
+          </div>-->
           <div class="col-auto">
             <div class="btn-group my-1 dropdown-center">
               <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
@@ -740,6 +740,7 @@
     </div>
   </div>
   <div class="p-2"></div>
+</form>
   <!--
   <div class="container-fluid container-card">
     <div class="card mb-3 cards">
@@ -785,12 +786,12 @@
     </div>
   </div>
 -->
-
   <div class="container-fluid container-card">
-    <div class="card mb-3 cards" *ngFor="let busq of TCardInmuebles">
+    <div id="Cards" class="card mb-3 cards" *ngFor="let busq of TCardInmuebles" >
+   
       <div class="row g-3">
         <div class="col-md-4">
-          <img src="{{ busq.Picture }}" class="img-fluid rounded-start imagen-ajust" alt="...">
+          <img src="{{ busq.Picture }}" class="img-thumbnail img-fluid rounded-start imagen-ajust">
         </div>
         <div class="col-md-8">
           <div class="card-body m-2">
@@ -900,5 +901,4 @@
       </div>
     </div>
   </div>
-</form>
 <app-footer></app-footer>
