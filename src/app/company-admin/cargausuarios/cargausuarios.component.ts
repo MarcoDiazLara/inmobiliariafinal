@@ -17,7 +17,7 @@ import Swal from 'sweetalert2';
 
 export class CargausuariosComponent implements OnInit {
   selectedFiles: File[] = [];
-  serverUrl: string = 'https://inmobiliaria.arvispace.com/Armenda/backendArmenda/ser_carga_masiva.php';
+
   formGeneral!:FormGroup;
   // 
 selectedFile: File | null = null;
@@ -46,6 +46,9 @@ selectedFile: File | null = null;
     }
   }
 
+  serverUrl: string = 'https://inmobiliaria.arvispace.com/servicios/Carga_Masiva_Usuarios.php';
+
+
   constructor(
     private httpService: HttpService,
     private https: HttpClient,
@@ -61,6 +64,8 @@ selectedFile: File | null = null;
 
   handleFileInput(event: any) {
     this.selectedFiles = event.target.files;
+    console.log(this.selectedFiles);
+    this.uploadFile();
   }
 
   async uploadFile() {
@@ -69,9 +74,9 @@ selectedFile: File | null = null;
     if (this.selectedFiles.length > 0) {
       const formData = new FormData();
 
-      for (let i = 0; i < this.selectedFiles.length; i++) {
-        formData.append('dataCliente[]', this.selectedFiles[i]);
-      }
+        formData.append('dataCliente', this.selectedFiles[0]);
+      
+      
 
       this.https.post(this.serverUrl, formData).subscribe(
         async (response) => {
