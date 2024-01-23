@@ -107,6 +107,12 @@ Id_real!: string;
         }   
       })
     }
+
+    this.httpService.verificamodelado(this.Id_real).subscribe((data:any)=>{
+      if(data == "1"){
+        this.modelado = !this.modelado;
+      }
+    })
   
    
 
@@ -152,6 +158,7 @@ Id_real!: string;
   imagen4 !: string;
   imagen5 !: string;
   precio!:   string;
+  modelado: boolean =  false;
   
   details !: infoInmuebles;
   imagenesCarrusel: any[] = [
