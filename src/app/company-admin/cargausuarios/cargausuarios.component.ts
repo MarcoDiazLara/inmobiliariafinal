@@ -17,7 +17,6 @@ import Swal from 'sweetalert2';
 
 export class CargausuariosComponent implements OnInit {
   selectedFiles: File[] = [];
-
   formGeneral!:FormGroup;
   // 
 selectedFile: File | null = null;
