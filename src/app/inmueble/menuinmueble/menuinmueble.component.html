@@ -83,7 +83,7 @@
         <!--End Menu Inmobiliarias-->
         <!--Menu Forma Parte de Nosotros-->
         <li class="nav-item">
-          <a  (click)="Contratos()" class="nav-link" role="button" aria-expanded="false">Contraciones</a>
+          <a  (click)="Contratos()" class="nav-link" role="button" aria-expanded="false">Contrataciones</a>
         </li>
         <!-- End Menu Forma Parte de Nosotros-->
         <!--Menu Contactanos-->
@@ -93,9 +93,7 @@
         <!-- End Menu Contactanos-->
       </ul>
       <form class="d-flex">
-        <button (click)="planes()" class="btn btn-outline-inmo me-2" type="button" >
-          <i class="bi bi-cart  m-1 size-icon"></i>  Comprar
-        </button>
+         
 
         <button *ngIf="!isLoggedIn" class="btn btn-outline-inmo"  type="submit">
           <i class="bi bi-person-circle m-1 size-icon"></i> Acceder
