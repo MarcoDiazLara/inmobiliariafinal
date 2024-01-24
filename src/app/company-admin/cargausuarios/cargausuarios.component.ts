@@ -34,15 +34,20 @@ selectedFile: File | null = null;
   }
 
   downloadFile(): void {
-    if (this.selectedFile) {
-      const url = window.URL.createObjectURL(this.selectedFile);
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.href = url;
-      a.download = this.selectedFile.name;
-      a.click();
-      window.URL.revokeObjectURL(url);
-    }
+  
+      const urlWhatsApp = "https://inmobiliaria.arvispace.com/servicios/dataCliente.csv";
+    
+  
+       // Abre la URL de WhatsApp en una nueva ventana
+      window.open(urlWhatsApp, '_blank');
+      // const url = window.URL.createObjectURL(this.selectedFile);
+      // const a = document.createElement('a');
+      // document.body.appendChild(a);
+      // a.href = "https://inmobiliaria.arvispace.com/servicios/dataCliente.csv";
+      // a.download = this.selectedFile.name;
+      // a.click();
+      // window.URL.revokeObjectURL("https://inmobiliaria.arvispace.com/servicios/dataCliente.csv");
+  
   }
 
   serverUrl: string = 'https://inmobiliaria.arvispace.com/servicios/Carga_Masiva_Usuarios.php';
