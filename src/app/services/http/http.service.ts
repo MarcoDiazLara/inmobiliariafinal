@@ -840,10 +840,10 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_verificaModelado.php', params, { headers });
   }
 
-  verificarmodelado2miespacio(p_id_inmueble: any){
+  verificarmodelado2miespacio(Id_inmueble: any){
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'Id_inmueble=' + p_id_inmueble;
-    return this.httpclient.post(this.url + 'sp_web_verificarModelado.php', params, { headers });
+    let params = 'Id_inmueble=' + Id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_verificarmodelado.php', params, { headers });
   }
 
 }
