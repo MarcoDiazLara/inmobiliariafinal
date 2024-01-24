@@ -45,6 +45,8 @@ export class VistadeinmuebleComponent implements OnInit {
   PAL!: any | '';
   PGYM!: any | '';
   PEst!: any | '';
+  PFechaP!: any | '';
+  PFechaA!: any | '';
 
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute) {
   }
@@ -84,14 +86,16 @@ export class VistadeinmuebleComponent implements OnInit {
       this.PPrecioDesde = params['PrecioDesde'];
       this.PPrecioHasta = params['PrecioHasta'];
       this.PKeywords = params['Keywords'];
-      this.PRVR = params['RVR']
-      this.PVideo = params['Video']
-      this.PPlano = params['Plano']
+      this.PRVR = params['RVR'];
+      this.PVideo = params['Video'];
+      this.PPlano = params['Plano'];
       this.PBanos = params['Bano'];
       this.PCI = params['Cocina'];
-      this.PAL = params['Alberca']
-      this.PGYM = params['Gym']
-      this.PEst = params['Esta']
+      this.PAL = params['Alberca'];
+      this.PGYM = params['Gym'];
+      this.PEst = params['Esta'];
+      this.PFechaA = params['FAnt'] ?? '';
+      this.PFechaP = params['FPub'] ?? '';
       console.log('Action', this.PAction);
       console.log('Propiedad', this.PPropiedad);
       console.log('Ubicacion', this.PUbicacion);
@@ -127,7 +131,7 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   getInmueblesBuscador() {
-    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst).subscribe({
+    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP).subscribe({
       next: (data) => {
         console.log(data);
         this.TCardInmuebles = data;
@@ -159,7 +163,7 @@ export class VistadeinmuebleComponent implements OnInit {
     if (this.PIdOperacion == undefined) {
       this.PIdOperacion = '';
     }
-    this.PIdOperacion = this.PIdOperacion + Id;
+    this.PIdOperacion = Id;
     console.log('Click Operacion', this.PIdOperacion);
     this.PAction = Id;
   }
@@ -233,8 +237,18 @@ export class VistadeinmuebleComponent implements OnInit {
     console.log('Estacionamiento: ', this.PEst);
   }
 
+  clickFechaPub(val: any){
+    this.PFechaP = val;
+    console.log('Fecha Publicación: ', this.PFechaP);
+  }
+
+  clickFechaAnt(val: any){
+    this.PFechaA = val;
+    console.log('Fecha Antiguedad: ', this.PFechaA);
+  }
+
   applySearch() {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': this.PAction, 'tpropiedad': this.PPropiedad, 'ubicacion': this.PUbicacion, 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta, 'Keywords': this.PKeywords, 'RVR': this.PRVR, 'Video': this.PVideo, 'Plano': this.PPlano, 'Bano': this.PBanos, 'Cocina': this.PCI, 'Alberca': this.PAL, 'Gym': this.PGYM, 'Esta': this.PEst } });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': this.PAction, 'tpropiedad': this.PPropiedad, 'ubicacion': this.PUbicacion, 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta, 'Keywords': this.PKeywords, 'RVR': this.PRVR, 'Video': this.PVideo, 'Plano': this.PPlano, 'Bano': this.PBanos, 'Cocina': this.PCI, 'Alberca': this.PAL, 'Gym': this.PGYM, 'Esta': this.PEst, 'FAnt': this.PFechaA, 'FPub': this.PFechaP } });
   }
 
   backPage() {

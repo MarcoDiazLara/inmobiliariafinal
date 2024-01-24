@@ -374,7 +374,7 @@
               <ul class="dropdown-menu m-1">
                 <li class="dropdown-item" *ngFor="let inmo of TOperacion">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="flexRadioDefault{{ inmo.Id_Tipo_Publicacion }}"
+                    <input class="form-check-input" type="radio" name="operacion" id="flexRadioDefault{{ inmo.Id_Tipo_Publicacion }}"
                       value="{{ inmo.Id_Tipo_Publicacion }}" (click)="clickOperacion(inmo.Tipo_Publicacion)">
                     <label class="form-check-label" for="flexRadioDefault1">
                       {{ inmo.Tipo_Publicacion }}
@@ -394,8 +394,8 @@
               <ul class="dropdown-menu m-1">
                 <li class="dropdown-item" *ngFor="let inmo of TInmuebles">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="flexRadioDefault{{ inmo.Id_Tipo_Inmueble }}"
-                      value="{{ inmo.Id_Tipo_Inmueble }}" (click)="clickOperacion(inmo.Id_Tipo_Inmueble)">
+                    <input class="form-check-input" type="radio" name="inmuebles" id="flexRadioDefault{{ inmo.Id_Tipo_Inmueble }}"
+                      value="{{ inmo.Id_Tipo_Inmueble }}" (click)="clickInmueble(inmo.Id_Tipo_Inmueble)">
                     <label class="form-check-label" for="flexRadioDefault1"><span> {{ inmo.Tipo_Inmueble }}
                       </span></label>
                   </div>
@@ -662,32 +662,32 @@
                 <div class="mb-3">
                   <label class="form-label me-2"><strong>Fecha de Publicación</strong></label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-1FP" value="Today"
-                      checked>
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-1FP" value="Today" (click)="clickFechaPub('Today')"
+                      >
                     <label class="form-check-label" for="exampleRadios1">
                       Hoy
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-2FP" value="3d">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-2FP" value="3d" (click)="clickFechaPub('3d')">
                     <label class="form-check-label" for="exampleRadios2">
                       Hace 3 Días
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-3FP" value="1w">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-3FP" value="1w" (click)="clickFechaPub('1w')">
                     <label class="form-check-label" for="exampleRadios3">
                       Hace 1 Semana
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-4FP" value="1m">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-4FP" value="1m" (click)="clickFechaPub('1m')">
                     <label class="form-check-label" for="exampleRadios4">
                       Hace 1 Mes
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-5FP" value="1m+">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-5FP" value="1m+" (click)="clickFechaPub('1m+')">
                     <label class="form-check-label" for="exampleRadios5">
                       Más de 1 Mes
                     </label>
@@ -696,31 +696,25 @@
                 <div class="mb-3">
                   <label class="form-label me-2"><strong>Antigüedad</strong></label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-1FP" value="N" checked>
+                    <input class="form-check-input" type="radio" name="Radios" id="Radios-1FP" value="N" (click)="clickFechaAnt('N')">
                     <label class="form-check-label" for="exampleRadios1">
                       Nuevo
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-2FP" value="EC">
-                    <label class="form-check-label" for="exampleRadios2">
-                      En Construcción
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-3FP" value="1">
+                    <input class="form-check-input" type="radio" name="Radios" id="Radios-3FP" value="1" (click)="clickFechaAnt('1')">
                     <label class="form-check-label" for="exampleRadios3">
                       1 Año
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-4FP" value="3">
+                    <input class="form-check-input" type="radio" name="Radios" id="Radios-4FP" value="3" (click)="clickFechaAnt('3')">
                     <label class="form-check-label" for="exampleRadios4">
                       3 Años
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radios-5FP" value="3+">
+                    <input class="form-check-input" type="radio" name="Radios" id="Radios-5FP" value="3+" (click)="clickFechaAnt('3+')">
                     <label class="form-check-label" for="exampleRadios5">
                       Más de 3 Años
                     </label>
@@ -790,7 +784,6 @@
   <div id="Cards" *ngIf="!TCardInmuebles.length">
     <div class="container-fluid" style="display: flex; justify-content: center;">
       <img src="../../../assets/img/Not-Results.png" width="350" height="350" class="img-fluid text-center" alt="...">
-      
     </div>
     <p class="text-center h2">Busqueda Sin Resultados!!</p>
   </div>
