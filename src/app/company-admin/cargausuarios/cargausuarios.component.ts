@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { IdusuarioComponent } from '../ventanaemergente/idusuario/idusuario.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Swal from 'sweetalert2';
+import   Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cargausuarios',
