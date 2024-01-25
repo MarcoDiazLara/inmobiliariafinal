@@ -13,6 +13,7 @@ import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { P } from '@fullcalendar/core/internal-common';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Requisitos3dComponent } from '../requisitos3d/requisitos3d.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-avisos',
@@ -131,12 +132,21 @@ TipoInmueble(tiposInmuebles:number){
 
 }
 openDialog2(inmueble:Publicaciones): void {
-  localStorage.setItem("p_Id_inmueble",inmueble.Id_Inmueble);
-  this.dialog.open(Requisitos3dComponent, {
-
-  
-  
-  });
+ 
+  this.httpService.verificarmodelado2miespacio(inmueble.Id_Inmueble).subscribe((data:any)=>{
+    if(data == "0"){
+      localStorage.setItem("p_Id_inmueble",inmueble.Id_Inmueble);
+      this.dialog.open(Requisitos3dComponent, {
+      });
+    }else{
+      Swal.fire({
+        title: "Exito",
+        text: "Ya haz solicitado el modelado en 3D!",
+        icon: "success"
+      });
+    }
+  })
+ 
 }
 }
     

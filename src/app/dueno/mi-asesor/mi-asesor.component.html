@@ -54,14 +54,7 @@
         
   
       </div> -->
-        <!-- <div>
-          <i class="fas fa-heart"></i>
-          <button mat-raised-button color="#264D5E" class="contacto"><i class="material-icons">message</i>Texto </button>
-          <button mat-raised-button color="#264D5E" class="contacto"> <i class="material-icons">smartphone</i>llamada</button>
-          <button mat-raised-button color="#264D5E"  class="contacto"><i class="material-icons">email</i>Mail</button>
-
-        </div> -->
-      
+    
        
 <!--       
     </form>
@@ -136,7 +129,7 @@
         <div class="col-md-3">
           <mat-form-field appearance="fill">
             <mat-label><b>Contacto Principal</b></mat-label>
-            <input matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10"
+            <input [readonly]="state" matInput type="text" placeholder="Telefono" formControlName="contactoprincipal" maxlength="10"
               style="margin-left:6%;" [(ngModel)]="datosAsesor.Contacto_Principal">
             <mat-error *ngIf="this.formGeneral.get('contactoprincipal')?.hasError('required')">
               El número de teléfono <strong>es requerido</strong>
@@ -150,7 +143,7 @@
         <div class="col-md-3 alinea">
           <mat-form-field appearance="legacy" style="width: 100%;">
             <mat-label><b>Correo</b></mat-label>
-            <input matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datosAsesor.Email">
+            <input [readonly]="state" matInput type="email" placeholder="Correo electronico" formControlName="email" [(ngModel)]="datosAsesor.Email">
             <mat-error *ngIf="this.formGeneral.get('email')?.hasError('required')">
               Correo es <strong>requerido</strong>
             </mat-error>
@@ -172,8 +165,21 @@
       <br>
       <br>
       <br>
-      
+      <p>Envia un mensaje</p>
+      <textarea formControlName="p_desc" class="form-control" id="textAreaExample4" rows="2" maxlength="300"></textarea>
   
+      
+      <div>
+        <i class="fas fa-heart"></i>
+        <button (click)="enviarWhatsApp()" mat-raised-button color="#264D5E" class="contacto"><i class="material-icons">message</i>WhatsApp </button>
+    
+        <button (click)="enviarCorreo()" mat-raised-button color="#264D5E"  class="contacto"><i class="material-icons">email</i>Mail</button>
+    
+      </div>
     </form>
+    
+  
   </div>
+
+  
     

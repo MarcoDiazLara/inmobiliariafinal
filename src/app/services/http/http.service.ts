@@ -794,9 +794,9 @@ export class HttpService {
     return this.httpclient.post<TipoOperacion[]>(this.url + 'mostrarTipoOperaciones.php', params, { headers });
   }
 
-  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any, PrecioDesde: any, PrecioHasta: any, Keywords: any, RVR: any, Video: any, Plano: any, Bano: any, Cocina: any, Alberca: any, Gym: any, Esta: any) {
+  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any, PrecioDesde: any, PrecioHasta: any, Keywords: any, RVR: any, Video: any, Plano: any, Bano: any, Cocina: any, Alberca: any, Gym: any, Esta: any, PFechaA: any, PFechaP: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta + '&p_Keywords=' + Keywords + '&p_RVR=' + RVR + '&p_Video=' + Video + '&p_Plano=' + Plano + '&p_Bano=' + Bano + '&p_Cocina=' + Cocina + '&p_Alberca=' + Alberca + '&p_Gym=' + Gym + '&p_Estacionamiento=' + Esta ;
+    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta + '&p_Keywords=' + Keywords + '&p_RVR=' + RVR + '&p_Video=' + Video + '&p_Plano=' + Plano + '&p_Bano=' + Bano + '&p_Cocina=' + Cocina + '&p_Alberca=' + Alberca + '&p_Gym=' + Gym + '&p_Estacionamiento=' + Esta + '&p_FechaA=' + PFechaA + '&p_FechaP=' + PFechaP ;
     return this.httpclient.post<CardInmuebles[]>(this.url + 'getInmueblesBusqueda.php', params, { headers });
   }
   updateEstado(p_idestado: any, p_estado: any){
@@ -838,6 +838,12 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_inmueble=' + p_id_inmueble;
     return this.httpclient.post(this.url + 'sp_web_verificaModelado.php', params, { headers });
+  }
+
+  verificarmodelado2miespacio(Id_inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'Id_inmueble=' + Id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_verificarmodelado.php', params, { headers });
   }
 
 }
