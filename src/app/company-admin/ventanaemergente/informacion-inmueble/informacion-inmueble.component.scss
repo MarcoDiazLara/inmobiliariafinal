@@ -1,3 +1,6 @@
+.contenedorgeneral{
+    text-align: center;
+}
 
 .cssbutton button{
     width: 100%;
@@ -7,3 +10,11 @@
     background-color: #264D5E;
     
     } 
+
+    .orderinput{
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        
+    }
+  
