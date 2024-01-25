@@ -1,12 +1,9 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { IdusuarioComponent } from '../ventanaemergente/idusuario/idusuario.component';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,15 +14,15 @@ import Swal from 'sweetalert2';
 
 export class CargausuariosComponent implements OnInit {
   selectedFiles: File[] = [];
-  formGeneral!:FormGroup;
+  formGeneral!: FormGroup;
   // 
-selectedFile: File | null = null;
+  selectedFile: File | null = null;
 
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
   }
 
-// 
+  // 
 
   @ViewChild('fileInput') fileInput: any;
 
@@ -53,11 +50,11 @@ selectedFile: File | null = null;
     private https: HttpClient,
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.formGeneral = this.formBuilder.group({
-      descarga: ['',[Validators.required]],
+      descarga: ['', [Validators.required]],
     });
   }
 
@@ -73,9 +70,9 @@ selectedFile: File | null = null;
     if (this.selectedFiles.length > 0) {
       const formData = new FormData();
 
-        formData.append('dataCliente', this.selectedFiles[0]);
-      
-      
+      formData.append('dataCliente', this.selectedFiles[0]);
+
+
 
       this.https.post(this.serverUrl, formData).subscribe(
         async (response) => {
