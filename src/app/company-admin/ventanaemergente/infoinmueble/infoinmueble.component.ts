@@ -4,7 +4,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { Inmuebles,Estados,Municipios,Asentamiento } from 'src/app/services/Interface/Interfaces';
-
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { HttpService } from 'src/app/services/http/http.service';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-infoinmueble',
@@ -13,12 +16,69 @@ import { Inmuebles,Estados,Municipios,Asentamiento } from 'src/app/services/Inte
 })
 export class InfoinmuebleComponent implements OnInit {
   generatedCode: string = '';
+  estados: Estados[] = [];
+  estado!: Estados;
+  municipios: Municipios[] = [];
+  municipio!: Municipios;
+  asentamientos: Asentamiento[] = [];
+  asentamiento!: Asentamiento;
+  idasentamiento!:any;
+  
 
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private httpService: HttpService, private dialog: MatDialog ) { }
+  firstFormGroup!: FormGroup;
+  
 
   ngOnInit(): void {
+    this.ObtnerEstado();
+    this.firstFormGroup = this.formBuilder.group({
+
+      pId_estado: ['', [Validators.required]],
+      pId_municipio: ['', [Validators.required]],
+      pId_asentamiento: ['', [Validators.required]],
+      p_Tipo_de_Inmueble: ['', [Validators.required]],
+      p_Usuarios: ['', [Validators.required]],
+
+    })
   }
+    ObtnerEstado(){
+    
+      this.httpService.obtenerEstado().subscribe((resp:any)=>{
+         if(resp!== 201){
+          this.estado=resp[0].id_Estado;
+          this.estados=resp;
+         }
+        },(err)=>{
+          console.log(err);
+        
+      })
+    }
+    obternerM(){
+      this.httpService.obtenerMunicipio(this.firstFormGroup.value.pId_estado).subscribe((resp: any)=>{
+        if (resp !== 201) {
+          this.municipio = resp[0].id_Municipio;
+          this.municipios = resp;
+        }
+      },(err)=>{
+        console.log(err);
+      })
+    }
+    obtenerA(){
+      this.httpService.obtenerAsentamiento(this.firstFormGroup.value.pId_estado,
+        this.firstFormGroup.value.pId_municipio).subscribe((resp: any) => {
+          if (resp !== 201) {
+            this.asentamiento = resp[0].id_Asentamiento;
+            this.asentamientos = resp;
+          }
+        }, (err) => {
+          console.log(err);
+        })
+    }
+     
+    obtenerId(){
+      this.idasentamiento=this.firstFormGroup.value.pId_asentamiento;
+    }
+  
   generateRandomCode() {
     // Generar un código aleatorio (puedes personalizar la lógica según tus necesidades)
     this.generatedCode = this.getRandomCode();
@@ -26,7 +86,7 @@ export class InfoinmuebleComponent implements OnInit {
   private getRandomCode(): string {
     // Lógica para generar códigos aleatorios, por ejemplo, usando números y letras
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const codeLength = 8;
+    const codeLength = 5;
     let randomCode = '';
 
     for (let i = 0; i < codeLength; i++) {
@@ -36,5 +96,8 @@ export class InfoinmuebleComponent implements OnInit {
 
     return randomCode;
   }
+  CerraDialogo() {
+    this.dialog.closeAll();
 
+  }
 }
