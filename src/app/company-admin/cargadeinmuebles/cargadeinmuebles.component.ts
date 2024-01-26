@@ -105,7 +105,7 @@ async uploadFile() {
 openid() {
 
   const dialogRef = this.dialog.open(InfoinmuebleComponent, {
-    width: '60vh',
+    width: '80vh',
     height: 'auto',
     disableClose: true
   });
