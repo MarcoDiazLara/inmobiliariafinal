@@ -10,6 +10,7 @@ import { ActulizarInmueble } from 'src/app/services/Interface/Interfaces';
 import { EstatusInmueble } from 'src/app/services/Interface/Interfaces';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-informacion-inmueble',
   templateUrl: './informacion-inmueble.component.html',
