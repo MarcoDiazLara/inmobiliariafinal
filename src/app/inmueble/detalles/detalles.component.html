@@ -14,7 +14,6 @@
     </div>   -->
 
 
-
 <div class="allpage" >
 
       <!-- <h2 style="text-align: center; margin-top: 25px;">Recorre este inmueble de manera virtual 
@@ -28,15 +27,14 @@
     </mat-card>
 </div> -->
 
-    <div *ngIf="modelado">
-        <h2 style="text-align: center; margin-top: 25px;">Recorre este inmueble de manera virtual <img class="recorridovr"></h2>  
+    <div *ngIf="modelado"> 
         <div class="codigo" style="padding: 25px; margin-top: 25px;">
             <mat-card>
                 <mat-card-content>
+                    <h2 style="text-align: center; margin-top: 25px;">Recorre este inmueble de manera virtual <img class="recorridovr"></h2> 
                     <button (click)="verificacion()">
-                        {{"Amplia tu experiencia usando el siguiente código en nuestra App, da clic para continuar: " + vista_360}}
+                        {{"Amplia tu experiencia usando el siguiente código en nuestra App, da clic para continuar: " + Id_real}}
                         <img  class="mi-imagen"  src="assets/img/inmobewise.gif">
-
                     </button>
                 </mat-card-content>
             </mat-card>
