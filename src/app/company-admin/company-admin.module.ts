@@ -60,6 +60,9 @@ import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { CompBrokerComponent } from './ventanaemergente/comp-broker/comp-broker.component';
 import { CargausuariosComponent } from './cargausuarios/cargausuarios.component';
 import { IdusuarioComponent } from './ventanaemergente/idusuario/idusuario.component';
+import { CargadeinmueblesComponent } from './cargadeinmuebles/cargadeinmuebles.component';
+import { VisualizaciondeinmueblesComponent } from './visualizaciondeinmuebles/visualizaciondeinmuebles.component';
+import { InfoinmuebleComponent } from './ventanaemergente/infoinmueble/infoinmueble.component';
 
 
 
@@ -91,7 +94,10 @@ registerLocaleData(localeEs);
     EstatusComponent,
     CompBrokerComponent,
     CargausuariosComponent,
-    IdusuarioComponent
+    IdusuarioComponent,
+    CargadeinmueblesComponent,
+    VisualizaciondeinmueblesComponent,
+    InfoinmuebleComponent
 
     
 

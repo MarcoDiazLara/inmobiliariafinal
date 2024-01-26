@@ -15,6 +15,8 @@ import { EstatusComponent } from './ventanaemergente/estatus/estatus.component';
 import { EstatususuarioComponent } from './estatususuario/estatususuario.component';
 import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
 import { CargausuariosComponent } from './cargausuarios/cargausuarios.component';
+import { CargadeinmueblesComponent } from './cargadeinmuebles/cargadeinmuebles.component';
+import { VisualizaciondeinmueblesComponent } from './visualizaciondeinmuebles/visualizaciondeinmuebles.component';
 
 
 const routes: Routes = [
@@ -84,6 +86,14 @@ const routes: Routes = [
         component: CargausuariosComponent
 
       },
+      {
+        path: 'cargadeinmuebles',
+        component:CargadeinmueblesComponent
+      },
+      {
+        path: 'visualizaciondeinmuebles',
+        component:VisualizaciondeinmueblesComponent
+      }
     ]
   }
 
