@@ -1,1 +1,77 @@
-<p>infoinmueble works!</p>
+<hr>
+<h1 class="text-center">Informacion general del Inmueble <i class="bi bi-info">
+    <i class="bi bi-houses"></i>
+  </i></h1>
+<hr>
+<br>
+ <h2 class="text-center"> Ubica tu inmueble 
+    <i class="bi bi-map"></i>
+ </h2>
+<div class="contenedorgeneral">
+    <div class="container-fluit">
+        <div class="row">
+<div class="ordenainput col-md-4">
+
+    <mat-form-field style="margin-right: 10px;">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="pId_estado">
+          <mat-option >
+          --Estados
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+<div class="ordenainput col-md-4">
+      <mat-form-field style="margin-right: 10px;">
+        <mat-label>Municipio</mat-label>
+        <mat-select formControlName="pId_estado">
+          <mat-option >
+          --Municipio
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+</div>
+<div class="ordenainput col-md-4">
+      <mat-form-field style="margin-right: 10px;">
+        <mat-label>Asentamiento</mat-label>
+        <mat-select formControlName="pId_estado">
+          <mat-option >
+          --Estados
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+<h2 class="text-center"> Datos extras </h2>
+     
+<div class="ordenainput col-md-4">
+    <mat-form-field style="margin-right: 10px;">
+      <mat-label>Tipo de Inmueble</mat-label>
+      <mat-select formControlName="pId_estado">
+        <mat-option >
+        --Tipo de Inmueble
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div class="ordenainput col-md-4">
+    <mat-form-field style="margin-right: 10px;">
+      <mat-label>Usuarios</mat-label>
+      <mat-select formControlName="pId_estado">
+        <mat-option >
+        --Usuarios
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div class="ordenainput col-md-4">
+
+    <button  type="button" class="btn" style="background-color: #264D5E ; color: #ffffff;" (click)="generateRandomCode()">Genera tu codigo</button>
+    <p>Generated Code: {{ generatedCode }}</p>
+
+</div>
+
+
+</div>
+    </div>
+</div>
