@@ -64,11 +64,11 @@
     <mat-form-field style="margin-right: 10px;">
       <mat-label>Usuarios</mat-label>
       <mat-select formControlName="p_Usuarios">
-        <mat-option >
-        --Usuarios
+        <mat-option (click)="IdDuenos()" *ngFor="let Dueno of duenos" value="{{ Dueno.Id_Usuario}}">{{Dueno.Nombres+" "+Dueno.Apellido_Paterno+" "+Dueno.Apellido_Materno}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <p> Id Usuario {{IdDueno}} </p>
 </div>
 <div class="ordenainput col-md-4">
 

@@ -852,5 +852,12 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_mostrar_inmuebles_cm.php', params, { headers });
   }
 
+  SeleccionaDuenosCM(Id_Socio: any) {
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Socio=' + Id_Socio;
+    return this.httpclient.post(this.url + 'sp_web_select_duenos_cm.php', params, { headers });
+
+  }
+
 }
 
