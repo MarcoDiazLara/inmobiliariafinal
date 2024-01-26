@@ -23,6 +23,9 @@ export class InfoinmuebleComponent implements OnInit {
   asentamientos: Asentamiento[] = [];
   asentamiento!: Asentamiento;
   idasentamiento!:any;
+  IdTipoInmueble!:any;
+  inmuebles: Inmuebles[] = [];
+  inmueble!: Inmuebles;
   
 
   constructor(private formBuilder: FormBuilder, private httpService: HttpService, private dialog: MatDialog ) { }
@@ -36,10 +39,13 @@ export class InfoinmuebleComponent implements OnInit {
       pId_estado: ['', [Validators.required]],
       pId_municipio: ['', [Validators.required]],
       pId_asentamiento: ['', [Validators.required]],
-      p_Tipo_de_Inmueble: ['', [Validators.required]],
+      pId_Tipo_Inmueble: ['', [Validators.required]],
       p_Usuarios: ['', [Validators.required]],
 
     })
+
+    this.obtenerDatosInmuebles(); 
+   
   }
     ObtnerEstado(){
     
@@ -63,6 +69,7 @@ export class InfoinmuebleComponent implements OnInit {
         console.log(err);
       })
     }
+
     obtenerA(){
       this.httpService.obtenerAsentamiento(this.firstFormGroup.value.pId_estado,
         this.firstFormGroup.value.pId_municipio).subscribe((resp: any) => {
@@ -83,6 +90,25 @@ export class InfoinmuebleComponent implements OnInit {
     // Generar un código aleatorio (puedes personalizar la lógica según tus necesidades)
     this.generatedCode = this.getRandomCode();
   }
+
+  // Tipo Inmueble 
+  obtenerDatosInmuebles() {
+    this.httpService.tipoInmueble().subscribe((resp: any) => {
+      if (resp !== 201) {
+
+        this.inmueble = resp[0].Id_Tipo_Inmueble;
+        this.inmuebles = resp;
+      }
+    }, (err) => {
+      console.log(err);
+    })
+  }
+
+  IdT_Inmueble(){
+    this.IdTipoInmueble=this.firstFormGroup.value.pId_Tipo_Inmueble;
+  }
+  // 
+
   private getRandomCode(): string {
     // Lógica para generar códigos aleatorios, por ejemplo, usando números y letras
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
