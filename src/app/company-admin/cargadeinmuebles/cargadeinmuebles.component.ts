@@ -44,7 +44,7 @@ export class CargadeinmueblesComponent implements OnInit {
     // window.URL.revokeObjectURL("https://inmobiliaria.arvispace.com/servicios/dataCliente.csv");
 
 }
-serverUrl: string = 'https://inmobiliaria.arvispace.com/servicios/Carga_Masiva_Usuarios.php';
+serverUrl: string = 'https://inmobiliaria.arvispace.com/servicios/CargaMasivaInmuebles.php';
 constructor(
   private https: HttpClient,
   private httpService: HttpService,
