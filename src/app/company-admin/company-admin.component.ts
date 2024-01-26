@@ -29,7 +29,7 @@ export class CompanyAdminComponent implements OnDestroy {
     // { name: "asignar-reasignar-user", route: "resignar-asignarUser",icon: "groups_3" , label: "Asignar Reasignar Usuarios",number:'0'},
     { name: "Catalogoinmueble", route: "catalogoinmueble",icon: "collections_bookmark" , label: "Sube tu Catalogo de Inmueble",number:'0', onClick:this.xd},
     { name: "Cargausuarios", route: "cargausuario",icon: "upload" , label: "Carga de Usuarios",number:'0', onClick:this.xd},
-    { name: "cargadeinmuebles", route: "cargadeinmuebles",icon: "upload" , label: "Carga de Inmuebles",number:'0', onClick:this.xd},
+    { name: "cargadeinmuebles", route: "cargadeinmuebles",icon: "upload_file" , label: "Carga de Inmuebles",number:'0', onClick:this.xd},
     { name: "visualizaciondeinmuebles", route: "visualizaciondeinmuebles",icon: "visibility" , label: "Visualizacion de Inmuebles",number:'0', onClick:this.xd},
     { name: "estatususuario",    route: "estatususuario",icon: "person_remove" , label: "Deshabilitar Cuentas",number:'0', onClick:this.xd},
     { name: "Salir",icon: "logout", label: "SALIR" ,number:'1', onClick: () =>  this.logout()},

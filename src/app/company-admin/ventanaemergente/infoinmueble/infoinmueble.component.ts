@@ -3,7 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { Inmuebles,Estados,Municipios,Asentamiento } from 'src/app/services/Interface/Interfaces';
+import { Inmuebles,Estados,Municipios,Asentamiento,duenosCM } from 'src/app/services/Interface/Interfaces';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
@@ -23,6 +23,12 @@ export class InfoinmuebleComponent implements OnInit {
   asentamientos: Asentamiento[] = [];
   asentamiento!: Asentamiento;
   idasentamiento!:any;
+  IdTipoInmueble!:any;
+  IdDueno!:any;
+  inmuebles: Inmuebles[] = [];
+  inmueble!: Inmuebles;
+  duenos: duenosCM[] = [];
+  dueno!: duenosCM;
   
 
   constructor(private formBuilder: FormBuilder, private httpService: HttpService, private dialog: MatDialog ) { }
@@ -36,10 +42,14 @@ export class InfoinmuebleComponent implements OnInit {
       pId_estado: ['', [Validators.required]],
       pId_municipio: ['', [Validators.required]],
       pId_asentamiento: ['', [Validators.required]],
-      p_Tipo_de_Inmueble: ['', [Validators.required]],
+      pId_Tipo_Inmueble: ['', [Validators.required]],
       p_Usuarios: ['', [Validators.required]],
 
     })
+
+    this.obtenerDatosInmuebles(); 
+    this.obtenerDuenos();
+   
   }
     ObtnerEstado(){
     
@@ -63,6 +73,7 @@ export class InfoinmuebleComponent implements OnInit {
         console.log(err);
       })
     }
+
     obtenerA(){
       this.httpService.obtenerAsentamiento(this.firstFormGroup.value.pId_estado,
         this.firstFormGroup.value.pId_municipio).subscribe((resp: any) => {
@@ -83,6 +94,43 @@ export class InfoinmuebleComponent implements OnInit {
     // Generar un código aleatorio (puedes personalizar la lógica según tus necesidades)
     this.generatedCode = this.getRandomCode();
   }
+
+  // Tipo Inmueble 
+  obtenerDatosInmuebles() {
+    this.httpService.tipoInmueble().subscribe((resp: any) => {
+      if (resp !== 201) {
+        this.inmueble = resp[0].Id_Tipo_Inmueble;
+        this.inmuebles = resp;
+      
+      }
+    }, (err) => {
+      console.log(err);
+    })
+  }
+
+  IdT_Inmueble(){
+    this.IdTipoInmueble=this.firstFormGroup.value.pId_Tipo_Inmueble;
+  }
+  // 
+  // Id Usuario
+  obtenerDuenos() {
+
+    this.httpService.SeleccionaDuenosCM(localStorage.getItem("Id_Socio")).subscribe((resp: any) => {
+      if (resp !== 201) {
+
+       
+        this.dueno = resp[0].Id_Usuario;
+        this.duenos = resp;
+      }
+    }, (err) => {
+      console.log(err);
+    })
+  }
+  IdDuenos(){
+    this.IdDueno=this.firstFormGroup.value.p_Usuarios;
+  }
+  // 
+
   private getRandomCode(): string {
     // Lógica para generar códigos aleatorios, por ejemplo, usando números y letras
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

@@ -528,3 +528,10 @@ export interface inmusinimagenes{
     Id_Usuario: "",
     Nombres: ""
 }
+
+export interface duenosCM{
+    Id_Usuario: "",
+    Nombres: "",
+    Apellido_Paterno: "",
+    Apellido_Materno: ""
+}
