@@ -519,3 +519,12 @@ export interface CardInmuebles {
     Bano: string,
     Id_Publicador: string
 };
+
+export interface inmusinimagenes{
+    Nombre_Inmueble: "",
+    Calle: "",
+    Num_Ext: "",
+    Id_Inmueble: "",
+    Id_Usuario: "",
+    Nombres: ""
+}

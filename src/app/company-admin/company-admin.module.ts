@@ -63,6 +63,7 @@ import { IdusuarioComponent } from './ventanaemergente/idusuario/idusuario.compo
 import { CargadeinmueblesComponent } from './cargadeinmuebles/cargadeinmuebles.component';
 import { VisualizaciondeinmueblesComponent } from './visualizaciondeinmuebles/visualizaciondeinmuebles.component';
 import { InfoinmuebleComponent } from './ventanaemergente/infoinmueble/infoinmueble.component';
+import { SubirpublicacionComponent } from './ventanaemergente/subirpublicacion/subirpublicacion.component';
 
 
 
@@ -97,7 +98,8 @@ registerLocaleData(localeEs);
     IdusuarioComponent,
     CargadeinmueblesComponent,
     VisualizaciondeinmueblesComponent,
-    InfoinmuebleComponent
+    InfoinmuebleComponent,
+    SubirpublicacionComponent
 
     
 

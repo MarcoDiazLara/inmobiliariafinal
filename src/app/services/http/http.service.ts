@@ -846,5 +846,11 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_verificarmodelado.php', params, { headers });
   }
 
+  obtenerultimosinmu(p_IdSocio: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_IdSocio=' + p_IdSocio;
+    return this.httpclient.post(this.url + 'sp_web_mostrar_inmuebles_cm.php', params, { headers });
+  }
+
 }
 
