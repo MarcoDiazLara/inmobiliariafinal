@@ -208,7 +208,7 @@ export class InmuebleComponent implements OnInit {
     })
   }
 
-  guardar() {
+  guardar() { // refiere al estado
     console.log(this.firstFormGroup.value.pId_Tipo_Inmueble);
     this.httpService.obtenerEstado().subscribe((resp: any) => {
       if (resp !== 201) {
