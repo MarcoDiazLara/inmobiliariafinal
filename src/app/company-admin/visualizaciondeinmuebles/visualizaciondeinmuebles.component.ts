@@ -22,8 +22,8 @@ export class VisualizaciondeinmueblesComponent implements OnInit {
 
   }
 
-  openDialog(): void {
-    
+  openDialog(id: any): void {
+    localStorage.setItem("idAux", id);
     const dialogRef = this.dialog.open(SubirpublicacionComponent, {
    });
    
