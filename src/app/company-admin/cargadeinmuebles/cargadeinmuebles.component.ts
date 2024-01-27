@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/services/http/http.service';
 import { InfoinmuebleComponent } from '../ventanaemergente/infoinmueble/infoinmueble.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -49,7 +50,8 @@ constructor(
   private https: HttpClient,
   private httpService: HttpService,
   private formBuilder: FormBuilder,
-  public dialog: MatDialog
+  public dialog: MatDialog,
+  private router: Router
 ) { }
 ngOnInit(): void {
   this.formGeneral = this.formBuilder.group({
@@ -74,11 +76,14 @@ async uploadFile() {
       async (response) => {
         console.log('Respuesta del servidor:', response);
         this.httpService.closeDialog();
+        
         Swal.fire({
           title: "Exito",
           text: "Archivo CSV Cargado Exitosamente",
           icon: "success"
+
         });
+        this.router.navigate(['Company/visualizaciondeinmuebles']);
         // Manejar la respuesta del servidor si es necesario
       },
       async (error) => {
