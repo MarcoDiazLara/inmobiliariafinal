@@ -11,7 +11,7 @@
     <div class="acordeon">
         <h3>Sube el archivo sin modificaciones desde la pagina oficial de Servico Postal Mexicano.</h3>
         <h3>Puedes consultarlo en la siguiente liga: <a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" target="_blank">https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx</a></h3>
-
+        <h3>Sube el archivo en la siguiente caja para generar archivos .csv y subirlos segun corresponda en el siguiente paso.</h3>
         <h3 class="warning">solo se admiten archivos con extencion .txt*</h3>
 
           <label for="images" class="drop-container" id="dropcontainer" (dragover)="handleDragOver($event)" (drop)="handleDrop($event)">
@@ -23,82 +23,79 @@
                 <mat-progress-bar class="progressbar" mode="determinate" [value]="progressValue" *ngIf="showProgressBar"></mat-progress-bar>
             </div>
           </label>
-          <div class="progressbar2">
+          <!-- <div class="progressbar2">
             <mat-progress-bar *ngIf="procesoEnCurso" [value]="progreso"></mat-progress-bar>
             <button class="custom-file-input" id="start" (click)="proceso()">Iniciar proceso</button>
-          </div>
+          </div> -->
+          <br>
+          <br>
 
-        <h2>hola</h2>
+        <h2>Sube los archivos .csv generados anteriormente en el orden correspondiente:</h2>
        
         <mat-accordion>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    Asentamiento
+                   1.- Estados
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".txt" required>
+                  <input type="file" id="images" accept=".csv" required>
                 </label>
-                <button class="custom-file-input" id="start">Iniciar proceso</button>
               </mat-expansion-panel>
        
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    Tipo de asentamiento
+                   2.- Municipios
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".txt" required>
+                  <input type="file" id="images" accept=".csv" required>
                 </label>
-                <button class="custom-file-input" id="start">Iniciar proceso</button>
               </mat-expansion-panel>
         
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    Código Postal
+                  3.- Tipo de Asentamientos
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".txt" required>
+                  <input type="file" id="images" accept=".csv" required>
                 </label>
-                <button class="custom-file-input" id="start">Iniciar proceso</button>
               </mat-expansion-panel>
        
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    Estados
+                   4.- Asentamientos
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".txt" required>
+                  <input type="file" id="images" accept=".csv" required>
                 </label>
-                <button class="custom-file-input" id="start">Iniciar proceso</button>
               </mat-expansion-panel>
       
             <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  Municipios
+                 5.- Códigos Postales
                 </mat-panel-title>
               </mat-expansion-panel-header>
                <label for="images" class="drop-container" id="dropcontainer">
                 <span class="drop-title">Arrastra el archivo aqui</span>
                 o
-                <input type="file" id="images" accept=".txt" required>
+                <input type="file" id="images" accept=".csv" required>
               </label>
-              <button class="custom-file-input" id="start">Iniciar proceso</button>
             </mat-expansion-panel>
     
           </mat-accordion> 
