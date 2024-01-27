@@ -24,7 +24,7 @@ export class WebComponent implements OnInit {
     this.router.navigate(["/login"], { replaceUrl: true });
   }
   
-  }
+  } 
 
 
 

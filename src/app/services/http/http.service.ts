@@ -859,5 +859,19 @@ export class HttpService {
 
   }
 
+  actualizarimagenes(picture1: any,picture2:any, picture3: any, picture4: any, picture5:any, id_inmu: any ){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Picture1=' + picture1 + '&p_Picture2=' + picture2 + '&p_Picture3=' + picture3 + '&p_Picture4=' + picture4
+    + '&p_Picture5=' + picture5 + '&p_Id_Inmueble=' + id_inmu;
+    return this.httpclient.post(this.url + 'sp_web_actualiza_img_cm.php', params, { headers });
+  }
+
+  publicarinmueble(p_prec_min: any, p_prec_max:any, p_prec_final:any, p_id_publ:any, p_id_inmue: any, p_id_Tipo:any,Id_Estatus_Publicacion: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_prec_min=' + p_prec_min + '&p_prec_max=' + p_prec_max + '&p_prec_final=' + p_prec_final + '&p_id_publ=' + p_id_publ
+    + '&p_id_inmue=' + p_id_inmue + '&p_id_Tipo=' + p_id_Tipo + '&Id_Estatus_Publicacion=' + Id_Estatus_Publicacion;
+    return this.httpclient.post(this.url + 'sp_web_publicarinmueble.php', params, { headers });
+  }
+
 }
 

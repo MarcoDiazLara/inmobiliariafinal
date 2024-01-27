@@ -3,21 +3,19 @@
     width: 80%;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
-    .contenedorbusca{
-        width: 30%;
-        height: 50vh;
-        float: left;
-    }
 
-    
-    .contenedorbusca2{
-        width: 70%;
-        height: 50vh;
-        float: left;
-    }
+}
+.contenedorbusca{
+  width: 30%;
+  height: 50vh;
+  float: left;
+}
 
-  
+
+.contenedorbusca2{
+  width: 70%;
+  height: 50vh;
+  float: left;
 }
 .text-center{
   margin-top: 6%;
@@ -64,5 +62,8 @@ section {
 .example-disabled {
   display: inline-block;
 }
+
+
+
 
 

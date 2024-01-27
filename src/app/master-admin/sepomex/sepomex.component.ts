@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { CsvService } from 'src/app/services/csv.service';
 
 
 
@@ -56,7 +57,8 @@ export class SepomexComponent implements OnInit {
   constructor(
     private router: Router,
     private httpService: HttpService,
-    private formBuilder: FormBuilder){}
+    private formBuilder: FormBuilder,
+    private csvService: CsvService){}
 
   ngOnInit(): void {
     
@@ -276,6 +278,7 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
     console.log("estados: ");
     console.log(estadosSinDuplicados);
     this.estadosUnicos = estadosSinDuplicados;
+    this.csvService.generateCSV(estadosSinDuplicados, 'estados.csv');
     console.log("municipios: ");
     console.log(municipiosSinDuplicados);
     this.municipiosUnicos = municipiosSinDuplicados;

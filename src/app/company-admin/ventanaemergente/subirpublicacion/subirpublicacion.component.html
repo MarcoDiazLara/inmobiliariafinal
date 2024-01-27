@@ -1,7 +1,7 @@
 <mat-dialog-content class="mat-typography">
 
 <div class="contenedorgeneral">
-    <form >
+    <form  [formGroup]="options">
         <div class="container-fluit">
             <div class="row">
      
@@ -116,7 +116,7 @@
                     <br>
                     <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
        
-                        <input   formControlName="img" class="form-control" accept="image/*" type="file" name="images" >
+                        <input   formControlName="img" class="form-control" accept="image/*" type="file" name="images" (change)="onFileChange($event)" multiple>
                      
                     </div>
                   </div>
@@ -126,6 +126,6 @@
 
 
     </form>
-
+<button (click)="Actualizar()">xd</button>
 </div>
 </mat-dialog-content>
