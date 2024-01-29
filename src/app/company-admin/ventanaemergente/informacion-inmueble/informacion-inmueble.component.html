@@ -246,7 +246,7 @@
       <div class="ordenainput col-md-4">
         <mat-form-field appearance="fill">
           <mat-label>Precio Maximo </mat-label>
-          <input matInput formControlName="Precio_Minimo" required [(ngModel)]="datos.Precio_Max">
+          <input type="number" matInput formControlName="Precio_Minimo" required [(ngModel)]="datos.Precio_Max">
           <mat-icon matSuffix>
             <img src="assets/img/valor-de-la-vivienda.png" alt="Icono" width="30" height="30">
           </mat-icon>
@@ -256,7 +256,7 @@
       <div class="ordenainput col-md-4">
         <mat-form-field appearance="fill">
           <mat-label>Precio Final </mat-label>
-          <input matInput formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">
+          <input type="number" matInput formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">
           <mat-icon matSuffix>
             <img src="assets/img/precioF.png" alt="Icono" width="30" height="30">
           </mat-icon>

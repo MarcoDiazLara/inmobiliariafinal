@@ -376,14 +376,12 @@
 
         <div class="example-container">
           <mat-form-field style="margin-right: 15px;">
-            <input formControlName="p_prec_min" matInput placeholder="Ingrese Precio minimo">
-
+            <input type="number" min="0" formControlName="p_prec_min" matInput placeholder="Ingrese Precio minimo" >
           </mat-form-field>
         </div>
         <div class="example-container">
           <mat-form-field style="margin-right: 15px;">
-            <input formControlName="p_prec_max" matInput placeholder="Ingrese Precio maximo">
-
+            <input type="number" min="0" formControlName="p_prec_max" matInput placeholder="Ingrese Precio maximo">
           </mat-form-field>
         </div>
       </div>
@@ -394,7 +392,7 @@
       <div style="display: flex; justify-content: center; align-items: center;">
         <div class="example-container">
           <mat-form-field>
-            <input formControlName="p_prec_final" matInput placeholder=" Precio Final">
+            <input type="number" min="0" formControlName="p_prec_final" matInput placeholder=" Precio Final">
           </mat-form-field>
         </div>
       </div>
