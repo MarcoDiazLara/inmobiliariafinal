@@ -1,8 +1,8 @@
-<div class="col-sm-9" style="border-color: black;" >
+<div class="container-general">
+<div class="col-md-12" style="border-color: black;" >
     <div class="card rounded-start rounded-end" *ngFor="let res of datos" 
-    style="border-color: #264D5E; margin-left:20%;margin-top:5px;  " >
-     
-          
+    style="border-color: #264D5E;margin-top:5px;  " >
+
           <div class="col-md-12" >
               <div class="card-body" >
                   <h5 class="card-title">{{res.Nombre_Inmueble}}</h5>
@@ -11,9 +11,9 @@
                   <p class="card-text">{{res.Nombres}}</p>
                   <button mat-raised-button (click)="openDialog(res.Id_Inmueble)"  color="#264D5E" class="contacto">Subir Imagenes</button>
               </div>
-         
-          
-      </div>
+        </div>
+       
+  </div>
   </div>
   </div>
 

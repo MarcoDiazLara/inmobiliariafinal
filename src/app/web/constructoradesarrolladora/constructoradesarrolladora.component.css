@@ -9,6 +9,10 @@
     margin: 10px; /* Margen entre las tarjetas */
   }
   
+  .container-fluit{
+    width: 100%;
+    justify-content: center;
+  }
   .card-content {
     padding: 20px; /* Espacio para el contenido de la tarjeta */
   }
