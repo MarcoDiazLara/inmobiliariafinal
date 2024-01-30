@@ -16,7 +16,7 @@ export class VisualizaciondeinmueblesComponent implements OnInit {
   constructor(private httpService: HttpService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.httpService.obtenerultimosinmu(17).subscribe((data:any)=>{
+    this.httpService.obtenerultimosinmu(localStorage.getItem("Id_Socio")).subscribe((data:any)=>{
       this.datos = data;
     })
 

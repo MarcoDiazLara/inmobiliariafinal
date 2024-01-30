@@ -80,6 +80,7 @@ export class SepomexComponent implements OnInit {
   tipoasentamientosUnicos: tipoasentamiento[] = [];
   asentamientosUnicos: asentamiento[] = [];
   codigosUnicos: codigosPostales[]=[];
+  asentamientos2:asentamiento[]=[];
 
 
 
@@ -233,7 +234,7 @@ this.Archivo.forEach(sepomex => {
     asentamiento: sepomex.d_asenta,
     tipoasentamiento: sepomex.c_tipo_asenta,
     zona: sepomex.d_zona,
-    CP: sepomex.d_CP
+    CP: sepomex.d_codigo
   };
 
   // Agregar el objeto Estado al array estados
@@ -281,15 +282,28 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
     this.csvService.generateCSV(estadosSinDuplicados, 'estados.csv');
     console.log("municipios: ");
     console.log(municipiosSinDuplicados);
+    this.csvService.generateCSV(municipiosSinDuplicados, 'municipios.csv');
     this.municipiosUnicos = municipiosSinDuplicados;
     console.log("Tipo de Asentamientos: ")
     console.log(tipoAsentamientoSinDuplicados);
+    this.csvService.generateCSV(tipoAsentamientoSinDuplicados, 'tipoAsentamientos.csv');
     this.tipoasentamientosUnicos = tipoAsentamientoSinDuplicados;
     console.log("Asentamientos: ");
     console.log(this.asentamientos);
+    this.asentamientos2 = this.asentamientos.map((asentamiento: asentamiento) => {
+      return {
+        asentamiento: asentamiento.asentamiento.replace(/,/g, '-'),
+        zona: asentamiento.zona.replace(/,/g, '-'),
+        tipoasentamiento: asentamiento.tipoasentamiento.replace(/,/g, '-'),
+        CP: asentamiento.CP.replace(/,/g, '-')
+      };
+    });
+
+    this.csvService.generateCSV(this.asentamientos2, 'Asentamientos.csv');
     this.asentamientosUnicos = this.asentamientos;
     console.log("Codigos Postales: ");
     console.log(CPSinDuplicados);
+    this.csvService.generateCSV(CPSinDuplicados, 'CodigosPostales.csv');
     this.codigosUnicos = CPSinDuplicados;
     
 
