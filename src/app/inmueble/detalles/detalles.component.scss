@@ -85,7 +85,7 @@ mat-list table h3 {
 .other, .Xtwiter, .facebook, .bookmark, .bookmarkfull{
   width: 30px;
   height: 30px;
-  vertical-align: middle; 
+ 
   padding-left: 30px; 
   margin: 0%;
 }
@@ -436,9 +436,14 @@ textarea {
 
 .content{
     text-align: right;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
 }
 
-.content .shareButton.main .share, .content .shareButton.main .close, .content .shareButton.main .check {
+.content .shareButton.main .share, 
+.content .shareButton.main .close,
+.content .shareButton.main .check {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -456,7 +461,7 @@ textarea {
           transform: rotate(90deg) scale(0);
 }
 
-.shareButton, .shareButton.open {
+.shareButton, .shareButton.open, .content .shareButton.main {
   border: none;
   border-radius: 50%;
   background: #959193;
@@ -474,6 +479,7 @@ textarea {
   -webkit-transform: scale(1);
           transform: scale(1);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  margin-left: 0.5rem;
 }
 .shareButton:hover, .shareButton.open:hover {
   -webkit-transform: scale(1.1) translateY(-3px);
@@ -509,19 +515,19 @@ textarea {
 }
 
 .fb, .tw, .ig {
-  width: 0;
-  height: 0;
+  width: auto;
+  height: auto;
   overflow: hidden;
-  padding: 0;
+  padding: 0.5rem;
   margin: 0;
   opacity: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 .fb svg, .tw svg, .ig svg {
-  width: 0;
-  height: 0;
-  opacity: 0;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
   -webkit-transform: scale(0);
           transform: scale(0);
 } 
