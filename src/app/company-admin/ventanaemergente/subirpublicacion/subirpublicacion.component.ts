@@ -148,5 +148,5 @@ export class SubirpublicacionComponent implements OnInit {
         console.log(response);
       });
   }
-
+ 
 }

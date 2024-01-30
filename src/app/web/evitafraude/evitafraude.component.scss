@@ -1,16 +1,16 @@
-.contenedorgeneral{
-    width: 100%;
-    height: auto;
-    margin-top: 2%;
-}
+// .contenedorgeneral{
+//     width: 100%;
+//     height: auto;
+//     margin-top: 2%;
+// }
 
-.contenedortext{
-    width: 70%;
-    height: auto;
-    float: left;
-    padding: 25px 25px 25px 25px;
-    text-align: justify;
-}
+// .contenedortext{
+//     width: 70%;
+//     height: auto;
+//     float: left;
+//     padding: 25px 25px 25px 25px;
+//     text-align: justify;
+// }
 
 .contenedorlogo{
     width: 30%;
@@ -27,6 +27,7 @@ h1{
     font-size: 25px;
     color: #264D5E;
     font-weight: bold;
+    justify-content: center;
 }
 
 .button-back{
@@ -34,4 +35,7 @@ h1{
     background-color: #264D5E;
     color: #ffffff;
 height: 50px;
+}
+p{
+    text-align: justify;
 }

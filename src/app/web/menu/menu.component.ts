@@ -165,19 +165,19 @@ export class MenuComponent implements OnInit {
   }
 
   BusqCompra(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000'} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'venta', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': '', 'FAnt':'', 'FPub':''} });
   }
 
   BusqRenta(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'renta', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': '', 'FAnt':'', 'FPub':''} });
   }
 
   BusqRemate(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'remate', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': '', 'FAnt':'', 'FPub':''} });
   }
 
   BusqDesarrollo(propiedad: string) {
-    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': this.PPrecioDesde, 'PrecioHasta': this.PPrecioHasta} });
+    this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': '', 'FAnt':'', 'FPub':''} });
   }
 
 }

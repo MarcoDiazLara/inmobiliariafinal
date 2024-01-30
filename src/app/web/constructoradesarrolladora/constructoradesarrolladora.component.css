@@ -9,6 +9,11 @@
     margin: 10px; /* Margen entre las tarjetas */
   }
   
+  .contenedorgeneral{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+  }
   .card-content {
     padding: 20px; /* Espacio para el contenido de la tarjeta */
   }

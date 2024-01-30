@@ -1,19 +1,24 @@
-<div class="col-sm-9" style="border-color: black;" >
+
+<div class="container-general">
+    <br>
+    <h1> Lista 
+         de Inmuebles</h1>
+<div class="col-md-12" style="border-color: black;" >
     <div class="card rounded-start rounded-end" *ngFor="let res of datos" 
-    style="border-color: #264D5E; margin-top:5px;  " >
-     
-          
+    style="border-color: #264D5E;margin-top:5px;  " >
+
           <div class="col-md-12" >
               <div class="card-body" >
-                  <h5 class="card-title">{{res.Nombre_Inmueble}}</h5>
-                  <p class="card-text gap-2">{{res.Calle}}</p>
-                  <p class="card-text">{{res.Num_Ext}}</p>
-                  <p class="card-text">{{res.Nombres}}</p>
-                  <button mat-raised-button (click)="openDialog(res.Id_Inmueble)"  color="#264D5E" class="contacto">Subir Imagenes</button>
-              </div>
-         
+                 <h5 class="card-title">{{res.Nombre_Inmueble}}</h5>
           
-      </div>
+                   <p class="card-text gap-2"> Calle: {{res.Calle}}</p>
+                  <p class="card-text"> Numero Exterior: {{res.Num_Ext}}</p>
+                  <p class="card-text"> Nombre: {{res.Nombres}}</p>
+                  <button mat-raised-button (click)="openDialog(res.Id_Inmueble)"  type="button" class="btn" style="background-color: #264D5E ; color: #ffffff;" >Subir Imagenes <i class="bi bi-cloud-arrow-up"></i> &nbsp; <i class="bi bi-card-image"></i></button>
+              </div>
+        </div>
+       
+  </div>
   </div>
   </div>
 
