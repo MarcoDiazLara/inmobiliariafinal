@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { CsvService } from 'src/app/services/csv.service';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -47,9 +48,11 @@ interface codigosPostales{
 
 
 
-
 export class SepomexComponent implements OnInit {
   
+
+  
+  selectedFiles: File[] = [];
   mostrarMensaje: boolean = false;
   progreso: number = 0;
   procesoEnCurso: boolean = false;
@@ -58,7 +61,8 @@ export class SepomexComponent implements OnInit {
     private router: Router,
     private httpService: HttpService,
     private formBuilder: FormBuilder,
-    private csvService: CsvService){}
+    private csvService: CsvService,
+    private https: HttpClient){}
 
   ngOnInit(): void {
     
@@ -526,4 +530,73 @@ console.log("incercion de codigos postales");
 
 
   }
+
+  serverUrlEstados: string = 'https://inmobiliaria.arvispace.com/servicios/cargaEstados.php';
+  serverUrlMunicipios: string = 'https://inmobiliaria.arvispace.com/servicios/cargaMunicipios.php';
+  serverUrlTipoAse:string = 'https://inmobiliaria.arvispace.com/servicios/CargaTipoAsentamiento.php';
+  serverUrlCP:string = 'https://inmobiliaria.arvispace.com/servicios/CargaCP.php';
+  serverUrlAsentamientos:string = 'https://inmobiliaria.arvispace.com/servicios/cargaAsentamientos.php';
+  serverUrl!: string;
+
+  handleFileInput(event: any,estado: any) {
+    this.selectedFiles = event.target.files;
+    console.log(this.selectedFiles);
+    this.uploadFile(estado);
+  
+  }
+
+  async uploadFile(estado: any) {
+    this.httpService.openasesor();
+  
+    if (this.selectedFiles.length > 0) {
+      const formData = new FormData();
+  
+      formData.append('dataCliente', this.selectedFiles[0]);
+      if(estado == 1){
+        this.serverUrl = this.serverUrlEstados;
+      }else if(estado == 2){
+        this.serverUrl = this.serverUrlMunicipios;
+      }else if(estado == 3){
+        this.serverUrl = this.serverUrlTipoAse;
+      }else if(estado == 4){
+        this.serverUrl = this.serverUrlCP;
+      }else if(estado == 5){
+        this.serverUrl = this.serverUrlAsentamientos;
+      }
+      this.https.post(this.serverUrl, formData).subscribe(
+        async (response) => {
+          console.log('Respuesta del servidor:', response);
+          this.httpService.closeDialog();
+          
+          Swal.fire({
+            title: "Exito",
+            text: "Archivo CSV Cargado Exitosamente",
+            icon: "success"
+  
+          });
+         
+          // Manejar la respuesta del servidor si es necesario
+        },
+        async (error) => {
+          console.error('Error en la solicitud POST:', error);
+          this.httpService.closeDialog();
+          Swal.fire({
+            icon: "error",
+            text: "Ocurrio un error al querer cargar archivo CSV",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+          // Manejar el error de la solicitud POST si es necesario
+        }
+      );
+    } else {
+      this.httpService.closeDialog();
+      Swal.fire(
+        'Aviso!',
+        'No se ha seleccionado un archivo CSV.',
+        'info'
+      )
+      // Manejar el caso donde no se ha seleccionado ningún archivo
+    }
+  }
+
 }

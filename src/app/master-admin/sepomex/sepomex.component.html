@@ -42,7 +42,7 @@
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".csv" required>
+                  <input (change)="handleFileInput($event,1)" type="file" id="images" accept=".csv" required>
                 </label>
               </mat-expansion-panel>
        
@@ -55,7 +55,7 @@
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".csv" required>
+                  <input (change)="handleFileInput($event,2)" type="file" id="images" accept=".csv" required>
                 </label>
               </mat-expansion-panel>
         
@@ -68,35 +68,37 @@
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".csv" required>
+                  <input (change)="handleFileInput($event,3)" type="file" id="images" accept=".csv" required>
+                </label>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                   4.- Códigos Postales
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                 <label for="images" class="drop-container" id="dropcontainer">
+                  <span class="drop-title">Arrastra el archivo aqui</span>
+                  o
+                  <input (change)="handleFileInput($event,4)" type="file" id="images" accept=".csv" required>
                 </label>
               </mat-expansion-panel>
        
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                   4.- Asentamientos
+                   5.- Asentamientos
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                  <label for="images" class="drop-container" id="dropcontainer">
                   <span class="drop-title">Arrastra el archivo aqui</span>
                   o
-                  <input type="file" id="images" accept=".csv" required>
+                  <input (change)="handleFileInput($event,5)" type="file" id="images" accept=".csv" required>
                 </label>
               </mat-expansion-panel>
       
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                 5.- Códigos Postales
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-               <label for="images" class="drop-container" id="dropcontainer">
-                <span class="drop-title">Arrastra el archivo aqui</span>
-                o
-                <input type="file" id="images" accept=".csv" required>
-              </label>
-            </mat-expansion-panel>
+            
     
           </mat-accordion> 
        
