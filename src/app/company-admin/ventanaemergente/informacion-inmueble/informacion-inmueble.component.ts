@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FloatLabelType } from '@angular/material/form-field';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
@@ -17,6 +17,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./informacion-inmueble.component.scss']
 })
 export class InformacionInmuebleComponent implements OnInit {
+
+  @Output() cerrado: EventEmitter<void> = new EventEmitter<void>();
+
+  cerrarModal() {
+    // Lógica para cerrar el modal
+    
+  }
 
   opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
   opcionSeleccionada: string = '';
@@ -91,7 +98,7 @@ export class InformacionInmuebleComponent implements OnInit {
 
   CerraDialogo() {
     this.dialog.closeAll();
-
+  
   }
 
   Actulizar() {
