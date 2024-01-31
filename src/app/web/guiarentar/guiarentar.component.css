@@ -144,7 +144,7 @@ h3{
 }
 
 p{
-  justify-content: center;
+  text-align: justify;
 }
 
 @media only screen and (max-width: 768px) {
