@@ -23,9 +23,6 @@ export class CompAsignaBrokerComponent implements OnInit {
 
   brokers: asignacionBro[] = [];
   Nombres: any;
-
-
-
   formGeneral!: FormGroup;
   loading = false;
   hide2 = true;
@@ -111,14 +108,14 @@ export class CompAsignaBrokerComponent implements OnInit {
       this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
         
         if (resp == 1) {
-        let tem_Usuarios: any=this.globalservice.usuarios$.value || []; 
-        let index = tem_Usuarios.findIndex((usu:any)=>usu.Id_Inmueble == resp.Id_Inmueble);
+        // let tem_Usuarios: any=this.globalservice.usuarios$.value || []; 
+        // let index = tem_Usuarios.findIndex((usu:any)=>usu.Id_Inmueble == resp.Id_Inmueble);
       
-        if (index != -1)
-        {
-        //  tem_Usuarios[index].Id_Inmueble =
-        this.globalservice.usuarios$.next(tem_Usuarios);
-        }
+        // if (index != -1)
+        // {
+        // //  tem_Usuarios[index].Id_Inmueble =
+        // this.globalservice.usuarios$.next(tem_Usuarios);
+        // }
       
           Swal.fire({
             title: "Exito!",
