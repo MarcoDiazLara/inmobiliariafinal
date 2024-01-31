@@ -40,8 +40,6 @@ export class EstatususuarioComponent implements OnInit {
 
   columnas: string[] = ['Nombre_Usuario','Tipo_Usuario','Estatus','botonOption'];
   
-
-
   // poner el nombre de una variable
   datosinventario: tblUsers[]=[];
   
@@ -67,7 +65,7 @@ export class EstatususuarioComponent implements OnInit {
 
     
       
-  this.obtenerInventario();
+  this.obtenerusuarios();
 
   }
   
@@ -76,7 +74,7 @@ export class EstatususuarioComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  obtenerInventario(){
+  obtenerusuarios(){
      let IdSocio = localStorage.getItem("Id_Socio");
 
 //  Llamas tu procedimiento 
@@ -120,6 +118,9 @@ export class EstatususuarioComponent implements OnInit {
       width: '300px',
       disableClose: true
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.obtenerusuarios();
+      });
   }
 
   openDialog(): void {
