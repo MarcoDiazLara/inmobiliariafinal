@@ -74,6 +74,8 @@ export class Inventarioadmin implements OnInit {
   }
   
   
+
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
@@ -119,7 +121,9 @@ export class Inventarioadmin implements OnInit {
       height: '70%',  
       disableClose: true
     });
-
+    dialogRef.afterClosed().subscribe(result => {
+    this.obtenerInventario();
+    });
 
  
   }
