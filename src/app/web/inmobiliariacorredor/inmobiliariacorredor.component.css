@@ -9,6 +9,10 @@ h1 {
 
 }
 
+p{
+  text-align: left;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 1.5em; /* Tamaño del título para pantallas más pequeñas */
