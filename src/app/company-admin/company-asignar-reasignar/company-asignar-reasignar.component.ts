@@ -1,6 +1,6 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule} from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http/http.service';
 import { AsignacionBroker } from 'src/app/services/Interface/Interfaces';
@@ -78,8 +78,13 @@ export class CompanyAsignarReasignarComponent implements OnInit {
 
   }
 
+  // ngAfterViewChecked(){
+  //   this.obtenerUsuarios();
+  // }
+
   
   ngAfterViewInit() {
+    this.obtenerUsuarios();
     this.dataSource.paginator = this.paginator;
   }
  
@@ -153,22 +158,25 @@ localStorage.setItem("Id_Inmueble",id_inmo);
       height: 'auto',
       disableClose: true
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.obtenerUsuarios();
+      });
   }
 
 
-  openDialog(): void {
-    this.dialog.closeAll();
-    //this.httpService.setGlobalVariable(false);
-    const itemsToRemove =[
-      "id_publicacion",
-      "mi_valor",
-      "Asesor",
-    ];
-    itemsToRemove.forEach( item => {
-      localStorage.removeItem(item);
-    })
+  // openDialog(): void {
+  //   this.dialog.closeAll();
+  //   //this.httpService.setGlobalVariable(false);
+  //   const itemsToRemove =[
+  //     "id_publicacion",
+  //     "mi_valor",
+  //     "Asesor",
+  //   ];
+  //   itemsToRemove.forEach( item => {
+  //     localStorage.removeItem(item);
+  //   })
 
-  }
+  // }
 
 }
 
