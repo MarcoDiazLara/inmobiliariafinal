@@ -154,6 +154,11 @@ export class BrokersAsignarReasignarComponent implements OnInit {
       height: 'auto',
       disableClose: true
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.obtenerUsuarios();
+      });
+
+
   }
 
 

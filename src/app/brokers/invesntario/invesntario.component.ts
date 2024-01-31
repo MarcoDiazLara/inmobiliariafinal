@@ -122,6 +122,9 @@ export class InvesntarioComponent implements OnInit {
       height: '70%',    
       disableClose: true
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.obtenerInventario();
+      });
   }
 
   openDialog(): void {
