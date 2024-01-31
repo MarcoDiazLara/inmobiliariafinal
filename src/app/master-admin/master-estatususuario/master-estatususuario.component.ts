@@ -110,6 +110,9 @@ export class MasterEstatususuarioComponent implements OnInit {
       disableClose: true
 
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.obtenerInventario();
+      });
   }
 
   openDialog(): void {
