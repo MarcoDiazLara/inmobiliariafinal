@@ -22,7 +22,7 @@ export class BrokersComponent implements OnDestroy {
     // ''{ name: "Notificaciones", route: "notificacionbroker", icon: "notifications", label: "Notificaciones", number: '0', onClick:this.xd },''
     { name: "fechashito", route: "fechashito", icon: "event", label: "Fechas Hito ", number: '0', onClick:this.xd },
     { name: "Asignar-reasignar", route: "asignar-reasignar", icon: "groups", label: "Asignar Reasignar", number: '0', onClick:this.xd },
-    { name: "Calendario", route: "calendario", icon: "date_range", label: " Agenda", number: '0', onClick:this.xd },
+    // { name: "Calendario", route: "calendario", icon: "date_range", label: " Agenda", number: '0', onClick:this.xd },
     { name: "Inventario", route: "invesntario", icon: "inventory", label: "Inventario", number: '0' , onClick:this.xd},
     // { name: "Asignar Users", route: "asignarUsers", icon: "group", label: "Asignar Reasignar Usuarios", number: '0' , onClick:this.xd},
      { name: "Catalogoinmueble", route: "catalogoinmueble", icon: "collections_bookmark", label: "Sube tu Catalogo de Inmueble", number: '0' , onClick:this.xd },
