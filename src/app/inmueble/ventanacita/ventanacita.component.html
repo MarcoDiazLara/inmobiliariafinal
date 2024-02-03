@@ -156,7 +156,7 @@
     
           <mat-form-field style="margin: 10px;">
             <mat-label>Fecha</mat-label>
-            <input formControlName="p_Fecha" matInput [matDatepicker]="picker">
+            <input formControlName="p_Fecha" matInput [matDatepicker]="picker" [matDatepickerFilter]="weekendFilter">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -164,7 +164,7 @@
     
           <mat-form-field style="margin: 10px;">
             <mat-label>Hora de la Cita</mat-label>
-            <input formControlName="p_Hora" matInput type="time">
+            <input formControlName="p_Hora" matInput type="time"  >
           </mat-form-field>
     
         </div>

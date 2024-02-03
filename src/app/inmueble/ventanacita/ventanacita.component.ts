@@ -50,7 +50,7 @@ export class VentanacitaComponent implements OnInit {
   secondFormGroup!:FormGroup;
   terceroFormGroup!:FormGroup;
   isLoggedIn: boolean = false;
-
+  entrada: boolean = false;
 
   isLinear = false;
 
@@ -73,7 +73,11 @@ export class VentanacitaComponent implements OnInit {
 
 
         
-
+   weekendFilter = (d: Date | null): boolean => {
+    const day = (d || new Date()).getDay();
+    // Solo permitir días de lunes a viernes (0 a 5)
+    return day !== 0 && day !== 6;
+  }
 
 
 
@@ -103,7 +107,14 @@ export class VentanacitaComponent implements OnInit {
       p_Hora:['',[Validators.required]],
 
      })
-
+      
+     this.terceroFormGroup.get('p_Hora')?.valueChanges.subscribe((hora: string) => {
+      if (hora < '09:00' || hora > '18:00') {
+        this.entrada = true;
+      }else{
+        this.entrada = false;
+      }
+    });
 
     this.httpService.mostrarContacto().subscribe((data:any)=>{
       this.medioC=data;
@@ -111,6 +122,7 @@ export class VentanacitaComponent implements OnInit {
   }
   p_Id_Usuario!: string |null;
   open(){
+    
     //let p_nom_inmueble = this.tercerFormGroup.value.p_nom_inmu;
     let p_Nombre=this.firstFormGroup.value.p_Nombre;
     let p_Email=this.firstFormGroup.value.p_Email;
@@ -144,45 +156,55 @@ export class VentanacitaComponent implements OnInit {
 
 
   let p_Id_Publicacion=localStorage.getItem("Publicacion");
-  console.log(p_Id_Publicacion);
+  
 
   // let nom_aux= "2023"+"-"+ "09"+ "-" +"09";
 
  let nom_aux =  anio  +"-"+ mes1  +  "-"+ dia1;
-   
-  // console.log(nom_aux);
-    //     console.log("Nombre: "+p_Nombre+"Email: "+p_Email+"Telefono: "+p_Telefono+"Contacto: "+p_Id_Medio_Contacto
-    // +"Mensaje: "+p_Mensaje+"Fecha: "+nom_aux+"Hora: "+p_Hora+ "id_Uduario: "+ p_Id_Usuario + "id_Pub: "+p_Id_Publicacion);
-  this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.p_Id_Usuario).subscribe((resp:any)=>{
-    console.log("Respuesta del servicio:", resp);
-    if (resp==1){
-      let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
-        // alert("Se Agendo Cita")
-        this.httpService.Notis(mensaje, localStorage.getItem("Publicador")).subscribe((resp: any) =>{
+ console.log(this.p_Id_Usuario);
+ 
+   if(this.entrada == false){
+    this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.p_Id_Usuario).subscribe((resp:any)=>{
+      console.log("Respuesta del servicio:", resp);
+      if (resp==1){
+        let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
+          // alert("Se Agendo Cita")
+          this.httpService.Notis(mensaje, localStorage.getItem("Publicador")).subscribe((resp: any) =>{
+            
+          })
+  
+          Swal.fire(
+            'Exitosamente!',
+            'Se ha registrado una cita en el sistema',
+            'success'
+            
+          )
+          this.CerraDialogo();
           
+         } else{
+         //alert("No se agendo")
+         Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No se agendo',
+         
         })
-
-        Swal.fire(
-          'Exitosamente!',
-          'Se ha registrado una cita en el sistema',
-          'success'
-          
-        )
-        this.CerraDialogo();
-        
-       } else{
-       //alert("No se agendo")
-       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'No se agendo',
-       
-      })
-       }
-
-  }, (err) => {
-    console.log(err);
-  })
+         }
+  
+    }, (err) => {
+      console.log(err);
+    })
+  
+  
+   }else{
+    
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'La hora de la cita debe estar entre las 09:00 y las 18:00.',
+     
+    })
+   }
 
   }
 
