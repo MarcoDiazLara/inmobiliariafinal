@@ -19,6 +19,7 @@ export class CargadeinmueblesComponent implements OnInit {
   formGeneral!: FormGroup;
   // 
   selectedFile: File | null = null;
+  sesion: boolean = false;
 
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
@@ -31,7 +32,7 @@ export class CargadeinmueblesComponent implements OnInit {
   }
   downloadFile(): void {
   
-    const urlWhatsApp = "https://inmobiliaria.arvispace.com/servicios/Inmuebles.csv";
+    const urlWhatsApp = "https://inmobiliaria.arvispace.com/servicios/Inmuebles.xlsx";
   
 
      // Abre la URL de WhatsApp en una nueva ventana
@@ -54,6 +55,7 @@ constructor(
   private router: Router
 ) { }
 ngOnInit(): void {
+  this.sesion = this.httpService.getGlobalVariable();
   this.formGeneral = this.formBuilder.group({
     descarga: ['', [Validators.required]],
   });
@@ -62,7 +64,15 @@ ngOnInit(): void {
 handleFileInput(event: any) {
   this.selectedFiles = event.target.files;
   console.log(this.selectedFiles);
+  if(this.sesion){
   this.uploadFile();
+  }else{
+    Swal.fire({
+      icon: "error",
+      text: "Inicia sesion para usar esta funcion",
+      
+    });
+  }
 
 }
 async uploadFile() {
@@ -92,7 +102,7 @@ async uploadFile() {
         Swal.fire({
           icon: "error",
           text: "Ocurrio un error al querer cargar archivo CSV",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          
         });
         // Manejar el error de la solicitud POST si es necesario
       }

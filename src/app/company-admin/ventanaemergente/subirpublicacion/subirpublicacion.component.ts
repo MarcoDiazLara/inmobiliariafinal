@@ -88,15 +88,13 @@ export class SubirpublicacionComponent implements OnInit {
   }
 
   Actualizar(){
+
+    if(this.selectedImages.length == 5 ){
     let date = new Date();
     this.subir_imagenes();
-    let prec_min = this.options.value.Precio_Minimo;
-    let prec_max = this.options.value.Precio_Maximo;
-    let prec_final = this.options.value.Precio_Final;
-    let estatus = this.options.value.pId_Estatus_Inmueble;
-    let tipoPubli = this.options.value.pId_Tipo_Publicacion;
+   
     let id_inmueble = localStorage.getItem("idAux");
-    let id_Usuario = localStorage.getItem("Id_Usuario");
+
     
     let dia = date.getDate();
     let dia1 = date.getDate().toString();;
@@ -119,15 +117,22 @@ export class SubirpublicacionComponent implements OnInit {
     let p_pic_5 = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + this.selectedImages[4].name;
 
     this.httpService.actualizarimagenes(p_pic_1,p_pic_2,p_pic_3,p_pic_4,p_pic_5,id_inmueble).subscribe((data:any)=>{
+      Swal.fire({
+        title: "Exito",
+        text: "Inmueble actualizado y publicado",
+        icon: "success"
+
+      });
+      this.CerraDialogo();
       
     })
-    this.httpService.publicarinmueble(prec_min,prec_max,prec_final,id_Usuario,id_inmueble,tipoPubli,estatus).subscribe((data:any)=>{
-      Swal.fire({
-        title: "Felicidades!",
-        text: "Se ha actualizado tu inmueble!",
-        icon: "success"
-      });
-    })
+  }else{
+    Swal.fire({
+      icon: "error",
+      text: "Son necesarias solo 5 imagenes",
+      
+    });
+  }
     
   }
   selectedImages!: FileList;

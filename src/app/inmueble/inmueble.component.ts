@@ -311,6 +311,7 @@ export class InmuebleComponent implements OnInit {
 
 
   subirInmueble() {
+    if(this.selectedImages.length == 5){
     let date = new Date();
 
     this.subir_imagenes();
@@ -402,7 +403,12 @@ export class InmuebleComponent implements OnInit {
 
           })
         }
-      })
+      })}else{
+        Swal.fire({
+          icon: "error",
+          text: "Son necesarias solo 5 imagenes",
+        });
+      }
   }
 
 

@@ -26,6 +26,11 @@ export class VisualizaciondeinmueblesComponent implements OnInit {
     localStorage.setItem("idAux", id);
     const dialogRef = this.dialog.open(SubirpublicacionComponent, {
    });
+   dialogRef.afterClosed().subscribe(result => {
+    this.httpService.obtenerultimosinmu(localStorage.getItem("Id_Socio")).subscribe((data:any)=>{
+      this.datos = data;
+    })
+    });
    
 
 }

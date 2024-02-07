@@ -1,118 +1,18 @@
 <mat-dialog-content class="mat-typography">
 
 <div class="contenedorgeneral">
+  <p>Solo aceptamos 5 imagenes, las 5 son obligatorias</p>
     <form  [formGroup]="options">
         <div class="container-fluit">
             <div class="row">
      
-                <h1 class="text-center"> Precio <i class="bi bi-currency-dollar">
-                    <i class="bi bi-houses"></i>
-                  </i> </h1>
-                <hr>
-                <br>
-                <div class="ordenainput col-md-4">
-                    <mat-form-field appearance="fill">
-                      <mat-label>Precio Minimo</mat-label>
-                      <input matInput formControlName="Precio_Maximo" required >
-                      <mat-icon matSuffix>
-                        <img src="assets/img/valor-de-la-vivienda.png" alt="Icono" width="30" height="30">
-                      </mat-icon>
-                    </mat-form-field>
-                  </div>
+               
             
-                  <div class="ordenainput col-md-4">
-                    <mat-form-field appearance="fill">
-                      <mat-label>Precio Maximo </mat-label>
-                      <input matInput formControlName="Precio_Minimo" required >
-                      <mat-icon matSuffix>
-                        <img src="assets/img/valor-de-la-vivienda.png" alt="Icono" width="30" height="30">
-                      </mat-icon>
-                    </mat-form-field>
-                  </div>
-            
-                  <div class="ordenainput col-md-4">
-                    <mat-form-field appearance="fill">
-                      <mat-label>Precio Final </mat-label>
-                      <input matInput formControlName="Precio_Final" required>
-                      <mat-icon matSuffix>
-                        <img src="assets/img/precioF.png" alt="Icono" width="30" height="30">
-                      </mat-icon>
-                    </mat-form-field>
-                  </div>
-                  <hr>
-                  <h1 class="text-center"> Estatus </h1>
-                  <hr>
-                  <!-- <div class="ordenainput col">
-                    <mat-form-field style="margin-right: 10px;">
-                        <mat-label>Estatus publicacion </mat-label>
-                        <mat-select formControlName="estatus">
-                          <mat-option 
-                            value>Estado
-                        
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-
-                      <div class="ordenainput col">
-                        <mat-form-field style="margin-right: 10px;">
-                            <mat-label> Tipo de publicacion</mat-label>
-                            <mat-select formControlName="Tipo_Publicacion">
-                              <mat-option  
-                                value>
-                              </mat-option>
-                            </mat-select>
-                          </mat-form-field>
-                       
-                    </div>
-                   
-                </div> -->
+                  
                    
 
-                
-                <div class="ordenainput col-md-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label> Estatus de Publicacion</mat-label>
-                        <mat-select [(value)]="opcionSeleccionada" formControlName="pId_Estatus_Inmueble">
-                          <mat-option *ngFor="let opcion of  EstatusInmuebles" [value]="opcion.Id_Estatus_Publicacion">{{
-                            opcion.Estatus_Publicacion }}</mat-option>
-                        </mat-select>
-                        <mat-icon matSuffix>
-                          <img src="assets/img/edificios.png" alt="Icono" width="30" height="30">
-                        </mat-icon>
-                      </mat-form-field>
-                    <!-- <mat-form-field style="margin-right: 10px;">
-                        <mat-label>Estatus publicacion </mat-label>
-                        <mat-select formControlName="pId_Estatus_Inmueble">
-                          <mat-option 
-                            value>
-                        
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field> -->
-
-                  </div>
-            
-                  <div class="ordenainput col-md-4">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <mat-radio-group aria-label="Select an option" formControlName="pId_Tipo_Publicacion">
-                            <br>
-                          <mat-radio-button color="primary" style="margin-right: 10px;" value="1">Vender</mat-radio-button>
-                          <mat-radio-button color="primary" style="margin-right: 10px;" value="2">Rentar</mat-radio-button>
-                          <mat-radio-button color="primary" style="margin-right: 10px;" value="3">Remate</mat-radio-button>
-                          <mat-radio-button color="primary" style="margin-right: 10px;" value="4">Desarrollos</mat-radio-button>
-                        </mat-radio-group>
-                      </div>
-                    <!-- <mat-form-field style="margin-right: 10px;">
-                        <mat-label> Tipo de publicacion</mat-label>
-                        <mat-select formControlName="Tipo_Publicacion">
-                          <mat-option  
-                            value>
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field> -->
-                 
-                  </div>
-                  <div class="ordenainput col-md-4">
+                  
+                  <div class="ordenainput col-md-12">
                     <br>
                     <div class="grid w-full max-w-xs items-center gap-1, d-flex justify-content-center align-items-center">
        

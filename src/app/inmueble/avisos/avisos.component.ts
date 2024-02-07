@@ -60,8 +60,11 @@ export class AvisosComponent  {
 
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+      this.httpService.obtenerPublis(localStorage.getItem("Id_Usuario")).subscribe((data:any) =>{
+        this.inmuebles1 = data;
+      })
+      });
+    
 
 
   }
