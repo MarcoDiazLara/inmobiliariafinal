@@ -17,6 +17,7 @@ import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
 import { CargausuariosComponent } from './cargausuarios/cargausuarios.component';
 import { CargadeinmueblesComponent } from './cargadeinmuebles/cargadeinmuebles.component';
 import { VisualizaciondeinmueblesComponent } from './visualizaciondeinmuebles/visualizaciondeinmuebles.component';
+import { HistorialComponent } from './historial/historial.component';
 
 
 const routes: Routes = [
@@ -93,6 +94,10 @@ const routes: Routes = [
       {
         path: 'visualizaciondeinmuebles',
         component:VisualizaciondeinmueblesComponent
+      },
+      {
+        path: 'historial',
+        component: HistorialComponent
       }
     ]
   }

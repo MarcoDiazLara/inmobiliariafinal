@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
+import { MatSelectChange } from '@angular/material/select';
 import { HttpService } from 'src/app/services/http/http.service';
 import { SolicitudCambio } from 'src/app/services/Interface/Interfaces';
 
@@ -63,6 +64,15 @@ export class CambioasesorComponent implements OnInit {
     });
 
   }
+  id!: any;
+  obtenerValores(event: MatSelectChange) {
+    const nombrePublicacionSeleccionada = event.value;
+    const solicitudSeleccionada = this.solicitud.find(solict => solict.Nombre_Publicacion === nombrePublicacionSeleccionada);
+    if (solicitudSeleccionada) {
+        this.id = solicitudSeleccionada.Id_Inmueble;
+        // Realiza las acciones que necesites con nombrePublicacionSeleccionada y otroValor
+    }
+}
 
 
   Guardardatos() {
@@ -89,10 +99,10 @@ export class CambioasesorComponent implements OnInit {
       ;
 
       let motivosolicitud = this.formGeneral.value.motivosolicitud;
-      let mensaje = motivosolicitud + "Inmueble: " + Inmueble + "Fecha: " + nom_aux;
+      let mensaje = "Cambio de Asesor: " + motivosolicitud + " Inmueble: " + Inmueble + " Fecha: " + nom_aux;
+    
 
-
-      this.httpService.Notis(mensaje, this.obtener).subscribe((resp: any) => {
+      this.httpService.Notis(mensaje, this.obtener, this.id).subscribe((resp: any) => {
 
         Swal.fire({
           title: "Exito!",

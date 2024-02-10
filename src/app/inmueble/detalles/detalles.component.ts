@@ -5,6 +5,7 @@ import { sendCorreo } from 'src/app/services/Interface/Interfaces';
 import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import Swal from 'sweetalert2';
+import { informacionAsesorAsignado } from 'src/app/services/Interface/Interfaces';
 
 
 
@@ -25,6 +26,8 @@ export interface DialogData {
 })
 export class DetallesComponent implements OnInit {
   esFavorito: boolean = false;
+  asesor!: informacionAsesorAsignado;
+  entradaAsesor : boolean = false;
 
   toggleFavorito() {
     
@@ -82,6 +85,8 @@ Id_real!: string;
     
     });
 
+  
+
     this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
      
     this.details = resp[0];
@@ -107,10 +112,18 @@ Id_real!: string;
         }   
       })
     }
-
+    console.log(this.Id_real);
     this.httpService.verificamodelado(this.Id_real).subscribe((data:any)=>{
       if(data == "1"){
         this.modelado = !this.modelado;
+      }
+    })
+
+    this.httpService.informacionAsesor(this.Id_real).subscribe((data:any)=>{
+      console.log(data);
+      if(data != "0"){
+        this.asesor = data[0];
+        this.entradaAsesor = !this.entradaAsesor;
       }
     })
   
@@ -181,7 +194,7 @@ Id_real!: string;
     // Si no se puede abrir, redirige a la tienda de aplicaciones
     let temporizador = setTimeout(function() {
       // Redirige a la tienda de aplicaciones si no se abrió la aplicación
-      window.location.href = "https://play.google.com/store/apps/details?id=me.pou.app";
+      window.location.href = "https://play.google.com/store/apps/details?id=com.MindFly.ArviSpaceEcommerce";
   }, 500);
 
   // Agrega un evento de manejo para el caso de éxito (la aplicación se abrió)
@@ -222,13 +235,37 @@ Id_real!: string;
     if (!this.nombre || !this.telefono || !this.email) {
       Swal.fire('Por favor complete todos los campos obligatorios antes de enviar el formulario.');
   } else{
-    
+    //Para mandar la notificacion al dueño y al asesor asignado
+    if(this.entradaAsesor){
+      let correo = this.details.Email;
+    let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+    this.httpService.EnviarCorreo(this.asesor.Email,mensaje).subscribe((data: any) =>{
+      let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`
+      let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
+      
+      this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real ).subscribe((data:any)=>{
+
+      })
+      this.httpService.Notis(mensaje2, this.asesor.Id_Usuario, this.Id_real ).subscribe((data:any)=>{
+
+      })
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Enviado',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    })
+    }else{
     let correo = this.details.Email;
     let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
     this.httpService.EnviarCorreo(correo,mensaje).subscribe((data: any) =>{
-      let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`
+      let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`;
       
-      this.httpService.Notis(mensaje2, this.id_usuario ).subscribe((data:any)=>{
+      
+      this.httpService.Notis(mensaje2, this.id_usuario, this.Id_real ).subscribe((data:any)=>{
 
       })
 
@@ -241,6 +278,7 @@ Id_real!: string;
       })
     })
    }
+  }
 
   }
 
@@ -249,18 +287,37 @@ Id_real!: string;
     if (!this.nombre || !this.telefono || !this.email) {
       Swal.fire('Por favor complete todos los campos obligatorios antes de enviar el formulario.');
   } else{
+
+    if(this.entradaAsesor){
+      const numeroTelefono = this.asesor.Contacto_Principal;
+      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+      let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
+      const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+      let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
+      this.httpService.Notis(mensaje2, this.asesor.Id_Usuario, this.Id_real ).subscribe((data:any)=>{
+
+      })
+      this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real ).subscribe((data:any)=>{
+
+      })
+  
+       // Abre la URL de WhatsApp en una nueva ventana
+      window.open(urlWhatsApp, '_blank');
+  
+    }else{
       
       const numeroTelefono = this.details.Contacto_Principal;
       const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
       let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
-      this.httpService.Notis(mensaje2, this.id_usuario ).subscribe((data:any)=>{
+      this.httpService.Notis(mensaje2, this.id_usuario, this.Id_real ).subscribe((data:any)=>{
 
       })
   
        // Abre la URL de WhatsApp en una nueva ventana
       window.open(urlWhatsApp, '_blank');
   }
+}
 
   }
 
@@ -275,6 +332,7 @@ Id_real!: string;
   openDialog(): void {
     
       localStorage.setItem("Publicacion",this.details.Id_Publicacion);
+      localStorage.setItem("inmue", this.Id_real);
       localStorage.setItem("Publicador", this.details.Id_Usuario);
       const dialogRef = this.dialog.open(VentanacitaComponent, {
 

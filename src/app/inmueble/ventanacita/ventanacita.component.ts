@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpService } from 'src/app/services/http/http.service';
 import { medioC } from 'src/app/services/Interface/Interfaces';
 import Swal from 'sweetalert2';
+import { informacionAsesorAsignado } from 'src/app/services/Interface/Interfaces';
 
 
 
@@ -53,6 +54,9 @@ export class VentanacitaComponent implements OnInit {
   entrada: boolean = false;
 
   isLinear = false;
+
+  asesor!: informacionAsesorAsignado;
+  entradaAsesor : boolean = false;
 
   
 
@@ -107,9 +111,17 @@ export class VentanacitaComponent implements OnInit {
       p_Hora:['',[Validators.required]],
 
      })
+
+     this.httpService.informacionAsesor(localStorage.getItem("inmue")).subscribe((data:any)=>{
+      console.log(data);
+      if(data != "0"){
+        this.asesor = data[0];
+        this.entradaAsesor = !this.entradaAsesor;
+      }
+    })
       
      this.terceroFormGroup.get('p_Hora')?.valueChanges.subscribe((hora: string) => {
-      if (hora < '09:00' || hora > '18:00') {
+      if (hora < '09:00' || hora > '17:30') {
         this.entrada = true;
       }else{
         this.entrada = false;
@@ -164,12 +176,50 @@ export class VentanacitaComponent implements OnInit {
  console.log(this.p_Id_Usuario);
  
    if(this.entrada == false){
+    if(this.entradaAsesor){
+      this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.asesor.Id_Usuario).subscribe((resp:any)=>{
+        console.log("Respuesta del servicio:", resp);
+        if (resp==1){
+          let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
+            // alert("Se Agendo Cita")
+
+            this.httpService.Notis(mensaje, this.asesor.Id_Usuario, localStorage.getItem("inmue")).subscribe((resp: any) =>{
+              
+            })
+
+            this.httpService.Notis("Han agendado una cita para tu inmueble el "+nom_aux+", pronto tu asesor se comunicara contigo", localStorage.getItem("Publicador"), localStorage.getItem("inmue")).subscribe((resp: any) =>{
+              
+            })
+    
+            Swal.fire(
+              'Exitosamente!',
+              'Se ha registrado una cita en el sistema',
+              'success'
+              
+            )
+            this.CerraDialogo();
+            
+           } else{
+           //alert("No se agendo")
+           Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No se agendo',
+           
+          })
+           }
+    
+      }, (err) => {
+        console.log(err);
+      })
+    
+    }else{
     this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.p_Id_Usuario).subscribe((resp:any)=>{
       console.log("Respuesta del servicio:", resp);
       if (resp==1){
         let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
           // alert("Se Agendo Cita")
-          this.httpService.Notis(mensaje, localStorage.getItem("Publicador")).subscribe((resp: any) =>{
+          this.httpService.Notis(mensaje, localStorage.getItem("Publicador"), localStorage.getItem("inmue")).subscribe((resp: any) =>{
             
           })
   
@@ -195,13 +245,13 @@ export class VentanacitaComponent implements OnInit {
       console.log(err);
     })
   
-  
+    }
    }else{
     
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'La hora de la cita debe estar entre las 09:00 y las 18:00.',
+      text: 'La hora de la cita debe estar entre las 09:00 y las 17:30.',
      
     })
    }

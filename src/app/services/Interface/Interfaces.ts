@@ -234,7 +234,7 @@ export interface inmobiliaria {
 
 export interface SolicitudCambio {
     Id_Usuario: "",
-    Id_Publicacion: "",
+    Id_Inmueble: "",
     Nombre_Publicacion: "",
     Nombre_Usuario: "",
     Id_Socio: ""
@@ -534,4 +534,10 @@ export interface duenosCM{
     Nombres: "",
     Apellido_Paterno: "",
     Apellido_Materno: ""
+}
+
+export interface informacionAsesorAsignado{
+    Contacto_Principal:"",
+    Email: "",
+    Id_Usuario: ""
 }

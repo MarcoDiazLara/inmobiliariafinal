@@ -64,6 +64,8 @@ import { CargadeinmueblesComponent } from './cargadeinmuebles/cargadeinmuebles.c
 import { VisualizaciondeinmueblesComponent } from './visualizaciondeinmuebles/visualizaciondeinmuebles.component';
 import { InfoinmuebleComponent } from './ventanaemergente/infoinmueble/infoinmueble.component';
 import { SubirpublicacionComponent } from './ventanaemergente/subirpublicacion/subirpublicacion.component';
+import { HistorialComponent } from './historial/historial.component';
+import { HistorialNotisComponent } from './ventanaemergente/historial-notis/historial-notis.component';
 
 
 
@@ -99,7 +101,9 @@ registerLocaleData(localeEs);
     CargadeinmueblesComponent,
     VisualizaciondeinmueblesComponent,
     InfoinmuebleComponent,
-    SubirpublicacionComponent
+    SubirpublicacionComponent,
+    HistorialComponent,
+    HistorialNotisComponent
 
     
 

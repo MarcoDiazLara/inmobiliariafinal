@@ -43,7 +43,7 @@ export class CalendarioComponent implements AfterViewInit {
 
     calendar.render(); // Renderiza el calendario antes de obtener las citas
 
-    this.httpService.mostrarCita(localStorage.getItem('Id_Usuario')).subscribe(
+    this.httpService.citasAsesor(localStorage.getItem('Id_Usuario')).subscribe(
       (data: any) => {
         this.Mcita = data;
 
