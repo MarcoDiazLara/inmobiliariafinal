@@ -1,5 +1,32 @@
 
-<button (click)="CerraDialogo()">hola</button>
+
+<div class="barraFiltros"> 
+    <h3>Filtrar por:</h3>
+    <h4>Fecha: </h4>
+        <mat-form-field>
+            <mat-label>Elije una fecha</mat-label>
+            <div class="date-input-container">
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            </div>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      
+    <h4>Tipo: </h4>
+        <mat-form-field>
+            <mat-label>Select</mat-label>
+            <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    <button class="back" mat-stroked-button (click)="CerraDialogo()" style="color: white;" >Cerrar</button>
+
+</div>
+<mat-divider></mat-divider>
+
+
 <div id="notificationlist" class="notification-list-container">
 
     <div *ngIf="showNotificationList" class="notification-list">

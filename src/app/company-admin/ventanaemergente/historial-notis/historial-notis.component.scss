@@ -1,3 +1,8 @@
+h3, h4{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 .notification-list-container {
     margin: 20px;
     padding: 10px;
@@ -37,3 +42,33 @@
     color: #888;
     font-size: 12px;
 }
+
+
+.barraFiltros {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.back {
+    margin-left: 28%;
+    background-color: #264D5E;
+    border-color: #264D5E;
+    width: 35px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0%;
+}
+.back h3{
+    margin-right: 5px;
+}
+
+
+.date-input-container {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;     
+  }
+  
+
+
