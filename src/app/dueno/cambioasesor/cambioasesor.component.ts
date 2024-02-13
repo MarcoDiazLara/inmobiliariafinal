@@ -102,7 +102,7 @@ export class CambioasesorComponent implements OnInit {
       let mensaje = "Cambio de Asesor: " + motivosolicitud + " Inmueble: " + Inmueble + " Fecha: " + nom_aux;
     
 
-      this.httpService.Notis(mensaje, this.obtener, this.id).subscribe((resp: any) => {
+      this.httpService.Notis(mensaje, this.obtener, this.id,"2").subscribe((resp: any) => {
 
         Swal.fire({
           title: "Exito!",

@@ -541,3 +541,4 @@ export interface informacionAsesorAsignado{
     Email: "",
     Id_Usuario: ""
 }
+

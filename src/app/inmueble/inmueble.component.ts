@@ -386,7 +386,7 @@ export class InmuebleComponent implements OnInit {
 
           Swal.fire(
             'Exitosamente!',
-            'Se ha registrado tu inmueble exitosamente',
+            'Se ha registrado tu inmueble exitosamente, un encargado pronto validara tu inmueble y sera publico',
             'success'
 
           )

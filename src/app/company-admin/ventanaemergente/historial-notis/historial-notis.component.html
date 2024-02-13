@@ -6,7 +6,7 @@
         <mat-form-field>
             <mat-label>Elije una fecha</mat-label>
             <div class="date-input-container">
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" (dateChange)="onDateSelected($event)">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             </div>
             <mat-hint>MM/DD/YYYY</mat-hint>
@@ -16,9 +16,10 @@
     <h4>Tipo: </h4>
         <mat-form-field>
             <mat-label>Select</mat-label>
-            <mat-select>
-            <mat-option value="one">First option</mat-option>
-            <mat-option value="two">Second option</mat-option>
+            <mat-select (selectionChange)="onSelectTipo($event)">
+                <mat-option *ngFor="let inmo of tipo" value="{{ inmo.Id_tipo_notificacion}}">{{ inmo.Tipo_notificacion
+                }}
+              </mat-option>
             </mat-select>
         </mat-form-field>
     <button class="back" mat-stroked-button (click)="CerraDialogo()" style="color: white;" >Cerrar</button>

@@ -119,7 +119,7 @@ export class SubirpublicacionComponent implements OnInit {
     this.httpService.actualizarimagenes(p_pic_1,p_pic_2,p_pic_3,p_pic_4,p_pic_5,id_inmueble).subscribe((data:any)=>{
       Swal.fire({
         title: "Exito",
-        text: "Inmueble actualizado y publicado",
+        text: "Inmueble actualizado, un encargado pronto validara tu inmueble y sera publico",
         icon: "success"
 
       });

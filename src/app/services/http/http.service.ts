@@ -366,9 +366,10 @@ export class HttpService {
   //   let params = 'Id_Publicacion='+ p_id_publicacion;
   //   return this.httpclient.post(this.url + 'consultar_detalle_inmuebles_asesores.php', params, { headers }); 
   // }
-  Notis(p_mensje: any, id_publicador: any, id_inmueble: any) {
+  Notis(p_mensje: any, id_publicador: any, id_inmueble: any, p_id_tipo: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_mensje=' + p_mensje + '&id_publicador=' + id_publicador + '&id_inmueble=' + id_inmueble;
+    let params = 'p_mensje=' + p_mensje + '&id_publicador=' + id_publicador + '&id_inmueble=' + id_inmueble+
+    '&p_id_tipo=' + p_id_tipo;
     return this.httpclient.post(this.url + 'creaNotificacion.php', params, { headers });
   }
 
@@ -883,6 +884,24 @@ export class HttpService {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_id_usuario=' + p_id_usuario;
     return this.httpclient.post(this.url + 'sp_web_citasAsesor.php', params, { headers });
+  }
+
+  historial(p_Id_Inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_historialinmu.php', params, { headers });
+  }
+
+  tipoNoti(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'asdfghjkl';
+    return this.httpclient.post(this.url + 'sp_web_tipoNoti.php', params, { headers });
+  }
+
+  filtrohistorial(p_fecha: any, p_tipo:any, p_id_inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = "p_fecha=" + p_fecha + "&p_tipo=" + p_tipo + "&p_id_inmueble=" + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_filtroshistorial.php', params, { headers });
   }
 
 }

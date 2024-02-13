@@ -183,11 +183,11 @@ export class VentanacitaComponent implements OnInit {
           let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
             // alert("Se Agendo Cita")
 
-            this.httpService.Notis(mensaje, this.asesor.Id_Usuario, localStorage.getItem("inmue")).subscribe((resp: any) =>{
+            this.httpService.Notis(mensaje, this.asesor.Id_Usuario, localStorage.getItem("inmue"),"1").subscribe((resp: any) =>{
               
             })
 
-            this.httpService.Notis("Han agendado una cita para tu inmueble el "+nom_aux+", pronto tu asesor se comunicara contigo", localStorage.getItem("Publicador"), localStorage.getItem("inmue")).subscribe((resp: any) =>{
+            this.httpService.Notis("Han agendado una cita para tu inmueble el "+nom_aux+", pronto tu asesor se comunicara contigo", localStorage.getItem("Publicador"), localStorage.getItem("inmue"),"1").subscribe((resp: any) =>{
               
             })
     
@@ -219,7 +219,7 @@ export class VentanacitaComponent implements OnInit {
       if (resp==1){
         let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
           // alert("Se Agendo Cita")
-          this.httpService.Notis(mensaje, localStorage.getItem("Publicador"), localStorage.getItem("inmue")).subscribe((resp: any) =>{
+          this.httpService.Notis(mensaje, localStorage.getItem("Publicador"), localStorage.getItem("inmue"),"1").subscribe((resp: any) =>{
             
           })
   
