@@ -8,6 +8,7 @@ import { PerfilmasterAdminComponent } from './perfilmaster-admin/perfilmaster-ad
 import { NotificacionesmasterAdminComponent } from './notificacionesmaster-admin/notificacionesmaster-admin.component';
 import { MasterEstatususuarioComponent } from './master-estatususuario/master-estatususuario.component';
 import { SepomexComponent } from './sepomex/sepomex.component';
+import { AutorizarInmueblesComponent } from './autorizar-inmuebles/autorizar-inmuebles.component';
 
 
 const routes: Routes = [ 
@@ -38,6 +39,10 @@ children:[
 {
   path: 'sepomex',
   component: SepomexComponent,
+},
+{
+  path: 'autorizarInmueble',
+  component: AutorizarInmueblesComponent, 
 },
 
 ]
