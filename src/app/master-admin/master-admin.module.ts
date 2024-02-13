@@ -38,6 +38,7 @@ import { MasterEstatususuarioComponent } from './master-estatususuario/master-es
 import { MasterestatusComponent } from './ventanaemergente/masterestatus/masterestatus.component';
 import { SepomexComponent } from './sepomex/sepomex.component';
 import { AutorizarInmueblesComponent } from './autorizar-inmuebles/autorizar-inmuebles.component';
+import { AutorizarComponent } from './ventanaemergente/autorizar/autorizar.component';
 
 
 
@@ -56,6 +57,7 @@ import { AutorizarInmueblesComponent } from './autorizar-inmuebles/autorizar-inm
   MasterestatusComponent,
   SepomexComponent,
   AutorizarInmueblesComponent,
+  AutorizarComponent,
 
  
   

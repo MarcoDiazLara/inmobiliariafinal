@@ -904,5 +904,35 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_filtroshistorial.php', params, { headers });
   }
 
+  inmueblesAuto(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'asdfghjkl';
+    return this.httpclient.post(this.url + 'sp_web_InmuAutorizar.php', params, { headers });
+  }
+
+  getImagenes(p_Id_Inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_selImagenes.php', params, { headers });
+  }
+  
+  autorizarInum(p_Id_Inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_AutorizarInmuebles.php', params, { headers });
+  }
+
+  infousuInmu(p_Id_Inmueble: any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_infoUsuarioInmueble.php', params, { headers });
+  }
+
+  eliminarInmu(p_Id_Inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_Id_Inmueble=' + p_Id_Inmueble;
+    return this.httpclient.post(this.url + 'sp_web_eliminaNoAut.php', params, { headers });
+  }
+
 }
 

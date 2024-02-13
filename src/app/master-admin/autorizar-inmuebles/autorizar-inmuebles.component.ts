@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InventarioInmuebles } from 'src/app/services/Interface/Interfaces';
+import { AutorizarComponent } from '../ventanaemergente/autorizar/autorizar.component';
 
 
 @Component({
@@ -78,15 +79,15 @@ export class AutorizarInmueblesComponent implements OnInit {
   }
 
   obtenerInventario(){
-     let IdSocio = localStorage.getItem("Id_Socio");
+     
 
  
- this.httpService.InventarioInmuebles(IdSocio).subscribe((data:any)=>{
+ this.httpService.inmueblesAuto().subscribe((data:any)=>{
   console.log("datosdeinventario"+data);
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(IdSocio);
-        ;
+     
+        
       } else {
         data = [];
         this.adminService.inventarioasesor$.next(data);
@@ -94,7 +95,7 @@ export class AutorizarInmueblesComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio);
+      console.log('Error de conexión');
 
     }
     )
@@ -112,15 +113,15 @@ export class AutorizarInmueblesComponent implements OnInit {
 
   openasesor(idPubli:any ) {
 
-    // localStorage.setItem ('idpublicacion',idPubli);
-    // const dialogRef = this.dialog.open(HistorialNotisComponent, {
-    //   width: '70%',
-    //   height: '70%',  
-    //   disableClose: true
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    // this.obtenerInventario();
-    // });
+    localStorage.setItem ('idpublicacion',idPubli);
+    const dialogRef = this.dialog.open(AutorizarComponent, {
+      width: '70%',
+      height: '70%',  
+      disableClose: true
+    });
+    dialogRef.afterClosed().subscribe(result => {
+    this.obtenerInventario();
+    });
 
  
   }
