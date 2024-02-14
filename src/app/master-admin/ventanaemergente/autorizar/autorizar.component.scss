@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 20%;
     padding: 20px;
   }
   .container img {
@@ -18,3 +19,27 @@
     font-size: 16px;
     cursor: pointer;
   }
+
+    
+  button{
+    background-color: #264D5E;
+    color: white;
+  }
+  
+  .cssbutton button{
+    width: 60%;
+    color: #ffffff;
+    
+  } 
+
+  @media (max-width: 500px){
+
+    
+    .cssbutton button{
+      width: 100%;
+      color: #ffffff;
+      margin-bottom: 10px;
+      
+      } 
+    
+    }

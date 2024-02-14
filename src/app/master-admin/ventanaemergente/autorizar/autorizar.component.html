@@ -6,9 +6,11 @@
       <img src={{imagen4}} alt="Imagen 4">
       <img src={{imagen5}} alt="Imagen 5">
     </div>
-    <div class="buttons">
-      <button (click)="autorizar()">Autorizar</button>
-      <button (click)="denegar()">Denegar</button>
-      <button (click)="CerraDialogo()">Cancelar</button>
+    <div class="row">
+    <div class="col-sm cssbutton">
+      <button   mat-raised-button (click)="autorizar()">Autorizar</button>
+      <button   mat-raised-button (click)="denegar()">Denegar</button>
+      <button   mat-raised-button (click)="CerraDialogo()">Cancelar</button>
+    </div>
     </div>
 </body>  
