@@ -26,6 +26,9 @@ export class CompAsignaBrokerComponent implements OnInit {
   formGeneral!: FormGroup;
   loading = false;
   hide2 = true;
+  id: any;
+  correo: any;
+  nombreinmu: any;
 
   constructor(
     private dialog: MatDialog,
@@ -38,6 +41,12 @@ export class CompAsignaBrokerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.http.infousuInmu(localStorage.getItem("Id_Inmueble")).subscribe((data:any)=>{
+      this.id = data[0].Id_Usuario;
+      this.correo = data[0].Email;
+      this.nombreinmu = data[0].Nombre_Inmueble;
+    });
     let Id_Socio = localStorage.getItem("Id_Socio");
     this.http.mostrarBroker(Id_Socio).subscribe((data: any) => {
       this.brokers = data;
@@ -65,21 +74,26 @@ export class CompAsignaBrokerComponent implements OnInit {
 
 
       this.http.insertarusuarioasignacion( this.Nombres,Id_Inmueble).subscribe((data: any) => {
-        if (data == 1) {
-          // Swal.fire({
-          //   position: 'top-end',
-          //   icon: 'success',
-          //   title: 'El Broker fue asignado',
-          //   showConfirmButton: false,
-          //   timer: 1500
-          //})
+        let nombrebroker;
+        this.brokers.forEach((broker: any)=>{
+            if(this.Nombres == broker.Id_Usuario){
+              nombrebroker = broker.Nombres + " "+ broker.Apellido_Paterno + " "+ broker.Apellido_Materno;
+            }
+        })
+        if (data == 1) { 
+          let mensaje = "El inmueble :"+ this.nombreinmu + " ha sido asignado al broker: "  + nombrebroker;
+          this.http.Notis(mensaje, this.Nombres, Id_Inmueble, "2").subscribe((data:any)=>{
+
+          })
+          this.http.Notis(mensaje,this.id, Id_Inmueble, "4").subscribe((data:any)=>{
+
+          })
 
           Swal.fire({
             title: "Exito!",
             text: "El Broker fue asignado",
             icon: "success"
           });
-
 
           this.closeDialog();
         }
@@ -106,16 +120,21 @@ export class CompAsignaBrokerComponent implements OnInit {
     if (valor == "1") {
         
       this.http.updateUsuarioReasignacion(Id_Inmueble, this.Nombres).subscribe((resp: any) => {
+        let nombrebroker;
+        this.brokers.forEach((broker: any)=>{
+            if(this.Nombres == broker.Id_Usuario){
+              nombrebroker = broker.Nombres + " "+ broker.Apellido_Paterno + " "+ broker.Apellido_Materno;
+            }
+        })
         
         if (resp == 1) {
-        // let tem_Usuarios: any=this.globalservice.usuarios$.value || []; 
-        // let index = tem_Usuarios.findIndex((usu:any)=>usu.Id_Inmueble == resp.Id_Inmueble);
-      
-        // if (index != -1)
-        // {
-        // //  tem_Usuarios[index].Id_Inmueble =
-        // this.globalservice.usuarios$.next(tem_Usuarios);
-        // }
+          let mensaje = "El inmueble :"+ this.nombreinmu + " ha sido reasignado al broker: "  + nombrebroker;
+          this.http.Notis(mensaje, this.Nombres, Id_Inmueble, "2").subscribe((data:any)=>{
+
+          })
+          this.http.Notis(mensaje,this.id, Id_Inmueble, "4").subscribe((data:any)=>{
+
+          })
       
           Swal.fire({
             title: "Exito!",

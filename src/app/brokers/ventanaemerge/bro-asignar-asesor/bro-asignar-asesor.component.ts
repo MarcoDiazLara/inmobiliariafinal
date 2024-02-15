@@ -30,6 +30,10 @@ export class BroAsignarAsesorComponent implements OnInit {
   loading = false;
   hide2 = true;
 
+  id: any;
+  correo: any;
+  nombreinmu: any;
+
   constructor(
     private dialog: MatDialog,
     private http:HttpService,
@@ -38,6 +42,12 @@ export class BroAsignarAsesorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.http.infousuInmu(localStorage.getItem("Id_Inmueble")).subscribe((data:any)=>{
+      this.id = data[0].Id_Usuario;
+      this.correo = data[0].Email;
+      this.nombreinmu = data[0].Nombre_Inmueble;
+    });
     let Id_Responsable= localStorage.getItem("Id_Usuario");
     this.http.mostrarAsesor(Id_Responsable).subscribe((data:any)=>{
       this.asesores=data;
@@ -62,7 +72,19 @@ export class BroAsignarAsesorComponent implements OnInit {
      
       
       this.http.insertaAsesores( this.Nombres,Id_Inmueble).subscribe((data: any)=> {
+        let nombreasesor;
+        this.asesores.forEach((broker: any)=>{
+            if(this.Nombres == broker.Id_Asesor){
+              nombreasesor = broker.Nombres + " "+ broker.Apellido_Paterno + " "+ broker.Apellido_Materno;
+            }
+        })
+        let mensaje = "El broker: "+ localStorage.getItem("Nombre_Usuario") + ", ha asigando el inmueble: "+ this.nombreinmu + " al asesor: " + nombreasesor;
         if(data == 1){
+
+          this.http.Notis(mensaje, this.id, Id_Inmueble, "2").subscribe((data:any)=>{
+
+          })
+        
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -98,8 +120,19 @@ export class BroAsignarAsesorComponent implements OnInit {
     if (valor=="1"){
   
       this.http.actualiza_asig_asesor(this.Nombres,Id_Inmueble).subscribe((resp:any)=> {
+        let nombreasesor;
+        this.asesores.forEach((broker: any)=>{
+            if(this.Nombres == broker.Id_Asesor){
+              nombreasesor = broker.Nombres + " "+ broker.Apellido_Paterno + " "+ broker.Apellido_Materno;
+            }
+        })
         if(resp == 1){
-  
+
+          
+        let mensaje = "El broker: "+ localStorage.getItem("Nombre_Usuario") + ", ha reasigando el inmueble: "+ this.nombreinmu + " al asesor: " + nombreasesor;
+        this.http.Notis(mensaje, this.id, Id_Inmueble, "2").subscribe((data:any)=>{
+
+        })
           Swal.fire({
             title: "Exito!",
             text: "El Asesor fue asignado",

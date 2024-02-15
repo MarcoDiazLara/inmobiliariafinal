@@ -33,6 +33,10 @@ export class VentanadetallesInmuebleComponent implements OnInit {
     secondCtrl: ['', Validators.required],
   });
   isLinear = false;
+
+  id: any;
+  correo: any;
+  nombreinmu: any;
  
   constructor(private _formBuilder: FormBuilder, private httpService: HttpService, private dialog:MatDialog,) { }
   getFloatLabelValue(): FloatLabelType {
@@ -43,6 +47,12 @@ export class VentanadetallesInmuebleComponent implements OnInit {
   ngOnInit(): void {
     this.ObtenerEstatusInmueble();
     this.ObtenerinformacionInmueble();
+
+    this.httpService.infousuInmu(localStorage.getItem("idpublicacion")).subscribe((data:any)=>{
+      this.id = data[0].Id_Usuario;
+      this.correo = data[0].Email;
+      this.nombreinmu = data[0].Nombre_Inmueble;
+    });
      
     this.options = this._formBuilder.group({
       Nombre_de_Inmueble: ['', [Validators.required]],
@@ -136,6 +146,11 @@ export class VentanadetallesInmuebleComponent implements OnInit {
         Banos, cocina,pisos,antiguedad,acabados,alberca,jardin,gym,garden,estacionamiento,usuario,inmueble,prec_min,prec_max,prec_final,
         estatus).subscribe((data:any)=>{
           if(data==1){
+
+            let mensaje = "El inmueble: "+ this.nombreinmu+" ha sido actualizado por el usuario: " + localStorage.getItem("Nombre_Usuario");
+          this.httpService.Notis(mensaje,this.id,inmueble,"2").subscribe((data:any)=>{
+
+          })
             Swal.fire(
               'Exitosamente!',
               'Se ha actualizado la informacion',

@@ -243,7 +243,7 @@ Id_real!: string;
       let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`
       let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
       
-      this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real,"3").subscribe((data:any)=>{
+      this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real,"4").subscribe((data:any)=>{
 
       })
       this.httpService.Notis(mensaje2, this.asesor.Id_Usuario, this.Id_real,"3").subscribe((data:any)=>{
@@ -297,7 +297,7 @@ Id_real!: string;
       this.httpService.Notis(mensaje2, this.asesor.Id_Usuario, this.Id_real,"3").subscribe((data:any)=>{
 
       })
-      this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real,"3").subscribe((data:any)=>{
+      this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real,"4").subscribe((data:any)=>{
 
       })
   
