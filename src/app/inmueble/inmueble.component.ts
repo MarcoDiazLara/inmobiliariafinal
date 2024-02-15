@@ -150,6 +150,7 @@ export class InmuebleComponent implements OnInit {
   ngOnInit() {
 
     this.obtenerDatosInmuebles();
+    this.guardar();
     this.plan = localStorage.getItem("Id_Tipo_Plan");
 
 
@@ -190,7 +191,7 @@ export class InmuebleComponent implements OnInit {
       p_alberca: ['', [Validators.required]],
       p_roof: ['', [Validators.required]],
       p_anti: ['', [Validators.required]],
-      p_acabados: ['', [Validators.required]]
+      p_acabados: ['', [Validators.maxLength(10)]]
     })
 
   }
@@ -209,7 +210,7 @@ export class InmuebleComponent implements OnInit {
   }
 
   guardar() { // refiere al estado
-    console.log(this.firstFormGroup.value.pId_Tipo_Inmueble);
+  
     this.httpService.obtenerEstado().subscribe((resp: any) => {
       if (resp !== 201) {
         this.estado = resp[0].id_Estado;
@@ -297,7 +298,21 @@ export class InmuebleComponent implements OnInit {
       console.log('lat: ', position.coords.latitude, ' long: ', position.coords.longitude);
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
+      let lat = Number (this.latitud);
+      let lng = Number (this.longitud);
       this.bandera = 1;
+      const newMarker = {
+        position: { lat, lng },
+        label: 'Inmueble',
+      };
+
+      // Borra el marcador activo anterior, si existe
+      if (this.activeMarker) {
+        this.activeMarker = null;
+      }
+
+      // Establece el nuevo marcador como activo
+      this.activeMarker = newMarker;
       Swal.fire(
         'Exitosamente!',
         'Haz sido localizado',
