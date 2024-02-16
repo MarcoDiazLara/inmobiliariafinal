@@ -145,12 +145,28 @@ export class VentanadetallesInmuebleComponent implements OnInit {
       this.httpService.actualizarInformacionInmueble(nombre,Descripcion,Calle,No_Interior,No_Exterior,terreno,construccion,recamaras,
         Banos, cocina,pisos,antiguedad,acabados,alberca,jardin,gym,garden,estacionamiento,usuario,inmueble,prec_min,prec_max,prec_final,
         estatus).subscribe((data:any)=>{
+          let mensaje;
+        let estadoaux;
           if(data==1){
 
-            let mensaje = "El inmueble: "+ this.nombreinmu+" ha sido actualizado por el usuario: " + localStorage.getItem("Nombre_Usuario");
-          this.httpService.Notis(mensaje,this.id,inmueble,"2").subscribe((data:any)=>{
+            if(estatus == 6 || estatus == 7){
 
-          })
+              this.EstatusInmuebles.forEach(estado => {
+                if(estado.Id_Estatus_Publicacion == estatus){
+                    estadoaux = estado.Estatus_Publicacion;
+                }
+              });
+              mensaje = "El inmueble: "+ this.nombreinmu+" ha sido actualizado al estado: "+estadoaux +", por el usuario broker: " + localStorage.getItem("Nombre_Usuario");
+              this.httpService.Notis(mensaje,this.id,inmueble,"5").subscribe((data:any)=>{
+
+              })
+              
+            }else{
+              mensaje = "El inmueble: "+ this.nombreinmu+" ha sido actualizado por el usuario broker: " + localStorage.getItem("Nombre_Usuario");
+              this.httpService.Notis(mensaje,this.id,inmueble,"2").subscribe((data:any)=>{
+
+              })
+            }
             Swal.fire(
               'Exitosamente!',
               'Se ha actualizado la informacion',

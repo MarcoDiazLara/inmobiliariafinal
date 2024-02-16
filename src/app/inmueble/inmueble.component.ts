@@ -232,7 +232,7 @@ export class InmuebleComponent implements OnInit {
           xd = i;
         }
     })
-    console.log(xd);
+    
     
     let lat = Number (xd.latitud);
     let lng = Number (xd.longitud);

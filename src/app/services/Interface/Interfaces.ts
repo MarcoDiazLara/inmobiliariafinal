@@ -91,7 +91,8 @@ export interface inmueblesBuscados {
     Tipo_Asentamiento: ""
     id_asentamiento: "",
     latitud: number,
-    longitud: number
+    longitud: number,
+    Id_Publicacion:""
 
 };
 export interface medioC {

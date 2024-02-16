@@ -111,7 +111,7 @@ export class MapsComponent  {
     if (inmueble) {
       // Navega al componente "detalles" y pasa los parámetros necesarios
       
-     this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_inmueble': inmueble.Id_Inmueble, 'id_usuario': inmueble.Id_Publicador, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion }} );
+     this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_publicacion': inmueble.Id_Publicacion, 'id_usuario': inmueble.Id_Publicador, 'tpropiedad' : this.tpropiedad, 'ubicacion' : this.ubicacion }} );
     }
   }
 }

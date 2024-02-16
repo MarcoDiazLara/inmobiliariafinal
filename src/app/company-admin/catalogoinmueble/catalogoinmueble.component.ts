@@ -179,7 +179,7 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
         p_alberca: ['',[Validators.required]],
         p_roof: ['',[Validators.required]],
         p_anti: ['',[Validators.required]],
-        p_acabados: ['',[Validators.required]]
+        p_acabados: ['',[Validators.maxLength(10)]]
       })
   
     }
@@ -301,7 +301,10 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
     
   
     subirInmueble(){
+
+      if(this.selectedImages.length == 5){
       let idaux;
+
       let date = new Date();
       
       this.subir_imagenes();
@@ -382,7 +385,7 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
   
           Swal.fire(
             'Exitosamente!',
-            'Se ha registrado tu inmueble exitosamente',
+            'Se ha registrado tu inmueble exitosamente, un encargado pronto validara tu inmueble y sera publico',
             'success'
             
           )
@@ -407,7 +410,12 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
         }
          })
       
-      
+        }else{
+          Swal.fire({
+            icon: "error",
+            text: "Son necesarias solo 5 imagenes",
+          });
+        }
     
     }
   
