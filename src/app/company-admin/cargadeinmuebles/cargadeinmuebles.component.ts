@@ -93,6 +93,9 @@ async uploadFile() {
           icon: "success"
 
         });
+        this.httpService.EnviarCorreo(this.httpService.getcorreo(), "Tienes nuevos inmuebles para autorizar, revisa el portal. \nAtte. Equipo InmobeWise").subscribe((data:any)=>{
+            
+        })
         this.router.navigate(['Company/visualizaciondeinmuebles']);
         // Manejar la respuesta del servidor si es necesario
       },

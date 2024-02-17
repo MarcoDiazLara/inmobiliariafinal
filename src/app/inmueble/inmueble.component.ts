@@ -399,6 +399,10 @@ export class InmuebleComponent implements OnInit {
       p_prec_final1, p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) => {
         if (data == 1) {
 
+          this.httpService.EnviarCorreo(this.httpService.getcorreo(), "Tienes un nuevo inmueble para autorizar, revisa el portal. \nAtte. Equipo InmobeWise").subscribe((data:any)=>{
+
+          })
+
           Swal.fire(
             'Exitosamente!',
             'Se ha registrado tu inmueble exitosamente, un encargado pronto validara tu inmueble y sera publico',

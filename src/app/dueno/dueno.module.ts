@@ -38,6 +38,7 @@ import { DatosInteresadosComponent } from './interesados/datos-interesados/datos
 import { CambioasesorComponent } from './cambioasesor/cambioasesor.component';
 import { PerfilduenoComponent } from './perfildueno/perfildueno.component';
 import { DuenopasswordComponent } from './ventanaemergente/duenopassword/duenopassword.component';
+import { InmueblesComponent } from './inmuebles/inmuebles.component';
 
 
 registerLocaleData(localeEs);
@@ -52,6 +53,7 @@ registerLocaleData(localeEs);
     CambioasesorComponent,
     PerfilduenoComponent,
     DuenopasswordComponent,
+    InmueblesComponent,
   ],
   imports: [
     CommonModule,

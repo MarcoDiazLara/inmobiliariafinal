@@ -389,6 +389,9 @@ constructor(private formBuilder: FormBuilder,private dialog: MatDialog
             'success'
             
           )
+          this.httpService.EnviarCorreo(this.httpService.getcorreo(), "Tienes un nuevo inmueble para autorizar, revisa el portal. \nAtte. Equipo InmobeWise").subscribe((data:any)=>{
+            
+          })
           this.firstFormGroup.reset();
           this.imageForm.reset();
           this.secondFormGroup.reset();

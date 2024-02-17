@@ -30,7 +30,7 @@ export class ContactoComponent implements OnInit {
     if (this.formContacto && this.formContacto.valid) {
       let mensaje = "Nombre: " + this.formContacto.value.nombre + "\nCorreo: " + this.formContacto.value.correo + "\nComentario: " + this.formContacto.value.comentario;
 
-      this.httpService.EnviarCorreo("marko_lar@hotmail.com", mensaje).subscribe((data: any) => {
+      this.httpService.EnviarCorreo(this.httpService.getcorreo(), mensaje).subscribe((data: any) => {
         Swal.fire(
           'Exitosamente!',
           'Se ha enviado el correo',

@@ -17,6 +17,8 @@ export class HttpService {
 
   public variableGlobal: boolean = false;
 
+  public correo: string = "marko_lar@hotmail.com";
+
   constructor(
     private httpclient: HttpClient, private dialog:MatDialog
   ) { }
@@ -101,6 +103,10 @@ export class HttpService {
 
   setGlobalVariable(value: boolean) {
     this.variableGlobal = value;
+  }
+
+  getcorreo(){
+    return this.correo;
   }
 
   getGlobalVariable() {
