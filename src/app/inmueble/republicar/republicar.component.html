@@ -1,0 +1,116 @@
+
+<mat-dialog-content  >
+ 
+    <hr>
+    <h1>Esta opcion es en caso de que desees realizar mas de una operacion por inmueble.<i class="bi bi-info">
+      <i class="bi bi-houses"></i>
+    </i></h1> 
+    <hr>  
+     <br>
+     <br>      
+     <div class="example-container">
+        <form [formGroup]="options">
+        <div class="text-center">
+            <h3>Tipo de operación</h3>
+          </div>
+         
+          <div class="radio-group-container">
+            <mat-radio-group aria-label="Select an option" formControlName="pId_Estatus_Inmueble">
+            
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="1">Vender</mat-radio-button>
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="2">Rentar</mat-radio-button>
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="3">Remate</mat-radio-button>
+                <mat-radio-button color="primary" style="margin-right: 10px;" value="4">Desarrollos</mat-radio-button>
+            
+             </mat-radio-group>
+          </div>
+          <br>
+          <br>
+        <div style="display: flex; justify-content: center; align-items: center;">
+  
+ 
+             
+            
+            
+            
+            
+              
+              
+  
+          <mat-form-field style="margin-right: 15px;">
+            <mat-label>Nombre del Inmueble</mat-label>
+            <input matInput  formControlName="Nombre_de_Inmueble" required  [(ngModel)]="datos.Nombre_Inmueble">
+            <mat-icon matSuffix>
+              <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
+          </mat-icon>
+          </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <!-- ------------------------------------------------------------------- -->
+          <mat-form-field style="margin-right: 10px;">
+              <mat-label>Descripcion</mat-label>
+              <input matInput  formControlName="Descripcion" required [(ngModel)]="datos.Descripcion_Inmueble">
+              <mat-icon matSuffix>
+                <img src="assets/img/bienes-raices.png" alt="Icono" width="30" height="30">
+            </mat-icon>
+            </mat-form-field>
+        
+            
+          </div>
+          
+        
+    
+    
+
+   
+            <h1> Precio  <i class="bi bi-currency-dollar">
+              <i class="bi bi-houses"></i>
+            </i>  </h1>
+            <hr>
+           <br>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <mat-form-field style="margin-right: 15px;">
+              <mat-label>Precio Minimo</mat-label>
+              <input matInput formControlName="Precio_Maximo" required [(ngModel)]="datos.Precio_Min">
+              <mat-icon matSuffix>
+                <img src="assets/img/valor-de-la-vivienda.png"  alt="Icono" width="30" height="30">
+            </mat-icon>
+          
+            </mat-form-field> 
+    
+            <mat-form-field style="margin-right: 15px;">
+              <mat-label>Precio Maximo </mat-label>
+              <input matInput  formControlName="Precio_Minimo" required  [(ngModel)]="datos.Precio_Max">
+              <mat-icon matSuffix>
+                <img src="assets/img/valor-de-la-vivienda.png"  alt="Icono" width="30" height="30">
+            </mat-icon>
+          
+            </mat-form-field>
+       </div>
+       <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-form-field style="margin-right: 15px;">
+              <mat-label>Precio Final </mat-label>
+              <input matInput  formControlName="Precio_Final" required [(ngModel)]="datos.Precio_Final">
+              <mat-icon matSuffix>
+                <img src="assets/img/precioF.png"  alt="Icono" width="30" height="30">
+            </mat-icon>
+            </mat-form-field>
+      </div>
+      </form>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button   type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="Actulizar()" >
+          Aceptar
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+  
+       
+        <button  style="margin-right: 15px;" type="button" class="btn" style="background-color: #38B6E3 ; color: #ffffff;" (click)="CerraDialogo()">
+          Cancelar
+        </button>
+  
+      </div>
+  
+    </div>
+  
+  </mat-dialog-content>

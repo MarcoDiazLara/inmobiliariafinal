@@ -934,5 +934,13 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_eliminaNoAut.php', params, { headers });
   }
 
+  republicar(p_nom_pub: any, p_desc_pub: any, p_prec_min:any, p_prec_max:any, p_prec_final:any, p_id_publ:any,
+    p_id_inmue:any, p_id_Tipo:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_nom_pub=' + p_nom_pub + '&p_desc_pub=' + p_desc_pub + '&p_prec_min=' + p_prec_min+ '&p_prec_max=' + p_prec_max
+    + '&p_prec_final=' + p_prec_final+ '&p_id_publ=' + p_id_publ+ '&p_id_inmue=' + p_id_inmue+ '&p_id_Tipo=' + p_id_Tipo;
+    return this.httpclient.post(this.url + 'sp_web_republicar.php', params, { headers });
+  }
+
 }
 

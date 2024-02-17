@@ -35,6 +35,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { ModalComponent } from './modal/modal.component';
+import { RepublicarComponent } from './republicar/republicar.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -49,7 +50,8 @@ registerLocaleData(localeEs);
     PlanesComponent,
     Requisitos3dComponent,
     FavoritosComponent,
-    ModalComponent
+    ModalComponent,
+    RepublicarComponent
     
   ],
   imports: [

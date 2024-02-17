@@ -14,6 +14,7 @@ import { P } from '@fullcalendar/core/internal-common';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Requisitos3dComponent } from '../requisitos3d/requisitos3d.component';
 import Swal from 'sweetalert2';
+import { RepublicarComponent } from '../republicar/republicar.component';
 
 @Component({
   selector: 'app-avisos',
@@ -151,8 +152,22 @@ openDialog2(inmueble:Publicaciones): void {
   })
  
 }
+
+
+openDialog3(inmueble:Publicaciones): void {
+ 
+  
+      localStorage.setItem("p_Id_inmueble",inmueble.Id_Inmueble);
+      const dialogRef = this.dialog.open(RepublicarComponent, {
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        this.obtenerDatosInmuebles();
+        });
+
+ 
 }
-    
+
+}
 //   this.httpService.filtroEstadoAnuncio(localStorage.getItem("Id_Usuario"),Anuncio).subscribe((data:any)=>{
 // this.inmuebles1=data;
 //   })
