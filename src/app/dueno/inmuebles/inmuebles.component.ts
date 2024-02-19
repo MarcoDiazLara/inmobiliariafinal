@@ -3,6 +3,7 @@ import { HttpService } from 'src/app/services/http/http.service';
 import { infoAsesor } from 'src/app/services/Interface/Interfaces';
 import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-inmuebles',
@@ -16,7 +17,7 @@ export class InmueblesComponent implements OnInit {
   formGeneral!: FormGroup;
   state: boolean = true;
 
-  constructor(private httpService: HttpService, private formBuilder: FormBuilder) { }
+  constructor(private httpService: HttpService, private formBuilder: FormBuilder, private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.formGeneral = this.formBuilder.group({
@@ -28,7 +29,7 @@ export class InmueblesComponent implements OnInit {
       Socio: ["",[Validators.required]],
       p_desc:["",[Validators.required]]
     })
-    this.httpService.obtenerinfoAsesor(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
+    this.httpService.obtenerinfoAsesor(localStorage.getItem("Id_Inmueble")).subscribe((data:any)=>{
       console.log(data);
       if(data != "0"){
         this.datosAsesor = data[0];
@@ -75,6 +76,11 @@ export class InmueblesComponent implements OnInit {
    
 
   }
+
+  CerraDialogo(){
+    this.dialog.closeAll();
+ 
+    }
 
 
 }

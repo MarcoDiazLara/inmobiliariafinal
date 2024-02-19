@@ -1,137 +1,56 @@
-.contacto{
-    width: 25%;
-    margin-top: 15%;
-    margin-left: 8%;
+table {
+  width: 100%;
 }
 
-.perfilcontenedor{
-    width: 30%;
-    height: auto;
-    float: left;
-    padding: 0px 0px 0px 0px;
-    text-align: center;
-  
-    }
-    .container-fluit{
-        background-color: #e4e4e4;
-        height: 10%;
-        text-align: center;
-    }
-  
-    .contenidoperfil{
-      width: 70%;
-      height: auto;
-      float: left;
-      margin-top: 5%;
-  }
-  
-  button{
-    background-color: #264D5E;
-    color: white;
-  }
-  
-  .cssbutton button{
-    width: 60%;
-    color: #ffffff;
-    
-  } 
-  
-  
-  
-  .example-section {
-    margin: 12px 0;
-  }
-  
-  .example-margin {
-    margin: 0 12px;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin-top: 4px;
-  }
-  
-  button{
-    background-color: #264D5E;
-    color: white;
-  }
-  
-  
-  
-  
-  .insertar-dialog h1 {
-  text-align: center;
-  font-weight: 500;
-  }
-  
-  .insertar-dialog-content {
-  background-color: transparent !important;
-  width: 120%;
-  margin: 10px 60px;
-  /* input {
-      color: black;
-  } */
-  }
-  
-  .insertar-dialog-content input {
-  color: black;
-  }
-  
-  
-  
-  
-  // button {
-  // display: block;
-  // width: 100%;
-  // margin: auto;
-  // margin-bottom: 3% !important;
-  // }
-  
-  // button:disabled {
-  // span {
-  // color: #9a8d8d;
-  // }
-  // }
-  
-  // ::ng-deep {
-  // .mat-form-field.mat-focused .mat-form-field-label {
-  // color: #0c6291f7 !important;
-  // }
-  // }
-  
-  // @keyframes spinner {
-  // to {
-  // transform: rotate(360deg);
-  // }
-  // }
-  
-  // .spinner:before {
-  // content: '';
-  // box-sizing: border-box;
-  // position: absolute;
-  // top: 50%;
-  // left: 36%;
-  // width: 20px;
-  // height: 20px;
-  // margin-top: -10px;
-  // margin-left: -10px;
-  // border-radius: 50%;
-  // border: 2px solid #ffffff;
-  // border-top-color: #0c6291f7;
-  // animation: spinner 0.6s ease-out infinite;
-  // }
-  
-  .alineaestatus{
-  margin-top: 2%;
-  }
-  
-  .alinea{
-  margin-top: 1%;
-  }
-  
-  
-  .cssbutton button{
-  width: 60%;
-  color: #ffffff;
-  
-  }    
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width:10%;
+} 
+
+td.mat-column-star {
+width: 15%;
+padding-right: 8px;
+}
+
+th.mat-column-position, td.mat-column-position {
+padding-left: 8px;
+}
+
+.mat-table-sticky-border-elem-right {
+border-left: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky-border-elem-left {
+border-right: 1px solid #e0e0e0;
+}
+
+
+.material-symbols-outlined {
+font-variation-settings:
+'FILL' 0,
+'wght' 400,
+'GRAD' 0,
+'opsz' 24
+}
+
+.buttonasignar{
+width: 100%;
+height: auto;
+background-color:  #264D5E;
+color: #ffffff;
+margin-top: 5%;
+}
+
+
+
+
+

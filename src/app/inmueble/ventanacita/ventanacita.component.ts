@@ -121,7 +121,7 @@ export class VentanacitaComponent implements OnInit {
     })
       
      this.terceroFormGroup.get('p_Hora')?.valueChanges.subscribe((hora: string) => {
-      if (hora < '09:00' || hora > '17:30') {
+      if (hora < '06:00' || hora > '21:30') {
         this.entrada = true;
       }else{
         this.entrada = false;
@@ -251,7 +251,7 @@ export class VentanacitaComponent implements OnInit {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'La hora de la cita debe estar entre las 09:00 y las 17:30.',
+      text: 'La hora de la cita debe estar entre las 06:00 y las 21:30.',
      
     })
    }
