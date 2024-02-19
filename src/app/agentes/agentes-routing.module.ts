@@ -7,6 +7,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { FechaHitoAgentesComponent } from './fecha-hito-agentes/fecha-hito-agentes.component';
 import { InventarioagentesComponent } from './inventarioagentes/inventarioagentes.component';
 import { BienvenidaComponent } from '../web/bienvenida/bienvenida.component';
+import { CitasComponent } from './citas/citas.component';
 const routes: Routes = [
   {
     path:'',
@@ -36,6 +37,10 @@ const routes: Routes = [
         path:'Bienvenida',
         component: BienvenidaComponent,
 
+      },
+      {
+        path: "citas",
+        component: CitasComponent
       }
     ],
   }

@@ -40,6 +40,7 @@ import { InmuebledetallesComponent } from './ventanaemergente/inmuebledetalles/i
 import { Citas1Component } from './citas1/citas1.component';
 /end/
 import { MatDialogModule } from '@angular/material/dialog';
+import { CitasComponent } from './citas/citas.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     InventarioagentesComponent,
     InmuebledetallesComponent,
     Citas1Component,
+    CitasComponent,
 
     
   ],

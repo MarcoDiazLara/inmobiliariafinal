@@ -238,7 +238,8 @@ export interface SolicitudCambio {
     Id_Inmueble: "",
     Nombre_Publicacion: "",
     Nombre_Usuario: "",
-    Id_Socio: ""
+    Id_Socio: "",
+    Nombre_Inmueble:""
 };
 
 

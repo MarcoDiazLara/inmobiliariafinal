@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <form class="insertar-dialog-content" [formGroup]="formGeneral">
+      <div class="row contenedorgeneral">
+        <div class="col-md-12">
+          <div class="contenedortext">
+            <h1>Control de citas</h1>
+          </div>
+          <div class="contenedorimagen">
+            <img src="assets/img/cambio_asesor.png">
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>Selecciona el Inmueble Publicado</b></mat-label>
+            <mat-select formControlName="Inmueble" required (selectionChange)="obtenerValores($event)">
+              <mat-option (click)="obtenerIdSocioUsuario()" *ngFor="let solict of solicitud" [value]="solict.Nombre_Inmueble">{{solict.Nombre_Inmueble}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="this.formGeneral.get('Inmueble')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <input matInput type="text" placeholder="Nombre del citador" formControlName="nombre">
+            <mat-label><b>Nombre del citador</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('nombre')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        
+
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>Estado de la cita</b></mat-label>
+            <mat-select formControlName="estado" required (selectionChange)="obtenerValores($event)">
+              <mat-option *ngFor="let solict of tipoCita" [value]="solict.value">{{solict.value}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="this.formGeneral.get('estado')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <mat-label><b>Fecha de la cita </b></mat-label>
+            <input formControlName="Fecha" matInput [matDatepicker]="picker">
+            <mat-hint><b>MM/DD/YYYY</b></mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="this.formGeneral.get('Fecha')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" style="width: 95%;">
+            <textarea matInput rows="4" type="text" placeholder="" formControlName="motivosolicitud"></textarea>
+            <mat-label><b>Razon del cliente</b></mat-label>
+            <mat-error *ngIf="this.formGeneral.get('motivosolicitud')?.hasError('required')">
+              <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="col-md-6" style="text-align: center; margin-top: 3%;">
+          <button mat-raised-button (click)="Guardardatos()">Enviar Cita</button>
+        </div>
+      </div>
+    </form>
+  </div>
+

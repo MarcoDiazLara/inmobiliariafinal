@@ -22,6 +22,7 @@ export class AgentesComponent implements OnDestroy {
     { name: "Notificaciones", route: "Notificaciones",icon: "notifications" , label: "Notificaciones",number:'0',   onClick:this.xd },
     { name: "Hito", route: "Hitoagente",icon: "event" , label: "Fecha Hito",number:'0', onClick:this.xd},
     { name: "Menu", route: "Calendario",icon: "date_range" , label: "Calendario",number:'0', onClick:this.xd },
+    { name: "Citas", route: "citas",icon: "schedule" , label: "Control de citas",number:'0' , onClick:this.xd},
     { name: "Inventario", route: "Inventario",icon: "inventory" , label: "Inventario",number:'0' , onClick:this.xd},
     { name: "Salir",icon: "logout", label: "SALIR" ,number:'1', onClick: () =>  this.logout() },
     
