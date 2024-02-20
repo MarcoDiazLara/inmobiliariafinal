@@ -144,8 +144,17 @@ obtnerimg(){
    }
 
    elimina(imagen:any, num:any){
-
-    const partes: string[] = imagen.split('/');
+    Swal.fire({
+      title: "Estas seguro?",
+      text: "Esta accion no se puede revertir!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borrar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const partes: string[] = imagen.split('/');
     let mensaje = "El usuario: " + localStorage.getItem("Nombre_Usuario") + " ha rechazado la imagen: "+ partes[partes.length - 1] + " del inmueble: "+ this.nombre + ", considera cambiar esta imagen.\nAtte. Equipo InmobeWise";
 
     //console.log(imagen);
@@ -164,6 +173,7 @@ obtnerimg(){
             'Se ha eliminado la imagen del inmueble',
             'success'
           )
+          this.obtnerimg();
         }
       })
     }else if(num == 2){
@@ -174,6 +184,7 @@ obtnerimg(){
             'Se ha eliminado la imagen del inmueble',
             'success'
           )
+          this.obtnerimg();
         }
         this.httpService.EnviarCorreo(this.correo,mensaje).subscribe((data:any)=>{
          
@@ -190,6 +201,7 @@ obtnerimg(){
             'Se ha eliminado la imagen del inmueble',
             'success'
           )
+          this.obtnerimg();
         }
         this.httpService.EnviarCorreo(this.correo,mensaje).subscribe((data:any)=>{
          
@@ -206,6 +218,7 @@ obtnerimg(){
             'Se ha eliminado la imagen del inmueble',
             'success'
           )
+          this.obtnerimg();
         }
         this.httpService.EnviarCorreo(this.correo,mensaje).subscribe((data:any)=>{
          
@@ -222,6 +235,7 @@ obtnerimg(){
             'Se ha eliminado la imagen del inmueble',
             'success'
           )
+          this.obtnerimg();
         }
         this.httpService.EnviarCorreo(this.correo,mensaje).subscribe((data:any)=>{
          
@@ -232,7 +246,10 @@ obtnerimg(){
       })
     }
 
-    this.obtnerimg();
+      }
+    });
+
+    
    }
 
   autorizar(){

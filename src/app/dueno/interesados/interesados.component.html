@@ -22,7 +22,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="Nombre">
       <th mat-header-cell *matHeaderCellDef> Nombres </th>
-      <td mat-cell *matCellDef="let element">  {{element.Nombres}} </td>
+      <td mat-cell *matCellDef="let element">  {{element.Nombres + " "+ element.Apellido_Paterno + " "+ element.Apellido_Materno}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Nombre_Inmueble">

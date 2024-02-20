@@ -960,5 +960,11 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_borrarimagen.php', params, { headers });
   }
 
+  supervisaAuth(){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'asdfghjk';
+    return this.httpclient.post(this.url + 'sp_web_supervisaAuth.php', params, { headers });
+  }
+
 }
 

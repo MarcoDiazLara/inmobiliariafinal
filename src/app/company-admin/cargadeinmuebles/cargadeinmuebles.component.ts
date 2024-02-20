@@ -33,17 +33,9 @@ export class CargadeinmueblesComponent implements OnInit {
   downloadFile(): void {
   
     const urlWhatsApp = "https://inmobiliaria.arvispace.com/servicios/Inmuebles.xlsx";
-  
 
-     // Abre la URL de WhatsApp en una nueva ventana
     window.open(urlWhatsApp, '_blank');
-    // const url = window.URL.createObjectURL(this.selectedFile);
-    // const a = document.createElement('a');
-    // document.body.appendChild(a);
-    // a.href = "https://inmobiliaria.arvispace.com/servicios/dataCliente.csv";
-    // a.download = this.selectedFile.name;
-    // a.click();
-    // window.URL.revokeObjectURL("https://inmobiliaria.arvispace.com/servicios/dataCliente.csv");
+  
 
 }
 serverUrl: string = 'https://inmobiliaria.arvispace.com/servicios/CargaMasivaInmuebles.php';
