@@ -327,11 +327,26 @@
 <body>
     <p>Da clic sobre la imagen para eliminarla y notificar al usuario que no se cumple con las normas del portal</p>
     <div class="container">
-      <img (click)="elimina(imagen1,1)" src={{imagen1}} alt="Imagen 1">
-      <img (click)="elimina(imagen2,2)" src={{imagen2}} alt="Imagen 2">
-      <img (click)="elimina(imagen3,3)" src={{imagen3}} alt="Imagen 3">
-      <img (click)="elimina(imagen4,4)" src={{imagen4}} alt="Imagen 4">
-      <img (click)="elimina(imagen5,5)" src={{imagen5}} alt="Imagen 5">
+      <div class="img">
+        <img  src={{imagen1}} alt="Imagen 1">
+        <span (click)="elimina(imagen1,1)" class="mdi-light--delete"></span>
+      </div>
+      <div class="img">
+        <img  src={{imagen2}} alt="Imagen 2">
+        <span (click)="elimina(imagen2,2)" class="mdi-light--delete"></span>
+      </div>
+      <div class="img">
+        <img  src={{imagen3}} alt="Imagen 3">
+        <span (click)="elimina(imagen3,3)"class="mdi-light--delete"></span>
+      </div>
+      <div class="img">
+        <img src={{imagen4}} alt="Imagen 4">
+        <span (click)="elimina(imagen4,4)" class="mdi-light--delete"></span>
+      </div>
+      <div class="img">
+        <img src={{imagen5}} alt="Imagen 5">
+        <span (click)="elimina(imagen5,5)" class="mdi-light--delete"></span>
+      </div>
     </div>
     <!-- Puto marco xd -->
     <div class="botones">

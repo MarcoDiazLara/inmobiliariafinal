@@ -66,3 +66,37 @@
       }
     }
     
+    .mdi-light--delete {
+      border-radius: 50%;
+      background-color: #ffffffa2;
+      position: absolute;
+      padding: 15px;
+      top: 43%;
+      left: 43%;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      width: 2em;
+      height: 2em;
+      opacity: 0;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23264d5d' d='M18 19a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V7H4V4h4.5l1-1h4l1 1H19v3h-1zM6 7v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V7zm12-1V5h-4l-1-1h-3L9 5H5v1zM8 9h1v10H8zm6 0h1v10h-1z'/%3E%3C/svg%3E");
+    }
+
+
+.img {
+  position: relative;
+  display: inline-block;
+}
+
+img{
+  transition: filter 0.5s ease; 
+}
+
+.img:hover img {
+  filter: blur(2px); 
+}
+
+
+.img:hover  .mdi-light--delete{
+  opacity: 1;
+}
