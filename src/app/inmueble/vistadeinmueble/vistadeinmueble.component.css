@@ -410,3 +410,6 @@ ul.in {
   width: 100% !important;
   height: 325px !important;
 }
+.rotar180 {
+  transform: rotate(180deg);
+}
