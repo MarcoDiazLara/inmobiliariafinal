@@ -180,4 +180,9 @@ export class MenuComponent implements OnInit {
     this.router.navigate(["/inmueble/vista"], { queryParams: { 'action': 'desarrollo', 'tpropiedad': propiedad, 'ubicacion': '', 'PrecioDesde': '1', 'PrecioHasta': '500000', 'Keywords': '' , 'RVR': '' , 'Video': '' , 'Plano': '', 'Bano': '', 'Cocina': '', 'Alberca': '', 'Gym': '', 'Esta': '', 'FAnt':'', 'FPub':''} });
   }
 
+
+  abrirEnNuevaPestana() {
+    // Abre la URL en una nueva pestaña
+    window.open("https://www.holacasa.mx/", "_blank");
+}
 }

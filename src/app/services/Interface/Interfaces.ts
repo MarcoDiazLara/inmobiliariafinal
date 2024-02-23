@@ -544,3 +544,12 @@ export interface informacionAsesorAsignado{
     Id_Usuario: ""
 }
 
+export interface historialvisto{
+    Id_Inmueble:"",
+    Nombre_Publicacion:"",
+    Descripcion_Publicacion:"",
+    Picture1:"",
+    Id_Usuario:"",
+    Id_Publicacion:""
+}
+

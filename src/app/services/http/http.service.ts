@@ -966,5 +966,22 @@ export class HttpService {
     return this.httpclient.post(this.url + 'sp_web_supervisaAuth.php', params, { headers });
   }
 
+  insertahistorial(p_id_usuario:any, p_id_inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_historialvisto.php', params, { headers });
+  }
+
+  validahistorial(p_id_usuario:any, p_id_inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_validavisita.php', params, { headers });
+  }
+
+  obtenerhistorialusuario(p_id_usuario:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario;
+    return this.httpclient.post(this.url + 'sp_web_obtenerhistorial.php', params, { headers });
+  }
 }
 

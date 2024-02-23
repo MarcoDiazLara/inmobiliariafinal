@@ -63,6 +63,9 @@ export class MenuinmuebleComponent {
     this.router.navigate(['inmueble/avisos']);
 
   }
+  historial(){
+    this.router.navigate(['inmueble/historial'])
+  }
 
 
   Contratos() {

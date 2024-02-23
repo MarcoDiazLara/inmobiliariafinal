@@ -6,6 +6,8 @@ import { Inmuebles } from 'src/app/services/Interface/Interfaces';
 import { TipoOperacion } from 'src/app/services/Interface/Interfaces';
 import { CardInmuebles } from 'src/app/services/Interface/Interfaces';
 import * as bootstrap from 'bootstrap';
+import { ContactoComponent } from '../contacto/contacto.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 
 
 @Component({
@@ -48,7 +50,7 @@ export class VistadeinmuebleComponent implements OnInit {
   PFechaP!: any | '';
   PFechaA!: any | '';
 
-  constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute) {
+  constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -144,6 +146,18 @@ export class VistadeinmuebleComponent implements OnInit {
 
   detallesInmueble(id_usu: any, id_inmu: any) {
     this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
+  }
+  contactoInmueble(id_usu: any, id_inmu: any) {
+    //this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
+    const dialogRef = this.dialog.open(ContactoComponent, {
+
+    });
+    
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  
+  });
+  
   }
 
   changeUbicacion() {

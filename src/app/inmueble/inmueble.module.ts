@@ -36,6 +36,8 @@ import { Requisitos3dComponent } from './requisitos3d/requisitos3d.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { ModalComponent } from './modal/modal.component';
 import { RepublicarComponent } from './republicar/republicar.component';
+import { HistorialComponent } from './historial/historial.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -51,7 +53,9 @@ registerLocaleData(localeEs);
     Requisitos3dComponent,
     FavoritosComponent,
     ModalComponent,
-    RepublicarComponent
+    RepublicarComponent,
+    HistorialComponent,
+    ContactoComponent
     
   ],
   imports: [
