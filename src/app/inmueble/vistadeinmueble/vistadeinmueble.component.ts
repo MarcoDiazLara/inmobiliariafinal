@@ -148,7 +148,11 @@ export class VistadeinmuebleComponent implements OnInit {
     this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
   }
   contactoInmueble(id_usu: any, id_inmu: any) {
+    
     //this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
+    localStorage.setItem("id_usu2",id_usu);
+    localStorage.setItem("id_inmu2", id_inmu);
+    
     const dialogRef = this.dialog.open(ContactoComponent, {
 
     });

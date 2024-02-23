@@ -36,12 +36,13 @@ Id_real!: string;
 
 
   vista_360 !: string;
-  id_inmueble!: string;
-  id_usuario!: String;
+  id_inmueble!: any;
+  id_usuario!: any;
   tpropiedad!: Number;
   ubicacion!: String;
   bandera!: number;
   tipoP!: number;
+  nombreinmu!: string;
 
   tipo !: String;
 
@@ -49,7 +50,8 @@ Id_real!: string;
   ngOnInit(): void {
      this.isLoggedIn=this.httpService.getGlobalVariable();
 
-   
+     this.id_usuario = localStorage.getItem("id_usu2");
+     this.id_inmueble = localStorage.getItem("id_inmu2");
 
   
 
@@ -60,6 +62,7 @@ Id_real!: string;
     this.Id_real = this.details.Id_Inmueble;
     
     this.tipo = this.details.Id_Tipo_Publicacion;
+    this.nombreinmu = this.details.Nombre_Inmueble;
   
 
     if(this.isLoggedIn){
@@ -140,7 +143,7 @@ Id_real!: string;
     //Para mandar la notificacion al dueño y al asesor asignado
     if(this.entradaAsesor){
       let correo = this.details.Email;
-    let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+    let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. Nombre inmueble: `+this.nombreinmu;
     this.httpService.EnviarCorreo(this.asesor.Email,mensaje).subscribe((data: any) =>{
       let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`
       let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
@@ -162,7 +165,7 @@ Id_real!: string;
     })
     }else{
     let correo = this.details.Email;
-    let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+    let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. Nombre Inmueble: `+ this.nombreinmu;
     this.httpService.EnviarCorreo(correo,mensaje).subscribe((data: any) =>{
       let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`;
       
@@ -192,7 +195,7 @@ Id_real!: string;
 
     if(this.entradaAsesor){
       const numeroTelefono = this.asesor.Contacto_Principal;
-      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. Nombre Inmueble: `+this.nombreinmu;
       let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
       let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
@@ -209,7 +212,7 @@ Id_real!: string;
     }else{
       
       const numeroTelefono = this.details.Contacto_Principal;
-      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
+      const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. Nombre Inmmueble: `+this.nombreinmu;
       let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
       this.httpService.Notis(mensaje2, this.id_usuario, this.Id_real,"3").subscribe((data:any)=>{
