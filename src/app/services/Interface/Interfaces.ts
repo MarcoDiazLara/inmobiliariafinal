@@ -520,6 +520,7 @@ export interface CardInmuebles {
     Recamara: string,
     Bano: string,
     Id_Publicador: string
+    Id_Tipo_Publicacion:number
 };
 
 export interface inmusinimagenes{

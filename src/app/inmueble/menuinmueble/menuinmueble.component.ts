@@ -81,6 +81,10 @@ export class MenuinmuebleComponent {
   home() {
     this.router.navigate(['/web']);
   }
+
+  Contactos(){
+    this.router.navigate(['inmueble/Contactados']);
+  }
   planes(): void {
     const dialogRef = this.dialog.open(PlanesComponent, {
 

@@ -453,9 +453,11 @@
   <div id="Cards" *ngIf="TCardInmuebles.length">
     <div id="Cards" class="card mb-3 cards" *ngFor="let busq of TCardInmuebles">
       <div class="row g-3">
-        <div class="col-md-4">
+        <div class="col-md-4 position-relative">
           <img src="{{ busq.Picture }}" class="img-thumbnail img-fluid rounded-start imagen-ajust">
+          <div *ngIf="busq.Id_Tipo_Publicacion == 4" class="semi-transparent-label">Inmueble en construcción</div>
         </div>
+        
         <div class="col-md-8">
           <div class="card-body m-2">
             <h4 class="card-title fs-5"> {{ busq.Nombre_Publicacion }}</h4>

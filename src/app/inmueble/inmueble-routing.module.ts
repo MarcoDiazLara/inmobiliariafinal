@@ -13,6 +13,7 @@ import { ContratosComponent } from './contratos/contratos.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { HistorialComponent } from './historial/historial.component';
 import { ContactoComponent } from '../web/contacto/contacto.component';
+import { ContactadosComponent } from './contactados/contactados.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,9 @@ const routes: Routes = [
   },
   {
     path:'contacto', component:ContactoComponent
+  },
+  {
+    path:'Contactados', component:ContactadosComponent
   }
   // {
   //   path:'inmobiliariacorredor',component:inmobiliariacorredor

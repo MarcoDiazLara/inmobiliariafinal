@@ -413,3 +413,18 @@ ul.in {
 .rotar180 {
   transform: rotate(180deg);
 }
+
+.position-relative {
+  position: relative;
+}
+
+.semi-transparent-label {
+  position: absolute;
+  top: 10px; /* ajusta según la posición deseada */
+  left: 10px; /* ajusta según la posición deseada */
+  background-color: rgba(255, 255, 255, 0.7); /* fondo semi-transparente */
+  padding: 5px; /* ajusta según sea necesario */
+  border-radius: 5px;
+  font-size: 14px;
+  left: 10px;
+}

@@ -16,12 +16,25 @@ export class WebComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    if (!cookiesAccepted) {
+      this.showCookiePopup = true;
+    }
   }
 
 
   openLogin(){
    
     this.router.navigate(["/login"], { replaceUrl: true });
+  }
+
+  showCookiePopup: boolean = false;
+
+
+  acceptCookies() {
+    // Establecer el indicador de aceptación de cookies en localStorage
+    localStorage.setItem('cookiesAccepted', 'true');
+    this.showCookiePopup = false;
   }
   
   } 

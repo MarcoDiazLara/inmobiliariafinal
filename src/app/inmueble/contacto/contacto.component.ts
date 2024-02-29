@@ -147,6 +147,10 @@ Id_real!: string;
     this.httpService.EnviarCorreo(this.asesor.Email,mensaje).subscribe((data: any) =>{
       let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`
       let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
+
+      this.httpService.insertarContactados(this.asesor.Id_Usuario,this.Id_real).subscribe((data:any)=>{
+
+      })
       
       this.httpService.Notis(mensaje3, this.id_usuario, this.Id_real,"4").subscribe((data:any)=>{
 
@@ -169,6 +173,9 @@ Id_real!: string;
     this.httpService.EnviarCorreo(correo,mensaje).subscribe((data: any) =>{
       let mensaje2 = `${this.nombre}` + " te ha enviado un correo, con el correo: " + `${this.email}`;
       
+      this.httpService.insertarContactados(this.id_usuario,this.Id_real).subscribe((data:any)=>{
+        
+      })
       
       this.httpService.Notis(mensaje2, this.id_usuario, this.Id_real,"3").subscribe((data:any)=>{
 
@@ -199,6 +206,10 @@ Id_real!: string;
       let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
       let mensaje3 =  "Se han comunicado con tu Asesor para pedir informacion sobre tu inmueble. \n Atte. Equipo InmobeWise"
+      
+      this.httpService.insertarContactados(this.asesor.Id_Usuario,this.Id_real).subscribe((data:any)=>{
+        
+      })
       this.httpService.Notis(mensaje2, this.asesor.Id_Usuario, this.Id_real,"3").subscribe((data:any)=>{
 
       })
@@ -215,6 +226,9 @@ Id_real!: string;
       const mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. Nombre Inmmueble: `+this.nombreinmu;
       let mensaje2 = `${this.nombre}` + " te ha enviado un WhatsApp, con el numero: " + `${this.telefono}`
       const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+      this.httpService.insertarContactados(this.id_usuario,this.Id_real).subscribe((data:any)=>{
+        
+      })
       this.httpService.Notis(mensaje2, this.id_usuario, this.Id_real,"3").subscribe((data:any)=>{
 
       })

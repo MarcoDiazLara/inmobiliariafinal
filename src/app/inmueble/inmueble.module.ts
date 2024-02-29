@@ -38,6 +38,7 @@ import { ModalComponent } from './modal/modal.component';
 import { RepublicarComponent } from './republicar/republicar.component';
 import { HistorialComponent } from './historial/historial.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { ContactadosComponent } from './contactados/contactados.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -55,7 +56,8 @@ registerLocaleData(localeEs);
     ModalComponent,
     RepublicarComponent,
     HistorialComponent,
-    ContactoComponent
+    ContactoComponent,
+    ContactadosComponent
     
   ],
   imports: [
