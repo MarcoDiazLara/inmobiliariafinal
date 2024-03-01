@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -52,6 +52,7 @@ import { VistadeinmuebleComponent } from './inmueble/vistadeinmueble/vistadeinmu
 import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
 import { MetododepagoComponent } from './metododepago/metododepago.component';
+import { HttpInterceptorInterceptor } from './services/interceptors/http-interceptor.interceptor';
 
 
 
@@ -114,7 +115,11 @@ import { MetododepagoComponent } from './metododepago/metododepago.component';
 
   ],
   exports: [WebModule],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
