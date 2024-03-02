@@ -85,6 +85,10 @@ export class MenuinmuebleComponent {
   Contactos(){
     this.router.navigate(['inmueble/Contactados']);
   }
+
+  descartados(){
+    this.router.navigate(['inmueble/descartados']);
+  }
   planes(): void {
     const dialogRef = this.dialog.open(PlanesComponent, {
 

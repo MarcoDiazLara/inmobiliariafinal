@@ -1,0 +1,70 @@
+
+<app-menuinmueble></app-menuinmueble>
+<br>
+<br>
+
+    <div class="col-sm-9">
+      <div class="cointainer p-4">
+      <form>
+        <div class="row justify-content-center align-items-center mb-2">
+          <div class="col"><input class="form-check-input me-2" type="checkbox" id="autoSizingCheck">
+        
+          </div>
+          <div class="col">
+    
+          </div>
+          <div class="col">
+            <div class="input-group">
+         
+            
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="bi bi-search"></i>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="col">
+            <select class="form-control">
+              <option selected>Lo Más Recientes</option>
+              <option>Lo Más Vistos</option>
+              <option>Lo Más Antiguos</option>
+            </select></div>
+          </div>
+      </form>
+    </div>
+  </div>
+  
+    <div class="col-sm-9" style="border-color: black;" >
+      <div class="card rounded-start rounded-end" *ngFor="let res of histo" 
+      style="border-color: #264D5E; margin-left:20%;margin-top:5px; width: 70%; " >
+        <div class="row no-gutters">
+            <div class="col-sm-4" >
+                <img class="card-img" src="{{res.Picture1}}" width="800px" height="auto"style=" margin:10px;">
+            </div>
+            <div class="col-sm-5" >
+                <div class="card-body" >
+                    <h5 class="card-title">{{res.Nombre_Publicacion}}</h5>
+                    <p class="card-text gap-2">{{res.Descripcion_Publicacion}}</p>
+                    <p class="card-text">Estatus del Inmueble</p>
+                    <button mat-raised-button (click)="detallesInmueble(res.Id_Usuario,res.Id_Publicacion)" color="#264D5E" class="contacto">Visitar </button>
+
+
+            
+                </div>
+            </div>
+            <div class="col-sm-6 " style="display: flex;
+            align-items: center;
+            justify-content: center;">
+              <div class="d-grid gap-2">
+                <!-- <button class="btn btn-primary" disabled type="button">Visualizaciones</button>
+                <button class="btn btn-primary" disabled type="button">Interesados</button> -->
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  
+
+
+  

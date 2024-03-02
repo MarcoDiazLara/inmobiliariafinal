@@ -39,6 +39,7 @@ import { RepublicarComponent } from './republicar/republicar.component';
 import { HistorialComponent } from './historial/historial.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ContactadosComponent } from './contactados/contactados.component';
+import { DescartadosComponent } from './descartados/descartados.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -57,7 +58,8 @@ registerLocaleData(localeEs);
     RepublicarComponent,
     HistorialComponent,
     ContactoComponent,
-    ContactadosComponent
+    ContactadosComponent,
+    DescartadosComponent
     
   ],
   imports: [
