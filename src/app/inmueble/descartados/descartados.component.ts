@@ -40,14 +40,16 @@ id_usuario!: String;
   }
 
   obtenerInfo(){
-    this.httpService.obtenercontactosusuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>{
+    this.httpService.obtenerDescartados(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>{
   this.histo=data;
   console.log(this.infoFavoritos);
     })
   }
 
-  detallesInmueble(id_usu: any, id_inmu: any) {
-    this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
+  habilitar( id_inmu: any) {
+    this.httpService.habilitarDescartados(localStorage.getItem("Id_Usuario"), id_inmu).subscribe((data:any)=>{
+        this.obtenerInfo();
+    })
   }
     
 

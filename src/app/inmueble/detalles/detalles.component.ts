@@ -423,6 +423,48 @@ Favoritos(){
  abrirVentanaEmergente(url: string) {
    window.open(url, '_blank', 'width=600,height=400');
  }
+
+ mostrarTooltip: boolean = false;
+
+
+ ocultar(){
+  
+  if(this.isLoggedIn){
+    console.log("Id _ usuario"+ localStorage.getItem("Id_Usuario")+ "Id_Inmueble" +  this.Id_real);
+    Swal.fire({
+      title: "Estas seguro de querer ocultar este anuncio?",
+      text: "Puedes revertir esta accion en Mi espacio -> Descartados!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText:"Cancelar",
+      confirmButtonText: "Si, ocultar!"
+    }).then((result) => {
+      this.httpService.insertarDescartados(localStorage.getItem("Id_Usuario"), this.Id_real).subscribe((data:any)=>{
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Oculto",
+            text: "Este inmueble no te volvera a aparecer en proximas busquedas.",
+            icon: "success"
+          });
+        }
+      })
+      
+    });
+  
+   
+    
+    } else{
+      Swal.fire('Inicia sesion para poder ocultar inmuebles');
+    } 
+ }
+    
+
+    mostrarTexto() {
+      
+        this.mostrarTooltip = true;
+    }
    
   
 

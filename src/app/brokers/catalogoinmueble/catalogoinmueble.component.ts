@@ -104,6 +104,26 @@ export class CatalogoinmuebleComponent  {
       Validators.required,
       Validators.pattern(/^-?\d*(\.\d+)?$/) // Acepta números enteros y decimales
     ]);
+    showSelects = false;
+    months: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    years: number[] = this.generateYearsRange(2024, 2040);
+    showSelects2 = false;
+    
+  contractedMonthsOptions = [
+    { label: '0 meses', value: '0 meses' },
+    { label: '12 meses', value: '12 meses' },
+    { label: '18 meses', value: '18 meses' },
+    { label: '24 meses', value: '24 meses' },
+    { label: '30 meses', value: '30 meses' }
+  ];
+
+  freeMonthsOptions = [
+    { label: '0 meses gratis', value: '0 meses gratis' },
+    { label: '1 mes gratis', value: '1 mes gratis' },
+    { label: '2 meses gratis', value: '2 meses gratis' },
+    { label: '3 meses gratis', value: '3 meses gratis' },
+    { label: '4 meses gratis', value: '4 meses gratis' }
+  ];
     
       imageForm!: FormGroup;
       selectedImages!: FileList;
@@ -155,8 +175,13 @@ export class CatalogoinmuebleComponent  {
       
         this.firstFormGroup = this.formBuilder.group({
          pId_Tipo_Inmueble: ['',[Validators.required]],
-         pId_Tipo_Publicacion: ['',[Validators.required]],
-         Id_Usuario:['',[Validators.required]]
+         
+         Id_Usuario:['',[Validators.required]],
+         pId_Tipo_Publicacion: [''],
+      month: [''],
+      year: [''],
+      contractedMonths: [''],
+      freeMonths: ['']
         })
         this.secondFormGroup = this.formBuilder.group({
           pId_estado: ['',[Validators.required]],
@@ -187,7 +212,29 @@ export class CatalogoinmuebleComponent  {
           p_anti: ['',[Validators.required]],
           p_acabados: ['',[Validators.required]]
         })
+        this.firstFormGroup?.get('pId_Tipo_Publicacion')?.valueChanges.subscribe(value => {
+          if (value === '4') {
+            this.showSelects2 = false;
+            this.showSelects = true;
+          } else if(value === '2'){
+            this.showSelects = false;
+            this.showSelects2 = true;
+          }else {
+            this.showSelects = false;
+            this.showSelects2 = false;
+            this.firstFormGroup?.get('month')?.reset();
+            this.firstFormGroup?.get('year')?.reset();
+          }
+        });
     
+      }
+
+      generateYearsRange(startYear: number, endYear: number): number[] {
+        const years: number[] = [];
+        for (let year = startYear; year <= endYear; year++) {
+          years.push(year);
+        }
+        return years;
       }
     
       obtenerDatosInmuebles(){
@@ -376,6 +423,18 @@ export class CatalogoinmuebleComponent  {
           idaux = localStorage.getItem("Id_Usuario")
         }
         
+        let fechaentrega = "";
+        if(p_Id_Tipo == "2"){
+          let mesg = this.firstFormGroup.value.freeMonths;
+          let mesC = this.firstFormGroup.value.contractedMonths;
+          fechaentrega = mesg + " por un contrato de " + mesC + " para mas informacion, contactate con el dueño del inmueble";
+    
+        }else if( p_Id_Tipo == "4"){
+          let month = this.firstFormGroup.value.month;
+          let year = this.firstFormGroup.value.year;
+      
+           fechaentrega = month +" "+  year;  
+        }
      
         
     
@@ -383,7 +442,7 @@ export class CatalogoinmuebleComponent  {
         this.httpService.registrarInmuebles(p_nom_inmueble,p_desc_inmueble,p_calle1,p_num_ext1,p_num_int1,p_terreno1,
           p_construccion,p_recamara,p_bano,p_cocina1,p_num_pisos, p_antiguedad, p_acabados1,p_alberca1, p_jardin1,p_gym1,
           p_roof,p_estacionamiento,p_pic_1, p_pic_2, p_pic_3, p_pic_4, p_pic_5, p_360, p_video, p_id_asentamiento,p_id_tipo_inmueble,idaux, p_prec_min1,p_prec_max1,
-          p_prec_final1,p_Id_Tipo, this.latitud, this.longitud).subscribe((data: any) =>{
+          p_prec_final1,p_Id_Tipo, this.latitud, this.longitud, fechaentrega).subscribe((data: any) =>{
           if(data == 1){
     
             Swal.fire(
