@@ -66,6 +66,7 @@ import { InfoinmuebleComponent } from './ventanaemergente/infoinmueble/infoinmue
 import { SubirpublicacionComponent } from './ventanaemergente/subirpublicacion/subirpublicacion.component';
 import { HistorialComponent } from './historial/historial.component';
 import { HistorialNotisComponent } from './ventanaemergente/historial-notis/historial-notis.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 
@@ -103,7 +104,8 @@ registerLocaleData(localeEs);
     InfoinmuebleComponent,
     SubirpublicacionComponent,
     HistorialComponent,
-    HistorialNotisComponent
+    HistorialNotisComponent,
+    ReporteComponent
 
     
 
