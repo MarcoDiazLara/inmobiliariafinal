@@ -1,0 +1,94 @@
+h1{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    color: #264D5E;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+h2{
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    color: #264D5E;
+    font-style: normal;
+}
+h3{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+h4{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+h5{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+p{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-family: "Rajdhani", sans-serif;
+    font-style: normal;
+    color: #7a7a7a;
+}
+
+.carrousel{
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+}
+.tarjet{
+    margin-right: 40px;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #c6dee9;
+    width: 300px;
+    height: 320px;
+    min-width: 50px;
+    min-height: 80px;
+    position: relative;
+}
+
+.tarjetSuperior{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 60%;
+    margin: 0 0 0 0;
+
+}
+.tarjetInferior{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 40%;
+
+}
+.etiqueta-venta {
+    position: absolute;
+    top: 60%; 
+    right: 0px; 
+    background-color: rgb(237, 76, 76);
+    color: white;
+    padding: 5px;
+    border-bottom-left-radius: 50%; /* Crea la forma triangular */
+    border-style: solid;
+    border-width: 0 0 100% 100%; /* Establece bordes transparentes para formar el triángulo */
+    content: ''; 
+  }
+
+.imgTsuperior{
+    max-height: 100%;
+    width: 100%; 
+    display: block;
+    margin: 0 auto; 
+}

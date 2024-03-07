@@ -53,6 +53,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UnityComponent } from './inmueble/unity/unity.component';
 import { MetododepagoComponent } from './metododepago/metododepago.component';
 import { HttpInterceptorInterceptor } from './services/interceptors/http-interceptor.interceptor';
+import { InmueblesParecidosComponent } from './inmueble/inmuebles-parecidos/inmuebles-parecidos.component';
 
 
 
@@ -67,6 +68,7 @@ import { HttpInterceptorInterceptor } from './services/interceptors/http-interce
     DetallesComponent,
     UnityComponent,
     MetododepagoComponent,
+    InmueblesParecidosComponent
 
 
 

@@ -59,7 +59,7 @@ registerLocaleData(localeEs);
     HistorialComponent,
     ContactoComponent,
     ContactadosComponent,
-    DescartadosComponent
+    DescartadosComponent,
     
   ],
   imports: [

@@ -15,6 +15,7 @@ import { HistorialComponent } from './historial/historial.component';
 import { ContactoComponent } from '../web/contacto/contacto.component';
 import { ContactadosComponent } from './contactados/contactados.component';
 import { DescartadosComponent } from './descartados/descartados.component';
+import { InmueblesParecidosComponent } from './inmuebles-parecidos/inmuebles-parecidos.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,9 @@ const routes: Routes = [
   },
   {
     path:'descartados', component: DescartadosComponent
+  },
+  {
+    path:'parecidos', component: InmueblesParecidosComponent
   }
   // {
   //   path:'inmobiliariacorredor',component:inmobiliariacorredor

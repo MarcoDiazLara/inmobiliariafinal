@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, CanActivate, RouterStateSnapshot } from '@angular/router';
+import { InmueblesParecidosComponent } from '../inmuebles-parecidos/inmuebles-parecidos.component';
 import { HttpService } from 'src/app/services/http/http.service';
 import { sendCorreo } from 'src/app/services/Interface/Interfaces';
 import { VentanacitaComponent } from '../ventanacita/ventanacita.component';
