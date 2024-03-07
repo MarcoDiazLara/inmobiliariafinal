@@ -18,6 +18,7 @@ import { CargausuariosComponent } from './cargausuarios/cargausuarios.component'
 import { CargadeinmueblesComponent } from './cargadeinmuebles/cargadeinmuebles.component';
 import { VisualizaciondeinmueblesComponent } from './visualizaciondeinmuebles/visualizaciondeinmuebles.component';
 import { HistorialComponent } from './historial/historial.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 const routes: Routes = [
@@ -98,6 +99,10 @@ const routes: Routes = [
       {
         path: 'historial',
         component: HistorialComponent
+      },
+      {
+        path: 'reporte',
+        component: ReporteComponent
       }
     ]
   }
