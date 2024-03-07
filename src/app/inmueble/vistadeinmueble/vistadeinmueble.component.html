@@ -392,10 +392,31 @@
                   class="bi bi-arrow-return-left icon-size me-2"></i>Atrás</button>
             </div>
           </div>
+          <div class="col-auto">
+            <div class="btn-group my-1 dropdown-center">
+              <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false">
+                <i class="bi bi-sort-down-alt icon-size me-1"></i>Ordenar por
+              </button>
+              <ul class="dropdown-menu m-1">
+                <li class="dropdown-item" *ngFor="let inmo of TOperacion1">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="operacion" id="flexRadioDefault{{ inmo.Id_Tipo_Publicacion }}"
+                      value="{{ inmo.Id_Tipo_Publicacion }}" (click)="ordenarPublicaciones(inmo.Tipo_Publicacion)">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      {{ inmo.Tipo_Publicacion }}
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
   </div>
+  
   <div class="p-2"></div>
 </form>
 <!--
@@ -449,6 +470,7 @@
       <img src="../../../assets/img/Not-Results.png" width="350" height="350" class="img-fluid text-center" alt="...">
     </div>
     <p class="text-center h2">Busqueda Sin Resultados!!</p>
+    <p class="text-center h3">Intenta borrar algunos filtros</p>
   </div>
   <div id="Cards" *ngIf="TCardInmuebles.length">
     <div id="Cards" class="card mb-3 cards" *ngFor="let busq of TCardInmuebles">

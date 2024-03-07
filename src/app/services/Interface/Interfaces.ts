@@ -141,7 +141,8 @@ export interface infoInmuebles {
     Id_Tipo_Publicacion: String,
     Precio_Final: "",
     Id_Publicacion: "",
-    Id_Inmueble:""
+    Id_Inmueble:"",
+    Entrega:""
 };
 
 export interface mostrarcita {
@@ -521,6 +522,7 @@ export interface CardInmuebles {
     Bano: string,
     Id_Publicador: string
     Id_Tipo_Publicacion:number
+    Fecha_Publicacion:any
 };
 
 export interface inmusinimagenes{

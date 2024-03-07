@@ -18,6 +18,8 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angula
 
 export class VistadeinmuebleComponent implements OnInit {
 
+  isloggedIn : boolean = false;
+
   FilterFormGroup!: FormGroup;
   TInmuebles!: Inmuebles[];
   TOperacion!: TipoOperacion[];
@@ -53,7 +55,60 @@ export class VistadeinmuebleComponent implements OnInit {
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder, private route: ActivatedRoute, private dialog: MatDialog) {
   }
 
+  // ordenarPorPrecioMaxMayorAMenor() {
+  //   this.TCardInmuebles.sort((a, b) => {
+  //     const precioMaxA = parseFloat(a.Precio_Max.replace('$', '').replace(',', ''));
+  //     const precioMaxB = parseFloat(b.Precio_Max.replace('$', '').replace(',', ''));
+  //     return precioMaxB - precioMaxA; // Orden descendente
+  //   });
+  // }
+  ordenarPorPrecioMaxMayorAMenor() {
+    this.TCardInmuebles.sort((a, b) => {
+      // Extraer los números de los campos Precio_Max y convertirlos a números
+      const precioMaxA = parseFloat(a.Precio_Max.replace(/[$,]/g, ''));
+      const precioMaxB = parseFloat(b.Precio_Max.replace(/[$,]/g, ''));
+      
+      // Comparar los precios y ordenar de mayor a menor
+      return precioMaxB - precioMaxA;
+    });
+  }
+
+  ordenarPorPrecioMaxMenorAMayor() {
+    this.TCardInmuebles.sort((a, b) => {
+      // Extraer los números de los campos Precio_Max y convertirlos a números
+      const precioMaxA = parseFloat(a.Precio_Max.replace(/[$,]/g, ''));
+      const precioMaxB = parseFloat(b.Precio_Max.replace(/[$,]/g, ''));
+      
+      // Comparar los precios y ordenar de mayor a menor
+      return   precioMaxA - precioMaxB;
+    });
+  }
+
+  ordenarporFechadesc(){
+    this.TCardInmuebles.sort((a, b) => {
+      const fechaA = new Date(a.Fecha_Publicacion).getTime();
+      const fechaB = new Date(b.Fecha_Publicacion).getTime();
+      return fechaB - fechaA; // Orden descendente por fecha
+    });
+  }
+  ordenarporFechaasc(){
+    this.TCardInmuebles.sort((a, b) => {
+      const fechaA = new Date(a.Fecha_Publicacion).getTime();
+      const fechaB = new Date(b.Fecha_Publicacion).getTime();
+      return   fechaA - fechaB; // Orden ascendente por fecha
+    });
+  }
+  
+  TOperacion1: any[] = [
+    { Id_Tipo_Publicacion: 1, Tipo_Publicacion: 'Mayor precio' },
+    { Id_Tipo_Publicacion: 2, Tipo_Publicacion: 'Menor precio' },
+    { Id_Tipo_Publicacion: 3, Tipo_Publicacion: 'Mas antiguos' },
+    {Id_Tipo_Publicacion: 4, Tipo_Publicacion: 'Mas recientes'}
+  ];
+
   ngOnInit() {
+
+    this.isloggedIn = this.httpService.getGlobalVariable();
     this.FilterFormGroup = this.formBuilder.group({
       p_Ubicacion: ['', [Validators.required]],
       p_Id_Tipo_Operacion: ['', [Validators.required]],
@@ -133,7 +188,18 @@ export class VistadeinmuebleComponent implements OnInit {
   }
 
   getInmueblesBuscador() {
-    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP).subscribe({
+    if(this.isloggedIn){
+      this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP,localStorage.getItem("Id_Usuario")).subscribe({
+        next: (data) => {
+          console.log(data);
+          this.TCardInmuebles = data;
+        },
+        error: (e) => console.log(e),
+        complete: () => console.log("Complete")
+      })
+
+    }else{
+    this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP,"").subscribe({
       next: (data) => {
         console.log(data);
         this.TCardInmuebles = data;
@@ -141,6 +207,7 @@ export class VistadeinmuebleComponent implements OnInit {
       error: (e) => console.log(e),
       complete: () => console.log("Complete")
     })
+  }
 
   }
 
@@ -272,5 +339,25 @@ export class VistadeinmuebleComponent implements OnInit {
   backPage() {
     this.router.navigate(['/web']);
   }
+
+  ordenarPublicaciones(opcion: string) {
+    switch (opcion) {
+      case 'Mayor precio':
+        this.ordenarPorPrecioMaxMayorAMenor();
+        break;
+      case 'Menor precio':
+        this.ordenarPorPrecioMaxMenorAMayor();
+        break;
+      case 'Mas antiguos':
+        this.ordenarporFechadesc();
+        break;
+  
+        case 'Mas recientes':
+        this.ordenarporFechaasc();
+        break;
+      default:
+        break;
+    }}
+
 
 }

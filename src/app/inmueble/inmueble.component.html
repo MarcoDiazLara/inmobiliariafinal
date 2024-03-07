@@ -23,6 +23,41 @@
         </mat-radio-group>
       </div>
       <br>
+      <div class="text-center" *ngIf="showSelects2">
+        <h3 class="text-center">Selecciona la promoción de meses gratis</h3>
+        <mat-form-field>
+          <mat-label>Meses gratis</mat-label>
+          <mat-select formControlName="freeMonths">
+            <mat-option *ngFor="let option of freeMonthsOptions" [value]="option.value">{{ option.label }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>Meses contratados</mat-label>
+          <mat-select formControlName="contractedMonths">
+            <mat-option *ngFor="let option of contractedMonthsOptions" [value]="option.value">{{ option.label }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        
+      </div>
+      <div class="text-center" *ngIf="showSelects">
+        <h3 class="text-center">¿Cuando esta planeado entregar el inmueble?</h3>
+        <mat-form-field>
+          <mat-label>Mes</mat-label>
+          <mat-select formControlName="month">
+            <mat-option *ngFor="let month of months" [value]="month">{{ month }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>Año</mat-label>
+          <mat-select formControlName="year">
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <br>
       <br>
       <div class="center-content">
         <mat-form-field>

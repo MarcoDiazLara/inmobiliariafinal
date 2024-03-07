@@ -61,13 +61,13 @@ export class HttpService {
     p_terreno: string, p_construccion: string, p_recamara: string, p_bano: string, p_cocina: string, p_num_pisos: string, p_antiguedad: string,
     p_acabados: string, p_alberca: string, p_jardin: string, p_gym: string, p_roof: string, p_estacionamiento: string,
     p_pic_1: string, p_pic_2: string, p_pic_3: string, p_pic_4: string, p_pic_5: string, p_360: string, p_video: string, p_id_asentamiento: number,
-    p_id_tipo_inmueble: number, p_update: any, p_prec_min: any, p_prec_max: any, p_prec_final: any, p_id_Tipo: any, p_latitud: any, p_longitud: any) {
+    p_id_tipo_inmueble: number, p_update: any, p_prec_min: any, p_prec_max: any, p_prec_final: any, p_id_Tipo: any, p_latitud: any, p_longitud: any, fecha:any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = 'p_nom_inmueble=' + p_nom_inmueble + '&p_desc_inmueble=' + p_desc_inmueble + '&p_calle=' + p_calle + '&p_num_ext=' + p_num_ext + '&p_num_int=' + p_num_int + '&p_terreno=' + p_terreno +
       '&p_construccion=' + p_construccion + '&p_recamara=' + p_recamara + '&p_bano=' + p_bano + '&p_cocina=' + p_cocina + '&p_num_pisos=' + p_num_pisos + '&p_antiguedad=' + p_antiguedad +
       '&p_acabados=' + p_acabados + '&p_alberca=' + p_alberca + '&p_jardin=' + p_jardin + '&p_gym=' + p_gym + '&p_roof=' + p_roof + '&p_estacionamiento=' + p_estacionamiento +
       '&p_pic_1=' + p_pic_1 + '&p_pic_2=' + p_pic_2 + '&p_pic_3=' + p_pic_3 + '&p_pic_4=' + p_pic_4 + '&p_pic_5=' + p_pic_5 + '&p_360=' + p_360 + '&p_video=' + p_video + '&p_id_asentamiento=' + p_id_asentamiento + '&p_id_tipo_inmueble=' + p_id_tipo_inmueble
-      + '&p_update=' + p_update + '&p_prec_min=' + p_prec_min + '&p_prec_max=' + p_prec_max + '&p_prec_final=' + p_prec_final + '&p_id_Tipo=' + p_id_Tipo + '&p_latitud=' + p_latitud + '&p_longitud=' + p_longitud;
+      + '&p_update=' + p_update + '&p_prec_min=' + p_prec_min + '&p_prec_max=' + p_prec_max + '&p_prec_final=' + p_prec_final + '&p_id_Tipo=' + p_id_Tipo + '&p_latitud=' + p_latitud + '&p_longitud=' + p_longitud+ '&fecha=' + fecha;
     return this.httpclient.post(this.url + 'insertarInmueble.php', params, { headers });
   }
 
@@ -801,9 +801,9 @@ export class HttpService {
     return this.httpclient.post<TipoOperacion[]>(this.url + 'mostrarTipoOperaciones.php', params, { headers });
   }
 
-  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any, PrecioDesde: any, PrecioHasta: any, Keywords: any, RVR: any, Video: any, Plano: any, Bano: any, Cocina: any, Alberca: any, Gym: any, Esta: any, PFechaA: any, PFechaP: any) {
+  getInmuebles(Ubicacion: any, TipoPropiedad: any, TipoOperacion: any, PrecioDesde: any, PrecioHasta: any, Keywords: any, RVR: any, Video: any, Plano: any, Bano: any, Cocina: any, Alberca: any, Gym: any, Esta: any, PFechaA: any, PFechaP: any, p_id_Usuario: any) {
     let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta + '&p_Keywords=' + Keywords + '&p_RVR=' + RVR + '&p_Video=' + Video + '&p_Plano=' + Plano + '&p_Bano=' + Bano + '&p_Cocina=' + Cocina + '&p_Alberca=' + Alberca + '&p_Gym=' + Gym + '&p_Estacionamiento=' + Esta + '&p_FechaA=' + PFechaA + '&p_FechaP=' + PFechaP ;
+    let params = 'p_ubicacion=' + Ubicacion + '&p_TipoInmueble=' + TipoPropiedad + '&p_TipoPublicacion=' + TipoOperacion + '&p_Precio_Desde=' + PrecioDesde + '&p_Precio_Hasta=' + PrecioHasta + '&p_Keywords=' + Keywords + '&p_RVR=' + RVR + '&p_Video=' + Video + '&p_Plano=' + Plano + '&p_Bano=' + Bano + '&p_Cocina=' + Cocina + '&p_Alberca=' + Alberca + '&p_Gym=' + Gym + '&p_Estacionamiento=' + Esta + '&p_FechaA=' + PFechaA + '&p_FechaP=' + PFechaP +"&p_id_Usuario="+p_id_Usuario;
     return this.httpclient.post<CardInmuebles[]>(this.url + 'getInmueblesBusqueda.php', params, { headers });
   }
   updateEstado(p_idestado: any, p_estado: any){
@@ -995,6 +995,26 @@ export class HttpService {
     let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble;
     return this.httpclient.post(this.url + 'sp_web_insertarcontactados.php', params, { headers });
   }
+
+  insertarDescartados(p_id_usuario:any, p_id_inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_descartarInmuebles.php', params, { headers });
+  }
+
+  //sp_web_obtenerDescartados
+  obtenerDescartados(p_id_usuario:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario;
+    return this.httpclient.post(this.url + 'sp_web_obtenerDescartados.php', params, { headers });
+  }
+  habilitarDescartados(p_id_usuario:any, p_id_inmueble:any){
+    let headers: any = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let params = 'p_id_usuario=' + p_id_usuario + '&p_id_inmueble=' + p_id_inmueble;
+    return this.httpclient.post(this.url + 'sp_web_eliminarDescartados.php', params, { headers });
+  }
+
+
 }
 
 
