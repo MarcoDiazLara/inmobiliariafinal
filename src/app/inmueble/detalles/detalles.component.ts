@@ -87,7 +87,8 @@ Id_real!: string;
     });
 
   
-
+    this.details = undefined!;
+    console.log("HttpDetalles:" + this.id_inmueble);
     this.httpService.mostrarDetalles(this.id_usuario,this.id_inmueble).subscribe((resp: any)=>{
      
     this.details = resp[0];

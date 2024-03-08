@@ -4,12 +4,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 
 
 <div class="content">
     <h2>Inmuebles pensados para ti</h2>
-    <div class="carrousel">
+    <!-- <div class="carrousel">
         <div class="tarjet">
             <div class="tarjetSuperior">
                 <img src="assets/img/publicidad3.jpg" class="imgTsuperior">
@@ -67,6 +71,70 @@
             <div class="etiqueta-venta"><h4>Desarrollo</h4></div>
         </div>
 
+    </div> -->
+
+    <!-- <div class="carrousel"  >
+        <div class="tarjet" *ngFor="let item of TCardInmuebles">
+            <div class="tarjetSuperior">
+                <img [src]="item.Picture" class="imgTsuperior">
+            </div>
+            <div class="tarjetInferior">
+                <p>{{ item.Nombre_Publicacion }}</p>
+                <h1>{{ item.Precio_Max }}</h1>
+                <h4>{{ item.Domicilio }}</h4>
+                <h5>{{ item.ciudad }}</h5>
+            </div>
+            <div class="etiqueta-venta"><h4>{{ item.Tipo_Publicacion }}</h4></div>
+        </div>
+    </div> -->
+
+    <div class="carousel">
+        <div (click)="detallesInmueble(item.Id_Publicador,item.Id_Publicacion)" class="card" *ngFor="let item of TCardInmuebles">
+            <div class="tarjetSuperior">
+                <img [src]="item.Picture" class="imgTsuperior">
+            </div>
+            <div class="tarjetInferior">
+                <p>{{ item.Nombre_Publicacion }}</p>
+                <h1>{{ item.Precio_Max }}</h1>
+                <h4>{{ item.Domicilio }}</h4>
+                <!-- <h5>{{ item.ciudad }}</h5> -->
+            </div>
+            <div class="etiqueta-venta"><h4>{{ item.Tipo_Publicacion }}</h4></div>
+        </div>
+        <!-- <div class="card">
+            <h2>Tarjeta 1</h2>
+            <p>Contenido de la tarjeta 1</p>
+        </div>
+        <div class="card">
+            <h2>Tarjeta 2</h2>
+            <p>Contenido de la tarjeta 2</p>
+        </div>
+        <div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div>
+        <div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div>
+        <div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div>
+        <div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div>
+        <div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div><div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div><div class="card">
+            <h2>Tarjeta 3</h2>
+            <p>Contenido de la tarjeta 3</p>
+        </div> -->
     </div>
 
 </div>

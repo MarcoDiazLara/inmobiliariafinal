@@ -1,3 +1,4 @@
+
 h1{
     margin-top: 5px;
     margin-left: 10px;
@@ -92,3 +93,35 @@ p{
     display: block;
     margin: 0 auto; 
 }
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+    scrollbar-width: none; /* Ocultar barra de desplazamiento */
+    -ms-overflow-style: none; /* Ocultar barra de desplazamiento en IE/Edge */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Ocultar barra de desplazamiento en Webkit */
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    scroll-snap-align: start;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustar los estilos según sea necesario */
+

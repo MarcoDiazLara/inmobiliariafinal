@@ -41,6 +41,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ContactadosComponent } from './contactados/contactados.component';
 import { DescartadosComponent } from './descartados/descartados.component';
 
+
+
 registerLocaleData(localeEs);
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -84,6 +86,7 @@ registerLocaleData(localeEs);
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
+   
   ],
    providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es' }, // Establece el idioma predeterminado

@@ -103,6 +103,7 @@ export class RegistroComponent implements OnInit {
       text: 'Rellena todos los campos',
      
     })
+    this.httpService.closeDialog(); 
   }
  
   }

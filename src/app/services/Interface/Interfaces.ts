@@ -522,7 +522,8 @@ export interface CardInmuebles {
     Bano: string,
     Id_Publicador: string
     Id_Tipo_Publicacion:number
-    Fecha_Publicacion:any
+    Fecha_Publicacion:any,
+    Tipo_Publicacion:any
 };
 
 export interface inmusinimagenes{
