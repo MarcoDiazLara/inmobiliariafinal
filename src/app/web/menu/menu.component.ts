@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service'; // 1
+import { EtiquetasService } from 'src/app/services/etiquetas/etiquetas.service';
 
 
 
@@ -19,12 +20,16 @@ export class MenuComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private httpService: HttpService) {
+  constructor(private router: Router, private httpService: HttpService, private etiquetas: EtiquetasService) {
 
   }
  //3
+ et:any;
   ngOnInit() {
     this.isLoggedIn = this.httpService.getGlobalVariable();
+    this.etiquetas.etmenu().subscribe((data:any)=>{
+      this.et = data;
+    })
   }
 
   Login() {
