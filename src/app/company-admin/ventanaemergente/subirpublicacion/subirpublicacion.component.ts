@@ -77,7 +77,7 @@ export class SubirpublicacionComponent implements OnInit {
         this.EstatusInmuebles = resp;
       }
     }, (err) => {
-      console.log(err);
+  
     })
   }
 
@@ -150,7 +150,7 @@ export class SubirpublicacionComponent implements OnInit {
 
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-        console.log(response);
+        
       });
   }
  

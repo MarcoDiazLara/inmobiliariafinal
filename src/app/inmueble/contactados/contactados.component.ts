@@ -42,7 +42,7 @@ id_usuario!: String;
   obtenerInfo(){
     this.httpService.obtenercontactosusuario(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>{
   this.histo=data;
-  console.log(this.infoFavoritos);
+ 
     })
   }
 

@@ -153,11 +153,7 @@ export class VistadeinmuebleComponent implements OnInit {
       this.PEst = params['Esta'];
       this.PFechaA = params['FAnt'] ?? '';
       this.PFechaP = params['FPub'] ?? '';
-      console.log('Action', this.PAction);
-      console.log('Propiedad', this.PPropiedad);
-      console.log('Ubicacion', this.PUbicacion);
-      console.log('PrecioDesde', this.PPrecioDesde);
-      console.log('PrecioHasta', this.PPrecioHasta);
+  
 
       this.getInmueblesBuscador();
     });
@@ -168,22 +164,20 @@ export class VistadeinmuebleComponent implements OnInit {
   getTipoInmueble() {
     this.httpService.tipoInmueble().subscribe({
       next: (data) => {
-        console.info(data)
+        
         this.TInmuebles = data;
       },
-      error: (e) => console.log(e),
-      complete: () => console.log("Complete")
+      
     })
   }
 
   getTipoOperacion() {
     this.httpService.tipoOperacion().subscribe({
       next: (data) => {
-        console.info(data)
+       
         this.TOperacion = data;
       },
-      error: (e) => console.log(e),
-      complete: () => console.log("Complete")
+      
     })
   }
 
@@ -191,21 +185,19 @@ export class VistadeinmuebleComponent implements OnInit {
     if(this.isloggedIn){
       this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP,localStorage.getItem("Id_Usuario")).subscribe({
         next: (data) => {
-          console.log(data);
+          
           this.TCardInmuebles = data;
         },
-        error: (e) => console.log(e),
-        complete: () => console.log("Complete")
+       
       })
 
     }else{
     this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP,"").subscribe({
       next: (data) => {
-        console.log(data);
+        
         this.TCardInmuebles = data;
       },
-      error: (e) => console.log(e),
-      complete: () => console.log("Complete")
+      
     })
   }
 
@@ -225,23 +217,22 @@ export class VistadeinmuebleComponent implements OnInit {
     });
     
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+  
   
   });
   
   }
 
   changeUbicacion() {
-    console.log('Ubicacion Filtro', this.PUbicacion);
+
   }
 
   changePrices() {
-    console.log('Ubicacion Filtro', this.PPrecioDesde);
-    console.log('Ubicacion Filtro', this.PPrecioHasta);
+    
   }
 
   changeKeywords() {
-    console.log('Keywords: ', this.PKeywords);
+    
   }
 
   clickOperacion(Id: string) {
@@ -249,12 +240,12 @@ export class VistadeinmuebleComponent implements OnInit {
       this.PIdOperacion = '';
     }
     this.PIdOperacion = Id;
-    console.log('Click Operacion', this.PIdOperacion);
+ 
     this.PAction = Id;
   }
 
   clickInmueble(Id: string) {
-    console.log('Click Tipo Inmueble', Id);
+    
     this.PIdInmueble = Id;
     this.PPropiedad = Id;
   }
@@ -262,10 +253,10 @@ export class VistadeinmuebleComponent implements OnInit {
   clickPRVR(code: any) {
     if (this.PRVR == 'RVR') {
       this.PRVR = '';
-      console.log('RecorridoV: ', this.PRVR);
+
     } else {
       this.PRVR = code;
-      console.log('RecorridoV: ', this.PRVR);
+    
     }
     if (this.PRVR == undefined) {
       this.PRVR = '';
@@ -282,7 +273,7 @@ export class VistadeinmuebleComponent implements OnInit {
     if (this.PVideo == undefined) {
       this.PVideo = '';
     }
-    console.log('Video: ', this.PVideo);
+
   }
 
   clickPlano(code: any) {
@@ -294,42 +285,42 @@ export class VistadeinmuebleComponent implements OnInit {
     if (this.PPlano == undefined) {
       this.PPlano = '';
     }
-    console.log('Plano: ', this.PPlano);
+    
   }
 
   clickBanos (val: any){
     this.PBanos = val;
-    console.log('Baños: ', this.PBanos);
+   
   }
 
   clickCI(val: any){
     this.PCI = val;
-    console.log('Cocina Integral: ', this.PCI);
+   
   }
 
   clickAL(val: any){
     this.PAL = val;
-    console.log('Alberca: ', this.PAL);
+
   }
 
   clickGym(val: any){
     this.PGYM = val;
-    console.log('GYM: ', this.PGYM);
+
   }
 
   clickEst(val: any){
     this.PEst = val;
-    console.log('Estacionamiento: ', this.PEst);
+    
   }
 
   clickFechaPub(val: any){
     this.PFechaP = val;
-    console.log('Fecha Publicación: ', this.PFechaP);
+
   }
 
   clickFechaAnt(val: any){
     this.PFechaA = val;
-    console.log('Fecha Antiguedad: ', this.PFechaA);
+
   }
 
   applySearch() {

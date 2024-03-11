@@ -57,7 +57,7 @@ export class InmueblesParecidosComponent implements OnInit {
 
 
     this.getInmueblesBuscador();
-    console.log(this.TCardInmuebles);
+    
   }
 
   
@@ -67,28 +67,26 @@ export class InmueblesParecidosComponent implements OnInit {
     if(this.isloggedIn){
       this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP,localStorage.getItem("Id_Usuario")).subscribe({
         next: (data) => {
-          console.log(data);
+        
           this.TCardInmuebles = data;
         },
-        error: (e) => console.log(e),
-        complete: () => console.log("Complete")
+      
       })
 
     }else{
     this.httpService.getInmuebles(this.PUbicacion, this.PPropiedad, this.PAction, this.PPrecioDesde, this.PPrecioHasta, this.PKeywords, this.PRVR, this.PVideo, this.PPlano, this.PBanos, this.PCI, this.PAL, this.PGYM, this.PEst, this.PFechaA, this.PFechaP,"").subscribe({
       next: (data) => {
-        console.log(data);
+      
         this.TCardInmuebles = data;
       },
-      error: (e) => console.log(e),
-      complete: () => console.log("Complete")
+    
     })
   }
 
 }
 
 detallesInmueble(id_usu: any, id_inmu: any) {
-  console.log("Id Usuario Card" + id_usu)
+  
   this.router.navigate(['/inmueble/detalles'], { queryParams: { 'id_usuario': id_usu, 'id_publicacion': id_inmu } })
 }
 }

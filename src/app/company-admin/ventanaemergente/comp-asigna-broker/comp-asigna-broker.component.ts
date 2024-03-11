@@ -50,7 +50,7 @@ export class CompAsignaBrokerComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
     this.http.mostrarBroker(Id_Socio).subscribe((data: any) => {
       this.brokers = data;
-      console.log(this.brokers);
+      
     });
 
 
@@ -61,7 +61,7 @@ export class CompAsignaBrokerComponent implements OnInit {
 
   }
   ggg(){
-    console.log(this.formGeneral.value.Nombres)
+    
   }
   guardarasesor() {
     this.http.openasesor(); 
@@ -69,7 +69,7 @@ export class CompAsignaBrokerComponent implements OnInit {
       this.Nombres = this.formGeneral.value.Nombres;
       
       let Id_Inmueble = localStorage.getItem("Id_Inmueble");
-      console.log(Id_Inmueble);
+     
 
 
 

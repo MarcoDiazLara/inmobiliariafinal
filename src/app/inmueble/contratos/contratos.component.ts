@@ -14,7 +14,7 @@ export class ContratosComponent implements OnInit {
   ngOnInit(): void {
       this.httpService.obtenerCompras(localStorage.getItem("Id_Usuario")).subscribe((data:any) =>{
         this.datosVentas = data;
-        console.log(data);
+  
       })
   }
   datosVentas: compras[] = [];

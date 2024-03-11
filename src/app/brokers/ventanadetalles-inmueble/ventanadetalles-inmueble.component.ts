@@ -86,7 +86,7 @@ export class VentanadetallesInmuebleComponent implements OnInit {
     ObtenerinformacionInmueble(){
       this.httpService.actualizarInmueble(localStorage.getItem("idpublicacion")).subscribe((data:any)=>{
         this.datos=data[0];
-        console.log(this.datos);
+        
       })
     }
 
@@ -97,7 +97,7 @@ export class VentanadetallesInmuebleComponent implements OnInit {
             this.EstatusInmuebles = resp;
           }
         }, (err) => {
-          console.log(err);
+          
         })
       }
 
@@ -135,12 +135,7 @@ export class VentanadetallesInmuebleComponent implements OnInit {
     let prec_final=this.options.value.Precio_Final;
     let estatus=this.options.value.pId_Estatus_Inmueble;
 
-    // console.log("nombre: "+nombre+" Descripcion: "+  Descripcion+" Calle: " +Calle+ "No_Interior: "+No_Interior+
-    // "No_Exterior :"+No_Exterior+"terreno: "+terreno+"construccion: "+construccion +"recamaras:"+recamaras+"Banos: "+ Banos+
-    // "cocina: "+ cocina+"pisos: "+pisos+"antiguedad: "+antiguedad+ "acabados: "+ acabados+"alberca: "+ alberca+
-    // "jardin: "+jardin+"gym: " + gym +"garden: "+ garden+"estacionamiento: "+ estacionamiento+ "usuario: "+ usuario+
-    // "inmueble"+ inmueble+ "prec_min: " +prec_min+  "prec_max: "+ prec_max+  "prec_final: " + prec_final+
-    // "estatus: " + estatus)  
+ 
 
       this.httpService.actualizarInformacionInmueble(nombre,Descripcion,Calle,No_Interior,No_Exterior,terreno,construccion,recamaras,
         Banos, cocina,pisos,antiguedad,acabados,alberca,jardin,gym,garden,estacionamiento,usuario,inmueble,prec_min,prec_max,prec_final,

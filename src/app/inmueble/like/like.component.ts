@@ -22,8 +22,7 @@ export class LikeComponent  {
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
     localStorage.setItem("p_fecha",fecha1);
-    console.log(fecha1);
-    // console.log(this.selected);
+   
     const dialogRef = this.dialog.open(LikegraficaComponent, {
 
       width: '400px',
@@ -33,7 +32,7 @@ export class LikeComponent  {
 
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Ventana emergente cerrada');
+      
     });
   }
   CerraDialogo(){

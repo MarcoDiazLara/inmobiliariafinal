@@ -22,7 +22,7 @@ export class CalendarioComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     const calendarEl = document.getElementById('calendar');
     if (!calendarEl) {
-      console.error("Elemento '#calendar' no encontrado.");
+     
       return;
     }
 
@@ -66,7 +66,7 @@ export class CalendarioComponent implements AfterViewInit {
         calendar.addEventSource(evento);
       },
       (error) => {
-        console.error('Error al obtener citas', error);
+        
       }
     );
   }
@@ -89,7 +89,7 @@ export class CalendarioComponent implements AfterViewInit {
       const Nombre_Publicacion= info.event.extendedProps.Nombre_Publicacion;
       const Id_Usuario= info.event.extendedProps.Id_Usuario;
       const Medio_Contacto= info.event.extendedProps.Medio_Contacto;
-      // console.log(Calle);
+    
     // Abre el modal y pasa la información de la cita
     this.dialog.open(DialogComponent, {
 

@@ -32,7 +32,7 @@ export class MapsComponent  {
   ngOnInit() {
 
     this.route.queryParams.subscribe(params => {
-      console.log('Query Params: ', params);
+      
 
       this.action = params['action'];
       this.tpropiedad = params['tpropiedad'];
@@ -40,18 +40,14 @@ export class MapsComponent  {
       this.bandera = params['bandera'];
       this.tipoP = params['tipoP'];
 
-      console.log('Action: ', this.action);
-      console.log('Propiedad: ', this.tpropiedad);
-      console.log('Ubicacion: ', this.ubicacion);
+      
 
     });
 
     // this.http.busquedaAvanzada('',this.tpropiedad,'','','','',this.ubicacion).subscribe((data:any)=>{
       
     //   this.datosInmueble = data;
-    //   console.log(this.datosInmueble);
-      
-    //   console.log(this.markers);
+    
 
     // });
 
@@ -74,7 +70,7 @@ export class MapsComponent  {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = 0;
       const coords = position.coords;
-      console.log('lat: ', position.coords.latitude, ' long: ', position.coords.longitude);
+      
       this.center = { lat: position.coords.latitude, lng: position.coords.longitude };
       this.markers.push({
         position: {

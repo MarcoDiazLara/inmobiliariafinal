@@ -29,11 +29,12 @@ export class DetallesComponent implements OnInit {
   esFavorito: boolean = false;
   asesor!: informacionAsesorAsignado;
   entradaAsesor: boolean = false;
+  details !: infoInmuebles;
 
   toggleFavorito() {
 
     if (this.isLoggedIn) {
-      console.log("Id _ usuario" + localStorage.getItem("Id_Usuario") + "Id_Inmueble" + this.id_inmueble);
+    
       this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.id_inmueble, "1").subscribe((data: any) => {
         if (data == 1) {
           this.esFavorito = !this.esFavorito;
@@ -88,7 +89,7 @@ export class DetallesComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    
 
     });
 
@@ -109,9 +110,9 @@ export class DetallesComponent implements OnInit {
       this.tipoP = params['tipoP'];
 
       this.httpService.mostrarDetalles(this.id_usuario, this.id_inmueble).subscribe((resp: any) => {
-        console.log("Accedio HTTP Detalles");
+        
         this.details = resp[0];
-        console.log(this.details);
+      
         this.imagenPrincipalUrl = this.details.Picture1;
         this.imagen1 = this.details.Picture1;
         this.imagen2 = this.details.Picture2;
@@ -135,13 +136,13 @@ export class DetallesComponent implements OnInit {
           })
   
           this.httpService.validarlikes(localStorage.getItem("Id_Usuario"), this.Id_real).subscribe((data: any) => {
-            console.log(data);
+         
             if (data == 1) {
               this.esFavorito = !this.esFavorito;
             }
           })
         }
-        console.log(this.Id_real);
+        
         this.httpService.verificamodelado(this.Id_real).subscribe((data: any) => {
           if (data == "1") {
             this.modelado = !this.modelado;
@@ -149,7 +150,7 @@ export class DetallesComponent implements OnInit {
         })
   
         this.httpService.informacionAsesor(this.Id_real).subscribe((data: any) => {
-          console.log(data);
+          
           if (data != "0") {
             this.asesor = data[0];
             this.entradaAsesor = !this.entradaAsesor;
@@ -173,11 +174,6 @@ export class DetallesComponent implements OnInit {
       })
 
     });
-
-
-    this.details = undefined!;
-    console.log("HttpDetalles:" + this.id_inmueble);
-    
 
     const shareButton = document.querySelectorAll<HTMLButtonElement>("button.shareButton");
 
@@ -209,7 +205,7 @@ export class DetallesComponent implements OnInit {
   precio!: string;
   modelado: boolean = false;
 
-  details !: infoInmuebles;
+
   imagenesCarrusel: any[] = [
 
   ];
@@ -223,7 +219,7 @@ export class DetallesComponent implements OnInit {
   abrirAplicacion() {
     // Intenta abrir la aplicación
     let id = this.Id_real;
-    console.log(this.Id_real);
+    
     //let id = "16";
     window.location.href = "inmobewise-app://id_inmueble=" + id;
 
@@ -381,9 +377,9 @@ export class DetallesComponent implements OnInit {
 
 
   Favoritos() {
-    console.log(this.Id_real);
+  
     if (this.isLoggedIn) {
-      console.log("Id _ usuario" + localStorage.getItem("Id_Usuario") + "Id_Inmueble" + this.id_inmueble);
+      
       this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.Id_real, "1").subscribe((data: any) => {
         if (data == 1) {
 
@@ -442,7 +438,7 @@ export class DetallesComponent implements OnInit {
   ocultar() {
 
     if (this.isLoggedIn) {
-      console.log("Id _ usuario" + localStorage.getItem("Id_Usuario") + "Id_Inmueble" + this.Id_real);
+    
       Swal.fire({
         title: "Estas seguro de querer ocultar este anuncio?",
         text: "Puedes revertir esta accion en Mi espacio -> Descartados!",

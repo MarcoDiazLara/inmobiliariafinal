@@ -88,10 +88,10 @@ export class MiAsesorComponent implements OnInit {
 //  let idUsuario = 19;
  
  this.httpService.inmueblesuser(idUsuario).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
+  
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(idUsuario);
+       
         ;
       } else {
         data = [];
@@ -100,7 +100,7 @@ export class MiAsesorComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',idUsuario);
+      
 
     }
     )

@@ -65,7 +65,7 @@ export class CargausuariosComponent implements OnInit {
 
   handleFileInput(event: any) {
     this.selectedFiles = event.target.files;
-    console.log(this.selectedFiles);
+   
     this.uploadFile();
   }
 
@@ -81,7 +81,7 @@ export class CargausuariosComponent implements OnInit {
 
       this.https.post(this.serverUrl, formData).subscribe(
         async (response) => {
-          console.log('Respuesta del servidor:', response);
+          
           this.httpService.closeDialog();
           Swal.fire({
             title: "Exito",
@@ -91,7 +91,7 @@ export class CargausuariosComponent implements OnInit {
           // Manejar la respuesta del servidor si es necesario
         },
         async (error) => {
-          console.error('Error en la solicitud POST:', error);
+         
           this.httpService.closeDialog();
           Swal.fire({
             icon: "error",

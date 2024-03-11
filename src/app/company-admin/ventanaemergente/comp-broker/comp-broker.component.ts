@@ -36,7 +36,7 @@ export class CompBrokerComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
     this.http.mostrarBroker(Id_Socio).subscribe((data: any) => {
       this.brokers = data;
-      console.log(this.brokers);
+      
     });
 
 
@@ -47,7 +47,7 @@ export class CompBrokerComponent implements OnInit {
 
   }
   ggg(){
-    console.log(this.formGeneral.value.Nombres)
+    
   }
   guardarasesor() {
     if (this.formGeneral) {
@@ -55,7 +55,7 @@ export class CompBrokerComponent implements OnInit {
       let Asesor = localStorage.getItem("Agente");
       let Responsable = localStorage.getItem("Broker")
       let Socio = localStorage.getItem("Id_Socio")
-      console.log(Asesor);
+    
 
 
 

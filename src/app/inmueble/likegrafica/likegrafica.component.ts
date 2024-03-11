@@ -21,8 +21,7 @@ export class LikegraficaComponent  {
   ngOnInit(){
    this.httpService.mostrarlikes(localStorage.getItem("p_Id_inmueble"),localStorage.getItem("p_fecha")).subscribe((data:any)=>{
     this.NumLikes=data[0]["COUNT(*)"];
-    // console.log(this.NumLikes);
-    // console.log(data.COUNT);
+    
    })
   }
 }

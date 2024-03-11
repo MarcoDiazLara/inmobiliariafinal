@@ -100,7 +100,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
 
     this.httpService.InmueblesBrokers(Id_Socio).subscribe((data:any)=>{
-     console.log("datosinmueble",data)
+    
       if(data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
@@ -109,7 +109,7 @@ export class CompanyAsignarReasignarComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión');
+  
     }
     )
 
@@ -135,7 +135,7 @@ asignarAsesor(Id_InmuebleId_Inmueble:any,Id_Usuario:any){
 openasesor(id_inmo:any,asesor:any ) {
 
 const valorCelda = asesor;
-console.log(asesor);
+
 // Verifica si el valor de la celda está vacío o no
 
 if (valorCelda == null) {
@@ -149,7 +149,7 @@ localStorage.setItem("mi_valor", "1");
 
 localStorage.setItem("Id_Inmueble",id_inmo);
     localStorage.setItem("Asesor", asesor );
-    console.log(id_inmo);
+    
 
 
 

@@ -54,7 +54,7 @@ export class HistorialNotisComponent implements OnInit {
     this.httpService.historial(localStorage.getItem("idpublicacion")).subscribe((data:any)=>{
       
       this.notifications = data;
-      console.log(this.notifications);
+     
       // Puedes agregar más lógica aquí si es necesario
 
       // Mostrar la lista de notificaciones

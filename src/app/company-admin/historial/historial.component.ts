@@ -85,11 +85,10 @@ export class HistorialComponent implements OnInit {
 
  
  this.httpService.InventarioInmuebles(IdSocio).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
+
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(IdSocio);
-        ;
+        
       } else {
         data = [];
         this.adminService.inventarioasesor$.next(data);
@@ -97,7 +96,7 @@ export class HistorialComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio);
+      
 
     }
     )

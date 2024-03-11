@@ -465,14 +465,14 @@
   </div>
 -->
 <div class="container-fluid container-card">
-  <div id="Cards" *ngIf="!TCardInmuebles.length">
+  <div id="Cards" *ngIf="!TCardInmuebles?.length">
     <div class="container-fluid" style="display: flex; justify-content: center;">
       <img src="../../../assets/img/Not-Results.png" width="350" height="350" class="img-fluid text-center" alt="...">
     </div>
     <p class="text-center h2">Busqueda Sin Resultados!!</p>
     <p class="text-center h3">Intenta borrar algunos filtros</p>
   </div>
-  <div id="Cards" *ngIf="TCardInmuebles.length">
+  <div id="Cards" *ngIf="TCardInmuebles?.length">
     <div id="Cards" class="card mb-3 cards" *ngFor="let busq of TCardInmuebles">
       <div class="row g-3">
         <div class="col-md-4 position-relative">

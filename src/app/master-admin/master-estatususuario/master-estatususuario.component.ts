@@ -73,7 +73,7 @@ export class MasterEstatususuarioComponent implements OnInit {
 
     //  Llamas tu procedimiento 
     this.httpService.estatusUsuario().subscribe((data: any) => {
-      console.log("datosdeinventario" + data);
+      
       if (data !== 201) {
         this.adminService.pantallausuarios$.next(data);
 
@@ -85,7 +85,7 @@ export class MasterEstatususuarioComponent implements OnInit {
       }
     },
       (err) => {
-        console.log('Error de conexión');
+        
 
       }
     )

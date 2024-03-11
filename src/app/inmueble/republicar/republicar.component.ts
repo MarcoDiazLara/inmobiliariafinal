@@ -74,7 +74,7 @@ export class RepublicarComponent implements OnInit {
     ObtenerinformacionInmueble(){
       this.httpService.actualizarInmueble(localStorage.getItem("p_Id_inmueble")).subscribe((data:any)=>{
         this.datos=data[0];
-        console.log(this.datos);
+      
       })
     }
 
@@ -85,7 +85,7 @@ export class RepublicarComponent implements OnInit {
             this.EstatusInmuebles = resp;
           }
         }, (err) => {
-          console.log(err);
+          
         })
       }
 

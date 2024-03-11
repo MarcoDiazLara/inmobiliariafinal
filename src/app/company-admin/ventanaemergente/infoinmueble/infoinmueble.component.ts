@@ -59,7 +59,7 @@ export class InfoinmuebleComponent implements OnInit {
           this.estados=resp;
          }
         },(err)=>{
-          console.log(err);
+          
         
       })
     }
@@ -70,7 +70,7 @@ export class InfoinmuebleComponent implements OnInit {
           this.municipios = resp;
         }
       },(err)=>{
-        console.log(err);
+        
       })
     }
 
@@ -82,7 +82,7 @@ export class InfoinmuebleComponent implements OnInit {
             this.asentamientos = resp;
           }
         }, (err) => {
-          console.log(err);
+     
         })
     }
      
@@ -104,7 +104,7 @@ export class InfoinmuebleComponent implements OnInit {
       
       }
     }, (err) => {
-      console.log(err);
+    
     })
   }
 
@@ -123,7 +123,7 @@ export class InfoinmuebleComponent implements OnInit {
         this.duenos = resp;
       }
     }, (err) => {
-      console.log(err);
+     
     })
   }
   IdDuenos(){

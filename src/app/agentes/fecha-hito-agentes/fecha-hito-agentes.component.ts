@@ -35,10 +35,10 @@ export class FechaHitoAgentesComponent implements OnInit {
     this.httpService.mostrarCita(localStorage.getItem('Id_Usuario')).subscribe(
       (data: any) => {
         this.Mcita = data;
-        console.log(this.Mcita);
+       
       },
       (error) => {
-        console.error('Error al obtener citas', error);
+        
       }
     );
   
@@ -55,10 +55,10 @@ export class FechaHitoAgentesComponent implements OnInit {
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
-    console.log(fecha1);
+ 
     this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
       this.mostrarfechashito=data;
-      console.log(data);
+    
     })
     const fecha = new Date();
     const hora = fecha.getHours();
@@ -96,12 +96,12 @@ export class FechaHitoAgentesComponent implements OnInit {
 
    Delete(idHito: any){
     if (!idHito) {
-      console.error('Se requiere el valor de idHito para llamar a EliminarFechasHitos');
+
       return;
     }
     alert(idHito)
     this.httpService.EliminarFechasHitos(idHito).subscribe((data:any) => {
-      console.log('Respuesta del servicio:', data);
+      
       alert("Se eliminar Fecha");
       // Después de realizar las acciones necesarias, puedes ocultar el icono
       this.mostrarIcono = false;
@@ -109,7 +109,7 @@ export class FechaHitoAgentesComponent implements OnInit {
     },
     (error) => {
       // Manejar errores del servicio/API
-      console.error('Error al llamar al servicio:', error);
+      
     }
 
     );
@@ -168,12 +168,7 @@ export class FechaHitoAgentesComponent implements OnInit {
 
   Addnew() {
     const modal = document.querySelector('.ShowAddEvent');
-    console.log('Asunto:', this.asunto);
-    console.log('fechaInicio:', this.fechaInicio);
-    console.log('fechaCierre:', this.fechaCierre);
-    console.log('Descripcion:', this.Descripcion);
-    console.log('notificacionesActivadas:', this.notificacionesActivadas);
-    console.log('selectedStatus:', this.selectedStatus);
+
 
     let dia= this.fechaInicio.getDate().toString();
     let mes= (this.fechaInicio.getMonth()+1).toString();
@@ -247,16 +242,15 @@ export class FechaHitoAgentesComponent implements OnInit {
    
   onDateSelected(event: any): void {
     // Aquí obtienes la fecha seleccionada
-    // console.log('Fecha seleccionada:', this.selected);
-    // console.log("Puto dani")
+    
     let dia= this.selected.getDate().toString();
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
-    console.log(fecha1);
+    
     this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
       this.mostrarfechashito=data;
-      console.log(data);
+   
     })
     // Puedes hacer lo que quieras con la fecha seleccionada
   }

@@ -82,10 +82,10 @@ export class PantallaUsuariosComponent implements OnInit {
 
 //  Llamas tu procedimiento 
  this.httpService.obtenerUsuarios(IdSocio).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
+ 
       if(data !== 201) {
         this.adminService.pantallausuarios$.next(data);
-        console.log(IdSocio);
+        
         ;
       } else {
         data = [];
@@ -94,7 +94,7 @@ export class PantallaUsuariosComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio);
+      
 
     }
     )

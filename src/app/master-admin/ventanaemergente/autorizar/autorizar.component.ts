@@ -157,7 +157,7 @@ obtnerimg(){
         const partes: string[] = imagen.split('/');
     let mensaje = "El usuario: " + localStorage.getItem("Nombre_Usuario") + " ha rechazado la imagen: "+ partes[partes.length - 1] + " del inmueble: "+ this.nombre + ", considera cambiar esta imagen.\nAtte. Equipo InmobeWise";
 
-    //console.log(imagen);
+    
     if(num == 1){
       this.httpService.borrarimagen("https://inmobiliaria.arvispace.com/imagenes/blanco13.jpg","Picture1", "Id_Inmueble ="+ localStorage.getItem('idpublicacion')).subscribe((data:any)=>{
         if(data == 1){

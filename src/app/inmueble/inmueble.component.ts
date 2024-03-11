@@ -254,7 +254,7 @@ export class InmuebleComponent implements OnInit {
         this.inmuebles = resp;
       }
     }, (err) => {
-      console.log(err);
+     
     })
   }
 
@@ -266,7 +266,7 @@ export class InmuebleComponent implements OnInit {
         this.estados = resp;
       }
     }, (err) => {
-      console.log(err);
+      
     })
 
 
@@ -308,7 +308,7 @@ export class InmuebleComponent implements OnInit {
         this.municipios = resp;
       }
     }, (err) => {
-      console.log(err);
+     
     })
   }
 
@@ -320,7 +320,7 @@ export class InmuebleComponent implements OnInit {
           this.asentamientos = resp;
         }
       }, (err) => {
-        console.log(err);
+       
       })
 
 
@@ -328,7 +328,7 @@ export class InmuebleComponent implements OnInit {
 
 
   xd() {
-    console.log(this.tercerFormGroup.value.p_gym);
+    
   }
 
   obtenerLocalizacion() {
@@ -344,7 +344,7 @@ export class InmuebleComponent implements OnInit {
 
     navigator.geolocation.getCurrentPosition((position) => {
       const coords = position.coords;
-      console.log('lat: ', position.coords.latitude, ' long: ', position.coords.longitude);
+      
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
       let lat = Number (this.latitud);
@@ -511,7 +511,7 @@ export class InmuebleComponent implements OnInit {
     if (event.latLng) {
       const lat = event.latLng.lat();
       const lng = event.latLng.lng();
-      console.log(`Latitud: ${lat}, Longitud: ${lng}`);
+      
       this.latitud = event.latLng.lat();
       this.longitud = event.latLng.lng();
 
@@ -530,7 +530,7 @@ export class InmuebleComponent implements OnInit {
 
 
     } else {
-      console.log('No se pudo obtener la posición.');
+      
     }
   }
 
@@ -553,7 +553,7 @@ export class InmuebleComponent implements OnInit {
 
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-        console.log(response);
+      
       });
   }
 
@@ -575,7 +575,7 @@ export class InmuebleComponent implements OnInit {
     }
 
     return combination;
-    // console.log(combination);
+    
   }
 
   openDialog(bandera: number): void {

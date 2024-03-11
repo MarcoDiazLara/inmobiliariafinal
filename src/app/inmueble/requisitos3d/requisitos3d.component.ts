@@ -229,7 +229,7 @@ export class Requisitos3dComponent implements OnInit {
     formData.append('pdfs[]', this.archivos[0]);
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/sp_web_SubirPDF.php', formData)
     .subscribe((response) => {
-      console.log(response);
+      
     });
   }
 
@@ -279,7 +279,7 @@ export class Requisitos3dComponent implements OnInit {
       let anio = date.getFullYear().toString();
       let nom_aux = anio + mes1 + dia1;
       const nombrePDF = this.archivos[0].name;
-      //console.log();
+     
       //let aux = this.obtenerNombreArchivo(imagenNames[i]);
        let img = "https://inmobiliaria.arvispace.com/imagenes/" + nom_aux + imagenNames[i];
        this.pdfFile = "https://inmobiliaria.arvispace.com/pdfs/"+ nom_aux + nombrePDF;
@@ -346,7 +346,7 @@ export class Requisitos3dComponent implements OnInit {
     // Realiza la solicitud HTTP
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-        console.log(response);
+       
       });
   }
   

@@ -163,7 +163,7 @@ export class PerfilclienteComponent implements OnInit {
        
       })
     }else{
-      console.log(data);
+     
       this.datos.Nombre_Usuario = data.Nombre_Usuario;
       this.datos.Img_Profile = data[0].Img_Profile;
     }})
@@ -181,7 +181,7 @@ export class PerfilclienteComponent implements OnInit {
 
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-       console.log(response);
+       
       });
   }
 

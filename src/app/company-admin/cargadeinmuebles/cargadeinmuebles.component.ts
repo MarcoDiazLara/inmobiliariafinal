@@ -55,7 +55,7 @@ ngOnInit(): void {
 
 handleFileInput(event: any) {
   this.selectedFiles = event.target.files;
-  console.log(this.selectedFiles);
+ 
   if(this.sesion){
   this.uploadFile();
   }else{
@@ -76,7 +76,7 @@ async uploadFile() {
     formData.append('dataCliente', this.selectedFiles[0]);
     this.https.post(this.serverUrl, formData).subscribe(
       async (response) => {
-        console.log('Respuesta del servidor:', response);
+       
         this.httpService.closeDialog();
         
         Swal.fire({
@@ -92,7 +92,7 @@ async uploadFile() {
         // Manejar la respuesta del servidor si es necesario
       },
       async (error) => {
-        console.error('Error en la solicitud POST:', error);
+        
         this.httpService.closeDialog();
         Swal.fire({
           icon: "error",

@@ -245,19 +245,19 @@ export class CatalogoinmuebleComponent  {
            this.inmuebles = resp;
          }
         },(err)=>{
-         console.log(err);
+       
         })
        }
     
        guardar(){
-        console.log(this.firstFormGroup.value.pId_Tipo_Inmueble);
+        
         this.httpService.obtenerEstado().subscribe((resp:any)=> {
           if(resp !== 201){
             this.estado = resp[0].id_Estado;
             this.estados = resp;
           }
          },(err)=>{
-          console.log(err);
+         
          })
     
          
@@ -271,7 +271,7 @@ export class CatalogoinmuebleComponent  {
           this.municipios = resp;
         }
        },(err)=>{
-        console.log(err);
+
        })
     }
     
@@ -284,7 +284,7 @@ export class CatalogoinmuebleComponent  {
             xd = i;
           }
       })
-      console.log(xd);
+      
       
       let lat = Number (xd.latitud);
       let lng = Number (xd.longitud);
@@ -312,7 +312,7 @@ export class CatalogoinmuebleComponent  {
           this.asentamientos = resp;
         }
        },(err)=>{
-        console.log(err);
+        
        })
       
      
@@ -320,7 +320,7 @@ export class CatalogoinmuebleComponent  {
     
     
     xd(){
-      console.log(this.tercerFormGroup.value.p_gym);
+      
     }
     
     obtenerLocalizacion(){
@@ -337,7 +337,7 @@ export class CatalogoinmuebleComponent  {
     
       navigator.geolocation.getCurrentPosition((position) => {
         const coords = position.coords;
-        console.log('lat: ', position.coords.latitude, ' long: ', position.coords.longitude);
+       
         this.latitud = position.coords.latitude;
         this.longitud = position.coords.longitude;
         this.bandera = 1;
@@ -491,7 +491,7 @@ export class CatalogoinmuebleComponent  {
         if (event.latLng) {
           const lat = event.latLng.lat();
           const lng = event.latLng.lng();
-          console.log(`Latitud: ${lat}, Longitud: ${lng}`);
+       
           this.latitud = event.latLng.lat();
           this.longitud =  event.latLng.lng();
         
@@ -510,7 +510,7 @@ export class CatalogoinmuebleComponent  {
           
          
         } else {
-          console.log('No se pudo obtener la posición.');
+          
         }
       }
     
@@ -529,7 +529,7 @@ export class CatalogoinmuebleComponent  {
     
         this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
           .subscribe((response) => {
-           console.log(response);
+         
           });
       }
     
@@ -551,7 +551,7 @@ export class CatalogoinmuebleComponent  {
         }
       
         return combination;
-        // console.log(combination);
+     
       }
         
       openDialog(bandera:number): void {
@@ -568,11 +568,11 @@ export class CatalogoinmuebleComponent  {
       this.httpService.seleccionD(localStorage.getItem("Id_Socio")).subscribe((resp:any)=> {
         if(resp !== 201){
           this.SeleccionDueno= resp;
-          console.log(this.SeleccionDueno);
+        
           this.SeleccionDue= resp;
         }
        },(err)=>{
-        console.log(err);
+      ;
        })
       
     }

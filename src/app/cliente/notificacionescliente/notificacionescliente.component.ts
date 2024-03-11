@@ -16,7 +16,7 @@ export class NotificacionesclienteComponent implements OnInit {
     this.httpService.getNotis(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
       
       this.notifications = data;
-      console.log(this.notifications);
+     
       // Puedes agregar más lógica aquí si es necesario
 
       // Mostrar la lista de notificaciones

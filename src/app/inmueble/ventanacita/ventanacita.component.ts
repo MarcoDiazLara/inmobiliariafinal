@@ -113,7 +113,7 @@ export class VentanacitaComponent implements OnInit {
      })
 
      this.httpService.informacionAsesor(localStorage.getItem("inmue")).subscribe((data:any)=>{
-      console.log(data);
+     
       if(data != "0"){
         this.asesor = data[0];
         this.entradaAsesor = !this.entradaAsesor;
@@ -173,12 +173,12 @@ export class VentanacitaComponent implements OnInit {
   // let nom_aux= "2023"+"-"+ "09"+ "-" +"09";
 
  let nom_aux =  anio  +"-"+ mes1  +  "-"+ dia1;
- console.log(this.p_Id_Usuario);
+
  
    if(this.entrada == false){
     if(this.entradaAsesor){
       this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.asesor.Id_Usuario).subscribe((resp:any)=>{
-        console.log("Respuesta del servicio:", resp);
+  
         if (resp==1){
           let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
             // alert("Se Agendo Cita")
@@ -210,12 +210,12 @@ export class VentanacitaComponent implements OnInit {
            }
     
       }, (err) => {
-        console.log(err);
+      
       })
     
     }else{
     this.httpService.AgendarC(nom_aux,p_Hora,p_Email,p_Id_Medio_Contacto,p_Nombre,p_Telefono,p_Mensaje,p_Id_Publicacion,this.p_Id_Usuario).subscribe((resp:any)=>{
-      console.log("Respuesta del servicio:", resp);
+    
       if (resp==1){
         let mensaje = p_Nombre + " ha agendado una nueva cita el " + nom_aux + " revisa tu calendario"
           // alert("Se Agendo Cita")
@@ -242,7 +242,7 @@ export class VentanacitaComponent implements OnInit {
          }
   
     }, (err) => {
-      console.log(err);
+    
     })
   
     }

@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit {
 
   }
  //3
- et:any;
+ et!:any;
   ngOnInit() {
     this.isLoggedIn = this.httpService.getGlobalVariable();
     this.etiquetas.etmenu().subscribe((data:any)=>{
@@ -96,7 +96,7 @@ export class MenuComponent implements OnInit {
     })
     this.httpService.setGlobalVariable(false);
     this.router.navigate(["/web"]);
-    console.log("entro");
+    
   }
 
 

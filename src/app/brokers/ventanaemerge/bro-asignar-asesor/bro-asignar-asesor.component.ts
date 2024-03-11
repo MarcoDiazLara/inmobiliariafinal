@@ -51,7 +51,7 @@ export class BroAsignarAsesorComponent implements OnInit {
     let Id_Responsable= localStorage.getItem("Id_Usuario");
     this.http.mostrarAsesor(Id_Responsable).subscribe((data:any)=>{
       this.asesores=data;
-      console.log(this.asesores);
+     
       });
   
   
@@ -67,7 +67,7 @@ export class BroAsignarAsesorComponent implements OnInit {
       this.Nombres = this.formGeneral.value.Nombres;
       let Id_Usuario = this.formGeneral.value.Id_Asesor
       let Id_Inmueble = localStorage.getItem("Id_Inmueble");
-      console.log(Id_Inmueble);
+   
 
      
       

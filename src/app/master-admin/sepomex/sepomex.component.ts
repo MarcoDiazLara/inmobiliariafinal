@@ -108,16 +108,16 @@ export class SepomexComponent implements OnInit {
         // Continuar con el procesamiento del archivo
         const modifiedContent = this.eliminarrenglones(fileContent);
 
-        //console.log(modifiedContent);
+        
         //-----------------------------------------------
 
 
         let aux = this.reemplazarCaracteresEspeciales(modifiedContent);
-        // console.log(aux);
+        
         let contenidoSinSaltos: string = modifiedContent.replace(/[\r]/g,'');
         let palabras: string[] = contenidoSinSaltos.split("\n");
         let palabrasFiltradas: string[] = palabras.filter(palabra => palabra.trim() !== '');
-        //console.log(palabrasFiltradas);
+       
 
         palabrasFiltradas.forEach(linea=>{
           let datos: string[] = linea.split('|');
@@ -180,7 +180,7 @@ this.Archivo.forEach(sepomex => {
   // Agregar el objeto Estado al array estados
   this.municipios.push(municipio);
 });
-//console.log(this.municipios);
+
 let conjuntoMunicipios: Set<string> = new Set();
 let municipiosSinDuplicados: municipios[] = this.municipios.filter(municipios => {
   // Convertir cada objeto Estado a una cadena única
@@ -280,20 +280,15 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
 });
 
 
-    console.log("estados: ");
-    console.log(estadosSinDuplicados);
     this.estadosUnicos = estadosSinDuplicados;
     this.csvService.generateCSV(estadosSinDuplicados, 'estados.csv');
-    console.log("municipios: ");
-    console.log(municipiosSinDuplicados);
+
     this.csvService.generateCSV(municipiosSinDuplicados, 'municipios.csv');
     this.municipiosUnicos = municipiosSinDuplicados;
-    console.log("Tipo de Asentamientos: ")
-    console.log(tipoAsentamientoSinDuplicados);
+ 
     this.csvService.generateCSV(tipoAsentamientoSinDuplicados, 'tipoAsentamientos.csv');
     this.tipoasentamientosUnicos = tipoAsentamientoSinDuplicados;
-    console.log("Asentamientos: ");
-    console.log(this.asentamientos);
+  
     this.asentamientos2 = this.asentamientos.map((asentamiento: asentamiento) => {
       return {
         asentamiento: asentamiento.asentamiento.replace(/,/g, '-'),
@@ -305,8 +300,7 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
 
     this.csvService.generateCSV(this.asentamientos2, 'Asentamientos.csv');
     this.asentamientosUnicos = this.asentamientos;
-    console.log("Codigos Postales: ");
-    console.log(CPSinDuplicados);
+    
     this.csvService.generateCSV(CPSinDuplicados, 'CodigosPostales.csv');
     this.codigosUnicos = CPSinDuplicados;
     
@@ -363,7 +357,7 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
       const customChangeEvent = { target: { files: files } } as any; 
       this.processFile(customChangeEvent);
     } else {
-      console.log("Algo salió mal");
+     
     }
   }
   
@@ -405,9 +399,9 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
       (response: any) => {
         estadosProcesados++;
         if (response === '1') {
-          console.log('Inserción exitosa:', response.message);
+          
         } else {
-          console.error('Error en la inserción de Estados', response.message);
+          
         }
         this.progreso = (estadosProcesados / totalEstados) * 100;
 
@@ -418,7 +412,7 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
       },
       (error: any) => {
         estadosProcesados++;
-        console.error('Error de comunicación con el servidor:', error);
+    
         this.progreso = (estadosProcesados / totalEstados) * 100;
         if (estadosProcesados === totalEstados) {
           this.procesoEnCurso = false;
@@ -443,13 +437,13 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
    this.httpService.updateMunicipio(p_idMunicipio, p_municipio, p_idEstado).subscribe(
      (response: any) => {
        if (response === '1') {
-         console.log('Inserción exitosa:', response.message);
+        
        } else {
-         console.error('Error en la inserción de municipios', response.message);
+         
        }
      },
      (error: any) => {
-       console.error('Error de comunicación con el servidor:', error);
+   
      }
    );
  });
@@ -464,20 +458,18 @@ let CPSinDuplicados: codigosPostales[] = this.codigos.filter(codigo => {
    this.httpService.updateTasentamiento(p_idTasentamiento,  p_Tasentamiento).subscribe(
      (response: any) => {
        if (response === '1') {
-         console.log('Inserción exitosa:', response.message);
        } else {
-         console.error('Error en la inserción de tipos de asentamiento', response.message);
+         
        }
      },
      (error: any) => {
-       console.error('Error de comunicación con el servidor:', error);
+       
      }
    );
  });
 
 // Asentamientos
-console.log("incercion de Asentamientos");
-  console.log(this.asentamientosUnicos);
+
   this.asentamientosUnicos.forEach((Asentamiento) => {
 
    const  p_asentamiento = Asentamiento.asentamiento;
@@ -489,13 +481,13 @@ console.log("incercion de Asentamientos");
    this.httpService.updateAsentamiento(p_asentamiento, p_tipo_zona, p_idtipoasentamiento, p_idcp).subscribe(
      (response: any) => {
        if (response === '1') {
-         console.log('Inserción exitosa:', response.message);
+  
        } else {
-         console.error('Error en la inserción de Asentamientos', response.message);
+         
        }
      },
      (error: any) => {
-       console.error('Error de comunicación con el servidor:', error);
+       
      }
    );
  });
@@ -503,8 +495,6 @@ console.log("incercion de Asentamientos");
 
 // Codigos postales
 
-console.log("incercion de codigos postales");
-  console.log(this.codigosUnicos);
   this.codigosUnicos.forEach((codigos) => {
  
 
@@ -517,13 +507,13 @@ console.log("incercion de codigos postales");
    this.httpService.updateCodigopostal(p_id_cp, p_cp, p_id_municipio, p_id_estado ).subscribe(
      (response: any) => {
        if (response === '1') {
-         console.log('Inserción exitosa:', response.message);
+        
        } else {
-         console.error('Error en la inserción de codigospostales', response.message);
+         
        }
      },
      (error: any) => {
-       console.error('Error de comunicación con el servidor:', error);
+       
      }
    );
  });
@@ -540,7 +530,7 @@ console.log("incercion de codigos postales");
 
   handleFileInput(event: any,estado: any) {
     this.selectedFiles = event.target.files;
-    console.log(this.selectedFiles);
+    
     this.uploadFile(estado);
   
   }
@@ -565,7 +555,7 @@ console.log("incercion de codigos postales");
       }
       this.https.post(this.serverUrl, formData).subscribe(
         async (response) => {
-          console.log('Respuesta del servidor:', response);
+          
           this.httpService.closeDialog();
           
           Swal.fire({
@@ -578,7 +568,7 @@ console.log("incercion de codigos postales");
           // Manejar la respuesta del servidor si es necesario
         },
         async (error) => {
-          console.error('Error en la solicitud POST:', error);
+       
           this.httpService.closeDialog();
           Swal.fire({
             icon: "error",

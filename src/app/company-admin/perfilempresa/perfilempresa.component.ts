@@ -151,7 +151,7 @@ export class PerfilempresaComponent implements OnInit {
     }else{
     
       this.datos = data[0];
-      console.log(this.datos)
+   
      
     }})
   }
@@ -177,7 +177,7 @@ export class PerfilempresaComponent implements OnInit {
 
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-       console.log(response);
+       
       });
   }
 

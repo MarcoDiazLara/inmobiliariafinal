@@ -99,7 +99,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
 
     this.httpService.Asignaciones_asesor(Id_Socio, Id_Usuario).subscribe((data: any) => {
       this.adminService.usuarios$.next(data);
-      console.log(data)
+     
       if (data !== 201) {
         this.adminService.usuarios$.next(data);
       } else {
@@ -108,7 +108,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
       }
     },
       (err) => {
-        console.log('Error de conexión');
+        
       }
     )
 
@@ -132,7 +132,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
   openasesor(id_inmo: any, asesor: any) {
 
     const valorCelda = asesor;
-    console.log(asesor);
+   
     // Verifica si el valor de la celda está vacío o no
 
     if (valorCelda == null) {
@@ -146,7 +146,7 @@ export class BrokersAsignarReasignarComponent implements OnInit {
 
     localStorage.setItem("Id_Inmueble", id_inmo);
     localStorage.setItem("Nombres", asesor);
-    console.log(id_inmo);
+    
 
 
     const dialogRef = this.dialog.open(BroAsignarAsesorComponent, {

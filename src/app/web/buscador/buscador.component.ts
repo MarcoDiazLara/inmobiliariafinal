@@ -47,11 +47,10 @@ export class BuscadorComponent implements OnInit {
   obtenerDatosInmuebles() {
     this.httpService.tipoInmueble().subscribe({
       next: (data) => {
-        console.info(data)
+        
         this.TInmuebles = data;
       },
-      error: (e) => console.log(e),
-      complete: () => console.log("Complete")
+      
     })
   }
 
@@ -73,20 +72,19 @@ export class BuscadorComponent implements OnInit {
   }
 
   cambioTpropiedad(tprop:number){
-    console.log('Selecciona Propiedad: ',tprop);
+   
     this.tpropiedad = tprop;
   }
 
   cambioUbicacion(ubi:string){
-    console.log('Selecciona Ubicacion: ',ubi);
+    
     this.ubicacion = ubi;
   }
 
 
 
   onSubmit(){
-    console.warn(this.segundoFormGroup.value);
-    console.warn(this.firstFormGroup.value);
+    
   }
   
   PageMapV() {

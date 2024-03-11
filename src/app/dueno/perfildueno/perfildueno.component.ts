@@ -178,7 +178,7 @@ export class PerfilduenoComponent implements OnInit {
 
     this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
       .subscribe((response) => {
-       console.log(response);
+       
       });
   }
 

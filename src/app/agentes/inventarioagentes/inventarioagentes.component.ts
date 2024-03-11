@@ -70,7 +70,7 @@ export class InventarioagentesComponent implements OnInit {
     // let Id_Usuario = localStorage.getItem ('Id_Usuario');   
     // this.http.InventarioAsesor(Id_Usuario).subscribe((data:any)=>{
     //   data=this.datosinventario;
-    //   console.log("datosinventario"+this.datosinventario);
+   
 
     // });
     // this.dataSource = new MatTableDataSource(this.datosinventario);
@@ -90,11 +90,10 @@ export class InventarioagentesComponent implements OnInit {
 //  let idUsuario = 19;
  
  this.httpService.inventarioAsesor(idUsuario).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
+
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(idUsuario);
-        ;
+        
       } else {
         data = [];
         this.adminService.inventarioasesor$.next(data);
@@ -102,7 +101,7 @@ export class InventarioagentesComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',idUsuario);
+      
 
     }
     )

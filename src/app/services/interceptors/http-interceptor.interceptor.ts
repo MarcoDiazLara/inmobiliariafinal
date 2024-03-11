@@ -18,7 +18,7 @@ export class HttpInterceptorInterceptor implements HttpInterceptor {
     const reqWithHeader = request.clone({
       headers: request.headers.append("Authorization", Token)
     });
-    console.log("Inbgreso a Interceptor");
+    
 
     request = reqWithHeader;
     return next.handle(request);

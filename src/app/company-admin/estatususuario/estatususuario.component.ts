@@ -79,11 +79,10 @@ export class EstatususuarioComponent implements OnInit {
 
 //  Llamas tu procedimiento 
  this.httpService.EstatusUsuarioCompany(IdSocio).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
+
       if(data !== 201) {
         this.adminService.pantallausuarios$.next(data);
-        console.log(IdSocio);
-        ;
+        
       } else {
         data = [];
         this.adminService.pantallausuarios$.next(data);
@@ -91,7 +90,7 @@ export class EstatususuarioComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio);
+     
 
     }
     )

@@ -41,10 +41,10 @@ idusu:any;
 
   ngOnInit(): void {
     let Id_Socio = localStorage.getItem("Id_Usuario");
-    console.log(Id_Socio)
+    
     this.httpService.inventarioAsesor(Id_Socio).subscribe((data: any) => {
       this.solicitud = data;
-      console.log(this.solicitud);
+      
     });
 
 
@@ -66,7 +66,7 @@ idusu:any;
       this.obtener = data[0].IdSocUsu;
       
       // alert(data.IdSocUsu);
-      // console.log(data[0].IdSocUsu)
+   
 
 
     });

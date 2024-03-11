@@ -18,7 +18,7 @@ export class FavoritosComponent implements OnInit {
   toggleFavorito() {
     
     if(this.isLoggedIn){
-      console.log("Id_usuario: "+ localStorage.getItem("Id_Usuario")+ "Id_Inmueble" + this.id_inmueble);
+      
       this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), this.id_inmueble,"1").subscribe((data : any) =>{
         if(data == 1){
           this.esFavorito = !this.esFavorito;
@@ -59,7 +59,7 @@ id_usuario!: String;
   obtenerInfo(){
     this.httpService.obtenerInfoFavoritos(localStorage.getItem("Id_Usuario")).subscribe((data : any) =>{
   this.infoFavoritos=data;
-  console.log(this.infoFavoritos);
+  
     })
   }
 
@@ -67,7 +67,7 @@ id_usuario!: String;
   Favoritos(Id_Inmueble:string)
   {
     if(this.isLoggedIn){
-    console.log("Id _ usuario"+ localStorage.getItem("Id_Usuario")+ "Id_Inmueble" + Id_Inmueble);
+
     this.httpService.Favoritos(localStorage.getItem("Id_Usuario"), Id_Inmueble,"1").subscribe((data : any) =>{
       if(data == 1){
       

@@ -30,7 +30,7 @@ export class InmueblesComponent implements OnInit {
       p_desc:["",[Validators.required]]
     })
     this.httpService.obtenerinfoAsesor(localStorage.getItem("Id_Inmueble")).subscribe((data:any)=>{
-      console.log(data);
+     
       if(data != "0"){
         this.datosAsesor = data[0];
         this.datos2 = data[0];
@@ -62,7 +62,7 @@ export class InmueblesComponent implements OnInit {
     
     let correo = this.formGeneral.value.email;
     let mensaje = this.formGeneral.value.p_desc;
-    console.log(correo + mensaje);
+ 
     //let mensaje = `Hola, soy ${this.nombre}. Mi número de teléfono es ${this.telefono}. Mi correo electrónico es ${this.email}. Comentario: ${this.comentarios}. URL: ${window.location.href} `;
     this.httpService.EnviarCorreo(correo,mensaje).subscribe((data: any) =>{
       Swal.fire({

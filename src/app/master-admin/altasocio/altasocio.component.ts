@@ -197,7 +197,7 @@ obtenerTipo(){
         this.Socios = data;
     }
   },(err)=>{
-   console.log(err);
+  
   
   })
 
@@ -211,7 +211,7 @@ obtenerEstado(){
       this.estados = resp;
     }
    },(err)=>{
-    console.log(err);
+
    })
  }
 
@@ -223,7 +223,7 @@ updateM(){
       this.municipios = resp;
     }
    },(err)=>{
-    console.log(err);
+    
    })
 }
 
@@ -235,7 +235,7 @@ updateA(){
       this.asentamientos = resp;
     }
    },(err)=>{
-    console.log(err);
+  
    })
   
  
@@ -253,7 +253,7 @@ subir_imagenes(): void {
 
   this.httpClient.post('https://inmobiliaria.arvispace.com/servicios/subirArchivo.php', formData)
     .subscribe((response) => {
-     console.log(response);
+     
     });
 }
 

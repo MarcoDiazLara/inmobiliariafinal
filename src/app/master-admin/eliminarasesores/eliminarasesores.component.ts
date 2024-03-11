@@ -30,7 +30,7 @@ export class EliminarasesoresComponent implements OnInit {
         this.asesores = resp;
       }
      },(err)=>{
-      console.log(err);
+     
      
     })
   }

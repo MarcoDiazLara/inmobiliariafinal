@@ -40,7 +40,7 @@ export class CompAsignarAsesorComponent implements OnInit {
     let Id_Socio = localStorage.getItem("Id_Socio");
     this.http.mostrarAsesor(Id_Socio).subscribe((data:any)=>{
       this.asesores=data;
-      console.log(this.asesores);
+     
       });
   
   
@@ -54,7 +54,7 @@ export class CompAsignarAsesorComponent implements OnInit {
     if (this.formGeneral){
       this.Nombres = this.formGeneral.value.Nombres;
       let Id_Publicacion = localStorage.getItem("id_publicacion");
-      console.log(Id_Publicacion);
+      
 
      
       

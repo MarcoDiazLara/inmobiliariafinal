@@ -148,7 +148,7 @@ obtenerTipoUsuario(){
      this.typeUsers = resp;
    }
   },(err)=>{
-   console.log(err);
+
   })
  }
 

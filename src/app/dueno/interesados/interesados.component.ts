@@ -68,7 +68,7 @@ export class InteresadosComponent implements OnInit {
 
     // });
     this.MostrarIntersados();
-    console.log("DAtosInventario: " + this.datosinventario)
+    
      this.dataSource = new MatTableDataSource(this.datosinventario);
     
       
@@ -85,7 +85,7 @@ export class InteresadosComponent implements OnInit {
 
  MostrarIntersados(){
  this.http.interesados(localStorage.getItem("Id_Usuario")).subscribe((data:any)=>{
-   console.log(data);
+   
    
     this.adminService.inventarioasesor$.next(data);
   
@@ -100,7 +100,7 @@ export class InteresadosComponent implements OnInit {
     
   },
     (err) => {
-      console.log('Error de conexión');
+      
     }
   )
 

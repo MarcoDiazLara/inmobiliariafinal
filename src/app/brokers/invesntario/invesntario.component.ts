@@ -89,11 +89,11 @@ export class InvesntarioComponent implements OnInit {
 
  
  this.httpService.InventarioBroker(IdSocio,IdUsuario).subscribe((data:any)=>{
-  console.log("datosdeinventario"+data.Id_Usuario);
+  
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
-        console.log(IdSocio,IdUsuario);
-        ;
+        
+        
       } else {
         data = [];
         this.adminService.inventarioasesor$.next(data);
@@ -101,7 +101,7 @@ export class InvesntarioComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión',IdSocio,IdUsuario);
+    
 
     }
     )

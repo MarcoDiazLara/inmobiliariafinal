@@ -90,7 +90,7 @@ export class InformacionInmuebleComponent implements OnInit {
   ObtenerinformacionInmueble() {
     this.httpService.actualizarInmueble(localStorage.getItem("idpublicacion")).subscribe((data: any) => {
       this.datos = data[0];
-      console.log(this.datos);
+     
     })
   }
 
@@ -101,7 +101,7 @@ export class InformacionInmuebleComponent implements OnInit {
         this.EstatusInmuebles = resp;
       }
     }, (err) => {
-      console.log(err);
+      
     })
   }
 

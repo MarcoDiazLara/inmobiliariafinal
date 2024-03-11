@@ -68,7 +68,7 @@ login(){
         // alert("contraseña incorrecta");
         localStorage.setItem("Bandera","0");
       }else{
-        console.log(data.Estatus);
+       
         if(data.Estatus == "Inactivo" || data.Estatus == "inactivo"){
           Swal.fire({
             icon: 'error',

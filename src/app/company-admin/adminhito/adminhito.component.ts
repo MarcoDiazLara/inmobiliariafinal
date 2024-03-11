@@ -49,21 +49,21 @@ export class AdminhitoComponent implements OnInit {
 
   onDateSelected(event: any): void {
     // Aquí obtienes la fecha seleccionada
-    // console.log('Fecha seleccionada:', this.selected);
+    
  
     let dia= this.selected.getDate().toString();
     let mes= (this.selected.getMonth()+1).toString();
     let anio= this.selected.getFullYear().toString();
     let fecha1= anio+ "-" + mes +"-"+ dia;
     
-    //console.log(fecha1);
+   
     // this.httpService.mostrarfechasHito(localStorage.getItem("Id_Usuario"), fecha1).subscribe((data:any)=>{
     //   this.mostrarfechashito=data;
-    //   console.log(data);
+   
     // })
     this.httpService.mostrarHitoGeneral(localStorage.getItem("Id_Socio"), fecha1).subscribe((data:any)=>{
       this.mostrarfechashito=data;
-      console.log(data);
+     
     })
     // Puedes hacer lo que quieras con la fecha seleccionada
   }
@@ -94,12 +94,12 @@ export class AdminhitoComponent implements OnInit {
   Delete(idHito: any){
     this.httpService.openasesor(); 
     if (!idHito) {
-      console.error('Se requiere el valor de idHito para llamar a EliminarFechasHitos');
+      
       return;
     }
     // alert(idHito)
     this.httpService.EliminarFechasHitos(idHito).subscribe((data:any) => {
-      console.log('Respuesta del servicio:', data);
+      
       Swal.fire({
         title: "Éxito!!",
         text: "Se elimino fecha hito!",
@@ -111,7 +111,7 @@ export class AdminhitoComponent implements OnInit {
     },
     (error) => {
       // Manejar errores del servicio/API
-      console.error('Error al llamar al servicio:', error);
+      
     }
 
     );
@@ -185,12 +185,7 @@ export class AdminhitoComponent implements OnInit {
 
   Addnew() {
     const modal = document.querySelector('.ShowAddEvent');
-    console.log('Asunto:', this.asunto);
-    console.log('fechaInicio:', this.fechaInicio);
-    console.log('fechaCierre:', this.fechaCierre);
-    console.log('Descripcion:', this.Descripcion);
-    console.log('notificacionesActivadas:', this.notificacionesActivadas);
-    console.log('selectedStatus:', this.selectedStatus);
+  
 
     let dia= this.fechaInicio.getDate().toString();
     let mes= (this.fechaInicio.getMonth()+1).toString();
@@ -265,13 +260,15 @@ export class AdminhitoComponent implements OnInit {
     let anios= this.xd1.getFullYear().toString();
     let fecha2= anios+ "-" + mess +"-"+ dias;
     const modal = document.querySelector('.ShowAddEvent');
-    //let xd = Date(this.fechaInicio1);
     
-    // console.log(this.xd);
-    // console.log(this.xd1);
-    //  console.log(this.Aux.Id_Fecha_Hito+this.Aux.Asunto+this.Aux.Fecha_Inicio+this.Aux.Fecha_Cierre+this.Aux.Descripcion)
      this.httpService.ActualizacionFechasHito(this.Aux.Id_Fecha_Hito,this.Aux.Asunto,fecha1,fecha2,this.Aux.Descripcion).subscribe((data:any)=>{
-      alert("Se actualizo fecha hito");
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Se actualizo la fecha hito",
+        showConfirmButton: false,
+        timer: 1500
+      });
      })
     if (modal) {
       modal.classList.remove('mostrar');
@@ -303,7 +300,7 @@ export class AdminhitoComponent implements OnInit {
        this.brokers = resp;
      }
     },(err)=>{
-     console.log(err);
+     
     })
    }
  

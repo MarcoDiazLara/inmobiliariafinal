@@ -51,7 +51,7 @@ export class AvisosComponent  {
     const dialogRef = this.dialog.open(LikeComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+     
     });
   }
   InforInmu(inmueble:Publicaciones){
@@ -96,7 +96,7 @@ ngOnInit(){
        this.inmuebles = resp;
      }
     },(err)=>{
-     console.log(err);
+    
     })
    }
 
@@ -128,7 +128,7 @@ estadoAnuncion(Anuncio:number){
 TipoInmueble(tiposInmuebles:number){
   this.httpService.FiltroTipodeInmueble(localStorage.getItem("Id_Usuario"),tiposInmuebles).subscribe((data:any)=>{
     this.inmuebles1=data;
-    console.log("hola");
+    
   })
  
 

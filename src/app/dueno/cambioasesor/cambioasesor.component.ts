@@ -35,10 +35,10 @@ export class CambioasesorComponent implements OnInit {
 
   ngOnInit(): void {
     let Id_Socio = localStorage.getItem("Id_Usuario");
-    console.log(Id_Socio)
+    
     this.httpService.MostrarInmueblesSolicitud(Id_Socio).subscribe((data: any) => {
       this.solicitud = data;
-      console.log(this.solicitud);
+      
     });
 
 
@@ -58,7 +58,7 @@ export class CambioasesorComponent implements OnInit {
       this.obtener = data[0].IdSocUsu;
       
       // alert(data.IdSocUsu);
-      // console.log(data[0].IdSocUsu)
+      
 
 
     });

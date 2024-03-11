@@ -78,7 +78,7 @@ Id_real!: string;
     
 
     this.httpService.informacionAsesor(this.Id_real).subscribe((data:any)=>{
-      console.log(data);
+      
       if(data != "0"){
         this.asesor = data[0];
         this.entradaAsesor = !this.entradaAsesor;
@@ -258,7 +258,7 @@ Id_real!: string;
       });
       
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+     
     
     });
     

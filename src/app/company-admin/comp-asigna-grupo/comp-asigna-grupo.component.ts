@@ -100,7 +100,7 @@ export class CompAsignaGrupoComponent implements OnInit {
       }
     },
       (err) => {
-        console.log('Error de conexión');
+        
       }
     )
   }

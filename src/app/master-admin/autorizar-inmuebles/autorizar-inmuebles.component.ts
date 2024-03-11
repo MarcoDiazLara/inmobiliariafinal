@@ -83,7 +83,7 @@ export class AutorizarInmueblesComponent implements OnInit {
 
  
  this.httpService.inmueblesAuto().subscribe((data:any)=>{
-  console.log("datosdeinventario"+data);
+
       if(data !== 201) {
         this.adminService.inventarioasesor$.next(data);
      
@@ -95,7 +95,7 @@ export class AutorizarInmueblesComponent implements OnInit {
       }      
     },
     (err) => {
-      console.log('Error de conexión');
+    
 
     }
     )
