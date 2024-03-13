@@ -1,5 +1,5 @@
 
-<mat-dialog-content  >
+<mat-dialog-content *ngIf="datos" >
  
     <hr>
     <h1>Esta opcion es en caso de que desees realizar mas de una operacion por inmueble.<i class="bi bi-info">
@@ -39,7 +39,7 @@
   
           <mat-form-field style="margin-right: 15px;">
             <mat-label>Nombre del Inmueble</mat-label>
-            <input matInput  formControlName="Nombre_de_Inmueble" required  [(ngModel)]="datos.Nombre_Inmueble">
+            <input matInput type="text" formControlName="Nombre_de_Inmueble" required  [(ngModel)]="datos.Nombre_Inmueble">
             <mat-icon matSuffix>
               <img src="assets/img/edificio1.png" alt="Icono" width="30" height="30">
           </mat-icon>

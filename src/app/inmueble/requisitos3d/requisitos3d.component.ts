@@ -366,9 +366,10 @@ export class Requisitos3dComponent implements OnInit {
   }
 
    NuevosDatos(){
+    //franjaroca3@gmail.com
   this.httpService.subirModelado(localStorage.getItem("p_Id_inmueble"),this.miFormulario.value.name,this.miFormulario.value.Correo,this.miFormulario.value.Telefono,this.miFormulario.value.planos,"","","","","").subscribe((data:any)=>{
   let Correo="Hola me comunico para el modelado 3D" + '\n'+ "Mi nombre es:"+ this.miFormulario.value.name +'\n'+"Correo: "+ this.miFormulario.value.Correo+ '\n'+"Telefono:" + this.miFormulario.value.Telefono + '\n'+"Cuento con planos:"+ this.miFormulario.value.planos;
-  this.httpService.EnviarCorreo("franjaroca3@gmail.com",Correo, ).subscribe((data:any)=>{
+  this.httpService.EnviarCorreo("marko_lar@hotmail.com",Correo, ).subscribe((data:any)=>{
     // alert("se mando tu correo");
 
     Swal.fire({
