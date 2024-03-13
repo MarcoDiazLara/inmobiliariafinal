@@ -30,6 +30,7 @@ export class HistorialNotisComponent implements OnInit {
 
   fechaSeleccionada: Date = new Date();
   tipoSeleccionado: string = "";
+  bandera: number = 0;
   
 
   ngOnInit(): void {
@@ -92,11 +93,13 @@ export class HistorialNotisComponent implements OnInit {
       }
       let anio =  this.fechaSeleccionada.getFullYear().toString();
        this.nom_aux = anio +"-"+ mes1+"-" + dia1;
+       this.bandera = 1;
 
       this.filtro();
     }
   
   filtro(){
+    if(this.bandera == 1){
     this.httpService.filtrohistorial(this.nom_aux, this.tipoSeleccionado,localStorage.getItem("idpublicacion")).subscribe((data:any)=>{
       if(data == 0){
         this.notifications = [];
@@ -105,6 +108,16 @@ export class HistorialNotisComponent implements OnInit {
       }
       
     })
+  }else{
+    this.httpService.filtrohistorial("", this.tipoSeleccionado,localStorage.getItem("idpublicacion")).subscribe((data:any)=>{
+      if(data == 0){
+        this.notifications = [];
+      }else{
+        this.notifications = data;
+      }
+      
+    })
+  }
   }
 
 }

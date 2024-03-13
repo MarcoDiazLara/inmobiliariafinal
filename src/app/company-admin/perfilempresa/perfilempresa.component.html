@@ -1,5 +1,5 @@
 <div class="container-fluit">
-    <div class="perfilcontenedor">
+    <div class="perfilcontenedor" *ngIf="datos" [formGroup]="formGeneral">
       <br>
       <br>
       <br>
@@ -24,7 +24,7 @@
   </div>
     
   <div class="contenidoperfil">
-    <form class="insertar-dialog-content" [formGroup]="formGeneral">
+    <form class="insertar-dialog-content" *ngIf="datos" [formGroup]="formGeneral">
       <div class="row">
   
         <div class="col-md-3">

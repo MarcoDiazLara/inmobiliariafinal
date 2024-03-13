@@ -56,7 +56,7 @@ export class PerfilempresaComponent implements OnInit {
       Calle:['',[Validators.required]],
       Num_Ext:['',[Validators.required]],
       Num_Int:['',[Validators.required]],
-      
+      imageInput:['',[Validators.required]]
     });
   }
 
