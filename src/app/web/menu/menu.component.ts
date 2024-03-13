@@ -95,6 +95,7 @@ export class MenuComponent implements OnInit {
       localStorage.removeItem(item);
     })
     this.httpService.setGlobalVariable(false);
+    this.ngOnInit();
     this.router.navigate(["/web"]);
     
   }
