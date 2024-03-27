@@ -459,7 +459,7 @@ export class CatalogoinmuebleComponent  {
       
             
       
-              this.router.navigate(["/Company/Inventario"]);
+              //this.router.navigate(["/Company/Inventario"]);
             
           } else{
             Swal.fire({
